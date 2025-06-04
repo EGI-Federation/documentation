@@ -13,7 +13,7 @@ We have a dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting the
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>. Check
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrollment URL&lt;/a>. Check
 &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
 Virtual Appliances and Resource Providers participating in the &lt;em>vo.access.egi.eu&lt;/em> VO.
 AppDB is one of the service in the
@@ -389,7 +389,7 @@ dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please
 request access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting
-the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrolment URL&lt;/a>.
+the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.
 Check &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
 Virtual Appliances and Resource Providers participating in the
 &lt;em>vo.access.egi.eu&lt;/em> VO. AppDB is one of the service in the

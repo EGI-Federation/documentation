@@ -289,642 +289,78 @@ In this case, the pending petition will be deleted and a new enrollment flow wil
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ol></description></item><item><title>Users: Managing a Virtual Organisation</title><link>/users/aai/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/</guid><description>
-&lt;p>This page contains information about using Check-in for managing your Virtual
-Organisation (VO). For joining a VO please look at
-&lt;a href="../joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
-&lt;h2 id="background">Background&lt;/h2>
-&lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In EGI VOs
-are created to group researchers who aim to share resources across the EGI
-Federation to achieve a common goal as part of a scientific collaboration. For a
-more formal definition of VO please look at the
-&lt;a href="https://ims.egi.eu/display/EGIG/Virtual+organisation">EGI Glossary&lt;/a>.&lt;/p>
-&lt;p>You can browse existing VOs in the
-&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>. For each VO
-you can click on the &lt;em>Details&lt;/em> link to get more information. You can join an
-existing VO either using the &lt;em>enrollment URL&lt;/em> or emailing VO managers.&lt;/p>
-&lt;p>If you are interested in creating your own VO, please see instructions in the
-section &lt;a href="#vo-management">below&lt;/a>.&lt;/p>
-&lt;h2 id="vo-management">VO management&lt;/h2>
-&lt;p>VOs in Check-in are represented as groups that go beyond simple collections of
-users, providing structured membership management and advanced enrollment
-workflows tailored for complex access needs. VOs can also be organised in a
-hierarchical structure for creating groups or subgroups within a VO.&lt;/p>
-&lt;h3 id="registering-your-vo">Registering your VO&lt;/h3>
-&lt;p>Any person who can authenticate to the
-&lt;a href="https://operations-portal.egi.eu/">Operations Portal&lt;/a> using their EGI Check-in
-account can register a new VO.&lt;/p>
-&lt;p>The person initiating the registration is called the &lt;strong>VO manager&lt;/strong>. After the
-VO is set up and operational, the VO manager is the person who is primarily
-responsible for the operation of the VO and for providing sufficient information
-about VO activities for EGI and for VO members (to both people and sites).&lt;/p>
-&lt;p>A step-by-step guide for the VO registration process is provided in the
-procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration">PROC14 VO Registration&lt;/a>.&lt;/p>
-&lt;h2 id="vo-group-management">VO Group Management&lt;/h2>
-&lt;h3 id="group-admins">Group Admins&lt;/h3>
-&lt;p>Groups are managed by Group Admins, who have several key responsibilities:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#view-group-details-and-manage-group-roles">&lt;strong>Managing roles&lt;/strong>&lt;/a> for specific
-permissions within the Group.&lt;/li>
-&lt;li>&lt;a href="#manage-group-member-roles">&lt;strong>Managing member roles&lt;/strong>&lt;/a> to users based on
-their needs or requests.&lt;/li>
-&lt;li>&lt;a href="#extend-group-member-membership">&lt;strong>Extending memberships&lt;/strong>&lt;/a> for continued
-access.&lt;/li>
-&lt;li>&lt;a href="#suspend-or-activate-group-member">&lt;strong>Suspending or activating memberships&lt;/strong>&lt;/a>
-to control user access as required.&lt;/li>
-&lt;li>&lt;a href="#manage-enrollment-configurations">&lt;strong>Managing enrollment configurations&lt;/strong>&lt;/a> to
-define how users can join the Group.&lt;/li>
-&lt;li>&lt;a href="#create-sub-group">&lt;strong>Creating&lt;/strong>&lt;/a>/&lt;a href="#delete-sub-group">&lt;strong>Deleting&lt;/strong>&lt;/a> Sub Groups
-within the Group hierarchy.&lt;/li>
-&lt;/ul>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> &lt;em>Group Admin&lt;/em> is not a role within the Group; it is a separate
-administrative designation. Group Admins have the ability to manage all
-aspects of the Group, as well as any sub-groups in the hierarchy, including
-roles, memberships, and configurations.&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="group-roles">Group Roles&lt;/h3>
-&lt;p>Members of Groups are assigned roles upon joining. Users can join a Group in one
-of two ways:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>By accepting an invitation&lt;/strong>: Users receive the roles specified by the
-inviting administrator.&lt;/li>
-&lt;li>&lt;strong>By submitting an enrollment request&lt;/strong>: Users can select their preferred
-roles from the options available, as defined by the Group’s enrollment
-configuration.&lt;/li>
-&lt;/ul>
-&lt;p>Each assigned role includes an entitlement attribute, which grants authorization
-to specific resources. This flexible approach to role assignment allows Group
-administrators to control access while offering users the ability to select
-roles when available.&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> &lt;em>Entitlement&lt;/em> values can be found on the
-&lt;a href="#view-group-details-and-manage-group-roles">&lt;strong>Group Details Tab&lt;/strong>&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="membership-status">Membership Status&lt;/h3>
-&lt;p>Members of a Group can have different statuses that affect their access and
-entitlements:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Active&lt;/strong>: The membership is fully active, and the user receives all
-entitlements associated with the roles they hold in the Group.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Suspended&lt;/strong>: Administrators can suspend a user’s membership for security
-reasons, such as suspicious activity. While suspended, the user retains
-membership but loses all entitlements tied to their roles. Administrators can
-later revoke the suspension and
-&lt;a href="#suspend-or-activate-group-member">reactivate the membership&lt;/a>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Pending&lt;/strong>: A user’s membership can have a future start date based on the
-enrollment configuration used during joining. This scheduled membership will
-activate automatically on the specified start date. Administrators also have
-the option to
-&lt;a href="#suspend-or-activate-group-member">activate the membership manually&lt;/a> if
-needed.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> &lt;strong>Suspension/Activation&lt;/strong> of a member will also affect all
-memberships in Sub Groups of target group&lt;/p>
-&lt;/blockquote>
-&lt;p>Each status provides Group administrators with flexible control over user access
-and helps ensure security within the Group.&lt;/p>
-&lt;h3 id="membership-expiration">Membership Expiration&lt;/h3>
-&lt;p>Memberships in Groups come with a defined duration, which may be set to
-indefinite if allowed by the Group’s configuration settings. However, the
-duration of any membership is also affected by the Group&amp;rsquo;s position within the
-Group hierarchy. Membership in a higher-level Group imposes a duration limit on
-all memberships in its subordinate Groups. As a result, the expiration date for
-any membership in a lower-level Group cannot exceed the duration limit set by
-the higher-level Group.&lt;/p>
-&lt;h4 id="understanding-expiration-dates-in-group-memberships">Understanding Expiration Dates in Group Memberships&lt;/h4>
-&lt;p>When viewing members within a Group, you will encounter two types of expiration
-dates:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Direct Membership Expiration&lt;/strong>: This date indicates the expiration of
-membership specifically for the Group you are currently viewing. It applies
-only to that Group and not to any other Group within the hierarchy.&lt;/li>
-&lt;li>&lt;strong>Effective Membership Expiration&lt;/strong>: If relevant, this reflects the actual
-expiration date imposed by a higher-level Group. If a higher-level Group has
-an earlier expiration date than the Direct Membership Expiration, the
-Effective Membership Expiration will take precedence, overriding the direct
-expiration date for the current Group.&lt;/li>
-&lt;/ul>
-&lt;p>For example, if a user’s Direct Membership Expiration in a lower-level Group is
-set to indefinite (or a date beyond 2024), but the Effective Membership
-Expiration from a higher-level Group is November 12, 2024, the user’s membership
-will expire on November 12, 2024, in line with the higher Group’s restrictions.&lt;/p>
-&lt;p>&lt;img src="./admin-group-effective-expiration.png" alt="Admin Group Effective Membership Expiration">&lt;/p>
-&lt;p>This hierarchical approach to managing memberships allows for simplified
-administration and ensures consistent access policies are maintained across
-different Group levels.&lt;/p>
-&lt;h4 id="pending-memberships-with-future-start-dates">Pending Memberships with Future Start Dates&lt;/h4>
-&lt;p>Some enrollment flows or invitations may specify a starting date in the future.
-In these cases, users who accept the invitation or submit an enrollment request
-will have a &lt;strong>pending membership&lt;/strong> status until the specified start date. Once
-the start date arrives, the membership will automatically activate, changing
-their status from pending to active.&lt;/p>
-&lt;h3 id="view-group-details-and-manage-group-roles">View Group Details and Manage Group Roles&lt;/h3>
-&lt;p>The &lt;strong>Group Details Tab&lt;/strong> provides essential information and management options,
-including:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Available Group Roles&lt;/strong>: Lists roles within the Group and displays the
-entitlements granted to users with these roles.&lt;/li>
-&lt;li>&lt;strong>Group Path&lt;/strong>: Shows the hierarchical path of the Group within the overall
-structure.&lt;/li>
-&lt;li>&lt;strong>Enrollment Discovery Page URL&lt;/strong>: Provides a link to the
-&lt;a href="#enrollment-discovery-page">Enrollment Discovery Page&lt;/a>, allowing users to
-access relevant enrollment options.&lt;/li>
-&lt;/ul>
-&lt;ol>
-&lt;li>Log in to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of your login credentials linked to your account.&lt;/li>
-&lt;li>Go to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and select the target group to access its Group Configuration Page.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>View Group Details
-&lt;img src="./admin-group-details-tab.png" alt="Admin Groups Details View">&lt;/li>
-&lt;/ol>
-&lt;h4 id="create-group-role">Create Group Role&lt;/h4>
-&lt;p>To add a new role, enter the role name in the text input field and click the
-plus button to create it.&lt;br>
-&lt;img src="./admin-group-create-group-role.png" alt="Admin Groups Create Group Role">&lt;/p>
-&lt;h4 id="delete-group-role">Delete Group Role&lt;/h4>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> A role cannot be deleted from a group if it is assigned to any
-members.&lt;/p>
-&lt;/blockquote>
-&lt;p>Locate the role you want to remove and use the minus button next to it to delete
-it. &lt;img src="./admin-group-delete-group-role.png" alt="Admin Groups Delete Group Role">&lt;/p>
-&lt;h3 id="create-sub-group">Create Sub Group&lt;/h3>
-&lt;p>There are two ways to create a subgroup within the platform:&lt;/p>
-&lt;h4 id="a-through-the-group-management-pagehttpsaaiegieuauthrealmsidaccountgroupsadmingroups">A) Through the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>&lt;/h4>
-&lt;ol>
-&lt;li>Log in to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of your login credentials linked to your account.&lt;/li>
-&lt;li>Go to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-to locate your target group. &lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Click on the more options menu next to your group, then select &lt;strong>&amp;ldquo;Create
-Subgroup&amp;rdquo;&lt;/strong> from the available options.
-&lt;img src="./admin-group-subgroups-main.png" alt="Admin Create Subgroup">&lt;/li>
-&lt;/ol>
-&lt;h4 id="b-using-the-sub-groups-tab-in-the-group-configuration-page">B) Using the Sub Groups Tab in the Group Configuration Page&lt;/h4>
-&lt;ol>
-&lt;li>Log in to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of your login credentials linked to your account.&lt;/li>
-&lt;li>Go to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and select the target group to access its Group Configuration Page.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Navigate to the &lt;strong>Sub Groups&lt;/strong> tab to view existing subgroups within this
-Group. &lt;img src="./admin-group-subgroups-tab.png" alt="Admin Group Sub Group Tab">&lt;/li>
-&lt;li>To create a new subgroup, click the &lt;strong>plus button (+)&lt;/strong> at the top of the Sub
-Groups tab. Alternatively, you can click the &lt;strong>more options menu&lt;/strong> next to an
-existing subgroup and select the option to create a subgroup within that
-subgroup.
-&lt;img src="./admin-group-subgroups-tab-create.png" alt="Admin Group Sub Group Tab Create">&lt;/li>
-&lt;/ol>
-&lt;h3 id="delete-sub-group">Delete Sub Group&lt;/h3>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> Top-level Groups and Sub-Groups that contain additional Sub-Groups
-cannot be deleted.&lt;/p>
-&lt;/blockquote>
-&lt;h4 id="a-through-the-group-configuration-page">A) Through the Group Configuration Page&lt;/h4>
-&lt;ol>
-&lt;li>Log in to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of your login credentials linked to your account.&lt;/li>
-&lt;li>Go to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and select the target group to access its Group Configuration Page.
-&lt;img src="./admin-groups-select-sub.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Click the trash icon to delete group
-&lt;img src="./admin-group-subgroups-delete.png" alt="Admin Delete Sub Group">&lt;/li>
-&lt;/ol>
-&lt;h4 id="b-through-the-higher-level-group">B) Through the Higher Level Group&lt;/h4>
-&lt;ol>
-&lt;li>Log in to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of your login credentials linked to your account.&lt;/li>
-&lt;li>Go to the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and select the target group to access its Group Configuration Page.
-&lt;img src="./admin-groups-select-parent.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Navigate to the &lt;strong>Sub Groups&lt;/strong> tab to view existing subgroups within this
-Group. &lt;img src="./admin-group-subgroups-tab.png" alt="Admin Group Sub Group Tab">&lt;/li>
-&lt;li>To delete a subgroup, click the &lt;strong>more options menu&lt;/strong> next to the subgroup
-you wish to delete and select the option to delete that.
-&lt;img src="./admin-group-subgroups-tab-delete.png" alt="Admin Group Sub Group Tab Create">&lt;/li>
-&lt;/ol>
-&lt;h2 id="membership-management">Membership Management&lt;/h2>
-&lt;h3 id="view-group-members">View Group Members&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>To view the existing members, select the Group Members tab.
-&lt;img src="./admin-group-view-members-tab.png" alt="Admin Group View">&lt;/li>
-&lt;li>Group Members tab view &lt;img src="./admin-group-members.png" alt="Admin Group Members">&lt;/li>
-&lt;/ol>
-&lt;h3 id="add-group-members">Add Group Members&lt;/h3>
-&lt;h4 id="by-invitation--direct-add">By Invitation / Direct Add&lt;/h4>
-&lt;p>Users can be added to a group either by invitation or direct addition:&lt;/p>
-&lt;ul>
-&lt;li>By Invitation: Admins can send an email invitation to users. Upon receiving
-the invitation, users can log in to the Keycloak Account Console with their
-Check-in account to accept or reject the invitation.&lt;/li>
-&lt;li>Direct Add: Admins can directly add new members by selecting users who are
-already registered and belong to a group where they have admin rights.&lt;/li>
-&lt;/ul>
-&lt;p>Sending an Invitation to a User or directly adding them the group can be
-achieved by:&lt;/p>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Members tab.
-&lt;img src="./admin-group-view-members-tab.png" alt="Admin Group Members">&lt;/li>
-&lt;li>Click the Add Member button that opens the pop-up window.
-&lt;img src="./admin-group-members-invite.png" alt="Admin Group Members Invite">&lt;/li>
-&lt;li>Select an Enrollment Configuration
-&lt;img src="./admin-group-members-invite-step1.png" alt="Admin Group Members Invite Step 1">&lt;/li>
-&lt;li>Select the role(s) that you want the user have in the Group and click Next
-&lt;img src="./admin-group-members-invite-step2.png" alt="Admin Group Members Invite Step 2">&lt;/li>
-&lt;li>Select the user from the drop down selection input or enter an email address
-to send an Send Invitation.
-&lt;img src="./admin-group-members-invite-step3.png" alt="Admin Group Members Invite Step 3">&lt;/li>
-&lt;li>Select whether you want to send an invitation or to add User directly (if
-option is available) and Confirm.
-&lt;img src="./admin-group-members-invite-step4.png" alt="Admin Group Members Invite Step 4">&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a user accepts or reject an invitation email notification
-will be sent to admins of the group&lt;/p>
-&lt;/blockquote>
-&lt;h4 id="by-enrollment-request">By Enrollment Request&lt;/h4>
-&lt;p>Users can be added to a group by creating an Enrollment Request. Enrollment
-Requests can be created through the
-&lt;a href="#enrollment-discovery-page">Enrollment Discovery Page&lt;/a> or a Direct Enrollment
-Link. The Enrollment Discovery has available all the visible and active
-enrollment flows and the Direct Enrollment Link points to a single Enrollment
-Flow that must be active.&lt;/p>
-&lt;p>Α) Sharing the Enrollment Discovery Page Link following these steps:&lt;/p>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the more options and from the available options select the “Copy
-enrollment link to this group”admin-group-subgroups-main.png.
-&lt;img src="./admin-group-invite-url.png" alt="Admin Group Invite Url">&lt;/li>
-&lt;li>Share the copied Enrollment URL with the User.&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a user submits an enrollment request admins of the group will
-receive an email notification.&lt;/p>
-&lt;/blockquote>
-&lt;p>B) Sharing an Direct Enrollment Link to a specific Enrollment&lt;/p>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Enrollment Tab
-&lt;img src="./admin-group-enrollments-tab.png" alt="Admin Group Enrollment Tab">&lt;/li>
-&lt;li>Locate the desired Enrollment making sure it is active&lt;/li>
-&lt;li>Select the more options and from the available options select the “Copy
-enrollment link to this group”.
-&lt;img src="./admin-group-invite-url-specific.png" alt="Admin Group Enrollment Invite Url">&lt;/li>
-&lt;li>Share the copied Enrollment URL with the User.&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a user submits an enrollment request admins of the group will
-receive an email notification.&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="remove-member-from-group">Remove Member from Group&lt;/h3>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Removing a member from a group will also remove them from all Sub
-Groups.&lt;/p>
-&lt;/blockquote>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Members tab.
-&lt;img src="./admin-group-view-members-tab.png" alt="Admin Group Members">&lt;/li>
-&lt;li>Locate the User you want to remove from the group&lt;/li>
-&lt;li>Click the X button and then the Yes button at the confirmation pop-up window
-&lt;img src="./admin-group-remove-member.png" alt="Admin Group Remove Member">&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a group member is removed admins of the group and the removed
-user will receive an email notification&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="manage-group-member-roles">Manage Group Member Roles&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Members tab.
-&lt;img src="./admin-group-view-members-tab.png" alt="Admin Group Members">&lt;/li>
-&lt;li>Locate the User you want to alter their roles.&lt;/li>
-&lt;li>Click the edit button.
-&lt;img src="./admin-group-edit-member-roles.png" alt="Admin Group Edit Member Roles">&lt;/li>
-&lt;li>Alter their roles by selecting the desired ones from the available options.
-&lt;img src="./admin-group-edit-member-roles-window.png" alt="Admin Group Edit Member Roles Window">&lt;/li>
-&lt;li>To save edited member roles click the Save button.&lt;/li>
-&lt;/ol>
-&lt;h3 id="extend-group-member-membership">Extend Group Member Membership&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Members tab.
-&lt;img src="./admin-group-view-members-tab.png" alt="Admin Group Members">&lt;/li>
-&lt;li>Locate the User you want to alter their roles.&lt;/li>
-&lt;li>Click the edit button.
-&lt;img src="./admin-group-edit-member-roles.png" alt="Admin Group Edit Member Roles">&lt;/li>
-&lt;li>Alter the expiration date using the date picker.
-&lt;img src="./admin-group-extend-membership.png" alt="Admin Group Edit Member Roles Window">&lt;/li>
-&lt;li>To save edited membership details click the Save button.&lt;/li>
-&lt;/ol>
-&lt;h3 id="suspend-or-activate-group-member">Suspend or Activate Group Member&lt;/h3>
-&lt;p>User memberships can be suspended or activated by a group admin by following
-these steps:&lt;/p>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Members tab.
-&lt;img src="./admin-group-view-members-tab.png" alt="Admin Group Members">&lt;/li>
-&lt;li>Locate the User you want to suspend or activate their membership.&lt;/li>
-&lt;li>Click the suspend/activate button to open the confirmation pop-up window.
-&lt;img src="./admin-group-member-action.png" alt="Admin Group Member Action">&lt;/li>
-&lt;li>Optionally provide a justification for your action that will be included in
-the notification sent to the User and the group Admins.
-&lt;img src="./admin-group-member-action-confirmation.png" alt="Admin Group Member Action Confirmation">&lt;/li>
-&lt;li>Click the YES button to submit your action&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a group member is activated/suspended, admins of the group&lt;br>
-and the user will receive an email notification.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="admin-management">Admin Management&lt;/h2>
-&lt;h3 id="view-group-admins">View Group Admins&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Admins Tab.
-&lt;img src="./admin-group-admin-tab.png" alt="Admin Groups Admin Tab">&lt;/li>
-&lt;li>Group Admin details are available in list form.
-&lt;img src="./admin-group-details.png" alt="Admin Groups Admin Details">&lt;/li>
-&lt;/ol>
-&lt;h3 id="add-group-admin">Add Group Admin&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Admins Tab.
-&lt;img src="./admin-group-admin-tab.png" alt="Admin Groups Admin Tab">&lt;/li>
-&lt;li>Use the input located in the Add New Group Admin section to search for a user
-to add as a group admin, or type a valid email address to send an
-invitation.&lt;br>
-&lt;img src="./admin-group-admin-discovery.png" alt="Admin Groups Admin Discovery">&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Selecting a user discovered in the select input and will add the
-user immediately. Once a User accepts or rejects an invitation and when a user
-is added directly to a group, group admins receive email notification&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="remove-group-admin">Remove Group Admin&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Admins Tab.
-&lt;img src="./admin-group-admin-tab.png" alt="Admin Groups Admin Tab">&lt;/li>
-&lt;li>Locate User you want to remove from being an admin and click the X button
-&lt;img src="./admin-group-admin-remove.png" alt="Admin Groups Admin Remove">&lt;/li>
-&lt;li>Click the YES button in the confirmation pop-up window&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a group admin is removed from a group he and all other admins
-are sent an email notification&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="manage-enrollment-configurations">Manage Enrollment Configurations&lt;/h2>
-&lt;p>User enrols to a group using a specific enrollment, each enrollment has a
-configuration that defines the following things:&lt;/p>
-&lt;p>&lt;strong>Enrollment Name:&lt;/strong> The identifying name of the enrollment.&lt;/p>
-&lt;p>&lt;strong>Membership Expiration:&lt;/strong> The duration of the memberships of users enrolled
-with this enrollment. &lt;a href="#membership-expiration">See more&lt;/a>&lt;/p>
-&lt;p>&lt;strong>Start Date:&lt;/strong> Allows for memberships to be activated in future time and not
-directly after an enrollment is completed.&lt;/p>
-&lt;p>&lt;strong>Requires Approval:&lt;/strong> When enabled, enrollment requests submitted by users need
-to be approved by an administrator; otherwise, requests will be automatically
-approved.&lt;/p>
-&lt;p>&lt;strong>Comments:&lt;/strong> If activated Users that are submitting an enrollment request need
-to also provide additional information.&lt;/p>
-&lt;p>&lt;strong>Acceptable Use Policy (AUP):&lt;/strong> Acceptable Use Policy in the form of a URL.&lt;/p>
-&lt;p>&lt;strong>Available Roles:&lt;/strong> Available roles to users using this enrollment.&lt;/p>
-&lt;p>&lt;strong>Multiselect Roles:&lt;/strong> If activated users using this enrollment can select
-multiple roles.&lt;/p>
-&lt;p>&lt;strong>Visible to non-members:&lt;/strong> If activated the enrollment will be available in the
-Group &lt;a href="#enrollment-discovery-page">Enrollment Discovery Page&lt;/a>.&lt;/p>
-&lt;p>&lt;strong>Is Active:&lt;/strong> Only active enrollments can be used for user enrollments.&lt;/p>
-&lt;h3 id="enrollment-discovery-page">Enrollment Discovery Page&lt;/h3>
-&lt;p>Each group has a group enrollment discovery page where users can view all the
-available (visible) enrollment flows. Selecting an enrollment flow and using the
-submit button after filling the form creates an enrollment request. Enrollment
-requests can be used to create a new membership to a group or update an existing
-one. Always preselected is the default enrollment flow.&lt;/p>
-&lt;p>The Enrollment Discovery Page is accessed through a URL using the group path of
-a group following this format:&lt;/p>
-&lt;p>&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/group/path/example">https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/group/path/example&lt;/a>&lt;/p>
-&lt;p>&lt;img src="./admin-group-enrollment-discovery-page.png" alt="Enrollment Discovery Page">&lt;/p>
-&lt;h3 id="create-enrollment-configuration">Create Enrollment Configuration&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Enrollment Tab
-&lt;img src="./admin-group-enrollments-tab.png" alt="Admin Group Enrollment Tab">&lt;/li>
-&lt;li>Click on the + button located in the table header to open the creation window
-&lt;img src="./admin-group-create-enrollment.png" alt="Admin Group Create Enrollment">&lt;/li>
-&lt;li>Fill the form with the necessary information and click the Create button to
-create the Enrollment Configuration
-&lt;img src="./admin-group-create-enrollment-form.png" alt="Admin Group Create Enrollment Form">&lt;/li>
-&lt;/ol>
-&lt;h3 id="update-enrollment-configuration">Update Enrollment Configuration&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Enrollment Tab
-&lt;img src="./admin-group-enrollments-tab.png" alt="Admin Group Enrollment Tab">&lt;/li>
-&lt;li>Locate the Enrollment Configuration you want to update in the list.&lt;/li>
-&lt;li>Select the Enrollment Configuration you want to update by clicking on it.
-&lt;img src="./admin-group-select-enrollment.png" alt="Admin Group Select Enrollment">&lt;/li>
-&lt;li>Edit the fields you want to update and click the SAVE button to update the
-Enrollment Configuration
-&lt;img src="./admin-group-update-enrollment-form.png" alt="Admin Group Update Enrollment Form">&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> When updating an enrollment configuration, all ‘pending approval’
-and ‘Waiting for reply’ enrollment requests with this configuration are
-archived.&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="delete-enrollment-configuration">Delete Enrollment Configuration&lt;/h3>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Locate your group in the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>
-and access the Group Configuration Page by clicking it.
-&lt;img src="./admin-groups.png" alt="Admin Groups View">&lt;/li>
-&lt;li>Select the Group Enrollment Tab
-&lt;img src="./admin-group-enrollments-tab.png" alt="Admin Group Enrollment Tab">&lt;/li>
-&lt;li>Locate the Enrollment Configuration you want to delete in the list.&lt;/li>
-&lt;li>Select the Enrollment Configuration you want to delete by clicking on it.
-&lt;img src="./admin-group-select-enrollment.png" alt="Admin Group Select Enrollment">&lt;/li>
-&lt;li>Click the trash icon next to the Enrollment Configuration name.
-&lt;img src="./admin-group-delete-enrollment.png" alt="Admin Group Delete Enrollment">&lt;/li>
-&lt;li>Click the YES button to delete the Enrollment Configuration in the
-confirmation pop-up window.&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> When deleting an enrollment configuration, all ‘pending approval’
-and ‘Waiting for reply’ enrollment requests with this configuration are
-archived.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="review-enrollment-request">Review Enrollment Request&lt;/h2>
-&lt;p>All &lt;strong>enrollment requests&lt;/strong>—no matter for the status—are accessible through the
-&lt;strong>Account Console&lt;/strong> for Group admins. When a user submits an enrollment request
-to join a Group and the request requires approval, Group admins are notified via
-email. These notifications include a direct link to the request that needs to be
-reviewed, streamlining the approval process. Admins can view and manage these
-enrollment requests directly from their Account Console, making it easy to keep
-track of pending requests and process approvals in a timely manner.&lt;/p>
-&lt;p>To review an enrollment request follow these steps:&lt;/p>
-&lt;ol>
-&lt;li>Login to
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">Keycloak Account Console&lt;/a>
-using any of the login credentials already linked to your account.&lt;/li>
-&lt;li>Access the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/groupenrollments">Review Enrollment Requests&lt;/a>
-page available in the Group Management Section.
-&lt;img src="./admin-group-review-enrollment-sidebar.png" alt="Admin Groups View Enrollment Requests">&lt;/li>
-&lt;li>Locate the enrollment request In the list of all pending requests and click
-on the Review Button to open the Review Page.
-&lt;img src="./admin-group-review-enrollment-select.png" alt="Admin Groups Review Select Enrollment Requests">&lt;/li>
-&lt;li>Check all the information about the User and his Membership.&lt;/li>
-&lt;li>Optionally Leave a justification comment for your Review Action.&lt;/li>
-&lt;li>Approve the request by clicking the green Approve button or reject it by
-clicking the red Reject button.
-&lt;img src="./admin-group-review-enrollment-action.png" alt="Admin Groups Review Enrollment Requests Action">&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> After approving or denying an enrollment request email
-notifications are sent to the requesting user and other administrators of the
-group&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="enrollment-request-details">Enrollment Request Details&lt;/h2>
-&lt;p>Information Available when reviewing an enrollment request:&lt;/p>
-&lt;h3 id="general-details">General Details&lt;/h3>
-&lt;p>&lt;strong>Submission Date:&lt;/strong> Date and time of the submission of the request by the user.&lt;/p>
-&lt;p>&lt;strong>Enrollment Request State&lt;/strong>: State of the request. (Pending Approval, Approved,
-Rejected, Self Reviewed, Archived)&lt;/p>
-&lt;h3 id="user-details">User Details&lt;/h3>
-&lt;p>The User Details at the time the enrollment request was created:&lt;/p>
-&lt;p>&lt;strong>Full Name&lt;/strong>: Full name of the user when the request was submitted.&lt;/p>
-&lt;p>&lt;strong>Email&lt;/strong>: Email address of the user when the request was submitted.&lt;/p>
-&lt;p>&lt;strong>Authentication Providers&lt;/strong>: Authentication provider(s) used by the user for
-submitting the request.&lt;/p>
-&lt;p>&lt;strong>Assurance&lt;/strong>: Information for assessing the confidence level in the identity of
-the user when the request was submitted.&lt;/p>
-&lt;h3 id="show-current-user-details">Show Current User Details&lt;/h3>
-&lt;p>&lt;strong>Full Name&lt;/strong>: Current full name in the user profile&lt;/p>
-&lt;p>&lt;strong>Email&lt;/strong>: Current email address in the user profile&lt;/p>
-&lt;p>&lt;strong>Linked Identity Providers&lt;/strong>: Authentication providers linked to the user’s
-profile.&lt;/p>
-&lt;h3 id="membership-details">Membership Details&lt;/h3>
-&lt;p>&lt;strong>Group Name:&lt;/strong> Name of the group&lt;/p>
-&lt;p>&lt;strong>Enrollment Name:&lt;/strong> Name of the enrollment configuration used&lt;/p>
-&lt;p>&lt;strong>Group Roles:&lt;/strong> List of the roles that the user will acquire from this
-enrollment request&lt;/p>
-&lt;p>&lt;strong>Acceptable User Policy (AUP):&lt;/strong> Link of the AUP that the user has approved&lt;/p>
-&lt;p>&lt;strong>Membership Expiration Days:&lt;/strong> The duration of the membership in days.
-&lt;a href="#membership-expiration">See more&lt;/a>&lt;/p>
-&lt;p>&lt;strong>Comments (or custom name):&lt;/strong> Additional information from the user submitting
-the request.&lt;/p></description></item><item><title>Users: Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/</guid><description>
+&lt;/ol></description></item><item><title>Users: Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This page includes all the available ways to obtain OAuth tokens from EGI
-Check-in.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
+Check-in.&lt;/p></description></item><item><title>Users: Virtual Organisations</title><link>/users/aai/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/</guid><description>
+&lt;p>A &lt;a href="https://ims.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation&lt;/a>
+(VO) represents a research community and, in practice, it is just &lt;strong>a group of
+users&lt;/strong>. VOs are created to organise a community of researchers, who can share
+resources across the EGI Federation and other services to achieve a common goal,
+as part of a scientific collaboration.&lt;/p>
+&lt;p>&lt;img src="./VOs.png" alt="Virtual Organisations">&lt;/p>
+&lt;h2 id="see-the-list-of-virtual-organisations">See the list of Virtual Organisations&lt;/h2>
+&lt;p>Existing VOs can be found in the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>.&lt;/p>
+&lt;p>Click on the icon under the “Details” column to access more detailed information
+of the VO.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./OP_VO_details.png" alt="List of VOs in the Operations Portal">&lt;/p>
+&lt;h2 id="how-to-join-a-virtual-organisation">How to join a Virtual Organisation&lt;/h2>
+&lt;p>There are different ways to join a VO:&lt;/p>
+&lt;ul>
+&lt;li>Contact the administrators of the VO (the VO Managers). They can send you an
+invitation or a link to apply for membership in a VO.&lt;/li>
+&lt;li>Some community services provide a link on their Websites to grant access to
+their respective VOs.&lt;/li>
+&lt;li>Use the enrolment URL that can be found in the detailed information of the
+specific VO, in the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p class="img-screenshot">&lt;img src="./OP_VO_enrolment_url.png" alt="Enrolment URL of a VO in the Operations Portal">&lt;/p>
+&lt;p>Often, your request to apply for VO membership will be evaluated by a VO Manager
+before you are accepted in the VO.&lt;/p>
+&lt;h2 id="how-to-create-your-own-virtual-organisation">How to create your own Virtual Organisation&lt;/h2>
+&lt;p>To register a new VO, access the
+&lt;a href="https://operations-portal.egi.eu/vo/registration">VO registration page&lt;/a> of the
+Operations Portal. You will need to log in via Check-in and fill in the &lt;strong>VO ID
+card&lt;/strong>, which is the basic information for the VO.&lt;/p>
+&lt;p>The VO registration process is detailed in the procedure
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration">PROC14 VO Registration&lt;/a>.&lt;/p>
+&lt;p>The person registering a VO is considered the administrator of the VO, also
+known as &lt;strong>VO Manager&lt;/strong>. Additional VO Managers do not need to be included at
+the time of the VO creation, they
+&lt;a href="keycloak/admins#adding-administrators-to-a-group">can be added later&lt;/a>.&lt;/p>
+&lt;h2 id="manage-a-virtual-organisation">Manage a Virtual Organisation&lt;/h2>
+&lt;p>A VO is managed by its VO Managers. VOs can have more than one administrator,
+and they are responsible for the correct operation of the VO. The functions of
+the VO Managers include:&lt;/p>
+&lt;ul>
+&lt;li>Evaluate membership requests and approve or reject them. This is an important
+point, since membership in a VO may grant access to data or resources, so
+normally a VO Manager should not accept members arbitrarily.&lt;/li>
+&lt;li>Attend security recommendations, provide information requested by the EGI
+security teams and maintain the resources and users of the VO secure.&lt;/li>
+&lt;li>Provide information about the VO activities for EGI and for VO members (to
+both people and sites).&lt;/li>
+&lt;/ul>
+&lt;p>VOs can be structured in &lt;strong>groups&lt;/strong>, to organise the different permissions that
+users have inside a community. For example, inside a VO there can be a group for
+users that will manage cloud infrastructure, another group for users that access
+a specific application, other group for users that will attend a workshop and
+need access to Notebooks, etc.&lt;/p>
+&lt;p>Check-in offers two tools to organise a community:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="keycloak">Keycloak&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="perun">Perun&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>Follow the links for detailed information on how to manage VO groups.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
 &lt;h2 id="getting-help">Getting help&lt;/h2>
 &lt;p>Requests for technical assistance and other issues related to Check-in can be
 obtained by sending an email to:&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>&lt;a href="mailto:checkin-support@mailman.egi.eu">checkin-support@mailman.egi.eu&lt;/a>&lt;/strong>&lt;/p>
 &lt;/blockquote>
-&lt;p>Alternatively, if you already have a Check-in account, the &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
+&lt;p>Alternatively, if you already have a Check-in account, the &lt;a href="https://helpdesk.ggus.eu/">EGI Helpdesk&lt;/a>
 can be used. More information can be found in the
 &lt;a href="https://docs.egi.eu/internal/helpdesk/user-guide/">Helpdesk documentation&lt;/a>. In that case,
 submit a new ticket and make sure that the support unit is assigned to &amp;ldquo;Check-in (AAI)&amp;rdquo;.&lt;/p>

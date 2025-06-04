@@ -28,7 +28,7 @@ sharing, etc.)&lt;/li>
 &lt;/li>
 &lt;li>
 &lt;p>Then enroll
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:111">vo.notebooks.egi.eu VO&lt;/a>&lt;/p>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu">vo.notebooks.egi.eu VO&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Go to &lt;a href="https://notebooks.egi.eu/">https://notebooks.egi.eu/&lt;/a>&lt;/p>
@@ -54,7 +54,7 @@ kernel. When you create this notebook, a new tab will be presented with a
 notebook named &lt;code>Untitled.ipynb&lt;/code>. You can easily rename it by right-clicking on
 the current name.&lt;/p>
 &lt;h3 id="structure-of-a-notebook">Structure of a notebook&lt;/h3>
-&lt;p>The notebook consists of a sequence of cells. A cell is a multiline text input
+&lt;p>The notebook consists of a sequence of cells. A cell is a multi-line text input
 field, and its contents can be executed by using &lt;code>Shift-Enter&lt;/code>, or by clicking
 either the &amp;ldquo;Play&amp;rdquo; button in the toolbar, or Cell -&amp;gt; Run in the menu bar.&lt;/p>
 &lt;p>The execution behaviour of a cell is determined by the cell&amp;rsquo;s type.&lt;/p>
