@@ -65,7 +65,7 @@ user.
 {{% /alert %}}
 
 For joining this VO, please click on the
-[enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240)
+[enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 using your [EGI account](../../../aai/check-in/).
 
 ### Other VOs
