@@ -28,6 +28,7 @@ mega
 mytoken
 mytokens
 newkey
+openrc
 pem
 pheno
 pravda
