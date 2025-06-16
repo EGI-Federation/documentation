@@ -23,16 +23,18 @@ files&lt;/li>
 &lt;li>Unauthenticated, open access&lt;/li>
 &lt;li>Access after user registration or&lt;/li>
 &lt;li>Access restricted to members of a
-&lt;a href="../../../aai/check-in//vos">Virtual Organization&lt;/a> (VO)&lt;/li>
+&lt;a href="../../../aai/check-in/vos">Virtual Organization&lt;/a> (VO)&lt;/li>
 &lt;/ul>
 &lt;p>Data replication in EGI DataHub may take place either on-­demand or
 automatically. Replication uses a file catalogue to enable tracking of logical
 and physical copies of data.&lt;/p>
+&lt;p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 EGI DataHub is based on the
 &lt;a href="https://onedata.org/">Onedata technology&lt;/a>.
 &lt;/div>
+&lt;!-- cspell:disable-line -->&lt;/p>
 &lt;h2 id="motivations">Motivations&lt;/h2>
 &lt;ul>
 &lt;li>Putting up a (scalable) distributed data infrastructure needs specific
