@@ -59,7 +59,7 @@ repositories from a terminal.&lt;/p>
 &lt;a href="https://cli.github.com/">their homepage&lt;/a>. There is also a
 &lt;a href="https://cli.github.com/manual/">manual&lt;/a>.&lt;/p>
 &lt;p>Once installed you will have to start by setting up authentication.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Authenticate with GitHub, favor SSH protocol&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Authenticate with GitHub, favour SSH protocol&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh auth login
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh config &lt;span style="color:#204a87">set&lt;/span> git_protocol ssh
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="working-with-repositories">Working with repositories&lt;/h2>
@@ -92,8 +92,8 @@ can be used as a reference for building instructions.&lt;/p>
 &lt;li>&lt;a href="https://nodejs.org/">Node.js&lt;/a> and other &lt;a href="https://www.docsy.dev">docsy&lt;/a> theme
 dependencies:
 &lt;ul>
-&lt;li>postcss-cli&lt;/li>
-&lt;li>autoprofixer&lt;/li>
+&lt;li>&lt;a href="https://www.npmjs.com/package/postcss-cli">&lt;code>postcss-cli&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.npmjs.com/package/autoprefixer">&lt;code>autoprefixer&lt;/code>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -112,7 +112,7 @@ reusing a flox environment. Please see the steps below.&lt;/p>
 &lt;a href="https://github.com/gohugoio/hugo/releases">the Hugo releases page&lt;/a>.
 The recommended version for Hugo is specified under the GitHub Action in
 &lt;a href="https://github.com/EGI-Federation/documentation/blob/main/.github/workflows/hugo_version.txt">.github/workflows/hugo_version.txt&lt;/a>.&lt;/p>
-&lt;h4 id="reuse-the-flox-environment">Reuse the flox environment&lt;/h4>
+&lt;h4 id="reuse-the-flox-environment">Reuse the Flox environment&lt;/h4>
 &lt;p>&lt;a href="https://flox.dev/">Flox&lt;/a> is a virtual environment and package manager
 all in one. We provide a flox environment in our GitHub repository
 in a way that it is easier for everybody to work with the same
@@ -166,7 +166,7 @@ text editor or Integrated Development Environment (IDE) suits you, from
 &lt;a href="https://code.visualstudio.com/">Visual Studio Code&lt;/a>.&lt;/p>
 &lt;p>Some environments may provide you plugins helping with syntax or offering a
 preview, they are worth checking.&lt;/p>
-&lt;p>Be sure to commit files with having been formated using
+&lt;p>Be sure to commit files with having been formatted using
 &lt;a href="https://prettier.io/">Prettier&lt;/a> as documented in our &lt;a href="../style/">style guide&lt;/a>.&lt;/p>
 &lt;h2 id="commit-changes">Commit changes&lt;/h2>
 &lt;p>It is the best practice to have your commit message have a &lt;em>summary line&lt;/em> that
@@ -237,19 +237,11 @@ also be done in your repository clone using &lt;code>git rebase&lt;/code>.&lt;/p
 conflicts manually.&lt;/p>
 &lt;h2 id="running-checks-from-github-actions-locally">Running checks from GitHub actions locally&lt;/h2>
 &lt;p>The repository leverages &lt;a href="https://github.com/features/actions">GitHub Actions&lt;/a>
-to do automatic checks.&lt;/p>
-&lt;p>The main checks are:&lt;/p>
-&lt;ul>
-&lt;li>File lint using
-&lt;a href="https://github.com/marketplace/actions/super-linter">Super-Linter&lt;/a> that
-includes many linters. Markdown files are processed using
-&lt;a href="https://github.com/igorshubovych/markdownlint-cli#readme">markdownlint-cli&lt;/a>.&lt;/li>
-&lt;li>&lt;a href="https://github.com/marketplace/actions/markdown-link-check">Markdown link check&lt;/a>,
-relying on
-&lt;a href="https://github.com/tcort/markdown-link-check/">markdown-link-check&lt;/a>.&lt;/li>
-&lt;li>Spelling using
-&lt;a href="https://github.com/marketplace/actions/check-spelling">Check Spelling&lt;/a>.&lt;/li>
-&lt;/ul>
+to do automatic checks.
+These are encoded in the pre-commit hooks described above.
+In order to run these checks locally on the full repository, run&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pre-commit run --all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Checks are declared in the Megalinter configuration file.&lt;/p>
 &lt;p>It&amp;rsquo;s possible to run those linters locally, it can be useful to test and debug
 why they are reporting errors, and test without waiting on the automatic checks.&lt;/p>
 &lt;blockquote>
@@ -265,16 +257,24 @@ be installed locally on some platforms, in that case it can be used like this:&l
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you cannot or don&amp;rsquo;t want to install it locally, you can rely on using
 &lt;a href="https://www.docker.com/">Docker&lt;/a> and
 &lt;a href="https://github.com/features/packages">GitHub Packages&lt;/a>:&lt;/p>
+&lt;!-- cspell:disable -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -v &lt;span style="color:#000">$PWD&lt;/span>:/workdir:ro --rm -i ghcr.io/igorshubovych/markdownlint-cli:latest &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --config .github/linters/.markdownlint.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> content/en/about/_index.md
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-markdown-link-check-locally">Running markdown-link-check locally&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- cspell:enable -->
+&lt;h3 id="running-markdown-link-check-locally">Running markdown-link-check locally&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Deprecated&lt;/h4>
+This is deprecated in favour of Lychee
+&lt;/div>
 &lt;p>You can use &lt;a href="https://www.docker.com/">Docker&lt;/a> and
 &lt;a href="https://github.com/features/packages">GitHub Packages&lt;/a>:&lt;/p>
+&lt;!-- cspell:disable -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -v &lt;span style="color:#000">$PWD&lt;/span>:/tmp:ro --rm -i ghcr.io/tcort/markdown-link-check:stable &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --config /tmp/.github/linters/mlc_config.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /tmp/content/en/about/_index.md
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-check-spelling-locally">Running Check-Spelling locally&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- cspell:enable -->
+&lt;h3 id="running-check-spelling-locally">Running Check-Spelling locally&lt;/h3>
 &lt;p>For spelling, it may be easier to rely on a spell checker integrated in your
 content editor.&lt;/p>
 &lt;p>Nevertheless, if you are adventurous, you can use
@@ -290,6 +290,10 @@ properly scan through the command output.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Running the spelling job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -j spelling
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-super-linter-locally">Running Super-Linter locally&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Deprecated&lt;/h4>
+This is deprecated in favour of Megalinter
+&lt;/div>
 &lt;p>Should you want to do this, Super-Linter can be run locally.&lt;/p>
 &lt;p>You can try using &lt;a href="https://github.com/nektos/act">act&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing available jobs&lt;/span>
@@ -304,7 +308,7 @@ look at the
 done using the PR number.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># List available PR and their identifiers.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh pr list
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Clone specific PR, updating sudmodules&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Clone specific PR, updating submodules&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh pr checkout XX --recurse-submodules
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done it&amp;rsquo;s possible to build and run the site locally:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
