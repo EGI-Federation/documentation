@@ -5,6 +5,8 @@ checkin
 creds
 csr
 CVMFS
+CYFRONET
+DataHub
 dearmor
 delims
 dependant
@@ -29,6 +31,13 @@ megalinter
 mytoken
 mytokens
 newkey
+Oneclient
+Oneclients
+Onedata
+Oneprovider
+Oneproviders
+Onezone
+Onezones
 pem
 pheno
 pravda
