@@ -27,6 +27,8 @@ This means that no matter which identity you use to log in, you will access the 
 
 - You have a more consistent and secure experience across platforms.
 
+{{% alert title="Warning" color="warning" %}} Important: While your EGI profile remains the same, access to specific services may depend on the identity assurance level of the login option used. Some services require identities with higher levels of assurance (e.g., issued by academic institutions). If you log in with an identity that does not meet these requirements, access to those services may be restricted. {{% /alert %}}
+
 
 ## What Happens If You Don’t Link Them?
 
@@ -38,7 +40,7 @@ This means that no matter which identity you use to log in, you will access the 
 
 - If one identity is lost, you might lose access completely or need support to recover it.
 
-{{% alert title="Warning" color="warning" %}} Important: While your EGI profile remains the same, access to specific services may depend on the identity assurance level of the login option used. Some services require identities with higher levels of assurance (e.g., issued by academic institutions). If you log in with an identity that does not meet these requirements, access to those services may be restricted. {{% /alert %}}
+
 
 ## Step by step guide
 
