@@ -1,6 +1,7 @@
 ADFS
 allowfullscreen
 autoplay
+autoprefixer
 checkin
 creds
 csr
