@@ -1,0 +1,40 @@
+---
+# This workflow uses lychee to check all link in a base path periodically
+name: URL Link Health Checks
+
+on:
+  schedule:
+    # run every day
+    - cron: '0 0 * * *'
+
+permissions: read-all
+jobs:
+  lychee-userdocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/users
+    name: Check links at base of user documentation trees
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # This matrix is built from the directories in content/en/users
+        url: 
+          - "aai"
+          - "compute"
+          - "data"
+          - "dev-env"
+          - "getting-started"
+          # - "machine-learning" # currently in draft
+          - "security"
+          - "training"
+          - "tutorials"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+          
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2 # cspell:disable-line
+        with:
+          fail: true
+          failIfEmpty: false
+          format: markdown
+          args: "${{ env.BASE_URL}}/${{ matrix.url }}"

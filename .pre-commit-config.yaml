@@ -5,6 +5,8 @@ repos:
     rev: v8.7.0
     hooks:
       - id: megalinter-incremental
+    args:
+      - --flavor documentation
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.33.0
     hooks:
