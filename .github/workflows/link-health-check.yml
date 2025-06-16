@@ -38,3 +38,83 @@ jobs:
           failIfEmpty: false
           format: markdown
           args: "${{ env.BASE_URL}}/${{ matrix.url }}"
+  lychee-providerdocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/providers/
+    name: Check links at base of provider documentation trees
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # This matrix is built from the directories in content/en/users
+        url: 
+          - "check-in"
+          - "cloud-compute"
+          - "datahub" # cspell:disable-line
+          - "high-throughput-compute"
+          - "joining"
+          - "notebooks"
+          - "online-storage"
+          - "operations-manuals"
+          - "rod"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+          
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2 # cspell:disable-line
+        with:
+          fail: true
+          failIfEmpty: false
+          format: markdown
+          args: "${{ env.BASE_URL}}/${{ matrix.url }}"
+  lychee-internaldocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/internal
+    name: Check links at base of provider documentation trees
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # This matrix is built from the directories in content/en/users
+        url: 
+          - "accounting"
+          - "collaboration-tools"
+          - "configuration-database"
+          - "getting-started"
+          - "guidelines-software-development"
+          - "helpdesk" # cspell:disable-line
+          - "messaging"
+          - "monitoring"
+          - "operations-portal"
+          - "security-coordination"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+          
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2 # cspell:disable-line
+        with:
+          fail: true
+          failIfEmpty: false
+          format: markdown
+          args: "${{ env.BASE_URL}}/${{ matrix.url }}"
+  lychee-otherdocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/
+    name: Check links at base of the about pages
+    strategy:
+      matrix:
+        url:
+          - about
+          - support
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+          
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2 # cspell:disable-line
+        with:
+          fail: true
+          failIfEmpty: false
+          format: markdown
+          args: "${{ env.BASE_URL}}"
