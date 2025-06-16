@@ -11,10 +11,4 @@ repos:
       - id: check-github-workflows
   # Disabling markdown-link-check because it can not reliably check anchors and links against the source code.
   # Suggest using lychee instead (way faster and more accurate)
-  - repo: https://github.com/tcort/markdown-link-check
-    rev: v3.13.7
-    hooks:
-      - id: markdown-link-check
-        args:
-          - -c
-          - .github/linters/mlc_config.json
+  # this is now enabled in the megalinter config
