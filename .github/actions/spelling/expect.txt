@@ -11,7 +11,9 @@ dearmor
 delims
 dependant
 diracsgm
+docsy
 findstr
+flox
 galdyn
 gecos
 geodata
@@ -24,6 +26,8 @@ Initialising
 jscpd
 jwt
 ligo
+linter
+linters
 lsb
 markdownlint
 mega
