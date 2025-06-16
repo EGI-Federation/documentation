@@ -25,6 +25,7 @@ ligo
 lsb
 markdownlint
 mega
+megalinter
 mytoken
 mytokens
 newkey
