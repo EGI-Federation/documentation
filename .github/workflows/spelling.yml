@@ -1,6 +1,6 @@
 ---
 name: Check Spelling
-
+# cspell: disable
 # Comment management is handled through a secondary job, for details see:
 # https://github.com/check-spelling/check-spelling/wiki/Feature%3A-Restricted-Permissions
 #
@@ -56,6 +56,7 @@ name: Check Spelling
 #     # remove `security-events: write` and `use_sarif: 1`
 #     # remove `experimental_apply_changes_via_bot: 1`
 #     ... otherwise adjust the `with:` as you wish
+# cspell:enable
 
 on:
   pull_request_target:
@@ -80,7 +81,7 @@ jobs:
       actions: read
       security-events: write
     outputs:
-      followup: ${{ steps.spelling.outputs.followup }}
+      followup: ${{ steps.spelling.outputs.followup }} # cspell:disable-line
     runs-on: ubuntu-latest
     if:
       ${{ contains(github.event_name, 'pull_request') || github.event_name ==
@@ -103,7 +104,7 @@ jobs:
           post_comment: 0
           use_magic_file: 1
           experimental_apply_changes_via_bot: 1
-          use_sarif:
+          use_sarif: # cspell:disable-line
             ${{ (!github.event.pull_request ||
             (github.event.pull_request.head.repo.full_name ==
             github.repository)) && 1 }}
@@ -119,15 +120,14 @@ jobs:
     permissions:
       contents: write
     if:
-      (success() || failure()) && needs.spelling.outputs.followup &&
-      github.event_name == 'push'
+      (success() || failure()) && needs.spelling.outputs.followup && github.event_name == 'push' # cspell:disable-line
     steps:
       - name: comment
         uses: check-spelling/check-spelling@main
         with:
           checkout: true
           spell_check_this: check-spelling/spell-check-this@prerelease
-          task: ${{ needs.spelling.outputs.followup }}
+          task: ${{ needs.spelling.outputs.followup }} # cspell:disable-line
 
   comment-pr:
     name: Report (PR)
@@ -138,15 +138,14 @@ jobs:
       contents: read
       pull-requests: write
     if:
-      (success() || failure()) && needs.spelling.outputs.followup &&
-      contains(github.event_name, 'pull_request')
+      (success() || failure()) && needs.spelling.outputs.followup && contains(github.event_name, 'pull_request') # cspell:disable-line
     steps:
       - name: comment
         uses: check-spelling/check-spelling@main
         with:
           checkout: true
           spell_check_this: check-spelling/spell-check-this@prerelease
-          task: ${{ needs.spelling.outputs.followup }}
+          task: ${{ needs.spelling.outputs.followup }} # cspell:disable-line
           experimental_apply_changes_via_bot: 1
 
   update:
