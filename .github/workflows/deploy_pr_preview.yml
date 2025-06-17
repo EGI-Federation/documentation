@@ -109,14 +109,28 @@ jobs:
           - "security"
           - "training"
           - "tutorials"
+    # cspell:disable
     name: Check links of preview
     steps:
       - name: Checkout configuration
         uses: actions/checkout@v4
-      - name: run lychee against target
-        uses: lycheeverse/lychee-action@v2 # cspell:disable-line
-        with:
-          fail: true
-          failIfEmpty: false
-          format: markdown
-          args: "${{ env.BASE_URL}}/${{job.deploy_pr_preview.outputs.pr_number}}/${{ matrix.url }}"
+      - name: Get tools
+        # We will run hakrawler to crawl a page and sub-pages
+        # Then use lychee to check whether the urls in that page are ok.
+        run: |
+          curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
+          go install github.com/hakluke/hakrawler@latest
+      - name: Extract links and check them.
+        # This passes a given endpoint to hakrawler, which gets all of the links 
+        # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
+        # and returning only unique (-u) urls.
+        # The urls are then parsed via jq to get only hrefs, no scripts
+        # and the resulting list is sent to lyuchee via stdin (-)
+        # to see if there are any bad links in those pages
+        run: >-
+          echo "https://docs.egi.eu/documentation/733/users/${{ matrix.url }}" |
+            hakrawler -u -i -d 10 -json |
+            jq -r '. |
+            select(.Source == "href") | .URL' |
+            lychee -
+    # cspell:enable
