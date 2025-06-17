@@ -1,39 +1,86 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Managing a Virtual Organisation</title><link>/users/aai/check-in/vos/</link><description>Recent content in Managing a Virtual Organisation on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/vos/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: VO Membership Information</title><link>/users/aai/check-in/vos/expressing-vo-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/expressing-vo-information/</guid><description>
-&lt;p>According to &lt;a href="https://aarc-community.org/guidelines/aarc-g002/">AARC-G002&lt;/a> the
-information about the groups a user is a member of is commonly used by Service
-Providers in order to authorise user access to protected resources.The entity
-responsible for disseminating this information is the EGI Check-in AAI proxy and
-the format used is that of a URN namespace, called eduPersonEntitlement, that is
-uniformly interpreted across infrastructures.&lt;/p>
-&lt;p>The general form of the eduPersonEntitlement string is:&lt;/p>
-&lt;p>&lt;code>&amp;lt;NAMESPACE&amp;gt;:group:&amp;lt;VO&amp;gt;[:&amp;lt;GROUP&amp;gt;*][:role=&amp;lt;ROLE&amp;gt;]#&amp;lt;GROUP-AUTHORITY&amp;gt;&lt;/code>&lt;/p>
-&lt;p>As a result, an eduPersonEntitlement string informing the Service Provider that
-the user has the role Associate in the vo.example.eu VO (modelled as a COU) is:&lt;/p>
-&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:role=associate#aai.egi.eu&lt;/code>&lt;/p>
-&lt;h2 id="entitlement-construction">Entitlement Construction&lt;/h2>
-&lt;p>For the case of the CO Person with a profile/canvas, like the one provided
-above, we expect to get entitlements for all the entries listed under the tab
-Role Attributes. Additionally, we will get entitlements for all the General
-Purpose(GP) Groups enlisted under the tab Groups. These GP Groups have no
-prefix, neither CO: nor CO:COU, and no postfix, neither active nor all.&lt;/p>
-&lt;h3 id="vocou">VO(COU)&lt;/h3>
-&lt;p>For each entry in the table Role Attributes, that is in status &lt;strong>Active&lt;/strong> or
-&lt;strong>Grace Period&lt;/strong>, we create one eduPersonEntitlement for each different Role and
-for the Affiliation. For example, the CO Person from above is affiliated as
-Member to the VO vo.example.eu and has been assigned the role of an Associate.
-This will generate two entitlements as:&lt;/p>
-&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:role=associate#aai.egi.eu&lt;/code>&lt;/p>
-&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:role=member#aai.egi.eu&lt;/code>&lt;/p>
-&lt;h3 id="vo-groups-sub-cous">VO Groups (sub COUs)&lt;/h3>
-&lt;p>There are occasions where we need a VO to be organized in subgroups. For example
-vo.example.eu contains the sub-COU vo.example-sub.eu.&lt;/p>
-&lt;p>&lt;img src="vo-subgroup.png" alt="VO subgroup">&lt;/p>
-&lt;p>The CO Person is affiliated as member and with the Role of Support in the VO
-sub-group vo.example-sub.eu:&lt;/p>
-&lt;p>&lt;img src="vo-subgroup-membership.png" alt="VO subgroup membership">&lt;/p>
-&lt;p>In such occasions the eduPersonEntitlement will have the following structure:&lt;/p>
-&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:vo.example-sub.eu:role=support#aai.egi.eu&lt;/code>&lt;/p>
-&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:vo.examples-sub.eu:role=member#aai.egi.eu&lt;/code>&lt;/p></description></item><item><title>Users: Perun</title><link>/users/aai/check-in/vos/perun/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/perun/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Virtual Organisations</title><link>/users/aai/check-in/vos/</link><description>Recent content in Virtual Organisations on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/vos/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Authorisation using VO information</title><link>/users/aai/check-in/vos/authorisation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/authorisation/</guid><description>
+&lt;p>&lt;strong>Authorisation&lt;/strong> is the mechanism handling permissions and access control.
+While authentication deals with the identification of a user, authorisation
+determines and enforces what a user can do in the system.&lt;/p>
+&lt;p>This is depicted in the figure below, where a user access an application and
+authenticates through Check-in. If the authentication is successful, Check-in
+will share agreed user information with the application. As part of this
+information are &lt;strong>the entitlements&lt;/strong> of the user, which encode the group and
+role membership of the user.&lt;/p>
+&lt;p>&lt;img src="checkin_flow.jpg" alt="Check-in flow">&lt;/p>
+&lt;p>Services and applications typically use membership information to &lt;strong>authorise
+user access&lt;/strong> to protected resources, so the entitlements play a relevant role
+in the authorisation task.&lt;/p>
+&lt;h2 id="entitlements">Entitlements&lt;/h2>
+&lt;p>An entitlement is simply a string that encodes some user membership.
+Entitlements are formated as &lt;strong>URN&lt;/strong>s, in this format:&lt;/p>
+&lt;p>&lt;code>&amp;lt;NAMESPACE&amp;gt;:group:&amp;lt;VO&amp;gt;[:&amp;lt;SUBGROUP&amp;gt;*][:role=&amp;lt;ROLE&amp;gt;]#&amp;lt;GROUP-AUTHORITY&amp;gt;&lt;/code>&lt;/p>
+&lt;p>This format is described in the
+&lt;a href="https://aarc-community.org/guidelines/aarc-g069/">AARC-G069&lt;/a> specification:&lt;/p>
+&lt;p>&lt;img src="entitlements.jpg" alt="Structure of an entitlement">&lt;/p>
+&lt;p>Using this information, an application can determine that the user belongs to
+the the group &amp;ldquo;cloud&amp;rdquo; of the VO &amp;ldquo;vo.example.eu&amp;rdquo; and has the &amp;ldquo;operator&amp;rdquo; role
+assigned. With this, the application can make an authorisation decision whether
+or not to allow the user to access some resource or perform some action.&lt;/p>
+&lt;ul>
+&lt;li>If a user has two roles in a group, then two different entitlements will be
+released for the user. For example, a user with roles &amp;ldquo;cloud_operator&amp;rdquo; and
+&amp;ldquo;data_operator&amp;rdquo; in the same group will have these entitlements:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>urn:mace:egi.eu:group:project.vo.egi.eu:role=data_operator#aai.egi.eu&lt;/code>&lt;/p>
+&lt;p>&lt;code>urn:mace:egi.eu:group:project.vo.egi.eu:role=cloud_operator#aai.egi.eu&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>When a user is not a member of a specific VO or group, or if the user&amp;rsquo;s
+membership has expired, the entitlement for this VO/group will not be released
+by Check-in.&lt;/li>
+&lt;/ul></description></item><item><title>Users: Group Management in Keycloak</title><link>/users/aai/check-in/vos/keycloak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/</guid><description>
+&lt;p>Check-in allows you to organise your community based on two concepts:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Groups&lt;/strong>, representing a collection of users.&lt;/li>
+&lt;li>&lt;strong>Roles&lt;/strong>, which are &lt;strong>specific for each group&lt;/strong> and can be assigned to users
+individually.&lt;/li>
+&lt;/ul>
+&lt;p>Your community will be represented by a main group, often known as
+&lt;a href="../">&lt;strong>Virtual Organisation&lt;/strong>&lt;/a> (VO). Inside your VO, you can have subgroups,
+and these can also have subgroups, creating a hierarchy.&lt;/p>
+&lt;p>&lt;img src="./general_groups-01.png" alt="Groups hierarchy">&lt;/p>
+&lt;p>Operationally, a VO can be considered a group as any other, with the
+particularity that it has a special behaviour (VOs cannot be deleted, and
+their membership must be renewed at least once every year), and that it is the
+root group, the highest group in its hierarchy. The hierarchy can be expressed
+as a “&lt;strong>group path&lt;/strong>”. For example, the group path of the “External” group of
+the image is &lt;em>/community.eu/Testers/External&lt;/em>.&lt;/p>
+&lt;p>Groups and roles allow you to manage authorisation. When a user belongs to a
+group or is assigned a role, he/she receives an &lt;strong>entitlement&lt;/strong>, which is a
+string describing a permission the user has. For example, an entitlement looks
+like:&lt;/p>
+&lt;pre>&lt;code>urn:mace:egi.eu:group:engineering.vo.egi.eu:role=member#aai.egi.eu
+&lt;/code>&lt;/pre>
+&lt;p>representing that the user is a “member” of the VO “engineering.vo.egi.eu”. See
+&amp;ldquo;&lt;a href="../authorisation">Authorisation using VO information&lt;/a>&amp;rdquo; for more details about
+entitlements.&lt;/p>
+&lt;p>Using these entitlements, an application can then make authorisation decisions
+based on the membership in a group. For example, to establish that only members
+of the group “cloud operators” can create virtual machines and manage
+infrastructure.&lt;/p>
+&lt;h2 id="structure-of-a-group">Structure of a group&lt;/h2>
+&lt;p>Groups have two types of users:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Group Admins&lt;/strong>, who manage all aspects of the group, as well as any
+sub-groups in the hierarchy, including roles, membership, and settings. Groups
+can have one or more administrators.&lt;/li>
+&lt;li>&lt;strong>Group members&lt;/strong>, who are the users that belong to the group.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./general_groups-02.png" alt="Groups structure with admins and members">&lt;/p>
+&lt;p>Roles are defined per group and can be used to assign specific permissions
+within the group to users. Users inside a group can have one or more roles, but
+they must have &lt;strong>at least one role within the group&lt;/strong>. By default, the role
+“member” exists for all groups.&lt;/p>
+&lt;p>The Group Admin of the VO is sometimes called “&lt;strong>VO Manager&lt;/strong>”.&lt;/p>
+&lt;p>A Group Admin is also considered to be an administrator of all subgroups of the
+group (becoming an “indirect admin” for the subgroups), so these administration
+permissions propagate down the group hierarchy.&lt;/p>
+&lt;p>&lt;img src="./general_groups-03.png" alt="Group admin propagation">&lt;/p></description></item><item><title>Users: Perun</title><link>/users/aai/check-in/vos/perun/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/perun/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">How is this documentation organized&lt;/h4>
 This documentation is specific for the EGI users and use cases. Each section
