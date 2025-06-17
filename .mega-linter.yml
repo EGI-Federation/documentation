@@ -8,4 +8,6 @@ DISABLE_LINTERS:
   - REPOSITORY_TRUFFLEHOG
 SPELL_CSPELL_CONFIG_FILE: .cspell.json
 APPLY_FIXES: none
-SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: ^\.github/workflows.*$
+# We do not want to check links in our workflows, they may contain templates,
+# which will fail.
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: ^\.github\/workflows\/.*yml$
