@@ -79,7 +79,7 @@ It can be installed using the packages available on
 Once installed you will have to start by setting up authentication.
 
 ```shell
-# Authenticate with GitHub, favor SSH protocol
+# Authenticate with GitHub, favour SSH protocol
 $ gh auth login
 $ gh config set git_protocol ssh
 ```
@@ -132,8 +132,8 @@ can be used as a reference for building instructions.
 - [Hugo](https://gohugo.io)
 - [Node.js](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
   dependencies:
-  - postcss-cli
-  - autoprofixer
+  - [`postcss-cli`](https://www.npmjs.com/package/postcss-cli)
+  - [`autoprefixer`](https://www.npmjs.com/package/autoprefixer)
 
 These dependencies can be either installed manually or
 reusing a flox environment. Please see the steps below.
@@ -160,7 +160,7 @@ Hugo (extended) releases can be downloaded at
 The recommended version for Hugo is specified under the GitHub Action in
 [.github/workflows/hugo_version.txt](https://github.com/EGI-Federation/documentation/blob/main/.github/workflows/hugo_version.txt).
 
-#### Reuse the flox environment
+#### Reuse the Flox environment
 
 [Flox](https://flox.dev/) is a virtual environment and package manager
 all in one. We provide a flox environment in our GitHub repository
@@ -248,7 +248,7 @@ text editor or Integrated Development Environment (IDE) suits you, from
 Some environments may provide you plugins helping with syntax or offering a
 preview, they are worth checking.
 
-Be sure to commit files with having been formated using
+Be sure to commit files with having been formatted using
 [Prettier](https://prettier.io/) as documented in our [style guide](../style/).
 
 ## Commit changes
@@ -360,18 +360,14 @@ conflicts manually.
 
 The repository leverages [GitHub Actions](https://github.com/features/actions)
 to do automatic checks.
+These are encoded in the pre-commit hooks described above.
+In order to run these checks locally on the full repository, run
 
-The main checks are:
+```shell
+pre-commit run --all
+```
 
-- File lint using
-  [Super-Linter](https://github.com/marketplace/actions/super-linter) that
-  includes many linters. Markdown files are processed using
-  [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme).
-- [Markdown link check](https://github.com/marketplace/actions/markdown-link-check),
-  relying on
-  [markdown-link-check](https://github.com/tcort/markdown-link-check/).
-- Spelling using
-  [Check Spelling](https://github.com/marketplace/actions/check-spelling).
+Checks are declared in the Megalinter configuration file.
 
 It's possible to run those linters locally, it can be useful to test and debug
 why they are reporting errors, and test without waiting on the automatic checks.
@@ -394,22 +390,30 @@ If you cannot or don't want to install it locally, you can rely on using
 [Docker](https://www.docker.com/) and
 [GitHub Packages](https://github.com/features/packages):
 
+<!-- cspell:disable -->
 ```shell
 $ docker run -v $PWD:/workdir:ro --rm -i ghcr.io/igorshubovych/markdownlint-cli:latest \
     --config .github/linters/.markdownlint.json \
     content/en/about/_index.md
 ```
+<!-- cspell:enable -->
 
 ### Running markdown-link-check locally
+
+{{% alert title="Deprecated" color="warning" %}}
+This is deprecated in favour of Lychee
+{{% /alert %}}
 
 You can use [Docker](https://www.docker.com/) and
 [GitHub Packages](https://github.com/features/packages):
 
+<!-- cspell:disable -->
 ```shell
 $ docker run -v $PWD:/tmp:ro --rm -i ghcr.io/tcort/markdown-link-check:stable \
     --config /tmp/.github/linters/mlc_config.json \
     /tmp/content/en/about/_index.md
 ```
+<!-- cspell:enable -->
 
 ### Running Check-Spelling locally
 
@@ -432,6 +436,10 @@ $ act -j spelling
 ```
 
 ### Running Super-Linter locally
+
+{{% alert title="Deprecated" color="warning" %}}
+This is deprecated in favour of Megalinter
+{{% /alert %}}
 
 Should you want to do this, Super-Linter can be run locally.
 
@@ -456,7 +464,7 @@ done using the PR number.
 ```shell
 # List available PR and their identifiers.
 $ gh pr list
-# Clone  specific PR, updating sudmodules
+# Clone  specific PR, updating submodules
 $ gh pr checkout XX --recurse-submodules
 ```
 

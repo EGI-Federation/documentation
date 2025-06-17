@@ -145,11 +145,11 @@ enable = false
 
 [params.links]
   # End user relevant links. These will show up on left/right side of footer and in the community page if you have one.
-  [[params.links.user]]
-      name = "Community discussions"
-      url = "https://community.egi.eu"
-      icon = "fa fa-comments"
-      desc = "Discussion and help from your fellow users"
+  # [[params.links.user]]
+      # name = "Community discussions"
+      # url = "https://community.egi.eu"
+      # icon = "fa fa-comments"
+      # desc = "Discussion and help from your fellow users"
   [[params.links.user]]
       name = "Twitter"
       url = "https://twitter.com/EGI_eInfra"

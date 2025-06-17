@@ -1,3 +1,4 @@
+# cspell:disable
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
@@ -5,16 +6,12 @@ repos:
     rev: v8.7.0
     hooks:
       - id: megalinter-incremental
+    args:
+      - --flavor documentation
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.33.0
     hooks:
       - id: check-github-workflows
   # Disabling markdown-link-check because it can not reliably check anchors and links against the source code.
   # Suggest using lychee instead (way faster and more accurate)
-  - repo: https://github.com/tcort/markdown-link-check
-    rev: v3.13.7
-    hooks:
-      - id: markdown-link-check
-        args:
-          - -c
-          - .github/linters/mlc_config.json
+  # this is now enabled in the megalinter config

@@ -1,10 +1,8 @@
 {
   "name": "egi-documentation",
   "dependencies": {
-    "@umbrelladocs/linkspector": "^0.3.8",
-    "autoprefixer": "^9.0",
-    "it": "^1.1.1",
-    "postcss-cli": "^7.1.2"
+    "autoprefixer": "^10.4.21",
+    "postcss-cli": "^11.0.1"
   },
   "standard": {
     "ignore": [

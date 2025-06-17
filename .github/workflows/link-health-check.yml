@@ -1,0 +1,158 @@
+---
+# cspell:disable
+# This workflow uses lychee to check all link in a base path periodically
+name: URL Link Health Checks
+
+on:
+  schedule:
+    # run every day
+    - cron: "0 0 * * *"
+
+permissions: read-all
+jobs:
+  lychee-userdocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/users
+    name: Check links at base of user documentation trees
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # This matrix is built from the directories in content/en/users
+        url:
+          - "aai"
+          - "compute"
+          - "data"
+          - "dev-env"
+          - "getting-started"
+          # - "machine-learning" # currently in draft
+          - "security"
+          - "training"
+          - "tutorials"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get tools
+        # We will run hakrawler to crawl a page and sub-pages
+        # Then use lychee to check whether the urls in that page are ok.
+        run: |
+          curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
+          go install github.com/hakluke/hakrawler@latest
+      - name: Extract links and check them.
+        # This passes a given endpoint to hakrawler, which gets all of the links
+        # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
+        # and returning only unique (-u) urls.
+        # The urls are then parsed via jq to get only hrefs, no scripts
+        # and the resulting list is sent to lyuchee via stdin (-)
+        # to see if there are any bad links in those pages
+        run: >-
+          echo "${{ env.BASEURL }}/${{ matrix.url }}" |
+            hakrawler -u -i -d 10 -json |
+            jq -r '. |
+            select(.Source == "href") | .URL' |
+            lychee -
+  lychee-providerdocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/providers
+    name: Check links at base of provider documentation trees
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # This matrix is built from the directories in content/en/users
+        url:
+          - "check-in"
+          - "cloud-compute"
+          - "datahub" # cspell:disable-line
+          - "high-throughput-compute"
+          - "joining"
+          - "notebooks"
+          - "online-storage"
+          - "operations-manuals"
+          - "rod"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get tools
+        # We will run hakrawler to crawl a page and sub-pages
+        # Then use lychee to check whether the urls in that page are ok.
+        run: |
+          curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
+          go install github.com/hakluke/hakrawler@latest
+      - name: Extract links and check them.
+        # This passes a given endpoint to hakrawler, which gets all of the links
+        # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
+        # and returning only unique (-u) urls.
+        # The urls are then parsed via jq to get only hrefs, no scripts
+        # and the resulting list is sent to lyuchee via stdin (-)
+        # to see if there are any bad links in those pages
+        run: >-
+          echo "${{ env.BASEURL }}/${{ matrix.url }}" |
+            hakrawler -u -i -d 10 -json |
+            jq -r '. |
+            select(.Source == "href") | .URL' |
+            lychee -
+  lychee-internaldocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/internal
+    name: Check links at base of provider documentation trees
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # This matrix is built from the directories in content/en/users
+        url:
+          - "accounting"
+          - "collaboration-tools"
+          - "configuration-database"
+          - "getting-started"
+          - "guidelines-software-development"
+          - "helpdesk" # cspell:disable-line
+          - "messaging"
+          - "monitoring"
+          - "operations-portal"
+          - "security-coordination"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get tools
+        # We will run hakrawler to crawl a page and sub-pages
+        # Then use lychee to check whether the urls in that page are ok.
+        run: |
+          curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
+          go install github.com/hakluke/hakrawler@latest
+      - name: Extract links and check them.
+        # This passes a given endpoint to hakrawler, which gets all of the links
+        # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
+        # and returning only unique (-u) urls.
+        # The urls are then parsed via jq to get only hrefs, no scripts
+        # and the resulting list is sent to lyuchee via stdin (-)
+        # to see if there are any bad links in those pages
+        run: >-
+          echo "${{ env.BASEURL }}/${{ matrix.url }}" |
+            hakrawler -u -i -d 10 -json |
+            jq -r '. |
+            select(.Source == "href") | .URL' |
+            lychee -
+  lychee-otherdocs: # cspell:disable-line
+    env:
+      BASE_URL: https://docs.egi.eu/
+    name: Check links at base of the about pages
+    strategy:
+      matrix:
+        url:
+          - ""
+          - about
+          - support
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get tools
+        # On the "other" page, we do not want to crawl down, so we only use
+        # lyuchee to check the page itself.
+        run: |
+          curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
+      - name: Check Links.
+        run: lychee https://docs.egi.eu/${{ matrix.url }}
+# cspell:enable

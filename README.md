@@ -4,17 +4,17 @@
 
 [![Deploy Status](https://github.com/EGI-Federation/documentation/workflows/Deploy%20to%20GitHub%20pages/badge.svg)](https://github.com/EGI-Federation/documentation/actions)
 
-Source files used to build [EGI documentation](https://docs.egi.eu).
+This repository contains the source for the [EGI documentation](https://docs.egi.eu).
+
+It is built with:
 
 - [Hugo](https://gohugo.io/) is used to build a static site.
 - The theme [docsy](https://www.docsy.dev) is used.
-- The static site is
-  [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
-  by using a dedicated
-  [GitHub repository](https://github.com/EGI-Federation/EGI-Federation.github.io).
 
-> If you are interested in contributing, please check the
-> [Contributing Guide](https://docs.egi.eu/about/contributing/).
+The static site is [deployed on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/).
+
+If you are interested in contributing, please check the
+[Contributing Guide](https://docs.egi.eu/about/contributing/).
 
 ## Requirements
 
@@ -22,7 +22,7 @@ Source files used to build [EGI documentation](https://docs.egi.eu).
 - [NodeJS](https://nodejs.org/) and [docsy](https://www.docsy.dev) theme
   dependencies:
   - postcss-cli
-  - autoprofixer
+  - autoprefixer
 
 These dependencies can be either installed manually or
 reusing a flox environment. Please see the steps below.
@@ -84,7 +84,7 @@ hugo server -D
 The site is available locally at:
 [http://localhost:1313/](http://localhost:1313/).
 
-## Updating the theme
+## Updating the themes
 
 For ease of management, the [docsy](https://www.docsy.dev/docs/getting-started/)
 theme has been cloned as a git submodule.
@@ -98,6 +98,6 @@ git commit themes/docsy -m 'Update theme'
 
 ## Deployment to the EGI organisation pages
 
-[GitHub Actions](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows)
-will automatically deploy a new version when a PR is merged into _main_. It will
-then be available at [https://docs.egi.eu](https://docs.egi.eu).
+[GitHub Actions](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows) deploy a new version when a PR is merged into `main` at [https://docs.egi.eu](https://docs.egi.eu).
+
+Previews of PRs can also be built by applying the `safe-for-preview` label to a PR
