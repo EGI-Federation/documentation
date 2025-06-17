@@ -1,0 +1,423 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – EGI Check-in</title><link>/users/aai/check-in/</link><description>Recent content in EGI Check-in on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Sign up for an EGI Account</title><link>/users/aai/check-in/signup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/signup/</guid><description>
+&lt;h2 id="sign-up">Sign up&lt;/h2>
+&lt;p>You need to sign up for an account for accessing the EGI services. As part of
+this process you will be assigned a personal unique &lt;strong>EGI ID&lt;/strong> which will be
+then used across all EGI tools and services. Follow the instructions below to
+get started:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to &lt;a href="https://aai.egi.eu/signup">https://aai.egi.eu/signup&lt;/a>. This will show you the identity provider
+discovery page: browse through the list of Identity Providers to find your
+Home Organisation, &lt;em>or, alternatively,&lt;/em> type the name of your Home
+Organisation in the search box. Note that the names are localised based on
+the selected language.&lt;/p>
+&lt;p>&lt;img src="./check-in-idp-discovery.png" alt="Check-in IdP discovery">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter your login credentials to authenticate yourself with your Home
+Organisation&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After successful authentication, you may be prompted by your Home
+Organisation to consent to the release of personal information to the &lt;strong>EGI
+AAI Service Provider Proxy&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After successful authentication, you will be redirected to the EGI account
+registration form. On the introductory page, click &lt;strong>Begin&lt;/strong> to start the
+registration process.&lt;/p>
+&lt;p>&lt;img src="./check-in-sign-up-intro.png" alt="Check-in sign up intro">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>EGI requires some basic information from you, depending on the attributes
+released by your Identity Provider, you may need to provide the values of the
+missing attributes.&lt;/p>
+&lt;p>&lt;img src="./check-in-sign-up-attributes.png" alt="Check-in sign up attributes">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the registration form, click &lt;strong>Review Terms and Conditions&lt;/strong>
+(&lt;a href="https://documents.egi.eu/document/2623">Acceptable Use Policy and Conditions of Use - EGI AUP&lt;/a>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you agree to the Terms of Use, select the &lt;strong>I Agree&lt;/strong> option.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+You will not be able to agree
+to the terms until you review them.
+&lt;/div>
+&lt;p>&lt;img src="./check-in-tou-agreement.png" alt="Check-in ToU agreement">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finally, click &lt;strong>Submit&lt;/strong> to submit your request.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+You will not be able to
+submit your request until you agree to the terms.
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>After submitting your request, Check-in will send you an email with a
+verification link. After you click that link, you&amp;rsquo;ll be taken to the request
+confirmation page.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+If you do not find the email
+in your Inbox, please check your Spam or Junk folder for an email from &amp;ldquo;EGI
+AAI Notifications&amp;rdquo;. If you do find the email in these folders, mark the email
+as &amp;ldquo;safe&amp;rdquo; or &amp;ldquo;not spam&amp;rdquo; to ensure that you receive any future notifications
+about your EGI ID.
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>After reviewing your request, click &lt;strong>Confirm&lt;/strong> and re-authenticate yourself
+using the Identity Provider you selected before.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Note: After your registration has been completed, you can manage your profile
+through the &lt;a href="https://aai.egi.eu/registry">EGI Account Registry portal&lt;/a>.&lt;/p>
+&lt;h2 id="viewing-user-profile-information">Viewing user profile information&lt;/h2>
+&lt;p>The profile includes all the information related to the user. This information
+can be categorised as follows:&lt;/p>
+&lt;h3 id="basic-profile">Basic profile&lt;/h3>
+&lt;p>Includes the basic information about your profile:&lt;/p>
+&lt;ul>
+&lt;li>Name&lt;/li>
+&lt;li>Identifiers&lt;/li>
+&lt;li>Email addresses&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./check-in-profile-basic.png" alt="User profile">&lt;/p>
+&lt;h3 id="vogroup-membership-and-roles">VO/Group membership and roles&lt;/h3>
+&lt;p>Includes information about the Virtual Organisations (VOs) and groups the user is
+member of and the roles assigned to the user within those VOs.
+Check the &lt;a href="../joining-virtual-organisation">guide about VOs&lt;/a> for more details.&lt;/p>
+&lt;p>&lt;img src="./check-in-profile-vos.png" alt="VO/Group membership">&lt;/p>
+&lt;h3 id="linked-identities">Linked identities&lt;/h3>
+&lt;p>Information about linked identities to your account. Check the
+&lt;a href="../linking">guide for linking accounts&lt;/a> for more information.&lt;/p>
+&lt;p>&lt;img src="./check-in-profile-linked.png" alt="Linked identities">&lt;/p>
+&lt;h2 id="next-steps">Next steps&lt;/h2>
+&lt;p>Once your Check-in account is ready you can check
+&lt;a href="../linking">how to link it with different identities&lt;/a> or
+&lt;a href="../joining-virtual-organisation">how to join an existing Virtual Organisation (VO)&lt;/a>.&lt;/p></description></item><item><title>Users: Linking Identities</title><link>/users/aai/check-in/linking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/linking/</guid><description>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;h2 id="linking-new-identities-to-your-egi-account">Linking new identities to your EGI Account&lt;/h2>
+&lt;p>Identity linking allows you to access EGI resources with your existing personal
+EGI ID, using any of the login credentials you have linked to your account. You
+can use any of your organisational or social login credentials for this purpose.
+To link a new organisational or social identity to your EGI account:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Enter the following URL in a browser: &lt;a href="https://aai.egi.eu/registry">https://aai.egi.eu/registry&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Login&lt;/strong> and authenticate using any of the login credentials &lt;em>already&lt;/em>
+linked to your EGI account&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Navigate to &lt;strong>My EGI User Community Identity&lt;/strong> page in one of the following
+ways:&lt;/p>
+&lt;ul>
+&lt;li>hover over your display name next to the gear icon on the top right corner
+of the page; &lt;em>or, alternatively,&lt;/em>&lt;/li>
+&lt;li>select &lt;strong>EGI User Community&lt;/strong> from the list of available Collaborations and
+then click &lt;strong>My EGI User Community Identity&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./check-in-my-identity.png" alt="Check-in my identity">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Under the &lt;strong>Organisational Identities&lt;/strong> section of your profile page, expand
+&lt;strong>Actions&lt;/strong> menu and click &lt;strong>Link New Identity&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="./check-in-link-new.png" alt="Link new identity">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the introductory page for Identity Linking, click &lt;strong>Begin&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="./check-in-link-intro.png" alt="Link new identity intro">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You will need to sign in using the login credentials from the
+institutional/social identity provider you want to link to your account.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+It is very important to escape
+the identity provider selection, cached in the discovery page, before picking
+the new one.
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>After successful authentication, the new Identity Provider will be available
+under the Organizational Identities tab and you&amp;rsquo;ll be able to access EGI
+resources with your existing personal EGI ID using the login credentials of
+the identity provider you selected in &lt;strong>Step 6&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="./check-in-link-end.png" alt="Link new identity end">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="linking-your-certificate-to-your-egi-account">Linking your certificate to your EGI Account&lt;/h2>
+&lt;p>Certificate linking allows you to add the subject DN of your certificate to your
+existing personal EGI ID. For this you need to import your certificate to your
+browser.&lt;/p>
+&lt;p>To link a subject DN to your EGI account:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Enter the following URL in a browser: &lt;a href="https://aai.egi.eu/registry">https://aai.egi.eu/registry&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Login&lt;/strong> and authenticate using any of the login credentials &lt;em>already&lt;/em>
+linked to your EGI account&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Navigate to &lt;strong>My EGI User Community Identity&lt;/strong> page in one of the following
+ways:&lt;/p>
+&lt;ul>
+&lt;li>hover over your display name next to the gear icon on the top right corner
+of the page; &lt;em>or, alternatively,&lt;/em>&lt;/li>
+&lt;li>select &lt;strong>EGI User Community&lt;/strong> from the list of available Collaborations and
+then click &lt;strong>My EGI User Community Identity&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./check-in-my-identity.png" alt="Check-in my identity">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Under the &lt;strong>Organisational Identities&lt;/strong> section of your profile page, expand
+&lt;strong>Actions&lt;/strong> menu and click &lt;strong>Link New Identity&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="./check-in-link-new.png" alt="Link new identity">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the introductory page for Identity Linking, click &lt;strong>Begin&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="./check-in-link-intro.png" alt="Link new identity intro">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continuously, you will need to sign in using the IGTF Certificate Proxy.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+It is very important to escape
+the identity provider selection, cached in the discovery page, before picking
+the new one.
+&lt;/div>
+&lt;p>&lt;img src="./check-in-discovery-igft.png" alt="Check-in IdP discovery IGTF">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Then select the certificate you want to link to your account from the popup
+window.&lt;/p>
+&lt;p>&lt;img src="./check-in-select-certificate.png" alt="Select certificate">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After successful authentication you will be redirected back to your EGI
+Account. Also, you&amp;rsquo;ll be able to access EGI resources with your existing
+personal EGI ID using &lt;strong>IGTF Certificate Proxy&lt;/strong> and your certificate.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To verify that the subject DN is added to your EGI account scroll down to
+&lt;strong>Organisational Identities&lt;/strong> and click on &lt;strong>view&lt;/strong> button in the row where
+the source is
+&lt;code>https://edugain-proxy.igtf.net/simplesaml/saml2/idp/metadata.php&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="./check-in-list-organisational-ids.png" alt="List organisational identities">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Then scroll down to &lt;em>Certificates&lt;/em> and you should see the subject DN of your
+certificate.&lt;/p>
+&lt;p>&lt;img src="./check-in-certificates-preview.png" alt="Certificates preview">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;!--
+// jscpd:ignore-end
+--></description></item><item><title>Users: Joining a Virtual Organisation</title><link>/users/aai/check-in/joining-virtual-organisation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/joining-virtual-organisation/</guid><description>
+&lt;p>&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>
+in Check-in are represented as Collaborative Organisation Units (COUs).&lt;/p>
+&lt;p>In order to join a Virtual Organisation you must have an EGI account. If you
+don&amp;rsquo;t have, then first &lt;a href="../signup/">sign up for an EGI account&lt;/a>.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Login to &lt;a href="https://aai.egi.eu/registry">Check-in registry&lt;/a> with your EGI account.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Expand the &lt;strong>People&lt;/strong> drop down menu and click &lt;strong>Enroll&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="./check-in-people-enroll.png" alt="COmanage-people-enroll">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Begin&lt;/strong> link of the Enrollment flow of the VO you want to
+join&lt;/p>
+&lt;p>&lt;img src="./check-in-join-example.png" alt="Join example">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Begin&lt;/strong> button to start the Enrollment flow&lt;/p>
+&lt;p>&lt;img src="./check-in-start-enroll.png" alt="Start enrollement flow">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>a. If there are no pending petitions the enrollment flow will continue as usual.&lt;/p>
+&lt;p>b. If there is one pending petition:&lt;/p>
+&lt;p>b1. If its status is in Pending Approval you will see a page similar to this:&lt;/p>
+&lt;p>&lt;img src="./check-in-pending-petition-approval.png" alt="Pending Petition Under Approval">&lt;/p>
+&lt;p>Where you can:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Click the &lt;strong>Notify Approver(s) Again&lt;/strong> button and a reminder email will be sent to approver(s)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Proceed with new enrollment&lt;/strong>, so a new enrollment flow will start&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>.
+In this case, the pending petition will be deleted and a new enrollment flow will be created.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>b2. If its status is not in &lt;code>Pending Approval&lt;/code>, &lt;code>Pending Confirmation&lt;/code> or
+&lt;code>Finalized&lt;/code> you will see a page similar to this:&lt;/p>
+&lt;p>&lt;img src="./check-in-pending-petition-created.png" alt="Pending Petition">&lt;/p>
+&lt;p>Where you can:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Click the &lt;strong>Resume&lt;/strong> button and continue the enrollment flow&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Proceed with new enrollment&lt;/strong>, so a new enrollment flow will start&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>.
+In this case, the pending petition will be deleted and a new enrollment flow will start.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>c. If there is more than one pending petition related to the enrollment flow:&lt;/p>
+&lt;p>&lt;img src="./check-in-pending-petitions.png" alt="Pending Petitions">&lt;/p>
+&lt;p>Where you can:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Click the &lt;strong>View&lt;/strong> Button of each petition and review it. (see (b) use case above)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Proceed with new enrollment&lt;/strong> and a new enrollment flow will start&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>Users: Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This page includes all the available ways to obtain OAuth tokens from EGI
+Check-in.&lt;/p></description></item><item><title>Users: Virtual Organisations</title><link>/users/aai/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/</guid><description>
+&lt;p>A &lt;a href="https://ims.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation&lt;/a>
+(VO) represents a research community and, in practice, it is just &lt;strong>a group of
+users&lt;/strong>. VOs are created to organise a community of researchers, who can share
+resources across the EGI Federation and other services to achieve a common goal,
+as part of a scientific collaboration.&lt;/p>
+&lt;p>&lt;img src="./VOs.png" alt="Virtual Organisations">&lt;/p>
+&lt;h2 id="see-the-list-of-virtual-organisations">See the list of Virtual Organisations&lt;/h2>
+&lt;p>Existing VOs can be found in the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>.&lt;/p>
+&lt;p>Click on the icon under the “Details” column to access more detailed information
+of the VO.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./OP_VO_details.png" alt="List of VOs in the Operations Portal">&lt;/p>
+&lt;h2 id="how-to-join-a-virtual-organisation">How to join a Virtual Organisation&lt;/h2>
+&lt;p>There are different ways to join a VO:&lt;/p>
+&lt;ul>
+&lt;li>Contact the administrators of the VO (the VO Managers). They can send you an
+invitation or a link to apply for membership in a VO.&lt;/li>
+&lt;li>Some community services provide a link on their Websites to grant access to
+their respective VOs.&lt;/li>
+&lt;li>Use the enrolment URL that can be found in the detailed information of the
+specific VO, in the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p class="img-screenshot">&lt;img src="./OP_VO_enrolment_url.png" alt="Enrolment URL of a VO in the Operations Portal">&lt;/p>
+&lt;p>Often, your request to apply for VO membership will be evaluated by a VO Manager
+before you are accepted in the VO.&lt;/p>
+&lt;h2 id="how-to-create-your-own-virtual-organisation">How to create your own Virtual Organisation&lt;/h2>
+&lt;p>To register a new VO, access the
+&lt;a href="https://operations-portal.egi.eu/vo/registration">VO registration page&lt;/a> of the
+Operations Portal. You will need to log in via Check-in and fill in the &lt;strong>VO ID
+card&lt;/strong>, which is the basic information for the VO.&lt;/p>
+&lt;p>The VO registration process is detailed in the procedure
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration">PROC14 VO Registration&lt;/a>.&lt;/p>
+&lt;p>The person registering a VO is considered the administrator of the VO, also
+known as &lt;strong>VO Manager&lt;/strong>. Additional VO Managers do not need to be included at
+the time of the VO creation, they
+&lt;a href="keycloak/admins#adding-administrators-to-a-group">can be added later&lt;/a>.&lt;/p>
+&lt;h2 id="manage-a-virtual-organisation">Manage a Virtual Organisation&lt;/h2>
+&lt;p>A VO is managed by its VO Managers. VOs can have more than one administrator,
+and they are responsible for the correct operation of the VO. The functions of
+the VO Managers include:&lt;/p>
+&lt;ul>
+&lt;li>Evaluate membership requests and approve or reject them. This is an important
+point, since membership in a VO may grant access to data or resources, so
+normally a VO Manager should not accept members arbitrarily.&lt;/li>
+&lt;li>Attend security recommendations, provide information requested by the EGI
+security teams and maintain the resources and users of the VO secure.&lt;/li>
+&lt;li>Provide information about the VO activities for EGI and for VO members (to
+both people and sites).&lt;/li>
+&lt;/ul>
+&lt;p>VOs can be structured in &lt;strong>groups&lt;/strong>, to organise the different permissions that
+users have inside a community. For example, inside a VO there can be a group for
+users that will manage cloud infrastructure, another group for users that access
+a specific application, other group for users that will attend a workshop and
+need access to Notebooks, etc.&lt;/p>
+&lt;p>Check-in offers two tools to organise a community:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="keycloak">Keycloak&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="perun">Perun&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>Follow the links for detailed information on how to manage VO groups.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
+&lt;h2 id="getting-help">Getting help&lt;/h2>
+&lt;p>Requests for technical assistance and other issues related to Check-in can be
+obtained by sending an email to:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>&lt;a href="mailto:checkin-support@mailman.egi.eu">checkin-support@mailman.egi.eu&lt;/a>&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>Alternatively, if you already have a Check-in account, the &lt;a href="https://helpdesk.ggus.eu/">EGI Helpdesk&lt;/a>
+can be used. More information can be found in the
+&lt;a href="https://docs.egi.eu/internal/helpdesk/user-guide/">Helpdesk documentation&lt;/a>. In that case,
+submit a new ticket and make sure that the support unit is assigned to &amp;ldquo;Check-in (AAI)&amp;rdquo;.&lt;/p>
+&lt;p>&lt;img src="./check-in-support-unit.png" alt="Check-in support unit in HelpDesk">&lt;/p>
+&lt;h2 id="connect-to-check-in-an-idp-federated-in-an-hub-and-spoke-federations">Connect to Check-in an IdP federated in an hub and spoke federations&lt;/h2>
+&lt;!-- markdownlint-disable line-length -->
+&lt;h3 id="i-get-an-error-similar-to-error---egi-check-in-service-not-accessible-through-your-institution-surfconext-example">I get an error similar to: &amp;ldquo;Error - EGI Check-in Service not accessible through your institution&amp;rdquo; (SURFconext example)&lt;/h3>
+&lt;!-- markdownlint-enable line-length -->
+&lt;p>In case of a &amp;ldquo;hub and spoke&amp;rdquo; federation the federation coordinator may require
+that the IdP administrators explicitly request to connect to a SP and let their
+users to authenticate on these SP.&lt;/p>
+&lt;p>In most of the cases this is not a configuration problem neither for the
+Check-in service nor for the Identity provider. The connection needs to be
+implemented in the hub and spoke IdP Proxy.&lt;/p>
+&lt;p>One example of such federation is SURFconext, the national IdP federation for
+research and education in the Netherlands operated by SURFnet. If you are using
+credentials from a Dutch IdP in eduGAIN, the SURFconext administrator of your
+institute needs to request the connection.&lt;/p>
+&lt;h2 id="authentication-error-with-adfs-based-identity-providers">Authentication error with ADFS-based Identity Providers&lt;/h2>
+&lt;h3 id="why-do-i-get-the-error-below-after-successfully-authenticating-at-my-home-idp">Why do I get the error below after successfully authenticating at my Home IdP?&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>opensaml::FatalProfileException at (https://aai.egi.eu/registry.sso/SAML2/POST)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAML response reported an IdP error.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error from identity provider:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Status: urn:oasis:names:tc:SAML:2.0:status:Responder
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Responder error status is typically returned from ADFS-based IdP
+implementations (notably Microsoft ADFS 2.0 and ADFS 3.0) that cannot properly
+handle
+&lt;a href="https://docs.microsoft.com/en-za/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#scoping%3E">Scoping elements&lt;/a>.
+Check-in can be configured to omit the scoping element from the authentication
+requests sent to such IdPs in order to allow successful logins. Please send an
+email to the Check-in Support team using &lt;code>checkin-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code>
+&lt;code>mailman.egi.eu&lt;/code> and include a screenshot of your error.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;h2 id="i-have-linked-an-igtf-x509-certificate-to-my-check-in-identity-but-the-information-is-inaccurate-or-incomplete">I have linked an IGTF X.509 certificate to my Check-in identity but the information is inaccurate or incomplete&lt;/h2>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="what-can-i-do">What can I do?&lt;/h3>
+&lt;p>To update your certificate information, follow these steps to log into your
+Check-in profile page using your IGTF certificate:&lt;/p>
+&lt;ol>
+&lt;li>Click
+&lt;a href="https://aai.egi.eu/proxy/saml2/idp/SingleLogoutService.php?ReturnTo=https%3A%2F%2Faai.egi.eu%2Fregistry%2Fauth%2Flogin">here&lt;/a>
+to access your profile page&lt;/li>
+&lt;/ol>
+&lt;p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+This may log you out of any
+service you have accessed with Check-in on this browser!
+&lt;/div>
+2. On
+the Check-in identity provider discovery page, select &lt;strong>IGTF&lt;/strong>&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+If prompted to log in with a
+different identity provider, click &lt;strong>CHOOSE ANOTHER ACCOUNT&lt;/strong> and then select
+&lt;strong>IGTF&lt;/strong>. Alternatively, you can click
+&lt;a href="https://aai.egi.eu/registry/auth/login?idphint=https%3A%2F%2Fedugain-proxy.igtf.net%2Fsimplesaml%2Fsaml2%2Fidp%2Fmetadata.php">here&lt;/a>
+for your convenience
+&lt;/div>
+&lt;p>&lt;img src="./check-in-discovery-igft.png" alt="Check-in IdP discovery IGTF">&lt;/p></description></item></channel></rss>
