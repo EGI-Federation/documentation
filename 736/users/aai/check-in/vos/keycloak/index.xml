@@ -1,0 +1,558 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Group Management in Keycloak</title><link>/users/aai/check-in/vos/keycloak/</link><description>Recent content in Group Management in Keycloak on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/vos/keycloak/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Managing groups</title><link>/users/aai/check-in/vos/keycloak/groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/groups/</guid><description>
+&lt;h2 id="group-information">Group information&lt;/h2>
+&lt;p>When clicking on a group from the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>,
+the following group information is shown.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./group_details.jpg" alt="Group details">&lt;/p>
+&lt;ol>
+&lt;li>The name of the group, together with an icon to delete the group.&lt;/li>
+&lt;li>The description of the group, together with an icon to modify it.&lt;/li>
+&lt;li>The menu for the group. The “Group Details” contain the basic information of
+the group. There are other tabs to show different information about the
+groups: its members, its administrators, its enrolment flows (for users to
+join the group), its custom attributes and its subgroups.&lt;/li>
+&lt;li>The default link to request membership in the group, with a button to copy
+the link. When a user follows the link, he/she will be presented with the
+Enrolment Discovery Page, which offers all publicly available
+&lt;a href="../members/#group-enrolments">enrolment flows&lt;/a> to join the group (those
+enrolments with the attribute “Visible” enabled).&lt;/li>
+&lt;li>A section to &lt;a href="../roles/#creating-group-roles">add new roles&lt;/a> for the group.&lt;/li>
+&lt;li>The list of roles available for the group, containing the name of the role
+and the entitlement.&lt;/li>
+&lt;li>A button to copy the entitlement. The entitlement is the string that
+applications receive from the user information when he/she has the role
+assigned.&lt;/li>
+&lt;li>A button to &lt;a href="../roles/#deleting-group-roles">delete the role&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="creating-groups">Creating groups&lt;/h2>
+&lt;p>To create a group, access the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>
+and navigate the hierarchy of groups to locate where you want to create a
+subgroup.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./menu_groupmanagement.png" alt="Menu option Group management">&lt;/p>
+&lt;p>Using the three-dot menu on the right of the parent group, click on “Create Sub
+Group”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./subgroup_create.png" alt="Create subgroup from main list">&lt;/p>
+&lt;p>Alternatively, you can use the “Create Sub Group” option from the “Sub Groups”
+tab of any group.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./subgroup_create2.png" alt="Create subgroup from Sub Groups menu">&lt;/p>
+&lt;p>Fill in the details and the group will be created.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./subgroup_create_detail.png" alt="Details for subgroup creation">&lt;/p>
+&lt;h2 id="deleting-groups">Deleting groups&lt;/h2>
+&lt;p>To delete a group, access the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>
+and navigate the hierarchy of groups. Locate the group you want to delete and
+click on it.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./menu_groupmanagement.png" alt="Menu option Group management">&lt;/p>
+&lt;p>Use the “trash” icon to delete the group.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./subgroup_delete.png" alt="Delete group from group details">&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+The &amp;ldquo;trash&amp;rdquo; icon will not be
+available if the group has any subgroups. A group cannot be deleted if it has
+any associated subgroup.
+&lt;/div>
+&lt;p>Alternatively, you can delete a group from its parent group, by using the “Sub
+Groups” tab. Using the three-dot menu on the right of the group to be deleted,
+click on “Delete Group”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./subgroup_delete2.png" alt="Delete group from list of subgroups">&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+VOs (the root groups) cannot be
+deleted through the interface.
+&lt;/div></description></item><item><title>Users: Managing group members</title><link>/users/aai/check-in/vos/keycloak/members/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/members/</guid><description>
+&lt;p>Users can join a group to become members of the group. This membership can be
+limited by time, if desired. The exception is for the VO group (the root group),
+whose membership is always limited to a maximum of one year and must be renewed
+by the user at the end of that period.&lt;/p>
+&lt;p>Users will have one or more roles inside a group. A default “member” role may
+exist and be assigned if no other role is specified, but this role is not
+required to be a group member – any role qualifies a user as a member.&lt;/p>
+&lt;p>The list of group members can be found in the “Group Members” tab of a group.
+You can access the desired group from the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>.
+The Group Members tab shows the list of users belonging to the group, together
+with other useful information.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./members_list.png" alt="List of members">&lt;/p>
+&lt;ol>
+&lt;li>The “Direct Members” allows to visualise only direct members or all members
+(direct + indirect). Direct members are those that are explicit members of
+the group, whereas indirect members are those that inherited membership from
+a subgroup. If a user has been only added as a member of a group, he/she
+will be categorised as an indirect member of the parent groups.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="./general_groups-04.png" alt="Direct and indirect membership">&lt;/p>
+&lt;p>Herein, unchecking the “Direct Members” option from the view of the VO &lt;strong>group
+will display the entire VO population&lt;/strong>. Note that unchecking this option will
+add a new informative column called &amp;ldquo;Group Path&amp;rdquo; to specify the group to which
+the user belongs. This may generate duplicate entries for users who are members
+of several subgroups.&lt;/p>
+&lt;ol start="2">
+&lt;li>The &lt;strong>Unique User Identifier&lt;/strong> is the string that uniquely identifies a
+user, and it is made of a long alphanumerical string suffixed by “@egi.eu”.&lt;/li>
+&lt;li>Name / email shows the full name and email address of the user.&lt;/li>
+&lt;li>The roles that the user has in the group. Note that users can have more than
+one role assigned in the group but must have at least one assigned. There is
+a filter button to display only users with a certain role.&lt;/li>
+&lt;li>The date when the user membership started.&lt;/li>
+&lt;li>The date when the user membership will stop working. When the membership is
+close to expire an indication will be displayed.&lt;/li>
+&lt;/ol>
+&lt;p class="img-screenshot">&lt;img src="./expiration_warning.png" alt="Membership expiration warning">&lt;/p>
+&lt;ol start="7">
+&lt;li>A user can be one of these three &lt;a href="#membership-status">membership states&lt;/a>:&lt;/li>
+&lt;/ol>
+&lt;p class="img-icon">&lt;img src="status_green.png" alt="Active status"> &lt;strong>Active&lt;/strong>&lt;/p>
+&lt;p class="img-icon">&lt;img src="status_red.png" alt="Suspended status"> &lt;strong>Suspended&lt;/strong>&lt;/p>
+&lt;p class="img-icon">&lt;img src="status_yellow.png" alt="Pending status"> &lt;strong>Pending&lt;/strong>&lt;/p>
+&lt;p>Additionally, there is a filter option to show users that have only a certain
+status.&lt;/p>
+&lt;ol start="8">
+&lt;li>The “Add Member” button can be used to add new members, as explained
+&lt;a href="../../../../../#adding-users-to-a-group-manually">below&lt;/a>.&lt;/li>
+&lt;li>The “Search” field can be used to filter users by Unique Identifier, Name or
+email.&lt;/li>
+&lt;li>There are three action buttons:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Remove, to &lt;a href="#removing-a-user-from-a-group">remove a user from the group&lt;/a>.&lt;/li>
+&lt;li>Edit, to
+&lt;a href="#change-a-user-membership">change some aspect of the user membership&lt;/a>.&lt;/li>
+&lt;li>Suspend, to &lt;a href="#removing-a-user-from-a-group">revoke user’s permissions&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="membership-status">Membership status&lt;/h2>
+&lt;p>A user in a group can be in one of these three states:&lt;/p>
+&lt;p class="img-icon">a. &lt;img src="./status_green.png" alt="Active status"> &lt;strong>Active&lt;/strong>, when the user is a full
+member of the group and receives all entitlements (the permissions) associated
+with the roles that he/she has assigned in the group.&lt;/p>
+&lt;p class="img-icon">b. &lt;img src="./status_red.png" alt="Suspended status"> &lt;strong>Suspended&lt;/strong>, when a user has been
+revoked from the group, either by an membership expiration date or manually by
+an administrator. The user maintains a symbolic membership since he/she will not
+receive any entitlements of any of the roles assigned to him/her. Suspension is
+detailed in the Section &lt;a href="#removing-a-user-from-a-group">Removing a user&lt;/a>.&lt;/p>
+&lt;p class="img-icon">c. &lt;img src="./status_yellow.png" alt="Pending status"> &lt;strong>Pending&lt;/strong>, when a user has been
+accepted to join a group at a specific future time. The user will become Active
+automatically at the defined date. Alternatively, administrators can force the
+Active membership manually before the defined time. This is discussed in the
+&lt;a href="#creation-of-group-enrolments">creation of enrolments&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="./Membership_states.png" alt="Membership states">&lt;/p>
+&lt;p>For a user to join a group, a group enrolment must be used.&lt;/p>
+&lt;h3 id="membership-expiration">Membership expiration&lt;/h3>
+&lt;p>When the user membership in a group expires, the user becomes
+&lt;a href="#membership-status">suspended&lt;/a> in that group. Users have membership expiration
+dates defined for every group they belong to. However, the membership in a group
+is conditioned by expiration dates in any parent group. If the user membership
+expires in a parent group, the membership of a child group will be also
+suspended.&lt;/p>
+&lt;p>&lt;img src="./membership_effective_expiration.png" alt="Membership effective expiration">&lt;/p>
+&lt;p>This leads to two types of membership expiration: &lt;strong>direct&lt;/strong> and &lt;strong>effective&lt;/strong>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Direct&lt;/strong> is the expiration date that the user explicitly has in the group.&lt;/li>
+&lt;li>&lt;strong>Effective&lt;/strong> is the practical expiration date, which is different from the
+direct expiration date if the user has an earlier expiration time in a parent
+group.&lt;/li>
+&lt;/ul>
+&lt;p>Membership expiration dates can be found in the “Group Members” tab. The
+effective dates are shown only when the expiration of a parent date comes before
+the direct expiration date of the current group. A link will be shown to make it
+easier to see which group is responsible for the effective date.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./membership_expiration.png" alt="Check expiration">&lt;/p>
+&lt;p>When a membership is close to expire for a user, Group Admins will have the
+option to extend it by using the “Extend” button directly.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./expiration_extension.png" alt="Extend membership">&lt;/p>
+&lt;h2 id="group-enrolments">Group Enrolments&lt;/h2>
+&lt;p>Group enrolments are used &lt;strong>when a user joins a group&lt;/strong>. Enrolments are
+&lt;strong>preconfigured workflows&lt;/strong> to add users into a specific group. An enrolment is
+defined &lt;strong>within a group&lt;/strong>, and specifies things such as:&lt;/p>
+&lt;ul>
+&lt;li>For how long the user membership in a group will last.&lt;/li>
+&lt;li>When the membership becomes operational (it can be immediately or at a future
+time).&lt;/li>
+&lt;li>If the membership request must be automatically approved without human
+intervention or manually approved by an administrator.&lt;/li>
+&lt;li>If the user must provide some sort of information when requesting membership
+in the group.&lt;/li>
+&lt;li>If the group enrolment should be publicly available or not (defined by the
+“Visible” attribute) when the user access the default link to join a group.&lt;/li>
+&lt;li>The Acceptable Use Policy (AUP) to join the group.&lt;/li>
+&lt;li>What roles are available to the user when joining the group.&lt;/li>
+&lt;/ul>
+&lt;p>When a user first joins a group, he/she must always follow an enrolment. When a
+group is created, a default enrolment is also created together with it. This
+default enrolment can be changed at any time, and multiple enrolments can be
+created for the same group, each of them with different enrolment conditions.&lt;/p>
+&lt;p>To see the enrolments defined for a group, access the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>,
+locate the desired group and click on it. Its enrolments can be found in the
+“Group Enrolment Configuration” tab.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_list.png" alt="List of group enrolments">&lt;/p>
+&lt;h3 id="default-group-enrolment">Default Group Enrolment&lt;/h3>
+&lt;p>Every group has a default enrolment to join the group, which is marked in the
+list of enrolment configurations.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_list_default.png" alt="Default group enrolments">&lt;/p>
+&lt;p>To change it, just click on the three-dot menu on the right of the enrolment
+entry and use the option “Set this enrolment as default”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_default.png" alt="Change default group enrolments">&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+The AUP of the enrolment created by
+default for a VO (the root group) uses the “AUP text” defined in the
+&lt;a href="../../#how-to-create-your-own-virtual-organisation">VO ID Card&lt;/a>. Note that this
+text cannot be modified, so if you need to update this AUP, you will need to
+change the URL to point to the updated version of the AUP.
+&lt;/div>
+&lt;h3 id="creation-of-group-enrolments">Creation of Group Enrolments&lt;/h3>
+&lt;p>To create an enrolment, access the “Group Enrolment Configuration” tab and click
+on the “+” button.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_create1.png" alt="Access to create group enrolment">&lt;/p>
+&lt;p>This will open a form for the creation of the enrolment.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_create2.png" alt="Necessary information for group enrolment creation">&lt;/p>
+&lt;p>The necessary information for the enrolment creation is the following:&lt;/p>
+&lt;ol>
+&lt;li>A name for the enrolment.&lt;/li>
+&lt;li>The number of days that the membership will last for the user, once he/she
+joins the group.&lt;/li>
+&lt;/ol>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership.png" alt="Membership lenght">&lt;/p>
+&lt;p>The VO (or root group) must have an expiration date of 365 days or less, but
+other subgroups can have any length, including no expiration. However, consider
+that this expiration will be also
+&lt;a href="#membership-expiration">affected by the expiration of any parent group&lt;/a> in the
+group hierarchy. When a VO expiration is longer than 365 days, an error message
+will be shown.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_365warning.png" alt="Membership lenght error message for values exceeding 365 days">&lt;/p>
+&lt;p>Enrolments with no expiration dates get a warning, just to make sure that this
+was your intention.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_indefinite.png" alt="Membership lenght warning message for indefinite lenght">&lt;/p>
+&lt;ol start="3">
+&lt;li>A future date when the membership should start. This option is useful to
+control when the access to the group will be granted for a user. A user
+joining a group with a future membership date, will be in a
+&lt;a href="#membership-status">pending status&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_future_membership.png" alt="Group enrolment future membership">&lt;/p>
+&lt;ol start="4">
+&lt;li>Enrolment requests may be either approved automatically or manually approved
+by an administrator. This attribute specifies if the request needs a manual
+approval from a Group Admin (which is normally recommended). If it does, a
+Group Admin will have to approve the user request. If not, any user that
+requests it will be automatically approved and will become a member as soon
+as the request is received.&lt;/li>
+&lt;li>This attribute defines any extra information that must be collected from the
+user in the request. The information can be customised with a label and a
+description. The label will be presented to the user (e.g. the label could be
+“Reason to join the group”) and the description should explain the user how
+to fill in the comment field. The user will visualise this information as
+shown in the following image.&lt;/li>
+&lt;/ol>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_comments.png" alt="Comments in an enrolment">&lt;/p>
+&lt;ol start="6">
+&lt;li>The link for the Acceptable Use Policy of the group. This link will be
+presented to the user and its acceptance must be acknowledged as a
+requirement to join the group.&lt;/li>
+&lt;li>The group roles that the user can have assigned when joining the group.
+These roles will be presented to the user, who will decide which role(s) to
+request. There is an option to allow the user to accept only one role or
+multiple roles.&lt;/li>
+&lt;li>This attribute controls if this enrolment should be publicly available or
+not. If this attribute is checked, users following the
+&lt;a href="#default-group-enrolment">default enrolment link&lt;/a> of the group will be able
+to choose the enrolment to join the group.&lt;/li>
+&lt;/ol>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_select_visible.png" alt="Visible enrolments">&lt;/p>
+&lt;ol start="9">
+&lt;li>If the enrolment is enabled or disabled. This is useful to disable an
+enrolment temporarily, instead of deleting it.&lt;/li>
+&lt;/ol>
+&lt;h3 id="modification-of-group-enrolments">Modification of Group Enrolments&lt;/h3>
+&lt;p>To modify an existing enrolment, access the enrolment data by clicking on the
+name of the enrolment.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_access.png" alt="Access existing group enrolment">&lt;/p>
+&lt;p>This will open a window with the enrolment data, which can be modified. After
+finishing your modifications, click “Submit” to save changes.&lt;/p>
+&lt;h3 id="deletion-of-group-enrolments">Deletion of Group Enrolments&lt;/h3>
+&lt;p>To delete an enrolment, first access the enrolment data by clicking on the name
+of the enrolment.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_access.png" alt="Access existing group enrolment">&lt;/p>
+&lt;p>In the window with the enrolment data, click on the “trash” button to delete it.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_delete2.png" alt="Delete group enrolment">&lt;/p>
+&lt;h2 id="adding-users-to-a-group">Adding users to a group&lt;/h2>
+&lt;p>There are three main ways to add a user to a group:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="#adding-users-by-user-request">By user request&lt;/a>. The user must know an
+enrolment URL to request membership. This URL is generally sent by a Group
+Admin or found on a Website or application.&lt;/li>
+&lt;li>&lt;a href="#adding-users-by-invitation">By invitation&lt;/a>, where a Group Admin sends an
+invitation to the user email address.&lt;/li>
+&lt;li>&lt;a href="#adding-users-by-direct-registration">By direct registration&lt;/a> by a Group
+Admin. To do so, the user must belong to one of the groups managed by the
+Group Admin and the group should not need any AUP acceptance.&lt;/li>
+&lt;/ul>
+&lt;p>Both the user request and the invitation create an enrolment request, which may
+need &lt;a href="#approving-group-membership-requests">approval&lt;/a> from a Group Admin,
+depending on how &lt;a href="#creation-of-group-enrolments">the enrolment was created&lt;/a>. The
+direct registration does not need an extra approval, since the user registration
+is already done by a Group Admin.&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+When a user joins a group, one or
+more roles are assigned to them. If the enrolment request is submitted by the
+user, one or more roles will be chosen by the user, within the permitted roles
+defined in the enrolment configuration. If the user is directly added by a Group
+Admin, the roles will be selected by the Group Admin, also according to the
+roles permitted by the enrolment configuration.
+&lt;/div>
+&lt;h3 id="adding-users-by-user-request">Adding users by user request&lt;/h3>
+&lt;p>Users can request to join a group. To do so, they should either contact an
+administrator or use the link of any group enrolment. This link can be sent to
+users via email or placed on a Website or in an application.&lt;/p>
+&lt;p>As a Group Admin, the enrolment link can be obtained from different ways:&lt;/p>
+&lt;ul>
+&lt;li>To copy the “Enrolment Discovery Page” link access the list of VOs in the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>.
+Navigate the hierarchy of groups to locate the desired group and click on the
+three-dot menu on the right of the group. Finally, click on “&lt;strong>Copy Enrolment
+Discovery Page link&lt;/strong>”.&lt;/li>
+&lt;/ul>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_copyURL.png" alt="Copy Enrolment Discovery Page link">&lt;/p>
+&lt;p>The Enrolment Discovery Page will let the user choose which enrolment to use
+from those publicly available (those with the
+“&lt;a href="#creation-of-group-enrolments">Visible to non-members&lt;/a>” attribute enabled).
+Once the user follows the link, the specific enrolment can be selected from the
+“Group Enrolment” field.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_select_visible.png" alt="Selection of group enrolment">&lt;/p>
+&lt;ul>
+&lt;li>Another option is to access any group and access the “Group Enrolment
+Configuration” tab. This will list all existing enrolments. Locate the desired
+group and click on the three-dot menu on the right of the group. Finally,
+click on “&lt;strong>Copy Group Enrolment Direct Link&lt;/strong>”. This link will use this
+specific enrolment, no other option will be given to the user. Herein, it is
+&lt;strong>not necessary&lt;/strong> that the enrolment has the attribute “Visible to
+non-members“ enabled.&lt;/li>
+&lt;/ul>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_copyURL2.png" alt="Copy Group Enrolment direct link">&lt;/p>
+&lt;p>When the user accesses an enrolment URL, they will find the enrolment page to
+collect additional information for the membership request.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_run.png" alt="Request membership through an enrolment">&lt;/p>
+&lt;p>The information requested will depend on how the enrolment
+&lt;a href="#creation-of-group-enrolments">was created&lt;/a>. The example enrolment above
+requires an “Explanation to join the Data activity” (1) that the user must fill
+in (2). The selection of the group role (3) is always mandatory and, in the
+example, this enrolment only accepts the “Data” role. Some enrolments may give
+users the option to choose one or more roles.&lt;/p>
+&lt;p>Once submitted, the user will get an entry for the pending request under the
+menu option “Groups &amp;gt; View My Enrolment Requests”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_menu.png" alt="View Enrolment Requests">&lt;/p>
+&lt;h3 id="adding-users-by-invitation">Adding users by invitation&lt;/h3>
+&lt;p>Group Admins can send invitations to users to join a group. Once accepted, the
+user will become a member of the group.&lt;/p>
+&lt;p>To send an invitation, access the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>,
+locate the desired group, click on it and access the “Group Members” tab. Click
+on the “Add Member” button.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add0.png" alt="Add Member option">&lt;/p>
+&lt;p>The first step is to select one of the available enrolment configurations.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add.png" alt="Select enrolment configuration">&lt;/p>
+&lt;p>Then, select the role(s) for the user for this invitation and click “&lt;strong>Next&lt;/strong>”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add2.png" alt="Select roles in the enrolment configuration">&lt;/p>
+&lt;p>Input the user email address and click on “&lt;strong>Send invite to this email
+address&lt;/strong>…”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_invite.png" alt="Send invite">&lt;/p>
+&lt;p>Finally, make sure that the “Choose Action” is set to “&lt;strong>Invite Member&lt;/strong>” and
+click “&lt;strong>Confirm&lt;/strong>”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_invite2.png" alt="Invite Member">&lt;/p>
+&lt;h3 id="adding-users-by-direct-registration">Adding users by direct registration&lt;/h3>
+&lt;p>Group Admins can directly add a user in a group without the user interaction.
+For this, two prerequisites are necessary:&lt;/p>
+&lt;ol>
+&lt;li>The user &lt;strong>must be known&lt;/strong>, meaning that he/she must be a member of any of
+the groups of the Group Admin.&lt;/li>
+&lt;li>The group &lt;strong>must not have any AUP&lt;/strong> in place, since the Group Admin cannot
+accept any Acceptable Use Policy in the name of the user.&lt;/li>
+&lt;/ol>
+&lt;p>If these two prerequisites cannot be met, you need
+&lt;a href="#adding-users-by-invitation">to invite&lt;/a> the user instead.&lt;/p>
+&lt;p>If the user is added directly in a group, &lt;strong>the user will be informed&lt;/strong> that
+he/she has been added to the group.&lt;/p>
+&lt;p>To add a user directly, access the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>,
+locate the desired group, click on it and access the “Group Members” tab. Click
+on the “Add Member” button.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add0.png" alt="Add Member option">&lt;/p>
+&lt;p>The first step is to select one of the available enrolment configurations.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add.png" alt="Select enrolment configuration">&lt;/p>
+&lt;p>Then, select the role(s) for the user for this invitation and click “&lt;strong>Next&lt;/strong>”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add2.png" alt="Select roles in the enrolment configuration">&lt;/p>
+&lt;p>Finally, input the name or email address of the user. If the user is not known,
+you cannot add the user directly and you will need to
+&lt;a href="#adding-users-by-invitation">send an invitation&lt;/a>. If the user is known, you
+will be able to click on “&lt;strong>Add Member Directly&lt;/strong>” and then “&lt;strong>Confirm&lt;/strong>”. The
+user will be notified and will be immediately made a member of the group.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_add3.png" alt="Add Member Directly">&lt;/p>
+&lt;p>The user will be notified of this and will become immediately a member of the
+group.&lt;/p>
+&lt;h3 id="approving-group-membership-requests">Approving group membership requests&lt;/h3>
+&lt;p>Once the user has submitted a request to join a group, the Group Admins will get
+a notification by email and the request will be visible as “Pending Approval”
+under the menu option “Group management &amp;gt; Review Enrolment Requests”.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_status.png" alt="Enrolment Request statuses">&lt;/p>
+&lt;p>Following the link from the notification email or clicking on the “Review”
+button of the request, will show the basic information of the request, which is
+necessary to assess whether to approve or reject the request. This information
+includes:&lt;/p>
+&lt;ul>
+&lt;li>Full name&lt;/li>
+&lt;li>Email address&lt;/li>
+&lt;li>Username / identifier&lt;/li>
+&lt;li>Identification of the identity provider that authenticated the user (such as
+the University of Oxford, Google, LinkedIn, etc).&lt;/li>
+&lt;li>The Assurance of the user. This is a compendium of different attributes to
+support the assessment of the request. It includes for example if the user has
+authenticated with a low assurance organisation (such as Google, where
+everyone can create a user account) or a high assurance organisation (e.g.
+when they have some control over the user real identity).&lt;/li>
+&lt;/ul>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_request_approve.png" alt="Revision of enrolment requests">&lt;/p>
+&lt;p>Group Admins should review the request information and Approve or Deny the
+request subsequently.&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+As a Group Admin, it is important
+that you verify all the information provided by Check-in to evaluate if you
+should approve or reject a membership request. Consider that enrolment URLs are
+not secret, and malicious actors may try to gain access to your resources and
+data. ONLY approve requests of users according to the rules that govern your
+community.
+&lt;/div>
+&lt;h2 id="change-a-user-membership">Change a user membership&lt;/h2>
+&lt;p>User membership can be edited to
+&lt;a href="../roles/#assigning-or-removing-group-roles-tofrom-users">change the roles&lt;/a> of
+the user or the membership expiration. To edit the user membership, locate the
+user in the “Group Members” tab of the group and click on the Edit icon on the
+right of the user entry.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_edit.png" alt="Edit user">&lt;/p>
+&lt;p>This will open a dialog where some aspects of the user membership can be
+modified.&lt;/p>
+&lt;h2 id="removing-a-user-from-a-group">Removing a user from a group&lt;/h2>
+&lt;p>The membership of a user can be deactivated from a group in three ways:&lt;/p>
+&lt;ul>
+&lt;li>Automatically, when the group membership of the user
+&lt;a href="#membership-expiration">naturally expires&lt;/a>. The membership in a VO (the root
+group) must normally be renovated every year.&lt;/li>
+&lt;li>When the user is manually suspended by a Group Admin.&lt;/li>
+&lt;li>When the user is manually removed from the group by a Group Admin.&lt;/li>
+&lt;/ul>
+&lt;p>Users that are &lt;strong>removed&lt;/strong> from the group are completely deleted from the group
+and they do not receive any permissions associated with the group from that
+point. If they need to join the group again, they will need to follow a group
+enrolment again. Users that are &lt;strong>suspended&lt;/strong> also do not receive any
+permissions associated with the group, but they stay listed in the group members
+and could recover its membership status.&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+When a user is suspended in a group,
+he/she also becomes suspended of any child group in the group hierarchy.
+&lt;/div>
+&lt;p>To manually suspend a user’s membership, access the “Group Members” tab of the
+group, locate the user that you want to remove and click on the lock button on
+the right of the user entry.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_suspend.png" alt="Suspend user membership">&lt;/p>
+&lt;p>A justification for this suspension can be specified. This justification will be
+sent to the user by email.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_suspend2.png" alt="Justification for suspending user membership">&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+When a user is suspended, the
+administrators of the group and the user will be notified.
+&lt;/div>
+&lt;p>To manually remove a user from a group, access the “Group Members” tab of the
+group, locate the user that you want to remove and click on the cross button on
+the right of the user entry.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_delete.png" alt="Remove user">&lt;/p></description></item><item><title>Users: Managing group administrators</title><link>/users/aai/check-in/vos/keycloak/admins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/admins/</guid><description>
+&lt;p>Access the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>
+and navigate the hierarchy of groups to locate the group where the administrator
+must be added. Click on the group and then on the “Group Admins” tab.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./admin_menu.png" alt="Group Admins">&lt;/p>
+&lt;p>This will list all the administrators of the group, including details about the
+group admin being a direct admin or not. A &lt;strong>direct admin&lt;/strong> has been added for
+this specific group. An &lt;strong>indirect admin&lt;/strong> is an administrator that obtained the
+permissions as part of the group hierarchy: Group Admins become
+&lt;a href="../#structure-of-a-group">indirect administrators of all the subgroups of the group&lt;/a>.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./admin_direct_indirect.png" alt="Direct and indirect group admin">&lt;/p>
+&lt;h2 id="adding-administrators-to-a-group">Adding administrators to a group&lt;/h2>
+&lt;p>Admins can be added in the “Add New Group Admin” section.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./admin_add.png" alt="Add new group admin">&lt;/p>
+&lt;p>To add an administrator, add the name or email of the user to locate him/her and
+click on the button. The user &lt;strong>will become an administrator immediately&lt;/strong>.&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+To add a user directly, the user must
+be part of a group in which you are a Group Admin.
+&lt;/div>
+&lt;p>If the user is not part of any group you manage, then you will not be able to
+locate the user by name, and &lt;strong>an email invitation will have to be sent&lt;/strong> to
+his/her email address. Just specify the email address in the box. A message will
+indicate that the user will be invited through an email.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./admin_add_email1.png" alt="Invite group admin">&lt;/p>
+&lt;p>Once you click on “Invite with email…. “, the icon of the button will change,
+indicating that an invitation will be sent by email. The user will become an
+administrator &lt;strong>just after the invitation is accepted&lt;/strong>.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./admin_add_email2.png" alt="Send email to invite group admin">&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+Being a Group Admin is a status local
+to Check-in, so Check-in does not release any specific entitlement for
+administrators. If an application needs to verify an administrator, this should
+be modelled with a specific “administrator” role or subgroup.
+&lt;/div>
+&lt;h2 id="removing-administrators-from-a-group">Removing administrators from a group&lt;/h2>
+&lt;p>Administrators can be removed by using the cross icon in the “Group Admins” tab.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./admin_delete.png" alt="Remove group admin">&lt;/p></description></item><item><title>Users: Managing roles</title><link>/users/aai/check-in/vos/keycloak/roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/roles/</guid><description>
+&lt;p>Roles are created and are valid within a specific group. Access the group
+through the
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>.
+The roles defined for a group are listed in the “Group Details” tab, under the
+“Group Roles” section.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./roles_section.png" alt="Section listing the group roles">&lt;/p>
+&lt;h2 id="creating-group-roles">Creating group roles&lt;/h2>
+&lt;p>To create a role, add a role name in the field and click on the “+” button.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./role_create.png" alt="Create role">&lt;/p>
+&lt;p>You will get a dialog to confirm the creation of the role.&lt;/p>
+&lt;h2 id="deleting-group-roles">Deleting group roles&lt;/h2>
+&lt;p>To delete a role, click on the “-“ button on the right of a role entry.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./role_delete.png" alt="Delete role">&lt;/p>
+&lt;div class="alert alert-infobox" role="alert">
+&lt;h4 class="alert-heading">NOTE&lt;/h4>
+A role cannot be deleted from a group
+if it is assigned to any member.
+&lt;/div>
+&lt;h2 id="assigning-or-removing-group-roles-tofrom-users">Assigning or removing group roles to/from users&lt;/h2>
+&lt;p>Users can get a role assigned in two ways:&lt;/p>
+&lt;ul>
+&lt;li>When the user joins a group, either from the configuration of the enrolment
+they follow to join &lt;a href="../groups/#group-information">a group&lt;/a>, an
+&lt;a href="../members/#adding-users-to-a-group-by-invitation">invitation link&lt;/a> or when
+an administrator
+&lt;a href="../members/#adding-users-to-a-group-manually">adds a user manually&lt;/a> in a
+group.&lt;/li>
+&lt;li>By manually assigning the user’s roles when the user already belongs to a
+group.&lt;/li>
+&lt;/ul>
+&lt;p>To assign or remove a role to/from a user manually, visit the “Group Members”
+tab of the group. The Edit icon on the right of the user can be used to modify
+the user’s roles.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./member_edit.png" alt="Edit user">&lt;/p>
+&lt;p>In this example, the user only has the “Data” role assigned to him.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./roles_list_before.png" alt="Example of user with one role">&lt;/p>
+&lt;p>Click on the Edit icon button on the right of the user and edit the roles in the
+“Group Roles” section.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./roles_member_edit.png" alt="Edit user">&lt;/p>
+&lt;p>This will open a form with the user information. Scroll to the “Group Roles”
+section and check or uncheck roles as desired. Remember that the user must have
+at least one role assigned in the group.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./roles_edit.png" alt="Edit user to add a new role">&lt;/p>
+&lt;p>Save changes and the user will now show the new role configuration. In this
+case, the “Computing” role has been added. The same procedure can be followed to
+remove roles from the user.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./roles_list_after.png" alt="Example of user with two roles">&lt;/p></description></item></channel></rss>
