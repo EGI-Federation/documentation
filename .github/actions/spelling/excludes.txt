@@ -1,5 +1,5 @@
 # See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-excludes
-# Ignore some docsy-realted folders
+# Ignore some docsy-related folders
 ^archetypes/
 ^assets/
 ^themes/
@@ -7,7 +7,7 @@
 ^public/
 ^static/
 ^resources/
-^\.github/
+^\.github/workflows
 ^\.gitmodules
 CODEOWNERS
 AUTHORS

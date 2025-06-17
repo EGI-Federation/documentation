@@ -1,0 +1,11 @@
+---
+language: "en-gb"
+dictionaries:
+  - custom-words
+ignorePaths:
+  - ".github/actions/**"
+  - ".cspell.json"
+dictionaryDefinitions:
+  - name: custom-words
+    path: ./.github/actions/spelling/expect.txt
+    addWords: true
