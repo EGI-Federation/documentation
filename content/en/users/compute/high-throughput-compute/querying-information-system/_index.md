@@ -113,8 +113,6 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2MappingPolicyShareForeignKey
 ```
 
-It's also possible to look into [GLUE 1.3](#using-glue-13).
-
 ### Querying for ARC-CE compute resources
 
 Most, if not all the ARC-CE should be discoverable via GLUE 2.0.
@@ -175,33 +173,6 @@ It's also possible to look into [GLUE 1.3](#using-glue-13).
 ### Using GLUE 1.3
 
 > **GLUE 1.3** is legacy.
-
-Querying for information about HTCondor CE using GLUE 1.3.
-
-```shell
-# Querying for all HTCondorCE compute resources, using GLUE 1.3
-$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
-    -b "Mds-Vo-Name=local,o=grid" \
-    '(&(objectClass=GlueCE)(GlueCEInfoJobManager=HTCondorCE))' \
-    GlueCEImplementationVersion GlueCEImplementationName \
-    GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
-
-# Querying information about the HTCondor CE via GLUE 1.3
-$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
-    -b "Mds-Vo-Name=local,o=grid" \
-    '(&(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))'
-
-# Limiting output for the Condor CE via GLUE 1.3
-$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
-    -b "Mds-Vo-Name=local,o=grid" \
-    '(&(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))' \
-    GlueCEInfoHostName GlueCEUniqueID \
-    GlueCEInfoJobManager GlueCEImplementationName GlueCEImplementationVersion \
-    GlueCEInfoLRMSType GlueCEInfoLRMSVersion \
-    GlueCEAccessControlBaseRule \
-    GlueCEInfoTotalCPUs \
-    GlueCEStateStatus
-```
 
 Querying for information about ARC-CE using GLUE 1.3.
 
