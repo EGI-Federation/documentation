@@ -654,7 +654,7 @@ allows management of site configurations&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack">&lt;strong>OpenStack&lt;/strong>&lt;/a>
 can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> deployed to sites&lt;/li>
 &lt;li>&lt;strong>EC3&lt;/strong> allows deploying
-&lt;a href="../../compute/orchestration/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
+&lt;a href="../../compute/orchestration/im/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager

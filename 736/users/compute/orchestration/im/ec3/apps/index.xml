@@ -208,8 +208,6 @@ management page.&lt;/p>
 &lt;p>&lt;img src="ecas-manage.png" alt="Destroy cluster">&lt;/p>
 &lt;h2 id="references">References&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://ecaslab.cmcc.it/web/home.html">ECASLab CMCC&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ecaslab.dkrz.de/home.html">ECASLab DKRZ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ophidia.cmcc.it/">Ophidia&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/ECAS-Lab">GitHub: ECAS-Lab&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster">GitHub: Ansible role Ophidia cluster&lt;/a>&lt;/li>
@@ -219,7 +217,7 @@ management page.&lt;/p>
 &lt;h2 id="templates">Templates&lt;/h2>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.
 Create a directory to store EC3 configuration and init it with the
-&lt;a href="../../../../../getting-started/cli">FedCloud client&lt;/a>:&lt;/p>
+&lt;a href="../../../../../../getting-started/cli">FedCloud client&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir -p torque
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> torque
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;

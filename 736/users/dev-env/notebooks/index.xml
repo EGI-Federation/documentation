@@ -183,9 +183,9 @@ platform for the long-tail of science.&lt;/p>
 &lt;p>Here is how you can get them synchronised. First, make sure
 &lt;a href="https://b2drop.eudat.eu/">you have access to B2DROP&lt;/a>. Then, configure
 &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> on B2DROP&amp;rsquo;s
-&lt;a href="https://b2drop.eudat.eu/settings/user/security">security settings&lt;/a>. Now, back
-to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down menu when you start
-your session:&lt;/p>
+&lt;a href="https://eudat.eu/services/userdoc/b2drop#UserDocumentation-B2DROPUsage-WebDavclient">security settings&lt;/a>.
+Now, back to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down
+menu when you start your session:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-1.png" alt="EGI Notebook Session">&lt;/p>
 &lt;p>Enter the &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> created previously, with the option
 to save them for future logins:&lt;/p>
