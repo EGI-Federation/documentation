@@ -6,7 +6,7 @@ name: URL Link Health Checks
 on:
   schedule:
     # run every day
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 permissions: read-all
 jobs:
@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         # This matrix is built from the directories in content/en/users
-        url: 
+        url:
           - "aai"
           - "compute"
           - "data"
@@ -38,7 +38,7 @@ jobs:
           curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
           go install github.com/hakluke/hakrawler@latest
       - name: Extract links and check them.
-        # This passes a given endpoint to hakrawler, which gets all of the links 
+        # This passes a given endpoint to hakrawler, which gets all of the links
         # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
         # and returning only unique (-u) urls.
         # The urls are then parsed via jq to get only hrefs, no scripts
@@ -52,13 +52,13 @@ jobs:
             lychee -
   lychee-providerdocs: # cspell:disable-line
     env:
-      BASE_URL: https://docs.egi.eu/providers/
+      BASE_URL: https://docs.egi.eu/providers
     name: Check links at base of provider documentation trees
     runs-on: ubuntu-latest
     strategy:
       matrix:
         # This matrix is built from the directories in content/en/users
-        url: 
+        url:
           - "check-in"
           - "cloud-compute"
           - "datahub" # cspell:disable-line
@@ -71,7 +71,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-          
+
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
         # Then use lychee to check whether the urls in that page are ok.
@@ -79,7 +79,7 @@ jobs:
           curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
           go install github.com/hakluke/hakrawler@latest
       - name: Extract links and check them.
-        # This passes a given endpoint to hakrawler, which gets all of the links 
+        # This passes a given endpoint to hakrawler, which gets all of the links
         # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
         # and returning only unique (-u) urls.
         # The urls are then parsed via jq to get only hrefs, no scripts
@@ -99,7 +99,7 @@ jobs:
     strategy:
       matrix:
         # This matrix is built from the directories in content/en/users
-        url: 
+        url:
           - "accounting"
           - "collaboration-tools"
           - "configuration-database"
@@ -113,7 +113,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-          
+
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
         # Then use lychee to check whether the urls in that page are ok.
@@ -121,7 +121,7 @@ jobs:
           curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
           go install github.com/hakluke/hakrawler@latest
       - name: Extract links and check them.
-        # This passes a given endpoint to hakrawler, which gets all of the links 
+        # This passes a given endpoint to hakrawler, which gets all of the links
         # in it up to a depth of 10 (-d) and without crawling back up the tree (-i)
         # and returning only unique (-u) urls.
         # The urls are then parsed via jq to get only hrefs, no scripts
@@ -140,14 +140,14 @@ jobs:
     strategy:
       matrix:
         url:
-          - ''
+          - ""
           - about
           - support
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-          
+
       - name: Get tools
         # On the "other" page, we do not want to crawl down, so we only use
         # lyuchee to check the page itself.
