@@ -23,6 +23,8 @@ glast
 hmac
 hyperk
 iframe
+indico
+Indico
 Initialising
 jscpd
 jwt
