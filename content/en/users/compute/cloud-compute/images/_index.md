@@ -37,9 +37,9 @@ guides for the catalogue:
   [VO-wide image list management](https://wiki.appdb.egi.eu/main:guides:manage_vo-wide_image_lists).
 
 Check the full list of
-[Cloud marketplace guides](https://wiki.appdb.egi.eu/main:guides#cloud_marketplace)
+[Cloud marketplace guides](https://wiki.appdb.egi.eu/docs/guides/cloud/)
 and
-[Cloud marketplace FAQ](https://wiki.appdb.egi.eu/main:faq#cloud_marketplace)
+[Cloud marketplace FAQ](https://wiki.appdb.egi.eu/docs/faq/cloud/)
 for more information about the AppDB features.
 
 ## Custom images

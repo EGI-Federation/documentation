@@ -34,8 +34,8 @@ These are the available kernels:
   [RStudio Server](https://posit.co/products/open-source/rstudio-server/) offers
   a RStudio IDE from the Notebooks interface.
 
-- Octave: The [Octave](https://www.gnu.org/software/octave/) programming
-  language installed on its own conda environment (named `octave`).
+- Octave: The [Octave](https://www.octave.org/) programming language installed
+  on its own conda environment (named `octave`).
 
 If you want to add a new kernel, just let us know, and we will discuss the best
 way to support your request.

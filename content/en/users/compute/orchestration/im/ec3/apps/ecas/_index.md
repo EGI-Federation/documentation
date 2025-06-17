@@ -268,8 +268,6 @@ management page.
 
 ## References
 
-- [ECASLab CMCC](https://ecaslab.cmcc.it/web/home.html)
-- [ECASLab DKRZ](https://ecaslab.dkrz.de/home.html)
 - [Ophidia](https://ophidia.cmcc.it/)
 - [GitHub: ECAS-Lab](https://github.com/ECAS-Lab)
 - [GitHub: Ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster)

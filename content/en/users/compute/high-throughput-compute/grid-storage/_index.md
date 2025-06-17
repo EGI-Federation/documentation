@@ -155,17 +155,13 @@ gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file      DELETED
 
 ## Access via EGI Data Transfer
 
-<!-- markdown-link-check-disable -->
-
 The [EGI Data Transfer](../../../data/management/data-transfer) service provides
 mechanisms to optimize the transfer of files between EGI Online Storage
-endpoints. Both a
-[graphical user interface](../../../data/management/data-transfer/webfts) (GUI)
-and [command-line interfaces](../../../data/management/data-transfer/clients)
+endpoints. Both a graphical user interface (GUI) and
+[command-line interfaces](../../../data/management/data-transfer/clients)
 (CLI) are available to perform bulk movement of data. Please check out the
 related documentation for more information.
 
-<!-- markdown-link-check-enable -->
 
 ## Integration with Data Management frameworks
 
