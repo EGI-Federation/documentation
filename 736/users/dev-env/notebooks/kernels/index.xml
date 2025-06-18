@@ -160,8 +160,8 @@ Additionally, Simulink is not supported on the EGI at this time.&lt;/p>
 &lt;h2 id="restarting-stopping-or-signing-out-of-the-matlab-session">Restarting, stopping or signing out of the MATLAB session&lt;/h2>
 &lt;p>At any time, clicking on this symbol will bring up a dialog to stop, restart or
 sign out of the current MATLAB session.&lt;/p>
-&lt;p>&lt;img src="matlab-session.png" alt="matlab-session">&lt;/p>
-&lt;p>&lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
+&lt;p>&lt;img src="matlab-session.png" alt="matlab-session">
+&lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
 &lt;h2 id="open-science-using-matlab-on-egi-notebooks">Open Science using MATLAB on EGI Notebooks&lt;/h2>
 &lt;p>You can access publicly available datasets via the EGI DataHub and analyze them
 in-the-cloud directly using MATLAB, without the need for time consuming
@@ -221,8 +221,7 @@ Toolbox&lt;/p>
 &lt;p>Ask the system administrator of the site about MATLAB as part of EGI&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Contact &lt;a href="mailto:%20shuboc@mathworks.com">Shubo Chakrabarti&lt;/a> at MathWorks or
-&lt;a href="mailto:enol.fernandez@egi.eu">Enol Fernandez&lt;/a> at EGI for setting up access to
+&lt;p>Get in touch via &lt;a href="https://helpdesk.ggus.eu">GGUS&lt;/a> for setting up access to
 MATLAB at the site.&lt;/p>
 &lt;/li>
 &lt;/ul></description></item></channel></rss>
