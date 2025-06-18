@@ -28,6 +28,7 @@ arcstat
 arcsub
 arctest
 ardm
+Argo
 asgc
 aslo
 aso
@@ -709,6 +710,7 @@ vmops
 vms
 VMUUID
 vobox
+VOMS
 voname
 voperson
 vos

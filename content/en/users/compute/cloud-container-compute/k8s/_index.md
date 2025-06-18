@@ -41,7 +41,7 @@ You will also need a base image template for the deployment. Please refer to the
 [EC3 tutorial](../../../compute/orchestration/im/ec3) to create such file. Below you can see
 an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
-<!-- markdownlint-disable line-length -->
+<!-- cSpell: disable -->
 
 ```plaintext
 description ubuntu-ifca (
@@ -76,6 +76,8 @@ system wn (
     disk.0.os.credentials.username = 'cloudadm'
 )
 ```
+
+<!-- cSpell: enable -->
 
 <!-- markdownlint-enable line-length -->
 
@@ -436,7 +438,7 @@ test-pvc   Bound    pvc-39f970de-eaad-44d7-b49f-90dc9de54a14   3Gi        RWO   
 
 ## Destroying the cluster
 
-Once you don't need the cluster anymore, you can undeploy with the `destroy`
+Once you don't need the cluster any longer, you can undeploy with the `destroy`
 command of EC3:
 
 ```shell

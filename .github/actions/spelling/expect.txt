@@ -11,6 +11,7 @@ DataHub
 dearmor
 delims
 dependant
+dialog
 diracsgm
 docsy
 findstr

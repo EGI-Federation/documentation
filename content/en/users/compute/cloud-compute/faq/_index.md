@@ -65,6 +65,8 @@ The list of certified providers is available in [GOCDB](https://goc.egi.eu). The
 following command with the [fedcloud](https://fedcloudclient.fedcloud.eu/)
 client can help you to get that list:
 
+<!-- cSpell: disable -->
+
 ```shell
 $ fedcloud site list
 100IT
@@ -91,6 +93,8 @@ UA-BITP
 UNIV-LILLE
 fedcloud.srce.hr
 ```
+
+<!-- cSpell: enable -->
 
 The providers also generate dynamic information about their characteristics via
 the Argo Messaging System which is easily browsable from AppDB.

@@ -93,7 +93,7 @@ $ oneclient /tmp/space
 
 and then all usual file and folder operations (POSIX) will be available:
 
-[//]: # (cSpell: disable)
+<!-- cSpell: disable -->
 
 ```shell
 $ root@222d3ceb86df:/tmp/space# ls -l
@@ -102,7 +102,7 @@ total 0
 drwxrwxr-x 1 root    root    0 Jan 28 16:56  PLAYGROUND
 ```
 
-[//]: # (cSpell: enable)
+<!-- cSpell: enable -->
 
 Creating a file into the folder will push it to the Oneprovider and
 it will be accessible in the web interface and from other providers

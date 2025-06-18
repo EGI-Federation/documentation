@@ -9,6 +9,8 @@ description: >
   How to run scientific applications and tools with EC3
 ---
 
+<!-- cSpell:words Radiomics -->
+
 This section documents how to run some applications and use the existing tools
 with EC3.
 

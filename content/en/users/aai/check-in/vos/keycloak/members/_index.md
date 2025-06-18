@@ -208,7 +208,7 @@ The necessary information for the enrolment creation is the following:
 2. The number of days that the membership will last for the user, once he/she
     joins the group.
 
-![Membership lenght](./enrolment_membership.png)
+![Membership length](./enrolment_membership.png)
 {.img-screenshot}
 
 The VO (or root group) must have an expiration date of 365 days or less, but
@@ -218,13 +218,13 @@ that this expiration will be also
 group hierarchy. When a VO expiration is longer than 365 days, an error message
 will be shown.
 
-![Membership lenght error message for values exceeding 365 days](./enrolment_membership_365warning.png)
+![Membership length error message for values exceeding 365 days](./enrolment_membership_365warning.png)
 {.img-screenshot}
 
 Enrolments with no expiration dates get a warning, just to make sure that this
 was your intention.
 
-![Membership lenght warning message for indefinite lenght](./enrolment_membership_indefinite.png)
+![Membership length warning message for indefinite length](./enrolment_membership_indefinite.png)
 {.img-screenshot}
 
 3. A future date when the membership should start. This option is useful to
