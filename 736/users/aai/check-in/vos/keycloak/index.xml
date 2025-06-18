@@ -213,17 +213,17 @@ on the “+” button.&lt;/p>
 &lt;li>The number of days that the membership will last for the user, once he/she
 joins the group.&lt;/li>
 &lt;/ol>
-&lt;p class="img-screenshot">&lt;img src="./enrolment_membership.png" alt="Membership lenght">&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership.png" alt="Membership length">&lt;/p>
 &lt;p>The VO (or root group) must have an expiration date of 365 days or less, but
 other subgroups can have any length, including no expiration. However, consider
 that this expiration will be also
 &lt;a href="#membership-expiration">affected by the expiration of any parent group&lt;/a> in the
 group hierarchy. When a VO expiration is longer than 365 days, an error message
 will be shown.&lt;/p>
-&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_365warning.png" alt="Membership lenght error message for values exceeding 365 days">&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_365warning.png" alt="Membership length error message for values exceeding 365 days">&lt;/p>
 &lt;p>Enrolments with no expiration dates get a warning, just to make sure that this
 was your intention.&lt;/p>
-&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_indefinite.png" alt="Membership lenght warning message for indefinite lenght">&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_indefinite.png" alt="Membership length warning message for indefinite length">&lt;/p>
 &lt;ol start="3">
 &lt;li>A future date when the membership should start. This option is useful to
 control when the access to the group will be granted for a user. A user

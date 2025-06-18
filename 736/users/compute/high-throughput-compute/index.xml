@@ -15,7 +15,7 @@ you share, and with whom you share the data.&lt;/p>
 &lt;a href="https://en.wikipedia.org/wiki/GridFTP">gridFTP&lt;/a> and
 &lt;a href="https://en.wikipedia.org/wiki/WebDAV">WebDav/HTTP&lt;/a> protocols, together with
 &lt;a href="https://xrootd.slac.stanford.edu/">XRootD&lt;/a> and legacy
-&lt;a href="https://www.gridpp.ac.uk/wiki/SRM">SRM&lt;/a> (under deprecation at some of the
+&lt;a href="https://sdm.lbl.gov/srm-wg/">SRM&lt;/a> (under deprecation at some of the
 endpoints).&lt;/p>
 &lt;p>Several grid storage implementations are available in the EGI Infrastructure,
 the most common being:&lt;/p>
@@ -36,13 +36,15 @@ existing grid storages, using the following syntax:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-infosites --vo voname -&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>v&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> -f &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>site name&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>option&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#000;font-weight:bold">|&lt;/span> --help&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--is BDII&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, to list the Storage Elements (SEs) available to the &lt;code>biomed&lt;/code> VO, we
 could issue the following command:&lt;/p>
+&lt;!-- cSpell: disable -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-infosites --vo biomed se
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Avail Space&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>kB&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Used Space&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>kB&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Type SE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>------------------------------------------
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">280375465082&lt;/span> n.a SRM ccsrm.ihep.ac.cn
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">10995116266&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">11&lt;/span> SRM cirigridse01.univ-bpclermont.fr
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- cSpell: enable -->
+&lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
 &lt;p>Access to grid storage via a command-line interface (CLI) requires users to
 obtain a valid X.509 user VOMS proxy. Please refer to the
 &lt;a href="../../../aai/check-in/vos/voms">Check-in&lt;/a> documentation for more information.&lt;/p>
