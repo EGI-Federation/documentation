@@ -20,7 +20,7 @@ Information in the Top BDII is provided for two GLUE schema versions:
 > Some resources may not yet be exposed via GLUE 2.0, and it may be required to
 > use GLUE 1.3 for those ones.
 
-{{% alert title="Tip" color="info" %}} You can use `-o ldif-wrap=no` to disable
+<!--- cspell:disable-line -->{{% alert title="Tip" color="info" %}} You can use `-o ldif-wrap=no` to disable
 wrapping the results. {{% /alert %}}
 
 > Those examples are relying on the Top BDII service maintained by EGI
