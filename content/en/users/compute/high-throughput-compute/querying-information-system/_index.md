@@ -172,7 +172,9 @@ It's also possible to look into [GLUE 1.3](#using-glue-13).
 
 ### Using GLUE 1.3
 
-> **GLUE 1.3** is legacy.
+{{% alert color=warning title="Deprecated" %}}
+GLUE 1.3 is legacy
+{{% /alert %}}
 
 Querying for information about ARC-CE using GLUE 1.3.
 
