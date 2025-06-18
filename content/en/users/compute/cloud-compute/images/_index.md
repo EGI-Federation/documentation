@@ -99,8 +99,9 @@ general rule, always try to make images as smaller as possible following these
 guidelines:
 
 - **DO NOT** include (big) data in your image. There are other mechanisms for
-  accessing data from your VM (block/object storage,
-  [CVMFS](https://www.gridpp.ac.uk/wiki/RALnonLHCCVMFS))
+  accessing data from your VM ([block](../block-storage/)/
+  [object](../../../data/storage/object-storage/) storage,
+  [CVMFS](../../software-distribution))
 
 - **DO NOT** include (big) empty space or swap in your image. Extra space for
   your computation or swap can be added with block storage once the VM is booted
