@@ -1,16 +1,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – EGI Check-in</title><link>/users/aai/check-in/</link><description>Recent content in EGI Check-in on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Sign up for an EGI Account</title><link>/users/aai/check-in/signup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/signup/</guid><description>
-&lt;h2 id="sign-up">Sign up&lt;/h2>
-&lt;p>You need to sign up for an account for accessing the EGI services. As part of
-this process you will be assigned a personal unique &lt;strong>EGI ID&lt;/strong> which will be
-then used across all EGI tools and services. Follow the instructions below to
-get started:&lt;/p>
+&lt;h2 id="why-do-i-have-to-sign-up">Why do I have to sign up?&lt;/h2>
+&lt;p>Before accessing EGI services, you’ll first need an account through EGI Check-in, which is the Identity and Access Management (IAM) system used by EGI. An Identity Manager (or IAM system) is a secure layer that handles who you are, how you log in, and what you’re allowed to access across all participating platforms and services.&lt;/p>
+&lt;p>&lt;img src="./check-in-graph.png" alt="Check-in Graph">&lt;/p>
+&lt;p>Instead of creating a new username and password for every service, EGI Check-in allows you to log in using an existing identity you already trust — like your institutional account, ORCID, Google, or even an X.509 certificate. It does this by acting as a central gateway that connects your trusted login with the services and resources you need across the European research ecosystem.&lt;/p>
+&lt;p>This approach offers major benefits:&lt;/p>
+&lt;ul>
+&lt;li>You don’t need to remember another password.&lt;/li>
+&lt;li>You can access multiple services with a single, consistent profile.&lt;/li>
+&lt;li>Your permissions and roles are automatically applied based on your identity.&lt;/li>
+&lt;li>If you later switch institutions or accounts, you can still retain your access (especially if you link identities, which will be discussed later on).&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-do-i-sign-up">How do I sign up?&lt;/h2>
+&lt;p>Signing up is simple. You don’t create a new account from scratch — instead, you sign in once using an identity provider (IdP) you already have, and EGI Check-in creates a secure profile for you.&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Go to &lt;a href="https://aai.egi.eu/signup">https://aai.egi.eu/signup&lt;/a>. This will show you the identity provider
-discovery page: browse through the list of Identity Providers to find your
-Home Organisation, &lt;em>or, alternatively,&lt;/em> type the name of your Home
-Organisation in the search box. Note that the names are localised based on
-the selected language.&lt;/p>
+&lt;p>Go to &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">https://aai.egi.eu/auth/realms/id/account/#/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose your identity provider: You’ll see a list of login options — such as “University of X,” “ORCID,” “Google,” and many others. You can use the search bar to find your institution or provider.&lt;/p>
 &lt;p>&lt;img src="./check-in-idp-discovery.png" alt="Check-in IdP discovery">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -24,57 +31,45 @@ AAI Service Provider Proxy&lt;/strong>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>After successful authentication, you will be redirected to the EGI account
-registration form. On the introductory page, click &lt;strong>Begin&lt;/strong> to start the
+registration form. On the introductory page, click &lt;strong>Sign up&lt;/strong> to start the
 registration process.&lt;/p>
-&lt;p>&lt;img src="./check-in-sign-up-intro.png" alt="Check-in sign up intro">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>EGI requires some basic information from you, depending on the attributes
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+EGI requires some basic information from you, depending on the attributes
 released by your Identity Provider, you may need to provide the values of the
-missing attributes.&lt;/p>
-&lt;p>&lt;img src="./check-in-sign-up-attributes.png" alt="Check-in sign up attributes">&lt;/p>
+missing attributes.
+&lt;/div>
 &lt;/li>
 &lt;li>
 &lt;p>On the registration form, click &lt;strong>Review Terms and Conditions&lt;/strong>
-(&lt;a href="https://documents.egi.eu/document/2623">Acceptable Use Policy and Conditions of Use - EGI AUP&lt;/a>)&lt;/p>
+(&lt;a href="https://aai.egi.eu/auth/realms/id/theme-info/terms-of-use">Acceptable Use Policy and Conditions of Use - EGI AUP&lt;/a>)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>If you agree to the Terms of Use, select the &lt;strong>I Agree&lt;/strong> option.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Important&lt;/h4>
-You will not be able to agree
-to the terms until you review them.
-&lt;/div>
-&lt;p>&lt;img src="./check-in-tou-agreement.png" alt="Check-in ToU agreement">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Finally, click &lt;strong>Submit&lt;/strong> to submit your request.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Important&lt;/h4>
-You will not be able to
+&lt;h4 class="alert-heading">Very Important&lt;/h4>
+You wont be able to
 submit your request until you agree to the terms.
 &lt;/div>
 &lt;/li>
 &lt;li>
-&lt;p>After submitting your request, Check-in will send you an email with a
-verification link. After you click that link, you&amp;rsquo;ll be taken to the request
-confirmation page.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Important&lt;/h4>
-If you do not find the email
-in your Inbox, please check your Spam or Junk folder for an email from &amp;ldquo;EGI
-AAI Notifications&amp;rdquo;. If you do find the email in these folders, mark the email
-as &amp;ldquo;safe&amp;rdquo; or &amp;ldquo;not spam&amp;rdquo; to ensure that you receive any future notifications
-about your EGI ID.
-&lt;/div>
-&lt;/li>
-&lt;li>
-&lt;p>After reviewing your request, click &lt;strong>Confirm&lt;/strong> and re-authenticate yourself
-using the Identity Provider you selected before.&lt;/p>
+&lt;p>You will receive an email to confirm your new identity linked to EGI Check-in. Confirm your identity to continue:&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>Note: After your registration has been completed, you can manage your profile
-through the &lt;a href="https://aai.egi.eu/registry">EGI Account Registry portal&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="./check-in-email-verification.png" alt="Check-in Email verification">&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+&lt;ul>
+&lt;li>You do not need a new password for EGI Check-in — it always uses your existing account&amp;rsquo;s login system.&lt;/li>
+&lt;li>If you don’t see your institution in the list, check whether they are part of the eduGAIN federation, or consider using ORCID or another supported identity.&lt;/li>
+&lt;li>If you plan to use certificates, make sure they are installed in your browser before logging in.&lt;/li>
+&lt;/ul>
+&lt;/div>
 &lt;h2 id="viewing-user-profile-information">Viewing user profile information&lt;/h2>
 &lt;p>The profile includes all the information related to the user. This information
 can be categorised as follows:&lt;/p>
@@ -102,55 +97,88 @@ Check the &lt;a href="../joining-virtual-organisation">guide about VOs&lt;/a> fo
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;h2 id="linking-new-identities-to-your-egi-account">Linking new identities to your EGI Account&lt;/h2>
-&lt;p>Identity linking allows you to access EGI resources with your existing personal
-EGI ID, using any of the login credentials you have linked to your account. You
-can use any of your organisational or social login credentials for this purpose.
-To link a new organisational or social identity to your EGI account:&lt;/p>
+&lt;h2 id="what-does-identity-linking-mean">What does identity linking mean?&lt;/h2>
+&lt;p>Linking identities allows you to associate multiple login methods — such as your university account, ORCID, a Google account, or a certificate — with a single EGI Check-in account.
+This means that no matter which identity you use to log in, you will access the same EGI profile, with the same permissions, group memberships, and project access.&lt;/p>
+&lt;h2 id="what-happens-when-your-identities-are-linked">What Happens When Your Identities Are Linked?&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>You can log in with any linked identity and always reach the same services and projects.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You only need to manage one identity no matter how many login options you have.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If one identity becomes unavailable (e.g., your university account expires), you can still access your work using another linked identity.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You have a more consistent and secure experience across platforms.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Important: While your EGI profile remains the same, access to specific services may depend on the identity assurance level of the login option used. Some services require identities with higher levels of assurance (e.g., issued by academic institutions). If you log in with an identity that does not meet these requirements, access to those services may be restricted.
+&lt;/div>
+&lt;h2 id="what-happens-if-you-dont-link-them">What Happens If You Don’t Link Them?&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Each login creates a separate EGI account, treated as a different person.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You may not have access to the projects, roles, or services you used under your other login.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Services and collaborators won’t recognize you if you log in a different way.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If one identity is lost, you might lose access completely or need support to recover it.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-by-step-guide">Step by step guide&lt;/h2>
 &lt;ol>
 &lt;li>
-&lt;p>Enter the following URL in a browser: &lt;a href="https://aai.egi.eu/registry">https://aai.egi.eu/registry&lt;/a>&lt;/p>
+&lt;p>Enter the following URL in a browser: &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/security/linked-accounts">https://aai.egi.eu/auth/realms/id/account/#/security/linked-accounts&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Click &lt;strong>Login&lt;/strong> and authenticate using any of the login credentials &lt;em>already&lt;/em>
 linked to your EGI account&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Navigate to &lt;strong>My EGI User Community Identity&lt;/strong> page in one of the following
-ways:&lt;/p>
-&lt;ul>
-&lt;li>hover over your display name next to the gear icon on the top right corner
-of the page; &lt;em>or, alternatively,&lt;/em>&lt;/li>
-&lt;li>select &lt;strong>EGI User Community&lt;/strong> from the list of available Collaborations and
-then click &lt;strong>My EGI User Community Identity&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
-&lt;/ul>
+&lt;p>You will see the EGI Check-in profile management. Select “Linked Identities” under the Account security section.&lt;/p>
 &lt;p>&lt;img src="./check-in-my-identity.png" alt="Check-in my identity">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Under the &lt;strong>Organisational Identities&lt;/strong> section of your profile page, expand
-&lt;strong>Actions&lt;/strong> menu and click &lt;strong>Link New Identity&lt;/strong>.&lt;/p>
+&lt;p>Under the &lt;strong>&amp;ldquo;Account security&amp;rdquo;&lt;/strong> section of your profile page, expand
+&lt;strong>Linked identities&lt;/strong> menu.&lt;/p>
 &lt;p>&lt;img src="./check-in-link-new.png" alt="Link new identity">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>On the introductory page for Identity Linking, click &lt;strong>Begin&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="./check-in-link-intro.png" alt="Link new identity intro">&lt;/p>
+&lt;p>Search for your desired identity. In case you cannot see it at first glance, you can use the search box.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="./search_identity.png" alt="Search my identity">&lt;/p>
+&lt;ol start="6">
+&lt;li>
+&lt;p>Click on the “Link account” blue link on the right side of the identity to link it.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>You will need to sign in using the login credentials from the
-institutional/social identity provider you want to link to your account.&lt;/p>
+&lt;p>You will be taken into the identity login page. Proceed with the login, it will take you back directly to the EGI Check-in site once done.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Once done, your new login will be listed under “Linked accounts”.&lt;/p>
+&lt;p>&lt;img src="./check-in-link-intro.png" alt="Link new identity intro">
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-It is very important to escape
-the identity provider selection, cached in the discovery page, before picking
-the new one.
+You will need to sign in using the login credentials from the
+institutional/social identity provider you want to link to your account.
 &lt;/div>
+&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>After successful authentication, the new Identity Provider will be available
 under the Organizational Identities tab and you&amp;rsquo;ll be able to access EGI
 resources with your existing personal EGI ID using the login credentials of
-the identity provider you selected in &lt;strong>Step 6&lt;/strong>.&lt;/p>
-&lt;p>&lt;img src="./check-in-link-end.png" alt="Link new identity end">&lt;/p>
+the identity provider you selected.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="linking-your-certificate-to-your-egi-account">Linking your certificate to your EGI Account&lt;/h2>
@@ -160,41 +188,19 @@ browser.&lt;/p>
 &lt;p>To link a subject DN to your EGI account:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Enter the following URL in a browser: &lt;a href="https://aai.egi.eu/registry">https://aai.egi.eu/registry&lt;/a>&lt;/p>
+&lt;p>Make sure your certificate is already imported in your browser.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Click &lt;strong>Login&lt;/strong> and authenticate using any of the login credentials &lt;em>already&lt;/em>
-linked to your EGI account&lt;/p>
+&lt;p>Follow the same steps as above: go to &amp;ldquo;Account Security&amp;rdquo; and click on &amp;ldquo;Linked identities&amp;rdquo;.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Navigate to &lt;strong>My EGI User Community Identity&lt;/strong> page in one of the following
-ways:&lt;/p>
-&lt;ul>
-&lt;li>hover over your display name next to the gear icon on the top right corner
-of the page; &lt;em>or, alternatively,&lt;/em>&lt;/li>
-&lt;li>select &lt;strong>EGI User Community&lt;/strong> from the list of available Collaborations and
-then click &lt;strong>My EGI User Community Identity&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="./check-in-my-identity.png" alt="Check-in my identity">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Under the &lt;strong>Organisational Identities&lt;/strong> section of your profile page, expand
-&lt;strong>Actions&lt;/strong> menu and click &lt;strong>Link New Identity&lt;/strong>.&lt;/p>
-&lt;p>&lt;img src="./check-in-link-new.png" alt="Link new identity">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>On the introductory page for Identity Linking, click &lt;strong>Begin&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="./check-in-link-intro.png" alt="Link new identity intro">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Continuously, you will need to sign in using the IGTF Certificate Proxy.&lt;/p>
+&lt;p>You will need to link the &lt;strong>IGTF Certificate Proxy&lt;/strong> service. Find it and click &amp;ldquo;Link Account&amp;rdquo;.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 It is very important to escape
 the identity provider selection, cached in the discovery page, before picking
 the new one.
 &lt;/div>
-&lt;p>&lt;img src="./check-in-discovery-igft.png" alt="Check-in IdP discovery IGTF">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Then select the certificate you want to link to your account from the popup
@@ -205,18 +211,6 @@ window.&lt;/p>
 &lt;p>After successful authentication you will be redirected back to your EGI
 Account. Also, you&amp;rsquo;ll be able to access EGI resources with your existing
 personal EGI ID using &lt;strong>IGTF Certificate Proxy&lt;/strong> and your certificate.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>To verify that the subject DN is added to your EGI account scroll down to
-&lt;strong>Organisational Identities&lt;/strong> and click on &lt;strong>view&lt;/strong> button in the row where
-the source is
-&lt;code>https://edugain-proxy.igtf.net/simplesaml/saml2/idp/metadata.php&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="./check-in-list-organisational-ids.png" alt="List organisational identities">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Then scroll down to &lt;em>Certificates&lt;/em> and you should see the subject DN of your
-certificate.&lt;/p>
-&lt;p>&lt;img src="./check-in-certificates-preview.png" alt="Certificates preview">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;!--
