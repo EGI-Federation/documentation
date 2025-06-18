@@ -27,7 +27,7 @@ with other useful information.
 ![List of members](./members_list.png)
 {.img-screenshot}
 
-1.  The “Direct Members” allows to visualise only direct members or all members
+1. The “Direct Members” allows to visualise only direct members or all members
     (direct + indirect). Direct members are those that are explicit members of
     the group, whereas indirect members are those that inherited membership from
     a subgroup. If a user has been only added as a member of a group, he/she
@@ -41,20 +41,20 @@ add a new informative column called "Group Path" to specify the group to which
 the user belongs. This may generate duplicate entries for users who are members
 of several subgroups.
 
-2.  The **Unique User Identifier** is the string that uniquely identifies a
+2. The **Unique User Identifier** is the string that uniquely identifies a
     user, and it is made of a long alphanumerical string suffixed by “@egi.eu”.
-3.  Name / email shows the full name and email address of the user.
-4.  The roles that the user has in the group. Note that users can have more than
+3. Name / email shows the full name and email address of the user.
+4. The roles that the user has in the group. Note that users can have more than
     one role assigned in the group but must have at least one assigned. There is
     a filter button to display only users with a certain role.
-5.  The date when the user membership started.
-6.  The date when the user membership will stop working. When the membership is
+5. The date when the user membership started.
+6. The date when the user membership will stop working. When the membership is
     close to expire an indication will be displayed.
 
 ![Membership expiration warning](./expiration_warning.png)
 {.img-screenshot}
 
-7.  A user can be one of these three [membership states](#membership-status):
+7. A user can be one of these three [membership states](#membership-status):
 
 ![Active status](status_green.png) **Active**
 {.img-icon}
@@ -68,9 +68,9 @@ of several subgroups.
 Additionally, there is a filter option to show users that have only a certain
 status.
 
-8.  The “Add Member” button can be used to add new members, as explained
+8. The “Add Member” button can be used to add new members, as explained
     [below](/#adding-users-to-a-group-manually).
-9.  The “Search” field can be used to filter users by Unique Identifier, Name or
+9. The “Search” field can be used to filter users by Unique Identifier, Name or
     email.
 10. There are three action buttons:
 
@@ -204,8 +204,8 @@ This will open a form for the creation of the enrolment.
 
 The necessary information for the enrolment creation is the following:
 
-1.  A name for the enrolment.
-2.  The number of days that the membership will last for the user, once he/she
+1. A name for the enrolment.
+2. The number of days that the membership will last for the user, once he/she
     joins the group.
 
 ![Membership lenght](./enrolment_membership.png)
@@ -227,7 +227,7 @@ was your intention.
 ![Membership lenght warning message for indefinite lenght](./enrolment_membership_indefinite.png)
 {.img-screenshot}
 
-3.  A future date when the membership should start. This option is useful to
+3. A future date when the membership should start. This option is useful to
     control when the access to the group will be granted for a user. A user
     joining a group with a future membership date, will be in a
     [pending status](#membership-status).
@@ -251,14 +251,14 @@ was your intention.
 ![Comments in an enrolment](./enrolment_comments.png)
 {.img-screenshot}
 
-6.  The link for the Acceptable Use Policy of the group. This link will be
+6. The link for the Acceptable Use Policy of the group. This link will be
     presented to the user and its acceptance must be acknowledged as a
     requirement to join the group.
-7.  The group roles that the user can have assigned when joining the group.
+7. The group roles that the user can have assigned when joining the group.
     These roles will be presented to the user, who will decide which role(s) to
     request. There is an option to allow the user to accept only one role or
     multiple roles.
-8.  This attribute controls if this enrolment should be publicly available or
+8. This attribute controls if this enrolment should be publicly available or
     not. If this attribute is checked, users following the
     [default enrolment link](#default-group-enrolment) of the group will be able
     to choose the enrolment to join the group.
@@ -266,7 +266,7 @@ was your intention.
 ![Visible enrolments](./enrolment_select_visible.png)
 {.img-screenshot}
 
-9.  If the enrolment is enabled or disabled. This is useful to disable an
+9. If the enrolment is enabled or disabled. This is useful to disable an
     enrolment temporarily, instead of deleting it.
 
 ### Modification of Group Enrolments
@@ -415,9 +415,9 @@ click “**Confirm**”.
 Group Admins can directly add a user in a group without the user interaction.
 For this, two prerequisites are necessary:
 
-1.  The user **must be known**, meaning that he/she must be a member of any of
+1. The user **must be known**, meaning that he/she must be a member of any of
     the groups of the Group Admin.
-2.  The group **must not have any AUP** in place, since the Group Admin cannot
+2. The group **must not have any AUP** in place, since the Group Admin cannot
     accept any Acceptable Use Policy in the name of the user.
 
 If these two prerequisites cannot be met, you need

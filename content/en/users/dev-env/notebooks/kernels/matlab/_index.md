@@ -102,7 +102,6 @@ At any time, clicking on this symbol will bring up a dialog to stop, restart or
 sign out of the current MATLAB session.
 
 ![matlab-session](matlab-session.png)
-
 ![matlab-status](matlab-status.png)
 
 ## Open Science using MATLAB on EGI Notebooks
@@ -174,6 +173,5 @@ To access MATLAB on any site of the
 
 - Ask the system administrator of the site about MATLAB as part of EGI
 
-- Contact [Shubo Chakrabarti](mailto:%20shuboc@mathworks.com) at MathWorks or
-  [Enol Fernandez](mailto:enol.fernandez@egi.eu) at EGI for setting up access to
+- Get in touch via [GGUS](https://helpdesk.ggus.eu) for setting up access to
   MATLAB at the site.

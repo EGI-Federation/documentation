@@ -162,7 +162,6 @@ endpoints. Both a graphical user interface (GUI) and
 (CLI) are available to perform bulk movement of data. Please check out the
 related documentation for more information.
 
-
 ## Integration with Data Management frameworks
 
 Grid storage access, most of the time, is hidden from users by the integration

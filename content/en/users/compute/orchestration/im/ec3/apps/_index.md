@@ -31,7 +31,6 @@ Check the dedicated [ECAS documentation](./ecas/).
 Check the
 [Cloud Container Compute documentation](../../../../cloud-container-compute).
 
-
 ### OSCAR cluster
 
 To deploy

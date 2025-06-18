@@ -320,7 +320,7 @@ federation discoverable and searchable.
 <b>About</b>: openEO platform provides intuitive programming libraries
 to process a wide variety of earth observation datasets. This large-scale
 data access and processing is performed on multiple infrastructures, which
-all support the openEO API. This allows use cases from explorative research
+all support the openEO API. This allows use cases from exploratory research
 to large-scale production of EO-derived maps and information.
 <br/><br/>
 <b>Slides and code</b>
