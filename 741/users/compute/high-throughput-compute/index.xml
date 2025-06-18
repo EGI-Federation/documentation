@@ -131,6 +131,7 @@ of the specification, under the LDAP base &lt;code>GLUE2GroupID=grid,o=glue&lt;/
 &lt;p>Some resources may not yet be exposed via GLUE 2.0, and it may be required to
 use GLUE 1.3 for those ones.&lt;/p>
 &lt;/blockquote>
+&lt;!--- cspell:disable-line -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 You can use &lt;code>-o ldif-wrap=no&lt;/code> to disable
