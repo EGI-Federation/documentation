@@ -2,10 +2,14 @@
 language: "en-gb"
 dictionaries:
   - custom-words
+  - allowed-words
 ignorePaths:
   - ".github/actions/**"
   - ".cspell.json"
 dictionaryDefinitions:
   - name: custom-words
     path: ./.github/actions/spelling/expect.txt
+    addWords: true
+  - name: allowed-words
+    path: ./.github/actions/spelling/allow.txt
     addWords: true
