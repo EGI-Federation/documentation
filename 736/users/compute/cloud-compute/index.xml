@@ -1123,8 +1123,9 @@ guidelines:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>DO NOT&lt;/strong> include (big) data in your image. There are other mechanisms for
-accessing data from your VM (block/object storage,
-&lt;a href="https://www.gridpp.ac.uk/wiki/RALnonLHCCVMFS">CVMFS&lt;/a>)&lt;/p>
+accessing data from your VM (&lt;a href="../block-storage/">block&lt;/a>/
+&lt;a href="../../../data/storage/object-storage/">object&lt;/a> storage,
+&lt;a href="../../software-distribution">CVMFS&lt;/a>)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>DO NOT&lt;/strong> include (big) empty space or swap in your image. Extra space for
