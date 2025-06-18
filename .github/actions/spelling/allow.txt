@@ -44,7 +44,7 @@ bcdmi
 bdii
 bdiis
 beapps
-bifi
+BIFI
 bigemptyfile
 biggrid
 binlog
@@ -76,7 +76,7 @@ cerit
 certbot
 certdir
 certonly
-cesga
+CESGA
 cesnet
 ceta
 cff
@@ -220,6 +220,7 @@ finalise
 finalised
 finisheddirty
 firefox
+flavor
 floatingip
 floatip
 flox
@@ -251,7 +252,7 @@ glite
 globusrun
 GMA
 gmlog
-gocdb
+GOCDB
 gocdbpi
 gparam
 gpg
@@ -460,6 +461,7 @@ nvidia
 OAIS
 oauth
 occi
+OCCI
 ODV
 OGC
 ogf
