@@ -126,14 +126,14 @@ email.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>There are three action buttons:&lt;/p>
-&lt;/li>
-&lt;/ol>
 &lt;ul>
 &lt;li>Remove, to &lt;a href="#removing-a-user-from-a-group">remove a user from the group&lt;/a>.&lt;/li>
 &lt;li>Edit, to&lt;/li>
 &lt;li>&lt;a href="#change-a-user-membership">change some aspect of the user membership&lt;/a>.&lt;/li>
 &lt;li>Suspend, to &lt;a href="#removing-a-user-from-a-group">revoke user’s permissions&lt;/a>.&lt;/li>
 &lt;/ul>
+&lt;/li>
+&lt;/ol>
 &lt;h2 id="membership-status">Membership status&lt;/h2>
 &lt;p>A user in a group can be in one of these three states:&lt;/p>
 &lt;p>a. &lt;img src="./status_green.png" alt="Active status"> &lt;strong>Active&lt;/strong>, when the user is a full
