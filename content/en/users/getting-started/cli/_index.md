@@ -42,7 +42,7 @@ FedCloud client has the following modules (features):
 - [**OpenStack**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack)
   can perform commands on [OpenStack services](../openstack) deployed to sites
 - **EC3** allows deploying
-  [elastic cloud compute clusters](../../compute/orchestration/ec3)
+  [elastic cloud compute clusters](../../compute/orchestration/im/ec3)
 
 ### Installation
 
@@ -76,7 +76,8 @@ is a prerequisite, make sure it's installed with the following options selected:
 - Windows 10 SDK (`<latest`>)
 
 In case you prefer to use non-Microsoft alternatives for building non-pure
-packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
+packages, please see
+[Python Windows Compilers](https://wiki.python.org/moin/WindowsCompilers).
 
 To install the FedCloud client:
 
@@ -230,7 +231,7 @@ registration) to the FedCloud client via option `--oidc-agent-account`.
 {{% alert title="Important" color="warning" %}} Refresh tokens have long
 lifetime (one year in EGI Check-in), so they must be properly protected.
 Exposing refresh tokens via environment variables or command-line options is
-considered insecure and will be disabled in the near future in favor of using
+considered insecure and will be disabled in the near future in favour of using
 **oidc-agent**. {{% /alert %}}
 
 If multiple methods of getting access tokens are given at the same time, the

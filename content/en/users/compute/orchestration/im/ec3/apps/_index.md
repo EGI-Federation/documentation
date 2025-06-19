@@ -9,6 +9,8 @@ description: >
   How to run scientific applications and tools with EC3
 ---
 
+<!-- cSpell:words Radiomics -->
+
 This section documents how to run some applications and use the existing tools
 with EC3.
 
@@ -30,14 +32,6 @@ Check the dedicated [ECAS documentation](./ecas/).
 
 Check the
 [Cloud Container Compute documentation](../../../../cloud-container-compute).
-
-### Mesos + Marathon + Chronos
-
-To deploy a virtual cluster with
-[Marathon](https://mesosphere.github.io/marathon/),
-[Mesos](https://mesos.apache.org/), and
-[Chronos](https://mesos.github.io/chronos/) as an orchestration, please select
-Mesos + Marathon + Chronos from the list of available LRMS.
 
 ### OSCAR cluster
 

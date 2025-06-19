@@ -69,9 +69,9 @@ your cluster:
 1. network identifiers
 1. VM image identifiers
 
-We will use the [FedCloud client](../../../../getting-started/cli) to discover
+We will use the [FedCloud client](../../../../../getting-started/cli) to discover
 the required information. Set your credentials as shown in
-[the authentication guide](../../../../getting-started/cli#authentication)
+[the authentication guide](../../../../../getting-started/cli#authentication)
 and create the authorisation files needed for ec3 (in this case for CESGA with VO
 vo.access.egi.eu):
 

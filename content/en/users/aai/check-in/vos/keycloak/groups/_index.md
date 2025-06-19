@@ -18,24 +18,24 @@ the following group information is shown.
 ![Group details](./group_details.jpg)
 {.img-screenshot}
 
-1.  The name of the group, together with an icon to delete the group.
-2.  The description of the group, together with an icon to modify it.
-3.  The menu for the group. The “Group Details” contain the basic information of
+1. The name of the group, together with an icon to delete the group.
+2. The description of the group, together with an icon to modify it.
+3. The menu for the group. The “Group Details” contain the basic information of
     the group. There are other tabs to show different information about the
     groups: its members, its administrators, its enrolment flows (for users to
     join the group), its custom attributes and its subgroups.
-4.  The default link to request membership in the group, with a button to copy
+4. The default link to request membership in the group, with a button to copy
     the link. When a user follows the link, he/she will be presented with the
     Enrolment Discovery Page, which offers all publicly available
     [enrolment flows](../members/#group-enrolments) to join the group (those
     enrolments with the attribute “Visible” enabled).
-5.  A section to [add new roles](../roles/#creating-group-roles) for the group.
-6.  The list of roles available for the group, containing the name of the role
+5. A section to [add new roles](../roles/#creating-group-roles) for the group.
+6. The list of roles available for the group, containing the name of the role
     and the entitlement.
-7.  A button to copy the entitlement. The entitlement is the string that
+7. A button to copy the entitlement. The entitlement is the string that
     applications receive from the user information when he/she has the role
     assigned.
-8.  A button to [delete the role](../roles/#deleting-group-roles).
+8. A button to [delete the role](../roles/#deleting-group-roles).
 
 ## Creating groups
 

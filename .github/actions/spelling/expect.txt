@@ -11,6 +11,7 @@ DataHub
 dearmor
 delims
 dependant
+dialog
 diracsgm
 docsy
 findstr
@@ -23,6 +24,8 @@ glast
 hmac
 hyperk
 iframe
+indico
+Indico
 Initialising
 jscpd
 jwt

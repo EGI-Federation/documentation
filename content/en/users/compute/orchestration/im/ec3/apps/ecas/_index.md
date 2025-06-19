@@ -36,7 +36,7 @@ This guide will show how to:
 
 - deploy an ECAS elastic cluster of VMs in order to automatically install and
   configure the whole ECAS environment services, i.e. JupyterHub, PyOphidia,
-  several Python libraries such as numpy, matplotlib and Basemap;
+  several Python libraries such as `numpy`, `matplotlib` and `Basemap`;
 - perform data intensive analysis using the Ophidia HPDA framework;
 - access the ECAS JupyterHub interface to create and share documents containing
   live code, equations, visualizations and explanatory text.
@@ -54,7 +54,7 @@ To configure and deploy a Virtual Elastic Cluster using EC3, access the
 [EC3 platform front page](https://servproject.i3m.upv.es/ec3-ltos/index.php) and
 click on the **\"Deploy your cluster\"** link as shown in the figure below:
 
-![EC3 frontpage](ecas-front.png)
+![EC3 front page](ecas-front.png)
 
 A wizard will guide you through the cluster configuration process. Specifically,
 the general wizard steps include:
@@ -141,7 +141,7 @@ Cluster configured!
 ```
 
 As SLURM is used as workload manager, it is possible to check the status of the
-working nodes by using the sinfo command, which provides information about Slurm
+working nodes by using the `sinfo` command, which provides information about Slurm
 nodes and partitions.
 
 ```shell
@@ -268,8 +268,6 @@ management page.
 
 ## References
 
-- [ECASLab CMCC](https://ecaslab.cmcc.it/web/home.html)
-- [ECASLab DKRZ](https://ecaslab.dkrz.de/home.html)
 - [Ophidia](https://ophidia.cmcc.it/)
 - [GitHub: ECAS-Lab](https://github.com/ECAS-Lab)
 - [GitHub: Ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster)
