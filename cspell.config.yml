@@ -1,24 +1,27 @@
 ---
 language: "en-gb"
+enabledLanguageIds:
+  - markdown
 dictionaries:
   - custom-words
   - allowed-words
 patterns:
-  - name: markdown_code_block
-    pattern: |
-      /
-          ^(\s*`{3,}).*     # match the ```
-          [\s\S]*?          # the block of code
-          ^\1               # end of the block
-      /gmx
+  - name: md
+    # pattern: /^(\s*`{3,}).*\n[\s\S]*?^\1/gmix
+    pattern: /^(`{3})plaintext[\s\S]*?^\1/gmix
 languageSettings:
   - languageId: markdown
     ignoreRegExpList:
-      - markdown_code_block
+      - >
+        /^(`{3}) (plaintext|shell) [\s\S]*?^\1 /gmix
+      - >
+        `.*`
 ignorePaths:
   - ".github/actions/**"
   - ".github/workflows/**"
   - ".cspell.json"
+  - "cspell.config.yml"
+  - "cspell.yml"
 dictionaryDefinitions:
   - name: custom-words
     path: ./.github/actions/spelling/expect.txt
