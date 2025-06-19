@@ -25,8 +25,7 @@ regarding how to contribute easier and more efficiently.
 ## Feedback and questions
 
 If you wish to discuss anything related to the project, please open a
-[GitHub issue](https://github.com/EGI-Federation/documentation/issues/new) or
-start a topic on the [EGI Community Forum](https://community.egi.eu).
+[GitHub issue](https://github.com/EGI-Federation/documentation/issues/new).
 
 {{% alert title="Note" color="info" %}} The maintainers will move issues from
 GitHub to the community forum when longer, more open-ended discussion would be
@@ -126,7 +125,4 @@ following [semantic versioning](https://semver.org/) when applicable.
 
 EGI benefits from a strong community of developers and system administrators,
 and vice-versa. If you have any questions or if you would like to get involved
-in the wider EGI community you can check out:
-
-- [EGI Community Forum](https://community.egi.eu/)
-- [EGI site](https://www.egi.eu)
+in the wider EGI community you can check out the [EGI website](https://www.egi.eu)

@@ -4,7 +4,7 @@ linkTitle: DataHub
 weight: 20
 type: docs
 aliases:
-  - /users/datahub
+  - /users/datahub # cspell:disable-line
 description: Discover, manage, and replicate data with EGI DataHub
 ---
 
@@ -35,14 +35,14 @@ EGI DataHub supports multiple access policies:
 - Unauthenticated, open access
 - Access after user registration or
 - Access restricted to members of a
-  [Virtual Organization](../../../aai/check-in//vos) (VO)
+  [Virtual Organization](../../../aai/check-in/vos) (VO)
 
 Data replication in EGI DataHub may take place either on-­demand or
 automatically. Replication uses a file catalogue to enable tracking of logical
 and physical copies of data.
 
 {{% alert title="Note" color="info" %}} EGI DataHub is based on the
-[Onedata technology](https://onedata.org/). {{% /alert %}}
+[Onedata technology](https://onedata.org/). {{% /alert %}} <!-- cspell:disable-line -->
 
 ## Motivations
 
