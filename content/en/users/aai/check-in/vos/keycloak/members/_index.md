@@ -68,11 +68,10 @@ with other useful information.
 9. The “Search” field can be used to filter users by Unique Identifier, Name or
    email.
 10. There are three action buttons:
-
-   - Remove, to [remove a user from the group](#removing-a-user-from-a-group).
-   - Edit, to
-   - [change some aspect of the user membership](#change-a-user-membership).
-   - Suspend, to [revoke user’s permissions](#removing-a-user-from-a-group).
+    - Remove, to [remove a user from the group](#removing-a-user-from-a-group).
+    - Edit, to
+    - [change some aspect of the user membership](#change-a-user-membership).
+    - Suspend, to [revoke user’s permissions](#removing-a-user-from-a-group).
 
 ## Membership status
 
