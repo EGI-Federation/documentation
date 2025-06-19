@@ -1355,7 +1355,7 @@ proxy. To do this you first need to
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create &lt;code>testjob.xrsl&lt;/code>, a test job expressed in
 &lt;a href="https://www.nordugrid.org/arc/arc6/users/xrsl.html">xRSL&lt;/a>, showing environment
 where it will run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( jobname = &amp;#34;arctest&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( stdout = &amp;#34;stdout&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( join = &amp;#34;yes&amp;#34; )
