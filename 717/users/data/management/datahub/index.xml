@@ -550,7 +550,9 @@ screenshot.&lt;/p></description></item><item><title>Users: DataHub Links</title>
 &lt;li>&lt;a href="https://datahub.egi.eu">EGI DataHub service&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="https://go.egi.eu/datahub-intro">Overview slides&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://community.egi.eu/c/egi-services/datahub">Community Forum&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;!-- - [Community Forum](https://community.egi.eu/c/egi-services/datahub) -->
+&lt;ul>
 &lt;li>&lt;a href="https://indico.egi.eu/event/5089/">EGI Webinar&lt;/a> and
 &lt;a href="https://youtu.be/ayAplV2kEN4">YouTube video&lt;/a>&lt;/li>
 &lt;/ul>
