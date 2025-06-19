@@ -6,7 +6,11 @@ DISABLE_LINTERS:
   - REPOSITORY_TRIVY
   - REPOSITORY_GRYPE
   - REPOSITORY_TRUFFLEHOG
+  - ACTION_ACTIONLINT # Disable action lint, since it is covered by check-jsonschema in pre-commit
 SPELL_CSPELL_CONFIG_FILE: .cspell.json
+# Exclude Github Actions from CSpell checking
+# This is covered by the Github Actions Schema pre-commit hook
+SPELL_CSPELL_FILTER_REGEX_EXCLUDE: (^\.github\/workflows\/.*yml$|\.mega-linter\.yml)
 APPLY_FIXES: none
 # We do not want to check links in our workflows, they may contain templates,
 # which will fail.
