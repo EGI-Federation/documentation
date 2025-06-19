@@ -17,6 +17,7 @@ languageSettings:
       - markdown_code_block
 ignorePaths:
   - ".github/actions/**"
+  - ".github/workflows/**"
   - ".cspell.json"
 dictionaryDefinitions:
   - name: custom-words
