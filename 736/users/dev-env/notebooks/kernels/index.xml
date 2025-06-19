@@ -126,14 +126,14 @@ access to your on-prem Network License Manager (License Server).&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Free trial MATLAB Licenses If you do not have a MATLAB license and would
-like to try it out, you can download a free MATLAB trial license
-&lt;a href="https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html">here&lt;/a>.
+like to try it out, you can download a
+&lt;a href="https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html">free MATLAB trial license&lt;/a>.
 Note that the trial license is for MATLAB only and does not have any
 toolboxes.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>More information on MATLAB licensing with this integration can be found
-&lt;a href="https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md">here&lt;/a>.&lt;/p>
+&lt;p>More
+&lt;a href="https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md">information on MATLAB licensing with this integration&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Following this, the MATLAB IDE will appear in your browser.&lt;/p>
@@ -148,20 +148,19 @@ document. Live Scripts can be accessed from the
 tab. Here is
 &lt;a href="https://datahub.egi.eu/ozw/onezone/i#/public/shares/af92f66ad616fb8d49d854a823bfd69achf757">an example of a tutorial Live Script&lt;/a>
 from the EGI webinar showing steps required to analyze some public COVID-19
-data with MATLAB. Some other examples of Live Scripts can be found
-&lt;a href="https://www.mathworks.com/products/matlab/live-script-gallery.html">here&lt;/a>.&lt;/p>
+data with MATLAB. Check other
+&lt;a href="https://www.mathworks.com/products/matlab/live-script-gallery.html">examples of Live Scripts&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="limitations">Limitations&lt;/h2>
 &lt;p>Browser based MATLAB has some differences as compared to MATLAB on the desktop.
-For more information, see the limitations
-&lt;a href="https://www.mathworks.com/products/matlab-online/limitations.html">here&lt;/a>.
+For more information, see the
+&lt;a href="https://www.mathworks.com/products/matlab-online/limitations.html">limitations&lt;/a>.
 Additionally, Simulink is not supported on the EGI at this time.&lt;/p>
 &lt;h2 id="restarting-stopping-or-signing-out-of-the-matlab-session">Restarting, stopping or signing out of the MATLAB session&lt;/h2>
 &lt;p>At any time, clicking on this symbol will bring up a dialog to stop, restart or
 sign out of the current MATLAB session.&lt;/p>
-&lt;p>&lt;img src="matlab-session.png" alt="matlab-session">
-&lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
+&lt;p>&lt;img src="matlab-session.png" alt="matlab-session"> &lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
 &lt;h2 id="open-science-using-matlab-on-egi-notebooks">Open Science using MATLAB on EGI Notebooks&lt;/h2>
 &lt;p>You can access publicly available datasets via the EGI DataHub and analyze them
 in-the-cloud directly using MATLAB, without the need for time consuming
@@ -171,9 +170,8 @@ of interoperable and open formats.&lt;/p>
 &lt;p>This &lt;a href="https://www.youtube.com/watch?v=Hbf1yg32sso">short video&lt;/a> and this
 &lt;a href="https://youtu.be/zT9aW1xHCJU?t=167s">webinar&lt;/a> explains how to access EGI Data
 Services from MATLAB in detail. Data from different data providers can be
-accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. More
-information on Data Management from Notebooks and persistent storage can be
-found &lt;a href="../../data">here&lt;/a>.&lt;/p>
+accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. Check
+&lt;a href="../../data">Data Management documentation&lt;/a>.&lt;/p>
 &lt;h2 id="matlab-support-for-data-formats">MATLAB support for data formats&lt;/h2>
 &lt;p>MATLAB supports several
 &lt;a href="https://www.mathworks.com/help/matlab/scientific-data.html">scientific&lt;/a> and
