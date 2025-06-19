@@ -472,7 +472,7 @@ Create `testjob.xrsl`, a test job expressed in
 [xRSL](https://www.nordugrid.org/arc/arc6/users/xrsl.html), showing environment
 where it will run:
 
-```text
+```plaintext
 &( executable = "/usr/bin/env" )
 ( jobname = "arctest" )
 ( stdout = "stdout" )

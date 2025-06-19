@@ -237,6 +237,7 @@ FZK
 gcloud
 gcube
 geant
+GÉANT
 genkey
 geospatial
 geoss
@@ -336,6 +337,7 @@ jdl
 jdoe
 jdoepass
 jira
+JISCMAIL
 jobdescrfile
 jobid
 jobmanager
@@ -616,6 +618,7 @@ subpages
 subresource
 sudmodules
 summarises
+SUNET
 surl
 SUs
 sustainability
@@ -659,6 +662,7 @@ tpms
 TPU
 TRL
 trustanchors
+twiki
 uberftp
 ubuntu
 ucert
@@ -686,6 +690,7 @@ utilisation
 uuid
 uwsgi
 validgrid
+VAPOR
 varchar
 vcpus
 vda
@@ -711,6 +716,7 @@ vms
 VMUUID
 vobox
 VOMS
+VOMSES
 voname
 voperson
 vos
