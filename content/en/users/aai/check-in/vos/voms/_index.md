@@ -238,7 +238,7 @@ existing VOs
    get approval for your access.** ![Register to a VO](vo_registration.png)
 
 1. If there are no relevant VOs, you can send a request
-   [to register a new VO](ttps://operations-portal.egi.eu/vo/registration).
+   [to register a new VO](https://operations-portal.egi.eu/vo/registration).
    (Note, for EGI services, you should request for `VOMS configuration`, once VO
    is configured, you will be notified about your VO VOMS link). More
    information can be found at
