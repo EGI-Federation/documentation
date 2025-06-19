@@ -13,7 +13,7 @@ are available on the
 &lt;!-- markdownlint-disable no-bare-urls -->
 &lt;ul>
 &lt;li>Open &lt;a href="https://secrets.egi.eu">https://secrets.egi.eu&lt;/a> in your browser.&lt;/li>
-&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pulldown menu, then click
+&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pull-down menu, then click
 &lt;em>Sign in with OIDC provider&lt;/em>.&lt;/li>
 &lt;li>Login via &lt;em>EGI Check-in&lt;/em> and authorize the Vault GUI.&lt;/li>
 &lt;/ul>

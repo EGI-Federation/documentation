@@ -1491,7 +1491,7 @@ command-line FTS and to have your certificate installed in your browser to use
 &lt;ul>
 &lt;li>An &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account, you can
 &lt;a href="../../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>Enrolment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;li>An &lt;a href="../../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
 have all the credentials available (any S3 compatible storage should work)&lt;/li>

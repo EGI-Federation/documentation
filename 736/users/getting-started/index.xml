@@ -848,7 +848,7 @@ registration) to the FedCloud client via option &lt;code>--oidc-agent-account&lt
 Refresh tokens have long
 lifetime (one year in EGI Check-in), so they must be properly protected.
 Exposing refresh tokens via environment variables or command-line options is
-considered insecure and will be disabled in the near future in favor of using
+considered insecure and will be disabled in the near future in favour of using
 &lt;strong>oidc-agent&lt;/strong>.
 &lt;/div>
 &lt;p>If multiple methods of getting access tokens are given at the same time, the

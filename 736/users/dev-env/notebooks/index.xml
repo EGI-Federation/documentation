@@ -145,6 +145,7 @@ for increasing your default home allocation via ticket.&lt;/p>
 Your home directory is backed up daily.
 &lt;/div>
 &lt;h2 id="import-notebooks-into-your-workspace">Import notebooks into your workspace&lt;/h2>
+&lt;!-- cSpell:words nbgitpuller -->
 &lt;p>The Notebooks service default environment includes
 &lt;a href="https://github.com/jupyterhub/nbgitpuller">nbgitpuller&lt;/a>, an extension to sync a
 git repository one-way to a local path. You can generate a shareable link by
