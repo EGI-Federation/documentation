@@ -12,6 +12,7 @@ DataHub
 dearmor
 delims
 dependant
+dialog
 diracsgm
 docsy
 FedCloud
@@ -29,6 +30,8 @@ hmac
 hyperk
 IFCA
 iframe
+indico
+Indico
 Initialising
 jscpd
 jwt

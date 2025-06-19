@@ -22,7 +22,7 @@ Follow the steps below to access the web interface of EGI Secrets Store:
 
 <!-- markdownlint-disable no-bare-urls -->
 - Open https://secrets.egi.eu in your browser.
-- Choose the _OIDC authentication_ method in the pulldown menu, then click
+- Choose the _OIDC authentication_ method in the pull-down menu, then click
 _Sign in with OIDC provider_.
 - Login via _EGI Check-in_ and authorize the Vault GUI.
 <!-- markdownlint-enable no-bare-urls -->
@@ -64,7 +64,7 @@ To create your first secret, click on _Secrets_ in the top navigation bar,
 then click on folder **secrets**, then click _Create secret_ on the right.
 
 <!-- markdown-link-check-disable -->
-Use your EGI Check-in ID (e.g. e0b6...@egi.eu in the image below) as the path,
+Use your EGI Check-in ID (e.g. `e0b6...@egi.eu` in the image below) as the path,
 followed by the name of your secret. Add at least one key to your secret,
 together with a value.
 <!-- markdown-link-check-enable -->

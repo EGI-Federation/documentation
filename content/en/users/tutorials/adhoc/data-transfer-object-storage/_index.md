@@ -22,7 +22,7 @@ two object storage.
 {{% alert title="Warning" color="warning" %}} This procedure has been tested
 with the FTS client 3.11. Older version do not support all the options
 necessary. To install the latest version please add the
-[FTS3 Production](https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo)
+[FTS3 Production](https://fts-repo.web.cern.ch/fts-repo/fts3-el9.repo)
 repository to your configuration and update the client{{% /alert %}}
 
 ## Prerequisites
@@ -38,7 +38,7 @@ To access services and resources in the
 
 - An [EGI Check-in](../../../aai/check-in) account, you can
   [sign up here](../../../aai/check-in/signup)
-- Enrollment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
+- Enrolment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
 - An [Object Storage](../../../data/storage/object-storage) for which you need to
   have all the credentials available (any S3 compatible storage should work)

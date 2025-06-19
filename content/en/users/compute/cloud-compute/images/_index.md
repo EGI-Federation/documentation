@@ -37,9 +37,9 @@ guides for the catalogue:
   [VO-wide image list management](https://wiki.appdb.egi.eu/main:guides:manage_vo-wide_image_lists).
 
 Check the full list of
-[Cloud marketplace guides](https://wiki.appdb.egi.eu/main:guides#cloud_marketplace)
+[Cloud marketplace guides](https://wiki.appdb.egi.eu/docs/guides/cloud/)
 and
-[Cloud marketplace FAQ](https://wiki.appdb.egi.eu/main:faq#cloud_marketplace)
+[Cloud marketplace FAQ](https://wiki.appdb.egi.eu/docs/faq/cloud/)
 for more information about the AppDB features.
 
 ## Custom images
@@ -99,8 +99,9 @@ general rule, always try to make images as smaller as possible following these
 guidelines:
 
 - **DO NOT** include (big) data in your image. There are other mechanisms for
-  accessing data from your VM (block/object storage,
-  [CVMFS](https://www.gridpp.ac.uk/wiki/RALnonLHCCVMFS))
+  accessing data from your VM ([block](../block-storage/)/
+  [object](../../../data/storage/object-storage/) storage,
+  [CVMFS](../../software-distribution))
 
 - **DO NOT** include (big) empty space or swap in your image. Extra space for
   your computation or swap can be added with block storage once the VM is booted
@@ -160,11 +161,9 @@ that will manage the configuration of the VMs during runtime.
   minimally open.
 - Put no shared credentials (passwords) in any image.
 
-You should also follow the best practice guides for each service that\'s exposed
-to the outside world. See for example guides for:
-
-- [ssh](https://wiki.centos.org/HowTos/Network/SecuringSSH)
-- [tomcat](https://www.owasp.org/index.php/Securing_tomcat)
+You should also follow best practice guides for each service that\'s exposed
+to the outside world (e.g.
+[tomcat](https://www.owasp.org/index.php/Securing_tomcat)).
 
 See also
 [AWS security Best Practices](https://aws.amazon.com/whitepapers/aws-security-best-practices/)

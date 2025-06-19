@@ -439,7 +439,7 @@ Fetching data files...
 #### References
 
 - [HTCondor Quick Start Guide](https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html)
-- [HTCondor Application Programming Interfaces (APIs)](https://htcondor.readthedocs.io/en/latest/apis/index.html)
+- [HTCondor Python Bindings](https://htcondor.readthedocs.io/en/latest/apis/python-bindings/index.html)
 - [OSG Site Documentation: HTCondor-CE Overview](https://osg-htc.org/docs/compute-element/htcondor-ce-overview/)
 
 ### To an ARC-CE Computing Element
@@ -472,7 +472,7 @@ Create `testjob.xrsl`, a test job expressed in
 [xRSL](https://www.nordugrid.org/arc/arc6/users/xrsl.html), showing environment
 where it will run:
 
-```text
+```plaintext
 &( executable = "/usr/bin/env" )
 ( jobname = "arctest" )
 ( stdout = "stdout" )

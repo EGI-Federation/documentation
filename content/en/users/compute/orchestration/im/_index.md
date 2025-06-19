@@ -25,7 +25,7 @@ a wide variety of backends, either federated (such as
 [OpenStack](../../../getting-started/openstack)),
 thus making user applications cloud agnostic.
 IM features a [web-based GUI](https://im.egi.eu/),
-an XML-RPC API, a REST API and a [command-line interface](cli) (CLI).
+an XML-RPC API, a REST API and a [command-line interface](./cli) (CLI).
 It supports
 [OASIS TOSCA Simple Profile in YAML](https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html).
 
