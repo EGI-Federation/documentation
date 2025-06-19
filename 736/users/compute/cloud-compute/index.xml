@@ -2518,7 +2518,6 @@ the main commands in rOCCI and OpenStack equivalent in the table below:&lt;/p>
 &lt;p>The list of certified providers is available in &lt;a href="https://goc.egi.eu">GOCDB&lt;/a>. The
 following command with the &lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloud&lt;/a>
 client can help you to get that list:&lt;/p>
-&lt;!-- cSpell: disable -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud site list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>100IT
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BIFI
@@ -2543,8 +2542,7 @@ client can help you to get that list:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UA-BITP
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UNIV-LILLE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud.srce.hr
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- cSpell: enable -->
-&lt;p>The providers also generate dynamic information about their characteristics via
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The providers also generate dynamic information about their characteristics via
 the Argo Messaging System which is easily browsable from AppDB.&lt;/p>
 &lt;h3 id="how-can-i-choose-which-site-to-use">How can I choose which site to use?&lt;/h3>
 &lt;p>Sites offer their resources to users through Virtual Organisations (VO). First,

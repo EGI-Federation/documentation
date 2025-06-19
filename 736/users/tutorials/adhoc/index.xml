@@ -250,13 +250,11 @@ the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ mkdir /tmp/space
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oneclient /tmp/space
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then all usual file and folder operations (POSIX) will be available:&lt;/p>
-&lt;!-- cSpell: disable -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ root@222d3ceb86df:/tmp/space# ls -l
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>total &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>drwxrwxr-x &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> Jan &lt;span style="color:#0000cf;font-weight:bold">28&lt;/span> 16:56 PLAYGROUND
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- cSpell: enable -->
-&lt;p>Creating a file into the folder will push it to the Oneprovider and
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Creating a file into the folder will push it to the Oneprovider and
 it will be accessible in the web interface and from other providers
 supporting the space.&lt;/p>
 &lt;p>By using the default settings you can see all the spaces you have
@@ -1330,7 +1328,7 @@ modify its local copies of the spooled files.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-1">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html">HTCondor Quick Start Guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/index.html">HTCondor Application Programming Interfaces (APIs)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/python-bindings/index.html">HTCondor Python Bindings&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://osg-htc.org/docs/compute-element/htcondor-ce-overview/">OSG Site Documentation: HTCondor-CE Overview&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
@@ -1479,7 +1477,7 @@ two object storage.&lt;/p>
 This procedure has been tested
 with the FTS client 3.11. Older version do not support all the options
 necessary. To install the latest version please add the
-&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo">FTS3 Production&lt;/a>
+&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-el9.repo">FTS3 Production&lt;/a>
 repository to your configuration and update the client
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
