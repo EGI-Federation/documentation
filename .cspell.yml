@@ -3,8 +3,21 @@ language: "en-gb"
 dictionaries:
   - custom-words
   - allowed-words
+patterns:
+  - name: markdown_code_block
+    pattern: |
+      /
+          ^(\s*`{3,}).*     # match the ```
+          [\s\S]*?          # the block of code
+          ^\1               # end of the block
+      /gmx
+languageSettings:
+  - languageId: markdown
+    ignoreRegExpList:
+      - markdown_code_block
 ignorePaths:
   - ".github/actions/**"
+  - ".github/workflows/**"
   - ".cspell.json"
 dictionaryDefinitions:
   - name: custom-words

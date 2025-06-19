@@ -1,13 +1,11 @@
 ---
 name: Deploy pull request preview
 # Setup and build files with hugo
-# cspell:disable-next-line
 # https://github.com/peaceiris/actions-hugo
 # Deploy to GitHub pages
 # https://github.com/peaceiris/actions-gh-pages
 # Triggered by the build pull request preview
 # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
-
 on:
   # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_run
   workflow_run:
@@ -109,7 +107,6 @@ jobs:
           - "security"
           - "training"
           - "tutorials"
-    # cspell:disable
     name: Check links of preview
     steps:
       - name: Checkout configuration
@@ -129,14 +126,12 @@ jobs:
         # to see if there are any bad links in those pages
         run: >-
           echo "https://docs.egi.eu/documentation/${{
-          job.deploy_pr_preview.outputs.pr_number }}/users/${{ matrix.url }}" |
+          github.event.pull_request.number }}/users/${{ matrix.url }}/" |
             ./hakrawler -u -i -d 10 -json |
             jq -r '. |
             select(.Source == "href") | .URL' |
             ./lychee -
   check_preview_links_internal:
-    env:
-      BASE_URL: https://docs.egi.eu/documentation/internal
     runs-on: ubuntu-latest
     needs:
       - deploy_pr_preview
@@ -177,15 +172,12 @@ jobs:
         # to see if there are any bad links in those pages
         run: >-
           echo "https://docs.egi.eu/documentation/${{
-          job.deploy_pr_preview.outputs.pr_number }}/internal/${{ matrix.url }}"
-          |
+          github.event.pull_request.number }}/internal/${{ matrix.url }}/" |
             ./hakrawler -u -i -d 10 -json |
             jq -r '. |
             select(.Source == "href") | .URL' |
             ./lychee -
   check_preview_links_providers:
-    env:
-      BASE_URL: https://docs.egi.eu/documentation/providers
     runs-on: ubuntu-latest
     needs:
       - deploy_pr_preview
@@ -225,34 +217,33 @@ jobs:
         # to see if there are any bad links in those pages
         run: >-
           echo "https://docs.egi.eu/documentation/${{
-          job.deploy_pr_preview.outputs.pr_number }}/providers/${{ matrix.url
-          }}" |
+          github.event.pull_request.number }}/providers/${{ matrix.url }}/" |
             ./hakrawler -u -i -d 10 -json |
             jq -r '. |
             select(.Source == "href") | .URL' |
             ./lychee -
   lychee-otherdocs: # cspell:disable-line
-    env:
-      BASE_URL: https://docs.egi.eu/
+    needs:
+      - deploy_pr_preview
     name: Check links at base of the about pages
     strategy:
       matrix:
-        url:
-          - ""
+        url: # do not include the root url, or we will crawl the whole site
           - about
           - support
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Get tools
-        # On the "other" page, we do not want to crawl down, so we only use
-        # lyuchee to check the page itself.
         run: |
           curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
+          GOBIN=${PWD} go install github.com/hakluke/hakrawler@latest
       - name: Check Links.
-        run:
-          ./lychee https://docs.egi.eu/documentation/${{
-          job.deploy_pr_preview.outputs.pr_number }}/${{ matrix.url }}
-  # cspell:enable
+        run: >-
+          echo "https://docs.egi.eu/documentation/${{
+          github.event.pull_request.number }}/${{ matrix.url }}/" |
+            ./hakrawler -u -i -d 10 -json |
+            jq -r '. |
+            select(.Source == "href") | .URL' |
+            ./lychee -
