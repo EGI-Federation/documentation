@@ -41,8 +41,6 @@ You will also need a base image template for the deployment. Please refer to the
 [EC3 tutorial](../../../compute/orchestration/im/ec3) to create such file. Below you can see
 an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
-<!-- cSpell: disable -->
-
 ```plaintext
 description ubuntu-ifca (
     kind = 'images' and
@@ -76,8 +74,6 @@ system wn (
     disk.0.os.credentials.username = 'cloudadm'
 )
 ```
-
-<!-- cSpell: enable -->
 
 <!-- markdownlint-enable line-length -->
 

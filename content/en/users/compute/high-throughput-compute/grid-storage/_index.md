@@ -58,8 +58,6 @@ $ lcg-infosites --vo voname -[v] -f [site name] [option(s)] [-h| --help] [--is B
 For example, to list the Storage Elements (SEs) available to the `biomed` VO, we
 could issue the following command:
 
-<!-- cSpell: disable -->
-
 ```shell
 $ lcg-infosites --vo biomed  se
 
@@ -69,8 +67,6 @@ $ lcg-infosites --vo biomed  se
      10995116266              11  SRM   cirigridse01.univ-bpclermont.fr
 
 ```
-
-<!-- cSpell: enable -->
 
 ## Access from the command-line
 
