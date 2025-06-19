@@ -73,7 +73,7 @@ services may be restricted. {{% /alert %}}
 5. Search for your desired identity. In case you cannot see it at first glance,
    you can use the search box.
 
-![Search my identity](./search_identity.png)
+   ![Search my identity](./search_identity.png)
 
 6. Click on the “Link account” blue link on the right side of the identity to
    link it.
