@@ -76,7 +76,8 @@ is a prerequisite, make sure it's installed with the following options selected:
 - Windows 10 SDK (`<latest`>)
 
 In case you prefer to use non-Microsoft alternatives for building non-pure
-packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
+packages, please see
+[Python Windows Compilers](https://wiki.python.org/moin/WindowsCompilers).
 
 To install the FedCloud client:
 

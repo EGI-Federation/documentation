@@ -66,13 +66,13 @@ other topics using MATLAB.
      ![matlab-network-license](matlab-network-license.png)
 
    - Free trial MATLAB Licenses If you do not have a MATLAB license and would
-     like to try it out, you can download a free MATLAB trial license
-     [here](https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html).
+     like to try it out, you can download a
+     [free MATLAB trial license](https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html).
      Note that the trial license is for MATLAB only and does not have any
      toolboxes.
 
-   More information on MATLAB licensing with this integration can be found
-   [here](https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md).
+   More
+   [information on MATLAB licensing with this integration](https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md).
 
 1. Following this, the MATLAB IDE will appear in your browser.
 
@@ -86,14 +86,14 @@ other topics using MATLAB.
    tab. Here is
    [an example of a tutorial Live Script](https://datahub.egi.eu/ozw/onezone/i#/public/shares/af92f66ad616fb8d49d854a823bfd69achf757)
    from the EGI webinar showing steps required to analyze some public COVID-19
-   data with MATLAB. Some other examples of Live Scripts can be found
-   [here](https://www.mathworks.com/products/matlab/live-script-gallery.html).
+   data with MATLAB. Check other
+   [examples of Live Scripts](https://www.mathworks.com/products/matlab/live-script-gallery.html).
 
 ## Limitations
 
 Browser based MATLAB has some differences as compared to MATLAB on the desktop.
-For more information, see the limitations
-[here](https://www.mathworks.com/products/matlab-online/limitations.html).
+For more information, see the
+[limitations](https://www.mathworks.com/products/matlab-online/limitations.html).
 Additionally, Simulink is not supported on the EGI at this time.
 
 ## Restarting, stopping or signing out of the MATLAB session
@@ -101,8 +101,7 @@ Additionally, Simulink is not supported on the EGI at this time.
 At any time, clicking on this symbol will bring up a dialog to stop, restart or
 sign out of the current MATLAB session.
 
-![matlab-session](matlab-session.png)
-![matlab-status](matlab-status.png)
+![matlab-session](matlab-session.png) ![matlab-status](matlab-status.png)
 
 ## Open Science using MATLAB on EGI Notebooks
 
@@ -116,9 +115,8 @@ of interoperable and open formats.
 This [short video](https://www.youtube.com/watch?v=Hbf1yg32sso) and this
 [webinar](https://youtu.be/zT9aW1xHCJU?t=167s) explains how to access EGI Data
 Services from MATLAB in detail. Data from different data providers can be
-accessed from the [DataHub](../../../../data/management/datahub). More
-information on Data Management from Notebooks and persistent storage can be
-found [here](../../data).
+accessed from the [DataHub](../../../../data/management/datahub). Check
+[Data Management documentation](../../data).
 
 ## MATLAB support for data formats
 
