@@ -1328,7 +1328,7 @@ modify its local copies of the spooled files.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-1">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html">HTCondor Quick Start Guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/index.html">HTCondor Application Programming Interfaces (APIs)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/python-bindings/index.html">HTCondor Python Bindings&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://osg-htc.org/docs/compute-element/htcondor-ce-overview/">OSG Site Documentation: HTCondor-CE Overview&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
@@ -1355,7 +1355,7 @@ proxy. To do this you first need to
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create &lt;code>testjob.xrsl&lt;/code>, a test job expressed in
 &lt;a href="https://www.nordugrid.org/arc/arc6/users/xrsl.html">xRSL&lt;/a>, showing environment
 where it will run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( jobname = &amp;#34;arctest&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( stdout = &amp;#34;stdout&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( join = &amp;#34;yes&amp;#34; )
@@ -1477,7 +1477,7 @@ two object storage.&lt;/p>
 This procedure has been tested
 with the FTS client 3.11. Older version do not support all the options
 necessary. To install the latest version please add the
-&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo">FTS3 Production&lt;/a>
+&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-el9.repo">FTS3 Production&lt;/a>
 repository to your configuration and update the client
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
@@ -1491,7 +1491,7 @@ command-line FTS and to have your certificate installed in your browser to use
 &lt;ul>
 &lt;li>An &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account, you can
 &lt;a href="../../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>Enrolment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;li>An &lt;a href="../../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
 have all the credentials available (any S3 compatible storage should work)&lt;/li>

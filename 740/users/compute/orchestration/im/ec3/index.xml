@@ -142,9 +142,9 @@ your cluster:&lt;/p>
 &lt;li>network identifiers&lt;/li>
 &lt;li>VM image identifiers&lt;/li>
 &lt;/ol>
-&lt;p>We will use the &lt;a href="../../../../getting-started/cli">FedCloud client&lt;/a> to discover
+&lt;p>We will use the &lt;a href="../../../../../getting-started/cli">FedCloud client&lt;/a> to discover
 the required information. Set your credentials as shown in
-&lt;a href="../../../../getting-started/cli#authentication">the authentication guide&lt;/a>
+&lt;a href="../../../../../getting-started/cli#authentication">the authentication guide&lt;/a>
 and create the authorisation files needed for ec3 (in this case for CESGA with VO
 vo.access.egi.eu):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>fedcloud ec3 init --site CESGA --vo vo.access.egi.eu
@@ -301,6 +301,7 @@ credentials to access the site will be expired and need to refreshed first with
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARNING: you are going to delete the infrastructure &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>including frontend and nodes&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Success deleting the cluster!
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: EC3 Applications and Tools</title><link>/users/compute/orchestration/im/ec3/apps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/ec3/apps/</guid><description>
+&lt;!-- cSpell:words Radiomics -->
 &lt;p>This section documents how to run some applications and use the existing tools
 with EC3.&lt;/p>
 &lt;h2 id="how-to-run-scientific-applications-in-ec3">How to run scientific applications in EC3&lt;/h2>
@@ -314,12 +315,6 @@ from the list of applications.&lt;/p>
 &lt;h3 id="kubernetes">Kubernetes&lt;/h3>
 &lt;p>Check the
 &lt;a href="../../../../cloud-container-compute">Cloud Container Compute documentation&lt;/a>.&lt;/p>
-&lt;h3 id="mesos--marathon--chronos">Mesos + Marathon + Chronos&lt;/h3>
-&lt;p>To deploy a virtual cluster with
-&lt;a href="https://mesosphere.github.io/marathon/">Marathon&lt;/a>,
-&lt;a href="https://mesos.apache.org/">Mesos&lt;/a>, and
-&lt;a href="https://mesos.github.io/chronos/">Chronos&lt;/a> as an orchestration, please select
-Mesos + Marathon + Chronos from the list of available LRMS.&lt;/p>
 &lt;h3 id="oscar-cluster">OSCAR cluster&lt;/h3>
 &lt;p>To deploy
 &lt;a href="https://www.egi.eu/article/serverless-computing-for-data-processing-applications-in-egi/">Serverless computing for data-processing applications&lt;/a>

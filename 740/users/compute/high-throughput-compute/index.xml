@@ -15,7 +15,7 @@ you share, and with whom you share the data.&lt;/p>
 &lt;a href="https://en.wikipedia.org/wiki/GridFTP">gridFTP&lt;/a> and
 &lt;a href="https://en.wikipedia.org/wiki/WebDAV">WebDav/HTTP&lt;/a> protocols, together with
 &lt;a href="https://xrootd.slac.stanford.edu/">XRootD&lt;/a> and legacy
-&lt;a href="https://www.gridpp.ac.uk/wiki/SRM">SRM&lt;/a> (under deprecation at some of the
+&lt;a href="https://sdm.lbl.gov/srm-wg/">SRM&lt;/a> (under deprecation at some of the
 endpoints).&lt;/p>
 &lt;p>Several grid storage implementations are available in the EGI Infrastructure,
 the most common being:&lt;/p>
@@ -97,15 +97,12 @@ protocol can be replaced by any other supported protocol.
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-rm gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file DELETED
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
-&lt;!-- markdown-link-check-disable -->
 &lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service provides
 mechanisms to optimize the transfer of files between EGI Online Storage
-endpoints. Both a
-&lt;a href="../../../data/management/data-transfer/webfts">graphical user interface&lt;/a> (GUI)
-and &lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a>
+endpoints. Both a graphical user interface (GUI) and
+&lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a>
 (CLI) are available to perform bulk movement of data. Please check out the
 related documentation for more information.&lt;/p>
-&lt;!-- markdown-link-check-enable -->
 &lt;h2 id="integration-with-data-management-frameworks">Integration with Data Management frameworks&lt;/h2>
 &lt;p>Grid storage access, most of the time, is hidden from users by the integration
 with the Data Management Frameworks (DMFs) used by Collaborations and

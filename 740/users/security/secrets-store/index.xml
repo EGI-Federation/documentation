@@ -13,7 +13,7 @@ are available on the
 &lt;!-- markdownlint-disable no-bare-urls -->
 &lt;ul>
 &lt;li>Open &lt;a href="https://secrets.egi.eu">https://secrets.egi.eu&lt;/a> in your browser.&lt;/li>
-&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pulldown menu, then click
+&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pull-down menu, then click
 &lt;em>Sign in with OIDC provider&lt;/em>.&lt;/li>
 &lt;li>Login via &lt;em>EGI Check-in&lt;/em> and authorize the Vault GUI.&lt;/li>
 &lt;/ul>
@@ -48,7 +48,7 @@ arrow next to the user icon in the top right corner.
 &lt;p>To create your first secret, click on &lt;em>Secrets&lt;/em> in the top navigation bar,
 then click on folder &lt;strong>secrets&lt;/strong>, then click &lt;em>Create secret&lt;/em> on the right.&lt;/p>
 &lt;!-- markdown-link-check-disable -->
-&lt;p>Use your EGI Check-in ID (e.g. &lt;a href="mailto:e0b6...@egi.eu">e0b6...@egi.eu&lt;/a> in the image below) as the path,
+&lt;p>Use your EGI Check-in ID (e.g. &lt;code>e0b6...@egi.eu&lt;/code> in the image below) as the path,
 followed by the name of your secret. Add at least one key to your secret,
 together with a value.&lt;/p>
 &lt;!-- markdown-link-check-enable -->

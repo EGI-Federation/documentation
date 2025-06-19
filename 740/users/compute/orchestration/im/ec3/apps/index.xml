@@ -23,7 +23,7 @@ infrastructure.&lt;/p>
 &lt;ul>
 &lt;li>deploy an ECAS elastic cluster of VMs in order to automatically install and
 configure the whole ECAS environment services, i.e. JupyterHub, PyOphidia,
-several Python libraries such as numpy, matplotlib and Basemap;&lt;/li>
+several Python libraries such as &lt;code>numpy&lt;/code>, &lt;code>matplotlib&lt;/code> and &lt;code>Basemap&lt;/code>;&lt;/li>
 &lt;li>perform data intensive analysis using the Ophidia HPDA framework;&lt;/li>
 &lt;li>access the ECAS JupyterHub interface to create and share documents containing
 live code, equations, visualizations and explanatory text.&lt;/li>
@@ -37,7 +37,7 @@ on EGI resources.&lt;/p>
 &lt;p>To configure and deploy a Virtual Elastic Cluster using EC3, access the
 &lt;a href="https://servproject.i3m.upv.es/ec3-ltos/index.php">EC3 platform front page&lt;/a> and
 click on the &lt;strong>&amp;quot;Deploy your cluster&amp;quot;&lt;/strong> link as shown in the figure below:&lt;/p>
-&lt;p>&lt;img src="ecas-front.png" alt="EC3 frontpage">&lt;/p>
+&lt;p>&lt;img src="ecas-front.png" alt="EC3 front page">&lt;/p>
 &lt;p>A wizard will guide you through the cluster configuration process. Specifically,
 the general wizard steps include:&lt;/p>
 &lt;ul>
@@ -108,7 +108,7 @@ message:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Cluster configured!
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As SLURM is used as workload manager, it is possible to check the status of the
-working nodes by using the sinfo command, which provides information about Slurm
+working nodes by using the &lt;code>sinfo&lt;/code> command, which provides information about Slurm
 nodes and partitions.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># sinfo&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
@@ -208,8 +208,6 @@ management page.&lt;/p>
 &lt;p>&lt;img src="ecas-manage.png" alt="Destroy cluster">&lt;/p>
 &lt;h2 id="references">References&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://ecaslab.cmcc.it/web/home.html">ECASLab CMCC&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ecaslab.dkrz.de/home.html">ECASLab DKRZ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ophidia.cmcc.it/">Ophidia&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/ECAS-Lab">GitHub: ECAS-Lab&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster">GitHub: Ansible role Ophidia cluster&lt;/a>&lt;/li>
@@ -219,7 +217,7 @@ management page.&lt;/p>
 &lt;h2 id="templates">Templates&lt;/h2>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.
 Create a directory to store EC3 configuration and init it with the
-&lt;a href="../../../../../getting-started/cli">FedCloud client&lt;/a>:&lt;/p>
+&lt;a href="../../../../../../getting-started/cli">FedCloud client&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir -p torque
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> torque
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;

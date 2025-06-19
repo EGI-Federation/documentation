@@ -1,4 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Notebooks Environments</title><link>/users/dev-env/notebooks/kernels/</link><description>Recent content in Notebooks Environments on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/dev-env/notebooks/kernels/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Default Environment</title><link>/users/dev-env/notebooks/kernels/default/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/</guid><description>
+&lt;!-- cSpell:words datascience -->
 &lt;p>The default environment includes a set of
 &lt;a href="https://jupyter.readthedocs.io/en/latest/projects/kernels.html">kernels&lt;/a> that
 are automatically built from the
@@ -28,8 +29,8 @@ and some extra libraries.&lt;/p>
 a RStudio IDE from the Notebooks interface.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Octave: The &lt;a href="https://www.gnu.org/software/octave/">Octave&lt;/a> programming
-language installed on its own conda environment (named &lt;code>octave&lt;/code>).&lt;/p>
+&lt;p>Octave: The &lt;a href="https://www.octave.org/">Octave&lt;/a> programming language installed
+on its own conda environment (named &lt;code>octave&lt;/code>).&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>If you want to add a new kernel, just let us know, and we will discuss the best
@@ -39,6 +40,7 @@ way to support your request.&lt;/p>
 repositories where you can find software relevant to your community. These are
 accessible from the default CVMFS location &lt;code>/cvmfs&lt;/code> and also linked in your home
 directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are available:&lt;/p>
+&lt;!-- cSpell:disable -->
 &lt;ul>
 &lt;li>atlas-condb.cern.ch&lt;/li>
 &lt;li>atlas.cern.ch&lt;/li>
@@ -50,6 +52,7 @@ directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are availabl
 &lt;li>grid.cern.ch&lt;/li>
 &lt;li>notebooks.egi.eu&lt;/li>
 &lt;/ul>
+&lt;!-- cSpell:enable -->
 &lt;p>If you need access to any other repositories, please open a request in
 &lt;a href="https://ggus.eu">GGUS&lt;/a>.&lt;/p>
 &lt;h2 id="installing-your-own-kernelsenvironments-permanently">Installing your own kernels/environments permanently&lt;/h2>
@@ -86,12 +89,13 @@ notebooks.&lt;/p>
 &lt;h2 id="before-getting-started">Before getting started&lt;/h2>
 &lt;h3 id="matlab-licenses">MATLAB Licenses&lt;/h3>
 &lt;p>To use the MATLAB Integration on the EGI Notebooks service, a
-&lt;a href="https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md">supported MATLAB license&lt;/a>
+&lt;a href="https://github.com/mathworks/matlab-proxy/blob/main/MATLAB-Licensing-Info.md">supported MATLAB license&lt;/a>
 is required. You can also use the toolboxes linked to your MATLAB license.&lt;/p>
 &lt;p>If you are unsure of your MATLAB license type, contact your System Administrator
 or
 &lt;a href="https://www.mathworks.com/support/contact_us.html?s_tid=hp_ff_s_support">MathWorks support&lt;/a>.&lt;/p>
 &lt;h3 id="tutorials">Tutorials&lt;/h3>
+&lt;!-- cSpell:words Onramp Onramps -->
 &lt;p>If you are not familiar or have limited experience with MATLAB,
 &lt;a href="https://www.mathworks.com/learn/tutorials/matlab-onramp.html">MATLAB Onramp&lt;/a>
 provides a free, self-paced tutorial. Additional
@@ -126,14 +130,14 @@ access to your on-prem Network License Manager (License Server).&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Free trial MATLAB Licenses If you do not have a MATLAB license and would
-like to try it out, you can download a free MATLAB trial license
-&lt;a href="https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html">here&lt;/a>.
+like to try it out, you can download a
+&lt;a href="https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html">free MATLAB trial license&lt;/a>.
 Note that the trial license is for MATLAB only and does not have any
 toolboxes.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>More information on MATLAB licensing with this integration can be found
-&lt;a href="https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md">here&lt;/a>.&lt;/p>
+&lt;p>More
+&lt;a href="https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md">information on MATLAB licensing with this integration&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Following this, the MATLAB IDE will appear in your browser.&lt;/p>
@@ -148,32 +152,30 @@ document. Live Scripts can be accessed from the
 tab. Here is
 &lt;a href="https://datahub.egi.eu/ozw/onezone/i#/public/shares/af92f66ad616fb8d49d854a823bfd69achf757">an example of a tutorial Live Script&lt;/a>
 from the EGI webinar showing steps required to analyze some public COVID-19
-data with MATLAB. Some other examples of Live Scripts can be found
-&lt;a href="https://www.mathworks.com/products/matlab/live-script-gallery.html">here&lt;/a>.&lt;/p>
+data with MATLAB. Check other
+&lt;a href="https://www.mathworks.com/products/matlab/live-script-gallery.html">examples of Live Scripts&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="limitations">Limitations&lt;/h2>
 &lt;p>Browser based MATLAB has some differences as compared to MATLAB on the desktop.
-For more information, see the limitations
-&lt;a href="https://www.mathworks.com/products/matlab-online/limitations.html">here&lt;/a>.
+For more information, see the
+&lt;a href="https://www.mathworks.com/products/matlab-online/limitations.html">limitations&lt;/a>.
 Additionally, Simulink is not supported on the EGI at this time.&lt;/p>
 &lt;h2 id="restarting-stopping-or-signing-out-of-the-matlab-session">Restarting, stopping or signing out of the MATLAB session&lt;/h2>
 &lt;p>At any time, clicking on this symbol will bring up a dialog to stop, restart or
 sign out of the current MATLAB session.&lt;/p>
-&lt;p>&lt;img src="matlab-session.png" alt="matlab-session">&lt;/p>
-&lt;p>&lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
+&lt;p>&lt;img src="matlab-session.png" alt="matlab-session"> &lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
 &lt;h2 id="open-science-using-matlab-on-egi-notebooks">Open Science using MATLAB on EGI Notebooks&lt;/h2>
 &lt;p>You can access publicly available datasets via the EGI DataHub and analyze them
 in-the-cloud directly using MATLAB, without the need for time consuming
 downloads. Your MATLAB code can also be shared with your community in a variety
 of interoperable and open formats.&lt;/p>
-&lt;h2 id="analyzing-public-datasets-using-matlab-on-egi">Analyzing public datasets using MATLAB on EGI&lt;/h2>
+&lt;h2 id="analysing-public-datasets-using-matlab-on-egi">Analysing public datasets using MATLAB on EGI&lt;/h2>
 &lt;p>This &lt;a href="https://www.youtube.com/watch?v=Hbf1yg32sso">short video&lt;/a> and this
 &lt;a href="https://youtu.be/zT9aW1xHCJU?t=167s">webinar&lt;/a> explains how to access EGI Data
 Services from MATLAB in detail. Data from different data providers can be
-accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. More
-information on Data Management from Notebooks and persistent storage can be
-found &lt;a href="../../data">here&lt;/a>.&lt;/p>
+accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. Check
+&lt;a href="../../data">Data Management documentation&lt;/a>.&lt;/p>
 &lt;h2 id="matlab-support-for-data-formats">MATLAB support for data formats&lt;/h2>
 &lt;p>MATLAB supports several
 &lt;a href="https://www.mathworks.com/help/matlab/scientific-data.html">scientific&lt;/a> and
@@ -221,8 +223,7 @@ Toolbox&lt;/p>
 &lt;p>Ask the system administrator of the site about MATLAB as part of EGI&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Contact &lt;a href="mailto:%20shuboc@mathworks.com">Shubo Chakrabarti&lt;/a> at MathWorks or
-&lt;a href="mailto:enol.fernandez@egi.eu">Enol Fernandez&lt;/a> at EGI for setting up access to
+&lt;p>Get in touch via &lt;a href="https://helpdesk.ggus.eu">GGUS&lt;/a> for setting up access to
 MATLAB at the site.&lt;/p>
 &lt;/li>
 &lt;/ul></description></item></channel></rss>

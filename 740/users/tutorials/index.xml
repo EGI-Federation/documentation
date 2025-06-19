@@ -1142,6 +1142,7 @@ computation libraries like NumPy.
 &lt;/td>
 &lt;/tr>
 &lt;/table></description></item><item><title>Users: Scientific level</title><link>/users/tutorials/scientific/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/scientific/</guid><description>
+&lt;!-- cSpell:words CMIP Intercomparison -->
 &lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
@@ -1454,7 +1455,7 @@ allowfullscreen>
 &lt;b>About&lt;/b>: openEO platform provides intuitive programming libraries
 to process a wide variety of earth observation datasets. This large-scale
 data access and processing is performed on multiple infrastructures, which
-all support the openEO API. This allows use cases from explorative research
+all support the openEO API. This allows use cases from exploratory research
 to large-scale production of EO-derived maps and information.
 &lt;br/>&lt;br/>
 &lt;b>Slides and code&lt;/b>
