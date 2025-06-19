@@ -31,6 +31,8 @@ or
 
 ### Tutorials
 
+<!-- cSpell:words Onramp Onramps -->
+
 If you are not familiar or have limited experience with MATLAB,
 [MATLAB Onramp](https://www.mathworks.com/learn/tutorials/matlab-onramp.html)
 provides a free, self-paced tutorial. Additional
@@ -110,7 +112,7 @@ in-the-cloud directly using MATLAB, without the need for time consuming
 downloads. Your MATLAB code can also be shared with your community in a variety
 of interoperable and open formats.
 
-## Analyzing public datasets using MATLAB on EGI
+## Analysing public datasets using MATLAB on EGI
 
 This [short video](https://www.youtube.com/watch?v=Hbf1yg32sso) and this
 [webinar](https://youtu.be/zT9aW1xHCJU?t=167s) explains how to access EGI Data

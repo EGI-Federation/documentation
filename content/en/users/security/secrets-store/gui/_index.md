@@ -22,7 +22,7 @@ Follow the steps below to access the web interface of EGI Secrets Store:
 
 <!-- markdownlint-disable no-bare-urls -->
 - Open https://secrets.egi.eu in your browser.
-- Choose the _OIDC authentication_ method in the pulldown menu, then click
+- Choose the _OIDC authentication_ method in the pull-down menu, then click
 _Sign in with OIDC provider_.
 - Login via _EGI Check-in_ and authorize the Vault GUI.
 <!-- markdownlint-enable no-bare-urls -->

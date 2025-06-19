@@ -38,7 +38,7 @@ To access services and resources in the
 
 - An [EGI Check-in](../../../aai/check-in) account, you can
   [sign up here](../../../aai/check-in/signup)
-- Enrollment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
+- Enrolment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
 - An [Object Storage](../../../data/storage/object-storage) for which you need to
   have all the credentials available (any S3 compatible storage should work)

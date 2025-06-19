@@ -23,6 +23,8 @@ for increasing your default home allocation via ticket.
 
 ## Import notebooks into your workspace
 
+<!-- cSpell:words nbgitpuller -->
+
 The Notebooks service default environment includes
 [nbgitpuller](https://github.com/jupyterhub/nbgitpuller), an extension to sync a
 git repository one-way to a local path. You can generate a shareable link by

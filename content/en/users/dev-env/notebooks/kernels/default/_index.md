@@ -9,6 +9,8 @@ description: >
   The default environment in EGI Notebooks
 ---
 
+<!-- cSpell:words datascience -->
+
 The default environment includes a set of
 [kernels](https://jupyter.readthedocs.io/en/latest/projects/kernels.html) that
 are automatically built from the
@@ -47,6 +49,8 @@ repositories where you can find software relevant to your community. These are
 accessible from the default CVMFS location `/cvmfs` and also linked in your home
 directory `/home/jovyan/cvmfs`. These repositories are available:
 
+<!-- cSpell:disable -->
+
 - atlas-condb.cern.ch
 - atlas.cern.ch
 - auger.egi.eu
@@ -56,6 +60,8 @@ directory `/home/jovyan/cvmfs`. These repositories are available:
 - eiscat.egi.eu
 - grid.cern.ch
 - notebooks.egi.eu
+
+<!-- cSpell:enable -->
 
 If you need access to any other repositories, please open a request in
 [GGUS](https://ggus.eu).
