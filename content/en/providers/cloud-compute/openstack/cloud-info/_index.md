@@ -11,7 +11,7 @@ flavors available at the OpenStack for the federation users. It runs as a single
 python application
 [cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
 that pushes information through the
-[Messaging Service](../../../internal/messaging/).
+[Messaging Service](../../../../internal/messaging/).
 
 {{% alert title="BDII is deprecated" color="info" %}} Cloud providers no longer
 need to provide BDII as the Argo Messaging Service is used instead for
@@ -26,6 +26,7 @@ entry for the `org.openstack.nova`.
 EGI can manage the operation of the `cloud-info-provider` for the site so you
 don't need to do it. In order for your site to be included in the centrally
 operated `cloud-info-provider`, you need to create a Pull Request at the
+<!-- cspell:disable-next-line -->
 [EGI-Federation/fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/)
 adding your site configuration in the `sites` directory with a file like this:
 
@@ -69,10 +70,11 @@ cloud-info-provider-service --yaml-file <your site description.yaml> \
                             --ams-topic <your endpoint topic>
 ```
 
-For authentication, you should be able to use any authentication method
-supported by [keystoneauth](https://opendev.org/openstack/keystoneauth), for
-username and password use: `--os-password` and `--os-username`. Check the
-complete list of options with `cloud-info-provider-service --help`.
+For authentication, you should be able to use any authentication method supported by
+<!-- cspell:disable-next-line -->
+[`keystoneauth`](https://opendev.org/openstack/keystoneauth).
+For username and password use: `--os-password` and `--os-username`.
+Check the complete list of options with `cloud-info-provider-service --help`.
 
 The AMS topic has the format: `SITE_<SITE_NAME>_ENDPOINT_<GOCDB_ID>`, where
 `<SITE_NAME>` is the name of the site as declared in GOCDB and `<GOCDB_ID>` is
