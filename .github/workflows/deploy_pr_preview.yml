@@ -176,8 +176,8 @@ jobs:
         # and the resulting list is sent to lyuchee via stdin (-)
         # to see if there are any bad links in those pages
         run: >-
-          echo "https://docs.egi.eu/documentation/${{
-          github.event.pull_request.number }}/internal/${{ matrix.url }}/" |
+          echo "https://docs.egi.eu/documentation/${{ github.event.number
+          }}/internal/${{ matrix.url }}/" |
             ./hakrawler -u -i -d 10 -json |
             jq -r '. |
             select(.Source == "href") | .URL' |
