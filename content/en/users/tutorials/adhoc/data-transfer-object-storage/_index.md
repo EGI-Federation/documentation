@@ -22,7 +22,7 @@ two object storage.
 {{% alert title="Warning" color="warning" %}} This procedure has been tested
 with the FTS client 3.11. Older version do not support all the options
 necessary. To install the latest version please add the
-[FTS3 Production](https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo)
+[FTS3 Production](https://fts-repo.web.cern.ch/fts-repo/fts3-el9.repo)
 repository to your configuration and update the client{{% /alert %}}
 
 ## Prerequisites
