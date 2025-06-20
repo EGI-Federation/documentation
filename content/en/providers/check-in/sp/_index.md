@@ -266,7 +266,7 @@ It is recommended that your SP metadata contains:
   - an `<md:Extensions>` element at the role level containing
     - an `<mdui:UIInfo>` extension element containing the child elements
       `<mdui:DisplayName>`, `<mdui:Logo>`, and `<mdui:PrivacyStatementURL>`
-    - an `<mdattr:EntityAttributes>` extension element for signaling Subject
+    - an `<mdattr:EntityAttributes>` extension element for signalling Subject
       Identifier requirements with previously prescribed content
   - an `<md:ContactPerson>` element with a contactType of `support` and/or a
     `<md:ContactPerson>` element with a contactType of `technical`. The
@@ -294,6 +294,8 @@ The EGI Check-in IdP is guaranteed to release a minimal subset of the
 bundle to connected Service Providers without administrative involvement,
 subject to user consent. The following attributes constitute a minimal subset of
 the R&S attribute bundle:
+
+<!-- cSpell:words reassignable -->
 
 - Community User Identifier (CUID) which is a globally unique, opaque,
   persistent and non-reassignable identifier identifying the user
@@ -1727,7 +1729,7 @@ Generic information for users on how to do this can be found at
 [Instructions for end users on how to use the SSH key authN for proxy retrieval](https://wiki.nikhef.nl/grid/RCauth.eu_and_MasterPortal_SSH_Key_Portal).
 Alternatively VO portals could implement such functionality themselves by using
 the API described at the
-[Master Portal sshkey endpoint description](https://wiki.nikhef.nl/grid/Master_Portal_sshkey_endpoint).
+[Master Portal ssh key endpoint description](https://wiki.nikhef.nl/grid/Master_Portal_sshkey_endpoint).
 
 ## User attributes
 
@@ -1941,6 +1943,8 @@ connected to Check-in.
 |              **status** | Stable                                                                                                                                                                                     |
 
 ### 13. Assurance
+
+<!-- cSpell:words eppn -->
 
 |          attribute name | Assurance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

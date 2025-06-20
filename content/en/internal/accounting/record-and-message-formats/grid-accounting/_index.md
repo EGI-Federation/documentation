@@ -25,7 +25,7 @@ where the element is a direct child of `urf:UsageRecord`.
 
 | Key | Value | Description | Mandatory | CAR equivalent (if different) |
 | - | - | - | - | - |
-| Site | String | GOCDB sitename | Yes |
+| Site | String | GOCDB site name | Yes |
 | SubmitHost | String | The CE-ID (see example) | Yes |
 | MachineName | String | LRMS hostname | | |
 | Queue | String | Batch system queue | | |
@@ -134,7 +134,7 @@ The table shows the equivalent field in the AUR, under the container element
 
 | Key | Value | Description | Mandatory | AUR equivalent |
 | - | - | - | - | - |
-| Site | String | GOCDB sitename | Yes | |
+| Site | String | GOCDB site name | Yes | |
 | Month | int | Month of summary (see notes) | Yes | |
 | Year | int | Year of summary (see notes) | Yes | |
 | GlobalUserName | String | User's X509 DN | | aur:UserIdentity/urf:GlobalUserName |
@@ -217,7 +217,7 @@ sites which publish via the standard APEL client.
 
 | Key | Value | Description | Mandatory |
 | - | - | - | - |
-| Site | String | GOCDB sitename | Yes |
+| Site | String | GOCDB site name | Yes |
 | SubmitHost | String | CE ID | Yes |
 | NumberOfJobs | int | Total number of jobs for that month | Yes |
 | Month | int | Month | Yes |
