@@ -599,6 +599,7 @@ Notebooks service to scientific communities. Such customised instances can be ho
 hardware (for example with fat nodes and GPUs), can offer special libraries, data import/export
 and user authentication systems.
 <br/><br/>
+<!-- cSpell:word Enol -->
 During the webinar Enol will go through the main features of the EGI Notebooks service and
 he will explain how to use it with Binder and other open-source solutions to implement Open Science.
 </td>

@@ -4,6 +4,7 @@ description: "Concepts used when writing documentation"
 type: docs
 weight: 20
 ---
+<!-- cspell:word Flavored goldmark pageinfo -->
 
 The EGI documentation is a static site built using
 [Hugo](https://gohugo.io/getting-started/configuration-markup/)

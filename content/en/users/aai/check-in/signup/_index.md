@@ -90,7 +90,7 @@ Includes the basic information about your profile:
 
 Includes information about the Virtual Organisations (VOs) and groups the user is
 member of and the roles assigned to the user within those VOs.
-Check the [guide about VOs](../joining-virtual-organisation) for more details.
+Check the [guide about VOs](../vos) for more details.
 
 ![VO/Group membership](./check-in-profile-vos.png)
 
