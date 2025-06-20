@@ -609,7 +609,7 @@ he will explain how to use it with Binder and other open-source solutions to imp
 <b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
 </td>
 <td>
-<i>"Introduction to Slurm" (March 2023)</i>
+<i>"Introduction to SLURM" (March 2023)</i>
 <br/><br/>
 <iframe
   width="560"
@@ -621,10 +621,10 @@ he will explain how to use it with Binder and other open-source solutions to imp
   allowfullscreen>
 </iframe>
 <br/><br/>
-<b>About</b>: Slurm is an open-source, fault-tolerant, and highly scalable
+<b>About</b>: SLURM is an open-source, fault-tolerant, and highly scalable
 cluster management and job scheduling system for large and small Linux clusters.
 In this tutorial, we briefly discuss the benefits of using batch schedulers,
-the motivations to use Slurm and provide a list of commands to get started with Slurm.
+the motivations to use SLURM and provide a list of commands to get started with SLURM.
 <br/><br/>
 <b>Suggested material</b>
 <ul>
