@@ -57,8 +57,8 @@ Before users can access an EGI service, they have to:
 1. Obtain a supported ID, by signing up with either
    [EGI Check-in](../aai/check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. [Enroll into one VO](../aai/check-in/joining-virtual-organisation/). Users
-   need to be part of a VO before using EGI services. Explore the list of
+1. [Enrol into one VO](../aai/check-in/vos/#how-to-join-a-virtual-organisation).
+   Users need to be part of a VO before using EGI services. Explore the list of
    available VOs in the
    [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 1. Authenticate to [EGI Check-in](../aai/check-in) to obtain an OAuth2 access

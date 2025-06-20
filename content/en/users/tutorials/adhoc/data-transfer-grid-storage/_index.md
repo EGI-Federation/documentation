@@ -25,7 +25,7 @@ As first step please make sure that you have installed the FTS client as
 described in [Data Transfer](../../../data/management/data-transfer), and in particular
 [Clients](../../../data/management/data-transfer/clients) for the command-line FTS and to have
 your certificate installed in your browser to use
-[WebFTS](../../../data/management/data-transfer/webfts) browser based client.
+[WebFTS](../../../data/management/data-transfer) browser based client.
 
 To access services and resources in the
 [EGI Federated Cloud](../../../getting-started), you will need:
