@@ -56,7 +56,7 @@ where the element is a direct child of `urf:UsageRecord`.
 
 #### Example Message
 
-```text
+```plaintext
 APEL-individual-job-message: v0.2
 Site: ExampleSite
 SubmitHost: host.domain:port/queue
@@ -163,7 +163,7 @@ The table shows the equivalent field in the AUR, under the container element
 
 #### Example Message
 
-```text
+```plaintext
 APEL-summary-job-message: v0.3
 Site: ExampleSite
 Month: 3
@@ -231,7 +231,7 @@ sites which publish via the standard APEL client.
 
 #### Example Message
 
-```text
+```plaintext
 APEL-sync-message: v0.1
 Site: ExampleSite
 SubmitHost: host.domain:port/queue

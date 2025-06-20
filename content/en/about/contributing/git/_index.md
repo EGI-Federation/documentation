@@ -258,7 +258,7 @@ includes the issue number, followed by an empty line and then a brief
 description of the commit. This also helps other contributors understand the
 purpose of changes to the code.
 
-```text
+```plaintext
     #3 - platform_family and style
 
     * use platform_family for platform checking

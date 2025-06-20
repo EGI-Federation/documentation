@@ -316,7 +316,7 @@ to be discontinued with the end of June 2020.
 This interactive webinar will introduce the major new features of the ARC6 release and cover
 the deployment steps of an ARC6 CE  both as a new installation and as an upgrade from a previous
 ARC5-based deployment. Special attention will be given to the accounting system related changes
-and the new one-shop-stop sysadmin toolbox built around arcctl.
+and the new one-shop-stop sysadmin toolbox built around `arcctl`.
 </td>
 </tr>
 <tr>
