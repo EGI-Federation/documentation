@@ -16,7 +16,7 @@ This tutorial describes how to create your first Virtual Machine in the EGI Fede
 
 Create an EGI account with [Check-in](../../../aai/check-in/signup).
 
-## Step 2: Enroling to a Virtual Organisation
+## Step 2: Enrolling to a Virtual Organisation
 
 Once your EGI account is ready you need to join a
 [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).

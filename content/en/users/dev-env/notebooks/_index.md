@@ -48,11 +48,13 @@ Individual users can use the centrally operated service from EGI. Users can log
 in, write and play and re-play notebooks by:
 
 1. [creating an EGI account](../../aai/check-in/signup)
-2. Enroling to the one of the supported VOs such as
+2. Enrolling to the one of the supported VOs such as
    [vo.notebooks.egi.eu VO](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
 3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
 The central instance supports the following VOs:
+
+<!-- cSpell:disable -->
 
 - [vo.notebooks.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu),
   [enrol here](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
@@ -66,6 +68,8 @@ The central instance supports the following VOs:
 - [vo.environmental.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu)
 - [vo.lethe-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.lethe-project.eu)
 - [vo.cessda.eduteams.org](https://operations-portal.egi.eu/vo/view/voname/vo.cessda.eduteams.org)
+
+<!-- cSpell:enable -->
 
 ### Notebooks for communities
 

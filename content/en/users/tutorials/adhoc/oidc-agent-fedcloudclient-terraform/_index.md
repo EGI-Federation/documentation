@@ -26,7 +26,7 @@ valid TLS certificate from [Let's Encrypt](https://letsencrypt.org/).
 
 Create an EGI account with [Check-in](../../../aai/check-in/signup).
 
-## Step 2: Enroling to a Virtual Organisation
+## Step 2: Enrolling to a Virtual Organisation
 
 Once your EGI account is ready you need to join a
 [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
@@ -166,7 +166,7 @@ You can retrieve information from the AppDB about the sites supporting the
 
 > In the following example, the `IN2P3-IRES` site supporting the
 > `vo.access.egi.eu` VO will be used, see
-> [Step 2: Enroling to a Virtual Organisation](#step-2-enroling-to-a-virtual-organisation)
+> [Step 2: Enrolling to a Virtual Organisation](#step-2-enrolling-to-a-virtual-organisation)
 > to request access.
 
 ### Deploying the Virtual Machine with terraform
@@ -513,6 +513,8 @@ Then you can verify that the Virtual Machine is accessible by Ansible:
 $ ansible all -m ping
 ```
 
+<!-- cSpell:words playbooks -->
+
 Once this works, you can
 [create advanced playbooks](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 to configure your deployed host(s).
@@ -531,6 +533,7 @@ and in the
 Additional resources are available, and can help with addressing different use
 cases, or be used as a source of inspiration:
 
+<!-- cspell:disable-next-line -->
 - [egi-qc/deployment-howtos](https://github.com/egi-qc/deployment-howtos):
   Deployment recipes extracted from Jenkins builds for the
   [UMD](https://go.egi.eu/umd) and [CMD](https://go.egi.eu/cmd) products
