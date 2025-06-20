@@ -12,10 +12,15 @@ patterns:
 languageSettings:
   - languageId: markdown
     ignoreRegExpList:
+      # code blocks
       - >
         /^(`{3}) ([\w\-\.]+) [\s\S]*?^\1 /gmix
       - >
         `.*`
+      # code
+      - >
+        `.*`
+      # html commments
       - >
         <!--.*-->
 ignorePaths:
