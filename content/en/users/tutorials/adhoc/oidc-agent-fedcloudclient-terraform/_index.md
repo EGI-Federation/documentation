@@ -131,6 +131,7 @@ ansible
 
 For keeping the main system tidy and isolating the environment, the python
 packages will be installed in a dedicated
+<-- cspell:disable-next-line -->
 [python virtualenv](https://docs.python.org/3/tutorial/venv.html):
 
 ```shell
