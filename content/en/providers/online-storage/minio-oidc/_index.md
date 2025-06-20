@@ -22,15 +22,15 @@ Be familiar with the steps to configure an OpenID Connect Service Provider with
 This tutorial assumes that:
 
 - You have a valid EGI ID (account), you can
-  [sign up here](../../../users/aai/check-in//signup).
+  [sign up here](../../../users/aai/check-in/signup).
 - You are a member of a
-  [Virtual Organisation](../../../users/aai/check-in//joining-virtual-organisation).
+  [Virtual Organisation](../../../users/aai/check-in/vos/#how-to-join-a-virtual-organisation).
 - You have deployed MinIO and have access to the console as `admin`.
 
 ## Step 1: Get the OIDC entitlement for the Virtual Organisation
 
 See the
-[page about getting tokens from Check-in](../../../users/aai/check-in//obtaining-tokens/token-portal/).
+[page about getting tokens from Check-in](../../../users/aai/check-in/obtaining-tokens/token-portal/).
 You will get a `curl` command to get your OIDC entitlements.
 
 Select the entitlement for the Virtual Organisation that you want to

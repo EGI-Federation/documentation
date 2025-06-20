@@ -65,12 +65,12 @@ user.
 {{% /alert %}}
 
 For joining this VO, please click on the
-[enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
+[enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 using your [EGI account](../../../aai/check-in/).
 
 ### Other VOs
 
-Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
+Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
 [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 

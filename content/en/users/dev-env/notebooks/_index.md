@@ -54,8 +54,10 @@ in, write and play and re-play notebooks by:
 
 The central instance supports the following VOs:
 
+<!-- cSpell:disable -->
+
 - [vo.notebooks.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu),
-  enroll [here](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
+  [enrol here](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
 - [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 - [auger](https://operations-portal.egi.eu/vo/view/voname/auger)
 - [biomed](https://operations-portal.egi.eu/vo/view/voname/biomed)
@@ -66,6 +68,8 @@ The central instance supports the following VOs:
 - [vo.environmental.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu)
 - [vo.lethe-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.lethe-project.eu)
 - [vo.cessda.eduteams.org](https://operations-portal.egi.eu/vo/view/voname/vo.cessda.eduteams.org)
+
+<!-- cSpell:enable -->
 
 ### Notebooks for communities
 

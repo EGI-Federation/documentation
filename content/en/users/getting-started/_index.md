@@ -57,8 +57,8 @@ Before users can access an EGI service, they have to:
 1. Obtain a supported ID, by signing up with either
    [EGI Check-in](../aai/check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. [Enroll into one VO](../aai/check-in/joining-virtual-organisation/). Users
-   need to be part of a VO before using EGI services. Explore the list of
+1. [Enrol into one VO](../aai/check-in/vos/#how-to-join-a-virtual-organisation).
+   Users need to be part of a VO before using EGI services. Explore the list of
    available VOs in the
    [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 1. Authenticate to [EGI Check-in](../aai/check-in) to obtain an OAuth2 access
@@ -145,6 +145,8 @@ Users of the service are asked to provide appropriate acknowledgement of the use
 in scientific publications. The following acknowledgement text can be used for
 this purpose (you should adapt to match the exact providers in your case):
 
+<-- cSpell:word UNIV -->
+
 **This work used advanced computing resources from the 100%IT, CESGA, CLOUDIFIN,
 CYFRONET-CLOUD, GSI-LCG2, IFCA-LCG2, IN2P3-IRES, INFN-CATANIA-STACK,
 INFN-PADOVA-STACK, SCAI, TR-FC1-ULAKBIM, UA-BITP and UNIV-LILLE resource centres
@@ -158,9 +160,9 @@ the users' requests before granting the access to the resources.
 ### Get access to pilot allocation
 
 1. Create an [EGI Check-In account](../aai/check-in/).
-2. Enroll the `vo.access.egi.eu` Virtual Organisation by following the
-   [enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu).
-   Make sure you use your EGI Check-In account for the enrollment.
+2. Enrol the `vo.access.egi.eu` Virtual Organisation by following the
+   [enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu).
+   Make sure you use your EGI Check-In account for the enrolment.
 
 Once your petition is approved, you will be granted access. The grant to run
 applications is initially valid for 6 months and can be extended/renewed upon

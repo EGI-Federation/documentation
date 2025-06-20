@@ -13,7 +13,7 @@ description: >
 
 This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) to retrieve
-ODIC tokens from [EGI Check-in](../../../aai/check-in),
+OIDC tokens from [EGI Check-in](../../../aai/check-in),
 [fedcloudclient](https://fedcloudclient.fedcloud.eu/) to simplify interacting
 with the [EGI Cloud Compute service](../../../compute/cloud-compute),
 [terraform](https://www.terraform.io) and [Ansible](https://www.ansible.com/) to
@@ -31,8 +31,8 @@ Create an EGI account with [Check-in](../../../aai/check-in/signup).
 Once your EGI account is ready you need to join a
 [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 Here are the steps to
-[join a VO](../../../aai/check-in/joining-virtual-organisation/). Explore the list
-of available VOs in the
+[join a VO](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation).
+Explore the list of available VOs in the
 [Operations Portal](https://operations-portal.egi.eu/vo/a/list). We have a
 dedicated VO called
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
@@ -131,6 +131,7 @@ ansible
 
 For keeping the main system tidy and isolating the environment, the python
 packages will be installed in a dedicated
+<-- cspell:disable-next-line -->
 [python virtualenv](https://docs.python.org/3/tutorial/venv.html):
 
 ```shell
@@ -314,7 +315,7 @@ security_groups  = ["default"]
 #### Creating the main terraform deployment file
 
 To be more reusable, the `main.tf` configuration file is referencing variables
-described in the [vars.tf](#describing-the-terraform-variables) file created
+described in the [`vars.tf`](#describing-the-terraform-variables) file created
 previously, and will take the values from the
 [`$EGI_SITE.tfvars`](#documenting-the-cloud-resources-for-the-selected-site)
 file passed as an argument to the terraform command.
@@ -366,7 +367,7 @@ resource "local_file" "hosts_cfg" {
 ```
 
 The last resource is relying on
-[templatefile](https://www.terraform.io/language/functions/templatefile) to
+[`templatefile`](https://www.terraform.io/language/functions/templatefile) to
 populate the inventory file that will later be used by
 [ansible](#step-4-using-ansible).
 
@@ -513,6 +514,8 @@ Then you can verify that the Virtual Machine is accessible by Ansible:
 $ ansible all -m ping
 ```
 
+<!-- cSpell:words playbooks -->
+
 Once this works, you can
 [create advanced playbooks](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 to configure your deployed host(s).
@@ -531,6 +534,7 @@ and in the
 Additional resources are available, and can help with addressing different use
 cases, or be used as a source of inspiration:
 
+<!-- cspell:disable-next-line -->
 - [egi-qc/deployment-howtos](https://github.com/egi-qc/deployment-howtos):
   Deployment recipes extracted from Jenkins builds for the
   [UMD](https://go.egi.eu/umd) and [CMD](https://go.egi.eu/cmd) products

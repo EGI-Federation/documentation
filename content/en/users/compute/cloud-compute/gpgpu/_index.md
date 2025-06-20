@@ -18,6 +18,9 @@ The table below summarises the available options:
 
 <!-- markdownlint-disable line-length -->
 
+<!-- VO names do not need spell checking -->
+<!-- cSpell:words sarscov neanias carouseldancing clarin cryoem glados beamide -->
+
 | Site | VM configuration options | Flavors | Supported VOs with GPUs | Access conditions | More information |
 | ---- | ------------------------ | ------- | ----------------------- | ----------------- | ---------------- |
 | IISAS-FedCloud | up to 7 NVIDIA A100 40GB, up to 8 NVIDIA Tesla K20m | g1.c08r30-K20m, g1.c16r60-2xK20m, A100 GPUs accessible using private flavors | vo.access.egi.eu, training.egi.eu, eosc-synergy.eu, vo.ai4eosc.eu, icecube, vo.beamide.com | Sponsored, conditions to be negotiated | |
@@ -33,9 +36,9 @@ Check whether you belong to one of the supported
 [Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 If you are not sure what VO to join, request access to the pilot VO
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
-by visiting the [enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
+by visiting the [enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 with your Check-In account. More information is available in the
-[Check-in](../../../aai//check-in/joining-virtual-organisation) section.
+[Check-in](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation) section.
 
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon

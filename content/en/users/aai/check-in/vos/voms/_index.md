@@ -230,6 +230,8 @@ generate multiple proxies.
 Visit [Operation Portal](https://operations-portal.egi.eu) to search for
 existing VOs
 
+<!-- cSpell:word Enrollment -->
+
 1. If there are any community VOs matching your requirements (with _Registry
    System_ is _VOMS_), then click _Action_-> _Details_ to look at the VO
    information. In the _VO ID Card_ page, click the link for _Enrollment URL_,
@@ -238,7 +240,7 @@ existing VOs
    get approval for your access.** ![Register to a VO](vo_registration.png)
 
 1. If there are no relevant VOs, you can send a request
-   [to register a new VO](ttps://operations-portal.egi.eu/vo/registration).
+   [to register a new VO](https://operations-portal.egi.eu/vo/registration).
    (Note, for EGI services, you should request for `VOMS configuration`, once VO
    is configured, you will be notified about your VO VOMS link). More
    information can be found at
@@ -280,7 +282,7 @@ Once you have the VO information configured (`vomses` and `.lsc`) and your
 certificate available in your `$HOME/.globus` directory you can create a VOMS
 proxy to be used with clients with:
 
-```sh
+```shell
 voms-proxy-init --voms <name of the vo> --rfc
 ```
 
@@ -288,7 +290,7 @@ See for example, using `fedcloud.egi.eu` VO:
 
 <!-- markdownlint-disable line-length -->
 
-```sh
+```shell
 voms-proxy-init --voms fedcloud.egi.eu --rfc
 Enter GRID pass phrase:
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=EGI/OU=UCST/CN=Enol Fernandez

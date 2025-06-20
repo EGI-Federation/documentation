@@ -191,6 +191,7 @@ egifedcloud
 eginotebooks
 egispawner
 egiswift
+EIRO
 eiscat
 emi
 emphasisproject
@@ -329,6 +330,7 @@ interoperation
 ipykernel
 ipynb
 irisgrid
+IRTF
 ismore
 iss
 itil
@@ -572,6 +574,7 @@ scipy
 scotgrid
 screenshot
 scs
+SDIS
 secmon
 secretkey
 sectigo
@@ -583,6 +586,7 @@ SGs
 Shm
 shortcode
 shortcodes
+signup
 Simulink
 singleuser
 Sinica
