@@ -586,9 +586,9 @@ SGs
 Shm
 shortcode
 shortcodes
+signup
 Simulink
 singleuser
-singup
 Sinica
 sirtfi
 skipcacheck

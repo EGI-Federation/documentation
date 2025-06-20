@@ -13,7 +13,7 @@ description: >
 
 This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) to retrieve
-ODIC tokens from [EGI Check-in](../../../aai/check-in),
+OIDC tokens from [EGI Check-in](../../../aai/check-in),
 [fedcloudclient](https://fedcloudclient.fedcloud.eu/) to simplify interacting
 with the [EGI Cloud Compute service](../../../compute/cloud-compute),
 [terraform](https://www.terraform.io) and [Ansible](https://www.ansible.com/) to
@@ -367,7 +367,7 @@ resource "local_file" "hosts_cfg" {
 ```
 
 The last resource is relying on
-[templatefile](https://www.terraform.io/language/functions/templatefile) to
+[`templatefile`](https://www.terraform.io/language/functions/templatefile) to
 populate the inventory file that will later be used by
 [ansible](#step-4-using-ansible).
 
