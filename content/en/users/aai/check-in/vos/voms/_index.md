@@ -230,6 +230,8 @@ generate multiple proxies.
 Visit [Operation Portal](https://operations-portal.egi.eu) to search for
 existing VOs
 
+<!-- cSpell:word Enrollment -->
+
 1. If there are any community VOs matching your requirements (with _Registry
    System_ is _VOMS_), then click _Action_-> _Details_ to look at the VO
    information. In the _VO ID Card_ page, click the link for _Enrollment URL_,

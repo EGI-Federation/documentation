@@ -32,7 +32,7 @@ To access services and resources in the
 
 - An [EGI Check-in](../../../aai/check-in) account, you can
   [sign up here](../../../aai/check-in/signup)
-- Enrollment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
+- Enrolment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
 
 ## FTS client usage
@@ -66,8 +66,8 @@ for each FTS command. When running `voms-proxy-init` it's possible to specify
 the location of the public and private key. If this are not included as options,
 the tool expect to find them in:
 
-- ~/.globus/usercert.pem for the public key
-- ~/.globus/userkey.pem for the private key with read access only for the owner
+- `~/.globus/usercert.pem` for the public key
+- `~/.globus/userkey.pem` for the private key with read access only for the owner
 
 Following is an example of running this command with the public and private key
 already setup as described:
