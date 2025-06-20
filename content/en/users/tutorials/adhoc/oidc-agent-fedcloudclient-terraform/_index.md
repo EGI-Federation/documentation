@@ -31,7 +31,7 @@ Create an EGI account with [Check-in](../../../aai/check-in/signup).
 Once your EGI account is ready you need to join a
 [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 Here are the steps to
-[join a VO](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation). 
+[join a VO](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation).
 Explore the list of available VOs in the
 [Operations Portal](https://operations-portal.egi.eu/vo/a/list). We have a
 dedicated VO called

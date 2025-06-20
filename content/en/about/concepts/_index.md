@@ -160,9 +160,11 @@ the image already includes a folder with the same name as the file's base name.
 
 ### Linking to pages
 
+<!-- markdownlint-disable descriptive-link-text -->
 You can include hyperlinks in the documentation that will
 [link](https://spec.commonmark.org/0.29/#links) to any documentation page,
 or to external resources.
+<!-- markdownlint-enable descriptive-link-text -->
 
 Assuming we have the same section named **About** with a subpage **Concepts**
 as used [above](#embedding-images-or-other-content), and the file `_index.md`
@@ -189,9 +191,11 @@ if you omit the file extension, `.md` will be assumed.
 
 ### Linking to documentation headings
 
+<!-- markdownlint-disable descriptive-link-text -->
 You can also include hyperlinks in the documentation that will
 [link](https://spec.commonmark.org/0.29/#links) to any heading (aka chapter)
 from any documentation page.
+<!-- markdownlint-enable descriptive-link-text -->
 
 To link to a heading in a documentation page, you need to point the hyperlink
 to the anchor created automatically by Markdown for the targeted heading.

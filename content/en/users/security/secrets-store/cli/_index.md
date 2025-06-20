@@ -23,8 +23,8 @@ advanced Vault features not exposed via other tools.
 To access the EGI Secrets Store service from the command-line you need a valid
 [EGI Check-in](../../../aai/check-in) access token. Get it either from the
 [EGI Check-in Token Portal](https://aai.egi.eu/token), or from the
-**oidc-agent** (see [here](../../../getting-started/cli#authentication) for
-details), then set it to an environment variable:
+**oidc-agent** (see [cli guide](../../../getting-started/cli#authentication)
+for details), then set it to an environment variable:
 
 {{< tabpanex >}} {{< tabx header="Mac / Linux" >}}
 
