@@ -389,7 +389,7 @@ new service with ARGO. In addition, the real time computations and the results v
 the alerts, API and UI will be shown.
 <br/><br/>
 ARGO is a service jointly developed and maintained by
-<a href="http://www.cnrs.fr/en">CNRS</a>,
+<a href="https://www.cnrs.fr/en">CNRS</a>,
 <a href="https://grnet.gr/en/">GRNET</a> and
 <a href="https://www.srce.unizg.hr/en/">SRCE</a>.
 </td>

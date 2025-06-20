@@ -238,5 +238,5 @@ different page or section.
 ## Glossary
 
 {{% pageinfo %}} The EGI Glossary is available on the
-[EGI Glossary space](http://go.egi.eu/glossary).
+[EGI Glossary space](https://go.egi.eu/glossary).
 {{% /pageinfo %}}
