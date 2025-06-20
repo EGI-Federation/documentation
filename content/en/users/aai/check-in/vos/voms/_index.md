@@ -280,7 +280,7 @@ Once you have the VO information configured (`vomses` and `.lsc`) and your
 certificate available in your `$HOME/.globus` directory you can create a VOMS
 proxy to be used with clients with:
 
-```sh
+```shell
 voms-proxy-init --voms <name of the vo> --rfc
 ```
 
@@ -288,7 +288,7 @@ See for example, using `fedcloud.egi.eu` VO:
 
 <!-- markdownlint-disable line-length -->
 
-```sh
+```shell
 voms-proxy-init --voms fedcloud.egi.eu --rfc
 Enter GRID pass phrase:
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=EGI/OU=UCST/CN=Enol Fernandez

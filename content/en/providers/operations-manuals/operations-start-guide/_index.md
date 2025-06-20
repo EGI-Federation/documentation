@@ -267,7 +267,7 @@ with federated identities.
 #### Obtaining a X509 personal certificate
 
 If you do not already have a X509 personal certificate
-[the EUGridPMA worlmap](https://www.eugridpma.org/members/worldmap/) provides a
+[the EUGridPMA world map](https://www.eugridpma.org/members/worldmap/) provides a
 map of all certification authorities according to the country (or NGI). Select
 your country on the map to find out who is your local CA. Follow the procedure
 of your local CA to request a certificate. When you have received your
