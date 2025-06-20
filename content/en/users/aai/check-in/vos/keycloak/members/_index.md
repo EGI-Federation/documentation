@@ -41,7 +41,7 @@ with other useful information.
    of several subgroups.
 
 2. The **Unique User Identifier** is the string that uniquely identifies a user,
-   and it is made of a long alphanumerical string suffixed by “@egi.eu”.
+   and it is made of a long alphanumerical string suffixed by `@egi.eu`.
 3. Name / email shows the full name and email address of the user.
 4. The roles that the user has in the group. Note that users can have more than
    one role assigned in the group but must have at least one assigned. There is

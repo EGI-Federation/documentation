@@ -35,7 +35,7 @@ If you are not sure what VO to join, request access to the pilot VO
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 by visiting the [enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 with your Check-In account. More information is available in the
-[Check-in](../../../aai/check-in/joining-virtual-organisation) section.
+[Check-in](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation) section.
 
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon

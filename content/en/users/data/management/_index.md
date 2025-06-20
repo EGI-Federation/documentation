@@ -37,8 +37,8 @@ This higher-level data management service is available to researchers:
 The following specialized data management service is also available:
 
 - [EGI Data Transfer](data-transfer) is a low-level service to move data from
-  one [Grid](../storage/grid-storage) or [Object](../storage/object-storage) storage
-  to another.
+  one [Grid](../../compute/high-throughput-compute/grid-storage) or
+  [Object](../storage/object-storage) storage to another.
 
 ## Use-cases for storing research data
 
