@@ -14,9 +14,7 @@ languageSettings:
     ignoreRegExpList:
       # code blocks
       - >
-        /^(`{3}) ([\w\-\.]+) [\s\S]*?^\1 /gmix
-      - >
-        `.*`
+        /^([\s]+`{3}) ([\w\-\.]+) [\s\S]*?^\1 /gmix
       # code
       - >
         `.*`
