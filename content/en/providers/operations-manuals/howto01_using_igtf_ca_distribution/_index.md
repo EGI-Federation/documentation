@@ -36,7 +36,7 @@ Manager (RPM) based package management system, we provide a convenience package
 to manage the installation. To install the currently valid distribution, all RPM
 packages are provided at
 
-```text
+```plaintext
 https://repository.egi.eu/sw/production/cas/1/current/
 ```
 
@@ -133,7 +133,7 @@ other platforms. Since there is no dependency management in this case, please
 review the release notes carefully for any security issues or withdrawn CAs. The
 tar files can be found in the EGI repository at
 
-```text
+```plaintext
 https://repository.egi.eu/sw/production/cas/1/current/tgz/
 ```
 

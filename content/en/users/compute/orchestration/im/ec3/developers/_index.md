@@ -26,6 +26,7 @@ following process:
 * [EC3 documentation](https://ec3.readthedocs.io/en/devel/templates.html)
 * [RADL](https://github.com/grycap/ec3/tree/master/templates)
 
+<!-- cSpell:words Caballer Calatrava -->
 {{% alert title="Note" color="info" %}} For more information please contact
 
 * Miguel Caballer: `micafer1 <at> upv.es`
