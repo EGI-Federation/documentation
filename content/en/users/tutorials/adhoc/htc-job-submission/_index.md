@@ -550,7 +550,7 @@ The first step is to prepare a JDL as `testjob.jdl`. The
 [CREAM JDL Guide](https://cream-guide.readthedocs.io/en/latest/JDL_Guide.html),
 documents the creation of the JDL:
 
-```text
+```plaintext
 [
 Type = "Job";
 JobType = "Normal";

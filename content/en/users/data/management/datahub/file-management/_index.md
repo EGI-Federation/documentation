@@ -55,7 +55,7 @@ Permissions for "others" are considered when accessing
 
 Consider the following example of a file's POSIX permissions:
 
-```text
+```plaintext
 rwx r-- ---
  |   |   |
  |   |   guests

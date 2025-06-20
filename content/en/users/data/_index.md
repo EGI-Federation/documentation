@@ -10,7 +10,7 @@ description: >
 ## Working with data
 
 One of the main daily activities of researchers is to collect or create data
-that needs to be processed, analyzed, or shared. The EGI offering in this area
+that needs to be processed, analysed, or shared. The EGI offering in this area
 is quite vast and includes both low level
 [storage services](./storage/) and
 [data management](./management/) frameworks, as well as specialized
