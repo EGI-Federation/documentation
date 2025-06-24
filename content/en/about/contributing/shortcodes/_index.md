@@ -143,6 +143,9 @@ func main() {
 Will render as:
 
 <!-- prettier-ignore -->
+
+<!-- cSpell:disable -->
+
 {{< tabpane >}}
 {{< tab header="C++" lang="C++" >}}
 #include <iostream>
@@ -170,6 +173,8 @@ func main() {
 }
 {{< /tab >}}
 {{< /tabpane >}}
+
+<!-- cSpell:enable -->
 
 ## Content with multiple variants
 

@@ -71,7 +71,7 @@ following query to the GOCDBPI interface:
 - [egi.MSGBroker](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.MSGBroker):
   (Central service) The central message broker
 - [egi.Portal](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.Portal):
-  (Central Service) for monitoring generic web portals who dont have a specific
+  (Central Service) for monitoring generic web portals who don't have a specific
   service type
 - (deprecated) MSG-Broker: (Central service) A broker for the backbone messaging
   system.
