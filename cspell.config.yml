@@ -6,21 +6,18 @@ dictionaries:
   - custom-words
   - allowed-words
 patterns:
-  - name: md
-    # pattern: /^(\s*`{3,}).*\n[\s\S]*?^\1/gmix
-    pattern: /^(`{3})plaintext[\s\S]*?^\1/gmix
+  - name: html_comment 
+    pattern: /<!--.*-->/
+  - name: markdown_code_block
+    pattern: /```[\s\S]*?```/
+  - name: simple_code
+    pattern: /`.*`/
 languageSettings:
   - languageId: markdown
     ignoreRegExpList:
-      # code blocks
-      - >
-        /^([\s]*`{3}) ([\w\-\.]+) [\s\S]*?^\1 /gmix
-      # code
-      - >
-        `.*`
-      # html commments
-      - >
-        <!--.*-->
+      - markdown_code_block
+      - html_comment
+      - simple_code
 ignorePaths:
   - ".github/actions/**"
   - ".github/workflows/**"

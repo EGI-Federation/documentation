@@ -21,6 +21,8 @@ weight: 20
 
 ## Markdown writing guidelines
 
+<!-- cSpell:words Flavored linters -->
+
 Documentation pages have to be written in Markdown, compliant with
 [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/).
@@ -96,7 +98,7 @@ adverbs.
 
 ### Write objectively
 
-Do not use humor, jargon, exclamation marks, idioms, metaphors, and other
+Do not use humour, jargon, exclamation marks, idioms, metaphors, and other
 colloquialisms.
 
 ### Describe the most common use case first
@@ -504,6 +506,8 @@ reported:
 // jscpd:ignore-start
 -->
 
+<!-- cspell:disable -->
+
 ````go-html-template
 {{</* tabpanex */>}}
 
@@ -542,6 +546,7 @@ reported:
 
 {{</* /tabpanex */>}}
 ````
+<!-- cspell:enable -->
 
 <!--
 // jscpd:ignore-end

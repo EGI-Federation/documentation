@@ -13,7 +13,7 @@ description: >
 
 EGI Data Transfer offers Application Programming Interfaces (APIs) for both
 regular users and administrator. This page focuses on the user APIs,
-available in two favors:
+available in two flavours:
 
 - REST API
 - Python Easy Bindings

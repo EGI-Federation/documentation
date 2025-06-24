@@ -37,7 +37,7 @@ Resource Centre integrated into the EGI Federation.
 
 1. Security:
 
-   - HTC: [pakiti](../../../internal/security-coordination/monitoring/pakiti) is
+   - HTC: [`pakiti`](../../../internal/security-coordination/monitoring/pakiti) is
      installed and the outcome of the EGI CSIRT assessment is positive;
    - Cloud: the [EGI security Survey](https://survey.egi.eu/327232) was sent to
      the EGI CSIRT and the outcome was positive.
