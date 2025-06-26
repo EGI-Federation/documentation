@@ -79,7 +79,7 @@ requirements. All the EGI policies aim at implementing service provisioning best
 practices and common requirements. EGI operations may conduct campaigns targeted
 to mitigate security vulnerabilities and to update unsupported operating system
 and software. These activities are part of the regular activities of a resource
-centre anyways (also for the non-federated ones). EGI and the Operations Centres
+centre anyway (also for the non-federated ones). EGI and the Operations Centres
 coordinate these actions in order to have them implemented in a timely manner.
 
 In summary, most of the site activities that are coordinated by EGI and the NGIs

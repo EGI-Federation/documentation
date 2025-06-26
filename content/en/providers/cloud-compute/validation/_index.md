@@ -20,7 +20,7 @@ Extra checks for your installation:
   is already in good shape.
 
 - Check that all the images listed in the AppDB for the VOs you support (e.g.
-  [AppDB page for fedlcoud.egi.eu VO](https://appdb.egi.eu/store/vo/fedcloud.egi.eu))
+  [AppDB page for fedcloud.egi.eu VO](https://appdb.egi.eu/store/vo/fedcloud.egi.eu))
   are listed in your BDII. This sample query will return all the template IDs
   registered in your BDII: :
 
