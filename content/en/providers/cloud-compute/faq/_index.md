@@ -9,11 +9,11 @@ description: >
 ## Why joining the EGI Cloud?
 
 - To support international communities supported by EGI (e.g.
-  [these research communities and applications](https://www.egi.eu/use-cases/)
+  [research communities and applications](https://www.egi.eu/use-cases/)
   or
-  [these research infrastructures in EOSC-hub](https://eosc-hub.eu/research-communities)
+  [research infrastructures](https://www.egi.eu/publication/egi-support-for-research-infrastructures/)
   or
-  [these business pilots in the EOSC Digital Innovation Hub](https://eosc-hub.eu/digital-innovation-hub).
+  [business pilots in the EOSC Digital Innovation Hub](https://eosc-dih.eu/pilots/).
 - To participate in e-Infrastructure projects (H2020, EOSC) as an EGI compliant
   IaaS cloud provider.
 - To participate in resource allocation and in pay-for-use campaigns run by EGI.
