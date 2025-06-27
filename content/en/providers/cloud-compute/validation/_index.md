@@ -1,6 +1,6 @@
 ---
 title: "Installation Validation"
-weight: 60
+weight: 40
 type: "docs"
 description: >
   Validate your installation

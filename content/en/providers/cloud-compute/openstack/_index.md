@@ -1,6 +1,6 @@
 ---
 title: "OpenStack"
-weight: 20
+weight: 30
 type: "docs"
 description: >
   Integration with OpenStack
@@ -25,13 +25,14 @@ from outside the site:
 The integration is performed by a set of EGI components that interact with the
 OpenStack services APIs:
 
-- Authentication of EGI users into your system is performed by configuring the
-  native OpenID Connect support of Keystone
-- **cASO** collects accounting data from OpenStack and uses **SSM** to send the
-  records to the central accounting database on the EGI Accounting service
+- [Authentication and authorization of EGI users](./aai) into your system is
+  performed by configuring the native OpenID Connect support of Keystone
+- **cASO** collects [accounting](./accounting) data from OpenStack and uses
+  **SSM** to send the records to the central accounting database on
+  the [EGI Accounting service](../../../internal/accounting)
   ([APEL](https://apel.github.io/)). cASO and SSM are operated by the site.
-- EGI runs the cloud-info-provider and cloudkeeper instances to provide
-  information discovery and VM image synchronisation
+- EGI runs [catch-all components](./catch-all) -- cloud-info-provider and
+  cloudkeeper -- information discovery and VM image synchronisation.
 
 ![image](openstacksite.png)
 
