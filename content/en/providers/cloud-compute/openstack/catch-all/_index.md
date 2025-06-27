@@ -8,19 +8,20 @@ description: >
 
 EGI manages the operations of two components for the sites so you don't need
 to do it:
-  - the information discovery provides a view about the actual images and
-    flavors available at the OpenStack for the federation users.
-    It runs as a single python application
-    [cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
-    that pushes information through the
-    [Messaging Service](../../../../internal/messaging/).
 
-    {{% alert title="BDII is deprecated" color="info" %}} Cloud providers no longer
-    need to provide BDII as the Argo Messaging Service is used instead for
-    transferring information {{% /alert %}}
+- the information discovery provides a view about the actual images and
+  flavors available at the OpenStack for the federation users.
+  It runs as a single python application
+  [cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
+  that pushes information through the
+  [Messaging Service](../../../../internal/messaging/).
 
-  - the `image-sync` makes sure that images available in [EGI's Artefact Registry](https://registry.egi.eu)
-    are avalable for your users in glance.
+  {{% alert title="BDII is deprecated" color="info" %}} Cloud providers no longer
+  need to provide BDII as the Argo Messaging Service is used instead for
+  transferring information {{% /alert %}}
+
+- the `image-sync` makes sure that images available in [EGI's Artefact Registry](https://registry.egi.eu)
+  are available for your users in glance.
 
 The deployment and configuration of these components is managed a the
 <!-- cspell:disable-next-line -->
@@ -34,7 +35,7 @@ gocdb: <your site name as declared in GOCDB>
 images:
   sync: true
   # optionally list the formats that your site supports/prefers (as supported by qemu)
-  # if not specificed, the sync will assume all formats are supported
+  # if not specified, the sync will assume all formats are supported
   formats:
     - qcow2
     - raw

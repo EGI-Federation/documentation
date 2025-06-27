@@ -44,6 +44,7 @@ cASO and SSM releases can be be obtained from GitHub:
   containers are available in the
   [fedcloud-caso](https://github.com/EGI-Federation/fedcloud-catchall-operations/pkgs/container/fedcloud-caso)
   package from
+  <!-- cspell:disable-next-line -->
   [fedcloud-catchall-operations](https://github.com/EGI-Federation/fedcloud-catchall-operations)
 - [SSM](https://github.com/apel/ssm/releases).
 
