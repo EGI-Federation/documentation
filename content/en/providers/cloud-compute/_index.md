@@ -35,15 +35,17 @@ summarised below:
    site parses several intermediate stages - Registered, Candidate,
    Uncertified - until fully Certified.
 1. [**Requirements**](./requirements/) - hardware and software, network
-   configuration
+   configuration.
 1. **Registration of endpoints in the Configuration Database**
    ([GOCDB](../../internal/configuration-database/)), a service provided by EGI
    as a central registry to record information about the EGI Infrastructure
-   topology and which contains general information about all participating sites
+   topology and which contains general information about all participating sites.
 1. **Authentication and Authorization Integration** (AAI), including the setup
-   of an `ops` local project that will be used for monitoring your site
-1. **Accounting** configuration
-1. **Installation validation**
+   of an `ops` local project that will be used for monitoring your site.
+1. **Catch-all configuration**, providing the configuration of the projects
+   in your endpoint that will be used for supporting EGI users.
+1. **Accounting** configuration.
+1. **Installation validation**.
 
 If at any time you experience technical difficulties or need support, please
 [open a ticket](https://ggus.eu/). Dedicated integration sessions are available
