@@ -18,8 +18,8 @@ community, private and/or public cloud services. These service providers offer:
 
 - **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
   allows users to log in with their institutional (community) credentials
-- **Global image catalogue** at [AppDB](https://appdb.egi.eu) with
-  pre-configured virtual machine images
+- **Global image catalogue** at [Artefact Registry](https://registry.egi.eu)
+  with pre-configured virtual machine images
 - **Resource discovery** features to easily understand which providers are
   supporting your community, and what are their capabilities
 - **Global accounting** that

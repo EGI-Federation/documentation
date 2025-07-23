@@ -9,6 +9,8 @@ description: >
   Run virtual machines in the EGI Cloud
 ---
 
+<!-- cSpell:words NBIS VERCE-->
+
 The [EGI Federated Cloud Compute](https://www.egi.eu/service/cloud-compute/) (FedCloud)
 service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute driven
@@ -30,9 +32,9 @@ offer:
   users can log into every provider with their institutional credentials and
   use modern industry standards like
   [OpenID Connect](https://openid.net/connect/).
-- Global VM image catalogue at [AppDB](https://appdb.egi.eu) with pre-configured
-  Virtual Machine images that are automatically replicated to every provider
-  based on your community needs.
+- Global VM image catalogue at [Artefact Registry](https://registry.egi.eu)
+  with pre-configured Virtual Machine images that are automatically replicated
+  to every provider based on your community needs.
 - Resource discovery features to easily understand which providers are
   supporting your community and what are their capabilities.
 - [Global accounting](https://accounting.egi.eu/cloud/) that aggregates and

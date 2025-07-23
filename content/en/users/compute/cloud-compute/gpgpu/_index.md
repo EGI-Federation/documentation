@@ -67,7 +67,3 @@ Site-specific dashboards and endpoints are described in the following table:
 | CESNET-MCC     | `https://dashboard.cloud.muni.cz` | `https://identity.cloud.muni.cz/`    |
 
 <!-- markdownlint-enable line-length -->
-
-A VM image with pre-installed NVIDIA driver and Docker is available at
-[AppDB](https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7). Some VOs
-(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.

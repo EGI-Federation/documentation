@@ -66,8 +66,7 @@ the general wizard steps include:
 
 - **Endpoint**: the endpoints of the providers where to deploy the ECAS elastic
   cluster. The endpoints serving the `vo.access.egi.eu` VO are dynamically
-  retrieved from the [EGI Application DataBase](https://appdb.egi.eu/) using
-  REST APIs.
+  retrieved from the cloud information system using REST APIs.
 
 ![FedCloud endpoint](ecas-endpoint.png)
 
