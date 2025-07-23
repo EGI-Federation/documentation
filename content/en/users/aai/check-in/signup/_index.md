@@ -79,8 +79,9 @@ creates a secure profile for you.
 
     {{% alert title="Important" color="warning" %}}
 
-    - You do not need a new password for EGI Check-in — it always uses your existing
-      account's login system.
+    You do not need a new password for EGI Check-in — it always uses your existing
+    account's login system.
+
     - If you don’t see your institution in the list, check whether they are part of
       the eduGAIN federation, or consider using ORCID or another supported identity.
     - If you plan to use certificates, make sure they are installed in your browser
