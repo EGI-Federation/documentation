@@ -943,7 +943,7 @@ the providers supporting that VO: they will be able to manage VMs, block
 storage and object storage available to the VO. Resources (VMs and storage) are
 &lt;strong>shared&lt;/strong> across all members of the VO, please do not interfere with the VMs
 of other users if you are not entitled to do so (specially do not delete them).&lt;/p>
-&lt;p>Some users roles may have additional persmissions in VOs, check your VO Manager
+&lt;p>Some users roles may have additional permissions in VOs, check your VO Manager
 for the specific documentation.&lt;/p>
 &lt;h3 id="pilot-vo">Pilot VO&lt;/h3>
 &lt;p>The
@@ -1197,13 +1197,13 @@ using &lt;code>packer&lt;/code> and GitHub Actions.&lt;/p>
 &lt;p>The Artefact Registry can store arbitrary binary artifacts and those matching
 the expected metadata will be synced to the sites. For uploading the images,
 any OCI registry compliant tool can be used. We rely on
-&lt;a href="https://oras.land">oras&lt;/a> for uploading the EGI images.&lt;/p>
+&lt;a href="https://oras.land">&lt;code>oras&lt;/code>&lt;/a> for uploading the EGI images.&lt;/p>
 &lt;p>Images must have a &lt;code>eu.egi.cloud.tag&lt;/code> annotation in their manifest for them to
 be synced and the following additional annotations are expected to be available:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>org.openstack.glance.disk_format&lt;/code>: with the disk format of the image (e.g.
 &lt;code>raw&lt;/code> or &lt;code>qcow2&lt;/code>)&lt;/li>
-&lt;li>&lt;code>org.openstack.glance.container_format&lt;/code>: with the glance ontainer format
+&lt;li>&lt;code>org.openstack.glance.container_format&lt;/code>: with the glance container format
 (&lt;code>bare&lt;/code> should be used in most cases), see
 &lt;a href="https://docs.openstack.org/glance/latest/user/formats.html">glance documentation&lt;/a>.&lt;/li>
 &lt;li>&lt;code>eu.egi.cloud.image.title&lt;/code>: Human readable title.&lt;/li>
@@ -1215,7 +1215,7 @@ be synced and the following additional annotations are expected to be available:
 &lt;/ul>
 &lt;p>For the upload, you need to:&lt;/p>
 &lt;ol>
-&lt;li>Login to the registry, you can find crendentials in your registry profile:
+&lt;li>Login to the registry, you can find credentials in your registry profile:
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras login -u &amp;lt;user&amp;gt; registry.egi.eu
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>Prepare an

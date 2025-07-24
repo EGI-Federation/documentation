@@ -603,10 +603,14 @@ certificate and private keys (&lt;code>/etc/grid-security/hostcert.pem&lt;/code>
 &lt;p>Both caso and ssmsend are run via the root user crontab. For convenience there
 are two scripts &lt;code>/usr/local/bin/caso-extract.sh&lt;/code> and
 &lt;code>/usr/local/bin/ssm-send.sh&lt;/code> that run the docker container with the proper
-volumes.&lt;/p></description></item><item><title>Providers: Information System</title><link>/providers/cloud-compute/openstack/cloud-info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/cloud-info/</guid><description>
-&lt;p>Information discovery provides a real-time view about the actual images and
-flavors available at the OpenStack for the federation users. It runs as a single
-python application
+volumes.&lt;/p></description></item><item><title>Providers: Catch-all components</title><link>/providers/cloud-compute/openstack/catch-all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/catch-all/</guid><description>
+&lt;p>EGI manages the operations of two components for the sites so you don&amp;rsquo;t need
+to do it:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>the information discovery provides a view about the actual images and
+flavors available at the OpenStack for the federation users.
+It runs as a single python application
 &lt;a href="https://github.com/EGI-Federation/cloud-info-provider">cloud-info-provider&lt;/a>
 that pushes information through the
 &lt;a href="../../../../internal/messaging/">Messaging Service&lt;/a>.&lt;/p>
@@ -616,18 +620,26 @@ Cloud providers no longer
 need to provide BDII as the Argo Messaging Service is used instead for
 transferring information
 &lt;/div>
-&lt;p>You can either run the service by yourself or rely on central operations of the
-cloud-info-provider. In both cases you must register your host DN in the GOCDB
-entry for the &lt;code>org.openstack.nova&lt;/code>.&lt;/p>
-&lt;h2 id="catch-all-operations">Catch-all operations&lt;/h2>
-&lt;p>EGI can manage the operation of the &lt;code>cloud-info-provider&lt;/code> for the site so you
-don&amp;rsquo;t need to do it. In order for your site to be included in the centrally
-operated &lt;code>cloud-info-provider&lt;/code>, you need to create a Pull Request at the&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>the &lt;code>image-sync&lt;/code> makes sure that images available in &lt;a href="https://registry.egi.eu">EGI&amp;rsquo;s Artefact Registry&lt;/a>
+are available for your users in glance.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The deployment and configuration of these components is managed a the&lt;/p>
 &lt;!-- cspell:disable-next-line -->
-&lt;p>&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>
-adding your site configuration in the &lt;code>sites&lt;/code> directory with a file like this:&lt;/p>
+&lt;p>&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>.
+Every provider should have a single &lt;code>yaml&lt;/code> file that describes its configuration
+as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your endpoint as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">gocdb&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your site name as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">images&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sync&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># optionally list the formats that your site supports/prefers (as supported by qemu)&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># if not specified, the sync will assume all formats are supported&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">formats&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">qcow2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">raw&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">vos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># a list of VOs you support in your deployment as follows&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -636,56 +648,25 @@ adding your site configuration in the &lt;code>sites&lt;/code> directory with a 
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">project_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;local OpenStack project identifier for second VO&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;name of another vo&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once PR is merged, the service will be reconfigured and your site should start
-publishing information.&lt;/p>
-&lt;h2 id="local-operations">Local operations&lt;/h2>
-&lt;p>You can operate by yourself the &lt;code>cloud-info-provider&lt;/code>. The software can be
-obtained as RPMs, debs and python packages from the
-&lt;a href="https://github.com/EGI-Federation/cloud-info-provider/releases">GitHub releases page&lt;/a>.&lt;/p>
-&lt;p>The &lt;code>cloud-info-provider&lt;/code> needs a configuration file where your site is
-described, see the
-&lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml">sample OpenStack configuration&lt;/a>
-for the required information. The authentication parameters for your local
-OpenStack and the AMS are passed as command-line options:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cloud-info-provider-service --yaml-file &amp;lt;your site description.yaml&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --middleware openstack &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --os-auth-url &amp;lt;your keystone URL&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> any other options &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> authentication &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --format glue21 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --publisher ams &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --ams-cert &amp;lt;your host certificate&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --ams-key &amp;lt;your host secret key&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --ams-topic &amp;lt;your endpoint topic&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For authentication, you should be able to use any authentication method supported by&lt;/p>
-&lt;!-- cspell:disable-next-line -->
-&lt;p>&lt;a href="https://opendev.org/openstack/keystoneauth">&lt;code>keystoneauth&lt;/code>&lt;/a>.
-For username and password use: &lt;code>--os-password&lt;/code> and &lt;code>--os-username&lt;/code>.
-Check the complete list of options with &lt;code>cloud-info-provider-service --help&lt;/code>.&lt;/p>
-&lt;p>The AMS topic has the format: &lt;code>SITE_&amp;lt;SITE_NAME&amp;gt;_ENDPOINT_&amp;lt;GOCDB_ID&amp;gt;&lt;/code>, where
-&lt;code>&amp;lt;SITE_NAME&amp;gt;&lt;/code> is the name of the site as declared in GOCDB and &lt;code>&amp;lt;GOCDB_ID&amp;gt;&lt;/code> is
-the ID of the endpoint in GOCDB. For example,
-&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service&amp;amp;id=7513">this endpoint&lt;/a>
-would have a topic like: &lt;code>SITE_IFCA-LCG2_ENDPOINT_7513G0&lt;/code>.&lt;/p>
-&lt;p>You should periodically run the cloud-info-provider (e.g. with a cron every 5
-minutes) to push the information for consumption by clients.&lt;/p>
-&lt;h3 id="using-the-egi-fedcloud-appliance">Using the EGI FedCloud Appliance&lt;/h3>
-&lt;p>The appliance provides a ready-to-use cloud-info-provider configuration if you
-want to operate it by yourself. Once you have downloaded the appliance check the
-following files:&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can create
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/pulls">pull requests&lt;/a>
+for adding and maintaining your site configuration to the catch-all operations. As
+soon as the pull request is merged, a new deployment will be triggered and your site
+should start publishing information and syncing images.&lt;/p>
+&lt;p>The catch-all operations uses a service account user, this user is member of the &lt;code>ops&lt;/code> VO
+and should be enabled to manage VM images in glance.&lt;/p>
+&lt;h2 id="opting-out-of-catch-all-operations">Opting out of catch-all operations&lt;/h2>
+&lt;p>You can completely opt-out from the catch-all operations by removing your site
+configuration from the repository. However, this will make your site not discoverable
+by fedcloudclient or Infrastructure Manager.&lt;/p>
+&lt;p>You can also disable the image sync by setting &lt;code>images.sync&lt;/code> to &lt;code>false&lt;/code> or by completely
+removing the &lt;code>images&lt;/code> configuration. In that case, monitoring probes may fall as they rely
+on the images being present at the site.&lt;/p>
+&lt;p>Individual components are available in GitHub if you want to operate them by your own:&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>&lt;code>/etc/cloud-info-provider/openstack.rc&lt;/code>: the configuration of the account used
-to log into your OpenStack and the location of the host certificate that will
-be used to authenticate to the AMS.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>/etc/cloud-info-provider/openstack.yaml&lt;/code>: the cloud-info-provider
-configuration. You need to enter the details about the VOs/projects that the
-site is supporting.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>The appliance has a cron job that will connect to the configured OpenStack API
-and send messages every 5 minutes.&lt;/p></description></item><item><title>Providers: GPU flavours</title><link>/providers/cloud-compute/openstack/gpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/gpu/</guid><description>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/cloud-info-provider">&lt;code>cloud-info-provider&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/atrope">&lt;code>atrope&lt;/code>&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Providers: GPU flavours</title><link>/providers/cloud-compute/openstack/gpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/gpu/</guid><description>
 &lt;h2 id="setting-up-gpu-flavours">Setting up GPU flavours&lt;/h2>
 &lt;p>Support for GPU can be added to flavours using the
 &lt;a href="https://docs.openstack.org/nova/xena/admin/pci-passthrough.html">PCI passthrough feature in OpenStack&lt;/a>.

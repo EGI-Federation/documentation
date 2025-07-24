@@ -49,6 +49,52 @@ inbound external access)&lt;/p>
 capacity - min 8 GB - of an instance) needs to be made available by the site
 for monitoring purposes.&lt;/p>
 &lt;/li>
+&lt;/ul></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
+&lt;p>Site endpoints must be registered in
+&lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. Cloud
+services can coexist within an existing (Grid) site, but we are recommending to
+register a new site for the cloud services (as per
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
+procedure - see
+&lt;a href="../../joining/federated-resource-centre/">Joining as a provider&lt;/a> section)&lt;/p>
+&lt;h2 id="expected-services">Expected Services&lt;/h2>
+&lt;p>These are the expected services for a working site:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>org.openstack.nova&lt;/code> for the Nova endpoint of the site. The &lt;strong>endpoint URL&lt;/strong>
+must contain the Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>. Set the
+&lt;strong>Host DN&lt;/strong> so the cloud-info-provider can be enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.accounting&lt;/code> for the host sending the records to the accounting
+repository (executing SSM send). This host needs a valid IGTF-accredited X.509
+certificate. Set the &lt;strong>Host DN&lt;/strong> so the SSM can be enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>org.openstack.horizon&lt;/code> for the dashboard endpoint of the site (optional). The
+endpoint URL field must contain the horizon URL: &lt;code>https://hostname:port/url/&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>(Optional, if offering object storage) &lt;code>org.openstack.swift&lt;/code> for the swift
+endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> field must contain the Keystone v3
+URL: &lt;code>https://hostname:port/url/v3&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="deprecated-services">Deprecated services&lt;/h2>
+&lt;p>Deprecated services for cloud providers:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>Site-BDII&lt;/code>. This service collects and publishes site's data for the
+Information System. There is no need to run a BDII for cloud providers.
+&lt;code>eu.egi.cloud.information.bdii&lt;/code> is also deprecated and no longer in use.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.vm-metadata.vmcatcher&lt;/code> for the VMI replication mechanism.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.vm-management.occi&lt;/code> for the OCCI endpoint offered by the site.
+OCCI is no longer in use in FedCloud.&lt;/p>
+&lt;/li>
 &lt;/ul></description></item><item><title>Providers: OpenStack</title><link>/providers/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/</guid><description>
 &lt;p>This section provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
@@ -68,13 +114,14 @@ from outside the site:&lt;/p>
 &lt;p>The integration is performed by a set of EGI components that interact with the
 OpenStack services APIs:&lt;/p>
 &lt;ul>
-&lt;li>Authentication of EGI users into your system is performed by configuring the
-native OpenID Connect support of Keystone&lt;/li>
-&lt;li>&lt;strong>cASO&lt;/strong> collects accounting data from OpenStack and uses &lt;strong>SSM&lt;/strong> to send the
-records to the central accounting database on the EGI Accounting service
+&lt;li>&lt;a href="./aai">Authentication and authorization of EGI users&lt;/a> into your system is
+performed by configuring the native OpenID Connect support of Keystone&lt;/li>
+&lt;li>&lt;strong>cASO&lt;/strong> collects &lt;a href="./accounting">accounting&lt;/a> data from OpenStack and uses
+&lt;strong>SSM&lt;/strong> to send the records to the central accounting database on
+the &lt;a href="../../../internal/accounting">EGI Accounting service&lt;/a>
 (&lt;a href="https://apel.github.io/">APEL&lt;/a>). cASO and SSM are operated by the site.&lt;/li>
-&lt;li>EGI runs the cloud-info-provider and cloudkeeper instances to provide
-information discovery and VM image synchronisation&lt;/li>
+&lt;li>EGI runs &lt;a href="./catch-all">catch-all components&lt;/a> &amp;ndash; cloud-info-provider and
+cloudkeeper &amp;ndash; information discovery and VM image synchronisation.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="openstacksite.png" alt="image">&lt;/p>
 &lt;h2 id="installation-options">Installation options&lt;/h2>
@@ -84,6 +131,7 @@ information discovery and VM image synchronisation&lt;/li>
 containers are available in the
 &lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/pkgs/container/fedcloud-caso">fedcloud-caso&lt;/a>
 package from
+&lt;!-- cspell:disable-next-line -->
 &lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations">fedcloud-catchall-operations&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/apel/ssm/releases">SSM&lt;/a>.&lt;/li>
 &lt;/ul>
@@ -214,53 +262,7 @@ additional metadata properties that can help to identify the workload:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator.id: 0afdc7ba-bf5d-11ed-9e89-86ce117c3fcf
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator.url: https://im.egi.eu/im
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator.user: __OPENID__XXXXXXredacted
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
-&lt;p>Site endpoints must be registered in
-&lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. Cloud
-services can coexist within an existing (Grid) site, but we are recommending to
-register a new site for the cloud services (as per
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
-procedure - see
-&lt;a href="../../joining/federated-resource-centre/">Joining as a provider&lt;/a> section)&lt;/p>
-&lt;h2 id="expected-services">Expected Services&lt;/h2>
-&lt;p>These are the expected services for a working site:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;code>org.openstack.nova&lt;/code> for the Nova endpoint of the site. The &lt;strong>endpoint URL&lt;/strong>
-must contain the Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>. Set the
-&lt;strong>Host DN&lt;/strong> so the cloud-info-provider can be enabled.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>eu.egi.cloud.accounting&lt;/code> for the host sending the records to the accounting
-repository (executing SSM send). This host needs a valid IGTF-accredited X.509
-certificate. Set the &lt;strong>Host DN&lt;/strong> so the SSM can be enabled.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>org.openstack.horizon&lt;/code> for the dashboard endpoint of the site (optional). The
-endpoint URL field must contain the horizon URL: &lt;code>https://hostname:port/url/&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>(Optional, if offering object storage) &lt;code>org.openstack.swift&lt;/code> for the swift
-endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> field must contain the Keystone v3
-URL: &lt;code>https://hostname:port/url/v3&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="deprecated-services">Deprecated services&lt;/h2>
-&lt;p>Deprecated services for cloud providers:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;code>Site-BDII&lt;/code>. This service collects and publishes site's data for the
-Information System. There is no need to run a BDII for cloud providers.
-&lt;code>eu.egi.cloud.information.bdii&lt;/code> is also deprecated and no longer in use.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>eu.egi.cloud.vm-metadata.vmcatcher&lt;/code> for the VMI replication mechanism.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>eu.egi.cloud.vm-management.occi&lt;/code> for the OCCI endpoint offered by the site.
-OCCI is no longer in use in FedCloud.&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>Providers: Installation Validation</title><link>/providers/cloud-compute/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/validation/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: Installation Validation</title><link>/providers/cloud-compute/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/validation/</guid><description>
 &lt;p>Once the site services are registered in GOCDB (and flagged as &amp;quot;monitored&amp;quot;)
 they will appear in the EGI service monitoring tools. EGI will check the status
 of the services. Check if your services are present in the EGI service
@@ -270,17 +272,13 @@ reference Resource Infrastructure.&lt;/p>
 &lt;p>Extra checks for your installation:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>Check in &lt;a href="https://argo-mon2.egi.eu/nagios">ARGO-Mon2&lt;/a> that your services are
+&lt;p>Check in &lt;a href="https://argo.egi.eu/egi/CriticalUncert">ARGO&lt;/a> that your services are
 listed and are passing the tests. If all the tests are OK, your installation
 is already in good shape.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Check that you are publishing cloud information in your site BDII: :&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
 &lt;p>Check that all the images listed in the AppDB for the VOs you support (e.g.
-&lt;a href="https://appdb.egi.eu/store/vo/fedcloud.egi.eu">AppDB page for fedlcoud.egi.eu VO&lt;/a>)
+&lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB page for vo.access.egi.eu VO&lt;/a>)
 are listed in your BDII. This sample query will return all the template IDs
 registered in your BDII: :&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue &lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GLUE2ApplicationEnvironment GLUE2ApplicationEnvironmentRepository
@@ -303,11 +301,11 @@ listed and the values reported look consistent with the usage of your site.&lt;/
 &lt;h2 id="why-joining-the-egi-cloud">Why joining the EGI Cloud?&lt;/h2>
 &lt;ul>
 &lt;li>To support international communities supported by EGI (e.g.
-&lt;a href="https://www.egi.eu/use-cases/">these research communities and applications&lt;/a>
+&lt;a href="https://www.egi.eu/use-cases/">research communities and applications&lt;/a>
 or
-&lt;a href="https://eosc-hub.eu/research-communities">these research infrastructures in EOSC-hub&lt;/a>
+&lt;a href="https://www.egi.eu/publication/egi-support-for-research-infrastructures/">research infrastructures&lt;/a>
 or
-&lt;a href="https://eosc-hub.eu/digital-innovation-hub">these business pilots in the EOSC Digital Innovation Hub&lt;/a>.&lt;/li>
+&lt;a href="https://eosc-dih.eu/pilots/">business pilots in the EOSC Digital Innovation Hub&lt;/a>.&lt;/li>
 &lt;li>To participate in e-Infrastructure projects (H2020, EOSC) as an EGI compliant
 IaaS cloud provider.&lt;/li>
 &lt;li>To participate in resource allocation and in pay-for-use campaigns run by EGI.&lt;/li>
@@ -361,7 +359,7 @@ requirements. All the EGI policies aim at implementing service provisioning best
 practices and common requirements. EGI operations may conduct campaigns targeted
 to mitigate security vulnerabilities and to update unsupported operating system
 and software. These activities are part of the regular activities of a resource
-centre anyways (also for the non-federated ones). EGI and the Operations Centres
+centre anyway (also for the non-federated ones). EGI and the Operations Centres
 coordinate these actions in order to have them implemented in a timely manner.&lt;/p>
 &lt;p>In summary, most of the site activities that are coordinated by EGI and the NGIs
 are already part of the work plan of a well-maintained resource centre, the

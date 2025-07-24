@@ -6,7 +6,7 @@ of cloud providers using a single authentication and authorisation framework
 that allows the portability of workloads across multiple providers, and enables
 bringing computing to data. The current implementation is focused on
 Infrastructure-as-a-Service (IaaS) services, but can be easily applied to
-Platform-as-a-Service (PaaS) and Software-as-a-Servcice (SaaS) layers.&lt;/p>
+Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS) layers.&lt;/p>
 &lt;p>Each resource centre of the federated infrastructure operates a &lt;em>Cloud
 Management Framework (CMF)&lt;/em> according to its own preferences and constraints and
 joins the federation by integrating this CMF with components of the EGI service
@@ -56,7 +56,7 @@ users cannot be considered part of the EGI IaaS Cloud services.
 cloud providers at three different layers:&lt;/p>
 &lt;ul>
 &lt;li>Directly using the IaaS APIs or &lt;a href="../cli">CLIs&lt;/a> to manage individual resources.
-This option is recommended for preexisting use cases with requirements on
+This option is recommended for pre-existing use cases with requirements on
 specific APIs.&lt;/li>
 &lt;li>Using &lt;strong>Provisioning systems&lt;/strong> allow users to define infrastructure as code,
 then manage and combine resources from different providers, thus enabling
