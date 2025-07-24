@@ -1348,10 +1348,7 @@ the available GPU flavors on all sites for the specific VO in the command:&lt;/p
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length -->
-&lt;p>A VM image with pre-installed NVIDIA driver and Docker is available at
-&lt;a href="https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7">AppDB&lt;/a>. Some VOs
-(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.&lt;/p></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
+&lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
 &lt;p>The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
 memorable DNS hostnames in given domains (e.g. &lt;code>my-server.vo.fedcloud.eu&lt;/code>) and
@@ -1472,84 +1469,7 @@ datasets are attached to each VM).&lt;/li>
 &lt;li>Make scientific applications cloud agnostic.&lt;/li>
 &lt;/ul>
 &lt;p>To automate VM deployment, you can use any of the &lt;a href="../../orchestration">cloud orchestrators&lt;/a>
-available in the EGI Cloud.&lt;/p></description></item><item><title>Users: Monitoring and Management</title><link>/users/compute/cloud-compute/monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/monitor/</guid><description>
-&lt;p>The &lt;a href="https://appdb.egi.eu/">EGI Application Database (AppDB)&lt;/a> includes a web GUI
-for management of Virtual Machines (VMs) on the federated infrastructure.&lt;/p>
-&lt;p>This GUI is available for a set of
-&lt;a href="https://wiki.appdb.egi.eu/main:faq:which_vos_are_supported_by_the_vmops_dashboard">selected VOs&lt;/a>.
-If your VO is not listed and you are interested in getting support, please
-&lt;a href="https://ggus.eu">open a ticket&lt;/a> or contact us at &lt;code>support _at_ egi.eu&lt;/code>.&lt;/p>
-&lt;h2 id="main-user-features">Main user features&lt;/h2>
-&lt;ul>
-&lt;li>User identification with Check-in, with customised view of the VAs and
-resource providers based on the VO membership of the user.&lt;/li>
-&lt;li>Management of VMs in &lt;em>topologies&lt;/em>, containing one or more instances of a given
-VA.&lt;/li>
-&lt;li>Attachment of additional block storage to the VM instances.&lt;/li>
-&lt;li>Start/Stop VMs without destroying the VM (for all VMs of a topology or for
-individual instances within a topology)&lt;/li>
-&lt;li>Single control of topologies across the whole federation.&lt;/li>
-&lt;/ul>
-&lt;h2 id="quick-start">Quick start&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>Log into the &lt;a href="https://dashboard.appdb.egi.eu/vmops">VMOps dashboard&lt;/a> using
-EGI Check-in.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Click on &amp;quot;Create a new VM Topology&amp;quot; to start the topology builder, this
-will guide you through a set of steps:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Select the Virtual Appliance you want to start, these are the same shown
-in the &lt;a href="https://appdb.egi.eu/browse/cloud">AppDB Cloud Marketplace&lt;/a>, you
-can use the search field to find your VA;&lt;/p>
-&lt;p>&lt;img src="vmops_va_select.png" alt="Select the VA">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>select the VO to use when instantiating the VA;&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>select the provider where to instantiate the VA; and finally&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>select the template (VM instance type) of the instance that will determine
-the number of cores, memory and disk space used in your VM.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>
-&lt;p>Now you will be presented with a summary page where you can further customise
-your VM by:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Adding more VMs to the topology&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Adding block storage devices to the VMs&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Define contextualisation parameters (e.g. add new users, execute some
-script)&lt;/p>
-&lt;p>&lt;img src="vmops_settings.png" alt="Topology settings">&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Click on &amp;quot;Launch&amp;quot; and your deployment will be submitted to the
-infrastructure.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>The topology you just created will appear on your &amp;quot;Topologies&amp;quot; with all the
-details about it, clicking on a VM of a topology will give you details about its
-status and IP. VMOps will create a default &lt;code>cloudadm&lt;/code> user for you and create
-ssh-key pair for login (you can create as many users as needed with the
-contextualisation options of the wizard described above).&lt;/p>
-&lt;p>&lt;img src="vmops_vm.png" alt="VM details">&lt;/p>
-&lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>
-in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
-details and there is also a video recording available on
-&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
+available in the EGI Cloud.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
 &lt;h2 id="basics">Basics&lt;/h2>
 &lt;h3 id="how-can-i-get-access-to-the-cloud-compute-service">How can I get access to the cloud compute service?&lt;/h3>
 &lt;p>There is a VO available for 6 months piloting activities that any researcher in

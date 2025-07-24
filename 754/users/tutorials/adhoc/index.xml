@@ -275,7 +275,7 @@ synchronise images from AppDB but is not part of the federation.&lt;/p>
 &lt;li>A valid EGI account: learn to can create one in
 &lt;a href="../../../aai/check-in/signup">Check-in&lt;/a>.&lt;/li>
 &lt;li>Access to a cloud provider where the
-&lt;a href="https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm">Jupyter DataHub VM is available&lt;/a>.
+&lt;a href="https://registry.egi.eu/harbor/projects/8/repositories/datahub-jupyter">Jupyter DataHub VM is available&lt;/a>.
 Alternatively, this VM can be run on your computer using a virtualisation tool
 like VirtualBox.&lt;/li>
 &lt;/ul>

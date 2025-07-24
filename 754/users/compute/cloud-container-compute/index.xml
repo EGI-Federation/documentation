@@ -1,20 +1,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Cloud Container Compute</title><link>/users/compute/cloud-container-compute/</link><description>Recent content in Cloud Container Compute on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/cloud-container-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Docker VM</title><link>/users/compute/cloud-container-compute/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-container-compute/docker/</guid><description>
 &lt;p>The
-&lt;a href="https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04">EGI Docker VA&lt;/a>
+&lt;a href="https://registry.egi.eu/harbor/projects/8/repositories/docker/">EGI Docker VM image&lt;/a>
 is a ready-to-use Virtual Machine Image with &lt;a href="https://www.docker.com/">docker&lt;/a>
 and &lt;a href="https://docs.docker.com/compose/">docker-compose&lt;/a> pre-installed.&lt;/p>
-&lt;p>You can start that image as any other VA available from AppDB:&lt;/p>
+&lt;p>You can start that image as any other:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Go to the
-&lt;a href="https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04">EGI Docker image entry in AppDB&lt;/a>.&lt;/p>
+&lt;p>Go to your provider &lt;a href="https://dashboard.cloud.egi.eu">dashboard&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Check the identifiers of the endpoint, image and flavor you want to use at
-the provider.&lt;/p>
+&lt;p>Start your VM using the &lt;code>registry.egi.eu egi_vm_images/docker&lt;/code> image.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Use a ssh key when, so you can log into the VM once it's instantiated.&lt;/p>
+&lt;p>Use a ssh key, so you can log into the VM once it&amp;rsquo;s instantiated.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Once up, just ssh in the VM and start using docker as usual.&lt;/p>
