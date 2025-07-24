@@ -9,7 +9,7 @@ description: >
   Run virtual machines in the EGI Cloud
 ---
 
-<!-- cSpell:words NBIS VERCE-->
+<!-- cSpell:words NBIS VERCE -->
 
 The [EGI Federated Cloud Compute](https://www.egi.eu/service/cloud-compute/) (FedCloud)
 service offers a multi-cloud IaaS federation that brings together

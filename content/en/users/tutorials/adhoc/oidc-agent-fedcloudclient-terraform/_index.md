@@ -497,8 +497,6 @@ Then you can verify that the Virtual Machine is accessible by Ansible:
 $ ansible all -m ping
 ```
 
-<!-- cSpell:words playbooks -->
-
 Once this works, you can
 [create advanced playbooks](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 to configure your deployed host(s).

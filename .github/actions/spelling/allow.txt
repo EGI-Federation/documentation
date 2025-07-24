@@ -514,6 +514,7 @@ Phedex
 PITHIA
 pkce
 playbook
+playbooks
 plgrid
 podman
 Politecnica
