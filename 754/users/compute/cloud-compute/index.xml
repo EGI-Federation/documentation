@@ -1191,7 +1191,7 @@ you to:&lt;/p>
 &lt;/ul>
 &lt;p>Check out the
 &lt;a href="https://github.com/EGI-Federation/fedcloud-vmi-templates">fedcloud-vmi-templates GitHub repository&lt;/a>
-for examples of images that can be built in a completely autoamted workflow
+for examples of images that can be built in a completely automated workflow
 using &lt;code>packer&lt;/code> and GitHub Actions.&lt;/p>
 &lt;h4 id="uploading-to-the-registry">Uploading to the registry&lt;/h4>
 &lt;p>The Artefact Registry can store arbitrary binary artifacts and those matching

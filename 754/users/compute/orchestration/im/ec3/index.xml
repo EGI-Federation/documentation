@@ -25,8 +25,7 @@ Management System) that can be automatically installed and configured by EC3.&lt
 &lt;p>&lt;strong>Endpoint&lt;/strong>: the endpoints of the providers where to deploy the elastic
 cluster. The endpoints serving the
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu VO&lt;/a>
-are dynamically retrieved from the
-&lt;a href="https://appdb.egi.eu/">EGI Application DataBase&lt;/a> using REST APIs.&lt;/p>
+are dynamically retrieved from the cloud information system using REST APIs.&lt;/p>
 &lt;p>&lt;img src="ec3-endpoint.png" alt="Select the provider’s endpoint where deploy the cluster">&lt;/p>
 &lt;/li>
 &lt;li>

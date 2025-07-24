@@ -48,8 +48,7 @@ Management System) that can be automatically installed and configured by EC3.&lt
 &lt;ul>
 &lt;li>&lt;strong>Endpoint&lt;/strong>: the endpoints of the providers where to deploy the ECAS elastic
 cluster. The endpoints serving the &lt;code>vo.access.egi.eu&lt;/code> VO are dynamically
-retrieved from the &lt;a href="https://appdb.egi.eu/">EGI Application DataBase&lt;/a> using
-REST APIs.&lt;/li>
+retrieved from the cloud information system using REST APIs.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="ecas-endpoint.png" alt="FedCloud endpoint">&lt;/p>
 &lt;ul>

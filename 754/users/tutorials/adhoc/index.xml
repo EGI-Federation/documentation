@@ -14,11 +14,7 @@ We have a dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>. Check
-&lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
-Virtual Appliances and Resource Providers participating in the &lt;em>vo.access.egi.eu&lt;/em> VO.
-AppDB is one of the service in the
-&lt;a href="../../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.&lt;/p>
 &lt;h2 id="step-3-creating-a-vm">Step 3: Creating a VM&lt;/h2>
 &lt;p>Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
@@ -50,7 +46,7 @@ i.e.: &lt;code>wget https://github.com/github_username.keys&lt;/code>
 machine image and is generally different in each operating system image:&lt;/p>
 &lt;ul>
 &lt;li>For images available in the
-&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB Cloud Marketplace&lt;/a>, you should
+&lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a>, you should
 be able to find the username in the image description.&lt;/li>
 &lt;li>For &lt;code>official OS virtual machine images&lt;/code> you can use the general OpenStack
 reference documentation on
@@ -390,11 +386,7 @@ dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please
 request access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting
-the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.
-Check &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
-Virtual Appliances and Resource Providers participating in the
-&lt;em>vo.access.egi.eu&lt;/em> VO. AppDB is one of the service in the
-&lt;a href="../../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
+the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>This tutorial will assume you are using &lt;code>vo.access.egi.eu&lt;/code>, adapt as required
 for your specific environment.&lt;/p>
@@ -479,11 +471,7 @@ possible to get information about the OIDC token accessed via
 &lt;a href="#setting-up-oidc-agent">oidc-agent&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to the OIDC access token&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud token list-vos
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to look for sites supporting a particular VO, you can use the
-&lt;a href="https://appdb.egi.eu/browse/vos/cloud">EGI Application Database&lt;/a>.&lt;/p>
-&lt;p>You can retrieve information from the AppDB about the sites supporting the
-&lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">vo.access.egi.eu VO&lt;/a>.&lt;/p>
-&lt;blockquote>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>In the following example, the &lt;code>IN2P3-IRES&lt;/code> site supporting the
 &lt;code>vo.access.egi.eu&lt;/code> VO will be used, see
 &lt;a href="#step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/a>
@@ -594,14 +582,7 @@ requirements and to the selected site and VO:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Flavor: m1.medium
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">flavor_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;ab1fbd4c-324d-4155-bd0f-72f077f0ebce&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image for EGI CentOS 7
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.7
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">image_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;09093c70-f2bb-46b8-a87f-00e2cc0c8542&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI CentOS 8
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.8
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;38ced5bf-bbfd-434b-ae41-3ab35d929aba&amp;#34;
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI Ubuntu 22.04
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;fc6c83a3-845f-4f29-b44d-2584f0ca4177&amp;#34;
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Security groups

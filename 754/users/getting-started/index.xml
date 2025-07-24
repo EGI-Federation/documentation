@@ -81,10 +81,11 @@ provided at the
 &lt;a href="https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api">OS-FEDERATION API&lt;/a>.&lt;/p>
 &lt;h3 id="information-discovery">Information discovery&lt;/h3>
 &lt;p>The &lt;a href="#configuration-database">Configuration Database&lt;/a> contains the list of
-resource centres and their endpoints, while the &lt;a href="https://appdb.egi.eu/">AppDB&lt;/a>
-Information System collects this information in a central service for discovery,
-providing a real-time view of the actual capabilities of federation participants
-(can be used by both human users and machine services).&lt;/p>
+resource centres and their endpoints, while the
+&lt;a href="https://is.cloud.egi.eu/docs">cloud information system collects&lt;/a> this
+information in a central service for discovery, providing a real-time view
+of the actual capabilities of federation participants (can be used by both
+human users and machine services).&lt;/p>
 &lt;h4 id="configuration-database">Configuration Database&lt;/h4>
 &lt;p>The EGI &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> is
 used to catalogue the static information of the production infrastructure
@@ -103,8 +104,7 @@ Database to enable integration with EGI.&lt;/p>
 &lt;p>The &lt;a href="https://github.com/EGI-Federation/cloud-info-provider">Cloud Info Provider&lt;/a>
 extracts information from the resource centres using their native APIs and
 formats it following Glue, an OGC recommended standard. This information is
-pushed to the Argo Messaging System and consumed by
-&lt;a href="https://appdb.egi.eu/">AppDB&lt;/a> to provide a central information discovery
+consumed to provide a central information discovery
 service that aggregates several other sources of information about the
 infrastructure.&lt;/p>
 &lt;h3 id="virtual-machine-image-management">Virtual Machine Image management&lt;/h3>
@@ -115,17 +115,13 @@ VMI, and communities to select those VMIs relevant for distribution across
 providers. These images are automatically replicated at the providers supporting
 the community and converted as needed to ensure the correct instantiation when
 used.&lt;/p>
-&lt;p>AppDB includes a
-&lt;a href="https://appdb.egi.eu/browse/cloud">Virtual Appliance Marketplace&lt;/a> supporting
-Virtual Appliances (VAs), which are clean and lean virtual machine images
-designed to run on a virtualisation platform, that provide a software solution
-out-of-the-box, ready to be used with minimal or no set-up.&lt;/p>
-&lt;p>AppDB allows representatives of research communities (VOs) to generate a VM
-image list that resource centres subscribe to. The subscription enables the
+&lt;p>The &lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a> stores VM images, which are
+clean and lean images designed to run on a virtualisation platform, that provide
+a software solution out-of-the-box, ready to be used with minimal or no set-up.&lt;/p>
+&lt;p>The Registry allows research communities (VOs) to upload their own images, that
+that resource centres subscribe to. The subscription enables the
 periodic download, conversion and storage of those images to the image
-repository of the indicated resource centres, using HEPiX image list format.
-&lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper">cloudkeeper&lt;/a> provides
-this automated synchronisation between AppDB and the cloud provider.&lt;/p>
+repository of the indicated resource centres.&lt;/p>
 &lt;h3 id="accounting">Accounting&lt;/h3>
 &lt;p>&lt;a href="../../../internal/accounting">Federated Accounting&lt;/a> provides an integrated view
 about resource/service usage: it pulls together usage information from the
@@ -302,7 +298,7 @@ below:&lt;/p>
 &lt;td>ImageId&lt;/td>
 &lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
 &lt;td>&lt;/td>
-&lt;td>Every image has a unique ID associated with it. For images from the EGI FedCloud AppDB this should be &lt;code>VMCATCHER_EVENT_AD_MPURI&lt;/code>; for images from other repositories it should be a vmcatcher equivalent; for local images - local identifier of the image.&lt;/td>
+&lt;td>Every image has a unique ID associated with it. For images from the Artecfact Registry this should be &lt;code>VMCATCHER_EVENT_AD_MPURI&lt;/code>; for images from other repositories it should be an equivalent; for local images - local identifier of the image.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>CloudType&lt;/td>
@@ -551,10 +547,6 @@ availability of services must be provided by service developers.&lt;/p>
 publishing data to the Accounting repository&lt;/li>
 &lt;li>TCP checks (&lt;code>org.nagios.Broker-TCP&lt;/code>, &lt;code>org.nagios.CDMI-TCP&lt;/code>, and
 &lt;code>org.nagios.CloudBDII-Check&lt;/code>): Basic TCP checks for services.&lt;/li>
-&lt;li>VM Marketplace probe (&lt;code>eu.egi.cloud.AppDB-Update&lt;/code>): gets a predetermined image
-list from AppDB and checks its update interval.&lt;/li>
-&lt;li>PERUN probe (&lt;code>eu.egi.cloud.Perun-Check&lt;/code>): connects to the server and checks
-the status by using internal PERUN interface.&lt;/li>
 &lt;/ul>
 &lt;h2 id="roadmap">Roadmap&lt;/h2>
 &lt;p>The TCB-Cloud board defines the roadmap for the technical evolution of the EGI
