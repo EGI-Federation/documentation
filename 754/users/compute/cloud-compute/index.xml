@@ -1215,16 +1215,16 @@ be synced and the following additional annotations are expected to be available:
 &lt;/ul>
 &lt;p>For the upload, you need to:&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>Login to the registry, you can find credentials in your registry profile:&lt;/p>
+&lt;li>Login to the registry, you can find credentials in your registry profile:&lt;/li>
+&lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras login -u &amp;lt;user&amp;gt; registry.egi.eu
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Prepare an
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Prepare an
 &lt;a href="https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file">annotation file&lt;/a>
 with the expected metadata. You can find below an example for an AlmaLinux
 image file named &lt;code>alma-9.qcow2&lt;/code>. It also includes a &lt;code>$manifest&lt;/code> entry
-with annotation of the manifest itself.&lt;/p>
+with annotation of the manifest itself.&lt;/li>
+&lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;$manifest&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;7b98c834862f2e7e342fad7f9e175ea8c74aa4f3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1241,14 +1241,13 @@ with annotation of the manifest itself.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.container_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bare&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Upload the image and the annotation file:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Upload the image and the annotation file:&lt;/li>
+&lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras push --annotation-file &amp;lt;annotation json&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> registry.egi.eu/&amp;lt;project_name&amp;gt;/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &amp;lt;image file&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Users: GPUs</title><link>/users/compute/cloud-compute/gpgpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/gpgpu/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: GPUs</title><link>/users/compute/cloud-compute/gpgpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/gpgpu/</guid><description>
 &lt;h2 id="gpu-resources-on-egi-cloud">GPU resources on EGI Cloud&lt;/h2>
 &lt;p>GPUs resources are available on selected providers of the EGI Cloud. These are
 available as specific &lt;strong>flavours&lt;/strong> that when used to instantiate a Virtual
