@@ -217,15 +217,15 @@ v0.2 of the format is shown below:
 | Cloud Usage Record Property | Type           | Null | Definition                                                                   | Notes                                                                                                                                                                    |
 | --------------------------- | -------------- | ---- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | MeasurementTime             | `datetime`     | No   | The time the usage was recorded.                                             | In the message format, must be a UNIX timestamp, i.e. the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970) |
-| SiteName                    | `varchar(255)` | No   | The GOCDB site assigning the IP                                              |
-| CloudComputeService         | `varchar(255)` | Yes  | See Cloud Usage Record                                                       |
-| CloudType                   | `varchar(255)` | No   | See Cloud Usage Record                                                       |
-| LocalUser                   | `varchar(255)` | No   | See Cloud Usage Record                                                       |
-| LocalGroup                  | `varchar(255)` | No   | See Cloud Usage Record                                                       |
-| GlobalUserName              | `varchar(255)` | No   | See Cloud Usage Record                                                       |
-| FQAN                        | `varchar(255)` | No   | See Cloud Usage Record                                                       |
-| IPVersion                   | `byte`         | No   | 4 or 6                                                                       |
-| IPCount                     | `int(11)`      | No   | The number of IP addresses of IPVersion this user currently assigned to them |
+| SiteName                    | `varchar(255)` | No   | The GOCDB site assigning the IP                                              |                |
+| CloudComputeService         | `varchar(255)` | Yes  | See Cloud Usage Record                                                       |                |
+| CloudType                   | `varchar(255)` | No   | See Cloud Usage Record                                                       |                |
+| LocalUser                   | `varchar(255)` | No   | See Cloud Usage Record                                                       |                |
+| LocalGroup                  | `varchar(255)` | No   | See Cloud Usage Record                                                       |                |
+| GlobalUserName              | `varchar(255)` | No   | See Cloud Usage Record                                                       |                |
+| FQAN                        | `varchar(255)` | No   | See Cloud Usage Record                                                       |                |
+| IPVersion                   | `byte`         | No   | 4 or 6                                                                       |                |
+| IPCount                     | `int(11)`      | No   | The number of IP addresses of IPVersion this user currently assigned to them |                |
 
 <!-- markdownlint-enable line-length -->
 

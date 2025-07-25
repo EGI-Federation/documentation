@@ -194,6 +194,7 @@ any OCI registry compliant tool can be used. We rely on
 
 Images must have a `eu.egi.cloud.tag` annotation in their manifest for them to
 be synced and the following additional annotations are expected to be available:
+
 - `org.openstack.glance.disk_format`: with the disk format of the image (e.g.
   `raw` or `qcow2`)
 - `org.openstack.glance.container_format`: with the glance container format
@@ -207,7 +208,9 @@ be synced and the following additional annotations are expected to be available:
 - `org.openstack.glance.os_type`: OS type (e.g. `linux`).
 
 For the upload, you need to:
+
 1. Login to the registry, you can find credentials in your registry profile:
+
 ```shell
 oras login -u <user> registry.egi.eu
 ```
@@ -217,6 +220,7 @@ oras login -u <user> registry.egi.eu
    with the expected metadata. You can find below an example for an AlmaLinux
    image file named `alma-9.qcow2`. It also includes a `$manifest` entry
    with annotation of the manifest itself.
+
 ```json
 {
   "$manifest": {
@@ -236,7 +240,8 @@ oras login -u <user> registry.egi.eu
 }
 ```
 
-3. Upload the image and the annotation file: 
+3. Upload the image and the annotation file:
+
 ```shell
 oras push --annotation-file <annotation json> \
      registry.egi.eu/<project_name>/<repository>:<tag> \
