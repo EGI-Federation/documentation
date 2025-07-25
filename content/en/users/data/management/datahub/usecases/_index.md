@@ -4,6 +4,7 @@ linkTitle: Use-Cases
 weight: 10
 type: docs
 aliases:
+  # cspell:disable-next-line
   - /users/datahub/usecases
 description: >
     Use-cases for EGI DataHub

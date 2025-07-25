@@ -58,7 +58,7 @@ react (e.g. short power or network outage).
 
 **Action:** Administrator announces the failure by using the following template:
 
-```text
+```plaintext
 Subject:
  [SERVICE_NAME] unscheduled downtime
 
@@ -87,7 +87,7 @@ described.
 
 **Action:** Administrator announces the failure by using the following template:
 
-```text
+```plaintext
 Subject:
  [SERVICE_NAME] outage
 
@@ -112,7 +112,7 @@ every **24h**.
 **Action:** The administrator announces that recovery is taking longer by using
 the following template:
 
-```text
+```plaintext
 Subject:
  [SERVICE_NAME] extended outage
 
@@ -139,7 +139,7 @@ time of recovery.
 **Actions:** At the time of recovery the administrator announces the recovery by
 using the following template:
 
-```text
+```plaintext
 Subject:
  [SERVICE_NAME] recovery
 
@@ -163,7 +163,7 @@ needed.
 **Actions:** The administrator announces the post mortem analysis of failure by
 using the following notification template:
 
-```text
+```plaintext
 Subject:
  [SERVICE_NAME] outage analysis
 

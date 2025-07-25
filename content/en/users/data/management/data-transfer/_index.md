@@ -25,7 +25,7 @@ The main features of EGI Data Transfer are:
   Python bindings, Web Monitoring).
 - **Reliability**. Checksums are automatically calculated for each transfer and
   failed transfers are retried.
-- **Flexibility**. Multi-protocol support (WebDAV/HTTPS, GridFTP, xrootd, SRM, S3, GCloud).
+- **Flexibility**. Multi-protocol support (WebDAV/HTTPS, GridFTP, `xrootd`, SRM, S3, GCloud).
 - **Intelligence**. Parallel transfer optimization ensures users get the most from network
   without burning the storages. Transfers can be classified by _priority_ and _activity_.
 

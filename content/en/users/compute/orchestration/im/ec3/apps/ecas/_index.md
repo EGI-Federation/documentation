@@ -9,6 +9,8 @@ description: >
   environment.
 ---
 
+<!-- cSpell:words Cartopy -->
+
 The following guide is intended for researchers who want to use ECAS, a complete
 environment enabling data analysis experiments, in the EGI cloud.
 
@@ -140,7 +142,7 @@ Cluster configured!
 ```
 
 As SLURM is used as workload manager, it is possible to check the status of the
-working nodes by using the `sinfo` command, which provides information about Slurm
+working nodes by using the `sinfo` command, which provides information about SLURM 
 nodes and partitions.
 
 ```shell

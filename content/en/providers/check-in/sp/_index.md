@@ -266,7 +266,7 @@ It is recommended that your SP metadata contains:
   - an `<md:Extensions>` element at the role level containing
     - an `<mdui:UIInfo>` extension element containing the child elements
       `<mdui:DisplayName>`, `<mdui:Logo>`, and `<mdui:PrivacyStatementURL>`
-    - an `<mdattr:EntityAttributes>` extension element for signaling Subject
+    - an `<mdattr:EntityAttributes>` extension element for signalling Subject
       Identifier requirements with previously prescribed content
   - an `<md:ContactPerson>` element with a contactType of `support` and/or a
     `<md:ContactPerson>` element with a contactType of `technical`. The
@@ -294,6 +294,8 @@ The EGI Check-in IdP is guaranteed to release a minimal subset of the
 bundle to connected Service Providers without administrative involvement,
 subject to user consent. The following attributes constitute a minimal subset of
 the R&S attribute bundle:
+
+<!-- cSpell:words reassignable -->
 
 - Community User Identifier (CUID) which is a globally unique, opaque,
   persistent and non-reassignable identifier identifying the user
@@ -1727,7 +1729,7 @@ Generic information for users on how to do this can be found at
 [Instructions for end users on how to use the SSH key authN for proxy retrieval](https://wiki.nikhef.nl/grid/RCauth.eu_and_MasterPortal_SSH_Key_Portal).
 Alternatively VO portals could implement such functionality themselves by using
 the API described at the
-[Master Portal sshkey endpoint description](https://wiki.nikhef.nl/grid/Master_Portal_sshkey_endpoint).
+[Master Portal ssh key endpoint description](https://wiki.nikhef.nl/grid/Master_Portal_sshkey_endpoint).
 
 ## User attributes
 
@@ -1942,6 +1944,8 @@ connected to Check-in.
 
 ### 13. Assurance
 
+<!-- cSpell:words eppn -->
+
 |          attribute name | Assurance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |         **description** | Assurance of the identity of the user, following [REFEDS Assurance Framework (RAF)](https://refeds.org/assurance) and the [EGI AAI Assurance Profiles](https://docs.egi.eu/providers/check-in/sp/#level-of-assurance). The following RAF values are qualified and automatically set for all Community identities:<ul><li>$PREFIX$</li><li>$PREFIX$/ID/unique</li><li>$PREFIX$/ID/eppn-unique-no-reassign</li><li>$PREFIX$/IAP/low</li><li>$PREFIX$/ATP/ePA-1m</li><li>$PREFIX$/ATP/ePA-1d</li></ul>Following RAF values are set if the currently used authentication provider asserts (or otherwise qualifies to) them:</br><ul><li>$PREFIX$/IAP/medium</li><li>$PREFIX$/IAP/high</li></ul>The following compound profiles are asserted if the user qualifies to them</br><ul><li>$PREFIX$/profile/cappuccino</li><li>$PREFIX$/profile/espresso</li></ul> |
@@ -2073,7 +2077,7 @@ as a URN.
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```text
+```plaintext
 urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
@@ -2093,7 +2097,7 @@ where:
 
 **Example:**
 
-```text
+```plaintext
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
@@ -2113,7 +2117,7 @@ as a URN following the syntax defined in
 An entitlement value expressing a capability has the following syntax
 (components enclosed in square brackets are OPTIONAL):
 
-```text
+```plaintext
 <NAMESPACE>:res:<RESOURCE>[:<CHILD-RESOURCE>]...[:act:<ACTION>[,<ACTION>]...]#<AUTHORITY>
 ```
 
@@ -2171,7 +2175,7 @@ where:
 
 **Example:**
 
-```text
+```plaintext
 urn:mace:egi.eu:res:rcauth#aai.egi.eu
 ```
 
@@ -2226,7 +2230,7 @@ with each value formatted as a URN.
 An entitlement value expressing GOCDB roles has the following syntax (components
 enclosed in square brackets are OPTIONAL):
 
-```text
+```plaintext
 urn:mace:egi.eu:goc.egi.eu:<PRIMARY_KEY>:<ON_ENTITY>:<USER_ROLE>@egi.eu
 ```
 
@@ -2239,6 +2243,6 @@ where:
 
 **Example:**
 
-```text
+```plaintext
 urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu
 ```
