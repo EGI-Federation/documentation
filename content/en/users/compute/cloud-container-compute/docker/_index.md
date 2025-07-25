@@ -9,19 +9,17 @@ description: >
 ---
 
 The
-[EGI Docker VA](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04)
+[EGI Docker VM image](https://registry.egi.eu/harbor/projects/8/repositories/docker/)
 is a ready-to-use Virtual Machine Image with [docker](https://www.docker.com/)
 and [docker-compose](https://docs.docker.com/compose/) pre-installed.
 
-You can start that image as any other VA available from AppDB:
+You can start that image as any other:
 
-1. Go to the
-   [EGI Docker image entry in AppDB](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04).
+1. Go to your provider [dashboard](https://dashboard.cloud.egi.eu).
 
-1. Check the identifiers of the endpoint, image and flavor you want to use at
-   the provider.
+1. Start your VM using the `registry.egi.eu egi_vm_images/docker` image.
 
-1. Use a ssh key when, so you can log into the VM once it\'s instantiated.
+1. Use a ssh key, so you can log into the VM once it's instantiated.
 
 1. Once up, just ssh in the VM and start using docker as usual.
 

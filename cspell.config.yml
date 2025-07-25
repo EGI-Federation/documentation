@@ -13,9 +13,11 @@ languageSettings:
   - languageId: markdown
     ignoreRegExpList:
       - >
-        /^(`{3}) (plaintext|shell|terraform) [\s\S]*?^\1 /gmix
+        /^(`{3}) ([\w\-\.]+) [\s\S]*?^\1 /gmix
       - >
         `.*`
+      - >
+        <!--.*-->
 ignorePaths:
   - ".github/actions/**"
   - ".github/workflows/**"

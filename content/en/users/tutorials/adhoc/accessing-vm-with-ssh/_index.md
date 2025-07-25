@@ -31,7 +31,7 @@ The username to use to connect to a virtual machine is dependent on the virtual
 machine image and is generally different in each operating system image:
 
 - For images available in the
- [EGI AppDB Cloud Marketplace](https://appdb.egi.eu/browse/cloud), you should
+ [Artefact Registry](https://registry.egi.eu), you should
  be able to find the username in the image description.
 - For `official OS virtual machine images` you can use the general OpenStack
   reference documentation on

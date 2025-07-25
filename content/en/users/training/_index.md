@@ -59,8 +59,7 @@ The AppDB has a growing catalogue of Virtual Appliances that includes
 both basic applications (e.g. latest version of clean Linux
 distribution) and more specialised applications (e.g. Jupyter Notebook).
 The list of VAs available on the training infrastructure is configurable
-and listed in the [training.egi.eu VO entry of
-AppDB](https://appdb.egi.eu/store/vo/training.egi.eu).
+and managed in the [Artefact Registry](https://registry.egi.eu/).
 
 [Infrastructure Manager Dashboard](../compute/orchestration/im/dashboard/)
 can be used as web interface for both trainers and students to deploy
@@ -80,10 +79,7 @@ Do you want to join as a resource provider? Please email at
 `support <at> egi.eu`.
 {{% /alert %}}
 
-The list of providers and VAs is also discoverable in the
-[training.egi.eu VO entry of
-AppDB](https://appdb.egi.eu/store/vo/training.egi.eu). The VO is also
-described at the [EGI Operations Portal training.egi.eu VO id
+The VO is described at the [EGI Operations Portal training.egi.eu VO id
 card](https://operations-portal.egi.eu/vo/view/voname/training.egi.eu).
 
 ## Booking the infrastructure
