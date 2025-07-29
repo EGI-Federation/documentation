@@ -19,10 +19,10 @@ description: "Technical details of EGI Helpdesk"
 | Configuration Database entry | https://goc.egi.eu/portal/index.php?Page_Type=Site&id=247           |
 | Supplier                     | KIT                                                                 |
 | Roadmap                      | N/A                                                                 |
-| Release notes                | https://ggus.eu/index.php?mode=release_notes                        |
+| Release notes                | https://confluence.egi.eu/display/EGIHLPDSK/Update+Notes            |
 | Source code                  | Not available                                                       |
-| Issue tracker for developers | N/A                                                                 |
-| License                      | BMC Software Inc.                                                   |
-| Privacy Policy               | https://ggus.eu/?mode=privacy                                       |
+| Issue tracker for developers | https://confluence.egi.eu/display/EGIHLPDSK/To-Do                   |
+| License                      | Zammad                                                              |
+| Privacy Policy               | https://ggus.eu/?mode=privacy_notice (new location to be defined)   |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
