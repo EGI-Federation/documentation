@@ -765,5 +765,6 @@ youremail
 yourhostname
 yourprivatekey
 Youtube
+Zammad
 zenodo
 zshrc
