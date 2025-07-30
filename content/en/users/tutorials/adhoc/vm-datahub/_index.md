@@ -47,7 +47,7 @@ This will also install the needed dependencies.
 
 ### Oneclient installation via docker
 
-In order to use the Dockerized version of oneclient (provided that you
+In order to use the containerised version of oneclient (provided that you
 have docker installed), you can run the following  command:
 
 ```shell

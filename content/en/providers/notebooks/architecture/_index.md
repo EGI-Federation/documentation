@@ -5,11 +5,13 @@ description: "Internal Service Architecture"
 weight: 10
 ---
 
+<-- cSpell:words oauthenticator -->
+
 The EGI Notebooks service relies on the following technologies to provide its
 functionality:
 
 - [JupyterHub](https://github.com/jupyterhub/jupyterhub) with custom
-  [EGI Check-in oauthentication](https://github.com/enolfc/oauthenticator)
+  [EGI Check-in oauthenticator](https://github.com/EGI-Federation/egi-notebooks-hub)
   configured to spawn pods on Kubernetes.
 - [Kubernetes](https://kubernetes.io/) as container orchestration platform
   running on top of EGI Cloud resources. Within the service it is in charge of
@@ -96,7 +98,7 @@ auth:
 
 To simplify the configuration and to add refresh capabilities to the
 credentials, we have created a new
-[EGI Check-in authenticator](https://github.com/enolfc/oauthenticator) that can
+[EGI Check-in authenticator](https://github.com/EGI-Federation/egi-notebooks-hub) that can
 be configured as follows:
 
 ```yaml

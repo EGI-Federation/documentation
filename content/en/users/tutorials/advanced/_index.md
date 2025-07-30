@@ -8,6 +8,7 @@ description: >
 ---
 
 <!-- markdownlint-disable no-inline-html -->
+<!-- cSpell:words DODAS Mesos -->
 
 <table>
 <tr>
@@ -206,7 +207,7 @@ Agenda, slides and recording: <a href="https://indico.egi.eu/event/5720/">https:
 of heterogeneous distributed computing environments: it allow to orchestrate and
 coordinate the provisioning of virtualized compute and storage resources on Cloud
 Management Frameworks, both private and public (like OpenStack, OpenNebula, AWS, etc.),
-and the deployment of dockerized long-running services and batch jobs on Container Orchestration
+and the deployment of containerised long-running services and batch jobs on Container Orchestration
 Platforms like Apache Mesos and Kubernetes.
 <br/><br/>
 In this webinar, we will describe the architecture of the INDIGO Platform and its
@@ -316,7 +317,7 @@ to be discontinued with the end of June 2020.
 This interactive webinar will introduce the major new features of the ARC6 release and cover
 the deployment steps of an ARC6 CE  both as a new installation and as an upgrade from a previous
 ARC5-based deployment. Special attention will be given to the accounting system related changes
-and the new one-shop-stop sysadmin toolbox built around arcctl.
+and the new one-shop-stop sysadmin toolbox built around `arcctl`.
 </td>
 </tr>
 <tr>
