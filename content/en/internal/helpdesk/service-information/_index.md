@@ -23,6 +23,6 @@ description: "Technical details of EGI Helpdesk"
 | Source code                  | Not available                                                       |
 | Issue tracker for developers | https://confluence.egi.eu/display/EGIHLPDSK/To-Do                   |
 | License                      | Zammad                                                              |
-| Privacy Policy               | https://ggus.eu/?mode=privacy_notice (new location to be defined)   |
+| Privacy Policy               | https://helpdesk.ggus.eu/legals/privacy-policy.html                 |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
