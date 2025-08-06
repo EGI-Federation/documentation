@@ -11,8 +11,8 @@ Users can access the [EGI Helpdesk service GGUS](https://helpdesk.egi.eu/)
 with an existing EGI Check-in account.
 
 When you access the service for the first time, you are automatically assigned
-a role with minimal privileges by default: in such a situation you can only
-create user tickets and can't access tickets created by other users.
+a role with minimal privileges ("user") by default: in such a situation you can
+only create user tickets and can't access tickets created by other users.
 
 In order to create your first ticket, please use the green "+" button in the
 lower left part of your screen.
@@ -37,10 +37,18 @@ tasks.
 **Note: Currently the roles are managed within GGUS; we are planning to move
 the roles management to EGI Check-in.**
 
+If users require a role with greater privileges than the default role, they
+should create a service request ticket for the TPM group, who will forward the
+ticket to the appropriate second-level group. Users who have advanced
+privileges already can submit their service requests regarding the helpdesk
+portal directly to "Second Level › Services › EGI Services and Service
+Components › Helpdesk (GGUS)" (start typing "ggus" in the group field for quick
+access).
+
 ### How to check your roles
 
-You can check your assigned role by following these steps (not available for
-users with the default role):
+You can check your assigned role by following these steps **(not available for
+users with the default role)**:
 
 1. Click on your User Logo in the lower left corner of the screen.
 2. Navigate to Profile and select Roles.
@@ -112,7 +120,8 @@ users.
 
 ## Contact
 
-If you have any issues with roles or general questions regarding the helpdesk,
-please submit a ticket to the group "Second Level › Services › EGI Services and
-Service Components › Helpdesk (GGUS)" (start typing "ggus" in the group field
-for quick access).
+If you have any issues with roles or general questions regarding the EGI
+helpdesk, please submit a ticket to the group "Second Level › Services › EGI
+Services and Service Components › Helpdesk (GGUS)" (start typing "ggus" in the
+group field for quick access), or, if this group is not available to you,
+submit a ticket to the TPM.
