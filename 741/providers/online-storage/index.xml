@@ -10,14 +10,14 @@ Provider.&lt;/p>
 &lt;p>This tutorial assumes that:&lt;/p>
 &lt;ul>
 &lt;li>You have a valid EGI ID (account), you can
-&lt;a href="../../../users/aai/check-in//signup">sign up here&lt;/a>.&lt;/li>
+&lt;a href="../../../users/aai/check-in/signup">sign up here&lt;/a>.&lt;/li>
 &lt;li>You are a member of a
-&lt;a href="../../../users/aai/check-in//joining-virtual-organisation">Virtual Organisation&lt;/a>.&lt;/li>
+&lt;a href="../../../users/aai/check-in/vos/#how-to-join-a-virtual-organisation">Virtual Organisation&lt;/a>.&lt;/li>
 &lt;li>You have deployed MinIO and have access to the console as &lt;code>admin&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-1-get-the-oidc-entitlement-for-the-virtual-organisation">Step 1: Get the OIDC entitlement for the Virtual Organisation&lt;/h2>
 &lt;p>See the
-&lt;a href="../../../users/aai/check-in//obtaining-tokens/token-portal/">page about getting tokens from Check-in&lt;/a>.
+&lt;a href="../../../users/aai/check-in/obtaining-tokens/token-portal/">page about getting tokens from Check-in&lt;/a>.
 You will get a &lt;code>curl&lt;/code> command to get your OIDC entitlements.&lt;/p>
 &lt;p>Select the entitlement for the Virtual Organisation that you want to
 enable access to. For example, here is the entitlement for the

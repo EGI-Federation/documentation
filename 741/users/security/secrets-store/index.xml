@@ -13,7 +13,7 @@ are available on the
 &lt;!-- markdownlint-disable no-bare-urls -->
 &lt;ul>
 &lt;li>Open &lt;a href="https://secrets.egi.eu">https://secrets.egi.eu&lt;/a> in your browser.&lt;/li>
-&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pulldown menu, then click
+&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pull-down menu, then click
 &lt;em>Sign in with OIDC provider&lt;/em>.&lt;/li>
 &lt;li>Login via &lt;em>EGI Check-in&lt;/em> and authorize the Vault GUI.&lt;/li>
 &lt;/ul>
@@ -48,7 +48,7 @@ arrow next to the user icon in the top right corner.
 &lt;p>To create your first secret, click on &lt;em>Secrets&lt;/em> in the top navigation bar,
 then click on folder &lt;strong>secrets&lt;/strong>, then click &lt;em>Create secret&lt;/em> on the right.&lt;/p>
 &lt;!-- markdown-link-check-disable -->
-&lt;p>Use your EGI Check-in ID (e.g. &lt;a href="mailto:e0b6...@egi.eu">e0b6...@egi.eu&lt;/a> in the image below) as the path,
+&lt;p>Use your EGI Check-in ID (e.g. &lt;code>e0b6...@egi.eu&lt;/code> in the image below) as the path,
 followed by the name of your secret. Add at least one key to your secret,
 together with a value.&lt;/p>
 &lt;!-- markdown-link-check-enable -->
@@ -70,8 +70,8 @@ advanced Vault features not exposed via other tools.&lt;/p>
 &lt;p>To access the EGI Secrets Store service from the command-line you need a valid
 &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> access token. Get it either from the
 &lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a>, or from the
-&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../getting-started/cli#authentication">here&lt;/a> for
-details), then set it to an environment variable:&lt;/p>
+&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../getting-started/cli#authentication">cli guide&lt;/a>
+for details), then set it to an environment variable:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -268,7 +268,7 @@ virtual machine) as follows:&lt;/p>
 The size of the secret object (all the
 values in it) is limited to 512kB, which is sufficient for storing tokens,
 certificates, configuration files and so on. For larger datasets, please use
-&lt;a href="../../../data/storage/block-storage#storage-encryption">encrypted cloud storage&lt;/a>.
+&lt;a href="../../../compute/cloud-compute/block-storage/#storage-encryption">encrypted cloud storage&lt;/a>.
 &lt;/div>
 &lt;h3 id="secret-values-from-small-binary-files">Secret values from small binary files&lt;/h3>
 &lt;p>It is recommended to store secret values as text for compatibility and ease of

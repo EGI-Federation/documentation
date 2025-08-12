@@ -209,7 +209,7 @@ identities has started but it will takes time before having everything compliant
 with federated identities.&lt;/p>
 &lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
 &lt;p>If you do not already have a X509 personal certificate
-&lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA worlmap&lt;/a> provides a
+&lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA world map&lt;/a> provides a
 map of all certification authorities according to the country (or NGI). Select
 your country on the map to find out who is your local CA. Follow the procedure
 of your local CA to request a certificate. When you have received your
@@ -260,7 +260,7 @@ be subscribed to noc-managers mailing list &lt;code>noc-managers@mailman.egi.eu&
 &lt;p>Procedures and policies are accessible on the
 &lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures">EGI Policies and Procedures space&lt;/a>.
 Additional documentation relevant to EGI operations is available at
-&lt;a href="../../../../en">EGI Documentation&lt;/a>.&lt;/p>
+&lt;a href="../../">EGI Documentation&lt;/a>.&lt;/p>
 &lt;h2 id="tools">Tools&lt;/h2>
 &lt;p>A list of services relevant to EGI operations can be found at
 &lt;a href="../../../internal">the section about internal services&lt;/a>.&lt;/p></description></item><item><title>Providers: Resource Centre Integration Check List</title><link>/providers/operations-manuals/integration-checklist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/integration-checklist/</guid><description>

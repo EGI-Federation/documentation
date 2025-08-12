@@ -6,18 +6,15 @@
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
 &lt;p>Once your EGI account is ready you need to join a
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>.
-Here are the steps to &lt;a href="../../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>.
+Here are the steps to
+&lt;a href="../../../aai/check-in/vos/#how-to-join-a-virtual-organisation">join a VO&lt;/a>.
 Explore the list of available VOs in the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>.
 We have a dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrollment URL&lt;/a>. Check
-&lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
-Virtual Appliances and Resource Providers participating in the &lt;em>vo.access.egi.eu&lt;/em> VO.
-AppDB is one of the service in the
-&lt;a href="../../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.&lt;/p>
 &lt;h2 id="step-3-creating-a-vm">Step 3: Creating a VM&lt;/h2>
 &lt;p>Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
@@ -49,7 +46,7 @@ i.e.: &lt;code>wget https://github.com/github_username.keys&lt;/code>
 machine image and is generally different in each operating system image:&lt;/p>
 &lt;ul>
 &lt;li>For images available in the
-&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB Cloud Marketplace&lt;/a>, you should
+&lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a>, you should
 be able to find the username in the image description.&lt;/li>
 &lt;li>For &lt;code>official OS virtual machine images&lt;/code> you can use the general OpenStack
 reference documentation on
@@ -274,7 +271,7 @@ synchronise images from AppDB but is not part of the federation.&lt;/p>
 &lt;li>A valid EGI account: learn to can create one in
 &lt;a href="../../../aai/check-in/signup">Check-in&lt;/a>.&lt;/li>
 &lt;li>Access to a cloud provider where the
-&lt;a href="https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm">Jupyter DataHub VM is available&lt;/a>.
+&lt;a href="https://registry.egi.eu/harbor/projects/8/repositories/datahub-jupyter">Jupyter DataHub VM is available&lt;/a>.
 Alternatively, this VM can be run on your computer using a virtualisation tool
 like VirtualBox.&lt;/li>
 &lt;/ul>
@@ -368,7 +365,7 @@ from your Jupyter interface&lt;/p></description></item><item><title>Users: Autom
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent&lt;/a> to retrieve
-ODIC tokens from &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a>,
+OIDC tokens from &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a>,
 &lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloudclient&lt;/a> to simplify interacting
 with the &lt;a href="../../../compute/cloud-compute">EGI Cloud Compute service&lt;/a>,
 &lt;a href="https://www.terraform.io">terraform&lt;/a> and &lt;a href="https://www.ansible.com/">Ansible&lt;/a> to
@@ -382,18 +379,14 @@ valid TLS certificate from &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s
 &lt;p>Once your EGI account is ready you need to join a
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>.
 Here are the steps to
-&lt;a href="../../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>. Explore the list
-of available VOs in the
+&lt;a href="../../../aai/check-in/vos/#how-to-join-a-virtual-organisation">join a VO&lt;/a>.
+Explore the list of available VOs in the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>. We have a
 dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please
 request access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting
-the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.
-Check &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
-Virtual Appliances and Resource Providers participating in the
-&lt;em>vo.access.egi.eu&lt;/em> VO. AppDB is one of the service in the
-&lt;a href="../../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
+the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>This tutorial will assume you are using &lt;code>vo.access.egi.eu&lt;/code>, adapt as required
 for your specific environment.&lt;/p>
@@ -460,6 +453,7 @@ Cloud Compute service.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ansible
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For keeping the main system tidy and isolating the environment, the python
 packages will be installed in a dedicated
+&amp;lt;&amp;ndash; cspell:disable-next-line &amp;ndash;&amp;gt;
 &lt;a href="https://docs.python.org/3/tutorial/venv.html">python virtualenv&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating an arbitrary directory where to store python virtual environments&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir -p ~/.virtualenvs
@@ -477,11 +471,7 @@ possible to get information about the OIDC token accessed via
 &lt;a href="#setting-up-oidc-agent">oidc-agent&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to the OIDC access token&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud token list-vos
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to look for sites supporting a particular VO, you can use the
-&lt;a href="https://appdb.egi.eu/browse/vos/cloud">EGI Application Database&lt;/a>.&lt;/p>
-&lt;p>You can retrieve information from the AppDB about the sites supporting the
-&lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">vo.access.egi.eu VO&lt;/a>.&lt;/p>
-&lt;blockquote>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>In the following example, the &lt;code>IN2P3-IRES&lt;/code> site supporting the
 &lt;code>vo.access.egi.eu&lt;/code> VO will be used, see
 &lt;a href="#step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/a>
@@ -592,21 +582,14 @@ requirements and to the selected site and VO:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Flavor: m1.medium
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">flavor_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;ab1fbd4c-324d-4155-bd0f-72f077f0ebce&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image for EGI CentOS 7
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.7
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">image_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;09093c70-f2bb-46b8-a87f-00e2cc0c8542&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI CentOS 8
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.8
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;38ced5bf-bbfd-434b-ae41-3ab35d929aba&amp;#34;
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI Ubuntu 22.04
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;fc6c83a3-845f-4f29-b44d-2584f0ca4177&amp;#34;
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Security groups
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">security_groups&lt;/span> = &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="creating-the-main-terraform-deployment-file">Creating the main terraform deployment file&lt;/h4>
 &lt;p>To be more reusable, the &lt;code>main.tf&lt;/code> configuration file is referencing variables
-described in the &lt;a href="#describing-the-terraform-variables">vars.tf&lt;/a> file created
+described in the &lt;a href="#describing-the-terraform-variables">&lt;code>vars.tf&lt;/code>&lt;/a> file created
 previously, and will take the values from the
 &lt;a href="#documenting-the-cloud-resources-for-the-selected-site">&lt;code>$EGI_SITE.tfvars&lt;/code>&lt;/a>
 file passed as an argument to the terraform command.&lt;/p>
@@ -654,7 +637,7 @@ file passed as an argument to the terraform command.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">filename&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;./inventory/hosts.cfg&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last resource is relying on
-&lt;a href="https://www.terraform.io/language/functions/templatefile">templatefile&lt;/a> to
+&lt;a href="https://www.terraform.io/language/functions/templatefile">&lt;code>templatefile&lt;/code>&lt;/a> to
 populate the inventory file that will later be used by
 &lt;a href="#step-4-using-ansible">ansible&lt;/a>.&lt;/p>
 &lt;h4 id="initial-configuration-of-the-vm-using-cloud-init">Initial configuration of the VM using cloud-init&lt;/h4>
@@ -782,6 +765,7 @@ is providing a skeleton that you can use fore creating new roles.&lt;/p>
 &lt;h2 id="additional-resources">Additional resources&lt;/h2>
 &lt;p>Additional resources are available, and can help with addressing different use
 cases, or be used as a source of inspiration:&lt;/p>
+&lt;!-- cspell:disable-next-line -->
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/egi-qc/deployment-howtos">egi-qc/deployment-howtos&lt;/a>:
 Deployment recipes extracted from Jenkins builds for the
@@ -796,24 +780,20 @@ providing documentation for automated on-demand execution of Docker containers&l
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/adhoc/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-transfer-grid-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraphs you will learn how to:&lt;/p>
-&lt;ul>
-&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
-&lt;li>use the &lt;a href="#using-the-webfts-data-transfer-interface">WebFTS&lt;/a> web interface&lt;/li>
-&lt;/ul>
-&lt;p>to perform data transfers between two Grid storage.&lt;/p>
+WebFTS. In the following paragraphs you will learn how to use the FTS
+command-line client to perform data transfers between two Grid storage.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
 described in &lt;a href="../../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
 &lt;a href="../../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
 your certificate installed in your browser to use
-&lt;a href="../../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;a href="../../../data/management/data-transfer">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
 &lt;a href="../../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
 &lt;ul>
 &lt;li>An &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account, you can
 &lt;a href="../../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>Enrolment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;/ul>
 &lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
@@ -839,8 +819,8 @@ for each FTS command. When running &lt;code>voms-proxy-init&lt;/code> it&amp;rsq
 the location of the public and private key. If this are not included as options,
 the tool expect to find them in:&lt;/p>
 &lt;ul>
-&lt;li>~/.globus/usercert.pem for the public key&lt;/li>
-&lt;li>~/.globus/userkey.pem for the private key with read access only for the owner&lt;/li>
+&lt;li>&lt;code>~/.globus/usercert.pem&lt;/code> for the public key&lt;/li>
+&lt;li>&lt;code>~/.globus/userkey.pem&lt;/code> for the private key with read access only for the owner&lt;/li>
 &lt;/ul>
 &lt;p>Following is an example of running this command with the public and private key
 already setup as described:&lt;/p>
@@ -915,49 +895,7 @@ the transfer itself:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
 the destination. If this option is not present and a file with the same name
 exists on the destination, the transfer itself will fail. If you use this option
-you should make sure that it is safe to do so.&lt;/p>
-&lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
-&lt;h3 id="step-1-access-the-webfts-interface">Step 1 Access the WebFTS interface&lt;/h3>
-&lt;p>The WebFTS is accessible at this &lt;a href="https://webfts.cern.ch/">CERN FTS URL&lt;/a>.
-Similarly to what has been done from the command-line interface you need to
-provide our private key for delegation of the credential. To do that you use the
-following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter Import Password:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writing RSA key
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
-that opens:&lt;/p>
-&lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>
-&lt;p>And select the desired VO. Once the delegation is set it&amp;rsquo;s possible to move to
-the following steps.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-please be careful and avoid
-sharing this information with any third party or saving this information in
-plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
-described previously and does not store it.
-&lt;/div>
-&lt;h3 id="step-2-submitting-a-transfer">Step 2 Submitting a transfer&lt;/h3>
-&lt;p>The tab &lt;code>Submit a transfer&lt;/code> is divided in two parts in which is possible to add
-two endpoints that can be used both as source or destination. After adding the
-URL for the two endpoints, it is possible to browse and select the files and
-directories to be transferred. In the destination select the destination
-directory. In the following example the file 1MB has been selected and by simply
-clicking the arrow in the middle directing to the right you are instructing the
-system to copy the file from the storage and path on the left to the one on the
-right:&lt;/p>
-&lt;p>&lt;img src="WebFTS-submit_transfer.png" alt="WebFTS submit transfer">&lt;/p>
-&lt;p>Similarly to what can be done with the command-line interface, there is the
-option to overwrite the destination if it already exists. To enable this option
-tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
-page is also shown a confirmation that the transfer has been submitted
-successfully. This same web page shows the status of the current transfers in
-the &lt;code>My jobs&lt;/code> tab shown in the following screenshot:&lt;/p>
-&lt;p>&lt;img src="WebFTS-my_jobs.png" alt="WebFTS my jobs">&lt;/p>
-&lt;p>Each line on the list shows a different job. When clicked it will expand to show
-additional details. The reason for the failure of a job which can be seen by
-moving the mouse pointer over the &lt;code>File ID&lt;/code> on the detailed view.&lt;/p></description></item><item><title>Users: Submitting HTC Jobs</title><link>/users/tutorials/adhoc/htc-job-submission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/htc-job-submission/</guid><description>
+you should make sure that it is safe to do so.&lt;/p></description></item><item><title>Users: Submitting HTC Jobs</title><link>/users/tutorials/adhoc/htc-job-submission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/htc-job-submission/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to submit
 &lt;a href="../../../compute/high-throughput-compute">High Throughput Compute (HTC)&lt;/a> jobs
@@ -1328,7 +1266,7 @@ modify its local copies of the spooled files.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-1">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html">HTCondor Quick Start Guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/index.html">HTCondor Application Programming Interfaces (APIs)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/python-bindings/index.html">HTCondor Python Bindings&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://osg-htc.org/docs/compute-element/htcondor-ce-overview/">OSG Site Documentation: HTCondor-CE Overview&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
@@ -1355,7 +1293,7 @@ proxy. To do this you first need to
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create &lt;code>testjob.xrsl&lt;/code>, a test job expressed in
 &lt;a href="https://www.nordugrid.org/arc/arc6/users/xrsl.html">xRSL&lt;/a>, showing environment
 where it will run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( jobname = &amp;#34;arctest&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( stdout = &amp;#34;stdout&amp;#34; )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( join = &amp;#34;yes&amp;#34; )
@@ -1465,19 +1403,15 @@ the CRITICAL button).&lt;/p>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/adhoc/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-transfer-object-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraphs you will learn how to:&lt;/p>
-&lt;ul>
-&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
-&lt;li>use the &lt;a href="#step-6-web-interface">WebFTS&lt;/a> web interface&lt;/li>
-&lt;/ul>
-&lt;p>to perform data transfers between a Grid storage and object storage or between
-two object storage.&lt;/p>
+WebFTS. In the following paragraphs you will learn how to use the FTS
+command-line client to perform data transfers between a Grid storage and object
+storage or between two object storage.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 This procedure has been tested
 with the FTS client 3.11. Older version do not support all the options
 necessary. To install the latest version please add the
-&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo">FTS3 Production&lt;/a>
+&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-el9.repo">FTS3 Production&lt;/a>
 repository to your configuration and update the client
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
@@ -1485,13 +1419,13 @@ repository to your configuration and update the client
 described in &lt;a href="../../../data/management/data-transfer">Data Transfer&lt;/a>, and in
 particular &lt;a href="../../../data/management/data-transfer/clients">Clients&lt;/a> for the
 command-line FTS and to have your certificate installed in your browser to use
-&lt;a href="../../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;a href="../../../data/management/data-transfer">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
 &lt;a href="../../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
 &lt;ul>
 &lt;li>An &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account, you can
 &lt;a href="../../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>Enrolment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;li>An &lt;a href="../../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
 have all the credentials available (any S3 compatible storage should work)&lt;/li>
@@ -1535,8 +1469,8 @@ The name of the storage, is S3: + the domain part of the URL (for example
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ACCESS_KEY&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SECRET_KEY&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
-the object storage. See also the
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>ACCESS_KEY&lt;/code> and &lt;code>SECRET KEY&lt;/code> are the corresponding key necessary to
+access the object storage. See also the
 &lt;a href="https://fts3-docs.web.cern.ch/fts3-docs/docs/s3_support.html#doing-a-transfer">S3 Support&lt;/a>
 pages on the FTS docs pages.&lt;/p>
 &lt;h3 id="step-4-transfer-between-a-grid-storage-and-an-object-storage">Step 4 Transfer between a grid storage and an object storage&lt;/h3>
@@ -1572,10 +1506,4 @@ as before using the new job ID.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-web-interface">Step 6 Web interface&lt;/h3>
-&lt;p>An alternative way to check the status of the job is to use the FTS web
-interface to see using one the FTS servers and appending the job ID returned
-from one of the previous examples. For instance the link below will show the
-status of the specified job:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

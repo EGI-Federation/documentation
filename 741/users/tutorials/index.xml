@@ -476,7 +476,7 @@ new service with ARGO. In addition, the real time computations and the results v
 the alerts, API and UI will be shown.
 &lt;br/>&lt;br/>
 ARGO is a service jointly developed and maintained by
-&lt;a href="http://www.cnrs.fr/en">CNRS&lt;/a>,
+&lt;a href="https://www.cnrs.fr/en">CNRS&lt;/a>,
 &lt;a href="https://grnet.gr/en/">GRNET&lt;/a> and
 &lt;a href="https://www.srce.unizg.hr/en/">SRCE&lt;/a>.
 &lt;/td>
@@ -686,6 +686,7 @@ Notebooks service to scientific communities. Such customised instances can be ho
 hardware (for example with fat nodes and GPUs), can offer special libraries, data import/export
 and user authentication systems.
 &lt;br/>&lt;br/>
+&lt;!-- cSpell:word Enol -->
 During the webinar Enol will go through the main features of the EGI Notebooks service and
 he will explain how to use it with Binder and other open-source solutions to implement Open Science.
 &lt;/td>
@@ -1142,6 +1143,7 @@ computation libraries like NumPy.
 &lt;/td>
 &lt;/tr>
 &lt;/table></description></item><item><title>Users: Scientific level</title><link>/users/tutorials/scientific/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/scientific/</guid><description>
+&lt;!-- cSpell:words CMIP Intercomparison -->
 &lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
@@ -1454,7 +1456,7 @@ allowfullscreen>
 &lt;b>About&lt;/b>: openEO platform provides intuitive programming libraries
 to process a wide variety of earth observation datasets. This large-scale
 data access and processing is performed on multiple infrastructures, which
-all support the openEO API. This allows use cases from explorative research
+all support the openEO API. This allows use cases from exploratory research
 to large-scale production of EO-derived maps and information.
 &lt;br/>&lt;br/>
 &lt;b>Slides and code&lt;/b>
