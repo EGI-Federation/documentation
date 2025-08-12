@@ -78,7 +78,6 @@ creates a secure profile for you.
     ![Check-in Email verification](./check-in-email-verification.png)
 
     {{% alert title="Important" color="warning" %}}
-
     You do not need a new password for EGI Check-in — it always uses your existing
     account's login system.
 
