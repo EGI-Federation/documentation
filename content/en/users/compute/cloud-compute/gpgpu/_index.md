@@ -18,10 +18,13 @@ The table below summarises the available options:
 
 <!-- markdownlint-disable line-length -->
 
+<!-- VO names do not need spell checking -->
+<!-- cSpell:words sarscov neanias carouseldancing clarin cryoem glados beamide -->
+
 | Site | VM configuration options | Flavors | Supported VOs with GPUs | Access conditions | More information |
 | ---- | ------------------------ | ------- | ----------------------- | ----------------- | ---------------- |
 | IISAS-FedCloud | up to 7 NVIDIA A100 40GB, up to 8 NVIDIA Tesla K20m | g1.c08r30-K20m, g1.c16r60-2xK20m, A100 GPUs accessible using private flavors | vo.access.egi.eu, training.egi.eu, eosc-synergy.eu, vo.ai4eosc.eu, icecube, vo.beamide.com | Sponsored, conditions to be negotiated | |
-| IFCA-LCG2 | up to 80 NVIDIA T4, up to 20 NVIDIA V100 | | | Pay-per-use | [IFCA-LCG2 Documentation](https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors) |
+| IFCA-LCG2 | up to 80 NVIDIA T4, up to 20 NVIDIA V100 | | | Pay-per-use | [IFCA-LCG2 Documentation](https://confluence.ifca.es/spaces/IC/pages/1507347/Cloud+Compute+Flavors) |
 | CESNET-MCC | up to 2 NVIDIA Tesla T4, up to 4 NVIDIA A40, up to 2 GeForce RTX 1080/2080 (experimental use only) | hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.32core-256ram-nvidia-t4-single-gpu, hpc.64core-238ram-nvidia-t4, hpc.64core-512ram-nvidia-t4, meta-hdm.16core-120ram-nvidia-a40, meta-hdm.64core-485ram-nvidia-a40-quad | vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com, cryoem.instruct-eric.eu, fusion, icecube, vo.carouseldancing.org, vo.pangeo.eu, vo.neanias.eu, umsa.cerit-sc.cz, vip, vo.notebooks.egi.eu, vo.emphasisproject.eu, vo.inactive-sarscov2.eu | Sponsored, conditions to be negotiated | [CESNET-MCC Documentation](https://docs.cloud.muni.cz/cloud/gpus/) |
 | IN2P3-IRES | up to 1 NVIDIA Tesla T4 per VM, up to 1 NVIDIA A40 per VM, up to 4 GeForce RTX 2080 per VM (experimental use only) | g1.xlarge-4xmem, g2.xlarge-4xmem, g4.xlarge-4xmem | biomed, vo.emphasisproject.eu, vo.france-grilles.fr | Sponsored, conditions to be negotiated | |
 
@@ -33,9 +36,9 @@ Check whether you belong to one of the supported
 [Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 If you are not sure what VO to join, request access to the pilot VO
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
-by visiting the [enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
+by visiting the [enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 with your Check-In account. More information is available in the
-[Check-in](../../../aai//check-in/joining-virtual-organisation) section.
+[Check-in](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation) section.
 
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
@@ -64,7 +67,3 @@ Site-specific dashboards and endpoints are described in the following table:
 | CESNET-MCC     | `https://dashboard.cloud.muni.cz` | `https://identity.cloud.muni.cz/`    |
 
 <!-- markdownlint-enable line-length -->
-
-A VM image with pre-installed NVIDIA driver and Docker is available at
-[AppDB](https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7). Some VOs
-(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.

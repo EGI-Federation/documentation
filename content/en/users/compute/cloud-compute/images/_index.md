@@ -11,43 +11,46 @@ description: >
 
 Users of the EGI Cloud create Virtual Machines (VMs) on the providers. Those VMs
 are started from images: templates for the root volume of the running instances,
-i.e. operating system and applications available initially on a VM. The AppDB
-collects the Virtual Machine Images available on the service as Virtual
-Appliances (VA).
+i.e. operating system and applications available initially on a VM. The Artefact
+Registry collects the Virtual Machine Images available on the providers.
 
-Any user can register new Virtual Appliances at the AppDB, these are then
-managed by special VO members that curate which appliances are available to
-their VO.
+## Artefact Registry
 
-## AppDB Cloud Marketplace
+![Artefact Registry](registry.png)
 
-![AppDB Cloud Marketplace](appdb_cloud.png)
+The [Artefact Registry](https://registry.egi.eu) is a OCI-compliant catalogue
+of artefacts (including container images, VM images and helm charts) based on
+[Harbor](https://goharbor.io/) where users can upload their images.
 
-The [AppDB](https://appdb.egi.eu) is a browsable catalogue of Virtual Appliances
-that users can start at the providers. You can find below a set of reference
-guides for the catalogue:
+Images in the Artefact Registry are organised into projects where images are
+pushed to. Access to projects is granted based on the membership and role
+of users within a VO. For a given project, only users with the appropriate
+roles can perform certain operations.
 
-- [How to register a VA?](https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appliance):
-  any registered user can register VAs in AppDB for anyone to download or for
-  making them available at the EGI Cloud providers once a VO adds it to the
-  _VO-wide image list_.
-- Once registered, VAs can be managed as described in the
-  [VA management guide](https://wiki.appdb.egi.eu/main:guides:guide_for_managing_virtual_appliance_versions_using_the_portal).
-- VO managers select VAs to be available at the providers following the
-  [VO-wide image list management](https://wiki.appdb.egi.eu/main:guides:manage_vo-wide_image_lists).
+### EGI images
 
-Check the full list of
-[Cloud marketplace guides](https://wiki.appdb.egi.eu/main:guides#cloud_marketplace)
-and
-[Cloud marketplace FAQ](https://wiki.appdb.egi.eu/main:faq#cloud_marketplace)
-for more information about the AppDB features.
+EGI produces a set of basic images that are automatically synced to all the
+providers and available for all the supported VOs.
 
-## Custom images
+These images are built automatically using [packer](https://packer.io) and
+[Ansible](https://docs.ansible.com/) and uploaded to a dedicated project
+named `egi_vm_images` at the Artefact Registry. Build scripts, packer
+templates, and ansible playbooks are available in the
+[fedcloud-vmi-templates GitHub repository](https://github.com/EGI-Federation/fedcloud-vmi-templates).
+The images are built regularly to avoid any potential vulnerabilities.
+
+EGI images have minimal OS installation with
+[cloud-init](https://cloudinit.readthedocs.io/en/latest/) for contextualization and
+follow the `registry.egi.eu egi_vm_images/<image name>:<version>` naming convention.
+
+![egi_vm_images at OpenStack](glance-images.png)
+
+### Custom VO images
 
 Packaging your application in a custom VM image is a suggested solution in one
 of the following cases:
 
-- your particular OS flavor is not available at AppDB;
+- your particular OS flavor is not available;
 - installation of your application is very complex and time-consuming for being
   performed during contextualization; or
 - you want to reduce the number of \'moving-parts\' of your software stack and
@@ -91,7 +94,7 @@ Disadvantages:
 - In general, the effort to implement this solution is higher than the basic
   contextualization.
 
-### Image size and layout
+#### Image size and layout
 
 The larger the VM image, the longer it will take to be distributed to the
 providers and the longer it will take to be started on the infrastructure. As a
@@ -99,8 +102,9 @@ general rule, always try to make images as smaller as possible following these
 guidelines:
 
 - **DO NOT** include (big) data in your image. There are other mechanisms for
-  accessing data from your VM (block/object storage,
-  [CVMFS](https://www.gridpp.ac.uk/wiki/RALnonLHCCVMFS))
+  accessing data from your VM ([block](../block-storage/)/
+  [object](../../../data/storage/object-storage/) storage,
+  [CVMFS](../../software-distribution))
 
 - **DO NOT** include (big) empty space or swap in your image. Extra space for
   your computation or swap can be added with block storage once the VM is booted
@@ -128,7 +132,7 @@ guidelines:
   avoid LVM. This will allow the cloud provider to easily resize your partition
   when instantiated and to modify files in it if needed.
 
-### Contextualization and credentials
+#### Contextualization and credentials
 
 {{% alert title="Danger" color="danger" %}}
 
@@ -152,7 +156,7 @@ useful to use cloud-init to bootstrap some
 [Configuration Management Software](https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software)
 that will manage the configuration of the VMs during runtime.
 
-### Security
+#### Security
 
 - **Always remove all default passwords and accounts from your VM.**
 - Disable all services unless necessary for the intended tasks.
@@ -160,16 +164,14 @@ that will manage the configuration of the VMs during runtime.
   minimally open.
 - Put no shared credentials (passwords) in any image.
 
-You should also follow the best practice guides for each service that\'s exposed
-to the outside world. See for example guides for:
-
-- [ssh](https://wiki.centos.org/HowTos/Network/SecuringSSH)
-- [tomcat](https://www.owasp.org/index.php/Securing_tomcat)
+You should also follow best practice guides for each service that\'s exposed
+to the outside world (e.g.
+[tomcat](https://www.owasp.org/index.php/Securing_tomcat)).
 
 See also
 [AWS security Best Practices](https://aws.amazon.com/whitepapers/aws-security-best-practices/)
 
-### Tools
+#### Tools
 
 Whenever possible, automate the process of creating your images. This will allow
 you to:
@@ -178,12 +180,70 @@ you to:
 - Avoid tedious manual installation steps
 - Quickly produce updated versions of your images
 
-EGI uses [packer](https://packer.io) as a tool for automating the creation of
-our base images. This tool can use [VirtualBox](https://www.virtualbox.org/) as
-a hypervisor for the creation of the images and guarantees identical results
-under different platforms and providers.
-
 Check out the
 [fedcloud-vmi-templates GitHub repository](https://github.com/EGI-Federation/fedcloud-vmi-templates)
-for all the `packer` recipes used to build our images, re-use them as needed
-for your images.
+for examples of images that can be built in a completely automated workflow
+using `packer` and GitHub Actions.
+
+#### Uploading to the registry
+
+The Artefact Registry can store arbitrary binary artifacts and those matching
+the expected metadata will be synced to the sites. For uploading the images,
+any OCI registry compliant tool can be used. We rely on
+[`oras`](https://oras.land) for uploading the EGI images.
+
+Images must have a `eu.egi.cloud.tag` annotation in their manifest for them to
+be synced and the following additional annotations are expected to be available:
+
+- `org.openstack.glance.disk_format`: with the disk format of the image (e.g.
+  `raw` or `qcow2`)
+- `org.openstack.glance.container_format`: with the glance container format
+  (`bare` should be used in most cases), see
+  [glance documentation](https://docs.openstack.org/glance/latest/user/formats.html).
+- `eu.egi.cloud.image.title`: Human readable title.
+- `eu.egi.cloud.description`: A description of the image.
+- `org.openstack.glance.architecture`: Image architecture.
+- `org.openstack.glance.os_distro`: OS distro name (e.g. `ubuntu`).
+- `org.openstack.glance.os_version`: OS version (e.g. `24.04` for Ubuntu 24.04).
+- `org.openstack.glance.os_type`: OS type (e.g. `linux`).
+
+For the upload, you need to:
+
+1. Login to the registry, you can find credentials in your registry profile:
+
+```shell
+oras login -u <user> registry.egi.eu
+```
+
+2. Prepare an
+   [annotation file](https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file)
+   with the expected metadata. You can find below an example for an AlmaLinux
+   image file named `alma-9.qcow2`. It also includes a `$manifest` entry
+   with annotation of the manifest itself.
+
+```json
+{
+  "$manifest": {
+    "org.opencontainers.image.revision": "7b98c834862f2e7e342fad7f9e175ea8c74aa4f3",
+    "org.opencontainers.image.source": "https://github.com/EGI-Federation/fedcloud-vmi-templates"
+  },
+  "alma-9.qcow2": {
+    "eu.egi.cloud.image.title": "EGI Alma 9 image",
+    "org.openstack.glance.architecture": "x86_64",
+    "org.openstack.glance.os_distro": "alma",
+    "org.openstack.glance.os_type": "linux",
+    "org.openstack.glance.os_version": "9",
+    "org.openstack.glance.disk_format": "qcow2",
+    "eu.egi.cloud.tag": "2025-06-10-7b98c834",
+    "org.openstack.glance.container_format": "bare"
+ }
+}
+```
+
+3. Upload the image and the annotation file:
+
+```shell
+oras push --annotation-file <annotation json> \
+     registry.egi.eu/<project_name>/<repository>:<tag> \
+     <image file>
+```

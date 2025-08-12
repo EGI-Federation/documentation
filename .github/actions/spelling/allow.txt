@@ -28,6 +28,7 @@ arcstat
 arcsub
 arctest
 ardm
+Argo
 asgc
 aslo
 aso
@@ -44,7 +45,7 @@ bcdmi
 bdii
 bdiis
 beapps
-bifi
+BIFI
 bigemptyfile
 biggrid
 binlog
@@ -76,7 +77,7 @@ cerit
 certbot
 certdir
 certonly
-cesga
+CESGA
 cesnet
 ceta
 cff
@@ -190,6 +191,7 @@ egifedcloud
 eginotebooks
 egispawner
 egiswift
+EIRO
 eiscat
 emi
 emphasisproject
@@ -220,6 +222,7 @@ finalise
 finalised
 finisheddirty
 firefox
+flavor
 floatingip
 floatip
 flox
@@ -235,6 +238,7 @@ FZK
 gcloud
 gcube
 geant
+GÉANT
 genkey
 geospatial
 geoss
@@ -251,7 +255,7 @@ glite
 globusrun
 GMA
 gmlog
-gocdb
+GOCDB
 gocdbpi
 gparam
 gpg
@@ -326,6 +330,7 @@ interoperation
 ipykernel
 ipynb
 irisgrid
+IRTF
 ismore
 iss
 itil
@@ -334,6 +339,7 @@ jdl
 jdoe
 jdoepass
 jira
+JISCMAIL
 jobdescrfile
 jobid
 jobmanager
@@ -460,6 +466,7 @@ nvidia
 OAIS
 oauth
 occi
+OCCI
 ODV
 OGC
 ogf
@@ -483,6 +490,7 @@ openssl
 openstack
 openstackclient
 oph
+Ophidia
 ophuser
 orcid
 organisations
@@ -505,6 +513,8 @@ Petabytes
 Phedex
 PITHIA
 pkce
+playbook
+playbooks
 plgrid
 podman
 Politecnica
@@ -513,6 +523,7 @@ poweron
 poznan
 pprint
 proactively
+PROC
 processid
 promozione
 psnc
@@ -566,6 +577,7 @@ scipy
 scotgrid
 screenshot
 scs
+SDIS
 secmon
 secretkey
 sectigo
@@ -577,6 +589,7 @@ SGs
 Shm
 shortcode
 shortcodes
+signup
 Simulink
 singleuser
 Sinica
@@ -613,6 +626,7 @@ subpages
 subresource
 sudmodules
 summarises
+SUNET
 surl
 SUs
 sustainability
@@ -656,6 +670,7 @@ tpms
 TPU
 TRL
 trustanchors
+twiki
 uberftp
 ubuntu
 ucert
@@ -683,6 +698,7 @@ utilisation
 uuid
 uwsgi
 validgrid
+VAPOR
 varchar
 vcpus
 vda
@@ -707,6 +723,8 @@ vmops
 vms
 VMUUID
 vobox
+VOMS
+VOMSES
 voname
 voperson
 vos
@@ -747,5 +765,6 @@ youremail
 yourhostname
 yourprivatekey
 Youtube
+Zammad
 zenodo
 zshrc

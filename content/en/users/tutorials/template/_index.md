@@ -21,7 +21,7 @@ To access services and resources in the [EGI Federated Cloud](../../getting-star
 you will need:
 
 - An EGI ID (account), you can [sign up here](../../aai/check-in/signup)
-- Enrollment into a [Virtual Organisation](../../aai/check-in/vos) (VO)
+- Enrolment into a [Virtual Organisation](../../aai/check-in/vos) (VO)
   that has access to the services and resources you need
 
 Although provisioning, configuration, and access to EGI Cloud services is

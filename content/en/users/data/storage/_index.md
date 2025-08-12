@@ -17,10 +17,11 @@ the technology used to access and consume data, and the foreseen usage.
 
 Three major service offerings are available:
 
-- [Block Storage](block-storage) is block-level storage that can be attached to
-  virtual machines (VMs) as volumes, a simple solution for durable data that
-  does not need to be shared beside a single VM.
-- [Grid Storage](grid-storage) is file storage for
+- [Block Storage](../../compute/cloud-compute/block-storage) is block-level
+  storage that can be attached to virtual machines (VMs) as volumes, a simple
+  solution for durable data that does not need to be shared beside a single VM.
+- [Grid Storage](../../compute/high-throughput-compute/grid-storage) is file
+  storage for
   [High Throughput Compute](../../compute/high-throughput-compute) (HTC) and/or
   [High Performance Compute](../../compute/high-performance-compute) (HPC)
   scenarios.

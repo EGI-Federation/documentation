@@ -51,11 +51,10 @@ The task force members:
 
 {{% alert title="Tip" color="info" %}} If you are interested in joining the
 EGI FedCloud Task Force, send an email to
-`fedcloud-tf <at> mailman.egi.eu` and introduce yourself.
+`fedcloud-tf <at> mailman.egi.eu`  # cspell:disable-line
+and introduce yourself.
 {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} We hold bi-weekly meetings on Tuesdays
-at 11.00 CE(S)T. Check our
-[Indico category](https://indico.egi.eu/indico/categoryDisplay.py?categId=159)
-for minutes and upcoming events.
+at 11.00 CE(S)T. Join our mailing list for more information.
 {{% /alert %}}

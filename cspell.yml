@@ -1,0 +1,3 @@
+language: en-GB
+import:
+  - cspell.config.yml

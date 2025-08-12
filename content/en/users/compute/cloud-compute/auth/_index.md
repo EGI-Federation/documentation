@@ -14,9 +14,9 @@ description: >
 used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
 OpenStack providers.
 
-Authentication to web based services (like the AppDB) will redirect you to the
-EGI Check-in authentication page. Just select your institution or social login
-and follow the regular authentication process.
+Authentication to web based services (like the OpenStack dashboards) will
+redirect you to the EGI Check-in authentication page. Just select your
+institution or social login and follow the regular authentication process.
 
 Access to APIs or via command-line interfaces (CLI) requires the use of OAuth2.0
 tokens and interaction with the OpenStack Keystone
@@ -34,18 +34,14 @@ The process for authentication is as follows:
 ## Authorisation
 
 Cloud Compute service is accessed through **Virtual Organisations (VOs)**. Users
-that are members of a VO will have access to the providers supporting that VO:
-they will be able to manage VMs, block storage and object storage available to
-the VO. Resources (VMs and storage) are shared across all members of the VO,
-please do not interfere with the VMs of other users if you are not entitled to
-do so (specially do not delete them).
+with specific roles (by default, the `vm_operator` role) will have access to
+the providers supporting that VO: they will be able to manage VMs, block
+storage and object storage available to the VO. Resources (VMs and storage) are
+**shared** across all members of the VO, please do not interfere with the VMs
+of other users if you are not entitled to do so (specially do not delete them).
 
-Some users roles have special consideration in VOs:
-
-- Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
-  the AppDbB for managing the Virtual Appliances to be available at every
-  provider. Check the [Virtual Machine Image Management documentation](../images)
-  for more information.
+Some users roles may have additional permissions in VOs, check your VO Manager
+for the specific documentation.
 
 ### Pilot VO
 
@@ -65,12 +61,12 @@ user.
 {{% /alert %}}
 
 For joining this VO, please click on the
-[enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
+[enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 using your [EGI account](../../../aai/check-in/).
 
 ### Other VOs
 
-Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
+Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
 [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 
@@ -125,7 +121,7 @@ You can use the [fedcloud](https://fedcloudclient.fedcloud.eu/) client to
 simplify the discovery of projects.
 
 ```shell
-# Get a list of sites (also available in [AppDB](https://appdb.egi.eu))
+# Get a list of sites
 $ fedcloud site list
 # Get list of projects that you are allowed to access
 # You can either specify the name of the account in your oidc-agent configuration

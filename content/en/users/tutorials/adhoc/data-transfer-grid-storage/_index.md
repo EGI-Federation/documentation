@@ -12,12 +12,8 @@ description: >
 ## Overview
 
 This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraphs you will learn how to:
-
-- use the [FTS](#fts-client-usage) command-line client
-- use the [WebFTS](#using-the-webfts-data-transfer-interface) web interface
-
-to perform data transfers between two Grid storage.
+WebFTS. In the following paragraphs you will learn how to use the FTS
+command-line client to perform data transfers between two Grid storage.
 
 ## Prerequisites
 
@@ -25,14 +21,14 @@ As first step please make sure that you have installed the FTS client as
 described in [Data Transfer](../../../data/management/data-transfer), and in particular
 [Clients](../../../data/management/data-transfer/clients) for the command-line FTS and to have
 your certificate installed in your browser to use
-[WebFTS](../../../data/management/data-transfer/webfts) browser based client.
+[WebFTS](../../../data/management/data-transfer) browser based client.
 
 To access services and resources in the
 [EGI Federated Cloud](../../../getting-started), you will need:
 
 - An [EGI Check-in](../../../aai/check-in) account, you can
   [sign up here](../../../aai/check-in/signup)
-- Enrollment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
+- Enrolment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
 
 ## FTS client usage
@@ -66,8 +62,8 @@ for each FTS command. When running `voms-proxy-init` it's possible to specify
 the location of the public and private key. If this are not included as options,
 the tool expect to find them in:
 
-- ~/.globus/usercert.pem for the public key
-- ~/.globus/userkey.pem for the private key with read access only for the owner
+- `~/.globus/usercert.pem` for the public key
+- `~/.globus/userkey.pem` for the private key with read access only for the owner
 
 Following is an example of running this command with the public and private key
 already setup as described:
@@ -180,58 +176,3 @@ The last option `-o` specify that the file should be overwritten if present on
 the destination. If this option is not present and a file with the same name
 exists on the destination, the transfer itself will fail. If you use this option
 you should make sure that it is safe to do so.
-
-## Using the WebFTS Data Transfer interface
-
-### Step 1 Access the WebFTS interface
-
-The WebFTS is accessible at this [CERN FTS URL](https://webfts.cern.ch/).
-Similarly to what has been done from the command-line interface you need to
-provide our private key for delegation of the credential. To do that you use the
-following command:
-
-```shell
-$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
-Enter Import Password:
-writing RSA key
-(...)
-```
-
-Which extract the private key in RSA format and you can paste it in the windows
-that opens:
-
-![WebFTS credential delegation](WebFTS-credential_delegation.png)
-
-And select the desired VO. Once the delegation is set it's possible to move to
-the following steps.
-
-{{% alert title="Warning" color="warning" %}} please be careful and avoid
-sharing this information with any third party or saving this information in
-plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
-described previously and does not store it. {{% /alert %}}
-
-### Step 2 Submitting a transfer
-
-The tab `Submit a transfer` is divided in two parts in which is possible to add
-two endpoints that can be used both as source or destination. After adding the
-URL for the two endpoints, it is possible to browse and select the files and
-directories to be transferred. In the destination select the destination
-directory. In the following example the file 1MB has been selected and by simply
-clicking the arrow in the middle directing to the right you are instructing the
-system to copy the file from the storage and path on the left to the one on the
-right:
-
-![WebFTS submit transfer](WebFTS-submit_transfer.png)
-
-Similarly to what can be done with the command-line interface, there is the
-option to overwrite the destination if it already exists. To enable this option
-tick the `Overwrite Files` below the arrow for the transfer. On the top of the
-page is also shown a confirmation that the transfer has been submitted
-successfully. This same web page shows the status of the current transfers in
-the `My jobs` tab shown in the following screenshot:
-
-![WebFTS my jobs](WebFTS-my_jobs.png)
-
-Each line on the list shows a different job. When clicked it will expand to show
-additional details. The reason for the failure of a job which can be seen by
-moving the mouse pointer over the `File ID` on the detailed view.
