@@ -13,10 +13,8 @@ the service available to our users.
 ### Notebooks VO
 
 The resources used for the Notebooks deployments are managed with the
-`vo.notebooks.egi.eu` VO. Operators of the service should join the VO, check the
-entry at the
-[operations portal](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu)
-and at [AppDB](https://appdb.egi.eu/store/vo/vo.notebooks.egi.eu).
+[`vo.notebooks.egi.eu` VO](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu).
+Operators of the service should join the VO with the `admin` role.
 
 ### Clients installation
 

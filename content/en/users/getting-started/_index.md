@@ -18,8 +18,8 @@ community, private and/or public cloud services. These service providers offer:
 
 - **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
   allows users to log in with their institutional (community) credentials
-- **Global image catalogue** at [AppDB](https://appdb.egi.eu) with
-  pre-configured virtual machine images
+- **Global image catalogue** at [Artefact Registry](https://registry.egi.eu)
+  with pre-configured virtual machine images
 - **Resource discovery** features to easily understand which providers are
   supporting your community, and what are their capabilities
 - **Global accounting** that
@@ -145,7 +145,7 @@ Users of the service are asked to provide appropriate acknowledgement of the use
 in scientific publications. The following acknowledgement text can be used for
 this purpose (you should adapt to match the exact providers in your case):
 
-<-- cSpell:word UNIV -->
+<!-- cSpell:word UNIV -->
 
 **This work used advanced computing resources from the 100%IT, CESGA, CLOUDIFIN,
 CYFRONET-CLOUD, GSI-LCG2, IFCA-LCG2, IN2P3-IRES, INFN-CATANIA-STACK,

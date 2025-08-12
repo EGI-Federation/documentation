@@ -513,6 +513,8 @@ Petabytes
 Phedex
 PITHIA
 pkce
+playbook
+playbooks
 plgrid
 podman
 Politecnica
@@ -521,6 +523,7 @@ poweron
 poznan
 pprint
 proactively
+PROC
 processid
 promozione
 psnc
@@ -762,5 +765,6 @@ youremail
 yourhostname
 yourprivatekey
 Youtube
+Zammad
 zenodo
 zshrc

@@ -38,8 +38,7 @@ software packages. Specifically, the general wizard steps include:
 1. **Endpoint**: the endpoints of the providers where to deploy the elastic
    cluster. The endpoints serving the
    [vo.access.egi.eu VO](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
-   are dynamically retrieved from the
-   [EGI Application DataBase](https://appdb.egi.eu/) using REST APIs.
+   are dynamically retrieved from the cloud information system using REST APIs.
 
    ![Select the provider’s endpoint where deploy the cluster](ec3-endpoint.png)
 

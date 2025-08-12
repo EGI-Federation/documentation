@@ -96,7 +96,7 @@ cpu.count>=2 and
 memory.size>=4g and
 net_interface.0.connection = 'public' and
 disk.0.os.name='linux' and
-disk.0.image.url = 'appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu'
+disk.0.image.url = 'egi://IN2P3-IRES/egi_vm_images/ubuntu:22.04?vo.access.egi.eu'
 )
 
 configure wn (
@@ -135,7 +135,7 @@ topology_template:
             mem_size: 4 GB
         os:
           properties:
-            image: appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu
+            image: egi://IN2P3-IRES/egi_vm_images/ubuntu:22.04?vo.access.egi.eu
 
   outputs:
     node_ip:

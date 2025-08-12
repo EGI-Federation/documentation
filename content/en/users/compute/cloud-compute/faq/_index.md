@@ -92,23 +92,21 @@ UNIV-LILLE
 fedcloud.srce.hr
 ```
 
-The providers also generate dynamic information about their characteristics via
-the Argo Messaging System which is easily browsable from AppDB.
+The providers also generate dynamic information which is accessible through the
+[cloud-info-api](https://is.cloud.egi.eu).
 
 ### How can I choose which site to use?
 
 Sites offer their resources to users through Virtual Organisations (VO). First,
 you need to join a Virtual Organisation that matches your research interests,
-see [authorisation section](../auth) on how VOs work. AppDB shows the supported
-VOs and for each VO you can browse the resource providers that support it.
+see [authorisation section](../auth) on how VOs work.
 
 ### How can I get information about the available VM images?
 
-The [Application Database](https://appdb.egi.eu) contains information about the
-VM images available in the EGI Cloud. Within the AppDB Cloud Marketplace, you
-can look for a VM and get all the information about which VO the VM is
-associated, the sites where the VM is available and the endpoints and
-identifiers to use it in practice.
+The [Artefact Registry](https://registry.egi.eu) contains information about the
+VM images available in the EGI Cloud. A set of predefined images is available
+on every provider. For VO-specific images, check the
+[VM image guide](../images).
 
 ## Managing VMs
 
@@ -206,7 +204,7 @@ openstack server create --flavor <your-flavor> --image <your image> \
 ```
 
 {{% alert title="Note" color="info" %}} We recommend using `cloud-init` for
-contextualisation. EGI images in AppDB do support `cloud-init`. Check the
+contextualisation. EGI images do support `cloud-init`. Check the
 [documentation](https://cloudinit.readthedocs.io/) for more information.
 {{% /alert %}}
 

@@ -39,10 +39,6 @@ dedicated VO called
 for piloting purposes. If you are not sure about which VO to enrol to, please
 request access to the _vo.access.egi.eu_ VO with your EGI account by visiting
 the [enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu).
-Check [AppDB](https://appdb.egi.eu/store/vo/vo.access.egi.eu) to see the list of
-Virtual Appliances and Resource Providers participating in the
-_vo.access.egi.eu_ VO. AppDB is one of the service in the
-[EGI Architecture](../../../getting-started/architecture/).
 
 > This tutorial will assume you are using `vo.access.egi.eu`, adapt as required
 > for your specific environment.
@@ -158,12 +154,6 @@ possible to get information about the OIDC token accessed via
 # Listing the VO membership related to the OIDC access token
 $ fedcloud token list-vos
 ```
-
-In order to look for sites supporting a particular VO, you can use the
-[EGI Application Database](https://appdb.egi.eu/browse/vos/cloud).
-
-You can retrieve information from the AppDB about the sites supporting the
-[vo.access.egi.eu VO](https://appdb.egi.eu/store/vo/vo.access.egi.eu).
 
 > In the following example, the `IN2P3-IRES` site supporting the
 > `vo.access.egi.eu` VO will be used, see
@@ -298,14 +288,7 @@ public_ip_pool = "ext-net"
 # Flavor: m1.medium
 flavor_id = "ab1fbd4c-324d-4155-bd0f-72f077f0ebce"
 
-# Image for EGI CentOS 7
-# https://appdb.egi.eu/store/vappliance/egi.centos.7
-image_id = "09093c70-f2bb-46b8-a87f-00e2cc0c8542"
-# Image: EGI CentOS 8
-# https://appdb.egi.eu/store/vappliance/egi.centos.8
-# image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
 # Image: EGI Ubuntu 22.04
-# https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
 # image_id = "fc6c83a3-845f-4f29-b44d-2584f0ca4177"
 
 # Security groups
@@ -513,8 +496,6 @@ Then you can verify that the Virtual Machine is accessible by Ansible:
 # Confirming ansible can reach the VM
 $ ansible all -m ping
 ```
-
-<!-- cSpell:words playbooks -->
 
 Once this works, you can
 [create advanced playbooks](https://docs.ansible.com/ansible/latest/user_guide/index.html)
