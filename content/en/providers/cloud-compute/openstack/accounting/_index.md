@@ -40,7 +40,7 @@ must set:
 
 - cASO will discover the projects from OpenStack using tags and properties.
   You can set specific tags and properties as needed as described in the
-  [Documentaion](https://caso.readthedocs.io/en/stable/configuration.html#selecting-projects-to-get-usages).
+  [Documentation](https://caso.readthedocs.io/en/stable/configuration.html#selecting-projects-to-get-usages).
 
 cASO will write records to `/var/spool/apel` from where ssmsend will take them.
 
