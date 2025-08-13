@@ -8,15 +8,24 @@ description: >
 
 There are two different processes handling the accounting integration:
 
-- cASO, which connects to the OpenStack deployment to get the usage information,
-  and,
-- ssmsend, which sends that usage information to the central EGI accounting
-  repository.
+- [cASO](https://github.com/IFCA-Advanced-Computing/caso/), which connects
+  to the OpenStack services to get the usage information, and,
+- [ssmsend](https://github.com/apel/ssm), which sends that usage information
+  to the central EGI accounting repository.
 
-They should be run by cron periodically, settings below run cASO every hour and
-ssmsend every six hours.
 
-### Using the VM Appliance
+### Installation
+
+You can get cASO from the
+[releases page](https://github.com/IFCA-Advanced-Computing/caso/releases),
+alternatively a container image is available in the
+[fedcloud-caso](https://github.com/EGI-Federation/fedcloud-catchall-operations/pkgs/container/fedcloud-caso)
+repository.
+
+SSM is also available in the [releases](https://github.com/apel/ssm/releases)
+or as a container in the [ssm](https://github.com/apel/ssm/releases) repository
+
+### Configuration
 
 [cASO configuration](https://caso.readthedocs.org/en/latest/configuration.html)
 is stored at `/etc/caso/caso.conf`. Most default values should be OK, but you
@@ -24,41 +33,23 @@ must set:
 
 - `site_name` (line 12), with the name of your site as defined in GOCDB.
 
-- `projects` (line 20), with the list of projects you want to extract accounting
-  from.
-
-- credentials to access the accounting data (lines 28-47, more options also
-  available). Check the
+- credentials to access the OpenStack services to extract accounting data.
+  Check
   [cASO documentation](https://caso.readthedocs.org/en/latest/configuration.html#openstack-configuration)
   for the expected permissions of the user configured here.
 
-- The mapping from EGI VOs to your local projects `/etc/caso/voms.json`,
-  following this format: :
-
-  ```json
-  {
-    "vo name": {
-      "projects": [
-        "project A that accounts for the vo",
-        "project B that accounts for the VO"
-      ]
-    },
-    "another vo": {
-      "projects": ["project C that accounts for the VO"]
-    }
-  }
-  ```
+- cASO will discover the projects from OpenStack using tags and properties.
+  You can set specific tags and properties as needed as described in the
+  [Documentation](https://caso.readthedocs.io/en/stable/configuration.html#selecting-projects-to-get-usages).
 
 cASO will write records to `/var/spool/apel` from where ssmsend will take them.
 
 SSM configuration is available at `/etc/apel`. Defaults should be OK for most
-cases. The cron file uses `/etc/grid-security` for the CAs and the host
+cases. SSM will use `/etc/grid-security` for the certificate CAs and the host
 certificate and private keys (`/etc/grid-security/hostcert.pem` and
 `/etc/grid-security/hostkey.pem`).
 
 #### Running the services
 
-Both caso and ssmsend are run via the root user crontab. For convenience there
-are two scripts `/usr/local/bin/caso-extract.sh` and
-`/usr/local/bin/ssm-send.sh` that run the docker container with the proper
-volumes.
+Both caso and ssmsend should run periodically, e.g. with a cron job, at least
+once a day.  We recommend running them every 4 hours.
