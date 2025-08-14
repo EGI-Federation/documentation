@@ -214,8 +214,9 @@ we can investigate the best way to support your needs.&lt;/p></description></ite
 services from EGI or other e-Infrastructures. For data services, check
 &lt;a href="../data">data section of the documentation&lt;/a>&lt;/p>
 &lt;h2 id="api-access-to-notebooks">API access to notebooks&lt;/h2>
-&lt;p>The &lt;a href="https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html">JupyterHub REST API&lt;/a>
-is accessible. You can access the API with a
+&lt;p>You can use the
+&lt;a href="https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html">JupyterHub REST API&lt;/a>
+with a
 &lt;a href="../../../check-in/obtaining-tokens/">valid Check-in token&lt;/a> at
 &lt;code>https://notebooks.egi.eu/services/jwt&lt;/code>.&lt;/p>
 &lt;p>The endpoint expects an &lt;code>Authorization&lt;/code> header to be present in the requests
@@ -245,8 +246,8 @@ be renewed for longer usage. With EGI Notebooks, you can get a ready-to-use
 token at any time.&lt;/p>
 &lt;p>Whenever you start your session, you can select whether to automatically mount
 or not your token in your server. Default is &lt;strong>not&lt;/strong> to mount it, so if the
-server is shared for collaborative access, this token won&amp;rsquo;t be accessible for
-other users. Only select yes when you will not share the server!&lt;/p>
+server is &lt;a href="../sharing">shared for collaborative access&lt;/a>, this token won&amp;rsquo;t be
+accessible for other users. Only select yes when you will not share the server!&lt;/p>
 &lt;p>&lt;img src="notebooks-token-mount.png" alt="token mount selection">&lt;/p>
 &lt;p>You can obtain a new token at any time with the JupyterLab extension available
 from the Jupyter Lab interface. You have two options:&lt;/p>
@@ -339,7 +340,7 @@ Notebooks provide you this feature via user sharing menu.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 By allowing other users to access your server, you also allow them to access the
-files present on your Jupyter server. Do not store any secrets on your server if
+files present on your Jupyter server. &lt;strong>Do not&lt;/strong> store any secrets on your server if
 you are planning to share!
 &lt;/div>
 &lt;h2 id="inviting-users">Inviting users&lt;/h2>
