@@ -18,7 +18,7 @@ services from EGI or other e-Infrastructures. For data services, check
 You can use the
 [JupyterHub REST API](https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html)
 with a
-[valid Check-in token](../../../check-in/obtaining-tokens/) at
+[valid Check-in token](../../../aai/check-in/obtaining-tokens/) at
 `https://notebooks.egi.eu/services/jwt`.
 
 The endpoint expects an `Authorization` header to be present in the requests
