@@ -65,11 +65,11 @@ all granted access will be revoked.
 
 - Even after revoking, invited users can **still** be on your running server for
   some time before the Jupyter server prevents them from more access. Therefore,
-  if you wish to see changes immediately, you have to open the topbar menu
+  if you wish to see changes immediately, you have to open the top bar menu
   **File -> Hub Control Panel** and then **stop** your server.
 
 - Also remember that generated invitation links can still be used to get access
-  to your server until they expire or you revoke them. {{% /alert %}}
+  to your server until they expire or you revoke them.
 
 {{% /alert %}}
 
@@ -82,15 +82,21 @@ How do I enable RTC ? To enable RTC, you first have to open a terminal tab
 
 Then you have to execute 2 commands to enable RTC extensions:
 
-jupyter labextension enable @jupyter/docprovider-extension jupyter labextension
-enable @jupyter/collaboration-extension
+```shell
+jupyter labextension enable @jupyter/docprovider-extension
+jupyter labextension enable @jupyter/collaboration-extension
+```
 
 Warning!
 
 You can also disable RTC the same way via 2 commands:
 
-jupyter labextension disable @jupyter/docprovider-extension jupyter labextension
-disable @jupyter/collaboration-extension But disabling RTC extension wlll not
+```
+jupyter labextension disable @jupyter/docprovider-extension
+jupyter labextension disable @jupyter/collaboration-extension
+```
+
+But disabling RTC extension will not
 revoke access to your server. You have to use the user sharing menu for that.
 
 Once you enabled the extensions, you need to refresh your browser tab to see
