@@ -1,12 +1,12 @@
 ---
-title: Sharing and RTC
+title: Sharing and Real Time Collaboration
 linkTitle: Sharing
 weight: 30
 type: docs
 aliases:
   - /users/notebooks/sharing
 description: >
-  User initiated sharing and Real-Time collaboration
+  User initiated sharing and Real-Time Collaboration (RTC)
 ---
 
 User-initiated sharing is a mechanism allowing users to share access to their
@@ -16,12 +16,14 @@ Notebooks provide you this feature via user sharing menu.
 {{% alert title="Warning" color="warning" %}}
 
 By allowing other users to access your server, you also allow them to access the
-files present on your Jupyter server. Do not store any secrets on your server if
+files present on your Jupyter server. **Do not** store any secrets on your server if
 you are planning to share!
 
 {{% /alert %}}
 
-## Inviting users
+## Sharing access
+
+### Creating an invitation
 
 You can find the user sharing menu can be opened from the top bar, click on
 **User sharing -> Open user sharing menu**
@@ -47,7 +49,20 @@ share them with other users.
 Once the invited user has accepted an invitation and authorized access, you can
 start collaborating on the same server.
 
-## Controlling access to the server
+### Accepting an invitation
+
+If you receive a link for getting access to an existing Notebook server, you
+will be asked to accept the sharing invitation
+
+![Accept sharing invitation](notebooks-accept-sharing.png)
+
+and then a request to Authorize access:
+
+![Authorize access](notebooks-authorize-access.png)
+
+Once you accept and authorize, you will be able to collaborate on the existing server.
+
+### Managing invitations
 
 You can see IDs of all users who accepted your invitation and time when they did
 from the User sharing menu. Click the Refresh button or re-open the user sharing
@@ -78,34 +93,12 @@ all granted access will be revoked.
 Real-time collaboration(RTC) allows you to leverage the power of user-initiated
 sharing to see each other's edits in real time.
 
-How do I enable RTC ? To enable RTC, you first have to open a terminal tab
+You should see on the top-right corner of your Jupyter Lab your user initial.
 
-Then you have to execute 2 commands to enable RTC extensions:
+![user RTC corner](notebooks-rtc-corner.png)
 
-```shell
-jupyter labextension enable @jupyter/docprovider-extension
-jupyter labextension enable @jupyter/collaboration-extension
-```
+Whenever other users access your server you will see the details in the extension
+panel on the left of the Jupyter Lab interface. Now you can see users collaborating
+with you on your server and changes from other users will be shown in real time:
 
-Warning!
-
-You can also disable RTC the same way via 2 commands:
-
-```
-jupyter labextension disable @jupyter/docprovider-extension
-jupyter labextension disable @jupyter/collaboration-extension
-```
-
-But disabling RTC extension will not
-revoke access to your server. You have to use the user sharing menu for that.
-
-Once you enabled the extensions, you need to refresh your browser tab to see
-changes.
-
-When you do, you can verify your Jupyter server is in RTC mode by checking the
-top-right corner.
-
-You should be able to see your RTC icon at the top right corner.
-
-Now you can see users collaborating with you on your server, files they are
-working on and their edit in real time.
+![RTC sharing](notebooks-rtc-sharing.png)

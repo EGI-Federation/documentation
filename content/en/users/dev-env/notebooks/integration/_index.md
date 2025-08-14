@@ -58,8 +58,8 @@ token at any time.
 
 Whenever you start your session, you can select whether to automatically mount
 or not your token in your server. Default is **not** to mount it, so if the
-server is shared for collaborative access, this token won't be accessible for
-other users. Only select yes when you will not share the server!
+server is [shared for collaborative access](../sharing), this token won't be
+accessible for other users. Only select yes when you will not share the server!
 
 ![token mount selection](notebooks-token-mount.png)
 
