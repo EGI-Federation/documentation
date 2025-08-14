@@ -69,7 +69,7 @@ all granted access will be revoked.
   **File -> Hub Control Panel** and then **stop** your server.
 
 - Also remember that generated invitation links can still be used to get access
-  to your server until they expire or you revoke them. {{% /alert %}}
+  to your server until they expire or you revoke them.
 
 {{% /alert %}}
 
