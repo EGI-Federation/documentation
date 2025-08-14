@@ -1,12 +1,12 @@
 ---
-title: Sharing and RTC
+title: Sharing and Real Time Collaboration
 linkTitle: Sharing
 weight: 30
 type: docs
 aliases:
   - /users/notebooks/sharing
 description: >
-  User initiated sharing and Real-Time collaboration
+  User initiated sharing and Real-Time Collaboration (RTC)
 ---
 
 User-initiated sharing is a mechanism allowing users to share access to their
@@ -21,7 +21,9 @@ you are planning to share!
 
 {{% /alert %}}
 
-## Inviting users
+## Sharing access
+
+### Creating an invitation
 
 You can find the user sharing menu can be opened from the top bar, click on
 **User sharing -> Open user sharing menu**
@@ -47,7 +49,7 @@ share them with other users.
 Once the invited user has accepted an invitation and authorized access, you can
 start collaborating on the same server.
 
-### Accepting the invitation
+### Accepting an invitation
 
 If you receive a link for getting access to an existing Notebook server, you
 will be asked to accept the sharing invitation
@@ -58,9 +60,9 @@ and then a request to Authorize access:
 
 ![Authorize access](notebooks-authorize-access.png)
 
-Once you accept and authorize, will be able to collaborate on the existing server.
+Once you accept and authorize, you will be able to collaborate on the existing server.
 
-### Controlling access to the server
+### Managing invitations
 
 You can see IDs of all users who accepted your invitation and time when they did
 from the User sharing menu. Click the Refresh button or re-open the user sharing
@@ -91,13 +93,12 @@ all granted access will be revoked.
 Real-time collaboration(RTC) allows you to leverage the power of user-initiated
 sharing to see each other's edits in real time.
 
-You should see on the top-right corner of your Jupyter lab your user initial.
+You should see on the top-right corner of your Jupyter Lab your user initial.
 
 ![user RTC corner](notebooks-rtc-corner.png)
 
-
 Whenever other users access your server you will see the details in the extension
 panel on the left of the Jupyter Lab interface. Now you can see users collaborating
-with you on your server, changes from other users will be shown in real time:
+with you on your server and changes from other users will be shown in real time:
 
 ![RTC sharing](notebooks-rtc-sharing.png)
