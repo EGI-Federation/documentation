@@ -17,13 +17,31 @@ services from EGI or other e-Infrastructures. For data services, check
 
 Most services integrated with EGI Check-in can handle valid access tokens for
 authorising users. These are short-lived (normally less than 1-hour) and need to
-be renewed for longer usage. EGI Notebooks provides a ready to use access token
-that can be accessed from your notebooks and is automatically refreshed so you
-can always have a valid one.
+be renewed for longer usage. With EGI Notebooks, you can get a ready-to-use
+token at any time.
 
-The token is available at `/var/run/secrets/egi.eu/access_token` and you can use
-it for example to access cloud providers of the EGI cloud. See the following
-sample code where a list of VMs is obtained for CESGA:
+Whenever you start your session, you can select whether to automatically mount
+or not your token in your server. Default is **not** to mount it, so if the
+server is shared for collaborative access, this token won't be accessible for
+other users. Only select yes when you will not share the server!
+
+![token mount selection](notebooks-token-mount.png)
+
+You can obtain a new token at any time with the [xxxx JupyterLab extension]()
+You have two options:
+
+1. Copying the token to clipboard
+2. Saving the token to disk so it's accessible from your notebook files
+   and/or terminal. Optionally you can request the token to be continuously
+   refresh on disk so you don't need to to request new tokens.
+
+![token extension](notebooks-token-extension.png)
+
+Whether you have selected to mount the token on the server creation step or
+if you save it to disk with the extension, the token will be available at
+`/var/run/secrets/egi.eu/access_token`. See for example below some
+python code to access cloud providers of the EGI cloud, where a list of
+VMs is obtained from CESGA's OpenStack:
 
 ```python
 from keystoneauth1.identity import v3
@@ -43,8 +61,6 @@ sess = session.Session(auth=auth)
 nova = client.Client(session=sess, version=2)
 nova.servers.list()
 ```
-
-A valid ID token is also available at `/var/run/secrets/egi.eu/id_token`.
 
 ### fedcloud client
 
