@@ -47,7 +47,20 @@ share them with other users.
 Once the invited user has accepted an invitation and authorized access, you can
 start collaborating on the same server.
 
-## Controlling access to the server
+### Accepting the invitation
+
+If you receive a link for getting access to an existing Notebook server, you
+will be asked to accept the sharing invitation
+
+![Accept sharing invitation](notebooks-accept-sharing.png)
+
+and then a request to Authorize access:
+
+![Authorize access](notebooks-authorize-access.png)
+
+Once you accept and authorize, will be able to collaborate on the existing server.
+
+### Controlling access to the server
 
 You can see IDs of all users who accepted your invitation and time when they did
 from the User sharing menu. Click the Refresh button or re-open the user sharing
