@@ -78,34 +78,13 @@ all granted access will be revoked.
 Real-time collaboration(RTC) allows you to leverage the power of user-initiated
 sharing to see each other's edits in real time.
 
-How do I enable RTC ? To enable RTC, you first have to open a terminal tab
+You should see on the top-right corner of your Jupyter lab your user initial.
 
-Then you have to execute 2 commands to enable RTC extensions:
+![user RTC corner](notebooks-rtc-corner.png)
 
-```shell
-jupyter labextension enable @jupyter/docprovider-extension
-jupyter labextension enable @jupyter/collaboration-extension
-```
 
-Warning!
+Whenever other users access your server you will see the details in the extension
+panel on the left of the Jupyter Lab interface. Now you can see users collaborating
+with you on your server, changes from other users will be shown in real time:
 
-You can also disable RTC the same way via 2 commands:
-
-```
-jupyter labextension disable @jupyter/docprovider-extension
-jupyter labextension disable @jupyter/collaboration-extension
-```
-
-But disabling RTC extension will not
-revoke access to your server. You have to use the user sharing menu for that.
-
-Once you enabled the extensions, you need to refresh your browser tab to see
-changes.
-
-When you do, you can verify your Jupyter server is in RTC mode by checking the
-top-right corner.
-
-You should be able to see your RTC icon at the top right corner.
-
-Now you can see users collaborating with you on your server, files they are
-working on and their edit in real time.
+![RTC sharing](notebooks-rtc-sharing.png)
