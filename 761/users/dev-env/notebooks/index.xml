@@ -217,7 +217,7 @@ services from EGI or other e-Infrastructures. For data services, check
 &lt;p>You can use the
 &lt;a href="https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html">JupyterHub REST API&lt;/a>
 with a
-&lt;a href="../../../check-in/obtaining-tokens/">valid Check-in token&lt;/a> at
+&lt;a href="../../../aai/check-in/obtaining-tokens/">valid Check-in token&lt;/a> at
 &lt;code>https://notebooks.egi.eu/services/jwt&lt;/code>.&lt;/p>
 &lt;p>The endpoint expects an &lt;code>Authorization&lt;/code> header to be present in the requests
 with your token, e.g.:&lt;/p>
@@ -390,23 +390,12 @@ to your server until they expire or you revoke them.&lt;/p>
 &lt;h2 id="real-time-collaboration">Real-time collaboration&lt;/h2>
 &lt;p>Real-time collaboration(RTC) allows you to leverage the power of user-initiated
 sharing to see each other&amp;rsquo;s edits in real time.&lt;/p>
-&lt;p>How do I enable RTC ? To enable RTC, you first have to open a terminal tab&lt;/p>
-&lt;p>Then you have to execute 2 commands to enable RTC extensions:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>jupyter labextension &lt;span style="color:#204a87">enable&lt;/span> @jupyter/docprovider-extension
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jupyter labextension &lt;span style="color:#204a87">enable&lt;/span> @jupyter/collaboration-extension
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Warning!&lt;/p>
-&lt;p>You can also disable RTC the same way via 2 commands:&lt;/p>
-&lt;pre tabindex="0">&lt;code>jupyter labextension disable @jupyter/docprovider-extension
-jupyter labextension disable @jupyter/collaboration-extension
-&lt;/code>&lt;/pre>&lt;p>But disabling RTC extension will not
-revoke access to your server. You have to use the user sharing menu for that.&lt;/p>
-&lt;p>Once you enabled the extensions, you need to refresh your browser tab to see
-changes.&lt;/p>
-&lt;p>When you do, you can verify your Jupyter server is in RTC mode by checking the
-top-right corner.&lt;/p>
-&lt;p>You should be able to see your RTC icon at the top right corner.&lt;/p>
-&lt;p>Now you can see users collaborating with you on your server, files they are
-working on and their edit in real time.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/dev-env/notebooks/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/faq/</guid><description>
+&lt;p>You should see on the top-right corner of your Jupyter lab your user initial.&lt;/p>
+&lt;p>&lt;img src="notebooks-rtc-corner.png" alt="user RTC corner">&lt;/p>
+&lt;p>Whenever other users access your server you will see the details in the extension
+panel on the left of the Jupyter Lab interface. Now you can see users collaborating
+with you on your server, changes from other users will be shown in real time:&lt;/p>
+&lt;p>&lt;img src="notebooks-rtc-sharing.png" alt="RTC sharing">&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/dev-env/notebooks/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/faq/</guid><description>
 &lt;h2 id="how-do-i-install-library-_x_">How do I install library &lt;em>X&lt;/em>?&lt;/h2>
 &lt;p>You can install new software easily on the notebooks using &lt;code>conda&lt;/code> or &lt;code>pip&lt;/code>. The
 &lt;code>%conda&lt;/code> and &lt;code>%pip&lt;/code>
