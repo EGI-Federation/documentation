@@ -16,7 +16,7 @@ Notebooks provide you this feature via user sharing menu.
 {{% alert title="Warning" color="warning" %}}
 
 By allowing other users to access your server, you also allow them to access the
-files present on your Jupyter server. Do not store any secrets on your server if
+files present on your Jupyter server. **Do not** store any secrets on your server if
 you are planning to share!
 
 {{% /alert %}}

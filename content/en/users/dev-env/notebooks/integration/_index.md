@@ -15,8 +15,9 @@ services from EGI or other e-Infrastructures. For data services, check
 
 ## API access to notebooks
 
-The [JupyterHub REST API](https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html)
-is accessible. You can access the API with a
+You can use the
+[JupyterHub REST API](https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html)
+with a
 [valid Check-in token](../../../check-in/obtaining-tokens/) at
 `https://notebooks.egi.eu/services/jwt`.
 
@@ -57,8 +58,8 @@ token at any time.
 
 Whenever you start your session, you can select whether to automatically mount
 or not your token in your server. Default is **not** to mount it, so if the
-server is shared for collaborative access, this token won't be accessible for
-other users. Only select yes when you will not share the server!
+server is [shared for collaborative access](../sharing), this token won't be
+accessible for other users. Only select yes when you will not share the server!
 
 ![token mount selection](notebooks-token-mount.png)
 
