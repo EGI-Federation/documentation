@@ -16,8 +16,8 @@ services from EGI or other e-Infrastructures. For data services, check
 ## API access to notebooks
 
 The [JupyterHub REST API](https://jupyterhub.readthedocs.io/en/5.3.0/reference/rest-api.html)
-is accessible. You can acess the API with a
-[valid Check-in token](../../check-in/obtaining-tokens/) at
+is accessible. You can access the API with a
+[valid Check-in token](../../../check-in/obtaining-tokens/) at
 `https://notebooks.egi.eu/services/jwt`.
 
 The endpoint expects an `Authorization` header to be present in the requests
@@ -62,8 +62,8 @@ other users. Only select yes when you will not share the server!
 
 ![token mount selection](notebooks-token-mount.png)
 
-You can obtain a new token at any time with the [xxxx JupyterLab extension]()
-You have two options:
+You can obtain a new token at any time with the JupyterLab extension available
+from the Jupyter Lab interface. You have two options:
 
 1. Copying the token to clipboard
 2. Saving the token to disk so it's accessible from your notebook files
