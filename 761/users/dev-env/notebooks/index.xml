@@ -363,7 +363,14 @@ can revoke the validity of the generated link by clicking on the button
 &lt;/div>
 &lt;p>Once the invited user has accepted an invitation and authorized access, you can
 start collaborating on the same server.&lt;/p>
-&lt;h2 id="controlling-access-to-the-server">Controlling access to the server&lt;/h2>
+&lt;h3 id="accepting-the-invitation">Accepting the invitation&lt;/h3>
+&lt;p>If you receive a link for getting access to an existing Notebook server, you
+will be asked to accept the sharing invitation&lt;/p>
+&lt;p>&lt;img src="notebooks-accept-sharing.png" alt="Accept sharing invitation">&lt;/p>
+&lt;p>and then a request to Authorize access:&lt;/p>
+&lt;p>&lt;img src="notebooks-authorize-access.png" alt="Authorize access">&lt;/p>
+&lt;p>Once you accept and authorize, will be able to collaborate on the existing server.&lt;/p>
+&lt;h3 id="controlling-access-to-the-server">Controlling access to the server&lt;/h3>
 &lt;p>You can see IDs of all users who accepted your invitation and time when they did
 from the User sharing menu. Click the Refresh button or re-open the user sharing
 menu window to get an updated view.&lt;/p>
