@@ -255,7 +255,7 @@ from the Jupyter Lab interface. You have two options:&lt;/p>
 &lt;li>Copying the token to clipboard&lt;/li>
 &lt;li>Saving the token to disk so it&amp;rsquo;s accessible from your notebook files
 and/or terminal. Optionally you can request the token to be continuously
-refreshed on disk so you don&amp;rsquo;t need to to request new tokens.&lt;/li>
+refreshed on disk so you don&amp;rsquo;t need to request new tokens.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="notebooks-token-extension.png" alt="token extension">&lt;/p>
 &lt;p>Whether you have selected to mount the token on the server creation step or
