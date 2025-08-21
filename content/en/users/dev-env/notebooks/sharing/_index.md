@@ -64,7 +64,7 @@ Once you accept and authorize, you will be able to collaborate on the existing s
 
 ### Managing invitations
 
-You can see IDs of all users who accepted your invitation and time when they did
+You can see IDs of all users who accepted your invitation and the time when they did
 from the User sharing menu. Click the Refresh button or re-open the user sharing
 menu window to get an updated view.
 
