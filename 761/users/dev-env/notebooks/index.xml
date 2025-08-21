@@ -341,7 +341,7 @@ Notebooks provide you this feature via user sharing menu.&lt;/p>
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 By allowing other users to access your server, you also allow them to access the
 files present on your Jupyter server. &lt;strong>Do not&lt;/strong> store any secrets on your server if
-you are planning to share!
+you are planning to share it!
 &lt;/div>
 &lt;h2 id="sharing-access">Sharing access&lt;/h2>
 &lt;h3 id="creating-an-invitation">Creating an invitation&lt;/h3>
@@ -372,7 +372,7 @@ will be asked to accept the sharing invitation&lt;/p>
 &lt;p>&lt;img src="notebooks-authorize-access.png" alt="Authorize access">&lt;/p>
 &lt;p>Once you accept and authorize, you will be able to collaborate on the existing server.&lt;/p>
 &lt;h3 id="managing-invitations">Managing invitations&lt;/h3>
-&lt;p>You can see IDs of all users who accepted your invitation and time when they did
+&lt;p>You can see IDs of all users who accepted your invitation and the time when they did
 from the User sharing menu. Click the Refresh button or re-open the user sharing
 menu window to get an updated view.&lt;/p>
 &lt;p>&lt;img src="notebooks-user-sharing-list.png" alt="user sharing user list">&lt;/p>
