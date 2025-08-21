@@ -25,7 +25,7 @@ you are planning to share it!
 
 ### Creating an invitation
 
-You can find the user sharing menu can be opened from the top bar, click on
+The User sharing menu can be opened from the top bar, click on
 **User sharing -> Open user sharing menu**
 
 ![user sharing menu](notebooks-user-sharing.png)
