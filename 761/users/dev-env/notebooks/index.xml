@@ -376,7 +376,7 @@ will be asked to accept the sharing invitation&lt;/p>
 from the User sharing menu. Click the Refresh button or re-open the user sharing
 menu window to get an updated view.&lt;/p>
 &lt;p>&lt;img src="notebooks-user-sharing-list.png" alt="user sharing user list">&lt;/p>
-&lt;p>Click on the corresponding &lt;strong>Revoke&lt;/strong> button to revoke access for a concrete
+&lt;p>Click on the corresponding &lt;strong>Revoke&lt;/strong> button to revoke access for a specific
 user or click on &lt;strong>Revoke All users&lt;/strong> to revoke access for all users.&lt;/p>
 &lt;p>Other users access will last until you stop your server. At the start of each new session,
 all granted access will be revoked.&lt;/p>
