@@ -69,7 +69,7 @@ from the Jupyter Lab interface. You have two options:
 1. Copying the token to clipboard
 2. Saving the token to disk so it's accessible from your notebook files
    and/or terminal. Optionally you can request the token to be continuously
-   refresh on disk so you don't need to to request new tokens.
+   refreshed on disk so you don't need to to request new tokens.
 
 ![token extension](notebooks-token-extension.png)
 
