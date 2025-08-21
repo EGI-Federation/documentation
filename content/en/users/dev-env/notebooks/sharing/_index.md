@@ -70,7 +70,7 @@ menu window to get an updated view.
 
 ![user sharing user list](notebooks-user-sharing-list.png)
 
-Click on the corresponding **Revoke** button to revoke access for a concrete
+Click on the corresponding **Revoke** button to revoke access for a specific
 user or click on **Revoke All users** to revoke access for all users.
 
 Other users access will last until you stop your server. At the start of each new session,
