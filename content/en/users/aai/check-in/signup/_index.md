@@ -39,7 +39,7 @@ Signing up is simple. You don’t create a new account from scratch — instead,
 sign in once using an identity provider (IdP) you already have, and EGI Check-in
 creates a secure profile for you.
 
-1. Go to https://aai.egi.eu/auth/realms/id/account/#/
+1. Go to [https://aai.egi.eu/signup](https://aai.egi.eu/signup)
 2. Choose your identity provider: You’ll see a list of login options — such as
    “University of X,” “ORCID,” “Google,” and many others. You can use the search
    bar to find your institution or provider.
