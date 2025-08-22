@@ -25,7 +25,7 @@ sign in once using an identity provider (IdP) you already have, and EGI Check-in
 creates a secure profile for you.&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Go to &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/">https://aai.egi.eu/auth/realms/id/account/#/&lt;/a>&lt;/p>
+&lt;p>Go to &lt;a href="https://aai.egi.eu/signup">https://aai.egi.eu/signup&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Choose your identity provider: You’ll see a list of login options — such as
