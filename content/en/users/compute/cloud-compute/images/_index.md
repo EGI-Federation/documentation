@@ -18,14 +18,14 @@ Registry collects the Virtual Machine Images available on the providers.
 
 ![Artefact Registry](registry.png)
 
-The [Artefact Registry](https://registry.egi.eu) is a OCI-compliant catalogue
-of artefacts (including container images, VM images and helm charts) based on
+The [Artefact Registry](https://registry.egi.eu) is a OCI-compliant catalogue of
+artefacts (including container images, VM images and helm charts) based on
 [Harbor](https://goharbor.io/) where users can upload their images.
 
 Images in the Artefact Registry are organised into projects where images are
-pushed to. Access to projects is granted based on the membership and role
-of users within a VO. For a given project, only users with the appropriate
-roles can perform certain operations.
+pushed to. Access to projects is granted based on the membership and role of
+users within a VO. For a given project, only users with the appropriate roles
+can perform certain operations.
 
 ### EGI images
 
@@ -33,19 +33,109 @@ EGI produces a set of basic images that are automatically synced to all the
 providers and available for all the supported VOs.
 
 These images are built automatically using [packer](https://packer.io) and
-[Ansible](https://docs.ansible.com/) and uploaded to a dedicated project
-named `egi_vm_images` at the Artefact Registry. Build scripts, packer
-templates, and ansible playbooks are available in the
+[Ansible](https://docs.ansible.com/) and uploaded to a dedicated project named
+`egi_vm_images` at the Artefact Registry. Build scripts, packer templates, and
+ansible playbooks are available in the
 [fedcloud-vmi-templates GitHub repository](https://github.com/EGI-Federation/fedcloud-vmi-templates).
 The images are built regularly to avoid any potential vulnerabilities.
 
 EGI images have minimal OS installation with
-[cloud-init](https://cloudinit.readthedocs.io/en/latest/) for contextualization and
-follow the `registry.egi.eu egi_vm_images/<image name>:<version>` naming convention.
+[cloud-init](https://cloudinit.readthedocs.io/en/latest/) for contextualization
+and follow the `registry.egi.eu egi_vm_images/<image name>:<version>` naming
+convention.
 
 ![egi_vm_images at OpenStack](glance-images.png)
 
 ### Custom VO images
+
+#### VO project in Artefact Registry
+
+The Artefact Registry can store VM and container images. Besides the
+`egi_vm_images` projects, VOs can request their project in the Artefact Registry
+for storing custom images that include software needed to support the VOs
+activities. For doing so, open [Helpdesk](https://helpdesk.ggus.eu) ticket as
+follows:
+
+- Group: Artefact Registry (select Second Level/Services/EGI Services and
+  Service Components/Artefact Registry)
+- Ticket body:
+
+  ```
+  Dear Artefact Registry,
+
+  I'd like to request a new project for VO `<name of the VO>`.
+  The entitlement to authorize read-only (list, pull) access is `<entitlement to use>`.
+  The entitlement to authorize write (list, pull, push) access is `<entitlement to use>`.
+
+  Thanks!
+  ```
+
+Once the project is created, you will be able to login and manage artefacts.
+
+#### Uploading to the registry
+
+The Artefact Registry can store arbitrary binary artifacts and those matching
+the expected metadata will be synced to the sites. For uploading the images, any
+OCI registry compliant tool can be used. We rely on [`oras`](https://oras.land)
+for uploading the EGI images.
+
+Images must have a `eu.egi.cloud.tag` annotation in their manifest for them to
+be synced and the following additional annotations are expected to be available:
+
+- `org.openstack.glance.disk_format`: with the disk format of the image (e.g.
+  `raw` or `qcow2`)
+- `org.openstack.glance.container_format`: with the glance container format
+  (`bare` should be used in most cases), see
+  [glance documentation](https://docs.openstack.org/glance/latest/user/formats.html).
+- `eu.egi.cloud.image.title`: Human readable title.
+- `eu.egi.cloud.description`: A description of the image.
+- `org.openstack.glance.architecture`: Image architecture.
+- `org.openstack.glance.os_distro`: OS distro name (e.g. `ubuntu`).
+- `org.openstack.glance.os_version`: OS version (e.g. `24.04` for Ubuntu 24.04).
+- `org.openstack.glance.os_type`: OS type (e.g. `linux`).
+
+For the upload, you need to:
+
+1. Login to the registry, you can find credentials in your registry profile:
+
+```shell
+oras login -u <user> registry.egi.eu
+```
+
+2. Prepare an
+   [annotation file](https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file)
+   with the expected metadata. You can find below an example for an AlmaLinux
+   image file named `alma-9.qcow2`. It also includes a `$manifest` entry with
+   annotation of the manifest itself.
+
+```json
+{
+  "$manifest": {
+    "org.opencontainers.image.revision": "7b98c834862f2e7e342fad7f9e175ea8c74aa4f3",
+    "org.opencontainers.image.source": "https://github.com/EGI-Federation/fedcloud-vmi-templates"
+  },
+  "alma-9.qcow2": {
+    "eu.egi.cloud.image.title": "EGI Alma 9 image",
+    "org.openstack.glance.architecture": "x86_64",
+    "org.openstack.glance.os_distro": "alma",
+    "org.openstack.glance.os_type": "linux",
+    "org.openstack.glance.os_version": "9",
+    "org.openstack.glance.disk_format": "qcow2",
+    "eu.egi.cloud.tag": "2025-06-10-7b98c834",
+    "org.openstack.glance.container_format": "bare"
+  }
+}
+```
+
+3. Upload the image and the annotation file:
+
+```shell
+oras push --annotation-file <annotation json> \
+     registry.egi.eu/<project_name>/<repository>:<tag> \
+     <image file>
+```
+
+#### Building your own image
 
 Packaging your application in a custom VM image is a suggested solution in one
 of the following cases:
@@ -94,7 +184,7 @@ Disadvantages:
 - In general, the effort to implement this solution is higher than the basic
   contextualization.
 
-#### Image size and layout
+##### Image size and layout
 
 The larger the VM image, the longer it will take to be distributed to the
 providers and the longer it will take to be started on the infrastructure. As a
@@ -132,7 +222,7 @@ guidelines:
   avoid LVM. This will allow the cloud provider to easily resize your partition
   when instantiated and to modify files in it if needed.
 
-#### Contextualization and credentials
+##### Contextualization and credentials
 
 {{% alert title="Danger" color="danger" %}}
 
@@ -156,7 +246,7 @@ useful to use cloud-init to bootstrap some
 [Configuration Management Software](https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software)
 that will manage the configuration of the VMs during runtime.
 
-#### Security
+##### Security
 
 - **Always remove all default passwords and accounts from your VM.**
 - Disable all services unless necessary for the intended tasks.
@@ -164,14 +254,14 @@ that will manage the configuration of the VMs during runtime.
   minimally open.
 - Put no shared credentials (passwords) in any image.
 
-You should also follow best practice guides for each service that\'s exposed
-to the outside world (e.g.
+You should also follow best practice guides for each service that\'s exposed to
+the outside world (e.g.
 [tomcat](https://www.owasp.org/index.php/Securing_tomcat)).
 
 See also
 [AWS security Best Practices](https://aws.amazon.com/whitepapers/aws-security-best-practices/)
 
-#### Tools
+##### Tools
 
 Whenever possible, automate the process of creating your images. This will allow
 you to:
@@ -184,66 +274,3 @@ Check out the
 [fedcloud-vmi-templates GitHub repository](https://github.com/EGI-Federation/fedcloud-vmi-templates)
 for examples of images that can be built in a completely automated workflow
 using `packer` and GitHub Actions.
-
-#### Uploading to the registry
-
-The Artefact Registry can store arbitrary binary artifacts and those matching
-the expected metadata will be synced to the sites. For uploading the images,
-any OCI registry compliant tool can be used. We rely on
-[`oras`](https://oras.land) for uploading the EGI images.
-
-Images must have a `eu.egi.cloud.tag` annotation in their manifest for them to
-be synced and the following additional annotations are expected to be available:
-
-- `org.openstack.glance.disk_format`: with the disk format of the image (e.g.
-  `raw` or `qcow2`)
-- `org.openstack.glance.container_format`: with the glance container format
-  (`bare` should be used in most cases), see
-  [glance documentation](https://docs.openstack.org/glance/latest/user/formats.html).
-- `eu.egi.cloud.image.title`: Human readable title.
-- `eu.egi.cloud.description`: A description of the image.
-- `org.openstack.glance.architecture`: Image architecture.
-- `org.openstack.glance.os_distro`: OS distro name (e.g. `ubuntu`).
-- `org.openstack.glance.os_version`: OS version (e.g. `24.04` for Ubuntu 24.04).
-- `org.openstack.glance.os_type`: OS type (e.g. `linux`).
-
-For the upload, you need to:
-
-1. Login to the registry, you can find credentials in your registry profile:
-
-```shell
-oras login -u <user> registry.egi.eu
-```
-
-2. Prepare an
-   [annotation file](https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file)
-   with the expected metadata. You can find below an example for an AlmaLinux
-   image file named `alma-9.qcow2`. It also includes a `$manifest` entry
-   with annotation of the manifest itself.
-
-```json
-{
-  "$manifest": {
-    "org.opencontainers.image.revision": "7b98c834862f2e7e342fad7f9e175ea8c74aa4f3",
-    "org.opencontainers.image.source": "https://github.com/EGI-Federation/fedcloud-vmi-templates"
-  },
-  "alma-9.qcow2": {
-    "eu.egi.cloud.image.title": "EGI Alma 9 image",
-    "org.openstack.glance.architecture": "x86_64",
-    "org.openstack.glance.os_distro": "alma",
-    "org.openstack.glance.os_type": "linux",
-    "org.openstack.glance.os_version": "9",
-    "org.openstack.glance.disk_format": "qcow2",
-    "eu.egi.cloud.tag": "2025-06-10-7b98c834",
-    "org.openstack.glance.container_format": "bare"
- }
-}
-```
-
-3. Upload the image and the annotation file:
-
-```shell
-oras push --annotation-file <annotation json> \
-     registry.egi.eu/<project_name>/<repository>:<tag> \
-     <image file>
-```
