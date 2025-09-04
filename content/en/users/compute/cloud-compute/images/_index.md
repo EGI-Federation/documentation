@@ -254,11 +254,8 @@ that will manage the configuration of the VMs during runtime.
   minimally open.
 - Put no shared credentials (passwords) in any image.
 
-You should also follow best practice guides for each service that\'s exposed to
-the outside world (e.g.
-[tomcat](https://www.owasp.org/index.php/Securing_tomcat)).
-
-See also
+You should also follow best practice guides for each service that's exposed to
+the outside world. See also
 [AWS security Best Practices](https://aws.amazon.com/whitepapers/aws-security-best-practices/)
 
 ##### Tools
