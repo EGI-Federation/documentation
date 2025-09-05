@@ -1041,27 +1041,104 @@ i.e. operating system and applications available initially on a VM. The Artefact
 Registry collects the Virtual Machine Images available on the providers.&lt;/p>
 &lt;h2 id="artefact-registry">Artefact Registry&lt;/h2>
 &lt;p>&lt;img src="registry.png" alt="Artefact Registry">&lt;/p>
-&lt;p>The &lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a> is a OCI-compliant catalogue
-of artefacts (including container images, VM images and helm charts) based on
+&lt;p>The &lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a> is a OCI-compliant catalogue of
+artefacts (including container images, VM images and helm charts) based on
 &lt;a href="https://goharbor.io/">Harbor&lt;/a> where users can upload their images.&lt;/p>
 &lt;p>Images in the Artefact Registry are organised into projects where images are
-pushed to. Access to projects is granted based on the membership and role
-of users within a VO. For a given project, only users with the appropriate
-roles can perform certain operations.&lt;/p>
+pushed to. Access to projects is granted based on the membership and role of
+users within a VO. For a given project, only users with the appropriate roles
+can perform certain operations.&lt;/p>
 &lt;h3 id="egi-images">EGI images&lt;/h3>
 &lt;p>EGI produces a set of basic images that are automatically synced to all the
 providers and available for all the supported VOs.&lt;/p>
 &lt;p>These images are built automatically using &lt;a href="https://packer.io">packer&lt;/a> and
-&lt;a href="https://docs.ansible.com/">Ansible&lt;/a> and uploaded to a dedicated project
-named &lt;code>egi_vm_images&lt;/code> at the Artefact Registry. Build scripts, packer
-templates, and ansible playbooks are available in the
+&lt;a href="https://docs.ansible.com/">Ansible&lt;/a> and uploaded to a dedicated project named
+&lt;code>egi_vm_images&lt;/code> at the Artefact Registry. Build scripts, packer templates, and
+ansible playbooks are available in the
 &lt;a href="https://github.com/EGI-Federation/fedcloud-vmi-templates">fedcloud-vmi-templates GitHub repository&lt;/a>.
 The images are built regularly to avoid any potential vulnerabilities.&lt;/p>
 &lt;p>EGI images have minimal OS installation with
-&lt;a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init&lt;/a> for contextualization and
-follow the &lt;code>registry.egi.eu egi_vm_images/&amp;lt;image name&amp;gt;:&amp;lt;version&amp;gt;&lt;/code> naming convention.&lt;/p>
+&lt;a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init&lt;/a> for contextualization
+and follow the &lt;code>registry.egi.eu egi_vm_images/&amp;lt;image name&amp;gt;:&amp;lt;version&amp;gt;&lt;/code> naming
+convention.&lt;/p>
 &lt;p>&lt;img src="glance-images.png" alt="egi_vm_images at OpenStack">&lt;/p>
 &lt;h3 id="custom-vo-images">Custom VO images&lt;/h3>
+&lt;h4 id="vo-project-in-artefact-registry">VO project in Artefact Registry&lt;/h4>
+&lt;p>The Artefact Registry can store VM and container images. Besides the
+&lt;code>egi_vm_images&lt;/code> projects, VOs can request their project in the Artefact Registry
+for storing custom images that include software needed to support the VOs
+activities. For doing so, open &lt;a href="https://helpdesk.ggus.eu">Helpdesk&lt;/a> ticket as
+follows:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Group: Artefact Registry (select Second Level/Services/EGI Services and
+Service Components/Artefact Registry)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ticket body:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Dear Artefact Registry,
+I&amp;#39;d like to request a new project for VO `&amp;lt;name of the VO&amp;gt;`.
+The entitlement to authorize read-only (list, pull) access is `&amp;lt;entitlement to use&amp;gt;`.
+The entitlement to authorize write (list, pull, push) access is `&amp;lt;entitlement to use&amp;gt;`.
+Thanks!
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;p>Once the project is created, you will be able to login and manage artefacts.&lt;/p>
+&lt;h4 id="uploading-to-the-registry">Uploading to the registry&lt;/h4>
+&lt;p>The Artefact Registry can store arbitrary binary artifacts and those matching
+the expected metadata will be synced to the sites. For uploading the images, any
+OCI registry compliant tool can be used. We rely on &lt;a href="https://oras.land">&lt;code>oras&lt;/code>&lt;/a>
+for uploading the EGI images.&lt;/p>
+&lt;p>Images must have a &lt;code>eu.egi.cloud.tag&lt;/code> annotation in their manifest for them to
+be synced and the following additional annotations are expected to be available:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>org.openstack.glance.disk_format&lt;/code>: with the disk format of the image (e.g.
+&lt;code>raw&lt;/code> or &lt;code>qcow2&lt;/code>)&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.container_format&lt;/code>: with the glance container format
+(&lt;code>bare&lt;/code> should be used in most cases), see
+&lt;a href="https://docs.openstack.org/glance/latest/user/formats.html">glance documentation&lt;/a>.&lt;/li>
+&lt;li>&lt;code>eu.egi.cloud.image.title&lt;/code>: Human readable title.&lt;/li>
+&lt;li>&lt;code>eu.egi.cloud.description&lt;/code>: A description of the image.&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.architecture&lt;/code>: Image architecture.&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.os_distro&lt;/code>: OS distro name (e.g. &lt;code>ubuntu&lt;/code>).&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.os_version&lt;/code>: OS version (e.g. &lt;code>24.04&lt;/code> for Ubuntu 24.04).&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.os_type&lt;/code>: OS type (e.g. &lt;code>linux&lt;/code>).&lt;/li>
+&lt;/ul>
+&lt;p>For the upload, you need to:&lt;/p>
+&lt;ol>
+&lt;li>Login to the registry, you can find credentials in your registry profile:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras login -u &amp;lt;user&amp;gt; registry.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Prepare an
+&lt;a href="https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file">annotation file&lt;/a>
+with the expected metadata. You can find below an example for an AlmaLinux
+image file named &lt;code>alma-9.qcow2&lt;/code>. It also includes a &lt;code>$manifest&lt;/code> entry with
+annotation of the manifest itself.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;$manifest&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;7b98c834862f2e7e342fad7f9e175ea8c74aa4f3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.source&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/EGI-Federation/fedcloud-vmi-templates&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;alma-9.qcow2&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;eu.egi.cloud.image.title&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;EGI Alma 9 image&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.architecture&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;x86_64&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_distro&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;alma&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;linux&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_version&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;9&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.disk_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;qcow2&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;eu.egi.cloud.tag&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2025-06-10-7b98c834&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.container_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bare&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Upload the image and the annotation file:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras push --annotation-file &amp;lt;annotation json&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> registry.egi.eu/&amp;lt;project_name&amp;gt;/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &amp;lt;image file&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="building-your-own-image">Building your own image&lt;/h4>
 &lt;p>Packaging your application in a custom VM image is a suggested solution in one
 of the following cases:&lt;/p>
 &lt;ul>
@@ -1108,7 +1185,7 @@ the image or download it.&lt;/li>
 &lt;li>In general, the effort to implement this solution is higher than the basic
 contextualization.&lt;/li>
 &lt;/ul>
-&lt;h4 id="image-size-and-layout">Image size and layout&lt;/h4>
+&lt;h5 id="image-size-and-layout">Image size and layout&lt;/h5>
 &lt;p>The larger the VM image, the longer it will take to be distributed to the
 providers and the longer it will take to be started on the infrastructure. As a
 general rule, always try to make images as smaller as possible following these
@@ -1150,7 +1227,7 @@ avoid LVM. This will allow the cloud provider to easily resize your partition
 when instantiated and to modify files in it if needed.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h4 id="contextualization-and-credentials">Contextualization and credentials&lt;/h4>
+&lt;h5 id="contextualization-and-credentials">Contextualization and credentials&lt;/h5>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">Danger&lt;/h4>
 &lt;strong>Do NOT include any credentials on your images&lt;/strong>.
@@ -1168,7 +1245,7 @@ several other actions supported by the tool.&lt;/p>
 useful to use cloud-init to bootstrap some
 &lt;a href="https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software">Configuration Management Software&lt;/a>
 that will manage the configuration of the VMs during runtime.&lt;/p>
-&lt;h4 id="security">Security&lt;/h4>
+&lt;h5 id="security">Security&lt;/h5>
 &lt;ul>
 &lt;li>&lt;strong>Always remove all default passwords and accounts from your VM.&lt;/strong>&lt;/li>
 &lt;li>Disable all services unless necessary for the intended tasks.&lt;/li>
@@ -1176,12 +1253,10 @@ that will manage the configuration of the VMs during runtime.&lt;/p>
 minimally open.&lt;/li>
 &lt;li>Put no shared credentials (passwords) in any image.&lt;/li>
 &lt;/ul>
-&lt;p>You should also follow best practice guides for each service that's exposed
-to the outside world (e.g.
-&lt;a href="https://www.owasp.org/index.php/Securing_tomcat">tomcat&lt;/a>).&lt;/p>
-&lt;p>See also
+&lt;p>You should also follow best practice guides for each service that&amp;rsquo;s exposed to
+the outside world. See also
 &lt;a href="https://aws.amazon.com/whitepapers/aws-security-best-practices/">AWS security Best Practices&lt;/a>&lt;/p>
-&lt;h4 id="tools">Tools&lt;/h4>
+&lt;h5 id="tools">Tools&lt;/h5>
 &lt;p>Whenever possible, automate the process of creating your images. This will allow
 you to:&lt;/p>
 &lt;ul>
@@ -1192,62 +1267,7 @@ you to:&lt;/p>
 &lt;p>Check out the
 &lt;a href="https://github.com/EGI-Federation/fedcloud-vmi-templates">fedcloud-vmi-templates GitHub repository&lt;/a>
 for examples of images that can be built in a completely automated workflow
-using &lt;code>packer&lt;/code> and GitHub Actions.&lt;/p>
-&lt;h4 id="uploading-to-the-registry">Uploading to the registry&lt;/h4>
-&lt;p>The Artefact Registry can store arbitrary binary artifacts and those matching
-the expected metadata will be synced to the sites. For uploading the images,
-any OCI registry compliant tool can be used. We rely on
-&lt;a href="https://oras.land">&lt;code>oras&lt;/code>&lt;/a> for uploading the EGI images.&lt;/p>
-&lt;p>Images must have a &lt;code>eu.egi.cloud.tag&lt;/code> annotation in their manifest for them to
-be synced and the following additional annotations are expected to be available:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>org.openstack.glance.disk_format&lt;/code>: with the disk format of the image (e.g.
-&lt;code>raw&lt;/code> or &lt;code>qcow2&lt;/code>)&lt;/li>
-&lt;li>&lt;code>org.openstack.glance.container_format&lt;/code>: with the glance container format
-(&lt;code>bare&lt;/code> should be used in most cases), see
-&lt;a href="https://docs.openstack.org/glance/latest/user/formats.html">glance documentation&lt;/a>.&lt;/li>
-&lt;li>&lt;code>eu.egi.cloud.image.title&lt;/code>: Human readable title.&lt;/li>
-&lt;li>&lt;code>eu.egi.cloud.description&lt;/code>: A description of the image.&lt;/li>
-&lt;li>&lt;code>org.openstack.glance.architecture&lt;/code>: Image architecture.&lt;/li>
-&lt;li>&lt;code>org.openstack.glance.os_distro&lt;/code>: OS distro name (e.g. &lt;code>ubuntu&lt;/code>).&lt;/li>
-&lt;li>&lt;code>org.openstack.glance.os_version&lt;/code>: OS version (e.g. &lt;code>24.04&lt;/code> for Ubuntu 24.04).&lt;/li>
-&lt;li>&lt;code>org.openstack.glance.os_type&lt;/code>: OS type (e.g. &lt;code>linux&lt;/code>).&lt;/li>
-&lt;/ul>
-&lt;p>For the upload, you need to:&lt;/p>
-&lt;ol>
-&lt;li>Login to the registry, you can find credentials in your registry profile:&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras login -u &amp;lt;user&amp;gt; registry.egi.eu
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
-&lt;li>Prepare an
-&lt;a href="https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file">annotation file&lt;/a>
-with the expected metadata. You can find below an example for an AlmaLinux
-image file named &lt;code>alma-9.qcow2&lt;/code>. It also includes a &lt;code>$manifest&lt;/code> entry
-with annotation of the manifest itself.&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;$manifest&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;7b98c834862f2e7e342fad7f9e175ea8c74aa4f3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.source&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/EGI-Federation/fedcloud-vmi-templates&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;alma-9.qcow2&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;eu.egi.cloud.image.title&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;EGI Alma 9 image&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.architecture&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;x86_64&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_distro&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;alma&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;linux&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_version&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;9&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.disk_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;qcow2&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;eu.egi.cloud.tag&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2025-06-10-7b98c834&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.container_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bare&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
-&lt;li>Upload the image and the annotation file:&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras push --annotation-file &amp;lt;annotation json&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> registry.egi.eu/&amp;lt;project_name&amp;gt;/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &amp;lt;image file&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: GPUs</title><link>/users/compute/cloud-compute/gpgpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/gpgpu/</guid><description>
+using &lt;code>packer&lt;/code> and GitHub Actions.&lt;/p></description></item><item><title>Users: GPUs</title><link>/users/compute/cloud-compute/gpgpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/gpgpu/</guid><description>
 &lt;h2 id="gpu-resources-on-egi-cloud">GPU resources on EGI Cloud&lt;/h2>
 &lt;p>GPUs resources are available on selected providers of the EGI Cloud. These are
 available as specific &lt;strong>flavours&lt;/strong> that when used to instantiate a Virtual
