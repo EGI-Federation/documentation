@@ -126,6 +126,7 @@ crls
 crt
 cryptsetup
 cscs
+csic
 csirt
 csirts
 customisable
