@@ -55,7 +55,7 @@ latter basically behaving like a virtual USB drive that can be
 attached/detached to VMs to provide data and storage space for
 applications.
 
-The [Artefact Registry](../compute/cloud-compute/images/) has a 
+The [Artefact Registry](../compute/cloud-compute/images/) has a
 list of Virtual Appliances ready to use with popular Linux
 distributions, but more can be added upon demand.
 
