@@ -58,8 +58,7 @@ You should then select on the page the tab: `Deploy your own provider`
 
 In order to obtain the `PROVIDER_REGISTRATION_TOKEN` that is part of the
 preconfigured command, you need to contact the
-[EGI HelpDesk](https://ggus.eu/?mode=ticket_submit), selecting DataHub as
-support unit.
+[EGI HelpDesk](https://helpdesk.ggus.eu/), selecting DataHub as Group.
 
 Please include in the request the following info:
 

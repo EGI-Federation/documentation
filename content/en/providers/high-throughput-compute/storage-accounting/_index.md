@@ -88,7 +88,7 @@ Repository takes up to an hour to update its ACL from the configuration Database
 and the [EGI Messaging Service](../../../internal/messaging/) take up to 4
 hours. If you get warnings in your SSM log about invalid username or password
 you can retry again after a delay. If this persists for over 4 hours, then do
-open a [Helpdesk ticket](https://ggus.eu/).
+open a [Helpdesk ticket](https://helpdesk.ggus.eu/).
 
 ### Configure SSM
 

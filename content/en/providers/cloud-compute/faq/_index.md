@@ -67,9 +67,9 @@ For the most part daily operations will not change.
 
 A resource centre part of the EGI Federation, and supporting international
 communities, needs to provide support through the EGI channels. This means
-following up [GGUS tickets](https://ggus.eu). This includes requests from user
-communities and tickets triggered by failures detected by the monitoring
-infrastructure.
+following up [GGUS tickets](https://helpdesk.ggus.eu). This includes requests
+from user communities and tickets triggered by failures detected by the
+monitoring infrastructure.
 
 A resource centre needs to maintain the services federated in EGI properly
 configured with the EGI AAI.

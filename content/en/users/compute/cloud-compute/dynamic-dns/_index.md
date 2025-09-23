@@ -8,6 +8,8 @@ description: >
   Dynamic domain names for VMs in the EGI Cloud
 ---
 
+<!-- cSpell:words noip -->
+
 The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
 memorable DNS hostnames in given domains (e.g. `my-server.vo.fedcloud.eu`) and
@@ -115,7 +117,7 @@ where:
 
 ## Support
 
-Support for Dynamic DNS service is provided via [EGI Helpdesk](https://helpdesk.ggus.eu/)
-in **"Dynamic DNS"** support unit, where users can ask questions, report issues
-or make requests for additional domains for specific projects or user
-communities.
+Support for Dynamic DNS service is provided via
+[EGI Helpdesk](https://helpdesk.ggus.eu/) **"Dynamic DNS"** support unit, where
+users can ask questions, report issues or make requests for additional domains
+for specific projects or user communities.

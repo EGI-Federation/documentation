@@ -20,7 +20,7 @@ have the choice to run:
 After logging into the service, you will be shown a form for selecting the
 environment, pick the desired one and click start
 
-![environmet selection](notebooks-environments.png)
+![environment selection](notebooks-environments.png)
 
 The list of options is customised for your community, depending on the VOs you
 are member of, you will be able to select new options tuned to your needs, e.g.
@@ -31,7 +31,7 @@ members are presented with a runtime environment built matching their needs:
 
 If you have special needs that cannot be covered with the
 [default environment](./default) environment, let us know by opening a ticket to
-the Notebooks Support Unit in [GGUS](https://ggus.eu).
+the Notebooks Support Unit in [GGUS](https://helpdesk.ggus.eu).
 
 Additionally, you can build your own environment via [Replay](../../replay).
 This will allow you to build reproducible and shareable environments for your
