@@ -48,5 +48,5 @@ summarised below:
 1. **Installation validation**.
 
 If at any time you experience technical difficulties or need support, please
-[open a ticket](https://ggus.eu/). Dedicated integration sessions are available
-also on request.
+[open a ticket](https://helpdesk.ggus.eu/). Dedicated integration sessions are
+available also on request.

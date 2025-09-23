@@ -429,12 +429,16 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 
 #### List of supported VOs
 
+<!-- cSpell: disable -->
+
 - acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,
 - eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,
 - hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,
 - training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,
 - vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,
 - eng_cloud and breakseq_cloud
+
+<!-- cSpell: enable -->
 
 #### More details
 
@@ -450,6 +454,5 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
 
 - For technical issues and bug reports, please submit a ticket in
-  [GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`,
-  indicate:\
-  `EGI Services and Service Components` > `Workload Manager (DIRAC)`.
+  [GGUS](https://helpdesk.ggus.eu/), in `Group`, indicate:
+  `Workload Manager (DIRAC)`.

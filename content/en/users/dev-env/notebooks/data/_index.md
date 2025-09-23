@@ -15,8 +15,8 @@ be kept even if your notebook server is stopped (which can happen if there is no
 activity for more than 1 hour). **Modifications to the notebooks environment
 outside the home directory are not kept** (e.g. installation of libraries). If
 you need those changes to persist, let us know via a
-[GGUS ticket to the Notebooks Support Unit](https://ggus.eu). You can also ask
-for increasing your default home allocation via ticket.
+[GGUS ticket to the Notebooks Support Unit](https://helpdesk.ggus.eu). You can
+also ask for increasing your default home allocation via ticket.
 
 {{% alert title="Note" color="info" %}} Your home directory is backed up daily.
 {{% /alert %}}
@@ -52,7 +52,7 @@ with specific drivers that make the DataHub Spaces accessible from any notebook.
 
 Whenever you log into the service, supported DataHub spaces will be available
 under the `datahub` folder. If you need support for any additional space, please
-[open a ticket in GGUS](https://ggus.eu) to add it.
+[open a ticket in GGUS](https://helpdesk.ggus.eu) to add it.
 
 ![Datahub folder](datahub-folder.png)
 

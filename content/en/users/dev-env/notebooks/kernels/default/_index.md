@@ -64,7 +64,7 @@ directory `/home/jovyan/cvmfs`. These repositories are available:
 <!-- cSpell:enable -->
 
 If you need access to any other repositories, please open a request in
-[GGUS](https://ggus.eu).
+[GGUS](https://helpdesk.ggus.eu).
 
 ## Installing your own kernels/environments permanently
 
