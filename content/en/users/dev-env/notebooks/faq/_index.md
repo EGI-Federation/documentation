@@ -9,6 +9,8 @@ description: >
   Most frequent questions asked about EGI Notebooks
 ---
 
+<-- cSpell:words magics -->
+
 ## How do I install library _X_?
 
 You can install new software easily on the notebooks using `conda` or `pip`. The

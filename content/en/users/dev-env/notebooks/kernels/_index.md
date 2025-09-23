@@ -20,7 +20,7 @@ have the choice to run:
 After logging into the service, you will be shown a form for selecting the
 environment, pick the desired one and click start
 
-![environmet selection](notebooks-environments.png)
+![environment selection](notebooks-environments.png)
 
 The list of options is customised for your community, depending on the VOs you
 are member of, you will be able to select new options tuned to your needs, e.g.
