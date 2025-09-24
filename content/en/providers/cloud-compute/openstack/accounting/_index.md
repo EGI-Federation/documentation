@@ -44,10 +44,22 @@ must set:
 
 cASO will write records to `/var/spool/apel` from where ssmsend will take them.
 
-SSM configuration is available at `/etc/apel`. Defaults should be OK for most
-cases. SSM will use `/etc/grid-security` for the certificate CAs and the host
-certificate and private keys (`/etc/grid-security/hostcert.pem` and
-`/etc/grid-security/hostkey.pem`).
+SSM configuration is available at `/etc/apel`. Set the destination to
+`eu-egi-cloud-accounting`:
+
+```ini
+[messaging]
+# If using AMS this is the project that SSM will connect to. Ignored for STOMP.
+ams_project: accounting
+
+# Queue to which SSM will send messages
+destination: eu-egi-cloud-accounting
+```
+
+Other default values available in the configuration file should be ok
+for your site. SSM expects `/etc/grid-security` to contain the host certificate
+(`/etc/grid-security/hostcert.pem`), private key
+(`/etc/grid-security/hostkey.pem`) and CAs (`/etc/grid-security/certificates`).
 
 #### Running the services
 
