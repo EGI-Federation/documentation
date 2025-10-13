@@ -99,7 +99,7 @@ removing the hostname once the infrastructure is destroyed.
 
 List available domains for your user
 
-``plain
+```plain
 GET /nic/domains
 Authorization: Bearer {{access_token}}
 ```
@@ -139,6 +139,7 @@ specifying `name` and `domain` (both mandatory):
 GET /nic/register?name={{host_name}}&domain={{domain}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
 Authorization: Bearer {{access_token}}
 ```
+
 where:
 
 - `host_name` is the name of the host to register
@@ -153,6 +154,7 @@ of by specifying the `fqdn` (also mandatory):
 GET /nic/register?fqdn={{fqdn_of_host}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
 Authorization: Bearer {{access_token}}
 ```
+
 where:
 
 - `fqdn_of_host` is fqdn of the host to register
