@@ -79,7 +79,118 @@ To register a new DNS host name:
 
 {{% /alert %}}
 
+## Dynamic DNS support in Infrastructure Manager
+
+[Infrastructure Manager (IM)](../../orchestration/im/) automatically
+creates hostname and assign the correct public IP of the head node of your
+infrastructure in the Dynamic DNS. Just fill in the `DNS name to be used for
+the VM` or `DNS name to set to the Kubernetes Front-end` (other infrastructures
+may have similar names for this field) with a FQDN within the supported domains
+of the Dynamic DNS:
+
+![IM Dynamic DNS support](im-dyndns.png)
+
+IM will take care of registering the hostname, assigning the IP and eventually
+removing the hostname once the infrastructure is destroyed.
+
 ## API
+
+### List domains
+
+List available domains for your user
+
+``plain
+GET /nic/domains
+Authorization: Bearer {{access_token}}
+```
+
+where `access_token` is a valid Check-in access token
+
+Sample response:
+
+```json
+{
+  "status": "ok",
+  "private": [],
+  "public": [
+    {
+      "name": "cloud.ai4eosc.eu",
+      "public": true,
+      "available": true,
+      "comment": "Domain for stable services in AI4EOSC project",
+      "owner": "viet02"
+    },
+    {
+      "name": "cloud.eosc-siesta.eu",
+      "public": true,
+      "available": true,
+      "comment": "Domain for production services in EOSC-SIESTA project",
+      "owner": "root"
+    },
+}
+```
+
+### Register host
+
+You can register a new hostname with a call to `/nic/register` either by
+specifying `name` and `domain` (both mandatory):
+
+```plain
+GET /nic/register?name={{host_name}}&domain={{domain}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
+Authorization: Bearer {{access_token}}
+```
+where:
+
+- `host_name` is the name of the host to register
+- `domain` is the domain where to register the host
+- `comment` is a comment to add to the host
+- `wildcard` is whether to ?
+- `access_token` is a valid Check-in access token
+
+of by specifying the `fqdn` (also mandatory):
+
+```plain
+GET /nic/register?fqdn={{fqdn_of_host}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
+Authorization: Bearer {{access_token}}
+```
+where:
+
+- `fqdn_of_host` is fqdn of the host to register
+- `comment` is a comment to add to the host
+- `wildcard` is whether to ?
+- `access_token` is a valid Check-in access token
+
+Response will be a json as follows:
+
+```json
+{
+  "status": "ok",
+  "message": "Host registered.",
+  "host": {
+    "fqdn": "test.vm.fedcloud.eu",
+    "name": "test",
+    "domain": "vm.fedcloud.eu",
+    "wildcard": false,
+    "comment": "test",
+    "available": true,
+    "client_faults": 0,
+    "server_faults": 0,
+    "abuse_blocked": false,
+    "abuse": false,
+    "last_update_ipv4": "2025-10-13T11:24:51.165433+00:00",
+    "tls_update_ipv4": false,
+    "ipv4": "10.10.0.253",
+    "last_update_ipv6": null,
+    "tls_update_ipv6": false,
+    "ipv6": null,
+    "update_secret": "some_secret",
+    "IPv4_update_url_basic_auth": "https://test.vm.fedcloud.eu:some_secret@nsupdate.fedcloud.eu/nic/update",
+    "IPv4_update_url_bearer_auth": "https://nsupdate.fedcloud.eu/nic/update?hostname=test.vm.fedcloud.eu&myip=${myip}"
+  }
+}
+```
+
+### Update DNS record
 
 Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
 providers like [dyn.com](https://help.dyn.com/remote-access-api/perform-update/),
@@ -102,6 +213,54 @@ where:
   `username`
 - `myip` in the parameter string if omitted, the IP address of the client
   performing the GET request will be used
+
+### Lists hosts
+
+This API lists all the registered hosts by a given user:
+
+```plain
+GET /nic/hosts
+Authorization: Bearer {{access_token}}
+```
+
+or
+
+```plain
+GET /nic/hosts?domain={{domain}}
+Authorization: Bearer {{access_token}}
+```
+where:
+
+- `domain` is the domain to list hosts for
+- `access_token` is a valid Check-in access token
+
+Sample response:
+
+```json
+{
+  "status": "ok",
+  "hosts": [
+    {
+      "fqdn": "myhost.cloud.ai4eosc.eu",
+      "name": "myhost",
+      "domain": "cloud.ai4eosc.eu",
+      "wildcard": false,
+      "comment": "comment",
+      "available": true,
+      "client_faults": 1,
+      "server_faults": 0,
+      "abuse_blocked": false,
+      "abuse": false,
+      "last_update_ipv4": "2025-04-10T10:33:06.930760+00:00",
+      "tls_update_ipv4": false,
+      "ipv4": "147.213.65.206",
+      "last_update_ipv6": "2025-04-10T10:21:57.975176+00:00",
+      "tls_update_ipv6": false,
+      "ipv6": null
+    }
+  ]
+}
+```
 
 ## Security
 
