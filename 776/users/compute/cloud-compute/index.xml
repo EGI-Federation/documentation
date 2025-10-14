@@ -1451,7 +1451,7 @@ resolve to the same IP. For example, if the hostname of the head node of a
 kubernetes cluster is &lt;code>kubernetes.fedcloud.eu&lt;/code>, all services on the cluster can
 have the same IP (e.g. &lt;code>dashboard.kubernetes.fedcloud.eu&lt;/code>,
 &lt;code>api.kubernetes.fedcloud.eu&lt;/code>, &lt;code>app1.kubernetes.fedcloud.eu&lt;/code>), so the routing of
-the requests is managed at the cluster level by using an ingress or gatewat
+the requests is managed at the cluster level by using an ingress or gateway
 object.&lt;/p>
 &lt;p>This kind of names can be registered using the &lt;a href="#api">API calls&lt;/a> as described
 below.&lt;/p>
