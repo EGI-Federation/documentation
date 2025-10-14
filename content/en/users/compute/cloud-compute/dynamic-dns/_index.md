@@ -133,34 +133,35 @@ Sample response:
 ### Register host
 
 You can register a new hostname with a call to `/nic/register` either by
-specifying `name` and `domain` (both mandatory):
 
-```plain
-GET /nic/register?name={{host_name}}&domain={{domain}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
-Authorization: Bearer {{access_token}}
-```
+- specifying `name` and `domain` (both mandatory):
 
-where:
+  ```plain
+  GET /nic/register?name={{host_name}}&domain={{domain}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
+  Authorization: Bearer {{access_token}}
+  ```
 
-- `host_name` is the name of the host to register
-- `domain` is the domain where to register the host
-- `comment` is a comment to add to the host
-- `wildcard` is whether to ?
-- `access_token` is a valid Check-in access token
+  where:
 
-of by specifying the `fqdn` (also mandatory):
+  - `host_name` is the name of the host to register
+  - `domain` is the domain where to register the host
+  - `comment` is a comment to add to the host
+  - `wildcard` is whether to ?
+  - `access_token` is a valid Check-in access token
 
-```plain
-GET /nic/register?fqdn={{fqdn_of_host}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
-Authorization: Bearer {{access_token}}
-```
+- or by specifying the `fqdn` (also mandatory):
 
-where:
+  ```plain
+  GET /nic/register?fqdn={{fqdn_of_host}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
+  Authorization: Bearer {{access_token}}
+  ```
 
-- `fqdn_of_host` is fqdn of the host to register
-- `comment` is a comment to add to the host
-- `wildcard` is whether to ?
-- `access_token` is a valid Check-in access token
+  where:
+
+  - `fqdn_of_host` is fqdn of the host to register
+  - `comment` is a comment to add to the host
+  - `wildcard` is whether to ?
+  - `access_token` is a valid Check-in access token
 
 Response will be a json as follows:
 
