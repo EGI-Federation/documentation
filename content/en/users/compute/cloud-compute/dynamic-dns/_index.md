@@ -110,7 +110,7 @@ below.
 
 ### List domains
 
-List available domains for your user
+List available domains for your user:
 
 ```plain
 GET /nic/domains
