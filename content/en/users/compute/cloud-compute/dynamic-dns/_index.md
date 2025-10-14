@@ -117,7 +117,7 @@ GET /nic/domains
 Authorization: Bearer {{access_token}}
 ```
 
-where `access_token` is a valid Check-in access token
+where `access_token` is a valid Check-in access token.
 
 Sample response:
 
