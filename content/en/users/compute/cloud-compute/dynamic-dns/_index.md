@@ -238,7 +238,7 @@ GET /nic/hosts
 Authorization: Bearer {{access_token}}
 ```
 
-or
+or:
 
 ```plain
 GET /nic/hosts?domain={{domain}}
