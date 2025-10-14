@@ -1560,7 +1560,7 @@ performing the GET request will be used&lt;/li>
 &lt;p>This API lists all the registered hosts by a given user:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/hosts
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/hosts?domain={{domain}}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
