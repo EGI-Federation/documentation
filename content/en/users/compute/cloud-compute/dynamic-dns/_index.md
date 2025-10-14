@@ -100,7 +100,7 @@ resolve to the same IP. For example, if the hostname of the head node of a
 kubernetes cluster is `kubernetes.fedcloud.eu`, all services on the cluster can
 have the same IP (e.g. `dashboard.kubernetes.fedcloud.eu`,
 `api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`), so the routing of
-the requests is managed at the cluster level by using an ingress or gatewat
+the requests is managed at the cluster level by using an ingress or gateway
 object.
 
 This kind of names can be registered using the [API calls](#api) as described
