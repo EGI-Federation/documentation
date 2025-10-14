@@ -1457,10 +1457,10 @@ object.&lt;/p>
 below.&lt;/p>
 &lt;h2 id="api">API&lt;/h2>
 &lt;h3 id="list-domains">List domains&lt;/h3>
-&lt;p>List available domains for your user&lt;/p>
+&lt;p>List available domains for your user:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/domains
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>access_token&lt;/code> is a valid Check-in access token.&lt;/p>
 &lt;p>Sample response:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
