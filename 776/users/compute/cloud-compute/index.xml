@@ -1471,8 +1471,10 @@ removing the hostname once the infrastructure is destroyed.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="register-host">Register host&lt;/h3>
-&lt;p>You can register a new hostname with a call to &lt;code>/nic/register&lt;/code> either by
-specifying &lt;code>name&lt;/code> and &lt;code>domain&lt;/code> (both mandatory):&lt;/p>
+&lt;p>You can register a new hostname with a call to &lt;code>/nic/register&lt;/code> either by&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>specifying &lt;code>name&lt;/code> and &lt;code>domain&lt;/code> (both mandatory):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/register?name={{host_name}}&amp;amp;domain={{domain}}&amp;amp;comment={{comment}}&amp;amp;wildcard={{true|false|1|0|yes|no}}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
@@ -1483,7 +1485,9 @@ specifying &lt;code>name&lt;/code> and &lt;code>domain&lt;/code> (both mandatory
 &lt;li>&lt;code>wildcard&lt;/code> is whether to ?&lt;/li>
 &lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
 &lt;/ul>
-&lt;p>of by specifying the &lt;code>fqdn&lt;/code> (also mandatory):&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>or by specifying the &lt;code>fqdn&lt;/code> (also mandatory):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/register?fqdn={{fqdn_of_host}}&amp;amp;comment={{comment}}&amp;amp;wildcard={{true|false|1|0|yes|no}}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
@@ -1492,6 +1496,8 @@ specifying &lt;code>name&lt;/code> and &lt;code>domain&lt;/code> (both mandatory
 &lt;li>&lt;code>comment&lt;/code> is a comment to add to the host&lt;/li>
 &lt;li>&lt;code>wildcard&lt;/code> is whether to ?&lt;/li>
 &lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;p>Response will be a json as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
