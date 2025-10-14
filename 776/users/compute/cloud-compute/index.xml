@@ -1376,11 +1376,10 @@ the available GPU flavors on all sites for the specific VO in the command:&lt;/p
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
 memorable DNS hostnames in given domains (e.g. &lt;code>my-server.vo.fedcloud.eu&lt;/code>) and
 assign to public IPs of their servers.&lt;/p>
-&lt;p>By using Dynamic DNS, users can host services in EGI Cloud with their
-meaningful service names, can freely move VMs from sites to sites without
-modifying server/client configurations (federated approach), can request valid
-server certificates in advance (critical for security) and many other
-advantages.&lt;/p>
+&lt;p>By using Dynamic DNS, users can host services in EGI Cloud with their meaningful
+service names, can freely move VMs from sites to sites without modifying
+server/client configurations (federated approach), can request valid server
+certificates in advance (critical for security) and many other advantages.&lt;/p>
 &lt;p>A short demonstration video is available at
 &lt;a href="https://www.youtube.com/watch?v=dk4VYT2VFmU">fedcloud.eu YouTube channel&lt;/a>.&lt;/p>
 &lt;h2 id="dynamic-dns-gui-portal">Dynamic DNS GUI portal&lt;/h2>
@@ -1399,20 +1398,20 @@ users can login using their Check-in credentials. For doing so, click on the
 &lt;p>&lt;img src="add-host.png" alt="Add host">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>The portal will then show you a secret than can be used for updating
-the host ip whenever needed. Note it down so you can use it later.&lt;/p>
+&lt;p>The portal will then show you a secret than can be used for updating the host
+ip whenever needed. Note it down so you can use it later.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>From the VM you&amp;rsquo;d like to assign the name to, run a command like follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl &lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>&amp;lt;hostname&amp;gt;&lt;/code> is the full hostname generated before, e.g.
-&lt;code>myserver.fedcloud-tf.fedcloud.eu&lt;/code> and &lt;code>&amp;lt;secret&amp;gt;&lt;/code> is the secret generated
-in the previous step. You can add that as a boot command in your &lt;code>cloud-init&lt;/code>
+&lt;code>myserver.fedcloud-tf.fedcloud.eu&lt;/code> and &lt;code>&amp;lt;secret&amp;gt;&lt;/code> is the secret generated in
+the previous step. You can add that as a boot command in your &lt;code>cloud-init&lt;/code>
 configuration:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#cloud-config&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">runcmd&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">curl, &amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34; ]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">curl, &amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>You can also manually edit your registered hostnames in the &lt;em>Overview&lt;/em> menu
@@ -1436,14 +1435,26 @@ in Windows with &lt;code>ipconfig /flushdns&lt;/code> command with Administrator
 &lt;/ul>
 &lt;/div>
 &lt;h2 id="dynamic-dns-support-in-infrastructure-manager">Dynamic DNS support in Infrastructure Manager&lt;/h2>
-&lt;p>&lt;a href="../../orchestration/im/">Infrastructure Manager (IM)&lt;/a> automatically
-creates hostname and assign the correct public IP of the head node of your
-infrastructure in the Dynamic DNS. Just fill in the &lt;code>DNS name to be used for the VM&lt;/code> or &lt;code>DNS name to set to the Kubernetes Front-end&lt;/code> (other infrastructures
-may have similar names for this field) with a FQDN within the supported domains
-of the Dynamic DNS:&lt;/p>
+&lt;p>&lt;a href="../../orchestration/im/">Infrastructure Manager (IM)&lt;/a> automatically creates
+hostname and assign the correct public IP of the head node of your
+infrastructure in the Dynamic DNS. Just fill in the
+&lt;code>DNS name to be used for the VM&lt;/code> or
+&lt;code>DNS name to set to the Kubernetes Front-end&lt;/code> (other infrastructures may have
+similar names for this field) with a FQDN within the supported domains of the
+Dynamic DNS:&lt;/p>
 &lt;p>&lt;img src="im-dyndns.png" alt="IM Dynamic DNS support">&lt;/p>
 &lt;p>IM will take care of registering the hostname, assigning the IP and eventually
 removing the hostname once the infrastructure is destroyed.&lt;/p>
+&lt;h2 id="wildcard-hosts">Wildcard hosts&lt;/h2>
+&lt;p>For some use cases, it&amp;rsquo;s convenient for all hosts within a given subdomain to
+resolve to the same IP. For example, if the hostname of the head node of a
+kubernetes cluster is &lt;code>kubernetes.fedcloud.eu&lt;/code>, all services on the cluster can
+have the same IP (e.g. &lt;code>dashboard.kubernetes.fedcloud.eu&lt;/code>,
+&lt;code>api.kubernetes.fedcloud.eu&lt;/code>, &lt;code>app1.kubernetes.fedcloud.eu&lt;/code>), so the routing of
+the requests is managed at the cluster level by using an ingress or gatewat
+object.&lt;/p>
+&lt;p>This kind of names can be registered using the &lt;a href="#api">API calls&lt;/a> as described
+below.&lt;/p>
 &lt;h2 id="api">API&lt;/h2>
 &lt;h3 id="list-domains">List domains&lt;/h3>
 &lt;p>List available domains for your user&lt;/p>
@@ -1482,7 +1493,7 @@ removing the hostname once the infrastructure is destroyed.&lt;/p>
 &lt;li>&lt;code>host_name&lt;/code> is the name of the host to register&lt;/li>
 &lt;li>&lt;code>domain&lt;/code> is the domain where to register the host&lt;/li>
 &lt;li>&lt;code>comment&lt;/code> is a comment to add to the host&lt;/li>
-&lt;li>&lt;code>wildcard&lt;/code> is whether to ?&lt;/li>
+&lt;li>&lt;code>wildcard&lt;/code> is whether this is a wildcard name or not (default &lt;code>false&lt;/code>)&lt;/li>
 &lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -1494,7 +1505,7 @@ removing the hostname once the infrastructure is destroyed.&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>fqdn_of_host&lt;/code> is fqdn of the host to register&lt;/li>
 &lt;li>&lt;code>comment&lt;/code> is a comment to add to the host&lt;/li>
-&lt;li>&lt;code>wildcard&lt;/code> is whether to ?&lt;/li>
+&lt;li>&lt;code>wildcard&lt;/code> is whether this is a wildcard name or not (default &lt;code>false&lt;/code>)&lt;/li>
 &lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -1527,8 +1538,9 @@ removing the hostname once the infrastructure is destroyed.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="update-dns-record">Update DNS record&lt;/h3>
 &lt;p>Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
-providers like &lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>,
-and &lt;a href="https://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
+providers like
+&lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>, and
+&lt;a href="https://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
 follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/update?hostname=yourhostname&amp;amp;myip=ipaddress
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host: nsupdate.fedcloud.eu
