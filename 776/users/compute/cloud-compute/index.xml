@@ -1482,7 +1482,7 @@ below.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="register-host">Register host&lt;/h3>
-&lt;p>You can register a new hostname with a call to &lt;code>/nic/register&lt;/code> either by&lt;/p>
+&lt;p>You can register a new hostname with a call to &lt;code>/nic/register&lt;/code> either by:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>specifying &lt;code>name&lt;/code> and &lt;code>domain&lt;/code> (both mandatory):&lt;/p>
