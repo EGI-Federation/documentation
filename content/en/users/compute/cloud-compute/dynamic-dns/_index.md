@@ -145,7 +145,7 @@ Sample response:
 
 ### Register host
 
-You can register a new hostname with a call to `/nic/register` either by
+You can register a new hostname with a call to `/nic/register` either by:
 
 - specifying `name` and `domain` (both mandatory):
 
