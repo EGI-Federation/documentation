@@ -1611,14 +1611,14 @@ and data redundancy.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Optional: Consider a strategy for deleting old snapshots on the source OpenStack to save space.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># openstack image delete OLD_SNAPSHOT_NAME_OR_ID&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-automate-snapshot-replication-with-a-script">Step 3: Automate Snapshot Replication with a Script&lt;/h3>
-&lt;p>On the source migration instance create a script file to combine all the above steps, for example, &lt;code>~/replicate_vm_snapshot.sh&lt;/code>&lt;/p>
+&lt;p>On the source migration instance, create a script file to combine all the above steps, for example, &lt;code>~/replicate_vm_snapshot.sh&lt;/code>&lt;/p>
 &lt;h1 id="ensure-instance_id-and-other-critical-variables-are-correctly-set-within-the-script-itself-or-loaded-from-a-config-file">Ensure INSTANCE_ID and other critical variables are correctly set within the script itself or loaded from a config file.&lt;/h1>
 &lt;p>Make the script executable:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>chmod +x ~/replicate_vm_snapshot.sh
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Test the script manually:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>~/replicate_vm_snapshot.sh
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the ~/snapshot_replication.log file for output.&lt;/p>
-&lt;p>Add the script to Cron Edit the crontab on the &lt;em>source migration instance&lt;/em>:&lt;/p>
+&lt;p>Add the script to Cron. Edit the crontab on the &lt;em>source migration instance&lt;/em>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>crontab -e
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add an entry to run the script daily at, for example, 2:00 AM:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Redirect all output (stdout and stderr) from cron to the log file handled by the script, or to /dev/null if confident.&lt;/span>
@@ -1638,7 +1638,7 @@ federated cloud.&lt;/p>
 &lt;p>MinIO is available in FedCloud with different deployment options:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Preconfigured Virtual Machines&lt;/strong> using Infrastructure Manager.&lt;/li>
-&lt;li>&lt;strong>Helm chart deployment in Kubernetes&lt;/strong>, with CESNET&amp;rsquo;s Rancher enabling easy setup with just a few clicks.&lt;/li>
+&lt;li>&lt;strong>Helm chart deployment in Kubernetes&lt;/strong>, with &lt;a href="https://docs.egi.eu/users/compute/cloud-compute/">Cloud Container Compute&lt;/a>, enabling easy setup with just a few clicks.&lt;/li>
 &lt;/ul>
 &lt;h3 id="prerequisites-1">Prerequisites&lt;/h3>
 &lt;ul>
