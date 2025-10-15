@@ -9,8 +9,9 @@ REFEDS &lt;a href="https://refeds.org/category/research-and-scholarship">R&amp;a
 printed and signed copy should be sent to &lt;code>operations_at_egi.eu&lt;/code>&lt;/p>
 &lt;h2 id="identity-provider-integration-workflow">Identity Provider integration workflow&lt;/h2>
 &lt;p>To integrate your Identity Provider with the EGI Check-in service, you need to
-submit a &lt;a href="https://ggus.eu">GGUS&lt;/a> ticket indicating your request. The responsible
-support unit is &lt;a href="https://confluence.egi.eu/display/EGIPP/GGUS%3A+Check-in+%28AAI%29+FAQ">AAI Support&lt;/a>.
+submit a &lt;a href="https://helpdesk.ggus.eu">GGUS&lt;/a> ticket indicating your request.
+The responsible support unit is
+&lt;a href="https://confluence.egi.eu/display/EGIPP/GGUS%3A+Check-in+%28AAI%29+FAQ">AAI Support&lt;/a>.
 The integration follows a two-step process:&lt;/p>
 &lt;ol>
 &lt;li>Register your Identity Provider and test integration with the development

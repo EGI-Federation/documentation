@@ -1,4 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Compute Services</title><link>/users/compute/</link><description>Recent content in Compute Services on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Federated Cloud Compute</title><link>/users/compute/cloud-compute/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/</guid><description>
+&lt;!-- cSpell:words NBIS VERCE -->
 &lt;p>The &lt;a href="https://www.egi.eu/service/cloud-compute/">EGI Federated Cloud Compute&lt;/a> (FedCloud)
 service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute driven
@@ -17,9 +18,9 @@ offer:&lt;/p>
 users can log into every provider with their institutional credentials and
 use modern industry standards like
 &lt;a href="https://openid.net/connect/">OpenID Connect&lt;/a>.&lt;/li>
-&lt;li>Global VM image catalogue at &lt;a href="https://appdb.egi.eu">AppDB&lt;/a> with pre-configured
-Virtual Machine images that are automatically replicated to every provider
-based on your community needs.&lt;/li>
+&lt;li>Global VM image catalogue at &lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a>
+with pre-configured Virtual Machine images that are automatically replicated
+to every provider based on your community needs.&lt;/li>
 &lt;li>Resource discovery features to easily understand which providers are
 supporting your community and what are their capabilities.&lt;/li>
 &lt;li>&lt;a href="https://accounting.egi.eu/cloud/">Global accounting&lt;/a> that aggregates and

@@ -920,9 +920,9 @@ for details. See below two code samples for using them&lt;/p>
 &lt;p>&lt;a href="https://openid.net/connect/">OpenID Connect&lt;/a> (OIDC) is the main authentication protocol
 used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
 OpenStack providers.&lt;/p>
-&lt;p>Authentication to web based services (like the AppDB) will redirect you to the
-EGI Check-in authentication page. Just select your institution or social login
-and follow the regular authentication process.&lt;/p>
+&lt;p>Authentication to web based services (like the OpenStack dashboards) will
+redirect you to the EGI Check-in authentication page. Just select your
+institution or social login and follow the regular authentication process.&lt;/p>
 &lt;p>Access to APIs or via command-line interfaces (CLI) requires the use of OAuth2.0
 tokens and interaction with the OpenStack Keystone
 &lt;a href="https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api">OS-FEDERATION API&lt;/a>.
@@ -938,18 +938,13 @@ Scoped tokens will allow the user to perform operations on the provider.&lt;/li>
 &lt;/ol>
 &lt;h2 id="authorisation">Authorisation&lt;/h2>
 &lt;p>Cloud Compute service is accessed through &lt;strong>Virtual Organisations (VOs)&lt;/strong>. Users
-that are members of a VO will have access to the providers supporting that VO:
-they will be able to manage VMs, block storage and object storage available to
-the VO. Resources (VMs and storage) are shared across all members of the VO,
-please do not interfere with the VMs of other users if you are not entitled to
-do so (specially do not delete them).&lt;/p>
-&lt;p>Some users roles have special consideration in VOs:&lt;/p>
-&lt;ul>
-&lt;li>Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
-the AppDbB for managing the Virtual Appliances to be available at every
-provider. Check the &lt;a href="../images">Virtual Machine Image Management documentation&lt;/a>
-for more information.&lt;/li>
-&lt;/ul>
+with specific roles (by default, the &lt;code>vm_operator&lt;/code> role) will have access to
+the providers supporting that VO: they will be able to manage VMs, block
+storage and object storage available to the VO. Resources (VMs and storage) are
+&lt;strong>shared&lt;/strong> across all members of the VO, please do not interfere with the VMs
+of other users if you are not entitled to do so (specially do not delete them).&lt;/p>
+&lt;p>Some users roles may have additional permissions in VOs, check your VO Manager
+for the specific documentation.&lt;/p>
 &lt;h3 id="pilot-vo">Pilot VO&lt;/h3>
 &lt;p>The
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu Virtual Organisation&lt;/a>
@@ -966,10 +961,10 @@ providers. &lt;strong>Back-up frequently to avoid losing your work!&lt;/strong>&
 &lt;/ul>
 &lt;/div>
 &lt;p>For joining this VO, please click on the
-&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrollment URL&lt;/a>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>
 using your &lt;a href="../../../aai/check-in/">EGI account&lt;/a>.&lt;/p>
 &lt;h3 id="other-vos">Other VOs&lt;/h3>
-&lt;p>Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
+&lt;p>Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>.&lt;/p>
 &lt;h2 id="check-in-and-access-tokens">Check-in and access tokens&lt;/h2>
@@ -1016,7 +1011,7 @@ considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.&lt;/p>
 &lt;p>You can use the &lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloud&lt;/a> client to
 simplify the discovery of projects.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get a list of sites (also available in [AppDB](https://appdb.egi.eu))&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get a list of sites&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud site list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get list of projects that you are allowed to access&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># You can either specify the name of the account in your oidc-agent configuration&lt;/span>
@@ -1042,37 +1037,112 @@ the following command:&lt;/p>
 allows ssh with OIDC.&lt;/p></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
 &lt;p>Users of the EGI Cloud create Virtual Machines (VMs) on the providers. Those VMs
 are started from images: templates for the root volume of the running instances,
-i.e. operating system and applications available initially on a VM. The AppDB
-collects the Virtual Machine Images available on the service as Virtual
-Appliances (VA).&lt;/p>
-&lt;p>Any user can register new Virtual Appliances at the AppDB, these are then
-managed by special VO members that curate which appliances are available to
-their VO.&lt;/p>
-&lt;h2 id="appdb-cloud-marketplace">AppDB Cloud Marketplace&lt;/h2>
-&lt;p>&lt;img src="appdb_cloud.png" alt="AppDB Cloud Marketplace">&lt;/p>
-&lt;p>The &lt;a href="https://appdb.egi.eu">AppDB&lt;/a> is a browsable catalogue of Virtual Appliances
-that users can start at the providers. You can find below a set of reference
-guides for the catalogue:&lt;/p>
+i.e. operating system and applications available initially on a VM. The Artefact
+Registry collects the Virtual Machine Images available on the providers.&lt;/p>
+&lt;h2 id="artefact-registry">Artefact Registry&lt;/h2>
+&lt;p>&lt;img src="registry.png" alt="Artefact Registry">&lt;/p>
+&lt;p>The &lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a> is a OCI-compliant catalogue of
+artefacts (including container images, VM images and helm charts) based on
+&lt;a href="https://goharbor.io/">Harbor&lt;/a> where users can upload their images.&lt;/p>
+&lt;p>Images in the Artefact Registry are organised into projects where images are
+pushed to. Access to projects is granted based on the membership and role of
+users within a VO. For a given project, only users with the appropriate roles
+can perform certain operations.&lt;/p>
+&lt;h3 id="egi-images">EGI images&lt;/h3>
+&lt;p>EGI produces a set of basic images that are automatically synced to all the
+providers and available for all the supported VOs.&lt;/p>
+&lt;p>These images are built automatically using &lt;a href="https://packer.io">packer&lt;/a> and
+&lt;a href="https://docs.ansible.com/">Ansible&lt;/a> and uploaded to a dedicated project named
+&lt;code>egi_vm_images&lt;/code> at the Artefact Registry. Build scripts, packer templates, and
+ansible playbooks are available in the
+&lt;a href="https://github.com/EGI-Federation/fedcloud-vmi-templates">fedcloud-vmi-templates GitHub repository&lt;/a>.
+The images are built regularly to avoid any potential vulnerabilities.&lt;/p>
+&lt;p>EGI images have minimal OS installation with
+&lt;a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init&lt;/a> for contextualization
+and follow the &lt;code>registry.egi.eu egi_vm_images/&amp;lt;image name&amp;gt;:&amp;lt;version&amp;gt;&lt;/code> naming
+convention.&lt;/p>
+&lt;p>&lt;img src="glance-images.png" alt="egi_vm_images at OpenStack">&lt;/p>
+&lt;h3 id="custom-vo-images">Custom VO images&lt;/h3>
+&lt;h4 id="vo-project-in-artefact-registry">VO project in Artefact Registry&lt;/h4>
+&lt;p>The Artefact Registry can store VM and container images. Besides the
+&lt;code>egi_vm_images&lt;/code> projects, VOs can request their project in the Artefact Registry
+for storing custom images that include software needed to support the VOs
+activities. For doing so, open &lt;a href="https://helpdesk.ggus.eu">Helpdesk&lt;/a> ticket as
+follows:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appliance">How to register a VA?&lt;/a>:
-any registered user can register VAs in AppDB for anyone to download or for
-making them available at the EGI Cloud providers once a VO adds it to the
-&lt;em>VO-wide image list&lt;/em>.&lt;/li>
-&lt;li>Once registered, VAs can be managed as described in the
-&lt;a href="https://wiki.appdb.egi.eu/main:guides:guide_for_managing_virtual_appliance_versions_using_the_portal">VA management guide&lt;/a>.&lt;/li>
-&lt;li>VO managers select VAs to be available at the providers following the
-&lt;a href="https://wiki.appdb.egi.eu/main:guides:manage_vo-wide_image_lists">VO-wide image list management&lt;/a>.&lt;/li>
+&lt;li>
+&lt;p>Group: Artefact Registry (select Second Level/Services/EGI Services and
+Service Components/Artefact Registry)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ticket body:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Dear Artefact Registry,
+I&amp;#39;d like to request a new project for VO `&amp;lt;name of the VO&amp;gt;`.
+The entitlement to authorize read-only (list, pull) access is `&amp;lt;entitlement to use&amp;gt;`.
+The entitlement to authorize write (list, pull, push) access is `&amp;lt;entitlement to use&amp;gt;`.
+Thanks!
+&lt;/code>&lt;/pre>&lt;/li>
 &lt;/ul>
-&lt;p>Check the full list of
-&lt;a href="https://wiki.appdb.egi.eu/main:guides#cloud_marketplace">Cloud marketplace guides&lt;/a>
-and
-&lt;a href="https://wiki.appdb.egi.eu/main:faq#cloud_marketplace">Cloud marketplace FAQ&lt;/a>
-for more information about the AppDB features.&lt;/p>
-&lt;h2 id="custom-images">Custom images&lt;/h2>
+&lt;p>Once the project is created, you will be able to login and manage artefacts.&lt;/p>
+&lt;h4 id="uploading-to-the-registry">Uploading to the registry&lt;/h4>
+&lt;p>The Artefact Registry can store arbitrary binary artifacts and those matching
+the expected metadata will be synced to the sites. For uploading the images, any
+OCI registry compliant tool can be used. We rely on &lt;a href="https://oras.land">&lt;code>oras&lt;/code>&lt;/a>
+for uploading the EGI images.&lt;/p>
+&lt;p>Images must have a &lt;code>eu.egi.cloud.tag&lt;/code> annotation in their manifest for them to
+be synced and the following additional annotations are expected to be available:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>org.openstack.glance.disk_format&lt;/code>: with the disk format of the image (e.g.
+&lt;code>raw&lt;/code> or &lt;code>qcow2&lt;/code>)&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.container_format&lt;/code>: with the glance container format
+(&lt;code>bare&lt;/code> should be used in most cases), see
+&lt;a href="https://docs.openstack.org/glance/latest/user/formats.html">glance documentation&lt;/a>.&lt;/li>
+&lt;li>&lt;code>eu.egi.cloud.image.title&lt;/code>: Human readable title.&lt;/li>
+&lt;li>&lt;code>eu.egi.cloud.description&lt;/code>: A description of the image.&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.architecture&lt;/code>: Image architecture.&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.os_distro&lt;/code>: OS distro name (e.g. &lt;code>ubuntu&lt;/code>).&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.os_version&lt;/code>: OS version (e.g. &lt;code>24.04&lt;/code> for Ubuntu 24.04).&lt;/li>
+&lt;li>&lt;code>org.openstack.glance.os_type&lt;/code>: OS type (e.g. &lt;code>linux&lt;/code>).&lt;/li>
+&lt;/ul>
+&lt;p>For the upload, you need to:&lt;/p>
+&lt;ol>
+&lt;li>Login to the registry, you can find credentials in your registry profile:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras login -u &amp;lt;user&amp;gt; registry.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Prepare an
+&lt;a href="https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file">annotation file&lt;/a>
+with the expected metadata. You can find below an example for an AlmaLinux
+image file named &lt;code>alma-9.qcow2&lt;/code>. It also includes a &lt;code>$manifest&lt;/code> entry with
+annotation of the manifest itself.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;$manifest&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;7b98c834862f2e7e342fad7f9e175ea8c74aa4f3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.source&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://github.com/EGI-Federation/fedcloud-vmi-templates&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;alma-9.qcow2&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;eu.egi.cloud.image.title&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;EGI Alma 9 image&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.architecture&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;x86_64&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_distro&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;alma&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;linux&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.os_version&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;9&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.disk_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;qcow2&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;eu.egi.cloud.tag&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2025-06-10-7b98c834&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.container_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bare&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Upload the image and the annotation file:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras push --annotation-file &amp;lt;annotation json&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> registry.egi.eu/&amp;lt;project_name&amp;gt;/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &amp;lt;image file&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="building-your-own-image">Building your own image&lt;/h4>
 &lt;p>Packaging your application in a custom VM image is a suggested solution in one
 of the following cases:&lt;/p>
 &lt;ul>
-&lt;li>your particular OS flavor is not available at AppDB;&lt;/li>
+&lt;li>your particular OS flavor is not available;&lt;/li>
 &lt;li>installation of your application is very complex and time-consuming for being
 performed during contextualization; or&lt;/li>
 &lt;li>you want to reduce the number of 'moving-parts' of your software stack and
@@ -1115,7 +1185,7 @@ the image or download it.&lt;/li>
 &lt;li>In general, the effort to implement this solution is higher than the basic
 contextualization.&lt;/li>
 &lt;/ul>
-&lt;h3 id="image-size-and-layout">Image size and layout&lt;/h3>
+&lt;h5 id="image-size-and-layout">Image size and layout&lt;/h5>
 &lt;p>The larger the VM image, the longer it will take to be distributed to the
 providers and the longer it will take to be started on the infrastructure. As a
 general rule, always try to make images as smaller as possible following these
@@ -1123,8 +1193,9 @@ guidelines:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;strong>DO NOT&lt;/strong> include (big) data in your image. There are other mechanisms for
-accessing data from your VM (block/object storage,
-&lt;a href="https://www.gridpp.ac.uk/wiki/RALnonLHCCVMFS">CVMFS&lt;/a>)&lt;/p>
+accessing data from your VM (&lt;a href="../block-storage/">block&lt;/a>/
+&lt;a href="../../../data/storage/object-storage/">object&lt;/a> storage,
+&lt;a href="../../software-distribution">CVMFS&lt;/a>)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>DO NOT&lt;/strong> include (big) empty space or swap in your image. Extra space for
@@ -1156,7 +1227,7 @@ avoid LVM. This will allow the cloud provider to easily resize your partition
 when instantiated and to modify files in it if needed.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="contextualization-and-credentials">Contextualization and credentials&lt;/h3>
+&lt;h5 id="contextualization-and-credentials">Contextualization and credentials&lt;/h5>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">Danger&lt;/h4>
 &lt;strong>Do NOT include any credentials on your images&lt;/strong>.
@@ -1174,7 +1245,7 @@ several other actions supported by the tool.&lt;/p>
 useful to use cloud-init to bootstrap some
 &lt;a href="https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software">Configuration Management Software&lt;/a>
 that will manage the configuration of the VMs during runtime.&lt;/p>
-&lt;h3 id="security">Security&lt;/h3>
+&lt;h5 id="security">Security&lt;/h5>
 &lt;ul>
 &lt;li>&lt;strong>Always remove all default passwords and accounts from your VM.&lt;/strong>&lt;/li>
 &lt;li>Disable all services unless necessary for the intended tasks.&lt;/li>
@@ -1182,15 +1253,10 @@ that will manage the configuration of the VMs during runtime.&lt;/p>
 minimally open.&lt;/li>
 &lt;li>Put no shared credentials (passwords) in any image.&lt;/li>
 &lt;/ul>
-&lt;p>You should also follow the best practice guides for each service that's exposed
-to the outside world. See for example guides for:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://wiki.centos.org/HowTos/Network/SecuringSSH">ssh&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.owasp.org/index.php/Securing_tomcat">tomcat&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>See also
+&lt;p>You should also follow best practice guides for each service that&amp;rsquo;s exposed to
+the outside world. See also
 &lt;a href="https://aws.amazon.com/whitepapers/aws-security-best-practices/">AWS security Best Practices&lt;/a>&lt;/p>
-&lt;h3 id="tools">Tools&lt;/h3>
+&lt;h5 id="tools">Tools&lt;/h5>
 &lt;p>Whenever possible, automate the process of creating your images. This will allow
 you to:&lt;/p>
 &lt;ul>
@@ -1198,20 +1264,18 @@ you to:&lt;/p>
 &lt;li>Avoid tedious manual installation steps&lt;/li>
 &lt;li>Quickly produce updated versions of your images&lt;/li>
 &lt;/ul>
-&lt;p>EGI uses &lt;a href="https://packer.io">packer&lt;/a> as a tool for automating the creation of
-our base images. This tool can use &lt;a href="https://www.virtualbox.org/">VirtualBox&lt;/a> as
-a hypervisor for the creation of the images and guarantees identical results
-under different platforms and providers.&lt;/p>
 &lt;p>Check out the
 &lt;a href="https://github.com/EGI-Federation/fedcloud-vmi-templates">fedcloud-vmi-templates GitHub repository&lt;/a>
-for all the &lt;code>packer&lt;/code> recipes used to build our images, re-use them as needed
-for your images.&lt;/p></description></item><item><title>Users: GPUs</title><link>/users/compute/cloud-compute/gpgpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/gpgpu/</guid><description>
+for examples of images that can be built in a completely automated workflow
+using &lt;code>packer&lt;/code> and GitHub Actions.&lt;/p></description></item><item><title>Users: GPUs</title><link>/users/compute/cloud-compute/gpgpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/gpgpu/</guid><description>
 &lt;h2 id="gpu-resources-on-egi-cloud">GPU resources on EGI Cloud&lt;/h2>
 &lt;p>GPUs resources are available on selected providers of the EGI Cloud. These are
 available as specific &lt;strong>flavours&lt;/strong> that when used to instantiate a Virtual
 Machine will make the hardware available to the user.&lt;/p>
 &lt;p>The table below summarises the available options:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;!-- VO names do not need spell checking -->
+&lt;!-- cSpell:words sarscov neanias carouseldancing clarin cryoem glados beamide -->
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1238,7 +1302,7 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Pay-per-use&lt;/td>
-&lt;td>&lt;a href="https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors">IFCA-LCG2 Documentation&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://confluence.ifca.es/spaces/IC/pages/1507347/Cloud+Compute+Flavors">IFCA-LCG2 Documentation&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>CESNET-MCC&lt;/td>
@@ -1264,9 +1328,9 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>.
 If you are not sure what VO to join, request access to the pilot VO
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
-by visiting the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrollment URL&lt;/a>
+by visiting the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrolment URL&lt;/a>
 with your Check-In account. More information is available in the
-&lt;a href="../../../aai//check-in/joining-virtual-organisation">Check-in&lt;/a> section.&lt;/p>
+&lt;a href="../../../aai/check-in/vos/#how-to-join-a-virtual-organisation">Check-in&lt;/a> section.&lt;/p>
 &lt;p>GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
 dashboards or a &lt;a href="../automate">cloud orchestrator&lt;/a>.&lt;/p>
@@ -1306,19 +1370,16 @@ the available GPU flavors on all sites for the specific VO in the command:&lt;/p
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length -->
-&lt;p>A VM image with pre-installed NVIDIA driver and Docker is available at
-&lt;a href="https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7">AppDB&lt;/a>. Some VOs
-(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.&lt;/p></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
+&lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
+&lt;!-- cSpell:words noip -->
 &lt;p>The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
 memorable DNS hostnames in given domains (e.g. &lt;code>my-server.vo.fedcloud.eu&lt;/code>) and
 assign to public IPs of their servers.&lt;/p>
-&lt;p>By using Dynamic DNS, users can host services in EGI Cloud with their
-meaningful service names, can freely move VMs from sites to sites without
-modifying server/client configurations (federated approach), can request valid
-server certificates in advance (critical for security) and many other
-advantages.&lt;/p>
+&lt;p>By using Dynamic DNS, users can host services in EGI Cloud with their meaningful
+service names, can freely move VMs from sites to sites without modifying
+server/client configurations (federated approach), can request valid server
+certificates in advance (critical for security) and many other advantages.&lt;/p>
 &lt;p>A short demonstration video is available at
 &lt;a href="https://www.youtube.com/watch?v=dk4VYT2VFmU">fedcloud.eu YouTube channel&lt;/a>.&lt;/p>
 &lt;h2 id="dynamic-dns-gui-portal">Dynamic DNS GUI portal&lt;/h2>
@@ -1337,20 +1398,20 @@ users can login using their Check-in credentials. For doing so, click on the
 &lt;p>&lt;img src="add-host.png" alt="Add host">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>The portal will then show you a secret than can be used for updating
-the host ip whenever needed. Note it down so you can use it later.&lt;/p>
+&lt;p>The portal will then show you a secret than can be used for updating the host
+ip whenever needed. Note it down so you can use it later.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>From the VM you&amp;rsquo;d like to assign the name to, run a command like follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl &lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>&amp;lt;hostname&amp;gt;&lt;/code> is the full hostname generated before, e.g.
-&lt;code>myserver.fedcloud-tf.fedcloud.eu&lt;/code> and &lt;code>&amp;lt;secret&amp;gt;&lt;/code> is the secret generated
-in the previous step. You can add that as a boot command in your &lt;code>cloud-init&lt;/code>
+&lt;code>myserver.fedcloud-tf.fedcloud.eu&lt;/code> and &lt;code>&amp;lt;secret&amp;gt;&lt;/code> is the secret generated in
+the previous step. You can add that as a boot command in your &lt;code>cloud-init&lt;/code>
 configuration:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#cloud-config&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">runcmd&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">curl, &amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34; ]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">curl, &amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>You can also manually edit your registered hostnames in the &lt;em>Overview&lt;/em> menu
@@ -1373,10 +1434,113 @@ in Windows with &lt;code>ipconfig /flushdns&lt;/code> command with Administrator
 &lt;/li>
 &lt;/ul>
 &lt;/div>
+&lt;h2 id="dynamic-dns-support-in-infrastructure-manager">Dynamic DNS support in Infrastructure Manager&lt;/h2>
+&lt;p>&lt;a href="../../orchestration/im/">Infrastructure Manager (IM)&lt;/a> automatically creates
+hostname and assign the correct public IP of the head node of your
+infrastructure in the Dynamic DNS. Just fill in the
+&lt;code>DNS name to be used for the VM&lt;/code> or
+&lt;code>DNS name to set to the Kubernetes Front-end&lt;/code> (other infrastructures may have
+similar names for this field) with a FQDN within the supported domains of the
+Dynamic DNS:&lt;/p>
+&lt;p>&lt;img src="im-dyndns.png" alt="IM Dynamic DNS support">&lt;/p>
+&lt;p>IM will take care of registering the hostname, assigning the IP and eventually
+removing the hostname once the infrastructure is destroyed.&lt;/p>
+&lt;h2 id="wildcard-hosts">Wildcard hosts&lt;/h2>
+&lt;p>For some use cases, it&amp;rsquo;s convenient for all hosts within a given subdomain to
+resolve to the same IP. For example, if the hostname of the head node of a
+kubernetes cluster is &lt;code>kubernetes.fedcloud.eu&lt;/code>, all services on the cluster can
+have the same IP (e.g. &lt;code>dashboard.kubernetes.fedcloud.eu&lt;/code>,
+&lt;code>api.kubernetes.fedcloud.eu&lt;/code>, &lt;code>app1.kubernetes.fedcloud.eu&lt;/code>), so the routing of
+the requests is managed at the cluster level by using an ingress or gateway
+object.&lt;/p>
+&lt;p>This kind of names can be registered using the &lt;a href="#api">API calls&lt;/a> as described
+below.&lt;/p>
 &lt;h2 id="api">API&lt;/h2>
+&lt;h3 id="list-domains">List domains&lt;/h3>
+&lt;p>List available domains for your user:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/domains
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>access_token&lt;/code> is a valid Check-in access token.&lt;/p>
+&lt;p>Sample response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;private&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;public&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cloud.ai4eosc.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;public&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;available&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;comment&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Domain for stable services in AI4EOSC project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;owner&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;viet02&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cloud.eosc-siesta.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;public&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;available&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;comment&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Domain for production services in EOSC-SIESTA project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;owner&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;root&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="register-host">Register host&lt;/h3>
+&lt;p>You can register a new hostname with a call to &lt;code>/nic/register&lt;/code> either by:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>specifying &lt;code>name&lt;/code> and &lt;code>domain&lt;/code> (both mandatory):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/register?name={{host_name}}&amp;amp;domain={{domain}}&amp;amp;comment={{comment}}&amp;amp;wildcard={{true|false|1|0|yes|no}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>host_name&lt;/code> is the name of the host to register&lt;/li>
+&lt;li>&lt;code>domain&lt;/code> is the domain where to register the host&lt;/li>
+&lt;li>&lt;code>comment&lt;/code> is a comment to add to the host&lt;/li>
+&lt;li>&lt;code>wildcard&lt;/code> is whether this is a wildcard name or not (default &lt;code>false&lt;/code>)&lt;/li>
+&lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>or by specifying the &lt;code>fqdn&lt;/code> (also mandatory):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/register?fqdn={{fqdn_of_host}}&amp;amp;comment={{comment}}&amp;amp;wildcard={{true|false|1|0|yes|no}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>fqdn_of_host&lt;/code> is fqdn of the host to register&lt;/li>
+&lt;li>&lt;code>comment&lt;/code> is a comment to add to the host&lt;/li>
+&lt;li>&lt;code>wildcard&lt;/code> is whether this is a wildcard name or not (default &lt;code>false&lt;/code>)&lt;/li>
+&lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Response will be a json as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;message&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Host registered.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;host&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;fqdn&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;test.vm.fedcloud.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;test&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;domain&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;vm.fedcloud.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;wildcard&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;comment&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;test&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;available&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_faults&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;server_faults&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;abuse_blocked&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;abuse&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;last_update_ipv4&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2025-10-13T11:24:51.165433+00:00&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;tls_update_ipv4&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ipv4&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;10.10.0.253&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;last_update_ipv6&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">null&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;tls_update_ipv6&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ipv6&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">null&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;update_secret&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;some_secret&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;IPv4_update_url_basic_auth&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://test.vm.fedcloud.eu:some_secret@nsupdate.fedcloud.eu/nic/update&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;IPv4_update_url_bearer_auth&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://nsupdate.fedcloud.eu/nic/update?hostname=test.vm.fedcloud.eu&amp;amp;myip=${myip}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="update-dns-record">Update DNS record&lt;/h3>
 &lt;p>Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
-providers like &lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>,
-and &lt;a href="https://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
+providers like
+&lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>, and
+&lt;a href="https://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
 follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/update?hostname=yourhostname&amp;amp;myip=ipaddress
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host: nsupdate.fedcloud.eu
@@ -1392,7 +1556,43 @@ follows:&lt;/p>
 &lt;li>&lt;code>myip&lt;/code> in the parameter string if omitted, the IP address of the client
 performing the GET request will be used&lt;/li>
 &lt;/ul>
-&lt;h2 id="security">Security&lt;/h2>
+&lt;h3 id="lists-hosts">Lists hosts&lt;/h3>
+&lt;p>This API lists all the registered hosts by a given user:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/hosts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/hosts?domain={{domain}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authorization: Bearer {{access_token}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>domain&lt;/code> is the domain to list hosts for&lt;/li>
+&lt;li>&lt;code>access_token&lt;/code> is a valid Check-in access token&lt;/li>
+&lt;/ul>
+&lt;p>Sample response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;hosts&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;fqdn&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;myhost.cloud.ai4eosc.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;myhost&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;domain&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cloud.ai4eosc.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;wildcard&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;comment&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;comment&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;available&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_faults&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;server_faults&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;abuse_blocked&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;abuse&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;last_update_ipv4&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2025-04-10T10:33:06.930760+00:00&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;tls_update_ipv4&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ipv4&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;147.213.65.206&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;last_update_ipv6&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2025-04-10T10:21:57.975176+00:00&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;tls_update_ipv6&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ipv6&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="security">Security&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>For updating IP address, only hostname and its secret are needed. No user
@@ -1409,10 +1609,10 @@ button in the host edit page. The old secret will be invalid.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="support">Support&lt;/h2>
-&lt;p>Support for Dynamic DNS service is provided via &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
-in &lt;strong>&amp;ldquo;Dynamic DNS&amp;rdquo;&lt;/strong> support unit, where users can ask questions, report issues
-or make requests for additional domains for specific projects or user
-communities.&lt;/p></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
+&lt;p>Support for Dynamic DNS service is provided via
+&lt;a href="https://helpdesk.ggus.eu/">EGI Helpdesk&lt;/a> &lt;strong>&amp;ldquo;Dynamic DNS&amp;rdquo;&lt;/strong> support unit, where
+users can ask questions, report issues or make requests for additional domains
+for specific projects or user communities.&lt;/p></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
 &lt;p>The &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a> sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
@@ -1430,994 +1630,7 @@ datasets are attached to each VM).&lt;/li>
 &lt;li>Make scientific applications cloud agnostic.&lt;/li>
 &lt;/ul>
 &lt;p>To automate VM deployment, you can use any of the &lt;a href="../../orchestration">cloud orchestrators&lt;/a>
-available in the EGI Cloud.&lt;/p></description></item><item><title>Users: Monitoring and Management</title><link>/users/compute/cloud-compute/monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/monitor/</guid><description>
-&lt;p>The &lt;a href="https://appdb.egi.eu/">EGI Application Database (AppDB)&lt;/a> includes a web GUI
-for management of Virtual Machines (VMs) on the federated infrastructure.&lt;/p>
-&lt;p>This GUI is available for a set of
-&lt;a href="https://wiki.appdb.egi.eu/main:faq:which_vos_are_supported_by_the_vmops_dashboard">selected VOs&lt;/a>.
-If your VO is not listed and you are interested in getting support, please
-&lt;a href="https://ggus.eu">open a ticket&lt;/a> or contact us at &lt;code>support _at_ egi.eu&lt;/code>.&lt;/p>
-&lt;h2 id="main-user-features">Main user features&lt;/h2>
-&lt;ul>
-&lt;li>User identification with Check-in, with customised view of the VAs and
-resource providers based on the VO membership of the user.&lt;/li>
-&lt;li>Management of VMs in &lt;em>topologies&lt;/em>, containing one or more instances of a given
-VA.&lt;/li>
-&lt;li>Attachment of additional block storage to the VM instances.&lt;/li>
-&lt;li>Start/Stop VMs without destroying the VM (for all VMs of a topology or for
-individual instances within a topology)&lt;/li>
-&lt;li>Single control of topologies across the whole federation.&lt;/li>
-&lt;/ul>
-&lt;h2 id="quick-start">Quick start&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>Log into the &lt;a href="https://dashboard.appdb.egi.eu/vmops">VMOps dashboard&lt;/a> using
-EGI Check-in.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Click on &amp;quot;Create a new VM Topology&amp;quot; to start the topology builder, this
-will guide you through a set of steps:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Select the Virtual Appliance you want to start, these are the same shown
-in the &lt;a href="https://appdb.egi.eu/browse/cloud">AppDB Cloud Marketplace&lt;/a>, you
-can use the search field to find your VA;&lt;/p>
-&lt;p>&lt;img src="vmops_va_select.png" alt="Select the VA">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>select the VO to use when instantiating the VA;&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>select the provider where to instantiate the VA; and finally&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>select the template (VM instance type) of the instance that will determine
-the number of cores, memory and disk space used in your VM.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>
-&lt;p>Now you will be presented with a summary page where you can further customise
-your VM by:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Adding more VMs to the topology&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Adding block storage devices to the VMs&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Define contextualisation parameters (e.g. add new users, execute some
-script)&lt;/p>
-&lt;p>&lt;img src="vmops_settings.png" alt="Topology settings">&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Click on &amp;quot;Launch&amp;quot; and your deployment will be submitted to the
-infrastructure.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>The topology you just created will appear on your &amp;quot;Topologies&amp;quot; with all the
-details about it, clicking on a VM of a topology will give you details about its
-status and IP. VMOps will create a default &lt;code>cloudadm&lt;/code> user for you and create
-ssh-key pair for login (you can create as many users as needed with the
-contextualisation options of the wizard described above).&lt;/p>
-&lt;p>&lt;img src="vmops_vm.png" alt="VM details">&lt;/p>
-&lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>
-in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
-details and there is also a video recording available on
-&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: AppDB REST API v1.0</title><link>/users/compute/cloud-compute/appdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/appdb/</guid><description>
-&lt;p>This document is intended for developers who want to write applications that
-interact with the AppDB API over the web using HTTP commands following the
-&lt;a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST&lt;/a> paradigm.
-The API endpoint is located at &lt;code>https://appdb-pi.egi.eu&lt;/code> and it allows
-information retrieval and modification from third party applications without
-having to reside on the rich user interface of the AppDB portal. Thus one is
-given the opportunity to design one&amp;rsquo;s own frontends.&lt;/p>
-&lt;h2 id="getting-started">Getting started&lt;/h2>
-&lt;h3 id="operations">Operations&lt;/h3>
-&lt;p>Starting with version 1.0, the AppDB API features write access as well, by
-supporting HTTP verbs such as &lt;code>PUT&lt;/code>, &lt;code>POST&lt;/code>, and &lt;code>DELETE&lt;/code>. Verb mappings to data
-operations follow a
-&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> convention,
-as depicted in the following table:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Operation&lt;/th>
-&lt;th>HTTP Verb&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Create&lt;/td>
-&lt;td>&lt;code>PUT&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Read&lt;/td>
-&lt;td>&lt;code>GET&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Update&lt;/td>
-&lt;td>&lt;code>POST&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Delete&lt;/td>
-&lt;td>&lt;code>DELETE&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>The API also supports the Listing operation
-(&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUDL&lt;/a>
-extension), by passing the parameter listmode=listing in the querystring when
-performing a &lt;code>GET&lt;/code> request. Please note that in order to simplify the access
-model, Update operations are always partial, meaning that properties of the
-resource that is being updated which are entirely missing from the
-representation, are ignored (i.e. their state in the backend does not change).
-Therefore, in order to unset/remove a property, one has to explicitly specify it
-as &lt;code>NULL&lt;/code>, provided that this is permitted. This is the reason why Create and
-Update &lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a>
-mappings are inverted with regards to what is usually accustomed. Finally, the
-API also supports the &lt;code>OPTIONS&lt;/code> HTTP verb, which returns a list of the
-operations that are permitted, in principle, for the resource in question. The
-base URI for this version of the RESTful API is&lt;/p>
-&lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/&lt;/code>&lt;/p>
-&lt;p>and requests must be followed by at least one resource name, which may be
-followed by one or more optional sub-resource names, separated by slashes, as in
-the examples given bellow:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications/&lt;/code>&lt;/li>
-&lt;li>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications/50/&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3 id="response-types">Response types&lt;/h3>
-&lt;p>Because the API conforms to the REST paradigm, responses to all
-&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> operations
-are always &lt;a href="https://en.wikipedia.org/wiki/XML">XML&lt;/a> document representations of
-the resource in question. These documents are described by schema files which
-reside publicly in the web server. All the XML documents are enveloped in a
-common root element named &lt;code>appdb&lt;/code> with attributes that describe request status,
-such as paging, or errors. These attributes are:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>count&lt;/code> (number) : the count of the entries found in the applications
-database. In case of paging, where only a subset of the results gets returned,
-the attribute is left unaffected.&lt;/li>
-&lt;li>&lt;code>pagelength&lt;/code>, &lt;code>pageoffset&lt;/code> (numbers) : paging data in case the response is a
-list of resources. More information follows in the next section.&lt;/li>
-&lt;li>&lt;code>datatype&lt;/code> (string) : an identifier for the resource data that is enclosed in
-the response as defined in the XML schema.&lt;/li>
-&lt;li>&lt;code>type&lt;/code> (string) : the type of the response. Possible values are:
-&lt;ul>
-&lt;li>&lt;code>list&lt;/code>: A collection of references to entries in the applications&amp;rsquo; database.
-In order to obtain the referenced entry, a request should be made using the
-entry&amp;rsquo;s ID.&lt;/li>
-&lt;li>&lt;code>entry&lt;/code>: Detailed information about an entry in the applications&amp;rsquo; database.
-Paging is never used for this type of response.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>version&lt;/code> (number) : The version of the API that was accessed.&lt;/li>
-&lt;li>&lt;code>error&lt;/code> (string) : If an error occurs, this attribute will contain the error
-message.&lt;/li>
-&lt;li>&lt;code>errornum&lt;/code> (number) : If an error occurs, this attribute will contain the
-error number.&lt;/li>
-&lt;li>&lt;code>errordesc&lt;/code> (string) : If an error occurs, this attribute might contain a more
-detailed description about the error.&lt;/li>
-&lt;li>&lt;code>host&lt;/code>, &lt;code>apihost&lt;/code> (strings) : the URIs of the host that provided the data and
-API access, respectively.&lt;/li>
-&lt;/ul>
-&lt;h3 id="paging-and-filtering">Paging and Filtering&lt;/h3>
-&lt;p>The paging mechanism that the API provides, as far as Read/Listing operations
-are concerned, can be used through two query parameters (if allowed) and can be
-displayed in the attributes of the root element of the response XML document.
-The query parameters are:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>pagelength&lt;/code>: defines the count of entries to be displayed in each page.&lt;/li>
-&lt;li>&lt;code>pageoffset&lt;/code>: defines the position in the list of entries from which the page
-will start.&lt;/li>
-&lt;/ul>
-&lt;p>So if the client wants a list of 50 entries and wants to display the first 10,
-then the parameters should be set as page length=10 and page offset=0. To view
-the next 10 entries it should change the page offset to 10, for the next 10, it
-should set page length to 20, etc. One must remember that paging is not valid
-for all resources, as documented in the query parameters section in the API
-reference. A final note about paging is that if the client hasn&amp;rsquo;t explicitly
-enable paging, then the server will default to a preset paging value, in order
-to reduce load; this value can be retrieved from the relevant attributes of the
-response’s root node. If the paging parameters were set by the client but the
-page length exceeds that of the server&amp;rsquo;s default maximum value, then the later
-is used. Otherwise the page length set by the client will be used. Moreover,
-some of the API resources support filtering when doing Read/Listing operations;
-filter expressions may be passed in the querystring by assigning a value to the
-flt parameter, in order to retrieve just the subset of data that match certain
-criteria. These filter expressions are strings that may range from simple
-keywords to complex queries. They are search arguments which will be matched to
-results that are deemed relevant in the scope of the search target. These
-expressions can range from the simple and obvious space separated keyword list,
-to complex operator and field specific queries. In particular, filter
-expressions are composed of one or more keywords, optionally prefixed by
-operators and/or specifiers. The syntax in BNF is:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-BNF" data-lang="BNF">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">expression&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">keyword&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>*
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">keyword&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> [&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>][&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">specifier&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>:]some_string
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> [&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">context_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>]&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">comparison_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">context_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &amp;amp;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">comparison_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> = | * | ~ | $ | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">[=] | &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[=] | +[=|*|~|$|&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">[=]|&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[=]] | -[=|*|~|$|&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">[=]|&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[=]]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">specifier&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">related_entity&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[.property_name] | property_name
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">related_entity&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> application | person | vo | middleware | country | [sub]discipline
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Rules are as follow:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Each keyword without an operator may partially match any property related to
-the filtered entity.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>=&lt;/code> operator, then the keyword may exactly
-match any related property.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>*&lt;/code> operator, then any part of a
-comma-separated set of keywords may exactly match any related property.&lt;/p>
-&lt;p>Please note that in this case, the keyword &lt;code>NULL&lt;/code> takes on the special meaning
-of a nil value&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>&amp;lt;&lt;/code> or &lt;code>&amp;gt;&lt;/code> comparison operator, then the
-keyword may be greater than or lesser than any related property, respectively.&lt;/p>
-&lt;p>Optionally prefixing the &lt;code>=&lt;/code> operator as well, will make the comparison
-operator non-strict.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>~&lt;/code> operator, then the keyword will be
-treated as a regular expression which may match any related property.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>$&lt;/code> operator, then the keyword will be
-treated as a soundex phoneme which may match any related property that sounds
-alike in the English language.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>+&lt;/code> operator, then the keyword must match
-any related property.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a keyword is prefixed with the &lt;code>-&lt;/code> operator, then the keyword must not
-match any related property.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>If a specifier is present, then the keyword applies only to the specified
-property.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Specifiers referring to related entities may omit the property name, in which
-case the special property any will be implicit.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>In keywords without specifiers, the special specifier any.any will be
-implicit.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>&amp;amp;&lt;/code> context operator makes an entity&amp;rsquo;s context private when present; this
-reduces results to the immediate neighbourhood of the target.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>Consider the following examples when searching for software:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>cms atlas
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return a software item named &lt;code>CMSSW&lt;/code>, another named &lt;code>ATLAS&lt;/code>, another
-belonging to the &lt;code>atlas&lt;/code> VO, etc.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>cms atlas +greece
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return only the subset of the previous example&amp;rsquo;s results that actually
-mention Greece (e.g. in the description, or by having a researcher from Greece
-in their contact list, etc.)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>cms atlas -greece
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return only the subset of the first example&amp;rsquo;s results that do not mention
-Greece&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>vo:biomed
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that belong to the VO&amp;rsquo;s that contain biomed in their name
-or description&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>=vo.name:biomed
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that belong to the VO named &lt;code>biomed&lt;/code> only&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>&amp;lt;dateadded:2011
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that have been registered before the year 2011&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>&amp;gt;=name:x
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software whose names begin with &lt;code>x&lt;/code>,&lt;code>y&lt;/code>, or &lt;code>z&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>person:&amp;#34;john doe&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that has someone whose name contains &lt;code>john doe&lt;/code> listed as
-a contact&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>discipline:physics +tag:portal
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that are filed under disciplines that are related to
-physics, and that are tagged as portals&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>For a list of possible specifiers, you can look up the &lt;code>/filter/reflect&lt;/code>
-subresource of any searchable resource (e.g. &lt;code>/applications/filter/reflect&lt;/code>), or
-you can also try using any search box in the &lt;a href="https://appdb.egi.eu">portal&lt;/a>, and
-check out the autocompletion list.&lt;/p>
-&lt;h3 id="authenticated-access">Authenticated Access&lt;/h3>
-&lt;p>Some or all operations on certain resources may require authentication, as
-indicated in the API Reference section below. In order to perform authenticated
-API calls, users need to create an access token and provide the following
-parameters in the query string, or POST fields accordingly:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>accesstoken&lt;/code>: a valid access token. Registered users can generate access
-tokens from within the AppDB portal, under their profile preferences tab&lt;/li>
-&lt;/ul>
-&lt;p>Access tokens may be assigned netfilters, which will only allow authenticated
-access from specific sources. Defining netfilters for an access token is not
-required, but it is strongly suggested, since they can help safeguard its use.&lt;/p>
-&lt;h2 id="api-reference">API Reference&lt;/h2>
-&lt;p>Below you may find an exhaustive list of the resources v1.0 of the AppDB RESTful
-API offers. Details and documentation about a resource&amp;rsquo;s representation may be
-found as &lt;a href="https://en.wikipedia.org/wiki/XSD">XSD&lt;/a> annotations inside the
-appropriate schema file, under
-&lt;a href="https://appdb-pi.egi.eu/rest/1.0/schema">the schemata base resource&lt;/a>. Note that
-when performing &lt;code>POST&lt;/code> operations, the representation must be passed as a
-URL-encoded string in the query-string under the parameter &lt;code>data&lt;/code>, whereas when
-performing &lt;code>PUT&lt;/code> operations, the representation must be passed as a normal text
-stream. Representations passed to &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code> operations must be enclosed
-within an &lt;code>appdb:appdb&lt;/code> root element, with the appropriate
-&lt;a href="https://en.wikipedia.org/wiki/XML">XML&lt;/a> namespaces declared, the same way that
-responses are; nevertheless, this will be omitted in all following examples, in
-order to reduce clutter. Also note that since all Update (&lt;code>POST&lt;/code>) operations are
-partial, &lt;a href="https://en.wikipedia.org/wiki/XML">XML&lt;/a> elements that represent
-properties with a cardinality 0..* must be either&lt;/p>
-&lt;ul>
-&lt;li>omitted, in which case the present state in the backend is left untouched,&lt;/li>
-&lt;li>fully disclosed, in which case entities present in the backend but absent from
-the POSTed representation are deleted, and vice versa&lt;/li>
-&lt;li>explicitly declared NULL by passing a single instance of the element, with no
-node value (is of &lt;em>mixed&lt;/em> type) and the single attribute &lt;code>xsi:nil&lt;/code> with value
-&lt;code>true&lt;/code>, in which case all instances of the entity are erased from the backend.&lt;/li>
-&lt;/ul>
-&lt;p>This way, it is possible to perform modifications to a resource&amp;rsquo;s properties
-without having to re-declare all instances of other properties with 0..*
-cardinality, lest they were to be erased. Properties of 0..1 cardinality may
-also be declared &lt;code>NULL&lt;/code> in a similar fashion, in which case their value in the
-backed becomes undefined. Moreover, one should also note that the response of
-all &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code>/&lt;code>DELETE&lt;/code> operations equivalent to that of a &lt;code>GET&lt;/code> operation,
-with the state of the resource&lt;/p>
-&lt;ul>
-&lt;li>after the operation, in case of &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code>&lt;/li>
-&lt;li>before the operation, in case of &lt;code>DELETE&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>This way, it is possible - as well as advised - to differentiate the response
-with the input to such operations, in order to verify that the result is what
-was intended, since properties that are malformed or invalid will not break the
-operation, but rather be ignored, as long as the representation is well-formed
-(i.e. passes the &lt;a href="https://en.wikipedia.org/wiki/XSD">XSD&lt;/a> compilation).&lt;/p>
-&lt;h3 id="application-list">Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: yes&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code> &lt;code>POST&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of all application entries registered in the database&lt;/p>
-&lt;p>Examples:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are listed under the Software Marketplace
-(i.e. Software)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are listed under the Cloud Marketplace (i.e.
-Virtual Appliances)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=country:Greece
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are related to Greece&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>POST https://appdb-pi.egi.eu/rest/1.0/applications?data={data}&amp;amp;username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:description&amp;gt;&lt;/span>some new description&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:description&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will update application with ID &lt;code>123&lt;/code> setting it description to
-&lt;code>&amp;quot;some new description&amp;quot;&lt;/code> and leaving all other properties as-is.&lt;/p>
-&lt;p>Similarly, providing&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:subdiscipline&lt;/span> &lt;span style="color:#c4a000">xsi:nil=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>as &lt;code>{data}&lt;/code> will remove all subdiscipline associations from the application,
-and providing&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;5&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will replace the list of associated disciplines of the application with ID
-&lt;code>123&lt;/code>, with the disciplines with IDs &lt;code>1&lt;/code> and &lt;code>5&lt;/code> (&amp;ldquo;Life Sciences&amp;rdquo; and &amp;ldquo;Earth
-Sciences&amp;rdquo; respectively)&lt;/p>
-&lt;p>Note that providing &lt;code>{data}&lt;/code> as&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">xsi:nil=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>to a &lt;code>POST&lt;/code> operation will result in an error, since discipline elements are
-not defined as nillable in the schemata, meaning that all application entries
-must have at least on discipline in their complete representation.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>with &lt;code>{data}&lt;/code> defined as&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">tagPolicy=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:name&amp;gt;&lt;/span>MyGridApp&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:name&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:description&amp;gt;&lt;/span>my grid application&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:description&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:abstract/&amp;gt;&lt;/span>this is a grid application which performs task X&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:abstract&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:category&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#c4a000">primary=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:category&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;2&amp;#34;&lt;/span> &lt;span style="color:#c4a000">primary=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:status&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;6&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;vo:vo&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;951&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:contact&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;189&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:contact&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;190&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:publication&lt;/span> &lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:title&amp;gt;&lt;/span>Evidence of Y using novel method X&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:title&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:url&amp;gt;&lt;/span>http://linkto.my.pub&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:url&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:conference&amp;gt;&lt;/span>X developments 2012&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:conference&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:proceedings/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:isbn&amp;gt;&lt;/span>ISSN 0000-0000&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:isbn&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:startPage&amp;gt;&lt;/span>592&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:startPage&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:endPage&amp;gt;&lt;/span>597&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:endPage&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:volume&amp;gt;&lt;/span>18&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:volume&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:publisher/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:journal/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:year&amp;gt;&lt;/span>2012&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:year&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:type&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>Full Paper&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:type&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:author&lt;/span> &lt;span style="color:#c4a000">main=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#c4a000">type=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;internal&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;person:person&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;189&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:author&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:author&lt;/span> &lt;span style="color:#c4a000">type=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;external&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:extAuthor&amp;gt;&lt;/span>John Doe&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:extAuthor&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:author&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:publication&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;middleware:middleware&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>gLite&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/middleware:middleware&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;middleware:middleware&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;5&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>MyGrid&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/middleware:middleware&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>methodX&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>countryZ&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will add a new application to the database, with the following properties:&lt;/p>
-&lt;ul>
-&lt;li>belonging to two categories, of which the one with ID equal to 1 will be the
-primary&lt;/li>
-&lt;li>related to one discipline&lt;/li>
-&lt;li>with an application status with ID 6&lt;/li>
-&lt;li>listed as supported by the VO with ID 951&lt;/li>
-&lt;li>having two people in its scientific contact list, those with IDs 189 and 190&lt;/li>
-&lt;li>having one publication with two authors, one internal (i.e. registered with
-the AppDB) and one external (not registered, name-only entry)&lt;/li>
-&lt;li>listed as supported by two middleware, and&lt;/li>
-&lt;li>with two tags applied&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="application-entry">Application Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a specific application entry&lt;/p>
-&lt;h3 id="moderated-application-list">Moderated Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/moderated&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code> &lt;code>PUT&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of applications that have been moderated for some particular reason, and
-thus hidden from public view until the issue gets resolved. Administrative
-access only.&lt;/p>
-&lt;p>Examples:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications/moderated?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:moderationReason&amp;gt;&lt;/span>copyright violation&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:moderationReason&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will moderate the application with ID &lt;code>123&lt;/code>, providing &lt;code>&amp;quot;copyright violation&amp;quot;&lt;/code>
-as the reason&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="application-publication-list">Application Publication List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/publications&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: publication&lt;/li>
-&lt;li>Schema: publication&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code> &lt;code>POST&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of scientific publications related to an application entry. Publications
-can be individually managed from this resource (and its sub-resources), or
-collectively defined directly from &lt;code>application/{id}&lt;/code> resources&lt;/p>
-&lt;h3 id="application-publication-entry">Application Publication Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/publications/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: publication&lt;/li>
-&lt;li>Schema: publication&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a publication related to an application entry&lt;/p>
-&lt;h3 id="application-tag-list">Application Tag List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/tags&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: tag&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of tags applied to an application entry. Tags can be individually managed
-from this resource (and its sub-resources), or collectively defined directly
-from &lt;code>application/{id}&lt;/code> resources&lt;/p>
-&lt;p>Examples:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications/123/tags?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>C++&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will apply the tag &lt;code>C++&lt;/code> to the application with ID &lt;code>123&lt;/code>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="application-tag-entry">Application Tag Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/tags/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: tag&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a tag applied to an application&lt;/p>
-&lt;h3 id="related-application-list">Related Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/relatedapps&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: relatedapp&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of applications related to an application entry&lt;/p>
-&lt;h3 id="application-rating-report">Application Rating Report&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/ratingsreport&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: ratingreport&lt;/li>
-&lt;li>Schema: appratingreport&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Report on all user ratings of an application entry&lt;/p>
-&lt;h3 id="external-application-rating-report">External Application Rating Report&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/ratingsreport/internal&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: ratingreport&lt;/li>
-&lt;li>Schema: appratingreport&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Report on user ratings of an application entry made by registered users&lt;/p>
-&lt;h3 id="internal-application-rating-report">Internal Application Rating Report&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/ratingsreport/external&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: ratingreport&lt;/li>
-&lt;li>Schema: appratingreport&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Report on user ratings of an application entry made by anonymous users&lt;/p>
-&lt;h3 id="application-rating-list">Application Rating List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/ratings&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: rating&lt;/li>
-&lt;li>Schema: apprating&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of user rating entries applied to an application entry&lt;/p>
-&lt;h3 id="application-rating-entry">Application Rating Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/ratings/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: rating&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a rating entry applied to an application entry&lt;/p>
-&lt;h3 id="application-state-history-list">Application State History List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/history&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: history&lt;/li>
-&lt;li>Schema: history&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of previous states of an application entry. Administrative access only.&lt;/p>
-&lt;h3 id="application-state-history-entry">Application State History Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/{id}/history/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: history&lt;/li>
-&lt;li>Schema: history&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a previous state of an application entry. Administrative
-access only.&lt;/p>
-&lt;h3 id="bookmarked-application-list">Bookmarked Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/{id}/applications/bookmarked&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: yes&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code> &lt;code>PUT&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of application entries bookmarked by a user&lt;/p>
-&lt;p>Examples:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all application entries with a discipline related to chemistry and
-which have been bookmarked by the user with ID &lt;code>123&lt;/code>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="bookmarked-application-entry">Bookmarked Application Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/{id}/applications/bookmarked/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of an application entry bookmarked by a user&lt;/p>
-&lt;p>Examples:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>DELETE https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked/111?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will delete the application with ID &lt;code>111&lt;/code> from the list of bookmarked
-applications of the user with ID &lt;code>123&lt;/code>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="editable-application-list">Editable Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/{id}/applications/editable&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: yes&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of application entries that a user has permission to edit&lt;/p>
-&lt;h3 id="owned-application-list">Owned Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/{id}/applications/owned&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of application entries that a user holds ownership of&lt;/p>
-&lt;h3 id="associated-application-list">Associated Application List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/{id}/applications/associated&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: application&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of application entries that a user is associated to, as a member of the
-application&amp;rsquo;s contact list&lt;/p>
-&lt;h3 id="people-list">People List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: person&lt;/li>
-&lt;li>Schema: person&lt;/li>
-&lt;li>Filtering: yes&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code> &lt;code>POST&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of users (people) that have registered with the database&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/people/?flt={flt}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{flt}&lt;/code> is the URL-encoded representation of
-&lt;code>&amp;gt;=registeredon:2012-02 +=vo.name:SEE -country:Greece&lt;/code>&lt;/p>
-&lt;p>will return a list of all people who have registered after or in Feb 2012,
-have a relation to the VO named &lt;code>SEE&lt;/code> and that are not related with Greece&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="person-entry">Person Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: person&lt;/li>
-&lt;li>Schema: person&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a user entry&lt;/p>
-&lt;h3 id="regional-information-list">Regional Information List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>regional/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: regional&lt;/li>
-&lt;li>Schema: regional&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of countries, regions, and service providers participating in EGI and
-available to application and user entries&lt;/p>
-&lt;h3 id="application-category-list">Application Category List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/categories/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: category&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of category types available for application entries&lt;/p>
-&lt;h3 id="disciplinesubdiscipline-list">Discipline/Subdiscipline List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>disciplines/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: discipline&lt;/li>
-&lt;li>Schema: discipline&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of discipline and subdiscipline types available for application entries&lt;/p>
-&lt;h3 id="middleware-list">Middleware List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>middleware/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: middleware&lt;/li>
-&lt;li>Schema: middleware&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of grid middleware supported by application entries and VOs&lt;/p>
-&lt;h3 id="application-status-list">Application Status List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/statuses/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: status&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of status states available to application entries&lt;/p>
-&lt;h3 id="vo-list">VO List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>vos/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: vo&lt;/li>
-&lt;li>Schema: vo&lt;/li>
-&lt;li>Filtering: yes&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of VOs registered with the
-&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a> and
-available to application entries&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{flt}&lt;/code> is the URL-encoded representation of
-&lt;code>application:CMS +description:CERN&lt;/code>&lt;/p>
-&lt;p>will return the list of VOs that contain the word CERN in their description,
-and that are related to any application that mentions CMS in any of its
-properties&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="vo-entry">VO Entry&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>vos/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: vo&lt;/li>
-&lt;li>Schema: vo&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a VO registered with the
-&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a> and
-available to application entries&lt;/p>
-&lt;h3 id="user-role-list">User Role List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/roles/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: role&lt;/li>
-&lt;li>Schema: person&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of user roles available, which define base user privileges&lt;/p>
-&lt;h3 id="available-tag-list">Available Tag List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/tags/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: tag&lt;/li>
-&lt;li>Schema: application&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of all tag entries that have been attached at least once on any application
-entry&lt;/p>
-&lt;h3 id="contact-type-list">Contact Type List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/contacttypes/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: tag&lt;/li>
-&lt;li>Schema: person&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>List of contact types available to user contact information entries&lt;/p>
-&lt;h3 id="application-filter-normalization">Application Filter Normalization&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/filter/normalize&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: filter&lt;/li>
-&lt;li>Schema: filter&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Validates and normalizes a filter expression for application searches, defined
-by the querystring parameter &lt;code>flt&lt;/code>&lt;/p>
-&lt;h3 id="application-filter-reflection">Application Filter Reflection&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>applications/filter/reflect&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: filter&lt;/li>
-&lt;li>Schema: filter&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Returns a nested representation of the filtering expression specifiers available
-to application searches&lt;/p>
-&lt;h3 id="person-filter-normalization">Person Filter Normalization&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/filter/normalize&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: filter&lt;/li>
-&lt;li>Schema: filter&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Validates and normalizes a filter expression for user searches, defined by the
-querystring parameter &lt;code>flt&lt;/code>&lt;/p>
-&lt;h3 id="person-filter-reflection">Person Filter Reflection&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>people/filter/reflect&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: filter&lt;/li>
-&lt;li>Schema: filter&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Returns a nested representation of the filtering expression specifiers available
-to user searches&lt;/p>
-&lt;h3 id="vo-filter-normalization">VO Filter Normalization&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>vos/filter/normalize&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: filter&lt;/li>
-&lt;li>Schema: filter&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Validates and normalizes a filter expression for VO searches, defined by the
-querystring parameter &lt;code>flt&lt;/code>&lt;/p>
-&lt;h3 id="vo-filter-reflection">VO Filter Reflection&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>vos/filter/reflect&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: filter&lt;/li>
-&lt;li>Schema: filter&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;li>Authenticated Operations: none&lt;/li>
-&lt;/ul>
-&lt;p>Returns a nested representation of the filtering expression specifiers available
-to VO searches&lt;/p>
-&lt;h3 id="dissemination-log-list">Dissemination Log List&lt;/h3>
-&lt;ul>
-&lt;li>Resource: &lt;code>dissemination/&lt;/code>&lt;/li>
-&lt;li>Type: list&lt;/li>
-&lt;li>Datatype: dissemination&lt;/li>
-&lt;li>Schema: dissemination&lt;/li>
-&lt;li>Filtering: no&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>List of dissemination messages that have been dispatched to registered users.
-Administrative access only.&lt;/p>
-&lt;h2 id="dissemination-log-entry">Dissemination Log Entry&lt;/h2>
-&lt;ul>
-&lt;li>Resource: &lt;code>dissemination/{id}&lt;/code>&lt;/li>
-&lt;li>Type: entry&lt;/li>
-&lt;li>Datatype: dissemination&lt;/li>
-&lt;li>Schema: dissemination&lt;/li>
-&lt;li>Filtering: N/A&lt;/li>
-&lt;li>Public Operations: none&lt;/li>
-&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Detailed description of a dissemination message that has been dispatched to
-registered users. Administrative access only.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
+available in the EGI Cloud.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
 &lt;h2 id="basics">Basics&lt;/h2>
 &lt;h3 id="how-can-i-get-access-to-the-cloud-compute-service">How can I get access to the cloud compute service?&lt;/h3>
 &lt;p>There is a VO available for 6 months piloting activities that any researcher in
@@ -2544,25 +1757,23 @@ client can help you to get that list:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UA-BITP
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UNIV-LILLE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud.srce.hr
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The providers also generate dynamic information about their characteristics via
-the Argo Messaging System which is easily browsable from AppDB.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The providers also generate dynamic information which is accessible through the
+&lt;a href="https://is.cloud.egi.eu">cloud-info-api&lt;/a>.&lt;/p>
 &lt;h3 id="how-can-i-choose-which-site-to-use">How can I choose which site to use?&lt;/h3>
 &lt;p>Sites offer their resources to users through Virtual Organisations (VO). First,
 you need to join a Virtual Organisation that matches your research interests,
-see &lt;a href="../auth">authorisation section&lt;/a> on how VOs work. AppDB shows the supported
-VOs and for each VO you can browse the resource providers that support it.&lt;/p>
+see &lt;a href="../auth">authorisation section&lt;/a> on how VOs work.&lt;/p>
 &lt;h3 id="how-can-i-get-information-about-the-available-vm-images">How can I get information about the available VM images?&lt;/h3>
-&lt;p>The &lt;a href="https://appdb.egi.eu">Application Database&lt;/a> contains information about the
-VM images available in the EGI Cloud. Within the AppDB Cloud Marketplace, you
-can look for a VM and get all the information about which VO the VM is
-associated, the sites where the VM is available and the endpoints and
-identifiers to use it in practice.&lt;/p>
+&lt;p>The &lt;a href="https://registry.egi.eu">Artefact Registry&lt;/a> contains information about the
+VM images available in the EGI Cloud. A set of predefined images is available
+on every provider. For VO-specific images, check the
+&lt;a href="../images">VM image guide&lt;/a>.&lt;/p>
 &lt;h2 id="managing-vms">Managing VMs&lt;/h2>
 &lt;h3 id="the-disk-on-my-vm-is-full-how-can-i-get-more-space">The disk on my VM is full, how can I get more space?&lt;/h3>
 &lt;p>There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
 device and attaching it to the VM. Check the
-&lt;a href="../../../data/storage">storage guide&lt;/a> for more information.&lt;/p>
+&lt;a href="../block-storage">storage guide&lt;/a> for more information.&lt;/p>
 &lt;h3 id="how-can-i-keep-my-data-after-the-vm-is-stopped">How can I keep my data after the VM is stopped?&lt;/h3>
 &lt;p>After a VM has been stopped and unless backed up in a block storage volume, all
 data in the VM is destroyed and cannot be recovered. To ensure your data will be
@@ -2631,7 +1842,7 @@ option to &lt;code>server create&lt;/code> in OpenStack.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 We recommend using &lt;code>cloud-init&lt;/code> for
-contextualisation. EGI images in AppDB do support &lt;code>cloud-init&lt;/code>. Check the
+contextualisation. EGI images do support &lt;code>cloud-init&lt;/code>. Check the
 &lt;a href="https://cloudinit.readthedocs.io/">documentation&lt;/a> for more information.
 &lt;/div>
 &lt;h3 id="how-can-i-pass-secrets-to-my-vms">How can I pass secrets to my VMs?&lt;/h3>
@@ -2662,7 +1873,7 @@ main strategies you can use:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Use a volume to store the data to be kept: Check the
-&lt;a href="../../../data/storage/block-storage">Storage section of the documentation&lt;/a> to
+&lt;a href="../block-storage">Storage section of the documentation&lt;/a> to
 learn how to use volumes. If you start your VM from a volume, the VM can be
 destroyed and recreated easily. OpenStack documentation cover how to
 &lt;a href="https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html">start a VM from a volume with CLI&lt;/a>

@@ -1,20 +1,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Cloud Container Compute</title><link>/users/compute/cloud-container-compute/</link><description>Recent content in Cloud Container Compute on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/cloud-container-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Docker VM</title><link>/users/compute/cloud-container-compute/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-container-compute/docker/</guid><description>
 &lt;p>The
-&lt;a href="https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04">EGI Docker VA&lt;/a>
+&lt;a href="https://registry.egi.eu/harbor/projects/8/repositories/docker/">EGI Docker VM image&lt;/a>
 is a ready-to-use Virtual Machine Image with &lt;a href="https://www.docker.com/">docker&lt;/a>
 and &lt;a href="https://docs.docker.com/compose/">docker-compose&lt;/a> pre-installed.&lt;/p>
-&lt;p>You can start that image as any other VA available from AppDB:&lt;/p>
+&lt;p>You can start that image as any other:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Go to the
-&lt;a href="https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04">EGI Docker image entry in AppDB&lt;/a>.&lt;/p>
+&lt;p>Go to your provider &lt;a href="https://dashboard.cloud.egi.eu">dashboard&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Check the identifiers of the endpoint, image and flavor you want to use at
-the provider.&lt;/p>
+&lt;p>Start your VM using the &lt;code>registry.egi.eu egi_vm_images/docker&lt;/code> image.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Use a ssh key when, so you can log into the VM once it's instantiated.&lt;/p>
+&lt;p>Use a ssh key, so you can log into the VM once it&amp;rsquo;s instantiated.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Once up, just ssh in the VM and start using docker as usual.&lt;/p>
@@ -86,7 +84,7 @@ information. You should also get the &lt;a href="../../../getting-started/cli">F
 installed to get EC3 templates needed to start deployment.&lt;/p>
 &lt;p>Your kubernetes deployment needs to be performed at an specific provider (site)
 and project. Discover them using &lt;code>fedcloud&lt;/code> as described in the
-&lt;a href="../../../compute/orchestration/ec3">EC3 tutorial&lt;/a>.&lt;/p>
+&lt;a href="../../../compute/orchestration/im/ec3">EC3 tutorial&lt;/a>.&lt;/p>
 &lt;h3 id="ec3-templates">EC3 Templates&lt;/h3>
 &lt;p>EC3 relies on a set of &lt;em>templates&lt;/em> that will determine what will be deployed on
 the infrastructure. &lt;code>fedcloud&lt;/code> helps you to get an initial set of templates for
@@ -95,9 +93,8 @@ your kubernetes deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> k8s
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You will also need a base image template for the deployment. Please refer to the
-&lt;a href="../../../compute/orchestration/ec3">EC3 tutorial&lt;/a> to create such file. Below you can see
+&lt;a href="../../../compute/orchestration/im/ec3">EC3 tutorial&lt;/a> to create such file. Below you can see
 an example for IFCA-LCG2 site with project related to &lt;code>vo.access.egi.eu&lt;/code>:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>description ubuntu-ifca (
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kind = &amp;#39;images&amp;#39; and
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> short = &amp;#39;ubuntu18-ifca&amp;#39; and
@@ -419,7 +416,7 @@ in NFS:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>test-pvc Bound pvc-39f970de-eaad-44d7-b49f-90dc9de54a14 3Gi RWO nfs-client 9m46s
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="destroying-the-cluster">Destroying the cluster&lt;/h2>
-&lt;p>Once you don&amp;rsquo;t need the cluster anymore, you can undeploy with the &lt;code>destroy&lt;/code>
+&lt;p>Once you don&amp;rsquo;t need the cluster any longer, you can undeploy with the &lt;code>destroy&lt;/code>
 command of EC3:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud ec3 refresh &lt;span style="color:#8f5902;font-style:italic"># refresh your credentials to interact with the cluster&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 destroy k8s -y -a auth.dat

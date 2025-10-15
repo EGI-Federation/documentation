@@ -48,8 +48,7 @@ the &lt;code>Add Support&lt;/code> button on the top right corner.&lt;/p>
 &lt;p>You should then select on the page the tab: &lt;code>Deploy your own provider&lt;/code>&lt;/p>
 &lt;p>In order to obtain the &lt;code>PROVIDER_REGISTRATION_TOKEN&lt;/code> that is part of the
 preconfigured command, you need to contact the
-&lt;a href="https://ggus.eu/?mode=ticket_submit">EGI HelpDesk&lt;/a>, selecting DataHub as
-support unit.&lt;/p>
+&lt;a href="https://helpdesk.ggus.eu/">EGI HelpDesk&lt;/a>, selecting DataHub as Group.&lt;/p>
 &lt;p>Please include in the request the following info:&lt;/p>
 &lt;ul>
 &lt;li>Use case for the installation of a Oneprovider connected to the EGI DataHub&lt;/li>

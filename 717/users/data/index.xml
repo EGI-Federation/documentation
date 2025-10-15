@@ -6,10 +6,11 @@ Different categories of storage are available, depending on how data is stored,
 the technology used to access and consume data, and the foreseen usage.&lt;/p>
 &lt;p>Three major service offerings are available:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="block-storage">Block Storage&lt;/a> is block-level storage that can be attached to
-virtual machines (VMs) as volumes, a simple solution for durable data that
-does not need to be shared beside a single VM.&lt;/li>
-&lt;li>&lt;a href="grid-storage">Grid Storage&lt;/a> is file storage for
+&lt;li>&lt;a href="../../compute/cloud-compute/block-storage">Block Storage&lt;/a> is block-level
+storage that can be attached to virtual machines (VMs) as volumes, a simple
+solution for durable data that does not need to be shared beside a single VM.&lt;/li>
+&lt;li>&lt;a href="../../compute/high-throughput-compute/grid-storage">Grid Storage&lt;/a> is file
+storage for
 &lt;a href="../../compute/high-throughput-compute">High Throughput Compute&lt;/a> (HTC) and/or
 &lt;a href="../../compute/high-performance-compute">High Performance Compute&lt;/a> (HPC)
 scenarios.&lt;/li>
@@ -77,8 +78,8 @@ users to share, collaborate and easily perform computations on the stored data.&
 &lt;p>The following specialized data management service is also available:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="data-transfer">EGI Data Transfer&lt;/a> is a low-level service to move data from
-one &lt;a href="../storage/grid-storage">Grid&lt;/a> or &lt;a href="../storage/object-storage">Object&lt;/a> storage
-to another.&lt;/li>
+one &lt;a href="../../compute/high-throughput-compute/grid-storage">Grid&lt;/a> or
+&lt;a href="../storage/object-storage">Object&lt;/a> storage to another.&lt;/li>
 &lt;/ul>
 &lt;h2 id="use-cases-for-storing-research-data">Use-cases for storing research data&lt;/h2>
 &lt;p>Depending on the type of the employed compute services and the use-cases being addressed,

@@ -13,7 +13,7 @@ are available on the
 &lt;!-- markdownlint-disable no-bare-urls -->
 &lt;ul>
 &lt;li>Open &lt;a href="https://secrets.egi.eu">https://secrets.egi.eu&lt;/a> in your browser.&lt;/li>
-&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pulldown menu, then click
+&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pull-down menu, then click
 &lt;em>Sign in with OIDC provider&lt;/em>.&lt;/li>
 &lt;li>Login via &lt;em>EGI Check-in&lt;/em> and authorize the Vault GUI.&lt;/li>
 &lt;/ul>
@@ -48,7 +48,7 @@ arrow next to the user icon in the top right corner.
 &lt;p>To create your first secret, click on &lt;em>Secrets&lt;/em> in the top navigation bar,
 then click on folder &lt;strong>secrets&lt;/strong>, then click &lt;em>Create secret&lt;/em> on the right.&lt;/p>
 &lt;!-- markdown-link-check-disable -->
-&lt;p>Use your EGI Check-in ID (e.g. &lt;a href="mailto:e0b6...@egi.eu">e0b6...@egi.eu&lt;/a> in the image below) as the path,
+&lt;p>Use your EGI Check-in ID (e.g. &lt;code>e0b6...@egi.eu&lt;/code> in the image below) as the path,
 followed by the name of your secret. Add at least one key to your secret,
 together with a value.&lt;/p>
 &lt;!-- markdown-link-check-enable -->
@@ -70,8 +70,8 @@ advanced Vault features not exposed via other tools.&lt;/p>
 &lt;p>To access the EGI Secrets Store service from the command-line you need a valid
 &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> access token. Get it either from the
 &lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a>, or from the
-&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../getting-started/cli#authentication">here&lt;/a> for
-details), then set it to an environment variable:&lt;/p>
+&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../getting-started/cli#authentication">cli guide&lt;/a>
+for details), then set it to an environment variable:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -268,7 +268,7 @@ virtual machine) as follows:&lt;/p>
 The size of the secret object (all the
 values in it) is limited to 512kB, which is sufficient for storing tokens,
 certificates, configuration files and so on. For larger datasets, please use
-&lt;a href="../../../data/storage/block-storage#storage-encryption">encrypted cloud storage&lt;/a>.
+&lt;a href="../../../compute/cloud-compute/block-storage/#storage-encryption">encrypted cloud storage&lt;/a>.
 &lt;/div>
 &lt;h3 id="secret-values-from-small-binary-files">Secret values from small binary files&lt;/h3>
 &lt;p>It is recommended to store secret values as text for compatibility and ease of
@@ -672,17 +672,17 @@ Windows
 &lt;div class="tabx-content" id="tabs-13-content">
 &lt;div class="tab-pane show active"
 id="tabs-13-0" role="tabpanel" aria-labelled-by="tabs-13-0-tab">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">VAULT_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/secrets/&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .voperson_id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">VAULT_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/secrets/users/&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .voperson_id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-13-1" role="tabpanel" aria-labelled-by="tabs-13-1-tab">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:VAULT_HOME&lt;/span>&lt;span style="color:#000;font-weight:bold">=/&lt;/span>&lt;span style="color:#000">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">$&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">curl &lt;/span>&lt;span style="color:#000">-X&lt;/span> &lt;span style="color:#000">POST&lt;/span> &lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">aai&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">eu&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">realms&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#204a87">openid-connect&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">userinfo&lt;/span> &lt;span style="color:#000">-H&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$env:OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">jq&lt;/span> &lt;span style="color:#000">-r&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">voperson_id&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:VAULT_HOME&lt;/span>&lt;span style="color:#000;font-weight:bold">=/&lt;/span>&lt;span style="color:#000">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">users&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">$&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">curl &lt;/span>&lt;span style="color:#000">-X&lt;/span> &lt;span style="color:#000">POST&lt;/span> &lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">aai&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">eu&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">realms&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#204a87">openid-connect&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">userinfo&lt;/span> &lt;span style="color:#000">-H&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$env:OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">jq&lt;/span> &lt;span style="color:#000">-r&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">voperson_id&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> /f &lt;span style="color:#4e9a06">&amp;#34;delims=&amp;#34;&lt;/span> %a in &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H &amp;#34;Authorization: Bearer %OIDC_ACCESS_TOKEN%&amp;#34; ^| jq -r .voperson_id&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">VAULT_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/secrets/%a&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> /f &lt;span style="color:#4e9a06">&amp;#34;delims=&amp;#34;&lt;/span> %a in &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H &amp;#34;Authorization: Bearer %OIDC_ACCESS_TOKEN%&amp;#34; ^| jq -r .voperson_id&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">VAULT_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/secrets/users/%a&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>

@@ -15,7 +15,7 @@ you share, and with whom you share the data.&lt;/p>
 &lt;a href="https://en.wikipedia.org/wiki/GridFTP">gridFTP&lt;/a> and
 &lt;a href="https://en.wikipedia.org/wiki/WebDAV">WebDav/HTTP&lt;/a> protocols, together with
 &lt;a href="https://xrootd.slac.stanford.edu/">XRootD&lt;/a> and legacy
-&lt;a href="https://www.gridpp.ac.uk/wiki/SRM">SRM&lt;/a> (under deprecation at some of the
+&lt;a href="https://sdm.lbl.gov/srm-wg/">SRM&lt;/a> (under deprecation at some of the
 endpoints).&lt;/p>
 &lt;p>Several grid storage implementations are available in the EGI Infrastructure,
 the most common being:&lt;/p>
@@ -97,15 +97,12 @@ protocol can be replaced by any other supported protocol.
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-rm gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file DELETED
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
-&lt;!-- markdown-link-check-disable -->
 &lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service provides
 mechanisms to optimize the transfer of files between EGI Online Storage
-endpoints. Both a
-&lt;a href="../../../data/management/data-transfer/webfts">graphical user interface&lt;/a> (GUI)
-and &lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a>
+endpoints. Both a graphical user interface (GUI) and
+&lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a>
 (CLI) are available to perform bulk movement of data. Please check out the
 related documentation for more information.&lt;/p>
-&lt;!-- markdown-link-check-enable -->
 &lt;h2 id="integration-with-data-management-frameworks">Integration with Data Management frameworks&lt;/h2>
 &lt;p>Grid storage access, most of the time, is hidden from users by the integration
 with the Data Management Frameworks (DMFs) used by Collaborations and
@@ -131,6 +128,7 @@ of the specification, under the LDAP base &lt;code>GLUE2GroupID=grid,o=glue&lt;/
 &lt;p>Some resources may not yet be exposed via GLUE 2.0, and it may be required to
 use GLUE 1.3 for those ones.&lt;/p>
 &lt;/blockquote>
+&lt;!--- cspell:disable-line -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 You can use &lt;code>-o ldif-wrap=no&lt;/code> to disable
@@ -213,8 +211,7 @@ about this one.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyRule &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyID &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2MappingPolicyShareForeignKey
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue-13">GLUE 1.3&lt;/a>.&lt;/p>
-&lt;h3 id="querying-for-arc-ce-compute-resources">Querying for ARC-CE compute resources&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="querying-for-arc-ce-compute-resources">Querying for ARC-CE compute resources&lt;/h3>
 &lt;p>Most, if not all the ARC-CE should be discoverable via GLUE 2.0.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all ARC-CE compute resources&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
@@ -262,33 +259,11 @@ about this one.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2MappingPolicyShareForeignKey
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue-13">GLUE 1.3&lt;/a>.&lt;/p>
 &lt;h3 id="using-glue-13">Using GLUE 1.3&lt;/h3>
-&lt;blockquote>
-&lt;p>&lt;strong>GLUE 1.3&lt;/strong> is legacy.&lt;/p>
-&lt;/blockquote>
-&lt;p>Querying for information about HTCondor CE using GLUE 1.3.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all HTCondorCE compute resources, using GLUE 1.3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEInfoJobManager=HTCondorCE))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEImplementationVersion GlueCEImplementationName &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the HTCondor CE via GLUE 1.3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Limiting output for the Condor CE via GLUE 1.3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoHostName GlueCEUniqueID &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoJobManager GlueCEImplementationName GlueCEImplementationVersion &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoLRMSType GlueCEInfoLRMSVersion &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEAccessControlBaseRule &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoTotalCPUs &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Querying for information about ARC-CE using GLUE 1.3.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Deprecated&lt;/h4>
+GLUE 1.3 is legacy
+&lt;/div>
+&lt;p>Querying for information about ARC-CE using GLUE 1.3.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all ARC CE compute resources, using GLUE 1.3&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\

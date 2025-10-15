@@ -37,9 +37,10 @@ in, write and play and re-play notebooks by:&lt;/p>
 &lt;li>&lt;a href="https://notebooks.egi.eu/">accessing https://notebooks.egi.eu/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>The central instance supports the following VOs:&lt;/p>
+&lt;!-- cSpell:disable -->
 &lt;ul>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu">vo.notebooks.egi.eu&lt;/a>,
-enroll &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu">here&lt;/a>&lt;/li>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu">enrol here&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/auger">auger&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/biomed">biomed&lt;/a>&lt;/li>
@@ -51,6 +52,7 @@ enroll &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.lethe-project.eu">vo.lethe-project.eu&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.cessda.eduteams.org">vo.cessda.eduteams.org&lt;/a>&lt;/li>
 &lt;/ul>
+&lt;!-- cSpell:enable -->
 &lt;h3 id="notebooks-for-communities">Notebooks for communities&lt;/h3>
 &lt;p>User communities can have their customised EGI Notebooks service instance. EGI
 offers consultancy, support, and can operate the setup as well. A community

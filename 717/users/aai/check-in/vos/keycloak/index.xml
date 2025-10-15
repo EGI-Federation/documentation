@@ -75,51 +75,64 @@ The Group Members tab shows the list of users belonging to the group, together
 with other useful information.&lt;/p>
 &lt;p class="img-screenshot">&lt;img src="./members_list.png" alt="List of members">&lt;/p>
 &lt;ol>
-&lt;li>The “Direct Members” allows to visualise only direct members or all members
+&lt;li>
+&lt;p>The “Direct Members” allows to visualise only direct members or all members
 (direct + indirect). Direct members are those that are explicit members of
 the group, whereas indirect members are those that inherited membership from
-a subgroup. If a user has been only added as a member of a group, he/she
-will be categorised as an indirect member of the parent groups.&lt;/li>
-&lt;/ol>
+a subgroup. If a user has been only added as a member of a group, he/she will
+be categorised as an indirect member of the parent groups.&lt;/p>
 &lt;p>&lt;img src="./general_groups-04.png" alt="Direct and indirect membership">&lt;/p>
 &lt;p>Herein, unchecking the “Direct Members” option from the view of the VO &lt;strong>group
 will display the entire VO population&lt;/strong>. Note that unchecking this option will
 add a new informative column called &amp;ldquo;Group Path&amp;rdquo; to specify the group to which
 the user belongs. This may generate duplicate entries for users who are members
 of several subgroups.&lt;/p>
-&lt;ol start="2">
-&lt;li>The &lt;strong>Unique User Identifier&lt;/strong> is the string that uniquely identifies a
-user, and it is made of a long alphanumerical string suffixed by “@egi.eu”.&lt;/li>
-&lt;li>Name / email shows the full name and email address of the user.&lt;/li>
-&lt;li>The roles that the user has in the group. Note that users can have more than
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;strong>Unique User Identifier&lt;/strong> is the string that uniquely identifies a user,
+and it is made of a long alphanumerical string suffixed by &lt;code>@egi.eu&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Name / email shows the full name and email address of the user.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The roles that the user has in the group. Note that users can have more than
 one role assigned in the group but must have at least one assigned. There is
-a filter button to display only users with a certain role.&lt;/li>
-&lt;li>The date when the user membership started.&lt;/li>
-&lt;li>The date when the user membership will stop working. When the membership is
-close to expire an indication will be displayed.&lt;/li>
-&lt;/ol>
+a filter button to display only users with a certain role.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The date when the user membership started.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The date when the user membership will stop working. When the membership is
+close to expire an indication will be displayed.&lt;/p>
 &lt;p class="img-screenshot">&lt;img src="./expiration_warning.png" alt="Membership expiration warning">&lt;/p>
-&lt;ol start="7">
-&lt;li>A user can be one of these three &lt;a href="#membership-status">membership states&lt;/a>:&lt;/li>
-&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>A user can be one of these three &lt;a href="#membership-status">membership states&lt;/a>:&lt;/p>
 &lt;p class="img-icon">&lt;img src="status_green.png" alt="Active status"> &lt;strong>Active&lt;/strong>&lt;/p>
 &lt;p class="img-icon">&lt;img src="status_red.png" alt="Suspended status"> &lt;strong>Suspended&lt;/strong>&lt;/p>
 &lt;p class="img-icon">&lt;img src="status_yellow.png" alt="Pending status"> &lt;strong>Pending&lt;/strong>&lt;/p>
 &lt;p>Additionally, there is a filter option to show users that have only a certain
 status.&lt;/p>
-&lt;ol start="8">
-&lt;li>The “Add Member” button can be used to add new members, as explained
-&lt;a href="../../../../../#adding-users-to-a-group-manually">below&lt;/a>.&lt;/li>
-&lt;li>The “Search” field can be used to filter users by Unique Identifier, Name or
-email.&lt;/li>
-&lt;li>There are three action buttons:&lt;/li>
-&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>The “Add Member” button can be used to add new members, as explained
+&lt;a href="../../../../../#adding-users-to-a-group-manually">below&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The “Search” field can be used to filter users by Unique Identifier, Name or
+email.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>There are three action buttons:&lt;/p>
 &lt;ul>
 &lt;li>Remove, to &lt;a href="#removing-a-user-from-a-group">remove a user from the group&lt;/a>.&lt;/li>
-&lt;li>Edit, to
-&lt;a href="#change-a-user-membership">change some aspect of the user membership&lt;/a>.&lt;/li>
+&lt;li>Edit, to &lt;a href="#change-a-user-membership">change some aspect of the user membership&lt;/a>.&lt;/li>
 &lt;li>Suspend, to &lt;a href="#removing-a-user-from-a-group">revoke user’s permissions&lt;/a>.&lt;/li>
 &lt;/ul>
+&lt;/li>
+&lt;/ol>
 &lt;h2 id="membership-status">Membership status&lt;/h2>
 &lt;p>A user in a group can be in one of these three states:&lt;/p>
 &lt;p class="img-icon">a. &lt;img src="./status_green.png" alt="Active status"> &lt;strong>Active&lt;/strong>, when the user is a full
@@ -209,58 +222,68 @@ on the “+” button.&lt;/p>
 &lt;p class="img-screenshot">&lt;img src="./enrolment_create2.png" alt="Necessary information for group enrolment creation">&lt;/p>
 &lt;p>The necessary information for the enrolment creation is the following:&lt;/p>
 &lt;ol>
-&lt;li>A name for the enrolment.&lt;/li>
-&lt;li>The number of days that the membership will last for the user, once he/she
-joins the group.&lt;/li>
-&lt;/ol>
-&lt;p class="img-screenshot">&lt;img src="./enrolment_membership.png" alt="Membership lenght">&lt;/p>
+&lt;li>
+&lt;p>A name for the enrolment.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The number of days that the membership will last for the user, once he/she
+joins the group.&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership.png" alt="Membership length">&lt;/p>
 &lt;p>The VO (or root group) must have an expiration date of 365 days or less, but
 other subgroups can have any length, including no expiration. However, consider
 that this expiration will be also
 &lt;a href="#membership-expiration">affected by the expiration of any parent group&lt;/a> in the
 group hierarchy. When a VO expiration is longer than 365 days, an error message
 will be shown.&lt;/p>
-&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_365warning.png" alt="Membership lenght error message for values exceeding 365 days">&lt;/p>
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_365warning.png" alt="Membership length error message for values exceeding 365 days">&lt;/p>
 &lt;p>Enrolments with no expiration dates get a warning, just to make sure that this
 was your intention.&lt;/p>
-&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_indefinite.png" alt="Membership lenght warning message for indefinite lenght">&lt;/p>
-&lt;ol start="3">
-&lt;li>A future date when the membership should start. This option is useful to
+&lt;p class="img-screenshot">&lt;img src="./enrolment_membership_indefinite.png" alt="Membership length warning message for indefinite length">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A future date when the membership should start. This option is useful to
 control when the access to the group will be granted for a user. A user
 joining a group with a future membership date, will be in a
-&lt;a href="#membership-status">pending status&lt;/a>.&lt;/li>
-&lt;/ol>
+&lt;a href="#membership-status">pending status&lt;/a>.&lt;/p>
 &lt;p class="img-screenshot">&lt;img src="./enrolment_future_membership.png" alt="Group enrolment future membership">&lt;/p>
-&lt;ol start="4">
-&lt;li>Enrolment requests may be either approved automatically or manually approved
+&lt;/li>
+&lt;li>
+&lt;p>Enrolment requests may be either approved automatically or manually approved
 by an administrator. This attribute specifies if the request needs a manual
 approval from a Group Admin (which is normally recommended). If it does, a
 Group Admin will have to approve the user request. If not, any user that
 requests it will be automatically approved and will become a member as soon
-as the request is received.&lt;/li>
-&lt;li>This attribute defines any extra information that must be collected from the
+as the request is received.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This attribute defines any extra information that must be collected from the
 user in the request. The information can be customised with a label and a
 description. The label will be presented to the user (e.g. the label could be
 “Reason to join the group”) and the description should explain the user how
 to fill in the comment field. The user will visualise this information as
-shown in the following image.&lt;/li>
-&lt;/ol>
+shown in the following image.&lt;/p>
 &lt;p class="img-screenshot">&lt;img src="./enrolment_comments.png" alt="Comments in an enrolment">&lt;/p>
-&lt;ol start="6">
-&lt;li>The link for the Acceptable Use Policy of the group. This link will be
+&lt;/li>
+&lt;li>
+&lt;p>The link for the Acceptable Use Policy of the group. This link will be
 presented to the user and its acceptance must be acknowledged as a
-requirement to join the group.&lt;/li>
-&lt;li>The group roles that the user can have assigned when joining the group.
-These roles will be presented to the user, who will decide which role(s) to
+requirement to join the group.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The group roles that the user can have assigned when joining the group. These
+roles will be presented to the user, who will decide which role(s) to
 request. There is an option to allow the user to accept only one role or
-multiple roles.&lt;/li>
-&lt;li>This attribute controls if this enrolment should be publicly available or
+multiple roles.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This attribute controls if this enrolment should be publicly available or
 not. If this attribute is checked, users following the
 &lt;a href="#default-group-enrolment">default enrolment link&lt;/a> of the group will be able
-to choose the enrolment to join the group.&lt;/li>
+to choose the enrolment to join the group.&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;p class="img-screenshot">&lt;img src="./enrolment_select_visible.png" alt="Visible enrolments">&lt;/p>
-&lt;ol start="9">
+&lt;ol start="11">
 &lt;li>If the enrolment is enabled or disabled. This is useful to disable an
 enrolment temporarily, instead of deleting it.&lt;/li>
 &lt;/ol>

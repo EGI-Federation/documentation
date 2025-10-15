@@ -551,6 +551,7 @@ generate multiple proxies.&lt;/p>
 &lt;h3 id="register-to-a-vo">Register to a VO&lt;/h3>
 &lt;p>Visit &lt;a href="https://operations-portal.egi.eu">Operation Portal&lt;/a> to search for
 existing VOs&lt;/p>
+&lt;!-- cSpell:word Enrollment -->
 &lt;ol>
 &lt;li>
 &lt;p>If there are any community VOs matching your requirements (with &lt;em>Registry
@@ -562,7 +563,7 @@ get approval for your access.&lt;/strong> &lt;img src="vo_registration.png" alt=
 &lt;/li>
 &lt;li>
 &lt;p>If there are no relevant VOs, you can send a request
-&lt;a href="ttps://operations-portal.egi.eu/vo/registration">to register a new VO&lt;/a>.
+&lt;a href="https://operations-portal.egi.eu/vo/registration">to register a new VO&lt;/a>.
 (Note, for EGI services, you should request for &lt;code>VOMS configuration&lt;/code>, once VO
 is configured, you will be notified about your VO VOMS link). More
 information can be found at
@@ -600,10 +601,10 @@ the &lt;code>vomses&lt;/code> and &lt;code>.lsc&lt;/code> files is shown.&lt;/p>
 &lt;p>Once you have the VO information configured (&lt;code>vomses&lt;/code> and &lt;code>.lsc&lt;/code>) and your
 certificate available in your &lt;code>$HOME/.globus&lt;/code> directory you can create a VOMS
 proxy to be used with clients with:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>voms-proxy-init --voms &amp;lt;name of the vo&amp;gt; --rfc
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>voms-proxy-init --voms &amp;lt;name of the vo&amp;gt; --rfc
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See for example, using &lt;code>fedcloud.egi.eu&lt;/code> VO:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>voms-proxy-init --voms fedcloud.egi.eu --rfc
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>voms-proxy-init --voms fedcloud.egi.eu --rfc
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>UCST/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Enol Fernandez
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating temporary proxy ......................................................... Done

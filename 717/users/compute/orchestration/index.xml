@@ -14,7 +14,7 @@ a wide variety of backends, either federated (such as
 &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>),
 thus making user applications cloud agnostic.
 IM features a &lt;a href="https://im.egi.eu/">web-based GUI&lt;/a>,
-an XML-RPC API, a REST API and a &lt;a href="cli">command-line interface&lt;/a> (CLI).
+an XML-RPC API, a REST API and a &lt;a href="./cli">command-line interface&lt;/a> (CLI).
 It supports
 &lt;a href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html">OASIS TOSCA Simple Profile in YAML&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -381,6 +381,7 @@ should be transferred to the grid to run the job. In this case the
 command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-submit InputAndOuputSandbox.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> XXXXXXXX
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="list-of-supported-vos">List of supported VOs&lt;/h4>
+&lt;!-- cSpell: disable -->
 &lt;ul>
 &lt;li>acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,&lt;/li>
 &lt;li>eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,&lt;/li>
@@ -389,6 +390,7 @@ command:&lt;/p>
 &lt;li>vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,&lt;/li>
 &lt;li>eng_cloud and breakseq_cloud&lt;/li>
 &lt;/ul>
+&lt;!-- cSpell: enable -->
 &lt;h4 id="more-details">More details&lt;/h4>
 &lt;ul>
 &lt;li>JDL language and simple jobs submission:
@@ -405,8 +407,7 @@ command:&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>For technical issues and bug reports, please submit a ticket in
-&lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>, in &lt;code>Assign to support unit&lt;/code>,
-indicate:&lt;br>
-&lt;code>EGI Services and Service Components&lt;/code> &amp;gt; &lt;code>Workload Manager (DIRAC)&lt;/code>.&lt;/p>
+&lt;a href="https://helpdesk.ggus.eu/">GGUS&lt;/a>, in &lt;code>Group&lt;/code>, indicate:
+&lt;code>Workload Manager (DIRAC)&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;/ul></description></item></channel></rss>

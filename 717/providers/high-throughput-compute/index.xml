@@ -152,7 +152,7 @@ Repository takes up to an hour to update its ACL from the configuration Database
 and the &lt;a href="../../../internal/messaging/">EGI Messaging Service&lt;/a> take up to 4
 hours. If you get warnings in your SSM log about invalid username or password
 you can retry again after a delay. If this persists for over 4 hours, then do
-open a &lt;a href="https://ggus.eu/">Helpdesk ticket&lt;/a>.&lt;/p>
+open a &lt;a href="https://helpdesk.ggus.eu/">Helpdesk ticket&lt;/a>.&lt;/p>
 &lt;h3 id="configure-ssm">Configure SSM&lt;/h3>
 &lt;p>Set the configuration files as explained in the
 &lt;a href="https://github.com/apel/ssm#sender-sending-via-the-argo-messaging-service-ams">general documentation&lt;/a>

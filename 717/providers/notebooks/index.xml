@@ -252,10 +252,8 @@ the service available to our users.&lt;/p>
 &lt;h2 id="initial-set-up">Initial set-up&lt;/h2>
 &lt;h3 id="notebooks-vo">Notebooks VO&lt;/h3>
 &lt;p>The resources used for the Notebooks deployments are managed with the
-&lt;code>vo.notebooks.egi.eu&lt;/code> VO. Operators of the service should join the VO, check the
-entry at the
-&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu">operations portal&lt;/a>
-and at &lt;a href="https://appdb.egi.eu/store/vo/vo.notebooks.egi.eu">AppDB&lt;/a>.&lt;/p>
+&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu">&lt;code>vo.notebooks.egi.eu&lt;/code> VO&lt;/a>.
+Operators of the service should join the VO with the &lt;code>admin&lt;/code> role.&lt;/p>
 &lt;h3 id="clients-installation">Clients installation&lt;/h3>
 &lt;p>In order to manage the resources you will need these tools installed on your
 client machine:&lt;/p>
