@@ -56,13 +56,6 @@ authorising users. These are short-lived (normally less than 1-hour) and need to
 be renewed for longer usage. With EGI Notebooks, you can get a ready-to-use
 token at any time.
 
-Whenever you start your session, you can select whether to automatically mount
-or not your token in your server. Default is **not** to mount it, so if the
-server is [shared for collaborative access](../sharing), this token won't be
-accessible for other users. Only select yes when you will not share the server!
-
-![token mount selection](notebooks-token-mount.png)
-
 You can obtain a new token at any time with the JupyterLab extension available
 from the Jupyter Lab interface. You have two options:
 
