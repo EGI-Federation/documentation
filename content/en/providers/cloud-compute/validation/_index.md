@@ -1,6 +1,6 @@
 ---
 title: "Installation Validation"
-weight: 60
+weight: 40
 type: "docs"
 description: >
   Validate your installation
@@ -15,18 +15,12 @@ reference Resource Infrastructure.
 
 Extra checks for your installation:
 
-- Check in [ARGO-Mon2](https://argo-mon2.egi.eu/nagios) that your services are
+- Check in [ARGO](https://argo.egi.eu/egi/CriticalUncert) that your services are
   listed and are passing the tests. If all the tests are OK, your installation
   is already in good shape.
 
-- Check that you are publishing cloud information in your site BDII: :
-
-  ```shell
-  ldapsearch -x -h <site bdii host> -p 2170 -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue
-  ```
-
 - Check that all the images listed in the AppDB for the VOs you support (e.g.
-  [AppDB page for fedlcoud.egi.eu VO](https://appdb.egi.eu/store/vo/fedcloud.egi.eu))
+  [AppDB page for vo.access.egi.eu VO](https://appdb.egi.eu/store/vo/vo.access.egi.eu))
   are listed in your BDII. This sample query will return all the template IDs
   registered in your BDII: :
 

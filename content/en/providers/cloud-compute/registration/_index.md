@@ -1,6 +1,6 @@
 ---
 title: "GOCDB Registration"
-weight: 40
+weight: 20
 type: "docs"
 description: >
   Registration of service endpoints in GOCDB

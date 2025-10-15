@@ -27,57 +27,55 @@ with other useful information.
 ![List of members](./members_list.png)
 {.img-screenshot}
 
-1.  The “Direct Members” allows to visualise only direct members or all members
-    (direct + indirect). Direct members are those that are explicit members of
-    the group, whereas indirect members are those that inherited membership from
-    a subgroup. If a user has been only added as a member of a group, he/she
-    will be categorised as an indirect member of the parent groups.
+1. The “Direct Members” allows to visualise only direct members or all members
+   (direct + indirect). Direct members are those that are explicit members of
+   the group, whereas indirect members are those that inherited membership from
+   a subgroup. If a user has been only added as a member of a group, he/she will
+   be categorised as an indirect member of the parent groups.
 
-![Direct and indirect membership](./general_groups-04.png)
+   ![Direct and indirect membership](./general_groups-04.png)
 
-Herein, unchecking the “Direct Members” option from the view of the VO **group
-will display the entire VO population**. Note that unchecking this option will
-add a new informative column called "Group Path" to specify the group to which
-the user belongs. This may generate duplicate entries for users who are members
-of several subgroups.
+   Herein, unchecking the “Direct Members” option from the view of the VO **group
+   will display the entire VO population**. Note that unchecking this option will
+   add a new informative column called "Group Path" to specify the group to which
+   the user belongs. This may generate duplicate entries for users who are members
+   of several subgroups.
 
-2.  The **Unique User Identifier** is the string that uniquely identifies a
-    user, and it is made of a long alphanumerical string suffixed by “@egi.eu”.
-3.  Name / email shows the full name and email address of the user.
-4.  The roles that the user has in the group. Note that users can have more than
-    one role assigned in the group but must have at least one assigned. There is
-    a filter button to display only users with a certain role.
-5.  The date when the user membership started.
-6.  The date when the user membership will stop working. When the membership is
-    close to expire an indication will be displayed.
+2. The **Unique User Identifier** is the string that uniquely identifies a user,
+   and it is made of a long alphanumerical string suffixed by `@egi.eu`.
+3. Name / email shows the full name and email address of the user.
+4. The roles that the user has in the group. Note that users can have more than
+   one role assigned in the group but must have at least one assigned. There is
+   a filter button to display only users with a certain role.
+5. The date when the user membership started.
+6. The date when the user membership will stop working. When the membership is
+   close to expire an indication will be displayed.
 
-![Membership expiration warning](./expiration_warning.png)
-{.img-screenshot}
+   ![Membership expiration warning](./expiration_warning.png)
+   {.img-screenshot}
 
-7.  A user can be one of these three [membership states](#membership-status):
+8. A user can be one of these three [membership states](#membership-status):
 
-![Active status](status_green.png) **Active**
-{.img-icon}
+   ![Active status](status_green.png) **Active**
+   {.img-icon}
 
-![Suspended status](status_red.png) **Suspended**
-{.img-icon}
+   ![Suspended status](status_red.png) **Suspended**
+   {.img-icon}
 
-![Pending status](status_yellow.png) **Pending**
-{.img-icon}
+   ![Pending status](status_yellow.png) **Pending**
+   {.img-icon}
 
-Additionally, there is a filter option to show users that have only a certain
-status.
+   Additionally, there is a filter option to show users that have only a certain
+   status.
 
-8.  The “Add Member” button can be used to add new members, as explained
-    [below](/#adding-users-to-a-group-manually).
-9.  The “Search” field can be used to filter users by Unique Identifier, Name or
-    email.
-10. There are three action buttons:
-
-- Remove, to [remove a user from the group](#removing-a-user-from-a-group).
-- Edit, to
-  [change some aspect of the user membership](#change-a-user-membership).
-- Suspend, to [revoke user’s permissions](#removing-a-user-from-a-group).
+9. The “Add Member” button can be used to add new members, as explained
+   [below](/#adding-users-to-a-group-manually).
+10. The “Search” field can be used to filter users by Unique Identifier, Name or
+   email.
+11. There are three action buttons:
+    - Remove, to [remove a user from the group](#removing-a-user-from-a-group).
+    - Edit, to [change some aspect of the user membership](#change-a-user-membership).
+    - Suspend, to [revoke user’s permissions](#removing-a-user-from-a-group).
 
 ## Membership status
 
@@ -204,70 +202,70 @@ This will open a form for the creation of the enrolment.
 
 The necessary information for the enrolment creation is the following:
 
-1.  A name for the enrolment.
-2.  The number of days that the membership will last for the user, once he/she
-    joins the group.
+1. A name for the enrolment.
+2. The number of days that the membership will last for the user, once he/she
+   joins the group.
 
-![Membership lenght](./enrolment_membership.png)
-{.img-screenshot}
+   ![Membership length](./enrolment_membership.png)
+   {.img-screenshot}
 
-The VO (or root group) must have an expiration date of 365 days or less, but
-other subgroups can have any length, including no expiration. However, consider
-that this expiration will be also
-[affected by the expiration of any parent group](#membership-expiration) in the
-group hierarchy. When a VO expiration is longer than 365 days, an error message
-will be shown.
+   The VO (or root group) must have an expiration date of 365 days or less, but
+   other subgroups can have any length, including no expiration. However, consider
+   that this expiration will be also
+   [affected by the expiration of any parent group](#membership-expiration) in the
+   group hierarchy. When a VO expiration is longer than 365 days, an error message
+   will be shown.
 
-![Membership lenght error message for values exceeding 365 days](./enrolment_membership_365warning.png)
-{.img-screenshot}
+   ![Membership length error message for values exceeding 365 days](./enrolment_membership_365warning.png)
+   {.img-screenshot}
 
-Enrolments with no expiration dates get a warning, just to make sure that this
-was your intention.
+   Enrolments with no expiration dates get a warning, just to make sure that this
+   was your intention.
 
-![Membership lenght warning message for indefinite lenght](./enrolment_membership_indefinite.png)
-{.img-screenshot}
+   ![Membership length warning message for indefinite length](./enrolment_membership_indefinite.png)
+   {.img-screenshot}
 
-3.  A future date when the membership should start. This option is useful to
-    control when the access to the group will be granted for a user. A user
-    joining a group with a future membership date, will be in a
-    [pending status](#membership-status).
+4. A future date when the membership should start. This option is useful to
+   control when the access to the group will be granted for a user. A user
+   joining a group with a future membership date, will be in a
+   [pending status](#membership-status).
 
-![Group enrolment future membership](./enrolment_future_membership.png)
-{.img-screenshot}
+   ![Group enrolment future membership](./enrolment_future_membership.png)
+   {.img-screenshot}
 
-4. Enrolment requests may be either approved automatically or manually approved
+5. Enrolment requests may be either approved automatically or manually approved
    by an administrator. This attribute specifies if the request needs a manual
    approval from a Group Admin (which is normally recommended). If it does, a
    Group Admin will have to approve the user request. If not, any user that
    requests it will be automatically approved and will become a member as soon
    as the request is received.
-5. This attribute defines any extra information that must be collected from the
+6. This attribute defines any extra information that must be collected from the
    user in the request. The information can be customised with a label and a
    description. The label will be presented to the user (e.g. the label could be
    “Reason to join the group”) and the description should explain the user how
    to fill in the comment field. The user will visualise this information as
    shown in the following image.
 
-![Comments in an enrolment](./enrolment_comments.png)
-{.img-screenshot}
+   ![Comments in an enrolment](./enrolment_comments.png)
+   {.img-screenshot}
 
-6.  The link for the Acceptable Use Policy of the group. This link will be
-    presented to the user and its acceptance must be acknowledged as a
-    requirement to join the group.
-7.  The group roles that the user can have assigned when joining the group.
-    These roles will be presented to the user, who will decide which role(s) to
-    request. There is an option to allow the user to accept only one role or
-    multiple roles.
-8.  This attribute controls if this enrolment should be publicly available or
-    not. If this attribute is checked, users following the
-    [default enrolment link](#default-group-enrolment) of the group will be able
-    to choose the enrolment to join the group.
+8. The link for the Acceptable Use Policy of the group. This link will be
+   presented to the user and its acceptance must be acknowledged as a
+   requirement to join the group.
+9. The group roles that the user can have assigned when joining the group. These
+   roles will be presented to the user, who will decide which role(s) to
+   request. There is an option to allow the user to accept only one role or
+   multiple roles.
+10. This attribute controls if this enrolment should be publicly available or
+   not. If this attribute is checked, users following the
+   [default enrolment link](#default-group-enrolment) of the group will be able
+   to choose the enrolment to join the group.
 
-![Visible enrolments](./enrolment_select_visible.png)
-{.img-screenshot}
+   ![Visible enrolments](./enrolment_select_visible.png)
+   {.img-screenshot}
 
-9.  If the enrolment is enabled or disabled. This is useful to disable an
-    enrolment temporarily, instead of deleting it.
+11. If the enrolment is enabled or disabled. This is useful to disable an
+   enrolment temporarily, instead of deleting it.
 
 ### Modification of Group Enrolments
 
@@ -415,10 +413,10 @@ click “**Confirm**”.
 Group Admins can directly add a user in a group without the user interaction.
 For this, two prerequisites are necessary:
 
-1.  The user **must be known**, meaning that he/she must be a member of any of
-    the groups of the Group Admin.
-2.  The group **must not have any AUP** in place, since the Group Admin cannot
-    accept any Acceptable Use Policy in the name of the user.
+1. The user **must be known**, meaning that he/she must be a member of any of
+   the groups of the Group Admin.
+2. The group **must not have any AUP** in place, since the Group Admin cannot
+   accept any Acceptable Use Policy in the name of the user.
 
 If these two prerequisites cannot be met, you need
 [to invite](#adding-users-by-invitation) the user instead.

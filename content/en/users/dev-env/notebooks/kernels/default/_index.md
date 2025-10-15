@@ -9,6 +9,8 @@ description: >
   The default environment in EGI Notebooks
 ---
 
+<!-- cSpell:words datascience -->
+
 The default environment includes a set of
 [kernels](https://jupyter.readthedocs.io/en/latest/projects/kernels.html) that
 are automatically built from the
@@ -34,8 +36,8 @@ These are the available kernels:
   [RStudio Server](https://posit.co/products/open-source/rstudio-server/) offers
   a RStudio IDE from the Notebooks interface.
 
-- Octave: The [Octave](https://www.gnu.org/software/octave/) programming
-  language installed on its own conda environment (named `octave`).
+- Octave: The [Octave](https://www.octave.org/) programming language installed
+  on its own conda environment (named `octave`).
 
 If you want to add a new kernel, just let us know, and we will discuss the best
 way to support your request.
@@ -47,6 +49,8 @@ repositories where you can find software relevant to your community. These are
 accessible from the default CVMFS location `/cvmfs` and also linked in your home
 directory `/home/jovyan/cvmfs`. These repositories are available:
 
+<!-- cSpell:disable -->
+
 - atlas-condb.cern.ch
 - atlas.cern.ch
 - auger.egi.eu
@@ -57,8 +61,10 @@ directory `/home/jovyan/cvmfs`. These repositories are available:
 - grid.cern.ch
 - notebooks.egi.eu
 
+<!-- cSpell:enable -->
+
 If you need access to any other repositories, please open a request in
-[GGUS](https://ggus.eu).
+[GGUS](https://helpdesk.ggus.eu).
 
 ## Installing your own kernels/environments permanently
 

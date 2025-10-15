@@ -9,11 +9,11 @@ description: >
 ## Why joining the EGI Cloud?
 
 - To support international communities supported by EGI (e.g.
-  [these research communities and applications](https://www.egi.eu/use-cases/)
+  [research communities and applications](https://www.egi.eu/use-cases/)
   or
-  [these research infrastructures in EOSC-hub](https://eosc-hub.eu/research-communities)
+  [research infrastructures](https://www.egi.eu/publication/egi-support-for-research-infrastructures/)
   or
-  [these business pilots in the EOSC Digital Innovation Hub](https://eosc-hub.eu/digital-innovation-hub).
+  [business pilots in the EOSC Digital Innovation Hub](https://eosc-dih.eu/pilots/).
 - To participate in e-Infrastructure projects (H2020, EOSC) as an EGI compliant
   IaaS cloud provider.
 - To participate in resource allocation and in pay-for-use campaigns run by EGI.
@@ -67,9 +67,9 @@ For the most part daily operations will not change.
 
 A resource centre part of the EGI Federation, and supporting international
 communities, needs to provide support through the EGI channels. This means
-following up [GGUS tickets](https://ggus.eu). This includes requests from user
-communities and tickets triggered by failures detected by the monitoring
-infrastructure.
+following up [GGUS tickets](https://helpdesk.ggus.eu). This includes requests
+from user communities and tickets triggered by failures detected by the
+monitoring infrastructure.
 
 A resource centre needs to maintain the services federated in EGI properly
 configured with the EGI AAI.
@@ -79,7 +79,7 @@ requirements. All the EGI policies aim at implementing service provisioning best
 practices and common requirements. EGI operations may conduct campaigns targeted
 to mitigate security vulnerabilities and to update unsupported operating system
 and software. These activities are part of the regular activities of a resource
-centre anyways (also for the non-federated ones). EGI and the Operations Centres
+centre anyway (also for the non-federated ones). EGI and the Operations Centres
 coordinate these actions in order to have them implemented in a timely manner.
 
 In summary, most of the site activities that are coordinated by EGI and the NGIs

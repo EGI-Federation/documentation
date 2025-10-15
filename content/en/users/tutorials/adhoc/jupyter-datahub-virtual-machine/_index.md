@@ -23,7 +23,7 @@ This tutorial assumes you have:
 - A valid EGI account: learn to can create one in
   [Check-in](../../../aai/check-in/signup).
 - Access to a cloud provider where the
-  [Jupyter DataHub VM is available](https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm).
+  [Jupyter DataHub VM is available](https://registry.egi.eu/harbor/projects/8/repositories/datahub-jupyter).
   Alternatively, this VM can be run on your computer using a virtualisation tool
   like VirtualBox.
 

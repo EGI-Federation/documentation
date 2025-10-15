@@ -92,23 +92,21 @@ UNIV-LILLE
 fedcloud.srce.hr
 ```
 
-The providers also generate dynamic information about their characteristics via
-the Argo Messaging System which is easily browsable from AppDB.
+The providers also generate dynamic information which is accessible through the
+[cloud-info-api](https://is.cloud.egi.eu).
 
 ### How can I choose which site to use?
 
 Sites offer their resources to users through Virtual Organisations (VO). First,
 you need to join a Virtual Organisation that matches your research interests,
-see [authorisation section](../auth) on how VOs work. AppDB shows the supported
-VOs and for each VO you can browse the resource providers that support it.
+see [authorisation section](../auth) on how VOs work.
 
 ### How can I get information about the available VM images?
 
-The [Application Database](https://appdb.egi.eu) contains information about the
-VM images available in the EGI Cloud. Within the AppDB Cloud Marketplace, you
-can look for a VM and get all the information about which VO the VM is
-associated, the sites where the VM is available and the endpoints and
-identifiers to use it in practice.
+The [Artefact Registry](https://registry.egi.eu) contains information about the
+VM images available in the EGI Cloud. A set of predefined images is available
+on every provider. For VO-specific images, check the
+[VM image guide](../images).
 
 ## Managing VMs
 
@@ -117,7 +115,7 @@ identifiers to use it in practice.
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
 device and attaching it to the VM. Check the
-[storage guide](../../../data/storage) for more information.
+[storage guide](../block-storage) for more information.
 
 ### How can I keep my data after the VM is stopped?
 
@@ -206,7 +204,7 @@ openstack server create --flavor <your-flavor> --image <your image> \
 ```
 
 {{% alert title="Note" color="info" %}} We recommend using `cloud-init` for
-contextualisation. EGI images in AppDB do support `cloud-init`. Check the
+contextualisation. EGI images do support `cloud-init`. Check the
 [documentation](https://cloudinit.readthedocs.io/) for more information.
 {{% /alert %}}
 
@@ -241,7 +239,7 @@ or boot your VM in a previous state when you need it back. We list below the
 main strategies you can use:
 
 - Use a volume to store the data to be kept: Check the
-  [Storage section of the documentation](../../../data/storage/block-storage) to
+  [Storage section of the documentation](../block-storage) to
   learn how to use volumes. If you start your VM from a volume, the VM can be
   destroyed and recreated easily. OpenStack documentation cover how to
   [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)

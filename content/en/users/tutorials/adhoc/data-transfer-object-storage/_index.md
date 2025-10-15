@@ -11,18 +11,14 @@ description: >
 ## Overview
 
 This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraphs you will learn how to:
-
-- use the [FTS](#fts-client-usage) command-line client
-- use the [WebFTS](#step-6-web-interface) web interface
-
-to perform data transfers between a Grid storage and object storage or between
-two object storage.
+WebFTS. In the following paragraphs you will learn how to use the FTS
+command-line client to perform data transfers between a Grid storage and object
+storage or between two object storage.
 
 {{% alert title="Warning" color="warning" %}} This procedure has been tested
 with the FTS client 3.11. Older version do not support all the options
 necessary. To install the latest version please add the
-[FTS3 Production](https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo)
+[FTS3 Production](https://fts-repo.web.cern.ch/fts-repo/fts3-el9.repo)
 repository to your configuration and update the client{{% /alert %}}
 
 ## Prerequisites
@@ -31,14 +27,14 @@ As first step please make sure that you have installed the FTS client as
 described in [Data Transfer](../../../data/management/data-transfer), and in
 particular [Clients](../../../data/management/data-transfer/clients) for the
 command-line FTS and to have your certificate installed in your browser to use
-[WebFTS](../../../data/management/data-transfer/webfts) browser based client.
+[WebFTS](../../../data/management/data-transfer) browser based client.
 
 To access services and resources in the
 [EGI Federated Cloud](../../../getting-started), you will need:
 
 - An [EGI Check-in](../../../aai/check-in) account, you can
   [sign up here](../../../aai/check-in/signup)
-- Enrollment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
+- Enrolment into a [Virtual Organisation](../../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
 - An [Object Storage](../../../data/storage/object-storage) for which you need to
   have all the credentials available (any S3 compatible storage should work)
@@ -100,8 +96,8 @@ Where `config.json` is a JSON file with the following content:
 }
 ```
 
-Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
-the object storage. See also the
+Where `ACCESS_KEY` and `SECRET KEY` are the corresponding key necessary to
+access the object storage. See also the
 [S3 Support](https://fts3-docs.web.cern.ch/fts3-docs/docs/s3_support.html#doing-a-transfer)
 pages on the FTS docs pages.
 
@@ -155,16 +151,3 @@ $ fts-transfer-status -d \
   c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
 FINISHED
 ```
-
-### Step 6 Web interface
-
-An alternative way to check the status of the job is to use the FTS web
-interface to see using one the FTS servers and appending the job ID returned
-from one of the previous examples. For instance the link below will show the
-status of the specified job:
-
-```text
-https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-```
-
-![WebFTS credential delegation](CERN-PROD-FTS3.png)

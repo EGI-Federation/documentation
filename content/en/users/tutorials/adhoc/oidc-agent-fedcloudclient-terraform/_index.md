@@ -13,7 +13,7 @@ description: >
 
 This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) to retrieve
-ODIC tokens from [EGI Check-in](../../../aai/check-in),
+OIDC tokens from [EGI Check-in](../../../aai/check-in),
 [fedcloudclient](https://fedcloudclient.fedcloud.eu/) to simplify interacting
 with the [EGI Cloud Compute service](../../../compute/cloud-compute),
 [terraform](https://www.terraform.io) and [Ansible](https://www.ansible.com/) to
@@ -31,18 +31,14 @@ Create an EGI account with [Check-in](../../../aai/check-in/signup).
 Once your EGI account is ready you need to join a
 [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 Here are the steps to
-[join a VO](../../../aai/check-in/joining-virtual-organisation/). Explore the list
-of available VOs in the
+[join a VO](../../../aai/check-in/vos/#how-to-join-a-virtual-organisation).
+Explore the list of available VOs in the
 [Operations Portal](https://operations-portal.egi.eu/vo/a/list). We have a
 dedicated VO called
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 for piloting purposes. If you are not sure about which VO to enrol to, please
 request access to the _vo.access.egi.eu_ VO with your EGI account by visiting
 the [enrolment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu).
-Check [AppDB](https://appdb.egi.eu/store/vo/vo.access.egi.eu) to see the list of
-Virtual Appliances and Resource Providers participating in the
-_vo.access.egi.eu_ VO. AppDB is one of the service in the
-[EGI Architecture](../../../getting-started/architecture/).
 
 > This tutorial will assume you are using `vo.access.egi.eu`, adapt as required
 > for your specific environment.
@@ -131,6 +127,7 @@ ansible
 
 For keeping the main system tidy and isolating the environment, the python
 packages will be installed in a dedicated
+<-- cspell:disable-next-line -->
 [python virtualenv](https://docs.python.org/3/tutorial/venv.html):
 
 ```shell
@@ -157,12 +154,6 @@ possible to get information about the OIDC token accessed via
 # Listing the VO membership related to the OIDC access token
 $ fedcloud token list-vos
 ```
-
-In order to look for sites supporting a particular VO, you can use the
-[EGI Application Database](https://appdb.egi.eu/browse/vos/cloud).
-
-You can retrieve information from the AppDB about the sites supporting the
-[vo.access.egi.eu VO](https://appdb.egi.eu/store/vo/vo.access.egi.eu).
 
 > In the following example, the `IN2P3-IRES` site supporting the
 > `vo.access.egi.eu` VO will be used, see
@@ -297,14 +288,7 @@ public_ip_pool = "ext-net"
 # Flavor: m1.medium
 flavor_id = "ab1fbd4c-324d-4155-bd0f-72f077f0ebce"
 
-# Image for EGI CentOS 7
-# https://appdb.egi.eu/store/vappliance/egi.centos.7
-image_id = "09093c70-f2bb-46b8-a87f-00e2cc0c8542"
-# Image: EGI CentOS 8
-# https://appdb.egi.eu/store/vappliance/egi.centos.8
-# image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
 # Image: EGI Ubuntu 22.04
-# https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
 # image_id = "fc6c83a3-845f-4f29-b44d-2584f0ca4177"
 
 # Security groups
@@ -314,7 +298,7 @@ security_groups  = ["default"]
 #### Creating the main terraform deployment file
 
 To be more reusable, the `main.tf` configuration file is referencing variables
-described in the [vars.tf](#describing-the-terraform-variables) file created
+described in the [`vars.tf`](#describing-the-terraform-variables) file created
 previously, and will take the values from the
 [`$EGI_SITE.tfvars`](#documenting-the-cloud-resources-for-the-selected-site)
 file passed as an argument to the terraform command.
@@ -366,7 +350,7 @@ resource "local_file" "hosts_cfg" {
 ```
 
 The last resource is relying on
-[templatefile](https://www.terraform.io/language/functions/templatefile) to
+[`templatefile`](https://www.terraform.io/language/functions/templatefile) to
 populate the inventory file that will later be used by
 [ansible](#step-4-using-ansible).
 
@@ -531,6 +515,7 @@ and in the
 Additional resources are available, and can help with addressing different use
 cases, or be used as a source of inspiration:
 
+<!-- cspell:disable-next-line -->
 - [egi-qc/deployment-howtos](https://github.com/egi-qc/deployment-howtos):
   Deployment recipes extracted from Jenkins builds for the
   [UMD](https://go.egi.eu/umd) and [CMD](https://go.egi.eu/cmd) products

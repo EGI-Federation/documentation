@@ -23,8 +23,8 @@ advanced Vault features not exposed via other tools.
 To access the EGI Secrets Store service from the command-line you need a valid
 [EGI Check-in](../../../aai/check-in) access token. Get it either from the
 [EGI Check-in Token Portal](https://aai.egi.eu/token), or from the
-**oidc-agent** (see [here](../../../getting-started/cli#authentication) for
-details), then set it to an environment variable:
+**oidc-agent** (see [cli guide](../../../getting-started/cli#authentication)
+for details), then set it to an environment variable:
 
 {{< tabpanex >}} {{< tabx header="Mac / Linux" >}}
 
@@ -181,7 +181,7 @@ $ fedcloud secret get certificate key  > hostkey.pem
 {{% alert title="Note" color="info" %}} The size of the secret object (all the
 values in it) is limited to 512kB, which is sufficient for storing tokens,
 certificates, configuration files and so on. For larger datasets, please use
-[encrypted cloud storage](../../../data/storage/block-storage#storage-encryption).
+[encrypted cloud storage](../../../compute/cloud-compute/block-storage/#storage-encryption).
 {{% /alert %}}
 
 ### Secret values from small binary files
@@ -232,7 +232,7 @@ $ fedcloud secret put certificate @certificate.json \
 To delete values from an existing secret:
 
 ```shell
-$ fedcloud secret get certificate -f json | 
+$ fedcloud secret get certificate -f json |
             jq 'del (.another_cert, .another_key)' \
             > certificate.json
 $ fedcloud secret put certificate @certificate.json
@@ -271,7 +271,7 @@ To add new values to an existing secret:
 To delete values from an existing secret:
 
 ```powershell
-$ fedcloud secret get certificate -f json | ` 
+$ fedcloud secret get certificate -f json | `
             jq 'del (.another_cert, .another_key)' `
             > certificate.json
 $ fedcloud secret put certificate @certificate.json
@@ -558,19 +558,19 @@ variable:
 {{< tabpanex >}} {{< tabx header="Mac / Linux" >}}
 
 ```shell
-$ export VAULT_HOME=/secrets/$(curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H "Authorization: Bearer $OIDC_ACCESS_TOKEN" | jq -r .voperson_id)
+$ export VAULT_HOME=/secrets/users/$(curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H "Authorization: Bearer $OIDC_ACCESS_TOKEN" | jq -r .voperson_id)
 ```
 
 {{< /tabx >}} {{< tabx header="Powershell" >}}
 
 ```powershell
-> $env:VAULT_HOME=/secrets/$(curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H "Authorization: Bearer $env:OIDC_ACCESS_TOKEN" | jq -r .voperson_id)
+> $env:VAULT_HOME=/secrets/users/$(curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H "Authorization: Bearer $env:OIDC_ACCESS_TOKEN" | jq -r .voperson_id)
 ```
 
 {{< /tabx >}} {{< tabx header="Windows" >}}
 
 ```shell
-> for /f "delims=" %a in ('curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H "Authorization: Bearer %OIDC_ACCESS_TOKEN%" ^| jq -r .voperson_id') do set VAULT_HOME="/secrets/%a"
+> for /f "delims=" %a in ('curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H "Authorization: Bearer %OIDC_ACCESS_TOKEN%" ^| jq -r .voperson_id') do set VAULT_HOME="/secrets/users/%a"
 ```
 
 {{< /tabx >}}{{< /tabpanex >}}

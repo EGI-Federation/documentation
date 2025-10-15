@@ -267,7 +267,7 @@ with federated identities.
 #### Obtaining a X509 personal certificate
 
 If you do not already have a X509 personal certificate
-[the EUGridPMA worlmap](https://www.eugridpma.org/members/worldmap/) provides a
+[the EUGridPMA world map](https://www.eugridpma.org/members/worldmap/) provides a
 map of all certification authorities according to the country (or NGI). Select
 your country on the map to find out who is your local CA. Follow the procedure
 of your local CA to request a certificate. When you have received your
@@ -333,7 +333,7 @@ be subscribed to noc-managers mailing list `noc-managers@mailman.egi.eu`.
 Procedures and policies are accessible on the
 [EGI Policies and Procedures space](https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures).
 Additional documentation relevant to EGI operations is available at
-[EGI Documentation](../../../../en).
+[EGI Documentation](/).
 
 ## Tools
 

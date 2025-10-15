@@ -109,8 +109,7 @@ has to select one of the Cloud providers that has been previously added (and not
 disabled) in the `Cloud Credentials` page, then has to select the base image
 used to deploy the VMs. In case of EGI Cloud Compute sites, the user has two
 options: he can select an image from the list of images provided by the
-[EGI AppDB information system](https://appdb.egi.eu/) or from the list provided
-directly by the Cloud site.
+cloud information system or from the list provided directly by the Cloud site.
 
 Other providers will only show a drop-down list with the available images. Only
 in the case of AWS Cloud provider the user has to specify manually the AMI ID of

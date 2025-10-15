@@ -9,6 +9,8 @@ description: >
   Most frequent questions asked about EGI Notebooks
 ---
 
+<-- cSpell:words magics -->
+
 ## How do I install library _X_?
 
 You can install new software easily on the notebooks using `conda` or `pip`. The
@@ -30,7 +32,7 @@ stopped (automatically after 1 hour of inactivity)! {{% /alert %}}
 
 Yes! Just let us know what are your needs. You can contact us via:
 
-- Opening a ticket in the [EGI Helpdesk](https://ggus.eu), or
+- Opening a ticket in the [EGI Helpdesk](https://helpdesk.ggus.eu), or
 - Creating a [GitHub Issue](https://github.com/EGI-Federation/notebooks/issues)
 
 We will analyse your request and get back to you.

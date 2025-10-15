@@ -15,13 +15,15 @@ be kept even if your notebook server is stopped (which can happen if there is no
 activity for more than 1 hour). **Modifications to the notebooks environment
 outside the home directory are not kept** (e.g. installation of libraries). If
 you need those changes to persist, let us know via a
-[GGUS ticket to the Notebooks Support Unit](https://ggus.eu). You can also ask
-for increasing your default home allocation via ticket.
+[GGUS ticket to the Notebooks Support Unit](https://helpdesk.ggus.eu). You can
+also ask for increasing your default home allocation via ticket.
 
 {{% alert title="Note" color="info" %}} Your home directory is backed up daily.
 {{% /alert %}}
 
 ## Import notebooks into your workspace
+
+<!-- cSpell:words nbgitpuller -->
 
 The Notebooks service default environment includes
 [nbgitpuller](https://github.com/jupyterhub/nbgitpuller), an extension to sync a
@@ -50,7 +52,7 @@ with specific drivers that make the DataHub Spaces accessible from any notebook.
 
 Whenever you log into the service, supported DataHub spaces will be available
 under the `datahub` folder. If you need support for any additional space, please
-[open a ticket in GGUS](https://ggus.eu) to add it.
+[open a ticket in GGUS](https://helpdesk.ggus.eu) to add it.
 
 ![Datahub folder](datahub-folder.png)
 
@@ -74,9 +76,9 @@ platform for the long-tail of science.
 Here is how you can get them synchronised. First, make sure
 [you have access to B2DROP](https://b2drop.eudat.eu/). Then, configure
 `app username` and `app password` on B2DROP's
-[security settings](https://b2drop.eudat.eu/settings/user/security). Now, back
-to EGI Notebooks, click on the `B2DROP connection` drop-down menu when you start
-your session:
+[security settings](https://eudat.eu/services/userdoc/b2drop#UserDocumentation-B2DROPUsage-WebDavclient).
+Now, back to EGI Notebooks, click on the `B2DROP connection` drop-down
+menu when you start your session:
 
 ![EGI Notebook Session](notebooks-b2drop-1.png)
 

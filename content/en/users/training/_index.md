@@ -55,36 +55,26 @@ latter basically behaving like a virtual USB drive that can be
 attached/detached to VMs to provide data and storage space for
 applications.
 
-The AppDB has a growing catalogue of Virtual Appliances that includes
-both basic applications (e.g. latest version of clean Linux
-distribution) and more specialised applications (e.g. Jupyter Notebook).
-The list of VAs available on the training infrastructure is configurable
-and listed in the [training.egi.eu VO entry of
-AppDB](https://appdb.egi.eu/store/vo/training.egi.eu).
+The [Artefact Registry](../compute/cloud-compute/images/) has a
+list of Virtual Appliances ready to use with popular Linux
+distributions, but more can be added upon demand.
 
 [Infrastructure Manager Dashboard](../compute/orchestration/im/dashboard/)
 can be used as web interface for both trainers and students to deploy
-and manage VMs.
+and manage Virtual Machines.
 
 ## Available resources
 
-The available resources are offered by a set of providers included in
-the [training.egi.eu VO Operation Level Agreement
-(OLA)](https://documents.egi.eu/document/2768). Check the document for
-the exact amount of resources and conditions of access for each
-provider.
+The available resources are an in-kind contribution from cloud providers
+in the EGI Federated Cloud: [CESNET](https://www.egi.eu/partner/cesnet/),
+[IISAS](https://www.egi.eu/partner/iisas/), and
+[IFCA-CSIC](https://www.egi.eu/partner/csic/).
 
 {{% alert title="Join the training infrastructure!" color="info" %}}
 
-Do you want to join as a resource provider? Please email at
+Do you want to join as a cloud provider? Please email at
 `support <at> egi.eu`.
 {{% /alert %}}
-
-The list of providers and VAs is also discoverable in the
-[training.egi.eu VO entry of
-AppDB](https://appdb.egi.eu/store/vo/training.egi.eu). The VO is also
-described at the [EGI Operations Portal training.egi.eu VO id
-card](https://operations-portal.egi.eu/vo/view/voname/training.egi.eu).
 
 ## Booking the infrastructure
 
