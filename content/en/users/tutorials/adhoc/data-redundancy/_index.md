@@ -155,7 +155,7 @@ rm -f "${LOCAL_IMAGE_FILE}"
 
 ### Step 3: Automate Snapshot Replication with a Script
 
-On the source migration instance create a script file to combine all the above steps, for example, `~/replicate_vm_snapshot.sh`
+On the source migration instance, create a script file to combine all the above steps, for example, `~/replicate_vm_snapshot.sh`
 # Ensure INSTANCE_ID and other critical variables are correctly set within the script itself or loaded from a config file.
 
 Make the script executable:
@@ -171,7 +171,7 @@ Test the script manually:
 
 Check the ~/snapshot_replication.log file for output.
 
-Add the script to Cron Edit the crontab on the *source migration instance*:
+Add the script to Cron. Edit the crontab on the *source migration instance*:
 
 ```sh
 crontab -e
@@ -209,7 +209,7 @@ federated cloud.
 MinIO is available in FedCloud with different deployment options:
 
 - **Preconfigured Virtual Machines** using Infrastructure Manager.
-- **Helm chart deployment in Kubernetes**, with CESNET's Rancher enabling easy setup with just a few clicks.
+- **Helm chart deployment in Kubernetes**, with [Cloud Container Compute](https://docs.egi.eu/users/compute/cloud-compute/), enabling easy setup with just a few clicks.
 
 ### Prerequisites
 
