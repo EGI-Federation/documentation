@@ -223,7 +223,7 @@ To configure MinIO for redundancy, follow these steps:
 
 #### Step 1: Access the MinIO Web Interface
 
-- Open your browser and navigate to `http://<minio_host>:9001`.
+- Open your browser and navigate to `https://<minio_host>:9001`.
 - Log in with your MinIO credentials (admin username and password).
 
 #### Step 2: Create Buckets
