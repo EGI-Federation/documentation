@@ -107,6 +107,14 @@ SNAPSHOT_ID=$(openstack server image create \
   "${INSTANCE_ID}" \
   -f value -c id)
 
+echo "Wait until the snapshot becomes active"
+STATUS=$(openstack image show "${SNAPSHOT_ID}" -f value -c status)
+while [ "${STATUS}" != "active" ]; do
+    echo "Waiting for snapshot to become active..."
+    sleep 10
+    STATUS=$(openstack image show "${SNAPSHOT_ID}" -f value -c status)
+done
+
 if [ -z "$SNAPSHOT_ID" ]; then
   echo "Error: Failed to create snapshot. SNAPSHOT_ID is empty."
   exit 1
