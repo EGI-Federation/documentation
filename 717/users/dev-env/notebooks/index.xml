@@ -244,11 +244,6 @@ authorization. The response contains information about the user.&lt;/p>
 authorising users. These are short-lived (normally less than 1-hour) and need to
 be renewed for longer usage. With EGI Notebooks, you can get a ready-to-use
 token at any time.&lt;/p>
-&lt;p>Whenever you start your session, you can select whether to automatically mount
-or not your token in your server. Default is &lt;strong>not&lt;/strong> to mount it, so if the
-server is &lt;a href="../sharing">shared for collaborative access&lt;/a>, this token won&amp;rsquo;t be
-accessible for other users. Only select yes when you will not share the server!&lt;/p>
-&lt;p>&lt;img src="notebooks-token-mount.png" alt="token mount selection">&lt;/p>
 &lt;p>You can obtain a new token at any time with the JupyterLab extension available
 from the Jupyter Lab interface. You have two options:&lt;/p>
 &lt;ol>
@@ -333,77 +328,7 @@ sample:&lt;/p>
 &lt;h2 id="other-third-party-services">Other third-party services&lt;/h2>
 &lt;p>We are open for integration with other services that may be relevant for your
 research. Please contact &lt;code>support &amp;lt;at&amp;gt; egi.eu&lt;/code> with your request so we can
-investigate the best way to support your needs.&lt;/p></description></item><item><title>Users: Sharing and Real Time Collaboration</title><link>/users/dev-env/notebooks/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/sharing/</guid><description>
-&lt;p>User-initiated sharing is a mechanism allowing users to share access to their
-Jupyter server with other users via the Jupyterhub user sharing API. EGI
-Notebooks provide you this feature via user sharing menu.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-By allowing other users to access your server, you also allow them to access the
-files present on your Jupyter server. &lt;strong>Do not&lt;/strong> store any secrets on your server if
-you are planning to share it!
-&lt;/div>
-&lt;h2 id="sharing-access">Sharing access&lt;/h2>
-&lt;h3 id="creating-an-invitation">Creating an invitation&lt;/h3>
-&lt;p>The User sharing menu can be opened from the top bar, click on
-&lt;strong>User sharing -&amp;gt; Open user sharing menu&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="notebooks-user-sharing.png" alt="user sharing menu">&lt;/p>
-&lt;p>With the user sharing menu window opened, you can now generate invite links and
-share them with other users.&lt;/p>
-&lt;p>&lt;img src="notebooks-user-sharing-window.png" alt="user sharing window">&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;ul>
-&lt;li>Each link is valid only &lt;strong>1 hour&lt;/strong>&lt;/li>
-&lt;li>The link can be used by &lt;strong>multiple&lt;/strong> users to get an access to your server&lt;/li>
-&lt;li>Only users &lt;strong>with access to the EGI Notebooks service&lt;/strong> can access your server&lt;/li>
-&lt;li>Once all users you want to share access with are connected to your server, you
-can revoke the validity of the generated link by clicking on the button
-&lt;strong>Revoke all share links&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;p>Once the invited user has accepted an invitation and authorized access, you can
-start collaborating on the same server.&lt;/p>
-&lt;h3 id="accepting-an-invitation">Accepting an invitation&lt;/h3>
-&lt;p>If you receive a link for getting access to an existing Notebook server, you
-will be asked to accept the sharing invitation&lt;/p>
-&lt;p>&lt;img src="notebooks-accept-sharing.png" alt="Accept sharing invitation">&lt;/p>
-&lt;p>and then a request to Authorize access:&lt;/p>
-&lt;p>&lt;img src="notebooks-authorize-access.png" alt="Authorize access">&lt;/p>
-&lt;p>Once you accept and authorize, you will be able to collaborate on the existing server.&lt;/p>
-&lt;h3 id="managing-invitations">Managing invitations&lt;/h3>
-&lt;p>You can see IDs of all users who accepted your invitation and the time when they did
-from the User sharing menu. Click the Refresh button or re-open the user sharing
-menu window to get an updated view.&lt;/p>
-&lt;p>&lt;img src="notebooks-user-sharing-list.png" alt="user sharing user list">&lt;/p>
-&lt;p>Click on the corresponding &lt;strong>Revoke&lt;/strong> button to revoke access for a specific
-user or click on &lt;strong>Revoke All users&lt;/strong> to revoke access for all users.&lt;/p>
-&lt;p>Other users access will last until you stop your server. At the start of each new session,
-all granted access will be revoked.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;ul>
-&lt;li>
-&lt;p>Even after revoking, invited users can &lt;strong>still&lt;/strong> be on your running server for
-some time before the Jupyter server prevents them from more access. Therefore,
-if you wish to see changes immediately, you have to open the top bar menu
-&lt;strong>File -&amp;gt; Hub Control Panel&lt;/strong> and then &lt;strong>stop&lt;/strong> your server.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Also remember that generated invitation links can still be used to get access
-to your server until they expire or you revoke them.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;h2 id="real-time-collaboration">Real-time collaboration&lt;/h2>
-&lt;p>Real-time collaboration(RTC) allows you to leverage the power of user-initiated
-sharing to see each other&amp;rsquo;s edits in real time.&lt;/p>
-&lt;p>You should see on the top-right corner of your Jupyter Lab your user initial.&lt;/p>
-&lt;p>&lt;img src="notebooks-rtc-corner.png" alt="user RTC corner">&lt;/p>
-&lt;p>Whenever other users access your server you will see the details in the extension
-panel on the left of the Jupyter Lab interface. Now you can see users collaborating
-with you on your server and changes from other users will be shown in real time:&lt;/p>
-&lt;p>&lt;img src="notebooks-rtc-sharing.png" alt="RTC sharing">&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/dev-env/notebooks/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/faq/</guid><description>
+investigate the best way to support your needs.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/dev-env/notebooks/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/faq/</guid><description>
 &lt;p>&amp;lt;&amp;ndash; cSpell:words magics &amp;ndash;&amp;gt;&lt;/p>
 &lt;h2 id="how-do-i-install-library-_x_">How do I install library &lt;em>X&lt;/em>?&lt;/h2>
 &lt;p>You can install new software easily on the notebooks using &lt;code>conda&lt;/code> or &lt;code>pip&lt;/code>. The
