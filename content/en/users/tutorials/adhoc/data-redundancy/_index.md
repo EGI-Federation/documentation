@@ -156,7 +156,7 @@ rm -f "${LOCAL_IMAGE_FILE}"
 ### Step 3: Automate Snapshot Replication with a Script
 
 On the source migration instance, create a script file to combine all the above steps, for example, `~/replicate_vm_snapshot.sh`
-# Ensure INSTANCE_ID and other critical variables are correctly set within the script itself or loaded from a config file.
+Ensure INSTANCE_ID and other critical variables are correctly set within the script itself or loaded from a config file.
 
 Make the script executable:
 
