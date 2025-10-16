@@ -1650,7 +1650,7 @@ federated cloud.&lt;/p>
 &lt;p>To configure MinIO for redundancy, follow these steps:&lt;/p>
 &lt;h4 id="step-1-access-the-minio-web-interface">Step 1: Access the MinIO Web Interface&lt;/h4>
 &lt;ul>
-&lt;li>Open your browser and navigate to &lt;code>http://&amp;lt;minio_host&amp;gt;:9001&lt;/code>.&lt;/li>
+&lt;li>Open your browser and navigate to &lt;code>https://&amp;lt;minio_host&amp;gt;:9001&lt;/code>.&lt;/li>
 &lt;li>Log in with your MinIO credentials (admin username and password).&lt;/li>
 &lt;/ul>
 &lt;h4 id="step-2-create-buckets">Step 2: Create Buckets&lt;/h4>
