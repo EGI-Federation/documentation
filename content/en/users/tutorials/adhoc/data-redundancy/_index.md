@@ -157,8 +157,14 @@ On the source migration instance:
 ```sh
 echo "Cleaning up local image file: ${LOCAL_IMAGE_FILE}"
 rm -f "${LOCAL_IMAGE_FILE}"
-# Optional: Consider a strategy for deleting old snapshots on the source OpenStack to save space.
-# openstack image delete OLD_SNAPSHOT_NAME_OR_ID
+# --- Optional, cleanup old snapshots on source ---
+MAX_KEEP=3  # keep only the last 3 snapshots
+OLD_SNAPS=$(openstack image list --name "${BASE_SNAPSHOT_NAME}-*" -f value -c ID -c Created | sort -k2 | head -n -$MAX_KEEP | awk '{print $1}')
+
+for SNAP in $OLD_SNAPS; do
+    echo "Deleting old snapshot $SNAP"
+    openstack image delete "$SNAP"
+done
 ```
 
 ### Step 3: Automate Snapshot Replication with a Script
