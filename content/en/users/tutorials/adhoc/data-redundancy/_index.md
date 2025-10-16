@@ -131,15 +131,15 @@ rsync -avz --progress "${LOCAL_IMAGE_FILE}" "${DESTINATION_USER}@${DESTINATION_H
 On the destination migration instance:
 
 ```sh
-echo 'Sourcing OpenStack RC file on destination: ${DESTINATION_OPENRC_PATH}'
-source '${DESTINATION_OPENRC_PATH}'
+echo "Sourcing OpenStack RC file on destination: '${DESTINATION_OPENRC_PATH}'"
+source "${DESTINATION_OPENRC_PATH}"
 
-echo 'Creating image from transferred file: ${REMOTE_IMAGE_FILE}'
+echo "Creating image from transferred file: '${REMOTE_IMAGE_FILE}'"
 openstack image create \\
-  --file '${REMOTE_IMAGE_FILE}' \\
+  --file "${REMOTE_IMAGE_FILE}" \\
   --disk-format qcow2 \\
   --container-format bare \\
-  '${SNAPSHOT_NAME_WITH_DATE}'
+  "${SNAPSHOT_NAME_WITH_DATE}"
 ```
 
 #### 2.5 Cleanup (Source)
