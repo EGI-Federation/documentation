@@ -150,6 +150,19 @@ openstack image create \\
   "${SNAPSHOT_NAME_WITH_DATE}"
 ```
 
+Cleanup old snapshots on destination (optional)
+
+```sh
+ssh "${DESTINATION_USER}@${DESTINATION_HOST}" bash -c "'
+MAX_KEEP=3
+OLD_SNAPS=\$(openstack image list --name \"${BASE_SNAPSHOT_NAME}-*\" -f value -c ID -c Created | sort -k2 | head -n -\$MAX_KEEP | awk \"{print \$1}\")
+for SNAP in \$OLD_SNAPS; do
+    echo \"Deleting old snapshot \$SNAP on destination\"
+    openstack image delete \"\$SNAP\"
+done
+"'
+```
+
 #### 2.5 Cleanup (Source)
 
 On the source migration instance:
