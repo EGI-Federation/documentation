@@ -45,6 +45,7 @@ megalinter
 mytoken
 mytokens
 newkey
+openrc
 Oneclient
 Oneclients
 Onedata
