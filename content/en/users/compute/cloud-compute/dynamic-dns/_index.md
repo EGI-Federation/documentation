@@ -95,13 +95,16 @@ removing the hostname once the infrastructure is destroyed.
 
 ## Wildcard hosts
 
-For some use cases, it's convenient for all hosts within a given subdomain to
-resolve to the same IP. For example, if the hostname of the head node of a
-kubernetes cluster is `kubernetes.fedcloud.eu`, all services on the cluster can
-have the same IP (e.g. `dashboard.kubernetes.fedcloud.eu`,
-`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`), so the routing of
-the requests is managed at the cluster level by using an ingress or gateway
-object.
+For certain use cases, it is desirable for all hosts within a specific subdomain
+to resolve to the same IP address. For example, if the head node of a Kubernetes
+cluster is accessible at `kubernetes.fedcloud.eu`, all services within the
+cluster can share the same IP and be represented using a wildcard entry
+`*.kubernetes.fedcloud.eu` (e.g. `dashboard.kubernetes.fedcloud.eu`,
+`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`). In this setup,
+request routing is handled internally by the cluster, typically through an
+Ingress or Gateway resource.
+
+![wildcard-example.png](wildcard-example.png)
 
 This kind of names can be registered using the [API calls](#api) as described
 below.
