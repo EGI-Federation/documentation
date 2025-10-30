@@ -379,6 +379,89 @@ Sample response:
 }
 ```
 
+---
+
+### Unregister Host
+
+Removes a previously registered host from the specified domain. The response
+confirms whether the unregistration was successful or if an error occurred.
+
+---
+
+#### **Endpoint**
+
+##### **Option 1**
+
+```http
+GET {{API_BASE_URL}}/nic/unregister?fqdn={{NAME}}.{{DOMAIN}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+##### **Parameters**
+
+| Name   | Type   | Required | Description                                                                                                                                                      |
+|--------|--------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to unregister, in the format `NAME.DOMAIN`,<br/> where `NAME` is the host name and `DOMAIN` is the parent domain. |
+
+##### **Option 2**
+
+```http
+GET {{API_BASE_URL}}/nic/unregister?name={{NAME}}&domain={{DOMAIN}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+##### **Parameters**
+
+| Name     | Type   | Required | Description                                |
+|----------|--------|----------|--------------------------------------------|
+| `name`   | string | ✅ Yes    | Name of the host to unregister.            |
+| `domain` | string | ✅ Yes    | Domain under which the host is registered. |
+
+---
+
+#### **Sample Response**
+
+```json
+{
+  "status": "ok",
+  "message": "Host unregistered.",
+  "host": {
+    "fqdn": "test.vm.fedcloud.eu",
+    "name": "test",
+    "domain": "vm.fedcloud.eu",
+    "wildcard": false,
+    "comment": "host for testing purposes"
+  }
+}
+```
+
+---
+
+#### **Response Fields**
+
+| Field     | Type   | Description                                                                                      |
+|-----------|--------|--------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
+| `message` | string | Human-readable message summarizing the result.                                                   |
+| `host`    | object | Contains details of the unregistered host.                                                       |
+
+---
+
+##### **`host` Object**
+
+| Field      | Type    | Description                                                  |
+|------------|---------|--------------------------------------------------------------|
+| `fqdn`     | string  | Fully qualified domain name (FQDN) of the unregistered host. |
+| `name`     | string  | Name of the unregistered host.                               |
+| `domain`   | string  | Domain under which the host was registered.                  |
+| `wildcard` | boolean | Indicates whether a wildcard entry was enabled for the host. |
+| `comment`  | string  | Optional comment associated with the host.                   |
+
+---
+
+
+---
+
 ## Security
 
 - For updating IP address, only hostname and its secret are needed. No user
