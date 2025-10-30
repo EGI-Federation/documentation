@@ -99,10 +99,11 @@ For certain use cases, it is desirable for all hosts within a specific subdomain
 to resolve to the same IP address. For example, if the head node of a Kubernetes
 cluster is accessible at `kubernetes.fedcloud.eu`, all services within the
 cluster can share the same IP and be represented using a wildcard entry
-`*.kubernetes.fedcloud.eu` (e.g. `dashboard.kubernetes.fedcloud.eu`,
-`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`). In this setup,
-request routing is handled internally by the cluster, typically through an
-Ingress or Gateway resource.
+`*.kubernetes.fedcloud.eu`, where `*` stands for any of the
+services; e.g. `dashboard.kubernetes.fedcloud.eu`,
+`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`. In such setup,
+request routing is handled internally by the cluster, typically through
+an Ingress or Gateway resource.
 
 ![wildcard-example.png](wildcard-example.png)
 
