@@ -173,8 +173,9 @@ Returns a JSON object containing two arrays:
       "available": true,
       "comment": "Domain for production services in EOSC-SIESTA project",
       "owner": "root"
-    },
     }
+  ]
+}
 ```
 
 ---
