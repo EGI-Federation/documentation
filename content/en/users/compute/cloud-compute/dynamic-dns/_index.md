@@ -578,11 +578,11 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 #### **Response Fields**
 
-| Field     | Type   | Description                                                                                        |
-|-----------|--------|----------------------------------------------------------------------------------------------------|
-| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure).   |
-| `message` | string | Present only in failed responses; provides a human-readable explanation of the error.              |
-| `secret`  | string | Presents only in successful responses; provides the newly generated secret for the specified host. |
+| Field     | Type   | Description                                                                                               |
+|-----------|--------|-----------------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure).          |
+| `message` | string | Present only in failed responses; provides a human-readable explanation of the error.                     |
+| `secret`  | string | Presents only in successful responses; provides the newly generated update secret for the specified host. |
 
 ---
 
