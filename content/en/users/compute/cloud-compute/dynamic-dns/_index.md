@@ -202,34 +202,32 @@ was successful or if an error occurred.
 
 ---
 
-#### **Endpoint 1**
+#### **Endpoint**
+
+##### **Option 1**
 
 ```http
 GET {{API_BASE_URL}}/nic/register?fqdn={{NAME}}.{{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
----
+##### **Parameters**
 
-#### **Parameters**
+| Name       | Type    | Required | Description                                                                                                                                                    |
+|------------|---------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register, in the format `NAME.DOMAIN`,<br/> where `NAME` is the host name and `DOMAIN` is the parent domain. |
+| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                                                               |
+| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default)                                    |
+| `comment`  | string  | No       | Optional comment or description for the host.                                                                                                                  |
 
-| Name       | Type    | Required | Description                                                                                                                                               |
-|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register, in the format `NAME.DOMAIN`, where `NAME` is the host name and `DOMAIN` is the parent domain. |
-| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                                                          |
-| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default)                               |
-| `comment`  | string  | No       | Optional comment or description for the host.                                                                                                             |
-
----
-
-#### **Endpoint 2**
+##### **Option 2**
 
 ```http
 GET {{API_BASE_URL}}/nic/register?name={{NAME}}&domain={{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-#### **Parameters**
+##### **Parameters**
 
 | Name       | Type    | Required | Description                                                                                                                 |
 |------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
