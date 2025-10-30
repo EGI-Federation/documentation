@@ -330,28 +330,32 @@ where:
 - `myip` in the parameter string if omitted, the IP address of the client
   performing the GET request will be used
 
-### Lists hosts
+---
 
-This API lists all the registered hosts by a given user:
+### List Hosts
 
-```plain
-GET /nic/hosts
-Authorization: Bearer {{access_token}}
+Retrieves all hosts registered by the authenticated user. Optionally, you can filter hosts by a specific domain.
+
+---
+
+#### **Endpoint**
+
+```http
+GET {{API_BASE_URL}}/nic/hosts?domain={{DOMAIN}}
+Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-or:
+---
 
-```plain
-GET /nic/hosts?domain={{domain}}
-Authorization: Bearer {{access_token}}
-```
+#### **Parameters**
 
-where:
+| Name     | Type   | Required | Description                                                                                     |
+|----------|--------|----------|-------------------------------------------------------------------------------------------------|
+| `domain` | string | No       | Optional domain to filter the hosts. If omitted, all hosts registered by the user are returned. |
 
-- `domain` is the domain to list hosts for
-- `access_token` is a valid Check-in access token
+---
 
-Sample response:
+#### **Sample Response**
 
 ```json
 {
@@ -378,6 +382,39 @@ Sample response:
   ]
 }
 ```
+
+---
+
+#### **Response Fields**
+
+| Field     | Type   | Description                                                                                      |
+|-----------|--------|--------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
+| `message` | string | Present only in failed responses; provides a human-readable explanation of the error.            |
+| `hosts`   | array  | Presents only in successful responses; provides a list of host objects registered by the user.   |
+
+---
+
+##### **`hosts` Object**
+
+| Field              | Type              | Description                                                 |
+|--------------------|-------------------|-------------------------------------------------------------|
+| `fqdn`             | string            | Fully qualified domain name of the host.                    |
+| `name`             | string            | Name of the host.                                           |
+| `domain`           | string            | Domain under which the host is registered.                  |
+| `wildcard`         | boolean           | Indicates whether a wildcard entry is enabled for the host. |
+| `comment`          | string            | Optional comment associated with the host.                  |
+| `available`        | boolean           | Indicates if the host is active and reachable.              |
+| `client_faults`    | integer           | Number of client-related errors recorded.                   |
+| `server_faults`    | integer           | Number of server-related errors recorded.                   |
+| `abuse_blocked`    | boolean           | Whether the host has been blocked due to abuse reports.     |
+| `abuse`            | boolean           | Indicates if the host is currently flagged for abuse.       |
+| `last_update_ipv4` | string (ISO 8601) | Timestamp of the last IPv4 update.                          |
+| `tls_update_ipv4`  | boolean           | Indicates if a TLS update is pending for the IPv4 record.   |
+| `ipv4`             | string            | The assigned IPv4 address.                                  |
+| `last_update_ipv6` | string (ISO 8601) | Timestamp of the last IPv6 update, or `null` if none.       |
+| `tls_update_ipv6`  | boolean           | Indicates if a TLS update is pending for the IPv6 record.   |
+| `ipv6`             | string \| null    | The assigned IPv6 address, or `null` if none.               |
 
 ---
 
