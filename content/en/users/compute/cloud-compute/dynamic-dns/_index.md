@@ -114,6 +114,18 @@ below.
 
 ## API
 
+## Table of Contents
+
+- [API](#api)
+  - [Authorization](#authorization)
+- [List domains](#list-domains)
+- [Register host](#register-host)
+- [Update DNS record](#update-dns-record)
+- [List hosts](#list-hosts)
+- [Unregister host](#unregister-host)
+- [Generate update secret](#generate-update-secret)
+
+
 The API is accessible via the `API_BASE_URL` endpoint
 (e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
 for domain management and related operations.
