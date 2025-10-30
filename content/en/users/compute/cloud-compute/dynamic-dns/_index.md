@@ -218,18 +218,18 @@ was successful or if an error occurred.
 ##### **Option 1**
 
 ```http
-GET {{API_BASE_URL}}/nic/register?fqdn={{NAME}}.{{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
+GET {{API_BASE_URL}}/nic/register?fqdn={{HOSTNAME}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
 ##### **Parameters**
 
-| Name       | Type    | Required | Description                                                                                                                                                    |
-|------------|---------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register, in the format `NAME.DOMAIN`,<br/> where `NAME` is the host name and `DOMAIN` is the parent domain. |
-| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                                                               |
-| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default)                                    |
-| `comment`  | string  | No       | Optional comment or description for the host.                                                                                                                  |
+| Name       | Type    | Required | Description                                                                                                                 |
+|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
+| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register.                                                                 |
+| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                            |
+| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
+| `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
 
 ##### **Option 2**
 
@@ -475,15 +475,15 @@ confirms whether the unregistration was successful or if an error occurred.
 ##### **Option 1**
 
 ```http
-GET {{API_BASE_URL}}/nic/unregister?fqdn={{NAME}}.{{DOMAIN}}
+GET {{API_BASE_URL}}/nic/unregister?fqdn={{HOSTNAME}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
 ##### **Parameters**
 
-| Name   | Type   | Required | Description                                                                                                                                                      |
-|--------|--------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to unregister, in the format `NAME.DOMAIN`,<br/> where `NAME` is the host name and `DOMAIN` is the parent domain. |
+| Name   | Type   | Required | Description                                                   |
+|--------|--------|----------|---------------------------------------------------------------|
+| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to unregister. |
 
 ##### **Option 2**
 
@@ -551,7 +551,7 @@ The secret can be used for authenticated dynamic updates to the host’s IP reco
 #### **Endpoint**
 
 ```http
-GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{NAME}}.{{DOMAIN}}
+GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{HOSTNAME}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
@@ -559,9 +559,9 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 #### **Parameters**
 
-| Name   | Type   | Required | Description                                                                                                   |
-|--------|--------|----------|---------------------------------------------------------------------------------------------------------------|
-| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret, in the format `NAME.DOMAIN`. |
+| Name   | Type   | Required | Description                                                                      |
+|--------|--------|----------|----------------------------------------------------------------------------------|
+| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret. |
 
 ---
 
