@@ -111,6 +111,10 @@ below.
 
 ## API
 
+The API is accessible via the `{{API_BASE_URL}}` endpoint
+(e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
+for domain management and related operations.
+
 ### List domains
 
 List available domains for your user:
