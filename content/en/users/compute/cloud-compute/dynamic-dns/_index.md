@@ -118,16 +118,29 @@ for domain management and related operations.
 
 ### List domains
 
-List available domains for your user:
+Retrieves all private domains owned by the authenticated user, as well as
+all available public domains.
+
+#### Endpoint
 
 ```plain
-GET /nic/domains
+GET {{API_BASE_URL}}/nic/domains
 Authorization: Bearer {{access_token}}
 ```
 
-where `access_token` is a valid Check-in access token.
+#### Parameters
 
-Sample response:
+- `access_token` — a valid Check-in access token to be included in the
+Authorization header for authentication.
+
+#### Response
+
+Returns a JSON object containing two arrays:
+
+- `private` — domains owned by the requesting user.
+- `public` — public domains available for use.
+
+#### Sample response
 
 ```json
 {
@@ -150,6 +163,30 @@ Sample response:
     },
 }
 ```
+
+#### Domain Fields Description
+
+When listing domains via the API, each domain object (private or public)
+includes the following fields:
+
+- **`name`** — The fully qualified domain name (FQDN) of the domain.
+  Example: `cloud.ai4eosc.eu`.
+
+- **`public`** — A boolean value indicating whether the domain is public (`true`)
+  or private (`false`). Public domains are available for multiple users, whereas
+  private domains are owned exclusively by the requesting user.
+
+- **`available`** — A boolean value that indicates whether the domain is available
+  for use. `true` means the domain can be used for registration of new hosts,
+  `false` indicates it is already in use, reserved, or otherwise restricted from
+  further host registrations.
+
+- **`comment`** — A short description or annotation about the domain. It is typically
+  used to provide context, e.g., `"Domain for stable services in AI4EOSC project"`.
+
+- **`owner`** — The username of the domain owner. For private domains, this is the
+  authenticated user who requested the list. For public domains, this indicates
+  the account responsible for the domain.
 
 ### Register host
 
