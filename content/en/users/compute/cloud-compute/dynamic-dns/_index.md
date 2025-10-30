@@ -110,37 +110,50 @@ an Ingress or Gateway resource.
 This kind of names can be registered using the [API calls](#api) as described
 below.
 
+---
+
 ## API
 
-The API is accessible via the `{{API_BASE_URL}}` endpoint
+The API is accessible via the `API_BASE_URL` endpoint
 (e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
 for domain management and related operations.
+
+---
+
+### Authorization
+
+All API requests require a valid `ACCESS_TOKEN`. This token must be included
+in the HTTP request `Authorization` header using the `Bearer` scheme for
+authentication.
+
+---
 
 ### List domains
 
 Retrieves all private domains owned by the authenticated user, as well as
 all available public domains.
 
-#### Endpoint
+---
 
-```plain
+#### **Endpoint**
+
+```http
 GET {{API_BASE_URL}}/nic/domains
-Authorization: Bearer {{access_token}}
+Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-#### Parameters
+---
 
-- `access_token` — a valid Check-in access token to be included in the
-Authorization header for authentication.
-
-#### Response
+#### **Response**
 
 Returns a JSON object containing two arrays:
 
-- `private` — domains owned by the requesting user.
-- `public` — public domains available for use.
+- `private` — Domains owned by the requesting user.
+- `public` — Public domains available for use.
 
-#### Sample response
+---
+
+#### **Sample response**
 
 ```json
 {
@@ -161,65 +174,73 @@ Returns a JSON object containing two arrays:
       "comment": "Domain for production services in EOSC-SIESTA project",
       "owner": "root"
     },
-}
+    }
 ```
 
-#### Domain Fields Description
+---
 
-When listing domains via the API, each domain object (private or public)
-includes the following fields:
+#### **Domain Fields Description**
 
-- **`name`** — The fully qualified domain name (FQDN) of the domain.
-  Example: `cloud.ai4eosc.eu`.
+Each domain object (private or public) includes the following fields:
 
-- **`public`** — A boolean value indicating whether the domain is public (`true`)
-  or private (`false`). Public domains are available for multiple users, whereas
-  private domains are owned exclusively by the requesting user.
+| Field       | Type    | Description                                                                                                                                                                                  |
+|-------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `name`      | string  | The fully qualified domain name (FQDN) of the domain. Example: `cloud.ai4eosc.eu`.                                                                                                           |
+| `public`    | boolean | Indicates whether the domain is public (`true`) or private (`false`). Public domains are available for multiple users, whereas private domains are owned exclusively by the requesting user. |
+| `available` | boolean | Indicates whether the domain is available for new host registrations. `true` means the domain can be used; `false` means it is in use, reserved, or restricted.                              |
+| `comment`   | string  | A short description or annotation about the domain. Typically provides context or usage information.                                                                                         |
+| `owner`     | string  | The username of the domain owner. For public domains, this is the account responsible for the domain.                                                                                        |
 
-- **`available`** — A boolean value that indicates whether the domain is available
-  for use. `true` means the domain can be used for registration of new hosts,
-  `false` indicates it is already in use, reserved, or otherwise restricted from
-  further host registrations.
+---
 
-- **`comment`** — A short description or annotation about the domain. It is typically
-  used to provide context, e.g., `"Domain for stable services in AI4EOSC project"`.
+### Register Host
 
-- **`owner`** — The username of the domain owner. For private domains, this is the
-  authenticated user who requested the list. For public domains, this indicates
-  the account responsible for the domain.
+This endpoint registers a host in the specified domain, optionally setting a
+wildcard and adding a comment. The response confirms whether the registration
+was successful or if an error occurred.
 
-### Register host
+---
 
-You can register a new hostname with a call to `/nic/register` either by:
+#### **Endpoint 1**
 
-- specifying `name` and `domain` (both mandatory):
+```http
+GET {{API_BASE_URL}}/nic/register?fqdn={{NAME}}.{{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
 
-  ```plain
-  GET /nic/register?name={{host_name}}&domain={{domain}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
-  Authorization: Bearer {{access_token}}
-  ```
+---
 
-  where:
-  - `host_name` is the name of the host to register
-  - `domain` is the domain where to register the host
-  - `comment` is a comment to add to the host
-  - `wildcard` is whether this is a wildcard name or not (default `false`)
-  - `access_token` is a valid Check-in access token
+#### **Parameters**
 
-- or by specifying the `fqdn` (also mandatory):
+| Name       | Type    | Required | Description                                                                                                                                               |
+|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register, in the format `NAME.DOMAIN`, where `NAME` is the host name and `DOMAIN` is the parent domain. |
+| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                                                          |
+| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default)                               |
+| `comment`  | string  | No       | Optional comment or description for the host.                                                                                                             |
 
-  ```plain
-  GET /nic/register?fqdn={{fqdn_of_host}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
-  Authorization: Bearer {{access_token}}
-  ```
+---
 
-  where:
-  - `fqdn_of_host` is fqdn of the host to register
-  - `comment` is a comment to add to the host
-  - `wildcard` is whether this is a wildcard name or not (default `false`)
-  - `access_token` is a valid Check-in access token
+#### **Endpoint 2**
 
-Response will be a json as follows:
+```http
+GET {{API_BASE_URL}}/nic/register?name={{NAME}}&domain={{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+#### **Parameters**
+
+| Name       | Type    | Required | Description                                                                                                                 |
+|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
+| `name`     | string  | ✅ Yes    | Name of the host to register.                                                                                               |
+| `domain`   | string  | ✅ Yes    | Domain under which the host is registered.                                                                                  |
+| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                            |
+| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
+| `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
+
+---
+
+#### **Sample Response**
 
 ```json
 {
@@ -248,6 +269,42 @@ Response will be a json as follows:
   }
 }
 ```
+
+---
+
+#### **Response Fields**
+
+| Field     | Type   | Description                                                                                      |
+|-----------|--------|--------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
+| `message` | string | Human-readable message summarizing the result.                                                   |
+| `host`    | object | Contains detailed information about the registered host.                                         |
+
+##### **`host` Object**
+
+| Field                         | Type              | Description                                                         |
+|-------------------------------|-------------------|---------------------------------------------------------------------|
+| `fqdn`                        | string            | Fully qualified domain name of the host.                            |
+| `name`                        | string            | Name of the host.                                                   |
+| `domain`                      | string            | Domain under which the host is registered.                          |
+| `wildcard`                    | boolean           | Whether a wildcard entry is enabled for the host.                   |
+| `comment`                     | string            | Optional comment associated with the host.                          |
+| `available`                   | boolean           | Indicates if the host is active and reachable.                      |
+| `client_faults`               | integer           | Number of client-related errors recorded.                           |
+| `server_faults`               | integer           | Number of server-related errors recorded.                           |
+| `abuse_blocked`               | boolean           | Whether the host has been blocked due to abuse reports.             |
+| `abuse`                       | boolean           | Indicates if the host is currently flagged for abuse.               |
+| `last_update_ipv4`            | string (ISO 8601) | Timestamp of the last IPv4 update.                                  |
+| `tls_update_ipv4`             | boolean           | Indicates if a TLS update is pending for the IPv4 record.           |
+| `ipv4`                        | string            | The assigned IPv4 address.                                          |
+| `last_update_ipv6`            | string \| null    | Timestamp of the last IPv6 update, or `null` if none.               |
+| `tls_update_ipv6`             | boolean           | Indicates if a TLS update is pending for the IPv6 record.           |
+| `ipv6`                        | string \| null    | The assigned IPv6 address, or `null` if none.                       |
+| `update_secret`               | string            | Secret token used for authenticated updates.                        |
+| `IPv4_update_url_basic_auth`  | string            | URL for updating the IPv4 record using Basic Auth credentials.      |
+| `IPv4_update_url_bearer_auth` | string            | URL for updating the IPv4 record using Bearer token authentication. |
+
+---
 
 ### Update DNS record
 
