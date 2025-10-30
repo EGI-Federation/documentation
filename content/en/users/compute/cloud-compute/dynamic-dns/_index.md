@@ -496,6 +496,48 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ---
 
+### Generate update secret
+
+Generates a new update secret for clients to update a registered host.
+The secret can be used for authenticated dynamic updates to the host’s IP records.
+
+---
+
+#### **Endpoint**
+
+```http
+GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{NAME}}.{{DOMAIN}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+---
+
+#### **Parameters**
+
+| Name   | Type   | Required | Description                                                                                                   |
+|--------|--------|----------|---------------------------------------------------------------------------------------------------------------|
+| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret, in the format `NAME.DOMAIN`. |
+
+---
+
+#### **Sample Response**
+
+```json
+{
+  "status": "ok",
+  "secret": "bMkzLXMr75"
+}
+```
+
+---
+
+#### **Response Fields**
+
+| Field     | Type   | Description                                                                                        |
+|-----------|--------|----------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure).   |
+| `message` | string | Present only in failed responses; provides a human-readable explanation of the error.              |
+| `secret`  | string | Presents only in successful responses; provides the newly generated secret for the specified host. |
 
 ---
 
