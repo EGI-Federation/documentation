@@ -319,28 +319,62 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ### Update DNS record
 
-Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
-providers like
-[dyn.com](https://help.dyn.com/remote-access-api/perform-update/), and
-[noip.com](https://www.noip.com/integrate/request). The API is specified as
-follows:
+The dynamic DNS update server uses the **dyndns2 protocol**, compatible with commercial providers
+such as [dyn.com](https://help.dyn.com/remote-access-api/perform-update/)
+and [noip.com](https://www.noip.com/integrate/request),
+and allows clients to update the IP address of a registered host. In addition to Basic authentication using an [update
+secret](#generate-update-secret), this endpoint also supports authentication with the `Bearer` scheme for enhanced
+security.
 
-```plain
-GET /nic/update?hostname=yourhostname&myip=ipaddress
-Host: nsupdate.fedcloud.eu
-Authorization: Basic base64-encoded-auth-string
-User-Agent:
+
+---
+
+#### **Endpoint**
+
+##### **Update using Bearer token authentication**
+
+```http
+GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&myip={{IP_ADDRESS}}
+Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-where:
+##### **Update using Basic authentication with update secret**
 
-- `base64-encoded-auth-string`: base64 encoding of username:password
-- `username`: your hostname
-- `password`: your host secret
-- `hostname` in the parameter string can be omitted or must be the same as
-  `username`
-- `myip` in the parameter string if omitted, the IP address of the client
-  performing the GET request will be used
+```http request
+GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&myip={{IP_ADDRESS}}
+Authorization: Basic {{BASE64_ENCODED_AUTH_STRING}}
+```
+
+###### Creating Basic authentication secret
+
+To create the Basic authentication token, encode FQDN of the target host and corresponding update secret using the
+Base64 encoding. To retrieve the update secret, use the [/nic/generate_secret](#generate-update-secret) endpoint.
+
+```bash
+$ echo -n "${HOSTNAME}:${UPDATE_SECRET}" | base64 -
+c3Rldm8tZ3B1Og==
+```
+
+#### **Parameters**
+
+| Name       | Type   | Required | Description                                                                                          |
+|------------|--------|----------|------------------------------------------------------------------------------------------------------|
+| `hostname` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to update.                                            |
+| `myip`     | string | No       | IP address to set for the host. If omitted, the server uses the IP address of the requesting client. |
+
+---
+
+#### **Sample response**
+
+```text
+HTTP/2 200 OK
+(Headers) ...content-type: text/plain...
+
+good 123.45.67.89
+```
+
+- The response body returns the status of the update followed by the current IP address assigned to the host.
+- Example: `good 123.45.67.89` indicates the update succeeded and the host now points to `123.45.67.89`.
 
 ---
 
