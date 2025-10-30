@@ -125,7 +125,6 @@ below.
 - [Unregister host](#unregister-host)
 - [Generate update secret](#generate-update-secret)
 
-
 The API is accessible via the `API_BASE_URL` endpoint
 (e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
 for domain management and related operations.
@@ -401,7 +400,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ---
 
-#### **Sample Response**
+#### **Sample response**
 
 ```json
 {
@@ -502,7 +501,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ---
 
-#### **Sample Response**
+#### **Sample response**
 
 ```json
 {
@@ -566,7 +565,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ---
 
-#### **Sample Response**
+#### **Sample response**
 
 ```json
 {
