@@ -531,13 +531,13 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ##### **`host` Object**
 
-| Field      | Type    | Description                                                  |
-|------------|---------|--------------------------------------------------------------|
-| `fqdn`     | string  | Fully qualified domain name (FQDN) of the unregistered host. |
-| `name`     | string  | Name of the unregistered host.                               |
-| `domain`   | string  | Domain under which the host was registered.                  |
-| `wildcard` | boolean | Indicates whether a wildcard entry was enabled for the host. |
-| `comment`  | string  | Optional comment associated with the host.                   |
+| Field      | Type            | Description                                                  |
+|------------|-----------------|--------------------------------------------------------------|
+| `fqdn`     | string          | Fully qualified domain name (FQDN) of the unregistered host. |
+| `name`     | string          | Name of the unregistered host.                               |
+| `domain`   | string          | Domain under which the host was registered.                  |
+| `wildcard` | boolean         | Indicates whether a wildcard entry was enabled for the host. |
+| `comment`  | string  \| null | Comment associated with the host, or `null` if none.         |
 
 ---
 
