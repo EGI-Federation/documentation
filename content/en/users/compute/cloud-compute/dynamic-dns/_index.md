@@ -127,21 +127,21 @@ authentication.
 Retrieves all private domains owned by the authenticated user, as well as
 all available public domains.
 
-#### **Endpoint**
+#### Endpoint
 
 ```http
 GET {{API_BASE_URL}}/nic/domains
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-#### **Response**
+#### Response
 
 Returns a JSON object containing two arrays:
 
 - `private` — Domains owned by the requesting user.
 - `public` — Public domains available for use.
 
-#### **Sample response**
+#### Sample response
 
 ```json
 {
@@ -166,7 +166,7 @@ Returns a JSON object containing two arrays:
 }
 ```
 
-#### **Domain Fields Description**
+#### Domain Fields Description
 
 Each domain object (private or public) includes the following fields:
 
@@ -184,16 +184,16 @@ This endpoint registers a host in the specified domain, optionally setting a
 wildcard and adding a comment. The response confirms whether the registration
 was successful or if an error occurred.
 
-#### **Endpoint**
+#### Endpoint
 
-##### **Option 1**
+##### Option 1
 
 ```http
 GET {{API_BASE_URL}}/nic/register?fqdn={{HOSTNAME}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-##### **Parameters**
+##### Parameters
 
 | Name       | Type    | Required | Description                                                                                                                 |
 |------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -202,14 +202,14 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
 | `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
 
-##### **Option 2**
+##### Option 2
 
 ```http
 GET {{API_BASE_URL}}/nic/register?name={{NAME}}&domain={{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-##### **Parameters**
+##### Parameters
 
 | Name       | Type    | Required | Description                                                                                                                 |
 |------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -219,7 +219,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
 | `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
 
-#### **Sample Response**
+#### Sample Response
 
 ```json
 {
@@ -249,7 +249,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
-#### **Response Fields**
+#### Response Fields
 
 | Field     | Type   | Description                                                                                      |
 |-----------|--------|--------------------------------------------------------------------------------------------------|
@@ -257,7 +257,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `message` | string | Human-readable message summarizing the result.                                                   |
 | `host`    | object | Contains detailed information about the registered host.                                         |
 
-##### **`host` Object**
+##### `host` Object
 
 | Field                         | Type              | Description                                                         |
 |-------------------------------|-------------------|---------------------------------------------------------------------|
@@ -290,16 +290,16 @@ and allows clients to update the IP address of a registered host. In addition to
 secret](#generate-update-secret), this endpoint also supports authentication with the `Bearer` scheme for enhanced
 security.
 
-#### **Endpoint**
+#### Endpoint
 
-##### **Update using Bearer token authentication**
+##### Update using Bearer token authentication
 
 ```http
 GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&myip={{IP_ADDRESS}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-##### **Update using Basic authentication with update secret**
+##### Update using Basic authentication with update secret
 
 ```http request
 GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&myip={{IP_ADDRESS}}
@@ -316,14 +316,14 @@ $ echo -n "${HOSTNAME}:${UPDATE_SECRET}" | base64 -
 c3Rldm8tZ3B1Og==
 ```
 
-#### **Parameters**
+#### Parameters
 
 | Name       | Type   | Required | Description                                                                                          |
 |------------|--------|----------|------------------------------------------------------------------------------------------------------|
 | `hostname` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to update.                                            |
 | `myip`     | string | No       | IP address to set for the host. If omitted, the server uses the IP address of the requesting client. |
 
-#### **Sample response**
+#### Sample response
 
 ```text
 HTTP/2 200 OK
@@ -339,20 +339,20 @@ good 123.45.67.89
 
 Retrieves all hosts registered by the authenticated user. Optionally, you can filter hosts by a specific domain.
 
-#### **Endpoint**
+#### Endpoint
 
 ```http
 GET {{API_BASE_URL}}/nic/hosts?domain={{DOMAIN}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-#### **Parameters**
+#### Parameters
 
 | Name     | Type   | Required | Description                                                                                     |
 |----------|--------|----------|-------------------------------------------------------------------------------------------------|
 | `domain` | string | No       | Optional domain to filter the hosts. If omitted, all hosts registered by the user are returned. |
 
-#### **Sample response**
+#### Sample response
 
 ```json
 {
@@ -380,7 +380,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
-#### **Response Fields**
+#### Response Fields
 
 | Field     | Type   | Description                                                                                      |
 |-----------|--------|--------------------------------------------------------------------------------------------------|
@@ -388,7 +388,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `message` | string | Present only in failed responses; provides a human-readable explanation of the error.            |
 | `hosts`   | array  | Presents only in successful responses; provides a list of host objects registered by the user.   |
 
-##### **`hosts` Object**
+##### `hosts` Object
 
 | Field              | Type              | Description                                                 |
 |--------------------|-------------------|-------------------------------------------------------------|
@@ -414,36 +414,36 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 Removes a previously registered host from the specified domain. The response
 confirms whether the unregistration was successful or if an error occurred.
 
-#### **Endpoint**
+#### Endpoint
 
-##### **Option 1**
+##### Option 1
 
 ```http
 GET {{API_BASE_URL}}/nic/unregister?fqdn={{HOSTNAME}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-##### **Parameters**
+##### Parameters
 
 | Name   | Type   | Required | Description                                                   |
 |--------|--------|----------|---------------------------------------------------------------|
 | `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to unregister. |
 
-##### **Option 2**
+##### Option 2
 
 ```http
 GET {{API_BASE_URL}}/nic/unregister?name={{NAME}}&domain={{DOMAIN}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-##### **Parameters**
+##### Parameters
 
 | Name     | Type   | Required | Description                                |
 |----------|--------|----------|--------------------------------------------|
 | `name`   | string | ✅ Yes    | Name of the host to unregister.            |
 | `domain` | string | ✅ Yes    | Domain under which the host is registered. |
 
-#### **Sample response**
+#### Sample response
 
 ```json
 {
@@ -459,7 +459,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
-#### **Response Fields**
+#### Response Fields
 
 | Field     | Type   | Description                                                                                      |
 |-----------|--------|--------------------------------------------------------------------------------------------------|
@@ -467,7 +467,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `message` | string | Human-readable message summarizing the result.                                                   |
 | `host`    | object | Contains details of the unregistered host.                                                       |
 
-##### **`host` Object**
+##### `host` Object
 
 | Field      | Type            | Description                                                  |
 |------------|-----------------|--------------------------------------------------------------|
@@ -482,20 +482,20 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 Generates a new update secret for clients to update a registered host.
 The secret can be used for authenticated dynamic updates to the host’s IP records.
 
-#### **Endpoint**
+#### Endpoint
 
 ```http
 GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{HOSTNAME}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-#### **Parameters**
+#### Parameters
 
 | Name   | Type   | Required | Description                                                                      |
 |--------|--------|----------|----------------------------------------------------------------------------------|
 | `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret. |
 
-#### **Sample response**
+#### Sample response
 
 ```json
 {
@@ -504,7 +504,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
-#### **Response Fields**
+#### Response Fields
 
 | Field     | Type   | Description                                                                                               |
 |-----------|--------|-----------------------------------------------------------------------------------------------------------|
