@@ -95,31 +95,53 @@ removing the hostname once the infrastructure is destroyed.
 
 ## Wildcard hosts
 
-For some use cases, it's convenient for all hosts within a given subdomain to
-resolve to the same IP. For example, if the hostname of the head node of a
-kubernetes cluster is `kubernetes.fedcloud.eu`, all services on the cluster can
-have the same IP (e.g. `dashboard.kubernetes.fedcloud.eu`,
-`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`), so the routing of
-the requests is managed at the cluster level by using an ingress or gateway
-object.
+For certain use cases, it is desirable for all hosts within a specific subdomain
+to resolve to the same IP address. For example, if the head node of a Kubernetes
+cluster is accessible at `kubernetes.fedcloud.eu`, all services within the
+cluster can share the same IP and be represented using a wildcard entry
+`*.kubernetes.fedcloud.eu`, where `*` stands for any of the
+services; e.g. `dashboard.kubernetes.fedcloud.eu`,
+`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`. In such setup,
+request routing is handled internally by the cluster, typically through
+an Ingress or Gateway resource.
+
+![wildcard-example.png](wildcard-example.png)
 
 This kind of names can be registered using the [API calls](#api) as described
 below.
 
 ## API
 
+The API is accessible via the `API_BASE_URL` endpoint
+(e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
+for domain management and related operations.
+
+### Authorization
+
+All API requests require a valid `ACCESS_TOKEN`. This token must be included
+in the HTTP request `Authorization` header using the `Bearer` scheme for
+authentication.
+
 ### List domains
 
-List available domains for your user:
+Retrieves all private domains owned by the authenticated user, as well as
+all available public domains.
 
-```plain
-GET /nic/domains
-Authorization: Bearer {{access_token}}
+#### Endpoint
+
+```http
+GET {{API_BASE_URL}}/nic/domains
+Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-where `access_token` is a valid Check-in access token.
+#### Response
 
-Sample response:
+Returns a JSON object containing two arrays:
+
+- `private` — Domains owned by the requesting user.
+- `public` — Public domains available for use.
+
+#### Sample response
 
 ```json
 {
@@ -139,42 +161,65 @@ Sample response:
       "available": true,
       "comment": "Domain for production services in EOSC-SIESTA project",
       "owner": "root"
-    },
+    }
+  ]
 }
 ```
 
-### Register host
+#### Domain Fields Description
 
-You can register a new hostname with a call to `/nic/register` either by:
+Each domain object (private or public) includes the following fields:
 
-- specifying `name` and `domain` (both mandatory):
+| Field       | Type    | Description                                                                                                                                                                                  |
+|-------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `name`      | string  | The fully qualified domain name (FQDN) of the domain. Example: `cloud.ai4eosc.eu`.                                                                                                           |
+| `public`    | boolean | Indicates whether the domain is public (`true`) or private (`false`). Public domains are available for multiple users, whereas private domains are owned exclusively by the requesting user. |
+| `available` | boolean | Indicates whether the domain is available for new host registrations. `true` means the domain can be used; `false` means it is in use, reserved, or restricted.                              |
+| `comment`   | string  | A short description or annotation about the domain. Typically provides context or usage information.                                                                                         |
+| `owner`     | string  | The username of the domain owner. For public domains, this is the account responsible for the domain.                                                                                        |
 
-  ```plain
-  GET /nic/register?name={{host_name}}&domain={{domain}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
-  Authorization: Bearer {{access_token}}
-  ```
+### Register Host
 
-  where:
-  - `host_name` is the name of the host to register
-  - `domain` is the domain where to register the host
-  - `comment` is a comment to add to the host
-  - `wildcard` is whether this is a wildcard name or not (default `false`)
-  - `access_token` is a valid Check-in access token
+This endpoint registers a host in the specified domain, optionally setting a
+wildcard and adding a comment. The response confirms whether the registration
+was successful or if an error occurred.
 
-- or by specifying the `fqdn` (also mandatory):
+#### Endpoint
 
-  ```plain
-  GET /nic/register?fqdn={{fqdn_of_host}}&comment={{comment}}&wildcard={{true|false|1|0|yes|no}}
-  Authorization: Bearer {{access_token}}
-  ```
+##### Option 1
 
-  where:
-  - `fqdn_of_host` is fqdn of the host to register
-  - `comment` is a comment to add to the host
-  - `wildcard` is whether this is a wildcard name or not (default `false`)
-  - `access_token` is a valid Check-in access token
+```http
+GET {{API_BASE_URL}}/nic/register?fqdn={{HOSTNAME}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
 
-Response will be a json as follows:
+##### Parameters
+
+| Name       | Type    | Required | Description                                                                                                                 |
+|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
+| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register.                                                                 |
+| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                            |
+| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
+| `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
+
+##### Option 2
+
+```http
+GET {{API_BASE_URL}}/nic/register?name={{NAME}}&domain={{DOMAIN}}&ip={{IP}}&wildcard={{WILDCARD}}&comment={{COMMENT}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+##### Parameters
+
+| Name       | Type    | Required | Description                                                                                                                 |
+|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
+| `name`     | string  | ✅ Yes    | Name of the host to register.                                                                                               |
+| `domain`   | string  | ✅ Yes    | Domain under which the host is registered.                                                                                  |
+| `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                            |
+| `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
+| `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
+
+#### Sample Response
 
 ```json
 {
@@ -204,53 +249,110 @@ Response will be a json as follows:
 }
 ```
 
+#### Response Fields
+
+| Field     | Type   | Description                                                                                      |
+|-----------|--------|--------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
+| `message` | string | Human-readable message summarizing the result.                                                   |
+| `host`    | object | Contains detailed information about the registered host.                                         |
+
+##### `host` Object
+
+| Field                         | Type              | Description                                                         |
+|-------------------------------|-------------------|---------------------------------------------------------------------|
+| `fqdn`                        | string            | Fully qualified domain name of the host.                            |
+| `name`                        | string            | Name of the host.                                                   |
+| `domain`                      | string            | Domain under which the host is registered.                          |
+| `wildcard`                    | boolean           | Whether a wildcard entry is enabled for the host.                   |
+| `comment`                     | string            | Optional comment associated with the host.                          |
+| `available`                   | boolean           | Indicates if the host is active and reachable.                      |
+| `client_faults`               | integer           | Number of client-related errors recorded.                           |
+| `server_faults`               | integer           | Number of server-related errors recorded.                           |
+| `abuse_blocked`               | boolean           | Whether the host has been blocked due to abuse reports.             |
+| `abuse`                       | boolean           | Indicates if the host is currently flagged for abuse.               |
+| `last_update_ipv4`            | string (ISO 8601) | Timestamp of the last IPv4 update.                                  |
+| `tls_update_ipv4`             | boolean           | Indicates if a TLS update is pending for the IPv4 record.           |
+| `ipv4`                        | string            | The assigned IPv4 address.                                          |
+| `last_update_ipv6`            | string \| null    | Timestamp of the last IPv6 update, or `null` if none.               |
+| `tls_update_ipv6`             | boolean           | Indicates if a TLS update is pending for the IPv6 record.           |
+| `ipv6`                        | string \| null    | The assigned IPv6 address, or `null` if none.                       |
+| `update_secret`               | string            | Secret token used for authenticated updates.                        |
+| `IPv4_update_url_basic_auth`  | string            | URL for updating the IPv4 record using Basic Auth credentials.      |
+| `IPv4_update_url_bearer_auth` | string            | URL for updating the IPv4 record using Bearer token authentication. |
+
 ### Update DNS record
 
-Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
-providers like
-[dyn.com](https://help.dyn.com/remote-access-api/perform-update/), and
-[noip.com](https://www.noip.com/integrate/request). The API is specified as
-follows:
+The dynamic DNS update server uses the **dyndns2 protocol**, compatible with commercial providers
+such as [dyn.com](https://help.dyn.com/remote-access-api/perform-update/)
+and [noip.com](https://www.noip.com/integrate/request),
+and allows clients to update the IP address of a registered host. In addition to Basic authentication using an [update
+secret](#generate-update-secret), this endpoint also supports authentication with the `Bearer` scheme for enhanced
+security.
 
-```plain
-GET /nic/update?hostname=yourhostname&myip=ipaddress
-Host: nsupdate.fedcloud.eu
-Authorization: Basic base64-encoded-auth-string
-User-Agent:
+#### Endpoint
+
+##### Update using Bearer token authentication
+
+```http
+GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&myip={{IP_ADDRESS}}
+Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
-where:
+##### Update using Basic authentication with update secret
 
-- `base64-encoded-auth-string`: base64 encoding of username:password
-- `username`: your hostname
-- `password`: your host secret
-- `hostname` in the parameter string can be omitted or must be the same as
-  `username`
-- `myip` in the parameter string if omitted, the IP address of the client
-  performing the GET request will be used
-
-### Lists hosts
-
-This API lists all the registered hosts by a given user:
-
-```plain
-GET /nic/hosts
-Authorization: Bearer {{access_token}}
+```http request
+GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&myip={{IP_ADDRESS}}
+Authorization: Basic {{BASE64_ENCODED_AUTH_STRING}}
 ```
 
-or:
+###### Creating Basic authentication secret
 
-```plain
-GET /nic/hosts?domain={{domain}}
-Authorization: Bearer {{access_token}}
+To create the Basic authentication token, encode FQDN of the target host and corresponding update secret using the
+Base64 encoding. To retrieve the update secret, use the [/nic/generate_secret](#generate-update-secret) endpoint.
+
+```bash
+$ echo -n "${HOSTNAME}:${UPDATE_SECRET}" | base64 -
+c3Rldm8tZ3B1Og==
 ```
 
-where:
+#### Parameters
 
-- `domain` is the domain to list hosts for
-- `access_token` is a valid Check-in access token
+| Name       | Type   | Required | Description                                                                                          |
+|------------|--------|----------|------------------------------------------------------------------------------------------------------|
+| `hostname` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to update.                                            |
+| `myip`     | string | No       | IP address to set for the host. If omitted, the server uses the IP address of the requesting client. |
 
-Sample response:
+#### Sample response
+
+```text
+HTTP/2 200 OK
+(Headers) ...content-type: text/plain...
+
+good 123.45.67.89
+```
+
+- The response body returns the status of the update followed by the current IP address assigned to the host.
+- Example: `good 123.45.67.89` indicates the update succeeded and the host now points to `123.45.67.89`.
+
+### List Hosts
+
+Retrieves all hosts registered by the authenticated user. Optionally, you can filter hosts by a specific domain.
+
+#### Endpoint
+
+```http
+GET {{API_BASE_URL}}/nic/hosts?domain={{DOMAIN}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+#### Parameters
+
+| Name     | Type   | Required | Description                                                                                     |
+|----------|--------|----------|-------------------------------------------------------------------------------------------------|
+| `domain` | string | No       | Optional domain to filter the hosts. If omitted, all hosts registered by the user are returned. |
+
+#### Sample response
 
 ```json
 {
@@ -277,6 +379,138 @@ Sample response:
   ]
 }
 ```
+
+#### Response Fields
+
+| Field     | Type   | Description                                                                                      |
+|-----------|--------|--------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
+| `message` | string | Present only in failed responses; provides a human-readable explanation of the error.            |
+| `hosts`   | array  | Presents only in successful responses; provides a list of host objects registered by the user.   |
+
+##### `hosts` Object
+
+| Field              | Type              | Description                                                 |
+|--------------------|-------------------|-------------------------------------------------------------|
+| `fqdn`             | string            | Fully qualified domain name of the host.                    |
+| `name`             | string            | Name of the host.                                           |
+| `domain`           | string            | Domain under which the host is registered.                  |
+| `wildcard`         | boolean           | Indicates whether a wildcard entry is enabled for the host. |
+| `comment`          | string            | Optional comment associated with the host.                  |
+| `available`        | boolean           | Indicates if the host is active and reachable.              |
+| `client_faults`    | integer           | Number of client-related errors recorded.                   |
+| `server_faults`    | integer           | Number of server-related errors recorded.                   |
+| `abuse_blocked`    | boolean           | Whether the host has been blocked due to abuse reports.     |
+| `abuse`            | boolean           | Indicates if the host is currently flagged for abuse.       |
+| `last_update_ipv4` | string (ISO 8601) | Timestamp of the last IPv4 update.                          |
+| `tls_update_ipv4`  | boolean           | Indicates if a TLS update is pending for the IPv4 record.   |
+| `ipv4`             | string            | The assigned IPv4 address.                                  |
+| `last_update_ipv6` | string (ISO 8601) | Timestamp of the last IPv6 update, or `null` if none.       |
+| `tls_update_ipv6`  | boolean           | Indicates if a TLS update is pending for the IPv6 record.   |
+| `ipv6`             | string \| null    | The assigned IPv6 address, or `null` if none.               |
+
+### Unregister Host
+
+Removes a previously registered host from the specified domain. The response
+confirms whether the unregistration was successful or if an error occurred.
+
+#### Endpoint
+
+##### Option 1
+
+```http
+GET {{API_BASE_URL}}/nic/unregister?fqdn={{HOSTNAME}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+##### Parameters
+
+| Name   | Type   | Required | Description                                                   |
+|--------|--------|----------|---------------------------------------------------------------|
+| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to unregister. |
+
+##### Option 2
+
+```http
+GET {{API_BASE_URL}}/nic/unregister?name={{NAME}}&domain={{DOMAIN}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+##### Parameters
+
+| Name     | Type   | Required | Description                                |
+|----------|--------|----------|--------------------------------------------|
+| `name`   | string | ✅ Yes    | Name of the host to unregister.            |
+| `domain` | string | ✅ Yes    | Domain under which the host is registered. |
+
+#### Sample response
+
+```json
+{
+  "status": "ok",
+  "message": "Host unregistered.",
+  "host": {
+    "fqdn": "test.vm.fedcloud.eu",
+    "name": "test",
+    "domain": "vm.fedcloud.eu",
+    "wildcard": false,
+    "comment": "host for testing purposes"
+  }
+}
+```
+
+#### Response Fields
+
+| Field     | Type   | Description                                                                                      |
+|-----------|--------|--------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
+| `message` | string | Human-readable message summarizing the result.                                                   |
+| `host`    | object | Contains details of the unregistered host.                                                       |
+
+##### `host` Object
+
+| Field      | Type            | Description                                                  |
+|------------|-----------------|--------------------------------------------------------------|
+| `fqdn`     | string          | Fully qualified domain name (FQDN) of the unregistered host. |
+| `name`     | string          | Name of the unregistered host.                               |
+| `domain`   | string          | Domain under which the host was registered.                  |
+| `wildcard` | boolean         | Indicates whether a wildcard entry was enabled for the host. |
+| `comment`  | string  \| null | Comment associated with the host, or `null` if none.         |
+
+### Generate update secret
+
+Generates a new update secret for clients to update a registered host.
+The secret can be used for authenticated dynamic updates to the host’s IP records.
+
+#### Endpoint
+
+```http
+GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{HOSTNAME}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+```
+
+#### Parameters
+
+| Name   | Type   | Required | Description                                                                      |
+|--------|--------|----------|----------------------------------------------------------------------------------|
+| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret. |
+
+#### Sample response
+
+```json
+{
+  "status": "ok",
+  "secret": "bMkzLXMr75"
+}
+```
+
+#### Response Fields
+
+| Field     | Type   | Description                                                                                               |
+|-----------|--------|-----------------------------------------------------------------------------------------------------------|
+| `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure).          |
+| `message` | string | Present only in failed responses; provides a human-readable explanation of the error.                     |
+| `secret`  | string | Presents only in successful responses; provides the newly generated update secret for the specified host. |
 
 ## Security
 
