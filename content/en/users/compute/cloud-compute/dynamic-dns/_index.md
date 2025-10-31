@@ -110,15 +110,11 @@ an Ingress or Gateway resource.
 This kind of names can be registered using the [API calls](#api) as described
 below.
 
----
-
 ## API
 
 The API is accessible via the `API_BASE_URL` endpoint
 (e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
 for domain management and related operations.
-
----
 
 ### Authorization
 
@@ -126,14 +122,10 @@ All API requests require a valid `ACCESS_TOKEN`. This token must be included
 in the HTTP request `Authorization` header using the `Bearer` scheme for
 authentication.
 
----
-
 ### List domains
 
 Retrieves all private domains owned by the authenticated user, as well as
 all available public domains.
-
----
 
 #### **Endpoint**
 
@@ -142,16 +134,12 @@ GET {{API_BASE_URL}}/nic/domains
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
----
-
 #### **Response**
 
 Returns a JSON object containing two arrays:
 
 - `private` — Domains owned by the requesting user.
 - `public` — Public domains available for use.
-
----
 
 #### **Sample response**
 
@@ -178,8 +166,6 @@ Returns a JSON object containing two arrays:
 }
 ```
 
----
-
 #### **Domain Fields Description**
 
 Each domain object (private or public) includes the following fields:
@@ -192,15 +178,11 @@ Each domain object (private or public) includes the following fields:
 | `comment`   | string  | A short description or annotation about the domain. Typically provides context or usage information.                                                                                         |
 | `owner`     | string  | The username of the domain owner. For public domains, this is the account responsible for the domain.                                                                                        |
 
----
-
 ### Register Host
 
 This endpoint registers a host in the specified domain, optionally setting a
 wildcard and adding a comment. The response confirms whether the registration
 was successful or if an error occurred.
-
----
 
 #### **Endpoint**
 
@@ -237,8 +219,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
 | `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
 
----
-
 #### **Sample Response**
 
 ```json
@@ -268,8 +248,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
   }
 }
 ```
-
----
 
 #### **Response Fields**
 
@@ -303,8 +281,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `IPv4_update_url_basic_auth`  | string            | URL for updating the IPv4 record using Basic Auth credentials.      |
 | `IPv4_update_url_bearer_auth` | string            | URL for updating the IPv4 record using Bearer token authentication. |
 
----
-
 ### Update DNS record
 
 The dynamic DNS update server uses the **dyndns2 protocol**, compatible with commercial providers
@@ -313,9 +289,6 @@ and [noip.com](https://www.noip.com/integrate/request),
 and allows clients to update the IP address of a registered host. In addition to Basic authentication using an [update
 secret](#generate-update-secret), this endpoint also supports authentication with the `Bearer` scheme for enhanced
 security.
-
-
----
 
 #### **Endpoint**
 
@@ -350,8 +323,6 @@ c3Rldm8tZ3B1Og==
 | `hostname` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to update.                                            |
 | `myip`     | string | No       | IP address to set for the host. If omitted, the server uses the IP address of the requesting client. |
 
----
-
 #### **Sample response**
 
 ```text
@@ -364,13 +335,9 @@ good 123.45.67.89
 - The response body returns the status of the update followed by the current IP address assigned to the host.
 - Example: `good 123.45.67.89` indicates the update succeeded and the host now points to `123.45.67.89`.
 
----
-
 ### List Hosts
 
 Retrieves all hosts registered by the authenticated user. Optionally, you can filter hosts by a specific domain.
-
----
 
 #### **Endpoint**
 
@@ -379,15 +346,11 @@ GET {{API_BASE_URL}}/nic/hosts?domain={{DOMAIN}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
----
-
 #### **Parameters**
 
 | Name     | Type   | Required | Description                                                                                     |
 |----------|--------|----------|-------------------------------------------------------------------------------------------------|
 | `domain` | string | No       | Optional domain to filter the hosts. If omitted, all hosts registered by the user are returned. |
-
----
 
 #### **Sample response**
 
@@ -417,8 +380,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
----
-
 #### **Response Fields**
 
 | Field     | Type   | Description                                                                                      |
@@ -426,8 +387,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
 | `message` | string | Present only in failed responses; provides a human-readable explanation of the error.            |
 | `hosts`   | array  | Presents only in successful responses; provides a list of host objects registered by the user.   |
-
----
 
 ##### **`hosts` Object**
 
@@ -450,14 +409,10 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `tls_update_ipv6`  | boolean           | Indicates if a TLS update is pending for the IPv6 record.   |
 | `ipv6`             | string \| null    | The assigned IPv6 address, or `null` if none.               |
 
----
-
 ### Unregister Host
 
 Removes a previously registered host from the specified domain. The response
 confirms whether the unregistration was successful or if an error occurred.
-
----
 
 #### **Endpoint**
 
@@ -488,8 +443,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `name`   | string | ✅ Yes    | Name of the host to unregister.            |
 | `domain` | string | ✅ Yes    | Domain under which the host is registered. |
 
----
-
 #### **Sample response**
 
 ```json
@@ -506,8 +459,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
----
-
 #### **Response Fields**
 
 | Field     | Type   | Description                                                                                      |
@@ -515,8 +466,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
 | `message` | string | Human-readable message summarizing the result.                                                   |
 | `host`    | object | Contains details of the unregistered host.                                                       |
-
----
 
 ##### **`host` Object**
 
@@ -528,14 +477,10 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `wildcard` | boolean         | Indicates whether a wildcard entry was enabled for the host. |
 | `comment`  | string  \| null | Comment associated with the host, or `null` if none.         |
 
----
-
 ### Generate update secret
 
 Generates a new update secret for clients to update a registered host.
 The secret can be used for authenticated dynamic updates to the host’s IP records.
-
----
 
 #### **Endpoint**
 
@@ -544,15 +489,11 @@ GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{HOSTNAME}}
 Authorization: Bearer {{ACCESS_TOKEN}}
 ```
 
----
-
 #### **Parameters**
 
 | Name   | Type   | Required | Description                                                                      |
 |--------|--------|----------|----------------------------------------------------------------------------------|
 | `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret. |
-
----
 
 #### **Sample response**
 
@@ -563,8 +504,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 }
 ```
 
----
-
 #### **Response Fields**
 
 | Field     | Type   | Description                                                                                               |
@@ -572,8 +511,6 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure).          |
 | `message` | string | Present only in failed responses; provides a human-readable explanation of the error.                     |
 | `secret`  | string | Presents only in successful responses; provides the newly generated update secret for the specified host. |
-
----
 
 ## Security
 
