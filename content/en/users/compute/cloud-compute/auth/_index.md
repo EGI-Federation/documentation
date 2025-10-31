@@ -1,7 +1,7 @@
 ---
 title: Authentication and Authorisation
 type: docs
-weight: 20
+weight: 10
 aliases:
   - /users/cloud-compute/auth
 description: >
@@ -10,9 +10,9 @@ description: >
 
 ## Authentication {#oidc-auth-using-check-in}
 
-[OpenID Connect](https://openid.net/connect/) (OIDC) is the main authentication protocol
-used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
-OpenStack providers.
+[OpenID Connect](https://openid.net/connect/) (OIDC) is the main authentication
+protocol used on the EGI Cloud. It replaces the legacy VOMS-based authentication
+for all OpenStack providers.
 
 Authentication to web based services (like the OpenStack dashboards) will
 redirect you to the EGI Check-in authentication page. Just select your
@@ -34,11 +34,11 @@ The process for authentication is as follows:
 ## Authorisation
 
 Cloud Compute service is accessed through **Virtual Organisations (VOs)**. Users
-with specific roles (by default, the `vm_operator` role) will have access to
-the providers supporting that VO: they will be able to manage VMs, block
-storage and object storage available to the VO. Resources (VMs and storage) are
-**shared** across all members of the VO, please do not interfere with the VMs
-of other users if you are not entitled to do so (specially do not delete them).
+with specific roles (by default, the `vm_operator` role) will have access to the
+providers supporting that VO: they will be able to manage VMs, block storage and
+object storage available to the VO. Resources (VMs and storage) are **shared**
+across all members of the VO, please do not interfere with the VMs of other
+users if you are not entitled to do so (specially do not delete them).
 
 Some users roles may have additional permissions in VOs, check your VO Manager
 for the specific documentation.
@@ -81,9 +81,9 @@ collect credentials every single time one expires. You can request this token
 alongside the access and/or ID tokens as part of a user's initial authentication
 flow.
 
-If you need to obtain these kinds of tokens for using it in command-line tools or APIs,
-you can easily do so with the EGI Check-in Token Portal. You can access the
-[EGI Check-in Token Portal](https://aai.egi.eu/token) and click on
+If you need to obtain these kinds of tokens for using it in command-line tools
+or APIs, you can easily do so with the EGI Check-in Token Portal. You can access
+the [EGI Check-in Token Portal](https://aai.egi.eu/token) and click on
 \'Authorise\' to log in with your Check-in credentials to obtain:
 
 - a client ID (`token-portal`)
@@ -92,23 +92,22 @@ you can easily do so with the EGI Check-in Token Portal. You can access the
 {{% alert title="Refresh tokens" color="danger" %}}
 
 `Refresh tokens` MUST be treated with care! This is a secret that can be used to
-impersonate you in the infrastructure. The life time of `refresh tokens` is up to one year!
-It is recommended not to store them in
-plain text.{{% /alert %}}
+impersonate you in the infrastructure. The life time of `refresh tokens` is up
+to one year! It is recommended not to store them in plain text.{{% /alert %}}
 
 There are more secure alternatives for handling `refresh tokens`:
 
 1. From your personal computer: use
-  [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
-  It is a tool that manages your tokens locally in a secure way `refresh
-  tokens` are even encrypted in RAM).
+   [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
+   It is a tool that manages your tokens locally in a secure way
+   `refresh tokens` are even encrypted in RAM).
 2. [fedcloud](https://fedcloudclient.fedcloud.eu/) client executed inside
-  [EGI Notebooks](../../../dev-env/notebooks/integration/#fedcloud-client).
-3. [mytoken](https://mytoken.data.kit.edu) Securely stores refresh tokens
-   on the mytoken-server. Users obtain `mytokens`, which can be used to
-   obtain `access tokens`. `mytokens` are more secure, because they can
-   carry `capabilities` and `restrictions` to fine tune their power for
-   specific use cases. Details here: <https://mytoken-docs.data.kit.edu>
+   [EGI Notebooks](../../../dev-env/notebooks/integration/#fedcloud-client).
+3. [mytoken](https://mytoken.data.kit.edu) Securely stores refresh tokens on the
+   mytoken-server. Users obtain `mytokens`, which can be used to obtain
+   `access tokens`. `mytokens` are more secure, because they can carry
+   `capabilities` and `restrictions` to fine tune their power for specific use
+   cases. Details here: <https://mytoken-docs.data.kit.edu>
 
 ### Discovering projects in Keystone
 
