@@ -1458,47 +1458,27 @@ an Ingress or Gateway resource.&lt;/p>
 &lt;p>&lt;img src="wildcard-example.png" alt="wildcard-example.png">&lt;/p>
 &lt;p>This kind of names can be registered using the &lt;a href="#api">API calls&lt;/a> as described
 below.&lt;/p>
-&lt;hr>
 &lt;h2 id="api">API&lt;/h2>
-&lt;h2 id="table-of-contents">Table of Contents&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="#api">API&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#authorization">Authorization&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#list-domains">List domains&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#register-host">Register host&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#update-dns-record">Update DNS record&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#list-hosts">List hosts&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#unregister-host">Unregister host&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#generate-update-secret">Generate update secret&lt;/a>&lt;/li>
-&lt;/ul>
 &lt;p>The API is accessible via the &lt;code>API_BASE_URL&lt;/code> endpoint
 (e.g. &lt;code>https://nsupdate.fedcloud.eu&lt;/code>) and exposes several endpoints
 for domain management and related operations.&lt;/p>
-&lt;hr>
 &lt;h3 id="authorization">Authorization&lt;/h3>
 &lt;p>All API requests require a valid &lt;code>ACCESS_TOKEN&lt;/code>. This token must be included
 in the HTTP request &lt;code>Authorization&lt;/code> header using the &lt;code>Bearer&lt;/code> scheme for
 authentication.&lt;/p>
-&lt;hr>
 &lt;h3 id="list-domains">List domains&lt;/h3>
 &lt;p>Retrieves all private domains owned by the authenticated user, as well as
 all available public domains.&lt;/p>
-&lt;hr>
-&lt;h4 id="endpoint">&lt;strong>Endpoint&lt;/strong>&lt;/h4>
+&lt;h4 id="endpoint">Endpoint&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/domains
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="response">&lt;strong>Response&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response">Response&lt;/h4>
 &lt;p>Returns a JSON object containing two arrays:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>private&lt;/code> — Domains owned by the requesting user.&lt;/li>
 &lt;li>&lt;code>public&lt;/code> — Public domains available for use.&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h4 id="sample-response">&lt;strong>Sample response&lt;/strong>&lt;/h4>
+&lt;h4 id="sample-response">Sample response&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;private&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[],&lt;/span>
@@ -1519,8 +1499,7 @@ all available public domains.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="domain-fields-description">&lt;strong>Domain Fields Description&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="domain-fields-description">Domain Fields Description&lt;/h4>
 &lt;p>Each domain object (private or public) includes the following fields:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1558,17 +1537,15 @@ all available public domains.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h3 id="register-host">Register Host&lt;/h3>
 &lt;p>This endpoint registers a host in the specified domain, optionally setting a
 wildcard and adding a comment. The response confirms whether the registration
 was successful or if an error occurred.&lt;/p>
-&lt;hr>
-&lt;h4 id="endpoint-1">&lt;strong>Endpoint&lt;/strong>&lt;/h4>
-&lt;h5 id="option-1">&lt;strong>Option 1&lt;/strong>&lt;/h5>
+&lt;h4 id="endpoint-1">Endpoint&lt;/h4>
+&lt;h5 id="option-1">Option 1&lt;/h5>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/register?fqdn={{HOSTNAME}}&amp;amp;ip={{IP}}&amp;amp;wildcard={{WILDCARD}}&amp;amp;comment={{COMMENT}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters">&lt;strong>Parameters&lt;/strong>&lt;/h5>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters">Parameters&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1605,10 +1582,10 @@ was successful or if an error occurred.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h5 id="option-2">&lt;strong>Option 2&lt;/strong>&lt;/h5>
+&lt;h5 id="option-2">Option 2&lt;/h5>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/register?name={{NAME}}&amp;amp;domain={{DOMAIN}}&amp;amp;ip={{IP}}&amp;amp;wildcard={{WILDCARD}}&amp;amp;comment={{COMMENT}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters-1">&lt;strong>Parameters&lt;/strong>&lt;/h5>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters-1">Parameters&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1651,8 +1628,7 @@ was successful or if an error occurred.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h4 id="sample-response-1">&lt;strong>Sample Response&lt;/strong>&lt;/h4>
+&lt;h4 id="sample-response-1">Sample Response&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;message&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Host registered.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1678,8 +1654,7 @@ was successful or if an error occurred.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;IPv4_update_url_bearer_auth&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://nsupdate.fedcloud.eu/nic/update?hostname=test.vm.fedcloud.eu&amp;amp;myip=${myip}&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="response-fields">&lt;strong>Response Fields&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response-fields">Response Fields&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1706,7 +1681,7 @@ was successful or if an error occurred.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h5 id="host-object">&lt;strong>&lt;code>host&lt;/code> Object&lt;/strong>&lt;/h5>
+&lt;h5 id="host-object">&lt;code>host&lt;/code> Object&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1813,7 +1788,6 @@ was successful or if an error occurred.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h3 id="update-dns-record">Update DNS record&lt;/h3>
 &lt;p>The dynamic DNS update server uses the &lt;strong>dyndns2 protocol&lt;/strong>, compatible with commercial providers
 such as &lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>
@@ -1821,12 +1795,11 @@ and &lt;a href="https://www.noip.com/integrate/request">noip.com&lt;/a>,
 and allows clients to update the IP address of a registered host. In addition to Basic authentication using an &lt;a href="#generate-update-secret">update
 secret&lt;/a>, this endpoint also supports authentication with the &lt;code>Bearer&lt;/code> scheme for enhanced
 security.&lt;/p>
-&lt;hr>
-&lt;h4 id="endpoint-2">&lt;strong>Endpoint&lt;/strong>&lt;/h4>
-&lt;h5 id="update-using-bearer-token-authentication">&lt;strong>Update using Bearer token authentication&lt;/strong>&lt;/h5>
+&lt;h4 id="endpoint-2">Endpoint&lt;/h4>
+&lt;h5 id="update-using-bearer-token-authentication">Update using Bearer token authentication&lt;/h5>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&amp;amp;myip={{IP_ADDRESS}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="update-using-basic-authentication-with-update-secret">&lt;strong>Update using Basic authentication with update secret&lt;/strong>&lt;/h5>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="update-using-basic-authentication-with-update-secret">Update using Basic authentication with update secret&lt;/h5>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/update?hostname={{HOSTNAME}}&amp;amp;myip={{IP_ADDRESS}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Basic {{BASE64_ENCODED_AUTH_STRING}}
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="creating-basic-authentication-secret">Creating Basic authentication secret&lt;/h6>
@@ -1834,7 +1807,7 @@ security.&lt;/p>
 Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-update-secret">/nic/generate_secret&lt;/a> endpoint.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> -n &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOSTNAME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">:&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">UPDATE_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> base64 -
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">c3Rldm8tZ3B1Og&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="parameters-2">&lt;strong>Parameters&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="parameters-2">Parameters&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1859,8 +1832,7 @@ Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-up
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h4 id="sample-response-2">&lt;strong>Sample response&lt;/strong>&lt;/h4>
+&lt;h4 id="sample-response-2">Sample response&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>HTTP/2 200 OK
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(Headers) ...content-type: text/plain...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1869,15 +1841,12 @@ Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-up
 &lt;li>The response body returns the status of the update followed by the current IP address assigned to the host.&lt;/li>
 &lt;li>Example: &lt;code>good 123.45.67.89&lt;/code> indicates the update succeeded and the host now points to &lt;code>123.45.67.89&lt;/code>.&lt;/li>
 &lt;/ul>
-&lt;hr>
 &lt;h3 id="list-hosts">List Hosts&lt;/h3>
 &lt;p>Retrieves all hosts registered by the authenticated user. Optionally, you can filter hosts by a specific domain.&lt;/p>
-&lt;hr>
-&lt;h4 id="endpoint-3">&lt;strong>Endpoint&lt;/strong>&lt;/h4>
+&lt;h4 id="endpoint-3">Endpoint&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/hosts?domain={{DOMAIN}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="parameters-3">&lt;strong>Parameters&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="parameters-3">Parameters&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1896,8 +1865,7 @@ Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-up
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h4 id="sample-response-3">&lt;strong>Sample response&lt;/strong>&lt;/h4>
+&lt;h4 id="sample-response-3">Sample response&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;hosts&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
@@ -1921,8 +1889,7 @@ Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-up
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="response-fields-1">&lt;strong>Response Fields&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response-fields-1">Response Fields&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1949,8 +1916,7 @@ Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-up
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h5 id="hosts-object">&lt;strong>&lt;code>hosts&lt;/code> Object&lt;/strong>&lt;/h5>
+&lt;h5 id="hosts-object">&lt;code>hosts&lt;/code> Object&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2042,16 +2008,14 @@ Base64 encoding. To retrieve the update secret, use the &lt;a href="#generate-up
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h3 id="unregister-host">Unregister Host&lt;/h3>
 &lt;p>Removes a previously registered host from the specified domain. The response
 confirms whether the unregistration was successful or if an error occurred.&lt;/p>
-&lt;hr>
-&lt;h4 id="endpoint-4">&lt;strong>Endpoint&lt;/strong>&lt;/h4>
-&lt;h5 id="option-1-1">&lt;strong>Option 1&lt;/strong>&lt;/h5>
+&lt;h4 id="endpoint-4">Endpoint&lt;/h4>
+&lt;h5 id="option-1-1">Option 1&lt;/h5>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/unregister?fqdn={{HOSTNAME}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters-4">&lt;strong>Parameters&lt;/strong>&lt;/h5>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters-4">Parameters&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2070,10 +2034,10 @@ confirms whether the unregistration was successful or if an error occurred.&lt;/
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h5 id="option-2-1">&lt;strong>Option 2&lt;/strong>&lt;/h5>
+&lt;h5 id="option-2-1">Option 2&lt;/h5>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/unregister?name={{NAME}}&amp;amp;domain={{DOMAIN}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters-5">&lt;strong>Parameters&lt;/strong>&lt;/h5>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="parameters-5">Parameters&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2098,8 +2062,7 @@ confirms whether the unregistration was successful or if an error occurred.&lt;/
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h4 id="sample-response-4">&lt;strong>Sample response&lt;/strong>&lt;/h4>
+&lt;h4 id="sample-response-4">Sample response&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;message&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Host unregistered.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -2111,8 +2074,7 @@ confirms whether the unregistration was successful or if an error occurred.&lt;/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;comment&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;host for testing purposes&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="response-fields-2">&lt;strong>Response Fields&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response-fields-2">Response Fields&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2139,8 +2101,7 @@ confirms whether the unregistration was successful or if an error occurred.&lt;/
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h5 id="host-object-1">&lt;strong>&lt;code>host&lt;/code> Object&lt;/strong>&lt;/h5>
+&lt;h5 id="host-object-1">&lt;code>host&lt;/code> Object&lt;/h5>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2177,16 +2138,13 @@ confirms whether the unregistration was successful or if an error occurred.&lt;/
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h3 id="generate-update-secret">Generate update secret&lt;/h3>
 &lt;p>Generates a new update secret for clients to update a registered host.
 The secret can be used for authenticated dynamic updates to the host’s IP records.&lt;/p>
-&lt;hr>
-&lt;h4 id="endpoint-5">&lt;strong>Endpoint&lt;/strong>&lt;/h4>
+&lt;h4 id="endpoint-5">Endpoint&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-http" data-lang="http">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">GET {{API_BASE_URL}}/nic/generate_secret?fqdn={{HOSTNAME}}
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">Authorization: Bearer {{ACCESS_TOKEN}}
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="parameters-6">&lt;strong>Parameters&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="parameters-6">Parameters&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2205,14 +2163,12 @@ The secret can be used for authenticated dynamic updates to the host’s IP reco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
-&lt;h4 id="sample-response-5">&lt;strong>Sample response&lt;/strong>&lt;/h4>
+&lt;h4 id="sample-response-5">Sample response&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ok&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bMkzLXMr75&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h4 id="response-fields-3">&lt;strong>Response Fields&lt;/strong>&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="response-fields-3">Response Fields&lt;/h4>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2239,7 +2195,6 @@ The secret can be used for authenticated dynamic updates to the host’s IP reco
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;hr>
 &lt;h2 id="security">Security&lt;/h2>
 &lt;ul>
 &lt;li>
