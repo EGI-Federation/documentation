@@ -2,7 +2,7 @@
 title: Virtual Machine Images
 linkTitle: Images
 type: docs
-weight: 30
+weight: 20
 aliases:
   - /users/cloud-compute/vmi
 description: >

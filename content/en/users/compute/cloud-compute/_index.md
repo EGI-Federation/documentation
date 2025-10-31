@@ -11,8 +11,8 @@ description: >
 
 <!-- cSpell:words NBIS VERCE -->
 
-The [EGI Federated Cloud Compute](https://www.egi.eu/service/cloud-compute/) (FedCloud)
-service offers a multi-cloud IaaS federation that brings together
+The [EGI Federated Cloud Compute](https://www.egi.eu/service/cloud-compute/)
+(FedCloud) service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute driven
 applications and services for research and science.
 
@@ -28,13 +28,12 @@ servers.
 Cloud Compute service is provided through a federation of IaaS cloud sites that
 offer:
 
-- Single Sign-On via [EGI Check-in](https://www.egi.eu/service/check-in/),
-  users can log into every provider with their institutional credentials and
-  use modern industry standards like
-  [OpenID Connect](https://openid.net/connect/).
-- Global VM image catalogue at [Artefact Registry](https://registry.egi.eu)
-  with pre-configured Virtual Machine images that are automatically replicated
-  to every provider based on your community needs.
+- Single Sign-On via [EGI Check-in](https://www.egi.eu/service/check-in/), users
+  can log into every provider with their institutional credentials and use
+  modern industry standards like [OpenID Connect](https://openid.net/connect/).
+- Global VM image catalogue at [Artefact Registry](https://registry.egi.eu) with
+  pre-configured Virtual Machine images that are automatically replicated to
+  every provider based on your community needs.
 - Resource discovery features to easily understand which providers are
   supporting your community and what are their capabilities.
 - [Global accounting](https://accounting.egi.eu/cloud/) that aggregates and
@@ -56,8 +55,7 @@ emerged:
 - **Service hosting**: the EGI Federated Cloud can be used to host any IT
   service as web servers, databases, etc. Cloud features, as elasticity, can
   help users to provide better performance and reliable services.
-  - Example:
-    [NBIS Web Services](https://www.egi.eu/case-study/nbis/),
+  - Example: [NBIS Web Services](https://www.egi.eu/case-study/nbis/),
     [Peachnote analysis platform](https://www.egi.eu/news/peachnote-in-unison-with-egi/).
 - **Compute and data intensive applications**: for those applications needing
   considerable amount of resources in terms of computation and/or memory and/or

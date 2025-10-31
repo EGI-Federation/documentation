@@ -99,11 +99,10 @@ For certain use cases, it is desirable for all hosts within a specific subdomain
 to resolve to the same IP address. For example, if the head node of a Kubernetes
 cluster is accessible at `kubernetes.fedcloud.eu`, all services within the
 cluster can share the same IP and be represented using a wildcard entry
-`*.kubernetes.fedcloud.eu`, where `*` stands for any of the
-services; e.g. `dashboard.kubernetes.fedcloud.eu`,
-`api.kubernetes.fedcloud.eu`, `app1.kubernetes.fedcloud.eu`. In such setup,
-request routing is handled internally by the cluster, typically through
-an Ingress or Gateway resource.
+`*.kubernetes.fedcloud.eu`, where `*` stands for any of the services; e.g.
+`dashboard.kubernetes.fedcloud.eu`, `api.kubernetes.fedcloud.eu`,
+`app1.kubernetes.fedcloud.eu`. In such setup, request routing is handled
+internally by the cluster, typically through an Ingress or Gateway resource.
 
 ![wildcard-example.png](wildcard-example.png)
 
@@ -112,20 +111,20 @@ below.
 
 ## API
 
-The API is accessible via the `API_BASE_URL` endpoint
-(e.g. `https://nsupdate.fedcloud.eu`) and exposes several endpoints
-for domain management and related operations.
+The API is accessible via the `API_BASE_URL` endpoint (e.g.
+`https://nsupdate.fedcloud.eu`) and exposes several endpoints for domain
+management and related operations.
 
 ### Authorization
 
-All API requests require a valid `ACCESS_TOKEN`. This token must be included
-in the HTTP request `Authorization` header using the `Bearer` scheme for
+All API requests require a valid `ACCESS_TOKEN`. This token must be included in
+the HTTP request `Authorization` header using the `Bearer` scheme for
 authentication.
 
 ### List domains
 
-Retrieves all private domains owned by the authenticated user, as well as
-all available public domains.
+Retrieves all private domains owned by the authenticated user, as well as all
+available public domains.
 
 #### Endpoint
 
@@ -171,7 +170,7 @@ Returns a JSON object containing two arrays:
 Each domain object (private or public) includes the following fields:
 
 | Field       | Type    | Description                                                                                                                                                                                  |
-|-------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`      | string  | The fully qualified domain name (FQDN) of the domain. Example: `cloud.ai4eosc.eu`.                                                                                                           |
 | `public`    | boolean | Indicates whether the domain is public (`true`) or private (`false`). Public domains are available for multiple users, whereas private domains are owned exclusively by the requesting user. |
 | `available` | boolean | Indicates whether the domain is available for new host registrations. `true` means the domain can be used; `false` means it is in use, reserved, or restricted.                              |
@@ -196,8 +195,8 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 ##### Parameters
 
 | Name       | Type    | Required | Description                                                                                                                 |
-|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
-| `fqdn`     | string  | ✅ Yes    | Fully qualified domain name (FQDN) of the host to register.                                                                 |
+| ---------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `fqdn`     | string  | ✅ Yes   | Fully qualified domain name (FQDN) of the host to register.                                                                 |
 | `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                            |
 | `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
 | `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
@@ -212,9 +211,9 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 ##### Parameters
 
 | Name       | Type    | Required | Description                                                                                                                 |
-|------------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------|
-| `name`     | string  | ✅ Yes    | Name of the host to register.                                                                                               |
-| `domain`   | string  | ✅ Yes    | Domain under which the host is registered.                                                                                  |
+| ---------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `name`     | string  | ✅ Yes   | Name of the host to register.                                                                                               |
+| `domain`   | string  | ✅ Yes   | Domain under which the host is registered.                                                                                  |
 | `ip`       | string  | No       | IP address to associate with the host. If omitted, the IP is inferred from the incoming request.                            |
 | `wildcard` | boolean | No       | Enables or disables a wildcard entry for the host. <br>• `true` — enable wildcard<br>• `false` — disable wildcard (default) |
 | `comment`  | string  | No       | Optional comment or description for the host.                                                                               |
@@ -252,7 +251,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 #### Response Fields
 
 | Field     | Type   | Description                                                                                      |
-|-----------|--------|--------------------------------------------------------------------------------------------------|
+| --------- | ------ | ------------------------------------------------------------------------------------------------ |
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
 | `message` | string | Human-readable message summarizing the result.                                                   |
 | `host`    | object | Contains detailed information about the registered host.                                         |
@@ -260,7 +259,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 ##### `host` Object
 
 | Field                         | Type              | Description                                                         |
-|-------------------------------|-------------------|---------------------------------------------------------------------|
+| ----------------------------- | ----------------- | ------------------------------------------------------------------- |
 | `fqdn`                        | string            | Fully qualified domain name of the host.                            |
 | `name`                        | string            | Name of the host.                                                   |
 | `domain`                      | string            | Domain under which the host is registered.                          |
@@ -283,12 +282,13 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 
 ### Update DNS record
 
-The dynamic DNS update server uses the **dyndns2 protocol**, compatible with commercial providers
-such as [dyn.com](https://help.dyn.com/remote-access-api/perform-update/)
-and [noip.com](https://www.noip.com/integrate/request),
-and allows clients to update the IP address of a registered host. In addition to Basic authentication using an [update
-secret](#generate-update-secret), this endpoint also supports authentication with the `Bearer` scheme for enhanced
-security.
+The dynamic DNS update server uses the **dyndns2 protocol**, compatible with
+commercial providers such as
+[dyn.com](https://help.dyn.com/remote-access-api/perform-update/) and
+[noip.com](https://www.noip.com/integrate/request), and allows clients to update
+the IP address of a registered host. In addition to Basic authentication using
+an [update secret](#generate-update-secret), this endpoint also supports
+authentication with the `Bearer` scheme for enhanced security.
 
 #### Endpoint
 
@@ -308,8 +308,9 @@ Authorization: Basic {{BASE64_ENCODED_AUTH_STRING}}
 
 ###### Creating Basic authentication secret
 
-To create the Basic authentication token, encode FQDN of the target host and corresponding update secret using the
-Base64 encoding. To retrieve the update secret, use the [/nic/generate_secret](#generate-update-secret) endpoint.
+To create the Basic authentication token, encode FQDN of the target host and
+corresponding update secret using the Base64 encoding. To retrieve the update
+secret, use the [/nic/generate_secret](#generate-update-secret) endpoint.
 
 ```bash
 $ echo -n "${HOSTNAME}:${UPDATE_SECRET}" | base64 -
@@ -319,8 +320,8 @@ c3Rldm8tZ3B1Og==
 #### Parameters
 
 | Name       | Type   | Required | Description                                                                                          |
-|------------|--------|----------|------------------------------------------------------------------------------------------------------|
-| `hostname` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to update.                                            |
+| ---------- | ------ | -------- | ---------------------------------------------------------------------------------------------------- |
+| `hostname` | string | ✅ Yes   | Fully qualified domain name (FQDN) of the host to update.                                            |
 | `myip`     | string | No       | IP address to set for the host. If omitted, the server uses the IP address of the requesting client. |
 
 #### Sample response
@@ -332,12 +333,15 @@ HTTP/2 200 OK
 good 123.45.67.89
 ```
 
-- The response body returns the status of the update followed by the current IP address assigned to the host.
-- Example: `good 123.45.67.89` indicates the update succeeded and the host now points to `123.45.67.89`.
+- The response body returns the status of the update followed by the current IP
+  address assigned to the host.
+- Example: `good 123.45.67.89` indicates the update succeeded and the host now
+  points to `123.45.67.89`.
 
 ### List Hosts
 
-Retrieves all hosts registered by the authenticated user. Optionally, you can filter hosts by a specific domain.
+Retrieves all hosts registered by the authenticated user. Optionally, you can
+filter hosts by a specific domain.
 
 #### Endpoint
 
@@ -349,7 +353,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 #### Parameters
 
 | Name     | Type   | Required | Description                                                                                     |
-|----------|--------|----------|-------------------------------------------------------------------------------------------------|
+| -------- | ------ | -------- | ----------------------------------------------------------------------------------------------- |
 | `domain` | string | No       | Optional domain to filter the hosts. If omitted, all hosts registered by the user are returned. |
 
 #### Sample response
@@ -383,7 +387,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 #### Response Fields
 
 | Field     | Type   | Description                                                                                      |
-|-----------|--------|--------------------------------------------------------------------------------------------------|
+| --------- | ------ | ------------------------------------------------------------------------------------------------ |
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
 | `message` | string | Present only in failed responses; provides a human-readable explanation of the error.            |
 | `hosts`   | array  | Presents only in successful responses; provides a list of host objects registered by the user.   |
@@ -391,7 +395,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 ##### `hosts` Object
 
 | Field              | Type              | Description                                                 |
-|--------------------|-------------------|-------------------------------------------------------------|
+| ------------------ | ----------------- | ----------------------------------------------------------- |
 | `fqdn`             | string            | Fully qualified domain name of the host.                    |
 | `name`             | string            | Name of the host.                                           |
 | `domain`           | string            | Domain under which the host is registered.                  |
@@ -426,8 +430,8 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 ##### Parameters
 
 | Name   | Type   | Required | Description                                                   |
-|--------|--------|----------|---------------------------------------------------------------|
-| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host to unregister. |
+| ------ | ------ | -------- | ------------------------------------------------------------- |
+| `fqdn` | string | ✅ Yes   | Fully qualified domain name (FQDN) of the host to unregister. |
 
 ##### Option 2
 
@@ -439,9 +443,9 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 ##### Parameters
 
 | Name     | Type   | Required | Description                                |
-|----------|--------|----------|--------------------------------------------|
-| `name`   | string | ✅ Yes    | Name of the host to unregister.            |
-| `domain` | string | ✅ Yes    | Domain under which the host is registered. |
+| -------- | ------ | -------- | ------------------------------------------ |
+| `name`   | string | ✅ Yes   | Name of the host to unregister.            |
+| `domain` | string | ✅ Yes   | Domain under which the host is registered. |
 
 #### Sample response
 
@@ -462,25 +466,25 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 #### Response Fields
 
 | Field     | Type   | Description                                                                                      |
-|-----------|--------|--------------------------------------------------------------------------------------------------|
+| --------- | ------ | ------------------------------------------------------------------------------------------------ |
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure). |
 | `message` | string | Human-readable message summarizing the result.                                                   |
 | `host`    | object | Contains details of the unregistered host.                                                       |
 
 ##### `host` Object
 
-| Field      | Type            | Description                                                  |
-|------------|-----------------|--------------------------------------------------------------|
-| `fqdn`     | string          | Fully qualified domain name (FQDN) of the unregistered host. |
-| `name`     | string          | Name of the unregistered host.                               |
-| `domain`   | string          | Domain under which the host was registered.                  |
-| `wildcard` | boolean         | Indicates whether a wildcard entry was enabled for the host. |
-| `comment`  | string  \| null | Comment associated with the host, or `null` if none.         |
+| Field      | Type           | Description                                                  |
+| ---------- | -------------- | ------------------------------------------------------------ |
+| `fqdn`     | string         | Fully qualified domain name (FQDN) of the unregistered host. |
+| `name`     | string         | Name of the unregistered host.                               |
+| `domain`   | string         | Domain under which the host was registered.                  |
+| `wildcard` | boolean        | Indicates whether a wildcard entry was enabled for the host. |
+| `comment`  | string \| null | Comment associated with the host, or `null` if none.         |
 
 ### Generate update secret
 
-Generates a new update secret for clients to update a registered host.
-The secret can be used for authenticated dynamic updates to the host’s IP records.
+Generates a new update secret for clients to update a registered host. The
+secret can be used for authenticated dynamic updates to the host’s IP records.
 
 #### Endpoint
 
@@ -492,8 +496,8 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 #### Parameters
 
 | Name   | Type   | Required | Description                                                                      |
-|--------|--------|----------|----------------------------------------------------------------------------------|
-| `fqdn` | string | ✅ Yes    | Fully qualified domain name (FQDN) of the host for which to generate the secret. |
+| ------ | ------ | -------- | -------------------------------------------------------------------------------- |
+| `fqdn` | string | ✅ Yes   | Fully qualified domain name (FQDN) of the host for which to generate the secret. |
 
 #### Sample response
 
@@ -507,7 +511,7 @@ Authorization: Bearer {{ACCESS_TOKEN}}
 #### Response Fields
 
 | Field     | Type   | Description                                                                                               |
-|-----------|--------|-----------------------------------------------------------------------------------------------------------|
+| --------- | ------ | --------------------------------------------------------------------------------------------------------- |
 | `status`  | string | Indicates the overall status of the request (e.g., `"ok"` for success or `"error"` for failure).          |
 | `message` | string | Present only in failed responses; provides a human-readable explanation of the error.                     |
 | `secret`  | string | Presents only in successful responses; provides the newly generated update secret for the specified host. |

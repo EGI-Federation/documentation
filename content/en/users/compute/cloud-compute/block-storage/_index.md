@@ -1,7 +1,7 @@
 ---
 title: Block Storage
 type: docs
-weight: 10
+weight: 40
 aliases:
   - /users/data/storage/block-storage
   - /users/online-storage/block-storage
@@ -740,8 +740,8 @@ $ umount /storage1
 $ cryptsetup close storage1
 ```
 
-For subsequent uses of the persistent disk, there will be no need to perform
-all these operations, only the following are necessary:
+For subsequent uses of the persistent disk, there will be no need to perform all
+these operations, only the following are necessary:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1

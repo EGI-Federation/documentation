@@ -104,9 +104,8 @@ see [authorisation section](../auth) on how VOs work.
 ### How can I get information about the available VM images?
 
 The [Artefact Registry](https://registry.egi.eu) contains information about the
-VM images available in the EGI Cloud. A set of predefined images is available
-on every provider. For VO-specific images, check the
-[VM image guide](../images).
+VM images available in the EGI Cloud. A set of predefined images is available on
+every provider. For VO-specific images, check the [VM image guide](../images).
 
 ## Managing VMs
 
@@ -114,8 +113,8 @@ on every provider. For VO-specific images, check the
 
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the
-[storage guide](../block-storage) for more information.
+device and attaching it to the VM. Check the [storage guide](../block-storage)
+for more information.
 
 ### How can I keep my data after the VM is stopped?
 
@@ -234,14 +233,14 @@ one as a gateway as described in the
 
 Whenever you delete a VM, the ephemeral disks associated with it will be also
 deleted. If you don't plan to use your VM for some time, there are several ways
-to release resources consumed by the VM (e.g. CPU, RAM) and recover the data
-or boot your VM in a previous state when you need it back. We list below the
-main strategies you can use:
+to release resources consumed by the VM (e.g. CPU, RAM) and recover the data or
+boot your VM in a previous state when you need it back. We list below the main
+strategies you can use:
 
 - Use a volume to store the data to be kept: Check the
-  [Storage section of the documentation](../block-storage) to
-  learn how to use volumes. If you start your VM from a volume, the VM can be
-  destroyed and recreated easily. OpenStack documentation cover how to
+  [Storage section of the documentation](../block-storage) to learn how to use
+  volumes. If you start your VM from a volume, the VM can be destroyed and
+  recreated easily. OpenStack documentation cover how to
   [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
   or
   [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
@@ -269,5 +268,6 @@ fedcloud token list-vos
 list-all-my-own-vms.sh --vo <virtual-organisation>
 ```
 
-See the [fedcloudclient documentation](https://fedcloudclient.fedcloud.eu/cheat.html#useful-commands)
+See the
+[fedcloudclient documentation](https://fedcloudclient.fedcloud.eu/cheat.html#useful-commands)
 for more information.
