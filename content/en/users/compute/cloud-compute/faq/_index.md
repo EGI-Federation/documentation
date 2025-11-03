@@ -93,7 +93,7 @@ fedcloud.srce.hr
 ```
 
 The providers also generate dynamic information which is accessible through the
-[cloud-info-api](https://is.cloud.egi.eu).
+[cloud-info-api](https://is.cloud.egi.eu/docs).
 
 ### How can I choose which site to use?
 
