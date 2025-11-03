@@ -60,7 +60,7 @@ follows:
   Service Components/Artefact Registry)
 - Ticket body:
 
-  ```
+  ```plaintext
   Dear Artefact Registry,
 
   I'd like to request a new project for VO `<name of the VO>`.

@@ -158,7 +158,7 @@ openstack server create --flavor m3.medium \
 ```
 
 - [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/latest/user/user-data.html)
-- [cloudinit documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
+- [`cloudinit` documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
 
 #### Shell script data as user data
 

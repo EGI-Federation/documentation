@@ -3,7 +3,7 @@ title: Automating Deployments
 type: docs
 weight: 60
 description: >
-  Use Infrastrucure-as-Code in the EGI Cloud
+  Use Infrastructure-as-Code in the EGI Cloud
 ---
 
 The [OpenStack](../../../getting-started/openstack) sites in the EGI Cloud that
@@ -117,144 +117,157 @@ You can follow these steps for getting started with Pulumi and EGI Cloud. It
 assumes you have a working installation of Pulumi and Python. We will be using
 IN2P3-IRES site with `vo.access.egi.eu` VO:
 
-1. Create new project
+#### Create new project
 
-   ```shell
-   $ mkdir egi-pulumi
-   $ cd egi-pulumi
-   $ pulumi new openstack-python
-   ```
+Create a new project using `pulumi new`
 
-   The `pulumi new` command will interactively initialize a new project, once
-   done you will have several configuration files and a `___main__.py` file
-   with some boilerplate code.
+```shell
+$ mkdir egi-pulumi
+$ cd egi-pulumi
+$ pulumi new openstack-python
+```
 
-2. Edit `__main__.py` to create a VM using EGI's alma 9 image, a flavor with
-   2 cores and set the right network:
+The `pulumi new` command will interactively initialize a new project, once
+done you will have several configuration files and a `___main__.py` file
+with some boilerplate code.
 
-   ``` python
-   """An OpenStack Python Pulumi program"""
+#### Define you infrastructure as code
 
-   import pulumi
-   from pulumi_openstack import compute, images
+Edit `__main__.py` to create a VM. In the example code below, we will use an
+`alma 9` image from [EGI's registry](../images) and a 2 cpus VM flavor at
+IN2P3-IRES site.  he site requires a network to be specified, which we can
+discover either using the [dashboard](https://dashboard.cloud.egi.eu) or
+the [FedCloud client](../../../getting-started/cli)
 
-   # Create an OpenStack resource (Compute Instance)
+```python
+"""An OpenStack Python Pulumi program"""
 
-   # Get image EGI alma:9
-   alma = images.get_image(
-       most_recent=True,
-       properties={
-           "os_distro": "alma",
-           "os_version": "9",
-           "image_list": "egi_vm_images",
-       },
-   )
+import pulumi
+from pulumi_openstack import compute, images
 
-   flavor = compute.get_flavor(vcpus=2)
+# Create an OpenStack resource (Compute Instance)
 
-   # Create instance
-   # Network name vary for every provider, in this case using
-   # the name of the network for vo.access.egi.eu VO at IN2P3-IRES
-   # It can be discovered by login into the dashboard or with:
-   # `fedcloud openstack --site IN2P3-IRES --vo vo.access.egi.eu network list`
-   instance = compute.Instance(
-       "pulumi-test",
-       flavor_id=flavor.id,
-       networks=[
-           {
-               "name": "egi-access-net",
-           }
-       ],
-       image_id=alma.id,
-   )
+# Get image EGI alma:9
+alma = images.get_image(
+    most_recent=True,
+    properties={
+        "os_distro": "alma",
+        "os_version": "9",
+        "image_list": "egi_vm_images",
+    },
+)
 
-   # Export the IP of the instance
-   pulumi.export("instance_ip", instance.access_ip_v4)
-   ```
+flavor = compute.get_flavor(vcpus=2)
 
-3. Get your environment ready for interaction with the site:
+# Create instance
+# Network name vary for every provider, in this case using
+# the name of the network for vo.access.egi.eu VO at IN2P3-IRES
+# It can be discovered by login into the dashboard or with:
+# `fedcloud openstack --site IN2P3-IRES --vo vo.access.egi.eu network list`
+instance = compute.Instance(
+    "pulumi-test",
+    flavor_id=flavor.id,
+    networks=[
+        {
+            "name": "egi-access-net",
+        }
+    ],
+    image_id=alma.id,
+)
 
-   ```shell
-   $ eval "$(fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu)"
-   $ export OS_TOKEN=$(fedcloud openstack --site IN2P3-IRES \
-                        --vo vo.access.egi.eu token issue -c id -f value)
-   ```
+# Export the IP of the instance
+pulumi.export("instance_ip", instance.access_ip_v4)
+```
 
-4. Deploy by running `pulumi up`:
+#### Get site credentials
 
-   ```shell
-   $ pulumi up
-   Enter your passphrase to unlock config/secrets
-       (set PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember):
-   Enter your passphrase to unlock config/secrets
-   Previewing update (dev):
-        Type                           Name            Plan       Info
-    +   pulumi:pulumi:Stack            egi-pulumi-dev  create     1 warning
-    +   └─ openstack:compute:Instance  pulumi-test     create
+Get your environment ready for interaction with the site. You will need an
+[access token](../../../getting-started/cli/#Authentication):
 
-   Diagnostics:
-     pulumi:pulumi:Stack (egi-pulumi-dev):
-       warning: provider config warning: Users not using loadbalancer resources can ignore this message. Support for neutron-lbaas will be removed on next major release. Octavia will be the only supported method for loadbalancer resources. Users using octavia will have to remove 'use_octavia' option from the provider configuration block. Users using neutron-lbaas will have to migrate/upgrade to octavia.
+```shell
+$ eval "$(fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu)"
+$ export OS_TOKEN=$(fedcloud openstack --site IN2P3-IRES \
+                    --vo vo.access.egi.eu token issue -c id -f value)
+```
 
-   Outputs:
-       instance_ip: [unknown]
+#### Deploy
 
-   Resources:
-       + 2 to create
+Deploy by running `pulumi up`:
 
-   Do you want to perform this update? yes
+```shell
+$ pulumi up
+Enter your passphrase to unlock config/secrets
+    (set PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember):
+Enter your passphrase to unlock config/secrets
+Previewing update (dev):
+     Type                           Name            Plan       Info
+ +   pulumi:pulumi:Stack            egi-pulumi-dev  create     1 warning
+ +   └─ openstack:compute:Instance  pulumi-test     create
 
-   Updating (dev):
-        Type                           Name            Status            Info
-    +   pulumi:pulumi:Stack            egi-pulumi-dev  created (15s)     1 warning
-    +   └─ openstack:compute:Instance  pulumi-test     created (13s)
+Diagnostics:
+  pulumi:pulumi:Stack (egi-pulumi-dev):
+    warning: provider config warning: Users not using loadbalancer resources can ignore this message. Support for neutron-lbaas will be removed on next major release. Octavia will be the only supported method for loadbalancer resources. Users using octavia will have to remove 'use_octavia' option from the provider configuration block. Users using neutron-lbaas will have to migrate/upgrade to octavia.
 
-   Diagnostics:
-     pulumi:pulumi:Stack (egi-pulumi-dev):
-       warning: provider config warning: Users not using loadbalancer resources can ignore this message. Support for neutron-lbaas will be removed on next major release. Octavia will be the only supported method for loadbalancer resources. Users using octavia will have to remove 'use_octavia' option from the provider configuration block. Users using neutron-lbaas will have to migrate/upgrade to octavia.
+Outputs:
+    instance_ip: [unknown]
 
-   Outputs:
-       instance_ip: "172.16.21.167"
+Resources:
+    + 2 to create
 
-   Resources:
-       + 2 created
+Do you want to perform this update? yes
 
-   Duration: 17s
-   ```
+Updating (dev):
+     Type                           Name            Status            Info
+ +   pulumi:pulumi:Stack            egi-pulumi-dev  created (15s)     1 warning
+ +   └─ openstack:compute:Instance  pulumi-test     created (13s)
 
-4. Clean up the resources by using `pulumi destroy`
+Diagnostics:
+  pulumi:pulumi:Stack (egi-pulumi-dev):
+    warning: provider config warning: Users not using loadbalancer resources can ignore this message. Support for neutron-lbaas will be removed on next major release. Octavia will be the only supported method for loadbalancer resources. Users using octavia will have to remove 'use_octavia' option from the provider configuration block. Users using neutron-lbaas will have to migrate/upgrade to octavia.
 
-   ```shell
-   $ pulumi destroy
-   Enter your passphrase to unlock config/secrets
-       (set PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember):
-   Enter your passphrase to unlock config/secrets
-   Previewing destroy (dev):
-        Type                           Name            Plan
-    -   pulumi:pulumi:Stack            egi-pulumi-dev  delete
-    -   └─ openstack:compute:Instance  pulumi-test     delete
+Outputs:
+    instance_ip: "172.16.21.167"
 
-   Outputs:
-     - instance_ip: "172.16.21.167"
+Resources:
+    + 2 created
 
-   Resources:
-       - 2 to delete
+Duration: 17s
+```
 
-   Do you want to perform this destroy? yes
-   Destroying (dev):
-        Type                           Name            Status
-    -   pulumi:pulumi:Stack            egi-pulumi-dev  deleted (0.00s)
-    -   └─ openstack:compute:Instance  pulumi-test     deleted (11s)
+#### Clean up
 
-   Outputs:
-     - instance_ip: "172.16.21.167"
+Clean up the resources by using `pulumi destroy`
 
-   Resources:
-       - 2 deleted
+```shell
+$ pulumi destroy
+Enter your passphrase to unlock config/secrets
+    (set PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember):
+Enter your passphrase to unlock config/secrets
+Previewing destroy (dev):
+     Type                           Name            Plan
+ -   pulumi:pulumi:Stack            egi-pulumi-dev  delete
+ -   └─ openstack:compute:Instance  pulumi-test     delete
 
-   Duration: 12s
+Outputs:
+  - instance_ip: "172.16.21.167"
 
-   The resources in the stack have been deleted, but the history and configuration associated with the stack are still maintained.
-   If you want to remove the stack completely, run `pulumi stack rm dev`.
-   ```
+Resources:
+    - 2 to delete
 
+Do you want to perform this destroy? yes
+Destroying (dev):
+     Type                           Name            Status
+ -   pulumi:pulumi:Stack            egi-pulumi-dev  deleted (0.00s)
+ -   └─ openstack:compute:Instance  pulumi-test     deleted (11s)
+
+Outputs:
+  - instance_ip: "172.16.21.167"
+
+Resources:
+    - 2 deleted
+
+Duration: 12s
+
+The resources in the stack have been deleted, but the history and configuration associated with the stack are still maintained.
+If you want to remove the stack completely, run `pulumi stack rm dev`.
+```
