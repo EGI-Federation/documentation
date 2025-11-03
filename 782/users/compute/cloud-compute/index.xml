@@ -159,12 +159,14 @@ Service Components/Artefact Registry)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Ticket body:&lt;/p>
-&lt;pre tabindex="0">&lt;code>Dear Artefact Registry,
-I&amp;#39;d like to request a new project for VO `&amp;lt;name of the VO&amp;gt;`.
-The entitlement to authorize read-only (list, pull) access is `&amp;lt;entitlement to use&amp;gt;`.
-The entitlement to authorize write (list, pull, push) access is `&amp;lt;entitlement to use&amp;gt;`.
-Thanks!
-&lt;/code>&lt;/pre>&lt;/li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>Dear Artefact Registry,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I&amp;#39;d like to request a new project for VO `&amp;lt;name of the VO&amp;gt;`.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The entitlement to authorize read-only (list, pull) access is `&amp;lt;entitlement to use&amp;gt;`.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The entitlement to authorize write (list, pull, push) access is `&amp;lt;entitlement to use&amp;gt;`.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thanks!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;p>Once the project is created, you will be able to login and manage artefacts.&lt;/p>
 &lt;h4 id="uploading-to-the-registry">Uploading to the registry&lt;/h4>
@@ -479,7 +481,7 @@ key for the default user of the VM (via the &lt;code>--key-name&lt;/code> argume
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --user-data userdata.txt --key-name My_Key server01.example.com
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>&lt;a href="https://docs.openstack.org/nova/latest/user/user-data.html">OpenStack: providing user data (cloud-init)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://cloudinit.readthedocs.io/en/latest/index.html">cloudinit documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cloudinit.readthedocs.io/en/latest/index.html">&lt;code>cloudinit&lt;/code> documentation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="shell-script-data-as-user-data">Shell script data as user data&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/sh
@@ -552,7 +554,7 @@ machines (VMs). Block storage volumes are raw, unformatted
 be mounted as devices in VMs.&lt;/p>
 &lt;p>Block storage volumes that are attached to a VM are exposed as storage volumes
 that &lt;strong>persist independently from the life of the VM&lt;/strong>, and need to be
-explicitly destroyed when data is not needed anymore. Users can create a file
+explicitly destroyed when data is not needed any more. Users can create a file
 system on top of these volumes, or use them in any way you would use a block
 device (such as a hard drive).&lt;/p>
 &lt;p>The content of block storage volumes can be accessed only from within the VM
@@ -1399,19 +1401,20 @@ for details on how to interact with sites.&lt;/p>
 &lt;p>You can follow these steps for getting started with Pulumi and EGI Cloud. It
 assumes you have a working installation of Pulumi and Python. We will be using
 IN2P3-IRES site with &lt;code>vo.access.egi.eu&lt;/code> VO:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Create new project&lt;/p>
+&lt;h4 id="create-new-project">Create new project&lt;/h4>
+&lt;p>Create a new project using &lt;code>pulumi new&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ mkdir egi-pulumi
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">cd&lt;/span> egi-pulumi
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ pulumi new openstack-python
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>pulumi new&lt;/code> command will interactively initialize a new project, once
 done you will have several configuration files and a &lt;code>___main__.py&lt;/code> file
 with some boilerplate code.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Edit &lt;code>__main__.py&lt;/code> to create a VM using EGI&amp;rsquo;s alma 9 image, a flavor with
-2 cores and set the right network:&lt;/p>
+&lt;h4 id="define-you-infrastructure-as-code">Define you infrastructure as code&lt;/h4>
+&lt;p>Edit &lt;code>__main__.py&lt;/code> to create a VM. In the example code below, we will use an
+&lt;code>alma 9&lt;/code> image from &lt;a href="../images">EGI&amp;rsquo;s registry&lt;/a> and a 2 cpus VM flavor at
+IN2P3-IRES site. he site requires a network to be specified, which we can
+discover either using the &lt;a href="https://dashboard.cloud.egi.eu">dashboard&lt;/a> or
+the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&amp;#34;An OpenStack Python Pulumi program&amp;#34;&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">pulumi&lt;/span>
@@ -1449,14 +1452,13 @@ with some boilerplate code.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Export the IP of the instance&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">pulumi&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">export&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;instance_ip&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">instance&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">access_ip_v4&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Get your environment ready for interaction with the site:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="get-site-credentials">Get site credentials&lt;/h4>
+&lt;p>Get your environment ready for interaction with the site. You will need an
+&lt;a href="../../../getting-started/cli/#Authentication">access token&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site IN2P3-IRES &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --vo vo.access.egi.eu token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="deploy">Deploy&lt;/h4>
 &lt;p>Deploy by running &lt;code>pulumi up&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pulumi up
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your passphrase to unlock config/secrets
@@ -1495,8 +1497,7 @@ with some boilerplate code.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> + &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> created
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Duration: 17s
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="clean-up">Clean up&lt;/h4>
 &lt;p>Clean up the resources by using &lt;code>pulumi destroy&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pulumi destroy
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your passphrase to unlock config/secrets
@@ -1529,8 +1530,7 @@ with some boilerplate code.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The resources in the stack have been deleted, but the &lt;span style="color:#204a87">history&lt;/span> and configuration associated with the stack are still maintained.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>If you want to remove the stack completely, run &lt;span style="color:#4e9a06">`&lt;/span>pulumi stack rm dev&lt;span style="color:#4e9a06">`&lt;/span>.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
 &lt;!-- cSpell:words noip -->
 &lt;p>The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
