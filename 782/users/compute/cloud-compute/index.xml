@@ -191,16 +191,16 @@ be synced and the following additional annotations are expected to be available:
 &lt;/ul>
 &lt;p>For the upload, you need to:&lt;/p>
 &lt;ol>
-&lt;li>Login to the registry, you can find credentials in your registry profile:&lt;/li>
-&lt;/ol>
+&lt;li>
+&lt;p>Login to the registry, you can find credentials in your registry profile:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras login -u &amp;lt;user&amp;gt; registry.egi.eu
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
-&lt;li>Prepare an
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Prepare an
 &lt;a href="https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file">annotation file&lt;/a>
 with the expected metadata. You can find below an example for an AlmaLinux
 image file named &lt;code>alma-9.qcow2&lt;/code>. It also includes a &lt;code>$manifest&lt;/code> entry with
-annotation of the manifest itself.&lt;/li>
-&lt;/ol>
+annotation of the manifest itself.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;$manifest&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.opencontainers.image.revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;7b98c834862f2e7e342fad7f9e175ea8c74aa4f3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -217,13 +217,15 @@ annotation of the manifest itself.&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;org.openstack.glance.container_format&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bare&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
-&lt;li>Upload the image and the annotation file:&lt;/li>
-&lt;/ol>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Upload the image and the annotation file:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>oras push --annotation-file &amp;lt;annotation json&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> registry.egi.eu/&amp;lt;project_name&amp;gt;/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &amp;lt;image file&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="building-your-own-image">Building your own image&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h4 id="building-your-own-image">Building your own image&lt;/h4>
 &lt;p>Packaging your application in a custom VM image is a suggested solution in one
 of the following cases:&lt;/p>
 &lt;ul>
@@ -2507,7 +2509,7 @@ client can help you to get that list:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UNIV-LILLE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud.srce.hr
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The providers also generate dynamic information which is accessible through the
-&lt;a href="https://is.cloud.egi.eu">cloud-info-api&lt;/a>.&lt;/p>
+&lt;a href="https://is.cloud.egi.eu/docs">cloud-info-api&lt;/a>.&lt;/p>
 &lt;h3 id="how-can-i-choose-which-site-to-use">How can I choose which site to use?&lt;/h3>
 &lt;p>Sites offer their resources to users through Virtual Organisations (VO). First,
 you need to join a Virtual Organisation that matches your research interests,
