@@ -1410,7 +1410,8 @@ IN2P3-IRES site with &lt;code>vo.access.egi.eu&lt;/code> VO:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ pulumi new openstack-python
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>pulumi new&lt;/code> command will interactively initialize a new project, once
 done you will have several configuration files and a &lt;code>___main__.py&lt;/code> file
-with some boilerplate code.&lt;/p>
+with some boilerplate code. You may need to log in to Pulumi before; you can
+operate Pulumi entirely on your computer using &lt;code>pulumi login --local&lt;/code>.&lt;/p>
 &lt;h4 id="define-you-infrastructure-as-code">Define you infrastructure as code&lt;/h4>
 &lt;p>Edit &lt;code>__main__.py&lt;/code> to create a VM. In the example code below, we will use an
 &lt;code>alma 9&lt;/code> image from &lt;a href="../images">EGI&amp;rsquo;s registry&lt;/a> and a 2 cpus VM flavor at
