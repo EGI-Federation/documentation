@@ -228,7 +228,7 @@ Duration: 17s
 
 ##### Clean up
 
-Clean up the resources by using `pulumi destroy`
+Clean up the resources by using `pulumi destroy`:
 
 ```shell
 $ pulumi destroy
