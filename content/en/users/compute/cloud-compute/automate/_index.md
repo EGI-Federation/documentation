@@ -184,7 +184,9 @@ pulumi.export("instance_ip", instance.access_ip_v4)
 ##### Deploy
 
 Follow [instructions for out of band authentication](#out-of-band-authentication)
-to set your environment and deploy by running `pulumi up`:
+to set your environment variables. The next step is to run `pulumi login` which
+by default requires an account on the Pulumi Cloud. For the sake of this example,
+we suggest using `pulumi login file://.` instead. Then you are ready to run `pulumi up`:
 
 ```shell
 $ pulumi up
