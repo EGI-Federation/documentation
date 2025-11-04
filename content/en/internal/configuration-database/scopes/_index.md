@@ -109,13 +109,8 @@ It is important to understand that scopes and Projects are distinct:
 ### WLCG Reserved Tags
 
 - A number of reserved scope tags have been defined for the WLCG:
-  - The ‘tierN’ tags should be requested for WLCG sites that are defined in
-    CRIC. To request a ‘tierN’ tag, raise a ticket against the CRIC support
-    unit in GGUS.
-  - For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with
-    the relevant VO support unit.
-  - The wlcg tag is a generic catch-all tag for sites/services with either tierN
-    and VO tags and is used to gain an overall view of the WLCG infrastructure.
+  - The `VO.tierN` tags should be requested for WLCG sites that are defined in CRIC. To request one of these scope tags, first raise a ticket against the relevant VO support unit for confirmation, then reassign the ticket to GOCDB.
+  - The `wlcg` tag is a generic catch-all tag for sites/services to gain an overall view of the WLCG infrastructure. It will be applied along with the `VO.tierN` tags
 
 ### SLA Reserved Tag
 

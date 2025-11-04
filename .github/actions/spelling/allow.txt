@@ -123,6 +123,7 @@ contextualized
 cou
 cous
 cred
+cric
 crls
 crt
 cryptsetup
