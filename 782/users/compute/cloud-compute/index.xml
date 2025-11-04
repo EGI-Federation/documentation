@@ -1351,10 +1351,10 @@ service to manage virtual infrastructures in EGI Cloud. Check the
 &lt;h2 id="other-orchestrators">Other orchestrators&lt;/h2>
 &lt;h3 id="out-of-band-authentication">Out of band authentication&lt;/h3>
 &lt;p>Orchestrators without native support for the EGI Cloud Compute service, but
-support out of band obtention of an OpenStack token for accessing the site can
+support out of band obtention with an OpenStack token for accessing the site can
 be used by obtaining this token with the help of the
-&lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>. You can set the usual
-&lt;code>OS_AUTH_URL&lt;/code>, &lt;code>OS_PROJECT_ID&lt;/code> and &lt;code>OS_TOKEN&lt;/code> environment variables as follows:&lt;/p>
+&lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>. You can set the &lt;code>OS_AUTH_URL&lt;/code>,
+&lt;code>OS_PROJECT_ID&lt;/code> and &lt;code>OS_TOKEN&lt;/code> environment variables as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OS_AUTH_URL and OS_PROJECT_ID with&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1459,11 +1459,7 @@ the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="get-site-credentials">Get site credentials&lt;/h4>
 &lt;h5 id="deploy">Deploy&lt;/h5>
 &lt;p>Follow &lt;a href="#out-of-band-authentication">instructions for out of band authentication&lt;/a>
-to set your environment:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site IN2P3-IRES &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --vo vo.access.egi.eu token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and deploy by running &lt;code>pulumi up&lt;/code>:&lt;/p>
+to set your environment and deploy by running &lt;code>pulumi up&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pulumi up
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your passphrase to unlock config/secrets
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">set&lt;/span> PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:
