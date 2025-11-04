@@ -59,7 +59,8 @@ available for the `fedcloud openstack` command to work.
 [Terraform](https://terraform.io/) supports EGI Cloud OpenStack providers by
 using valid access tokens for Keystone. For using this, just configure your
 provider as usual in Terraform, but do not include user/password information.
-Instead, set up your environment for [out of band authenticaton]()
+Instead, set up your environment for
+[out of band authenticaton](#out-of-band-authentication)
 
 Here is a sample `main.tf` configuration file for Terraform:
 
@@ -102,22 +103,22 @@ $ terraform apply
 For more information on how to use Terraform with OpenStack please check the
 [OpenStack provider documentation](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/).
 
-## Pulumi
+### Pulumi
 
 [Pulumi](https://www.pulumi.com/) provides Infrastructure as Code using
 different programming languages. Similarly to [Terraform](#terraform),
-it can use credentials obtained [out of band]() to interact with the OpenStack
-services. Check the documentation of the
+it can use credentials obtained [out of band](#out-of-band-authentication)
+to interact with the OpenStack services. Check the documentation of the
 [Pulumi OpenStack Provider](https://www.pulumi.com/registry/packages/openstack/)
 for details on how to interact with sites.
 
-### Example: creating a VM with Pulumi and Python
+#### Example: creating a VM with Pulumi and Python
 
 You can follow these steps for getting started with Pulumi and EGI Cloud. It
 assumes you have a working installation of Pulumi and Python. We will be using
 IN2P3-IRES site with `vo.access.egi.eu` VO:
 
-#### Create new project
+##### Create new project
 
 Create a new project using `pulumi new`
 
@@ -132,7 +133,7 @@ done you will have several configuration files and a `___main__.py` file
 with some boilerplate code. You may need to log in to Pulumi before; you can
 operate Pulumi entirely on your computer using `pulumi login --local`.
 
-#### Define you infrastructure as code
+##### Define you infrastructure as code
 
 Edit `__main__.py` to create a VM. In the example code below, we will use an
 `alma 9` image from [EGI's registry](../images) and a 2 cpus VM flavor at
@@ -183,9 +184,10 @@ pulumi.export("instance_ip", instance.access_ip_v4)
 #### Get site credentials
 
 
-#### Deploy
+##### Deploy
 
-Follow [instructions for out of band authentication]():
+Follow [instructions for out of band authentication](#out-of-band-authentication)
+to set your environment:
 
 ```shell
 $ eval "$(fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu)"
@@ -235,7 +237,7 @@ Resources:
 Duration: 17s
 ```
 
-#### Clean up
+##### Clean up
 
 Clean up the resources by using `pulumi destroy`
 
