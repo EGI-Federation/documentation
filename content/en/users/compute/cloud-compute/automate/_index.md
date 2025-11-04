@@ -130,8 +130,7 @@ $ pulumi new openstack-python
 
 The `pulumi new` command will interactively initialize a new project, once
 done you will have several configuration files and a `___main__.py` file
-with some boilerplate code. You may need to log in to Pulumi before; you can
-operate Pulumi entirely on your computer using `pulumi login --local`.
+with some boilerplate code.
 
 ##### Define you infrastructure as code
 
