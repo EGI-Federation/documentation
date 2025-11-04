@@ -1458,7 +1458,9 @@ the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">pulumi&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">export&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;instance_ip&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">instance&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">access_ip_v4&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="deploy">Deploy&lt;/h5>
 &lt;p>Follow &lt;a href="#out-of-band-authentication">instructions for out of band authentication&lt;/a>
-to set your environment and deploy by running &lt;code>pulumi up&lt;/code>:&lt;/p>
+to set your environment variables. The next step is to run &lt;code>pulumi login&lt;/code> which
+by default requires an account on the Pulumi Cloud. For the sake of this example,
+we suggest using &lt;code>pulumi login file://.&lt;/code> instead. Then you are ready to run &lt;code>pulumi up&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pulumi up
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your passphrase to unlock config/secrets
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">set&lt;/span> PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:
