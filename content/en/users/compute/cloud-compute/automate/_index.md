@@ -116,7 +116,7 @@ for details on how to interact with sites.
 
 You can follow these steps for getting started with Pulumi and EGI Cloud. It
 assumes you have a working installation of Pulumi and Python. We will be using
-IN2P3-IRES site with `vo.access.egi.eu` VO:
+IN2P3-IRES site with `vo.access.egi.eu` VO.
 
 ##### Create new project
 
