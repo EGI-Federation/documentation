@@ -60,7 +60,7 @@ available for the `fedcloud openstack` command to work.
 using valid access tokens for Keystone. For using this, just configure your
 provider as usual in Terraform, but do not include user/password information.
 Instead, set up your environment for
-[out of band authenticaton](#out-of-band-authentication)
+[out of band authentication](#out-of-band-authentication)
 
 Here is a sample `main.tf` configuration file for Terraform:
 
