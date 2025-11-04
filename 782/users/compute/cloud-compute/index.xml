@@ -1348,19 +1348,27 @@ correct datasets are attached to each VM).&lt;/li>
 &lt;p>&lt;a href="https://im.egi.eu">Infrastructure Manager&lt;/a> is the recommended orchestration
 service to manage virtual infrastructures in EGI Cloud. Check the
 &lt;a href="../../orchestration/im/">service documentation&lt;/a> for more information&lt;/p>
-&lt;h2 id="terraform">Terraform&lt;/h2>
-&lt;p>&lt;a href="https://terraform.io/">Terraform&lt;/a> supports EGI Cloud OpenStack providers by
-using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password information.
-Instead, use the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a> client to
-configure environment variables as follows:&lt;/p>
+&lt;h2 id="other-orchestrators">Other orchestrators&lt;/h2>
+&lt;h3 id="out-of-band-authentication">Out of band authentication&lt;/h3>
+&lt;p>Orchestrators without native support for the EGI Cloud Compute service, but
+support out of band obtention of an OpenStack token for accessing the site can
+be used by obtaining this token with the help of the
+&lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>. You can set the usual
+&lt;code>OS_AUTH_URL&lt;/code>, &lt;code>OS_PROJECT_ID&lt;/code> and &lt;code>OS_TOKEN&lt;/code> environment variables as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OS_AUTH_URL and OS_PROJECT_ID with&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># now get a valid token&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># now get a valid token for OpenStack&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is a sample &lt;code>main.tf&lt;/code> configuration file for Terraform:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You will need an &lt;a href="../../../getting-started/cli/#Authentication">access token&lt;/a>
+available for the &lt;code>fedcloud openstack&lt;/code> command to work.&lt;/p>
+&lt;h3 id="terraform">Terraform&lt;/h3>
+&lt;p>&lt;a href="https://terraform.io/">Terraform&lt;/a> supports EGI Cloud OpenStack providers by
+using valid access tokens for Keystone. For using this, just configure your
+provider as usual in Terraform, but do not include user/password information.
+Instead, set up your environment for &lt;a href="">out of band authenticaton&lt;/a>&lt;/p>
+&lt;p>Here is a sample &lt;code>main.tf&lt;/code> configuration file for Terraform:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">terraform&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">required_providers&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">openstack&lt;/span> = &lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -1387,19 +1395,11 @@ configure environment variables as follows:&lt;/p>
 &lt;h2 id="pulumi">Pulumi&lt;/h2>
 &lt;p>&lt;a href="https://www.pulumi.com/">Pulumi&lt;/a> provides Infrastructure as Code using
 different programming languages. Similarly to &lt;a href="#terraform">Terraform&lt;/a>,
-it can use credentials obtained out of band to interact with the OpenStack
+it can use credentials obtained &lt;a href="">out of band&lt;/a> to interact with the OpenStack
 services. Check the documentation of the
 &lt;a href="https://www.pulumi.com/registry/packages/openstack/">Pulumi OpenStack Provider&lt;/a>
 for details on how to interact with sites.&lt;/p>
-&lt;p>You can set the &lt;code>OS_AUTH&lt;/code> and &lt;code>OS_TOKEN&lt;/code> variables with the
-&lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OS_AUTH_URL and OS_PROJECT_ID with&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># now get a valid token&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example-creating-a-vm-with-pulumi-and-python">Example: creating a VM with Pulumi and Python&lt;/h3>
+&lt;h3 id="example-creating-a-vm-with-pulumi-and-python">Example: creating a VM with Pulumi and Python&lt;/h3>
 &lt;p>You can follow these steps for getting started with Pulumi and EGI Cloud. It
 assumes you have a working installation of Pulumi and Python. We will be using
 IN2P3-IRES site with &lt;code>vo.access.egi.eu&lt;/code> VO:&lt;/p>
@@ -1417,7 +1417,7 @@ operate Pulumi entirely on your computer using &lt;code>pulumi login --local&lt;
 &lt;code>alma 9&lt;/code> image from &lt;a href="../images">EGI&amp;rsquo;s registry&lt;/a> and a 2 cpus VM flavor at
 IN2P3-IRES site. The site requires a network to be specified, which we can
 discover either using the &lt;a href="https://dashboard.cloud.egi.eu">dashboard&lt;/a> or
-the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>&lt;/p>
+the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&amp;#34;An OpenStack Python Pulumi program&amp;#34;&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">pulumi&lt;/span>
@@ -1456,13 +1456,12 @@ the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Export the IP of the instance&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">pulumi&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">export&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;instance_ip&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">instance&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">access_ip_v4&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="get-site-credentials">Get site credentials&lt;/h4>
-&lt;p>Get your environment ready for interaction with the site. You will need an
-&lt;a href="../../../getting-started/cli/#Authentication">access token&lt;/a>:&lt;/p>
+&lt;h4 id="deploy">Deploy&lt;/h4>
+&lt;p>Follow &lt;a href="">instructions for out of band authentication&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site IN2P3-IRES &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --vo vo.access.egi.eu token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="deploy">Deploy&lt;/h4>
-&lt;p>Deploy by running &lt;code>pulumi up&lt;/code>:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and deploy by running &lt;code>pulumi up&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pulumi up
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your passphrase to unlock config/secrets
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">set&lt;/span> PULUMI_CONFIG_PASSPHRASE or PULUMI_CONFIG_PASSPHRASE_FILE to remember&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:
