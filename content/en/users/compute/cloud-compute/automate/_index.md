@@ -136,7 +136,7 @@ operate Pulumi entirely on your computer using `pulumi login --local`.
 
 Edit `__main__.py` to create a VM. In the example code below, we will use an
 `alma 9` image from [EGI's registry](../images) and a 2 cpus VM flavor at
-IN2P3-IRES site.  he site requires a network to be specified, which we can
+IN2P3-IRES site.  The site requires a network to be specified, which we can
 discover either using the [dashboard](https://dashboard.cloud.egi.eu) or
 the [FedCloud client](../../../getting-started/cli)
 
