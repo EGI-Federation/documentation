@@ -120,7 +120,7 @@ IN2P3-IRES site with `vo.access.egi.eu` VO.
 
 ##### Create new project
 
-Create a new project using `pulumi new`
+Create a new project using `pulumi new`:
 
 ```shell
 $ mkdir egi-pulumi
