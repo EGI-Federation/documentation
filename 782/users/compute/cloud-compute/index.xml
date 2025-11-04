@@ -1415,7 +1415,7 @@ operate Pulumi entirely on your computer using &lt;code>pulumi login --local&lt;
 &lt;h4 id="define-you-infrastructure-as-code">Define you infrastructure as code&lt;/h4>
 &lt;p>Edit &lt;code>__main__.py&lt;/code> to create a VM. In the example code below, we will use an
 &lt;code>alma 9&lt;/code> image from &lt;a href="../images">EGI&amp;rsquo;s registry&lt;/a> and a 2 cpus VM flavor at
-IN2P3-IRES site. he site requires a network to be specified, which we can
+IN2P3-IRES site. The site requires a network to be specified, which we can
 discover either using the &lt;a href="https://dashboard.cloud.egi.eu">dashboard&lt;/a> or
 the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&amp;#34;An OpenStack Python Pulumi program&amp;#34;&amp;#34;&amp;#34;&lt;/span>
