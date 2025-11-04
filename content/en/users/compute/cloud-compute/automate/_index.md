@@ -37,10 +37,10 @@ service to manage virtual infrastructures in EGI Cloud. Check the
 ### Out of band authentication
 
 Orchestrators without native support for the EGI Cloud Compute service, but
-support out of band obtention of an OpenStack token for accessing the site can
+support out of band obtention with an OpenStack token for accessing the site can
 be used by obtaining this token with the help of the
-[FedCloud client](../../../getting-started/cli). You can set the usual
-`OS_AUTH_URL`, `OS_PROJECT_ID` and `OS_TOKEN` environment variables as follows:
+[FedCloud client](../../../getting-started/cli). You can set the `OS_AUTH_URL`,
+`OS_PROJECT_ID` and `OS_TOKEN` environment variables as follows:
 
 ```shell
 # export OS_AUTH_URL and OS_PROJECT_ID with
@@ -187,15 +187,7 @@ pulumi.export("instance_ip", instance.access_ip_v4)
 ##### Deploy
 
 Follow [instructions for out of band authentication](#out-of-band-authentication)
-to set your environment:
-
-```shell
-$ eval "$(fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu)"
-$ export OS_TOKEN=$(fedcloud openstack --site IN2P3-IRES \
-                    --vo vo.access.egi.eu token issue -c id -f value)
-```
-
-and deploy by running `pulumi up`:
+to set your environment and deploy by running `pulumi up`:
 
 ```shell
 $ pulumi up
