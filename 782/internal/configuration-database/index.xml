@@ -820,13 +820,8 @@ tag, please contact EGI Operations.&lt;/li>
 &lt;ul>
 &lt;li>A number of reserved scope tags have been defined for the WLCG:
 &lt;ul>
-&lt;li>The ‘tierN’ tags should be requested for WLCG sites that are defined in
-CRIC. To request a ‘tierN’ tag, raise a ticket against the CRIC support
-unit in GGUS.&lt;/li>
-&lt;li>For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with
-the relevant VO support unit.&lt;/li>
-&lt;li>The wlcg tag is a generic catch-all tag for sites/services with either tierN
-and VO tags and is used to gain an overall view of the WLCG infrastructure.&lt;/li>
+&lt;li>The &lt;code>VO.tierN&lt;/code> tags should be requested for WLCG sites that are defined in CRIC. To request one of these scope tags, first raise a ticket against the relevant VO support unit for confirmation, then reassign the ticket to GOCDB.&lt;/li>
+&lt;li>The &lt;code>wlcg&lt;/code> tag is a generic catch-all tag for sites/services to gain an overall view of the WLCG infrastructure. It will be applied along with the &lt;code>VO.tierN&lt;/code> tags&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
