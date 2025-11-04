@@ -181,9 +181,6 @@ instance = compute.Instance(
 pulumi.export("instance_ip", instance.access_ip_v4)
 ```
 
-#### Get site credentials
-
-
 ##### Deploy
 
 Follow [instructions for out of band authentication](#out-of-band-authentication)
