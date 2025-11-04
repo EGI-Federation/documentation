@@ -32,22 +32,34 @@ Automating this activity will help researchers to:
 service to manage virtual infrastructures in EGI Cloud. Check the
 [service documentation](../../orchestration/im/) for more information
 
-## Terraform
+## Other orchestrators
 
-[Terraform](https://terraform.io/) supports EGI Cloud OpenStack providers by
-using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password information.
-Instead, use the [FedCloud client](../../../getting-started/cli) client to
-configure environment variables as follows:
+### Out of band authentication
+
+Orchestrators without native support for the EGI Cloud Compute service, but
+support out of band obtention of an OpenStack token for accessing the site can
+be used by obtaining this token with the help of the
+[FedCloud client](../../../getting-started/cli). You can set the usual
+`OS_AUTH_URL`, `OS_PROJECT_ID` and `OS_TOKEN` environment variables as follows:
 
 ```shell
 # export OS_AUTH_URL and OS_PROJECT_ID with
 $ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
 
-# now get a valid token
+# now get a valid token for OpenStack
 $ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
                     token issue -c id -f value)
 ```
+
+You will need an [access token](../../../getting-started/cli/#Authentication)
+available for the `fedcloud openstack` command to work.
+
+### Terraform
+
+[Terraform](https://terraform.io/) supports EGI Cloud OpenStack providers by
+using valid access tokens for Keystone. For using this, just configure your
+provider as usual in Terraform, but do not include user/password information.
+Instead, set up your environment for [out of band authenticaton]()
 
 Here is a sample `main.tf` configuration file for Terraform:
 
@@ -94,22 +106,10 @@ For more information on how to use Terraform with OpenStack please check the
 
 [Pulumi](https://www.pulumi.com/) provides Infrastructure as Code using
 different programming languages. Similarly to [Terraform](#terraform),
-it can use credentials obtained out of band to interact with the OpenStack
+it can use credentials obtained [out of band]() to interact with the OpenStack
 services. Check the documentation of the
 [Pulumi OpenStack Provider](https://www.pulumi.com/registry/packages/openstack/)
 for details on how to interact with sites.
-
-You can set the `OS_AUTH` and `OS_TOKEN` variables with the
-[FedCloud client](../../../getting-started/cli):
-
-```shell
-# export OS_AUTH_URL and OS_PROJECT_ID with
-$ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
-
-# now get a valid token
-$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
-                    token issue -c id -f value)
-```
 
 ### Example: creating a VM with Pulumi and Python
 
@@ -182,8 +182,10 @@ pulumi.export("instance_ip", instance.access_ip_v4)
 
 #### Get site credentials
 
-Get your environment ready for interaction with the site. You will need an
-[access token](../../../getting-started/cli/#Authentication):
+
+#### Deploy
+
+Follow [instructions for out of band authentication]():
 
 ```shell
 $ eval "$(fedcloud site show-project-id --site IN2P3-IRES --vo vo.access.egi.eu)"
@@ -191,9 +193,7 @@ $ export OS_TOKEN=$(fedcloud openstack --site IN2P3-IRES \
                     --vo vo.access.egi.eu token issue -c id -f value)
 ```
 
-#### Deploy
-
-Deploy by running `pulumi up`:
+and deploy by running `pulumi up`:
 
 ```shell
 $ pulumi up
