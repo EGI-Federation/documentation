@@ -1,7 +1,7 @@
 ---
-title: Using OpenStack Providers
+title: OpenStack in EGI Cloud
 type: docs
-weight: 10
+weight: 30
 aliases:
   - /users/cloud-compute/openstack
 description: >
@@ -17,19 +17,16 @@ includes details on every OpenStack project most providers offer access to:
 
 - [Keystone](https://docs.openstack.org/keystone/latest/), for identity
 - [Nova](https://docs.openstack.org/nova/latest/), for VM management
-- [Glance](https://docs.openstack.org/glance/latest/), for VM image
-  management
+- [Glance](https://docs.openstack.org/glance/latest/), for VM image management
 - [Cinder](https://docs.openstack.org/cinder/latest/), for block storage
 - [Swift](https://docs.openstack.org/swift/latest/), for object storage
-- [Neutron](https://docs.openstack.org/neutron/latest/), for network
-  management
-- [Horizon](https://docs.openstack.org/horizon/latest/), as a web
-  dashboard
+- [Neutron](https://docs.openstack.org/neutron/latest/), for network management
+- [Horizon](https://docs.openstack.org/horizon/latest/), as a web dashboard
 
 The Horizon Web-dashboard of the OpenStack providers can be accessed using your
 EGI Check-in credentials directly. See the
-[Getting Started guide](../../../getting-started/openstack/) for more information.
-The rest of this guide will focus on CLI/API access.
+[Getting Started guide](../../../getting-started/openstack/) for more
+information. The rest of this guide will focus on CLI/API access.
 
 ## Installation
 
@@ -37,8 +34,7 @@ The OpenStack client is a command-line client for OpenStack that brings the
 command set for Compute, Identity, Image, Object Storage and Block Storage APIs
 together in a single shell with a uniform command structure.
 
-{{< tabpanex >}}
-{{< tabx header="Linux / Mac" >}}
+{{< tabpanex >}} {{< tabx header="Linux / Mac" >}}
 
 Installation of the OpenStack client can be done using:
 
@@ -46,8 +42,7 @@ Installation of the OpenStack client can be done using:
 pip install openstackclient
 ```
 
-{{< /tabx >}}
-{{< tabx header="Windows" >}}
+{{< /tabx >}} {{< tabx header="Windows" >}}
 
 As there are non-pure Python packages needed for installation, the
 [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
@@ -68,8 +63,7 @@ Installation of the OpenStack client can be done using:
 pip install openstackclient
 ```
 
-{{< /tabx >}}
-{{< /tabpanex >}}
+{{< /tabx >}} {{< /tabpanex >}}
 
 Add IGTF CA to python\'s CA store:
 
@@ -87,8 +81,8 @@ credentials for accessing the providers.
 
 Most OpenStack clients allow authentication with tokens, so you can easily use
 them with EGI Cloud providers just doing a first step for obtaining the token.
-With the OpenStack client you can use the following command to set the OS_TOKEN
-variable with the needed token:
+With the OpenStack client you can use the following command to set the
+`OS_TOKEN` variable with the needed token:
 
 ```shell
 $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
@@ -164,7 +158,7 @@ openstack server create --flavor m3.medium \
 ```
 
 - [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/latest/user/user-data.html)
-- [cloudinit documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
+- [`cloudinit` documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
 
 #### Shell script data as user data
 
@@ -213,73 +207,13 @@ openstack server create --flavor <flavor> \
   <name of the new VM>
 ```
 
-## Terraform
-
-[Terraform](https://terraform.io/) supports EGI Cloud OpenStack providers by
-using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password information.
-Instead, use the [FedCloud client](../../../getting-started/cli) client to configure
-environment variables as follows:
-
-```shell
-# export OS_AUTH_URL and OS_PROJECT_ID with
-$ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
-
-# now get a valid token
-$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
-                    token issue -c id -f value)
-```
-
-Here is a sample `main.tf` configuration file for Terraform:
-
-```terraform
-terraform {
-  required_providers {
-    openstack = {
-      source = "terraform-provider-openstack/openstack"
-    }
-  }
-}
-
-# Create a server
-resource "openstack_compute_instance_v2" "vm" {
-  name = "testvm"
-  image_id = "..."
-  flavor_id = "..."
-  security_groups = ["default"]
-}
-```
-
-Initialize Terraform with:
-
-```shell
-$ terraform init
-```
-
-Now check the deployment plan:
-
-```shell
-$ terraform plan
-```
-
-If you are happy with the plan, perform the deployment with:
-
-```shell
-$ terraform apply
-```
-
-For more information on how to use Terraform with OpenStack please check the
-[OpenStack provider documentation](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/).
-
 ## libcloud
 
 [Apache libcloud](https://libcloud.apache.org/index.html) supports OpenStack and
 EGI authentication mechanisms by setting the `ex_force_auth_version` to
-`3.x_oidc_access_token` or `2.0_voms` respectively. Check the
+`3.x_oidc_access_token`. Check the
 [libcloud docs on connecting to OpenStack](https://libcloud.readthedocs.io/en/latest/compute/drivers/openstack.html#connecting-to-the-openstack-installation)
-for details. See below two code samples for using them
-
-### OpenID Connect
+for details. See below sample code:
 
 ```python
 import requests
@@ -309,19 +243,4 @@ OpenStack = get_driver(Provider.OPENSTACK)
 driver = OpenStack('egi.eu', access_token, ex_tenant_name='openid',
                    ex_force_auth_url='https://keystone_url:5000',
                    ex_force_auth_version='3.x_oidc_access_token')
-```
-
-### VOMS
-
-```python
-from libcloud.compute.types import Provider
-from libcloud.compute.providers import get_driver
-
-OpenStack = get_driver(Provider.OPENSTACK)
-# assume your proxy is available at /tmp/x509up_u1000
-# you can obtain a proxy with the voms-proxy-init command
-# no need for username
-driver = OpenStack(None, '/tmp/x509up_u1000', ex_tenant_name='EGI_FCTF',
-                   ex_force_auth_url='https://sbgcloud.in2p3.fr:5000',
-                   ex_force_auth_version='2.0_voms')
 ```

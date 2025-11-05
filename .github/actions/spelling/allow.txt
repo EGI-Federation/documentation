@@ -536,6 +536,7 @@ promozione
 psnc
 puid
 PUIDs
+pulumi
 Putra
 pvc
 pycon

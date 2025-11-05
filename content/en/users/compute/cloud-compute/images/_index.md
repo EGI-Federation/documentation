@@ -2,7 +2,7 @@
 title: Virtual Machine Images
 linkTitle: Images
 type: docs
-weight: 30
+weight: 20
 aliases:
   - /users/cloud-compute/vmi
 description: >
@@ -60,7 +60,7 @@ follows:
   Service Components/Artefact Registry)
 - Ticket body:
 
-  ```
+  ```plaintext
   Dear Artefact Registry,
 
   I'd like to request a new project for VO `<name of the VO>`.
@@ -98,42 +98,42 @@ For the upload, you need to:
 
 1. Login to the registry, you can find credentials in your registry profile:
 
-```shell
-oras login -u <user> registry.egi.eu
-```
+   ```shell
+   oras login -u <user> registry.egi.eu
+   ```
 
-2. Prepare an
+1. Prepare an
    [annotation file](https://oras.land/docs/how_to_guides/manifest_annotations/#using-a-json-file)
    with the expected metadata. You can find below an example for an AlmaLinux
    image file named `alma-9.qcow2`. It also includes a `$manifest` entry with
    annotation of the manifest itself.
 
-```json
-{
-  "$manifest": {
-    "org.opencontainers.image.revision": "7b98c834862f2e7e342fad7f9e175ea8c74aa4f3",
-    "org.opencontainers.image.source": "https://github.com/EGI-Federation/fedcloud-vmi-templates"
-  },
-  "alma-9.qcow2": {
-    "eu.egi.cloud.image.title": "EGI Alma 9 image",
-    "org.openstack.glance.architecture": "x86_64",
-    "org.openstack.glance.os_distro": "alma",
-    "org.openstack.glance.os_type": "linux",
-    "org.openstack.glance.os_version": "9",
-    "org.openstack.glance.disk_format": "qcow2",
-    "eu.egi.cloud.tag": "2025-06-10-7b98c834",
-    "org.openstack.glance.container_format": "bare"
-  }
-}
-```
+   ```json
+   {
+     "$manifest": {
+       "org.opencontainers.image.revision": "7b98c834862f2e7e342fad7f9e175ea8c74aa4f3",
+       "org.opencontainers.image.source": "https://github.com/EGI-Federation/fedcloud-vmi-templates"
+     },
+     "alma-9.qcow2": {
+       "eu.egi.cloud.image.title": "EGI Alma 9 image",
+       "org.openstack.glance.architecture": "x86_64",
+       "org.openstack.glance.os_distro": "alma",
+       "org.openstack.glance.os_type": "linux",
+       "org.openstack.glance.os_version": "9",
+       "org.openstack.glance.disk_format": "qcow2",
+       "eu.egi.cloud.tag": "2025-06-10-7b98c834",
+       "org.openstack.glance.container_format": "bare"
+     }
+   }
+   ```
 
-3. Upload the image and the annotation file:
+1. Upload the image and the annotation file:
 
-```shell
-oras push --annotation-file <annotation json> \
-     registry.egi.eu/<project_name>/<repository>:<tag> \
-     <image file>
-```
+    ```shell
+    oras push --annotation-file <annotation json> \
+         registry.egi.eu/<project_name>/<repository>:<tag> \
+         <image file>
+    ```
 
 #### Building your own image
 

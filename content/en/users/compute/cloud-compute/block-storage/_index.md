@@ -1,7 +1,7 @@
 ---
 title: Block Storage
 type: docs
-weight: 10
+weight: 40
 aliases:
   - /users/data/storage/block-storage
   - /users/online-storage/block-storage
@@ -22,7 +22,7 @@ be mounted as devices in VMs.
 
 Block storage volumes that are attached to a VM are exposed as storage volumes
 that **persist independently from the life of the VM**, and need to be
-explicitly destroyed when data is not needed anymore. Users can create a file
+explicitly destroyed when data is not needed any more. Users can create a file
 system on top of these volumes, or use them in any way you would use a block
 device (such as a hard drive).
 
@@ -740,8 +740,8 @@ $ umount /storage1
 $ cryptsetup close storage1
 ```
 
-For subsequent uses of the persistent disk, there will be no need to perform
-all these operations, only the following are necessary:
+For subsequent uses of the persistent disk, there will be no need to perform all
+these operations, only the following are necessary:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
