@@ -89,7 +89,7 @@ $ cfssl genkey <(echo '{"hosts":["#FQDN#"],"CN"#FQDN#","key":{"algo":"rsa","size
 
 ### Using OpenSSL
 
-It can be done using the following `OpenSSL` command (This will generate a
+It can be done using the following `OpenSSL` command that will generate a
 password-protected key.
 
 You will be asked for various questions, but the only important ones are the
