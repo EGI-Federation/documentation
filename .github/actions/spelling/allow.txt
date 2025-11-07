@@ -440,6 +440,7 @@ nearline
 neovim
 NERGY
 netfilters
+Nextcloud
 neugrid
 ngi
 nginx

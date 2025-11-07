@@ -17,7 +17,7 @@ This documentation covers how to configure a OneData OneProvider with a WebDAV b
 
 ### Network Requirements
 
-- The WebDAV storage should be accessible from the OneProvider instalation
+- The WebDAV storage should be accessible from the OneProvider installation
   - 443 port should be available for access and data transfer
 
 ## Configuration of WebDAV
@@ -40,7 +40,7 @@ Where we can select the "Type" as "WebDAV", the endpoint as the URL copied from 
 
 {{% alert title="Warning" color="warning" %}}
 
-At this strage if we try to add the storage backend we will see the following error:
+At this stage if we try to add the storage backend we will see the following error:
 
 ![image](Readonly-WebDAV.png)
 
