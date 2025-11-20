@@ -31,7 +31,7 @@ jobs:
           - "/tutorials"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
         # Then use lychee to check whether the urls in that page are ok.
@@ -72,7 +72,7 @@ jobs:
           - "/rod"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
@@ -115,7 +115,7 @@ jobs:
           - "/security-coordination"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
@@ -149,7 +149,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Get tools
         # On the "other" page, we do not want to crawl down, so we only use
