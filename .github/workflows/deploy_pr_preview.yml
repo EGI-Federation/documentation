@@ -112,7 +112,7 @@ jobs:
     name: Check links of preview
     steps:
       - name: Checkout configuration
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
         # Then use lychee to check whether the urls in that page are ok.
@@ -158,7 +158,7 @@ jobs:
     name: Check links of preview
     steps:
       - name: Checkout configuration
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
         # Then use lychee to check whether the urls in that page are ok.
@@ -203,7 +203,7 @@ jobs:
     name: Check links of preview
     steps:
       - name: Checkout configuration
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Get tools
         # We will run hakrawler to crawl a page and sub-pages
         # Then use lychee to check whether the urls in that page are ok.
@@ -236,7 +236,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Get tools
         run: |
           curl -fSL https://github.com/lycheeverse/lychee/releases/download/lychee-v0.19.1/lychee-x86_64-unknown-linux-musl.tar.gz | tar xvfz -> lychee
