@@ -5,6 +5,8 @@ type: "docs"
 description: "Using the IGTF CA distribution"
 ---
 
+<!-- cSpell:words SLCS TACAR -->
+
 To ensure interoperability within and outside of EGI, the
 [Policy on Acceptable Authentication Assurance](https://documents.egi.eu/document/2930)
 defined a common set of trust anchors (in a PKIX implementation "Certification
