@@ -5,7 +5,7 @@ type: "docs"
 description: "Using the IGTF CA distribution"
 ---
 
-<!-- cSpell:words SLCS TACAR -->
+<!-- cSpell:words SLCS -->
 
 To ensure interoperability within and outside of EGI, the
 [Policy on Acceptable Authentication Assurance](https://documents.egi.eu/document/2930)
@@ -230,6 +230,3 @@ the
 [International Grid Trust Federation](https://dist.eugridpma.info/distribution/igtf/current/),
 or its [mirror](https://www.apgridpma.org/distribution/). See the IGTF and
 EUGridPMA web pages for additional information.
-
-Make sure to verify your trust anchors with [TACAR](https://www.tacar.org/), the
-[TERENA](https://www.terena.org) Academic CA Repository, where applicable.
