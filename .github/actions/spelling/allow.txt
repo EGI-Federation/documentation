@@ -521,6 +521,7 @@ Petabytes
 Phedex
 PITHIA
 pkce
+PKIX
 playbook
 playbooks
 plgrid

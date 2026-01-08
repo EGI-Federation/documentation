@@ -5,6 +5,8 @@ type: "docs"
 description: "Using the IGTF CA distribution"
 ---
 
+<!-- cSpell:words SLCS -->
+
 To ensure interoperability within and outside of EGI, the
 [Policy on Acceptable Authentication Assurance](https://documents.egi.eu/document/2930)
 defined a common set of trust anchors (in a PKIX implementation "Certification
@@ -49,14 +51,14 @@ trusted CAs.
 ### Using YUM package management
 
 Add the following
-[repo-file](https://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo)
+[repo-file](https://repository.egi.eu/sw/production/cas/1/current/repo-files/egi-trustanchors.repo)
 to the `/etc/yum.repos.d/` directory:
 
 ```ini
 [EGI-trustanchors]
 name=EGI-trustanchors
-baseurl=https://repository.egi.eu/sw/production/cas/1/current/
-gpgkey=https://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3
+baseurl=http://repository.egi.eu/sw/production/cas/1/current/
+gpgkey=http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-4
 gpgcheck=1
 enabled=1
 ```
@@ -108,15 +110,15 @@ solve your issue, or may be asked to use a temporary repository. To use it:
 
 ```shell
 $ wget -q -O - \
-    https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3 \
-    | apt-key add -
+    https://repository.egi.eu/sw/production/cas/1/current/GPG-KEY-EUGridPMA-RPM-4 \
+    | gpg --dearmor -o /etc/apt/keyrings/GPG-KEY-EUGridPMA-RPM-4.gpg
 ```
 
-- Add the following line to your sources.list file for APT:
+- Add the following `egi-trustanchors.list` to your sources.list.d:
 
-```shell
+```plaintext
 #### EGI Trust Anchor Distribution ####
-deb https://repository.egi.eu/sw/production/cas/1/current egi-igtf core
+deb [signed-by=/etc/apt/keyrings/GPG-KEY-EUGridPMA-RPM-4.gpg] http://repository.egi.eu/sw/production/cas/1/current egi-igtf core
 ```
 
 - Populate the cache and install the meta-package
@@ -228,6 +230,3 @@ the
 [International Grid Trust Federation](https://dist.eugridpma.info/distribution/igtf/current/),
 or its [mirror](https://www.apgridpma.org/distribution/). See the IGTF and
 EUGridPMA web pages for additional information.
-
-Make sure to verify your trust anchors with [TACAR](https://www.tacar.org/), the
-[TERENA](https://www.terena.org) Academic CA Repository, where applicable.
