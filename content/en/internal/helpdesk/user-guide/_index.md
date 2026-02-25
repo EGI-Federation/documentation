@@ -231,6 +231,16 @@ description of the different state values and how they should be used.
 - unsolved: This status is for tickets that can not be solved due to any reason
   (ticket duplicated, topic not valid any longer, won't fix, etc.). Please add a
   comment in the text field explaining why it can't be solved.
+- closed: This state is automatically applied to tickets in the “solved”
+  and “unsolved” states 4 weeks after the last update.
+  Tickets in the “closed” state cannot be reopened or edited.
+  Any updates submitted via email to a “closed” ticket will be rejected.
+- verified: This state allows ticket submitters to confirm
+  that they are satisfied with the provided solution.
+  The “verified” state is available only for tickets currently in the “solved”
+  and “unsolved” states. Once a ticket is “verified”, it cannot be reopened
+  or edited. Any updates submitted via email to a “verified” ticket
+  will be rejected.
 
 ## Ticket history
 
