@@ -4,9 +4,17 @@
   "words": [
     "RCIAM",
     "rciam",
+    "Organisations",
+    "organisations",
+    "Organisation",
+    "organisation",
+    "organise",
+    "organised",
+    "behaviour",
+    "authorisation",
+    "Authorisation",
     "virtualisation",
     "organisational",
-    "organisation",
     "Perun",
     "perun",
     "Keycloak",
@@ -27,10 +35,16 @@
     "subgroups",
     "enrolment",
     "enrolments",
+    "Enrolments",
     "subgroup",
     "vopersonid",
     "mace",
     "eduPersonPrincipalName",
-    "eduPersonOrgDN"
+    "eduPersonOrgDN",
+    "infobox",
+    "visualise",
+    "visualised",
+    "categorised",
+    "customised"
   ]
 }
