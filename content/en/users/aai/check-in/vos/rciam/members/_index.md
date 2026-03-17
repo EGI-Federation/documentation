@@ -44,7 +44,7 @@ with other useful information.
 2. The **Unique User Identifier** is the string that uniquely identifies a user,
    and it is made of a long alphanumerical string suffixed by `@egi.eu`.
 3. Name / email shows the full name and email address of the user.
-4. The roles that the user has in the group. Note that users can have more than
+ The roles that the user has in the group. Note that users can have more than
    one role assigned in the group but must have at least one assigned. There is
    a filter button to display only users with a certain role.
 5. The date when the user membership started.
@@ -225,7 +225,7 @@ The necessary information for the enrolment creation is the following:
    ![Membership length warning message for indefinite length](./enrolment_membership_indefinite.png)
    {.img-screenshot}
 
-4. A future date when the membership should start. This option is useful to
+3. A future date when the membership should start. This option is useful to
    control when the access to the group will be granted for a user. A user
    joining a group with a future membership date, will be in a
    [pending status](#membership-status).
@@ -233,13 +233,13 @@ The necessary information for the enrolment creation is the following:
    ![Group enrolment future membership](./enrolment_future_membership.png)
    {.img-screenshot}
 
-5. Enrolment requests may be either approved automatically or manually approved
+4. Enrolment requests may be either approved automatically or manually approved
    by an administrator. This attribute specifies if the request needs a manual
    approval from a Group Admin (which is normally recommended). If it does, a
    Group Admin will have to approve the user request. If not, any user that
    requests it will be automatically approved and will become a member as soon
    as the request is received.
-6. This attribute defines any extra information that must be collected from the
+5. This attribute defines any extra information that must be collected from the
    user in the request. The information can be customised with a label and a
    description. The label will be presented to the user (e.g. the label could be
    “Reason to join the group”) and the description should explain the user how
@@ -249,14 +249,14 @@ The necessary information for the enrolment creation is the following:
    ![Comments in an enrolment](./enrolment_comments.png)
    {.img-screenshot}
 
-8. The link for the Acceptable Use Policy of the group. This link will be
+6. The link for the Acceptable Use Policy of the group. This link will be
    presented to the user and its acceptance must be acknowledged as a
    requirement to join the group.
-9. The group roles that the user can have assigned when joining the group. These
+7. The group roles that the user can have assigned when joining the group. These
    roles will be presented to the user, who will decide which role(s) to
    request. There is an option to allow the user to accept only one role or
    multiple roles.
-10. This attribute controls if this enrolment should be publicly available or
+8. This attribute controls if this enrolment should be publicly available or
    not. If this attribute is checked, users following the
    [default enrolment link](#default-group-enrolment) of the group will be able
    to choose the enrolment to join the group.
@@ -264,7 +264,7 @@ The necessary information for the enrolment creation is the following:
    ![Visible enrolments](./enrolment_select_visible.png)
    {.img-screenshot}
 
-11. If the enrolment is enabled or disabled. This is useful to disable an
+9. If the enrolment is enabled or disabled. This is useful to disable an
    enrolment temporarily, instead of deleting it.
 
 ### Modification of Group Enrolments
