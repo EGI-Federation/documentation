@@ -40,6 +40,8 @@ After logging into the web interface:
 - Enter your prompt in the input field
 - Submit the request to receive a response
 
+![FedLLM Web Interface](./fedllm_ui.png)
+
 ### API Usage
 
 You can retrieve a list of available models:
