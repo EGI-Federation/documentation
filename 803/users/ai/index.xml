@@ -1,0 +1,73 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Artificial Intelligence</title><link>/users/ai/</link><description>Recent content in Artificial Intelligence on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: FedLLM</title><link>/users/ai/fedllm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/ai/fedllm/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>FedLLM is an EGI service that provides access to Large Language Models (LLMs) through:&lt;/p>
+&lt;ul>
+&lt;li>A web-based chat interface: &lt;a href="https://chat.ai.egi.eu/">chat.ai.egi.eu&lt;/a>&lt;/li>
+&lt;li>An OpenAI-compatible API: &lt;a href="https://llm.ai.egi.eu/">llm.ai.egi.eu&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>The service enables users to generate and analyse text,
+run retrieval-augmented generation (RAG) workflows,
+and integrate AI capabilities into scientific applications.&lt;/p>
+&lt;h2 id="access-and-authentication">Access and Authentication&lt;/h2>
+&lt;p>Access is managed through EGI Check-in:&lt;/p>
+&lt;ol>
+&lt;li>Create an &lt;a href="../../aai/check-in/signup">EGI account&lt;/a>&lt;/li>
+&lt;li>Enrol in a supported Virtual Organisation (VO) such as
+&lt;a href="https://aai-demo.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.fedllm.egi.eu">vo.fedllm.egi.eu&lt;/a>&lt;/li>
+&lt;li>Access the service via &lt;a href="https://chat.ai.egi.eu/">chat.ai.egi.eu&lt;/a>&lt;/li>
+&lt;li>To use the API, generate an API key from the web interface (Account settings → Create a new secret key)&lt;/li>
+&lt;li>Use the API key to access the &lt;a href="https://llm.ai.egi.eu/">llm.ai.egi.eu&lt;/a> API endpoints&lt;/li>
+&lt;/ol>
+&lt;h2 id="using-ai-models">Using AI Models&lt;/h2>
+&lt;h3 id="web-interface">Web Interface&lt;/h3>
+&lt;p>After logging into the web interface:&lt;/p>
+&lt;ul>
+&lt;li>Select a model from the dropdown menu&lt;/li>
+&lt;li>Enter your prompt in the input field&lt;/li>
+&lt;li>Submit the request to receive a response&lt;/li>
+&lt;/ul>
+&lt;h3 id="api-usage">API Usage&lt;/h3>
+&lt;p>You can retrieve a list of available models:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl https://llm.ai.egi.eu/v1/models &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$API_KEY&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can then send a request using one of the available models:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl https://llm.ai.egi.eu/v1/chat/completions &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$API_KEY&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> &amp;#34;model&amp;#34;: &amp;#34;gpt-oss-120b&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> &amp;#34;messages&amp;#34;: [
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> { &amp;#34;role&amp;#34;: &amp;#34;user&amp;#34;, &amp;#34;content&amp;#34;: &amp;#34;Hello!&amp;#34; }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> ]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> }&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For detailed API specifications, refer to the
+&lt;a href="https://developers.openai.com/api/reference/overview">API reference&lt;/a>.
+Note that not all endpoints are supported.&lt;/p>
+&lt;p>For client access and development, refer to the &lt;a href="https://docs.litellm.ai/docs/#litellm-python-sdk">LiteLLM SDK&lt;/a>
+or the &lt;a href="https://developers.openai.com/api/docs/libraries/">OpenAI Client Libraries&lt;/a>.&lt;/p>
+&lt;!--
+## Service options
+### LLMs for Researchers
+- Shared service access
+- Standard quotas (requests per minute, tokens per minute)
+### LLMs for Communities
+- Dedicated deployments
+- Custom models and quotas
+- Integration with community services
+### On-premises LLMs
+- Deployment on community-owned infrastructure
+- Full control over models and data
+-->
+&lt;h2 id="high-level-service-architecture">High-level Service architecture&lt;/h2>
+&lt;p>The FedLLM service is composed of the following components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Web interface&lt;/strong> (Open WebUI): user interaction and API key management&lt;/li>
+&lt;li>&lt;strong>API gateway&lt;/strong> (LiteLLM): OpenAI-compatible interface and routing&lt;/li>
+&lt;li>&lt;strong>Inference backend&lt;/strong> (e.g. vLLM): execution of LLM workloads on GPU resources&lt;/li>
+&lt;/ul>
+&lt;p>User data is processed only for service delivery and is not retained or reused for training.&lt;/p>
+&lt;h2 id="usage-considerations">Usage considerations&lt;/h2>
+&lt;ul>
+&lt;li>Available models may vary depending on your VO&lt;/li>
+&lt;li>Usage may be subject to quotas and rate limits&lt;/li>
+&lt;/ul></description></item></channel></rss>
