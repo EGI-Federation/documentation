@@ -45,20 +45,22 @@ After logging into the web interface:
 You can retrieve a list of available models:
 
 ```shell
-$ curl https://llm.ai.egi.eu/v1/models \
-    -H "Authorization: Bearer ${API_KEY}" | jq .
+curl https://llm.ai.egi.eu/v1/models \
+  -H "Authorization: Bearer $API_KEY" | jq .
 ```
 
 You can then send a request using one of the available models:
 
  ```shell
- curl https://llm.ai.egi.eu/v1/chat/completions \
-    -H "Authorization: Bearer $API_KEY" \           
-    -H "Content-Type: application/json" \
-    -d '{"model": "gpt-oss-120b", 
-    "messages": [ 
-        { "role": "user", "content": "Hello!" }
-    ] }'| jq .
+curl https://llm.ai.egi.eu/v1/chat/completions \
+  -H "Authorization: Bearer $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-oss-120b",
+    "messages": [
+      { "role": "user", "content": "Hello!" }
+    ]
+  }' | jq .
 ```
 
 For detailed API specifications, refer to the
