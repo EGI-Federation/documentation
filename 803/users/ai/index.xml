@@ -26,6 +26,7 @@ and integrate AI capabilities into scientific applications.&lt;/p>
 &lt;li>Enter your prompt in the input field&lt;/li>
 &lt;li>Submit the request to receive a response&lt;/li>
 &lt;/ul>
+&lt;p>&lt;img src="./fedllm_ui.png" alt="FedLLM Web Interface">&lt;/p>
 &lt;h3 id="api-usage">API Usage&lt;/h3>
 &lt;p>You can retrieve a list of available models:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl https://llm.ai.egi.eu/v1/models &lt;span style="color:#4e9a06">\
