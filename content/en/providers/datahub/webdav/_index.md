@@ -8,7 +8,7 @@ description:
 weight: 20
 ---
 
-This documentation covers how to configure a OneData OneProvider with a WebDAV backend as an existing storage. This configuration has been tested with Nextcloud and XrootD.
+This documentation covers how to configure a OneData OneProvider with a WebDAV backend as an existing storage. This configuration has been tested with Nextcloud and SabreDAV.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ This documentation covers how to configure a OneData OneProvider with a WebDAV b
 ### Network Requirements
 
 - The WebDAV storage should be accessible from the OneProvider installation
-  - 443 port should be available for access and data transfer
+  - the port used to access the service should be available for access and data transfer
 
 ## Configuration of WebDAV
 
