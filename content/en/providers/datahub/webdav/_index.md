@@ -22,7 +22,7 @@ This documentation covers how to configure a OneData OneProvider with a WebDAV b
 
 ## Configuration of WebDAV
 
-In this documentation an installation of Nextcloud and SabreDAV have been used. In particular. On the Nextcloud webinterface, once logged in, we need to check the WebDAV section on the "File settings". The "Files settings" section can be accessed from the bottom lef of the web interface. For the SabreDAV implementation is simply the URL or IP of the server.
+In this documentation an installation of Nextcloud and SabreDAV have been used. In particular. On the Nextcloud web interface, once logged in, we need to check the WebDAV section on the "File settings". The "Files settings" section can be accessed from the bottom lef of the web interface. For the SabreDAV implementation is simply the URL or IP of the server.
 
 ![image](Nextcloud-File-Settings.png)
 
