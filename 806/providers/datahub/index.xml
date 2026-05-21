@@ -148,7 +148,7 @@ expanded and continuos scan enabled.&lt;/p></description></item><item><title>Pro
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="configuration-of-webdav">Configuration of WebDAV&lt;/h2>
-&lt;p>In this documentation an installation of Nextcloud and SabreDAV have been used. In particular. On the Nextcloud webinterface, once logged in, we need to check the WebDAV section on the &amp;ldquo;File settings&amp;rdquo;. The &amp;ldquo;Files settings&amp;rdquo; section can be accessed from the bottom lef of the web interface. For the SabreDAV implementation is simply the URL or IP of the server.&lt;/p>
+&lt;p>In this documentation an installation of Nextcloud and SabreDAV have been used. In particular. On the Nextcloud web interface, once logged in, we need to check the WebDAV section on the &amp;ldquo;File settings&amp;rdquo;. The &amp;ldquo;Files settings&amp;rdquo; section can be accessed from the bottom lef of the web interface. For the SabreDAV implementation is simply the URL or IP of the server.&lt;/p>
 &lt;p>&lt;img src="Nextcloud-File-Settings.png" alt="image">&lt;/p>
 &lt;p>This opens the Files settings where we can check and copy the URL to access the WebDAV interface as show in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="Nextcloud-Webdav-conf.png" alt="image">&lt;/p>
