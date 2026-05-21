@@ -148,7 +148,7 @@ expanded and continuos scan enabled.&lt;/p></description></item><item><title>Pro
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="configuration-of-webdav">Configuration of WebDAV&lt;/h2>
-&lt;p>In this example an installation of Nextcloud has been used. In particular, once logged in the web interface we need to check the WebDAV section on the &amp;ldquo;File settings&amp;rdquo;. The &amp;ldquo;Files settings&amp;rdquo; section can be accessed from the bottom lef of the web interface.&lt;/p>
+&lt;p>In this documentation an installation of Nextcloud and SabreDAV have been used. In particular. On the Nextcloud webinterface, once logged in, we need to check the WebDAV section on the &amp;ldquo;File settings&amp;rdquo;. The &amp;ldquo;Files settings&amp;rdquo; section can be accessed from the bottom lef of the web interface. For the SabreDAV implementation is simply the URL or IP of the server.&lt;/p>
 &lt;p>&lt;img src="Nextcloud-File-Settings.png" alt="image">&lt;/p>
 &lt;p>This opens the Files settings where we can check and copy the URL to access the WebDAV interface as show in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="Nextcloud-Webdav-conf.png" alt="image">&lt;/p>
@@ -158,14 +158,14 @@ expanded and continuos scan enabled.&lt;/p></description></item><item><title>Pro
 &lt;p>Where we can select the &amp;ldquo;Type&amp;rdquo; as &amp;ldquo;WebDAV&amp;rdquo;, the endpoint as the URL copied from Nextcloud in the previous steps and the credential to access NextCloud as &amp;ldquo;Credential type&amp;rdquo; basic and &amp;ldquo;login:password&amp;rdquo;&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;p>At this stage if we try to add the storage backend we will see the following error:&lt;/p>
-&lt;p>For this operation to succeed we need an implementation of WebDAV that has &amp;ldquo;Range write support&amp;rdquo;. One notable example of implementation that does not support &amp;ldquo;Range write support&amp;rdquo; is Nextcloud.
+&lt;p>At this stage if we try to add the Nextcloud storage backend we will see the following error:&lt;/p>
+&lt;p>For this operation to succeed we need an implementation of WebDAV that has &amp;ldquo;Range write support&amp;rdquo; which is not supported by Nextcloud.
 If we try to use that we would be presented the following warning and although the data would be accessible, the storage would be in readonly mode:&lt;/p>
 &lt;p>&lt;img src="Readonly-WebDAV.png" alt="image">&lt;/p>
 &lt;p>OneData, by design supports only this way of writing as it is expected to write large amount of data.&lt;/p>
 &lt;/div>
-&lt;p>To successfully test the support for WebDAV we used &lt;a href="https://sabre.io/">SabreDAV&lt;/a>.
-After the configuration is complete the&lt;/p>
+&lt;p>&lt;a href="https://sabre.io/">SabreDAV&lt;/a> has &amp;ldquo;Range write support&amp;rdquo; and can be successfully configured with read and write support.
+After the configuration is completed like shown it the previous steps we can access it is possible to access the content of the storage&lt;/p>
 &lt;p>&lt;img src="DataHub-WebDAV-Files.png" alt="image">&lt;/p>
-&lt;p>Like with any other backend is possible to perform all the operation and upload files from the web interface as shown in the following screenshot:&lt;/p>
+&lt;p>If the backend configured is for example SabreDAV it is possible to perform all the operation and upload files from the web interface as shown in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="DataHub-WebDAV-Upload.png" alt="image">&lt;/p></description></item></channel></rss>
