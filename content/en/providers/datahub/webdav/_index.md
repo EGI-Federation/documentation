@@ -51,7 +51,7 @@ OneData, by design supports only this way of writing as it is expected to write 
 {{% /alert %}}
 
 [SabreDAV](https://sabre.io/) has "Range write support" and can be successfully configured with read and write support.
-After the configuration is completed like shown it the previous steps we can access it is possible to access the content of the storage
+After the configuration is completed like shown it the previous steps it is possible to access the content of the storage
 
 ![image](DataHub-WebDAV-Files.png)
 
