@@ -55,6 +55,6 @@ After the configuration is completed like shown it the previous steps we can acc
 
 ![image](DataHub-WebDAV-Files.png)
 
-If the backend configured is for example SabreDAV it is possible to perform all the operation and upload files from the web interface as shown in the following screenshot:
+If the backend configured is for example SabreDAV it is possible to perform all the operations and upload files from the web interface as shown in the following screenshot:
 
 ![image](DataHub-WebDAV-Upload.png)
