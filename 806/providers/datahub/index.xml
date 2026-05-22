@@ -167,5 +167,5 @@ If we try to use that we would be presented the following warning and although t
 &lt;p>&lt;a href="https://sabre.io/">SabreDAV&lt;/a> has &amp;ldquo;Range write support&amp;rdquo; and can be successfully configured with read and write support.
 After the configuration is completed like shown it the previous steps we can access it is possible to access the content of the storage&lt;/p>
 &lt;p>&lt;img src="DataHub-WebDAV-Files.png" alt="image">&lt;/p>
-&lt;p>If the backend configured is for example SabreDAV it is possible to perform all the operation and upload files from the web interface as shown in the following screenshot:&lt;/p>
+&lt;p>If the backend configured is for example SabreDAV it is possible to perform all the operations and upload files from the web interface as shown in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="DataHub-WebDAV-Upload.png" alt="image">&lt;/p></description></item></channel></rss>
