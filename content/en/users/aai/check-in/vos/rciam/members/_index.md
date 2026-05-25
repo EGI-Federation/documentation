@@ -69,7 +69,7 @@ with other useful information.
    status.
 
 9. The “Add Member” button can be used to add new members, as explained
-   [below](/#adding-users-to-a-group-manually).
+   [below](#adding-users-to-a-group-manually).
 10. The “Search” field can be used to filter users by Unique Identifier, Name or
    email.
 11. There are three action buttons:
