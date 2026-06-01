@@ -521,4 +521,85 @@ command of EC3:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 destroy k8s -y -a auth.dat
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARNING: you are going to delete the infrastructure &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>including frontend and nodes&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Success deleting the cluster!
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Container Primer</title><link>/users/compute/cloud-container-compute/containers-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-container-compute/containers-intro/</guid><description>
+&lt;p>This guide looks at what containers are, how they are different from other
+kinds of virtualization technologies, and what advantages they can offer for
+your development and operations processes.&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>DevOps teams face important challenges when building and installing
+applications, due to the very specific deployment and configuration needs
+(libraries, dependencies, configuration files, environment variables, secrets,
+etc.), which can cause applications to fail to run correctly when moved from
+one environment (development) to another (production).&lt;/p>
+&lt;p>The goal of containerization is to offer a better way to create, package, and
+deploy software across different environments in a predictable and
+easy-to-manage way.&lt;/p>
+&lt;h2 id="what-is-a-container">What is a container?&lt;/h2>
+&lt;p>Similar to how a shipping container can be transported by ships, trucks, rail,
+etc. regardless of the cargo inside, &lt;strong>a container is a standardized, portable
+way of packaging software&lt;/strong>, together with all necessary code, dependencies and
+configuration.&lt;/p>
+&lt;p>Containers run consistently on any container-capable host, so developers can
+test containers as a unit, deploy and run them across different types of
+infrastructure with little or no modification. Because the hosts and platforms
+that run containers are generic, infrastructure management for container-based
+systems can be standardized.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Although containers can be implemented
+and managed in a number of different ways, &lt;a href="https://www.docker.com">Docker&lt;/a> is
+by far the most common way of building and running containers.
+&lt;/div>
+&lt;p>&lt;strong>Containers are created from container images&lt;/strong>, which are read-only bundles
+that represent an application or service, its dependencies, and its configuration.
+Container images act like templates for creating specific containers, and the
+same image can be used to spawn any number of running containers.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>This is similar to how &lt;em>classes&lt;/em> and
+&lt;em>instances&lt;/em> work in object-oriented programming: a single class can be used to
+create any number of instances just as a single container image can be used to
+create any number of containers.&lt;/p>
+&lt;p>This analogy also holds true in regards to inheritance since container images
+can act as the parent for other, more customized container images.&lt;/p>
+&lt;/div>
+&lt;p>Each &lt;strong>container image is built from a Dockerfile&lt;/strong>, which is a &amp;ldquo;recipe&amp;rdquo; that
+either starts from scratch or from another Dockerfile, and has a
+&lt;a href="https://docs.docker.com/engine/reference/builder/">simple syntax&lt;/a> for defining
+the steps needed to create and run the image. Each instruction in a Dockerfile
+creates a layer in the image. When you change the Dockerfile and rebuild the
+image, only those layers which have changed are rebuilt, making images lightweight,
+small, and fast, compared to other virtualization technologies.&lt;/p>
+&lt;p>Instead of building container images every time you need to use them,
+&lt;strong>container images are published in container registries&lt;/strong>, where images
+can be pushed by developers and pulled when new container instances need to
+be created and executed.&lt;/p>
+&lt;h2 id="containers-vs-virtual-machines">Containers vs Virtual Machines&lt;/h2>
+&lt;p>&lt;strong>Virtual machines virtualize the underlying hardware&lt;/strong> so that multiple
+operating system (OS) instances can run on the hardware. Each virtual machine
+(VM) runs an OS and has access to virtualized resources representing the
+underlying hardware.&lt;/p>
+&lt;p>Because VMs are operated as distinct computers that cannot affect the host
+system or other VMs, they offer great isolation and security. But because each VM
+contains an OS, libraries, applications, and more, VMs can use significant
+system resources, and the VM provisioning and boot times can be fairly slow.
+And since VMs operate as independent machines, VM owners need to employ
+infrastructure management tools and processes to manage and update them.&lt;/p>
+&lt;p>&lt;strong>Containers virtualize the underlying operating system&lt;/strong>. Containers are
+run by a container host that runs on the OS, and isolates (see note below) containerized
+applications by making them believe that each has the OS (including underlying resources
+like CPUs, GPUs, memory, file storage, and network connections) all to itself.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Cgroups">Linux control groups&lt;/a>
+allow processes and their resources to be grouped, isolated, and managed as a unit.&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Linux_namespaces">Linux namespaces&lt;/a> limit
+what processes can see of the rest of the system. Processes running inside
+namespaces are not aware of anything running outside of their namespace.&lt;/p>
+&lt;/div>
+&lt;p>Since containers share the host OS, they do not need to boot an OS or load
+libraries, which makes them much more efficient and lightweight than VMs.
+Containerized applications can start in seconds, and many more instances of
+the application can fit onto a physical machine than the same application
+running in a VM. The shared OS has the added benefit of reduced overhead
+when it comes to maintenance, such as patching and updates.&lt;/p></description></item></channel></rss>
