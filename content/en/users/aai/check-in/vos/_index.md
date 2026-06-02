@@ -59,7 +59,7 @@ The VO registration process is detailed in the procedure
 The person registering a VO is considered the administrator of the VO, also
 known as **VO Manager**. Additional VO Managers do not need to be included at
 the time of the VO creation, they
-[can be added later](keycloak/admins#adding-administrators-to-a-group).
+[can be added later](rciam/admins#adding-administrators-to-a-group).
 
 ## Manage a Virtual Organisation
 
@@ -83,7 +83,7 @@ need access to Notebooks, etc.
 
 Check-in offers two tools to organise a community:
 
-- [Keycloak](keycloak).
+- [RCIAM](rciam).
 - [Perun](perun).
 
 Follow the links for detailed information on how to manage VO groups.
