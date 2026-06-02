@@ -290,7 +290,7 @@ card&lt;/strong>, which is the basic information for the VO.&lt;/p>
 &lt;p>The person registering a VO is considered the administrator of the VO, also
 known as &lt;strong>VO Manager&lt;/strong>. Additional VO Managers do not need to be included at
 the time of the VO creation, they
-&lt;a href="keycloak/admins#adding-administrators-to-a-group">can be added later&lt;/a>.&lt;/p>
+&lt;a href="rciam/admins#adding-administrators-to-a-group">can be added later&lt;/a>.&lt;/p>
 &lt;h2 id="manage-a-virtual-organisation">Manage a Virtual Organisation&lt;/h2>
 &lt;p>A VO is managed by its VO Managers. VOs can have more than one administrator,
 and they are responsible for the correct operation of the VO. The functions of
@@ -311,7 +311,7 @@ a specific application, other group for users that will attend a workshop and
 need access to Notebooks, etc.&lt;/p>
 &lt;p>Check-in offers two tools to organise a community:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="keycloak">Keycloak&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="rciam">RCIAM&lt;/a>.&lt;/li>
 &lt;li>&lt;a href="perun">Perun&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>Follow the links for detailed information on how to manage VO groups.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>

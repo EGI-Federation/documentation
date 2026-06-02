@@ -33,7 +33,7 @@ released for the user. For example, a user with roles &amp;ldquo;cloud_operator&
 &lt;li>When a user is not a member of a specific VO or group, or if the user&amp;rsquo;s
 membership has expired, the entitlement for this VO/group will not be released
 by Check-in.&lt;/li>
-&lt;/ul></description></item><item><title>Users: Group Management in Keycloak</title><link>/users/aai/check-in/vos/keycloak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/</guid><description>
+&lt;/ul></description></item><item><title>Users: Group Management in Keycloak</title><link>/users/aai/check-in/vos/rciam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/rciam/</guid><description>
 &lt;p>Check-in allows you to organise your community based on two concepts:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Groups&lt;/strong>, representing a collection of users.&lt;/li>

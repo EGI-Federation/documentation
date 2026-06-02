@@ -133,7 +133,7 @@ There we should select the cluster that is providing the space that we need to
 configure, Spaces and select the specific space that need to be configured. In
 the example shown, the &amp;ldquo;Auto storage import configuration&amp;rdquo; menu has been
 expanded and continuos scan enabled.&lt;/p></description></item><item><title>Providers: DataHub WebDAV</title><link>/providers/datahub/webdav/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/datahub/webdav/</guid><description>
-&lt;p>This documentation covers how to configure a OneData OneProvider with a WebDAV backend as an existing storage. This configuration has been tested with Nextcloud and XrootD.&lt;/p>
+&lt;p>This documentation covers how to configure a OneData OneProvider with a WebDAV backend as an existing storage. This configuration has been tested with Nextcloud and SabreDAV.&lt;/p>
 &lt;h2 id="requirements">Requirements&lt;/h2>
 &lt;ul>
 &lt;li>An existing installation of DataHub and one provider&lt;/li>
@@ -143,12 +143,12 @@ expanded and continuos scan enabled.&lt;/p></description></item><item><title>Pro
 &lt;ul>
 &lt;li>The WebDAV storage should be accessible from the OneProvider installation
 &lt;ul>
-&lt;li>443 port should be available for access and data transfer&lt;/li>
+&lt;li>the port used to access the service should be available for access and data transfer&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="configuration-of-webdav">Configuration of WebDAV&lt;/h2>
-&lt;p>In this example an installation of Nextcloud has been used. In particular, once logged in the web interface we need to check the WebDAV section on the &amp;ldquo;File settings&amp;rdquo;. The &amp;ldquo;Files settings&amp;rdquo; section can be accessed from the bottom lef of the web interface.&lt;/p>
+&lt;p>In this documentation an installation of Nextcloud and SabreDAV have been used. In particular. On the Nextcloud web interface, once logged in, we need to check the WebDAV section on the &amp;ldquo;File settings&amp;rdquo;. The &amp;ldquo;Files settings&amp;rdquo; section can be accessed from the bottom lef of the web interface. For the SabreDAV implementation is simply the URL or IP of the server.&lt;/p>
 &lt;p>&lt;img src="Nextcloud-File-Settings.png" alt="image">&lt;/p>
 &lt;p>This opens the Files settings where we can check and copy the URL to access the WebDAV interface as show in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="Nextcloud-Webdav-conf.png" alt="image">&lt;/p>
@@ -158,8 +158,14 @@ expanded and continuos scan enabled.&lt;/p></description></item><item><title>Pro
 &lt;p>Where we can select the &amp;ldquo;Type&amp;rdquo; as &amp;ldquo;WebDAV&amp;rdquo;, the endpoint as the URL copied from Nextcloud in the previous steps and the credential to access NextCloud as &amp;ldquo;Credential type&amp;rdquo; basic and &amp;ldquo;login:password&amp;rdquo;&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;p>At this stage if we try to add the storage backend we will see the following error:&lt;/p>
+&lt;p>At this stage if we try to add the Nextcloud storage backend we will see the following error:&lt;/p>
+&lt;p>For this operation to succeed we need an implementation of WebDAV that has &amp;ldquo;Range write support&amp;rdquo; which is not supported by Nextcloud.
+If we try to use that we would be presented the following warning and although the data would be accessible, the storage would be in readonly mode:&lt;/p>
 &lt;p>&lt;img src="Readonly-WebDAV.png" alt="image">&lt;/p>
-&lt;p>This is because of a limitation on the WebDAV implementation of Nextcloud. In particular it does not have &amp;ldquo;Range write support&amp;rdquo; while OneData, by design supports only this way of writing as it is expected to write large amount of data. Selecting the &amp;ldquo;Read only&amp;rdquo; option allow to complete the configuration. Going back to the Files section we can then browse the files present on the imported WebDAV storage.&lt;/p>
+&lt;p>OneData, by design supports only this way of writing as it is expected to write large amount of data.&lt;/p>
 &lt;/div>
-&lt;p>A similar procedure can be used and has been tested for XrootD however in this case as the Nextcloud tests, the &amp;ldquo;Range write support&amp;rdquo; was not available on the instance tested and the readonly access was possible.&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://sabre.io/">SabreDAV&lt;/a> has &amp;ldquo;Range write support&amp;rdquo; and can be successfully configured with read and write support.
+After the configuration is completed like shown it the previous steps it is possible to access the content of the storage&lt;/p>
+&lt;p>&lt;img src="DataHub-WebDAV-Files.png" alt="image">&lt;/p>
+&lt;p>If the backend configured is for example SabreDAV it is possible to perform all the operations and upload files from the web interface as shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="DataHub-WebDAV-Upload.png" alt="image">&lt;/p></description></item></channel></rss>

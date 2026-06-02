@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Group Management in Keycloak</title><link>/users/aai/check-in/vos/keycloak/</link><description>Recent content in Group Management in Keycloak on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/vos/keycloak/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Managing groups</title><link>/users/aai/check-in/vos/keycloak/groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/groups/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Group Management in Keycloak</title><link>/users/aai/check-in/vos/rciam/</link><description>Recent content in Group Management in Keycloak on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/vos/rciam/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Managing groups</title><link>/users/aai/check-in/vos/rciam/groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/rciam/groups/</guid><description>
 &lt;h2 id="group-information">Group information&lt;/h2>
 &lt;p>When clicking on a group from the
 &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>,
@@ -60,7 +60,7 @@ click on “Delete Group”.&lt;/p>
 &lt;h4 class="alert-heading">NOTE&lt;/h4>
 VOs (the root groups) cannot be
 deleted through the interface.
-&lt;/div></description></item><item><title>Users: Managing group members</title><link>/users/aai/check-in/vos/keycloak/members/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/members/</guid><description>
+&lt;/div></description></item><item><title>Users: Managing group members</title><link>/users/aai/check-in/vos/rciam/members/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/rciam/members/</guid><description>
 &lt;p>Users can join a group to become members of the group. This membership can be
 limited by time, if desired. The exception is for the VO group (the root group),
 whose membership is always limited to a maximum of one year and must be renewed
@@ -93,10 +93,8 @@ of several subgroups.&lt;/p>
 and it is made of a long alphanumerical string suffixed by &lt;code>@egi.eu&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Name / email shows the full name and email address of the user.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The roles that the user has in the group. Note that users can have more than
+&lt;p>Name / email shows the full name and email address of the user.
+The roles that the user has in the group. Note that users can have more than
 one role assigned in the group but must have at least one assigned. There is
 a filter button to display only users with a certain role.&lt;/p>
 &lt;/li>
@@ -118,7 +116,7 @@ status.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>The “Add Member” button can be used to add new members, as explained
-&lt;a href="../../../../../#adding-users-to-a-group-manually">below&lt;/a>.&lt;/p>
+&lt;a href="#adding-users-to-a-group-manually">below&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>The “Search” field can be used to filter users by Unique Identifier, Name or
@@ -280,12 +278,12 @@ multiple roles.&lt;/p>
 not. If this attribute is checked, users following the
 &lt;a href="#default-group-enrolment">default enrolment link&lt;/a> of the group will be able
 to choose the enrolment to join the group.&lt;/p>
-&lt;/li>
-&lt;/ol>
 &lt;p class="img-screenshot">&lt;img src="./enrolment_select_visible.png" alt="Visible enrolments">&lt;/p>
-&lt;ol start="11">
-&lt;li>If the enrolment is enabled or disabled. This is useful to disable an
-enrolment temporarily, instead of deleting it.&lt;/li>
+&lt;/li>
+&lt;li>
+&lt;p>If the enrolment is enabled or disabled. This is useful to disable an
+enrolment temporarily, instead of deleting it.&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;h3 id="modification-of-group-enrolments">Modification of Group Enrolments&lt;/h3>
 &lt;p>To modify an existing enrolment, access the enrolment data by clicking on the
@@ -491,7 +489,7 @@ administrators of the group and the user will be notified.
 &lt;p>To manually remove a user from a group, access the “Group Members” tab of the
 group, locate the user that you want to remove and click on the cross button on
 the right of the user entry.&lt;/p>
-&lt;p class="img-screenshot">&lt;img src="./member_delete.png" alt="Remove user">&lt;/p></description></item><item><title>Users: Managing group administrators</title><link>/users/aai/check-in/vos/keycloak/admins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/admins/</guid><description>
+&lt;p class="img-screenshot">&lt;img src="./member_delete.png" alt="Remove user">&lt;/p></description></item><item><title>Users: Managing group administrators</title><link>/users/aai/check-in/vos/rciam/admins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/rciam/admins/</guid><description>
 &lt;p>Access the
 &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>
 and navigate the hierarchy of groups to locate the group where the administrator
@@ -531,7 +529,7 @@ be modelled with a specific “administrator” role or subgroup.
 &lt;/div>
 &lt;h2 id="removing-administrators-from-a-group">Removing administrators from a group&lt;/h2>
 &lt;p>Administrators can be removed by using the cross icon in the “Group Admins” tab.&lt;/p>
-&lt;p class="img-screenshot">&lt;img src="./admin_delete.png" alt="Remove group admin">&lt;/p></description></item><item><title>Users: Managing roles</title><link>/users/aai/check-in/vos/keycloak/roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/keycloak/roles/</guid><description>
+&lt;p class="img-screenshot">&lt;img src="./admin_delete.png" alt="Remove group admin">&lt;/p></description></item><item><title>Users: Managing roles</title><link>/users/aai/check-in/vos/rciam/roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/rciam/roles/</guid><description>
 &lt;p>Roles are created and are valid within a specific group. Access the group
 through the
 &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management page&lt;/a>.

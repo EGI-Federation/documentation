@@ -821,7 +821,12 @@ tag, please contact EGI Operations.&lt;/li>
 &lt;li>A number of reserved scope tags have been defined for the WLCG:
 &lt;ul>
 &lt;li>The &lt;code>VO.tierN&lt;/code> tags should be requested for WLCG sites that are defined in CRIC. To request one of these scope tags, first raise a ticket against the relevant VO support unit for confirmation, then reassign the ticket to GOCDB.&lt;/li>
-&lt;li>The &lt;code>wlcg&lt;/code> tag is a generic catch-all tag for sites/services to gain an overall view of the WLCG infrastructure. It will be applied along with the &lt;code>VO.tierN&lt;/code> tags&lt;/li>
+&lt;li>Additional scope tags will be applied along with the &lt;code>VO.tierN&lt;/code> tags.
+&lt;ul>
+&lt;li>The &lt;code>VO&lt;/code> tag is a generic catch-all tag for sites/services to gain an overall view of the infrastructure supporting a given VO.&lt;/li>
+&lt;li>The &lt;code>wlcg&lt;/code> tag is a generic catch-all tag for sites/services to gain an overall view of the WLCG infrastructure.&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
