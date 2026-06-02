@@ -26,7 +26,7 @@ Users have two options for using the managed Kubernetes service:
    managing the underlying infrastructure.
 
 1. **Bring Your Own Cluster**: Deploy your own Kubernetes cluster on
-   [EGI Federated Cloud](../cloud-compute/) resources or on your own
+   [EGI Federated Cloud](../../cloud-compute/) resources or on your own
    infrastructure, and register it with the Rancher management platform at
    containers.egi.eu. This option provides full control over your cluster
    configuration and scaling while still benefiting from the unified management
