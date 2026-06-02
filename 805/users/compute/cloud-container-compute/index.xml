@@ -16,7 +16,7 @@ managing the underlying infrastructure.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Bring Your Own Cluster&lt;/strong>: Deploy your own Kubernetes cluster on
-&lt;a href="../cloud-compute/">EGI Federated Cloud&lt;/a> resources or on your own
+&lt;a href="../../cloud-compute/">EGI Federated Cloud&lt;/a> resources or on your own
 infrastructure, and register it with the Rancher management platform at
 containers.egi.eu. This option provides full control over your cluster
 configuration and scaling while still benefiting from the unified management
