@@ -3,7 +3,7 @@ title: "Container Primer"
 type: docs
 weight: 60
 description: >
-  Intoduction to containerized applications
+  Introduction to containerized applications
 ---
 
 This guide looks at what containers are, how they are different from other
