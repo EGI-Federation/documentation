@@ -471,7 +471,7 @@ the steps below in order to register EGI Check-in as an Identity Provider:
 
    ![voPersonID mapper](saml-examples-keycloak-saml-vopersonid-mapper.png)
 
-   And for the `eduperson_entitlement` claim:
+   And for the `edupersonEntitlement` attribute:
 
    - Name: `eduPersonEntitlement`
    - Sync Mode Override: `Inherit`
@@ -479,7 +479,7 @@ the steps below in order to register EGI Check-in as an Identity Provider:
    - Attribute Name: `urn:oid:1.3.6.1.4.1.5923.1.1.1.7`
    - Friendly Name: `eduPersonEntitlement`
    - Name Format: `ATTRIBUTE_FORMAT_URI`
-   - User Attribute Name: `eduPersonEntitlement`
+   - User Attribute Name: `entitlements`
 
    ![eduPersonEntitlement mapper](saml-examples-keycloak-saml-edupersonentitlement-mapper.png)
 
@@ -564,11 +564,12 @@ UserInfo Endpoint:
 | `openid`                        | `sub`                                                                                                                                                                                                                                                                                                                |
 | `voperson_id`                   | `voperson_id`                                                                                                                                                                                                                                                                                                        |
 | `profile`                       | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                                                                                                                                     |
-| `email`                         | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                                                                                                                                                 |
-| `aarc`                          | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperson_certificate_dn`</li><li>`voperson_certificate_issuer_dn`</li><li>`voperson_external_affiliation`</li><li>`voperson_id`</li></ul> |
-| `eduperson_entitlement`         | `eduperson_entitlement`                                                                                                                                                                                                                                                                                              |
-| `voperson_certificate`          | <ul><li>`voperson_certificate_dn`</li><li>`voperson_certificate_issuer_dn`</li></ul>                                                                                                                                                                                                                                 |
+| `email`                         | <ul><li>`email`</li><li>`email_verified`</li></ul>                                                                                                                                                                                                                                 |
+| `entitlements`         | `entitlements`                                                                                                                                                                                                                                                                                              |
 | `voperson_external_affiliation` | `voperson_external_affiliation`                                                                                                                                                                                                                                                                                      |
+| `schac_home_organization` | `schac_home_organization`                                                                                                                                                                                                                                                                                                  |
+| `aarc`                          | <ul><li>`voperson_id`</li><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_external_affiliation`</li><li>`schac_home_organization`</li></ul> |
+| `voperson_certificate`          | <ul><li>`voperson_certificate_dn`</li><li>`voperson_certificate_issuer_dn`</li></ul>                                                                                                                                                                                                                                 |
 
 <!-- markdownlint-enable no-inline-html -->
 
@@ -1040,7 +1041,7 @@ $ curl -X POST "${TOKEN_ENDPOINT}" \
     -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
     -H "Content-Type: application/x-www-form-urlencoded" \
     -d "grant_type=client_credentials" \
-    -d "scope=openid%20email%20profile%20eduperson_entitlement%20voperson_id" | python -m json.tool;
+    -d "scope=openid%20email%20profile%20entitlements%20voperson_id" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -1055,7 +1056,7 @@ Example response:
   "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
   "not-before-policy": 0,
   "refresh_expires_in": 0,
-  "scope": "openid eduperson_entitlement voperson_id profile email",
+  "scope": "openid entitlements voperson_id profile email",
   "token_type": "Bearer"
 }
 ```
@@ -1072,7 +1073,7 @@ Example Access Token (decoded payload):
   "iat": 1674470029,
   "iss": "https://aai.egi.eu/auth/realms/egi",
   "jti": "bdf15737-01ba-4e61-b5bc-3304d637e2b6",
-  "scope": "openid eduperson_entitlement voperson_id profile email",
+  "scope": "openid entitlements voperson_id profile email",
   "sub": "253b69f3-2325-4fd5-a26d-95e26b42bbaf@egi.eu",
   "typ": "Bearer",
   "voperson_id": "253b69f3-2325-4fd5-a26d-95e26b42bbaf@egi.eu"
@@ -1215,24 +1216,18 @@ Example response:
 
 ```json
 {
-  "eduperson_assurance": [
-    "https://refeds.org/assurance/IAP/low",
-    "https://aai.egi.eu/LoA#Substantial"
-  ],
-  "eduperson_entitlement": [
-    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:members:role=member#aai.egi.eu",
-    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:role=member#aai.egi.eu",
-    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu"
-  ],
+  "sub": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
+  "voperson_id": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
   "email": "jdoe@example.org",
   "email_verified": true,
   "family_name": "John",
   "given_name": "Doe",
   "name": "John Doe",
   "preferred_username": "jdoe",
-  "sub": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
-  "voperson_id": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
-  "voperson_verified_email": ["jdoe@example.org"]
+  "entitlements": [
+    "urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu",
+    "urn:mace:egi.eu:group:vo.example.org:vm_operator:role=member#aai.egi.eu"
+  ]
 }
 ```
 
@@ -1264,34 +1259,45 @@ Example response:
 
 ```json
 {
-  "active": true,
-  "auth_time": 1668613335,
-  "authenticating_authority": "https://idp.admin.grnet.gr/idp/shibboleth",
-  "azp": "token-portal",
-  "client_id": "token-portal",
-  "eduperson_assurance": [
-    "https://refeds.org/assurance/IAP/low",
-    "https://aai.egi.eu/LoA#Substantial"
-  ],
-  "eduperson_entitlement": [
-    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:members:role=member#aai.egi.eu",
-    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:role=member#aai.egi.eu",
-    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu"
-  ],
-  "email": "jdoe@example.org",
-  "email_verified": true,
-  "exp": 1668616935,
-  "iat": 1668613335,
+  "exp": 1774004407,
+  "iat": 1774000807,
+  "auth_time": 1774000807,
+  "jti": "09132324-6995-4bf8-87b6-bd568b47cd19",
   "iss": "https://aai.egi.eu/auth/realms/egi",
-  "jti": "fecaf906-8578-4155-9783-f2083900b93c",
-  "nonce": "30ccf6777eb726aae4f71fc72684c07c",
-  "scope": "openid eduperson_entitlement voperson_id profile email",
-  "session_state": "dc0feb13-8a3d-4b91-86c6-039ee27503df",
-  "sid": "dc0feb13-8a3d-4b91-86c6-039ee27503df",
-  "sub": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
   "typ": "Bearer",
+  "azp": "example-client",
+  "nonce": "cb11c5cd5ff3426a1787fe3bb01607b3",
+  "session_state": "c89b15e4-30af-49a3-b03b-19e28c5bf302",
+  "scope": "openid voperson_id entitlements voperson_external_affiliation",
+  "sid": "c89b15e4-30af-49a3-b03b-19e28c5bf302",
+  "sub": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
   "voperson_id": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
-  "voperson_verified_email": ["jdoe@example.org"]
+  "entitlements": [
+    "urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu",
+    "urn:mace:egi.eu:group:vo.example.org:vm_operator:role=member#aai.egi.eu"
+  ]
+  "voperson_external_affiliation": [
+    "staff@university.example.org"
+  ],
+  "authenticating_authorities": [
+    {
+      "id": "https://idp.university.example.org/idp/shibboleth",
+      "name": "Example University"
+    },
+    {
+      "id": "https://aai.egi.eu/auth/realms/id",
+      "name": "EGI Check-in"
+    }
+  ],
+  "eduperson_assurance": [
+    "https://refeds.org/assurance",
+    "https://refeds.org/assurance/ID/unique",
+    "https://refeds.org/assurance/IAP/low",
+    "https://refeds.org/assurance/IAP/medium"
+  ],
+  "client_id": "example-client",
+  "token_type": "Bearer",
+  "active": true
 }
 ```
 
@@ -1358,9 +1364,8 @@ user authorisation:
 
 | Description                                                                                     | OIDC Claim              |
 | ----------------------------------------------------------------------------------------------- | ----------------------- |
-| [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
-| [Capabilities](#capabilities)                                                                   | `eduperson_entitlement` |
-| [GOCDB roles](#gocdb-roles)                                                                     | `eduperson_entitlement` |
+| [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `entitlements`          |
+| [Capabilities](#capabilities)                                                                   | `entitlements`          |
 | [Identity Assurance](#identity-assurance)                                                       | `eduperson_assurance`   |
 
 ### Example OIDC Client Configurations
@@ -1397,7 +1402,7 @@ steps below in order to register EGI Check-in as an Identity Provider:
    section and expand the "Advanced" option and then add the scopes that the
    Service needs. For example:
 
-   Scopes: `openid voperson_id email profile eduperson_entitlement`
+   Scopes: `openid voperson_id email profile entitlements`
 
    ![OpenID Connect Settings](oidc-examples-keycloak-oidc-idp-oidc.png)
 
@@ -1407,7 +1412,7 @@ steps below in order to register EGI Check-in as an Identity Provider:
    ![Advanced Settings](oidc-examples-keycloak-oidc-idp-advanced.png)
 
 1. Next, you will need to add two mappers to store the `voperson_id` and the
-   `eduperson_entitlement` claims because Keycloak can map only the
+   `entitlements` claims because Keycloak can map only the
    [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims).
    Go to the "Mappers" tab and then click on "Add Mapper".
 
@@ -1421,19 +1426,19 @@ steps below in order to register EGI Check-in as an Identity Provider:
 
    ![voPersonID mapper](oidc-examples-keycloak-oidc-voperson-id-mapper.png)
 
-   And for the `eduperson_entitlement` claim:
+   And for the `entitlements` claim:
 
    - Name: `eduPersonEntitlement`
    - Sync Mode Override: `Inherit`
    - Mapper Type: `Attribute Importer`
-   - Claim: `eduperson_entitlement`
-   - User Attribute Name: `eduPersonEntitlement`
+   - Claim: `entitlements`
+   - User Attribute Name: `entitlements`
 
    ![eduPersonEntitlement mapper](oidc-examples-keycloak-oidc-eduperson-entitlement-mapper.png)
 
    {{% alert title="Note" color="info" %}} For other
    [attributes](#user-attributes), create a mapper similar to the
-   `eduPersonEntitlement` mapper.{{% /alert %}}
+   `entitlements` mapper.{{% /alert %}}
 
 #### simple-oidc-client-php
 
@@ -1738,44 +1743,45 @@ connected to Check-in.
 
 ### 1. Community User Identifier
 
-|          attribute name | Community User Identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|          attribute name | Community User Identifier                                                                                   |
 | ----------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier identifying the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in                                                                                                                                                                                     |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|       **OIDC claim(s)** | `voperson_id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **OIDC claim location** | <ul><li>ID token</li><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|              **origin** | The Community User Identifier is assigned by Check-in or an external AAI service managing the community identity of the user                                                                                                                                                                                                                                                                                                                                                                          |
-|             **changes** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|        **multiplicity** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|        **availability** | Always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|             **example** | `ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu`                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|               **notes** | Use **Community User Identifier** within your application as the unique-identifier key for the user. Obtaining the Community User Identifier from the `sub` claim using the `openid` scope for OIDC Relying Parties or from `eduPersonUniqueId` for SAML Service Providers has been deprecated. OIDC RPs should request either the `voperson_id` or `aarc` scope to obtain the Community User Identifier. SAML PRs should request the `voPersonID` attribute to obtain the Community User Identifier. |
+|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier identifying the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in.                                               |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.6` (`voPersonID`)                                                            |
+|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li></ul>                                                              |
+|       **OIDC claim(s)** | `voperson_id`                                                                                               |
+| **OIDC claim location** | <ul><li>ID Token</li><li>UserInfo Endpoint</li><li>Introspection Endpoint</li><li>Access Token</li></ul>           
+          |
+|              **origin** | The Community User Identifier is assigned by Check-in or an external AAI service managing the community identity of the user                                                                                                          |
+|             **changes** | No                                                                                                          |
+|        **multiplicity** | No                                                                                                          |
+|        **availability** | Always                                                                                                      |
+|             **example** | `ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu`                                   |
+|               **notes** | Use **Community User Identifier** within your application as the unique-identifier key for the user. Obtaining the Community User Identifier from the `sub` claim using the `openid` scope for OIDC Relying Parties or from `eduPersonUniqueId` for SAML Service Providers has been deprecated. OIDC RPs should request either the `voperson_id` or `aarc` scope to obtain the Community User Identifier. SAML PRs should request the `voPersonID` attribute to obtain the Community User Identifier.                                                                                                              |
 |              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 ### 2. Display Name
 
-|          attribute name | Display Name                                      |
-| ----------------------: | :------------------------------------------------ |
-|         **description** | The user's full name, in a displayable form       |
-|   **SAML Attribute(s)** | `urn:oid:2.16.840.1.113730.3.1.241` (displayName) |
-|          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>        |
-|       **OIDC claim(s)** | `name`                                            |
-| **OIDC claim location** | UserInfo Endpoint                                 |
-|              **origin** | Provided by user's Identity Provider              |
-|             **changes** | Yes                                               |
-|        **multiplicity** | Single-valued                                     |
-|        **availability** | Always                                            |
-|             **example** | `John Doe`                                        |
-|               **notes** | -                                                 |
-|              **status** | Stable                                            |
+|          attribute name | Display Name                                        |
+| ----------------------: | :-------------------------------------------------- |
+|         **description** | The user's full name, in a displayable form         |
+|   **SAML Attribute(s)** | `urn:oid:2.16.840.1.113730.3.1.241` (`displayName`) |
+|          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>          |
+|       **OIDC claim(s)** | `name`                                              |
+| **OIDC claim location** | UserInfo Endpoint                                   |
+|              **origin** | Provided by user's Identity Provider                |
+|             **changes** | Yes                                                 |
+|        **multiplicity** | Single-valued                                       |
+|        **availability** | Always                                              |
+|             **example** | `John Doe`                                          |
+|               **notes** | -                                                   |
+|              **status** | Stable                                              |
 
 ### 3. Given Name
 
 |          attribute name | Given Name                                 |
 | ----------------------: | :----------------------------------------- |
 |         **description** | The user's first name                      |
-|   **SAML Attribute(s)** | `urn:oid:2.5.4.42` (givenName)             |
+|   **SAML Attribute(s)** | `urn:oid:2.5.4.42` (`givenName`)           |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul> |
 |       **OIDC claim(s)** | `given_name`                               |
 | **OIDC claim location** | UserInfo Endpoint                          |
@@ -1792,7 +1798,7 @@ connected to Check-in.
 |          attribute name | Family Name                                |
 | ----------------------: | :----------------------------------------- |
 |         **description** | The user's last name                       |
-|   **SAML Attribute(s)** | `urn:oid:2.5.4.4` (sn)                     |
+|   **SAML Attribute(s)** | `urn:oid:2.5.4.4` (`sn`)                   |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul> |
 |       **OIDC claim(s)** | `family_name`                              |
 | **OIDC claim location** | UserInfo Endpoint                          |
@@ -1809,7 +1815,7 @@ connected to Check-in.
 |          attribute name | Username                                                                            |
 | ----------------------: | :---------------------------------------------------------------------------------- |
 |         **description** | The username by which the user wishes to be referred to                             |
-|   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.1` (uid)                                           |
+|   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.1` (`uid`)                                         |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>                                          |
 |       **OIDC claim(s)** | `preferred_username`                                                                |
 | **OIDC claim location** | <ul><li>ID token</li><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul> |
@@ -1826,7 +1832,7 @@ connected to Check-in.
 |          attribute name | Email Address                                                               |
 | ----------------------: | :-------------------------------------------------------------------------- |
 |         **description** | The user's email address                                                    |
-|   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.3` (mail)                                  |
+|   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.3` (`mail`)                                |
 |          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                                    |
 |       **OIDC claim(s)** | `email`                                                                     |
 | **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>          |
@@ -1843,7 +1849,7 @@ connected to Check-in.
 |          attribute name | Verified email flag                                                 |
 | ----------------------: | :------------------------------------------------------------------ |
 |         **description** | True if the user's email address has been verified; otherwise false |
-|   **SAML Attribute(s)** | See [Verified email list](#8-verified-email-list)                   |
+|   **SAML Attribute(s)** | N/A                                                                 |
 |          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                            |
 |       **OIDC claim(s)** | `email_verified`                                                    |
 | **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>  |
@@ -1855,29 +1861,12 @@ connected to Check-in.
 |               **notes** | This claim is available only in OpenID Connect                      |
 |              **status** | Stable                                                              |
 
-### 8. Verified email list
+### 8. Affiliation
 
-|          attribute name | Verified email list                                                 |
-| ----------------------: | :------------------------------------------------------------------ |
-|         **description** | A list of user's email addresses that have been verified            |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.14` (voPersonVerifiedEmail)          |
-|          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                            |
-|       **OIDC claim(s)** | `voperson_verified_email`                                           |
-| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>  |
-|              **origin** | Check-in or the user's Identity Provider                            |
-|             **changes** | Yes                                                                 |
-|        **multiplicity** | Multi-valued                                                        |
-|        **availability** | Not always                                                          |
-|             **example** | <ul><li>`john.doe@example.org`</li><li>`jdoe@example.com`</li></ul> |
-|               **notes** | -                                                                   |
-|              **status** | Experimental                                                        |
-
-### 9. Affiliation
-
-|          attribute name | Affiliation                                                                                  |
+|          attribute name | Affiliation within Home Organisation                                                         |
 | ----------------------: | :------------------------------------------------------------------------------------------- |
-|         **description** | The user's affiliation within a particular security domain (scope)                           |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.11` (voPersonExternalAffiliation)                             |
+|         **description** | The user's affiliation(s) within one or more home organisations                              |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.11` (`voPersonExternalAffiliation`)                           |
 |          **OIDC scope** | `voperson_external_affiliation`                                                              |
 |       **OIDC claim(s)** | `voperson_external_affiliation`                                                              |
 | **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                           |
@@ -1885,8 +1874,25 @@ connected to Check-in.
 |             **changes** | Yes                                                                                          |
 |        **multiplicity** | Multi-valued                                                                                 |
 |        **availability** | Not always                                                                                   |
-|             **example** | <ul><li>`member@example.org`</li><li>`faculty@example.org`</li></ul>                         |
-|               **notes** | Service Providers are encouraged to validate the scope of this attribute                     |
+|             **example** | <ul><li>`member@university.example.org`</li><li>`faculty@university.example.org`</li></ul>   |
+|               **notes** | If the user's authenticating Identity Provider does not provide any affiliation information, but the security domain (scope) of the Identity Provider can be reliably determined, the affiliation is constructed by concatenating the string literal `unknown@` and the determined scope of that provider, e.g. `unknown@accounts.google.com` |
+|              **status** | Stable                                                                                       |
+
+### 9. Organisation Domain
+
+|          attribute name | Home Organisation Domain                                                                          |
+| ----------------------: | :------------------------------------------------------------------------------------------- |
+|         **description** | The user's home organisation using the domain name of the organisation                       |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.1.2.9` (`schacHomeOrganization`)                                  |
+|          **OIDC scope** | `schac_home_organization`                                                                    |
+|       **OIDC claim(s)** | `schac_home_organization`                                                                    |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                           |
+|              **origin** | When available, this information originates from the user's authenticating Identity Provider |
+|             **changes** | Yes                                                                                          |
+|        **multiplicity** | Single-valued                                                                                |
+|        **availability** | Not always                                                                                   |
+|             **example** | `university.example.org`                                                                     |
+|               **notes** | -                                                                                            |
 |              **status** | Stable                                                                                       |
 
 ### 10. Groups
@@ -1894,15 +1900,15 @@ connected to Check-in.
 |          attribute name | Groups                                                                                                                                 |
 | ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------- |
 |         **description** | The user's group/VO membership/role information expressed as entitlements                                                              |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                              |
-|          **OIDC scope** | `eduperson_entitlement`                                                                                                                |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (`eduPersonEntitlement`)                                                                            |
+|          **OIDC scope** | <ul><li>`entitlements`</li><li>`eduperson_entitlement` (deprecated)</li></ul>                                                          |
+|       **OIDC claim(s)** | <ul><li>`entitlements`</li><li>`eduperson_entitlement` (deprecated)</li></ul>                                                          |
 | **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                     |
 |              **origin** | Group memberships are managed by group administrators                                                                                  |
 |             **changes** | Yes                                                                                                                                    |
 |        **multiplicity** | Multi-valued                                                                                                                           |
 |        **availability** | Not always                                                                                                                             |
-|             **example** | <ul><li>`urn:mace:egi.eu:aai.egi.eu:member@fedcloud.egi.eu`</li><li>`urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu`</li></ul> |
+|             **example** | <ul><li>`urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu`</li><li>`urn:mace:egi.eu:group:vo.example.org:role=vm_operator#aai.egi.eu`</li></ul> |
 |               **notes** | -                                                                                                                                      |
 |              **status** | Stable                                                                                                                                 |
 
@@ -1911,9 +1917,9 @@ connected to Check-in.
 |          attribute name | Capabilities                                                                                                                                                                                                                              |
 | ----------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |         **description** | This attribute describes the resource or child-resource a user is allowed to access, optionally specifying certain actions the user is entitled to perform, as described in [AARC-G027](https://aarc-community.org/guidelines/aarc-g027/) |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                                                                 |
-|          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                                                                   |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                                                                   |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (`eduPersonEntitlement`)                                                                                                                                                                               |
+|          **OIDC scope** | <ul><li>`entitlements`</li><li>`eduperson_entitlement` (deprecated)</li></ul>                                                                                                                                                             |
+|       **OIDC claim(s)** | <ul><li>`entitlements`</li><li>`eduperson_entitlement` (deprecated)</li></ul>                                                                                                                                                             |
 | **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                                                                        |
 |              **origin** | Capabilities are managed by Check-in                                                                                                                                                                                                      |
 |             **changes** | Yes                                                                                                                                                                                                                                       |
@@ -1923,63 +1929,29 @@ connected to Check-in.
 |               **notes** | -                                                                                                                                                                                                                                         |
 |              **status** | Stable                                                                                                                                                                                                                                    |
 
-### 12. GOCDB Roles
+### 12. Assurance
 
-|          attribute name | GOCDB Roles                                                                                                                                                                                |
-| ----------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | The user's GOCDB role information expressed as entitlements                                                                                                                                |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                  |
-|          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                    |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                    |
-| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                         |
-|              **origin** | The roles are managed in GOCDB                                                                                                                                                             |
-|             **changes** | Yes                                                                                                                                                                                        |
-|        **multiplicity** | Multi-valued                                                                                                                                                                               |
-|        **availability** | Not always                                                                                                                                                                                 |
-|             **example** | <ul><li>`urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu`</li><li>`urn:mace:egi.eu:goc.egi.eu:92503G08:GRIDOPS-MON:Site+Operations+Manager@egi.eu`</li></ul> |
-|               **notes** | -                                                                                                                                                                                          |
-|              **status** | Stable                                                                                                                                                                                     |
+|          attribute name | Identity Assurance                                                                                                                                                                                   |
+| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | Assurance of the identity of the user, following [REFEDS Assurance Framework (RAF)](https://refeds.org/assurance) and the [EGI AAI Assurance Profiles](https://docs.egi.eu/providers/check-in/sp/#level-of-assurance). The following RAF values are qualified and automatically set for all Community identities:<ul><li>`https://refeds.org/assurance`</li><li>`https://refeds.org/assurance/ID/unique`</li><li>`https://refeds.org/assurance/IAP/low`</li></ul>The following RAF values are set if the currently used authentication provider asserts (or otherwise qualifies to) them:</br><ul><li>https://refeds.org/assurance/IAP/medium</li><li>https://refeds.org/assurance/IAP/high</li></ul>The following compound profiles are asserted if the user qualifies to them</br><ul><li>`https://refeds.org/assurance/profile/cappuccino`</li><li>`https://refeds.org/assurance/profile/espresso`</li><li>`https://aarc-community.org/policy/authn-assurance/assam` (e.g. social media providers or other low-assurance Identity Providers</li></ul> |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (`eduPersonAssurance`)             |
+|          **OIDC scope** | -                                                                      |
+|       **OIDC claim(s)** | `eduperson_assurance`                                                  |
+| **OIDC claim location** | <ul><li>Access Token</li><li>Introspection Endpoint</li></ul>          |
+|              **origin** | The assurance values are derived from the assurance information provided by the user’s authenticating Identity Provider.                                                                  |
+|             **changes** | Yes                                                                    |
+|        **multiplicity** | Multi-valued                                                           |
+|        **availability** | Always                                                                 |
+|             **example** | <ul><li>`https://refeds.org/assurance`</li><li>`https://refeds.org/assurance/ID/unique`</li><li>`https://refeds.org/assurance/IAP/low`</li></ul>                                               |
+|               **notes** | This attribute conveys just the identity assurance. Authentication assurance is described using authentication contexts (e.g. `acr` claim in OpenID Connect).                                      |
+|              **status** | Stable                                                                 |
 
-### 13. Assurance
-
-|          attribute name | Assurance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | Assurance of the identity of the user, following [REFEDS Assurance Framework (RAF)](https://refeds.org/assurance) and the [EGI AAI Assurance Profiles](https://docs.egi.eu/providers/check-in/sp/#level-of-assurance). The following RAF values are qualified and automatically set for all Community identities:<ul><li>$PREFIX$</li><li>$PREFIX$/ID/unique</li><li>$PREFIX$/ID/eppn-unique-no-reassign</li><li>$PREFIX$/IAP/low</li><li>$PREFIX$/ATP/ePA-1m</li><li>$PREFIX$/ATP/ePA-1d</li></ul>Following RAF values are set if the currently used authentication provider asserts (or otherwise qualifies to) them:</br><ul><li>$PREFIX$/IAP/medium</li><li>$PREFIX$/IAP/high</li></ul>The following compound profiles are asserted if the user qualifies to them</br><ul><li>$PREFIX$/profile/cappuccino</li><li>$PREFIX$/profile/espresso</li></ul> |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|          **OIDC scope** | `openid`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|       **OIDC claim(s)** | `eduperson_assurance`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|              **origin** | Check-in assigns this attribute on user registration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|             **changes** | Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|        **multiplicity** | Multi-valued                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|        **availability** | Always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             **example** | <ul><li>`https://aai.egi.eu/LoA#Low`</li><li>`https://refeds.org/assurance/IAP/low`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|               **notes** | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-
-### 14. CertEntitlement
-
-|          attribute name | CertEntitlement                                                                                                                                                                      |
-| ----------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | Provides information about the user's certificate subject(s) and the associated VO(s)                                                                                                |
-|   **SAML Attribute(s)** | **Not available**                                                                                                                                                                    |
-|          **OIDC scope** | `cert_entitlement`                                                                                                                                                                   |
-|       **OIDC claim(s)** | `cert_entitlement`                                                                                                                                                                   |
-| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                   |
-|              **origin** | VO/group management tools integrated with Check-in                                                                                                                                   |
-|             **changes** | Yes                                                                                                                                                                                  |
-|        **multiplicity** | Multi-valued                                                                                                                                                                         |
-|        **availability** | Not always                                                                                                                                                                           |
-|             **example** | `[{"cert_subject_dn": "/C=GR/O=HellasGrid/...","cert_iss": "/C=GR/O=HellasGrid/...","eduperson_entitlement": "urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu"}]` |
-|               **notes** | This is available only for DIRAC                                                                                                                                                     |
-|              **status** | Stable                                                                                                                                                                               |
-
-### 15. SSH Public Key
+### 13. SSH Public Key
 
 |          attribute name | SSH Public Key                                                                                                                              |
 | ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------------ |
 |         **description** | Provides information about the user's SSH public key(s)                                                                                     |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13` (sshPublicKey)                                                                                     |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13` (`sshPublicKey`)                                                                                   |
 |          **OIDC scope** | `ssh_public_key`                                                                                                                            |
 |       **OIDC claim(s)** | `ssh_public_key`                                                                                                                            |
 | **OIDC claim location** | UserInfo Endpoint                                                                                                                           |
@@ -1993,12 +1965,12 @@ connected to Check-in.
 
 <!-- textlint-disable -->
 
-### 16. ORCID iD
+### 14. ORCID iD
 
 |          attribute name | ORCID iD                                               |
 | ----------------------: | :----------------------------------------------------- |
 |         **description** | Provides information about the user's ORCID iD         |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.16` (eduPersonOrcid)   |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.16` (`eduPersonOrcid`) |
 |          **OIDC scope** | `orcid`                                                |
 |       **OIDC claim(s)** | `orcid`                                                |
 | **OIDC claim location** | UserInfo Endpoint                                      |
@@ -2012,12 +1984,12 @@ connected to Check-in.
 
 <!-- textlint-enable -->
 
-### 17. Subject Distinguished Name (DN) of user's X.509 certificate
+### 15. Subject Distinguished Name (DN) of user's X.509 certificate
 
 |          attribute name | Subject Distinguished Name (DN) of user's X.509 certificate                |
 | ----------------------: | :------------------------------------------------------------------------- |
 |         **description** | The Subject Distinguished Name of an X.509 certificate held by the person. |
-|   **SAML Attribute(s)** | `1.3.6.1.4.1.25178.4.1.3` (voPersonCertificateDN)                          |
+|   **SAML Attribute(s)** | `1.3.6.1.4.1.25178.4.1.3` (`voPersonCertificateDN`)                        |
 |          **OIDC scope** | <ul><li>`voperson_certificate`</li><li>`aarc`</li></ul>                    |
 |       **OIDC claim(s)** | `voperson_certificate_dn`                                                  |
 | **OIDC claim location** | UserInfo Endpoint                                                          |
@@ -2029,12 +2001,12 @@ connected to Check-in.
 |               **notes** | -                                                                          |
 |              **status** | Experimental                                                               |
 
-### 18. Issuer Distinguished Name (DN) of user's X.509 certificate
+### 16. Issuer Distinguished Name (DN) of user's X.509 certificate
 
 |          attribute name | Issuer Distinguished Name (DN) of user's X.509 certificate     |
 | ----------------------: | :------------------------------------------------------------- |
 |         **description** | The Subject Distinguished Name of the X.509 certificate issuer |
-|   **SAML Attribute(s)** | `1.3.6.1.4.1.25178.4.1.4` (voPersonCertificateIssuerDN)        |
+|   **SAML Attribute(s)** | `1.3.6.1.4.1.25178.4.1.4` (`voPersonCertificateIssuerDN`)      |
 |          **OIDC scope** | <ul><li>`voperson_certificate`</li><li>`aarc`</li></ul>        |
 |       **OIDC claim(s)** | `voperson_certificate_issuer_dn`                               |
 | **OIDC claim location** | UserInfo Endpoint                                              |
@@ -2063,7 +2035,7 @@ Check-in in order to control user access to resources:
 #### Background
 
 VO/group membership and role information is encoded in entitlements
-(`eduPersonEntitlement` attribute values in SAML or `eduperson_entitlement`
+(`eduPersonEntitlement` attribute values in SAML or `entitlements`
 claim in OIDC). These entitlements are typically used to indicate access rights
 to protected resources. Entitlements are multi-valued, with each value formatted
 as a URN.
@@ -2102,7 +2074,7 @@ urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 #### Background
 
 The user's capability information is encoded in entitlements
-(`eduPersonEntitlement` attribute values in SAML or `eduperson_entitlement`
+(`eduPersonEntitlement` attribute values in SAML or `entitlements`
 claim in OIDC). These entitlements are typically used to indicate access rights
 to protected resources. Entitlements are multi-valued, with each value formatted
 as a URN following the syntax defined in
@@ -2209,36 +2181,3 @@ the selected authentication mechanism as follows:
 
 - Username/password credentials → Low
 - X.509 certification → Substantial
-
-### GOCDB Roles
-
-#### Background
-
-GOCDB roles, as per
-[GOCDB documentations](https://wiki.egi.eu/wiki/GOCDB/PI/get_user_method), are
-encoded (`eduPersonEntitlement` attribute values in SAML or
-`eduperson_entitlement` claim in OIDC). These entitlements are typically used to
-indicate access rights to protected resources. Entitlements are multi-valued,
-with each value formatted as a URN.
-
-#### Syntax
-
-An entitlement value expressing GOCDB roles has the following syntax (components
-enclosed in square brackets are OPTIONAL):
-
-```text
-urn:mace:egi.eu:goc.egi.eu:<PRIMARY_KEY>:<ON_ENTITY>:<USER_ROLE>@egi.eu
-```
-
-where:
-
-- `<PRIMARY_KEY>` is the primary key for the user role, e.g. "123G0"
-- `<ON_ENTITY>` is the name of the entity on which the user role applies to,
-  e.g. "GRIDOPS-GOCDB"
-- `<USER_ROLE>` is the user's role, e.g. "Site Operations Manager"
-
-**Example:**
-
-```text
-urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu
-```
