@@ -36,7 +36,7 @@ series with column definitions and corresponding data rows.
 
 ##### High-level structure
 
-```text
+```console
 root
 └── results[]         # Array of result sets
     └── series[]      # Array of series returned for this result
@@ -87,7 +87,7 @@ Each entry in values represents a summary accounting record containing:
 
 ##### Example
 
-```text
+```json
 {
   "results": [
     {
