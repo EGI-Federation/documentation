@@ -37,10 +37,10 @@ included:
 - OSG Mailing list
 - Tool Admins Mailing List
 - WLCG Tier 1 contacts
-- NGI managers
+- NGI managers [EGI]
 - VO managers
 - VO users
-- Site administrators
+- Site administrators [EGI]
 - Operation tools
 
 **Notice:** Individual notification templates together with targets are
