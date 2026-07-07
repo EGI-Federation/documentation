@@ -76,7 +76,7 @@ validate that all records stored locally at a site have been published.&lt;/p>
 &lt;h2 id="cloud-accounting">Cloud Accounting&lt;/h2>
 &lt;p>Cloud accounting covers three types of messages:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="cloud-accounting#vm-records-and-messages">VM Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cloud-accounting#individual-vm-records-and-messages">VM Records and Messages&lt;/a>&lt;/li>
 &lt;li>&lt;a href="cloud-accounting#ip-records">IP Records&lt;/a>&lt;/li>
 &lt;li>&lt;a href="cloud-accounting#gpu-records">GPU Records&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
