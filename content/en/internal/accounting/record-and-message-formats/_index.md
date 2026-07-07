@@ -20,6 +20,6 @@ validate that all records stored locally at a site have been published.
 
 Cloud accounting covers three types of messages:
 
-- [VM Records and Messages](cloud-accounting#vm-records-and-messages)
+- [VM Records and Messages](cloud-accounting#individual-vm-records-and-messages)
 - [IP Records](cloud-accounting#ip-records)
 - [GPU Records](cloud-accounting#gpu-records)
