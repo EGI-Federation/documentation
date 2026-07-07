@@ -95,7 +95,7 @@ WallDuration: 15679988
 %%
 ```
 
-## IP Record
+## IP Records
 
 The fedcloud task force has agreed on a Public IP Usage Record. The format uses many
 of the same fields as the Cloud Usage Record. The Usage Record should be a
@@ -122,7 +122,7 @@ v0.2 of the format is shown below:
 A JSON schema defining a valid Public IP Usage message can be found at:
 <https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py>
 
-## GPU Record
+## GPU Records
 
 The fedcloud task force has agreed on an GPU Usage Record. The format uses many
 of the same fields as the Cloud Usage Record. A table defining _Draft 4 –
