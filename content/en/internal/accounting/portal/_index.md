@@ -1,6 +1,6 @@
 ---
-title: Accounting
-linkTitle: Accounting
+title: Accounting Portal
+linkTitle: Accounting Portal
 type: docs
 weight: 30
 description: >
