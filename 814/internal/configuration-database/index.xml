@@ -800,6 +800,18 @@ reserved scope tags from their Site and its child Services. As part of
 maintaining their Site information in GOCDB, Users should remove reserved
 scope tags from their Sites and/or their Services when they cease to be relevant.&lt;/li>
 &lt;/ul>
+&lt;h3 id="egifedcontainers">EGI.FedContainers&lt;/h3>
+&lt;ul>
+&lt;li>Tag for resources supporting the deployment of containers in the EGI
+Federated Cloud. To request this tag, please raise an
+&lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket against the Operations SU.&lt;/li>
+&lt;/ul>
+&lt;h3 id="egifedllm">EGI.FedLLM&lt;/h3>
+&lt;ul>
+&lt;li>Tag for resources providing access to the EGI Large Language Models service.
+To request this tag, please raise an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket
+against the Operations SU.&lt;/li>
+&lt;/ul>
 &lt;h3 id="fedcloud-reserved-tag">FedCloud Reserved Tag&lt;/h3>
 &lt;ul>
 &lt;li>Tag for resources that contribute to the EGI Federated Cloud. To request this
