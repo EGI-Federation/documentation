@@ -18,8 +18,8 @@ EGI Accounting consists of two main components:
 - The **Accounting Repository** is where all accounting data is collected by a
   network of message brokers that transfer usage data from hosts and services.
 - The **[Accounting Portal](https://accounting.egi.eu)** allows filtering and
-  displaying resource usage information. Documentation about the Accounting
-  Portal can be found [here](./portal).
+  displaying resource usage information. [Documentation](./portal) is
+  available.
 
 ## Publishing Accounting
 
