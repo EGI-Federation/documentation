@@ -14,3 +14,12 @@ validate that all records stored locally at a site have been published.
 - [Individual Job Records and Messages](grid-accounting#individual-job-records-and-messages)
 - [Summary Job Records and Messages](grid-accounting#summary-job-records-and-messages)
 - [Summary Sync Records and Messages](grid-accounting#summary-sync-records-and-messages)
+
+
+## Cloud Accounting
+
+Cloud accounting covers three types of messages:
+
+- [VM Records and Messages](cloud-accounting#individual-vm-records-and-messages)
+- [IP Records](cloud-accounting#ip-records)
+- [GPU Records](cloud-accounting#gpu-records)
