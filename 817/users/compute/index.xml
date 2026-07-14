@@ -21,8 +21,11 @@ modern industry standards like &lt;a href="https://openid.net/connect/">OpenID C
 pre-configured Virtual Machine images that are automatically replicated to
 every provider based on your community needs.&lt;/li>
 &lt;li>Resource discovery features to easily understand which providers are
-supporting your community and what are their capabilities.&lt;/li>
-&lt;li>&lt;a href="https://accounting.egi.eu/cloud/">Global accounting&lt;/a> that aggregates and
+supporting your community and what are their capabilities. A
+&lt;a href="https://is.cloud.egi.eu/docs">cloud-info-api endpoint&lt;/a> provides a real-time
+view of the actual capabilities of federation participants (can be used by
+both human users and machine services).&lt;/li>
+&lt;li>&lt;a href="https://accounting.egi.eu/">Global accounting&lt;/a> that aggregates and
 allows visualisation of usage information across the whole federation.&lt;/li>
 &lt;li>&lt;a href="https://argo.egi.eu/egi/report-status/Critical/SITES?filter=FedCloud">Monitoring of Availability and Reliability of the providers&lt;/a>
 to ensure SLAs are met.&lt;/li>
