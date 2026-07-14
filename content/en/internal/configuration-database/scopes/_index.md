@@ -90,6 +90,18 @@ It is important to understand that scopes and Projects are distinct:
   maintaining their Site information in GOCDB, Users should remove reserved
   scope tags from their Sites and/or their Services when they cease to be relevant.
 
+### EGI.FedContainers
+
+- Tag for resources supporting the deployment of containers in the EGI
+  Federated Cloud. To request this tag, please raise an
+  [EGI Helpdesk](../../helpdesk) ticket against the Operations SU.
+
+### EGI.FedLLM
+
+- Tag for resources providing access to the EGI Large Language Models service.
+  To request this tag, please raise an [EGI Helpdesk](../../helpdesk) ticket
+  against the Operations SU.
+
 ### FedCloud Reserved Tag
 
 - Tag for resources that contribute to the EGI Federated Cloud. To request this
