@@ -35,8 +35,11 @@ offer:
   pre-configured Virtual Machine images that are automatically replicated to
   every provider based on your community needs.
 - Resource discovery features to easily understand which providers are
-  supporting your community and what are their capabilities.
-- [Global accounting](https://accounting.egi.eu/cloud/) that aggregates and
+  supporting your community and what are their capabilities. A
+  [cloud-info-api endpoint](https://is.cloud.egi.eu/docs) provides a real-time
+  view of the actual capabilities of federation participants (can be used by
+  both human users and machine services).
+- [Global accounting](https://accounting.egi.eu/) that aggregates and
   allows visualisation of usage information across the whole federation.
 - [Monitoring of Availability and Reliability of the providers](https://argo.egi.eu/egi/report-status/Critical/SITES?filter=FedCloud)
   to ensure SLAs are met.
