@@ -1,0 +1,5 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Getting Started</title><link>/users/getting-started/</link><description>Recent content in Getting Started on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Community Specific Documentation</title><link>/users/getting-started/communities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/communities/</guid><description>
+&lt;p>In the following sections you can find documentation for communities that are
+using EGI services. These will typically cover an introduction of the
+scientific or research community, the procedure to gain access to the resources
+of the community, and guidelines about how to participate in the community.&lt;/p></description></item></channel></rss>
