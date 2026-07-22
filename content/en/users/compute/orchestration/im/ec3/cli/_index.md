@@ -69,9 +69,9 @@ your cluster:
 1. network identifiers
 1. VM image identifiers
 
-We will use the [FedCloud client](../../cloud-compute/openstack#the-fedcloud-client) to discover
+We will use the [FedCloud client](../../../compute/cloud-compute/openstack#the-fedcloud-client) to discover
 the required information. Set your credentials as shown in
-[the authentication guide](../../cloud-compute/openstack#authentication)
+[the authentication guide](../../../compute/cloud-compute/openstack#authentication)
 and create the authorisation files needed for ec3 (in this case for CESGA with VO
 vo.access.egi.eu):
 
