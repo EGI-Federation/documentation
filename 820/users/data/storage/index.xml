@@ -85,7 +85,7 @@ are described below.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 See
-&lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html">OpeStack container command&lt;/a>
+&lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html">OpenStack container command&lt;/a>
 for documentation on all storage container-related commands, and
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html">OpenStack object command&lt;/a>
 for all object-related commands.
