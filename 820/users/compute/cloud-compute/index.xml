@@ -920,8 +920,8 @@ unsupported parameter error.
 them with EGI Cloud providers just doing a first step for obtaining the token:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>fedcloud openstack --site &amp;lt;NAME_OF_THE_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt; token issue -c id -f value
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="useful-openstack-commands">Useful OpenStack commands&lt;/h3>
-&lt;p>Usage of the OpenStack client is described in detail
-&lt;a href="https://docs.openstack.org/python-openstackclient/latest">here&lt;/a>.&lt;/p>
+&lt;p>Usage of the OpenStack client is described in detail at
+&lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack documentation&lt;/a>.&lt;/p>
 &lt;p>Please refer to the
 &lt;a href="https://docs.openstack.org/nova/latest/user/">nova documentation&lt;/a> for a
 complete guide on the VM management features of OpenStack. We list in the
@@ -1129,7 +1129,7 @@ PowerShell
 &lt;div class="tab-pane show active"
 id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
-&lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
+&lt;a href="../../../compute/cloud-compute/openstack#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IN2P3-IRES
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu

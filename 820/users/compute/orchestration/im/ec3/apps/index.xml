@@ -216,7 +216,7 @@ management page.&lt;/p>
 &lt;h2 id="templates">Templates&lt;/h2>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.
 Create a directory to store EC3 configuration and init it with the
-&lt;a href="../../../../cloud-compute/openstack#the-fedcloud-client">FedCloud client&lt;/a>:&lt;/p>
+&lt;a href="../../../../../cloud-compute/openstack#the-fedcloud-client">FedCloud client&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir -p torque
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> torque
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;

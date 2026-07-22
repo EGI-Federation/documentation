@@ -8,7 +8,7 @@ choices of backends, either public (such as
 &lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
 &lt;a href="https://cloud.google.com/">Google Cloud&lt;/a> or
 &lt;a href="https://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
-&lt;a href="../../../../getting-started/openstack">OpenStack&lt;/a>). EC3 can provision clusters
+&lt;a href="../../../cloud-compute/openstack">OpenStack&lt;/a>). EC3 can provision clusters
 running &lt;a href="https://github.com/adaptivecomputing/torque">TORQUE&lt;/a>,
 &lt;a href="https://slurm.schedmd.com/">SLURM&lt;/a>,
 &lt;a href="https://research.cs.wisc.edu/htcondor/">HTCondor&lt;/a>,
@@ -206,8 +206,8 @@ to manage their infrastructures by launching a set of predefined TOSCA
 templates on top of EGI Cloud Compute resources. The dashboard does not
 provide all the features provided by the IM service. In case you need more
 advanced features use the
-&lt;a href="https://imdocs.readthedocs.io/en/latest/web.html">IM Web interface&lt;/a> or the
-&lt;a href="../cli">IM-CLI&lt;/a>.&lt;/p>
+&lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html">IM Web interface&lt;/a>
+or the &lt;a href="../cli">IM-CLI&lt;/a>.&lt;/p>
 &lt;p>&lt;img src="dash_login.png" alt="Landing page">&lt;/p>
 &lt;h3 id="login">Login&lt;/h3>
 &lt;p>Users must use &lt;a href="../../../../aai/check-in">EGI Check-in&lt;/a> to log into the

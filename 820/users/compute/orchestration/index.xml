@@ -11,7 +11,7 @@ a wide variety of backends, either federated (such as
 &lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
 &lt;a href="https://cloud.google.com/">Google Cloud&lt;/a> or
 &lt;a href="https://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
-&lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>),
+&lt;a href="../../cloud-compute/openstack">OpenStack&lt;/a>),
 thus making user applications cloud agnostic.
 IM features a &lt;a href="https://im.egi.eu/">web-based GUI&lt;/a>,
 an XML-RPC API, a REST API and a &lt;a href="./cli">command-line interface&lt;/a> (CLI).
