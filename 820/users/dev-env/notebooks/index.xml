@@ -281,7 +281,7 @@ client. Once logged into the EGI Notebooks open a terminal and run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud token check
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the &lt;code>fedcloud&lt;/code> command is not available, please follow the
-&lt;a href="../../../getting-started/cli">getting started&lt;/a> guide to get it.&lt;/p>
+&lt;a href="../../../compute/cloud-compute/openstack#the-fedcloud-client">fedcloud client guide&lt;/a> guide to get it.&lt;/p>
 &lt;h2 id="egi-workload-manager-dirac">EGI Workload Manager (DIRAC)&lt;/h2>
 &lt;p>If you are using a Notebooks instance integrated with
 &lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>, you may

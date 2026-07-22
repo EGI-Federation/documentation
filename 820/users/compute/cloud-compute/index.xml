@@ -387,7 +387,7 @@ EGI Check-in credentials directly.&lt;/p>
 at &lt;a href="https://dashboard.cloud.egi.eu/">the EGI Cloud Compute dashboard&lt;/a>.&lt;/p>
 &lt;p>You can quickly find the dashboards of
 all providers in the EGI infrastructure that are accessible to you (use the
-correct VO) with the &lt;a href="../cli">FedCloud Client&lt;/a>:&lt;/p>
+correct VO) with the &lt;a href="#the-fedcloud-client">FedCloud Client&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The same way you can also discover other types of resources, just use the
 correct resource type:&lt;/p>
@@ -411,17 +411,17 @@ use wrapper around the default OpenStack client.
 &lt;ul>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.checkin">&lt;strong>Check-in&lt;/strong>&lt;/a>
 allows checking validity of access tokens and listing
-&lt;a href="../../aai/check-in/vos">Virtual Organisations&lt;/a> (VOs) of a token&lt;/li>
+&lt;a href="../../../aai/check-in/vos">Virtual Organisations&lt;/a> (VOs) of a token&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.endpoint">&lt;strong>Endpoint&lt;/strong>&lt;/a>
 can search endpoints in the
-&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> and extract
+&lt;a href="../../../../internal/configuration-database">Configuration Database&lt;/a> and extract
 site-specific information from unscoped/scoped tokens&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.sites">&lt;strong>Sites&lt;/strong>&lt;/a>
 allows management of site configurations&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack">&lt;strong>OpenStack&lt;/strong>&lt;/a>
 can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> deployed to sites&lt;/li>
 &lt;li>&lt;strong>EC3&lt;/strong> allows deploying
-&lt;a href="../../compute/orchestration/im/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
+&lt;a href="../../orchestration/im/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager
@@ -554,7 +554,7 @@ run the following commands:&lt;/p>
 &lt;p>Once you have a shell running in the container with the FedCloud client, usage
 is the same as from &lt;a href="#using-from-the-command-line">the command-line&lt;/a>.&lt;/p>
 &lt;h3 id="using-from-egi-notebooks">Using from EGI Notebooks&lt;/h3>
-&lt;p>&lt;a href="../../dev-env/notebooks">EGI Notebooks&lt;/a> are integrated with access tokens so it
+&lt;p>&lt;a href="../../../dev-env/notebooks">EGI Notebooks&lt;/a> are integrated with access tokens so it
 simplifies using the FedCloud client. First make sure that you follow the
 &lt;a href="#installation">installation&lt;/a> steps above. Then, below are the commands that you
 need to run inside a terminal in JupyterLab:&lt;/p>
@@ -926,12 +926,12 @@ them with EGI Cloud providers just doing a first step for obtaining the token:&l
 &lt;a href="https://docs.openstack.org/nova/latest/user/">nova documentation&lt;/a> for a
 complete guide on the VM management features of OpenStack. We list in the
 sections below some useful commands for the EGI Cloud.&lt;/p>
-&lt;h3 id="registering-an-existing-ssh-key">Registering an existing ssh key&lt;/h3>
+&lt;h4 id="registering-an-existing-ssh-key">Registering an existing ssh key&lt;/h4>
 &lt;p>It&amp;rsquo;s possible to register an ssh key that can later be used as the default ssh
 key for the default user of the VM (via the &lt;code>--key-name&lt;/code> argument to
 &lt;code>openstack server create&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>fedcloud openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="creating-a-vm">Creating a VM&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="creating-a-vm">Creating a VM&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>fedcloud openstack flavor list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">FLAVOR&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;FLAVOR_NAME&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud openstack image list
@@ -1083,8 +1083,8 @@ of a provider, from a &lt;a href="#manage-from-the-command-line">command-line in
 &lt;p>Multiple command-line interfaces (CLIs) are available to manage block storage:&lt;/p>
 &lt;ul>
 &lt;li>The &lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack CLI&lt;/a>&lt;/li>
-&lt;li>The &lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a> is a high-level CLI for
-interaction with the EGI Federated Cloud (&lt;strong>recommended&lt;/strong>)&lt;/li>
+&lt;li>The &lt;a href="../../../compute/cloud-compute/openstack#the-fedcloud-client">FedCloud Client&lt;/a>
+is a high-level CLI for interaction with the EGI Federated Cloud (&lt;strong>recommended&lt;/strong>)&lt;/li>
 &lt;li>The
 &lt;a href="https://docs.openstack.org/python-cinderclient/latest/user/shell.html">Cinder CLI&lt;/a>
 has some advanced features and administrative commands that are not available
@@ -1146,7 +1146,7 @@ to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="tab-pane "
 id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
-&lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
+&lt;a href="../../../compute/cloud-compute/openstack#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IN2P3-IRES
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
@@ -1163,7 +1163,7 @@ to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="tab-pane "
 id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
-&lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
+&lt;a href="../../../compute/cloud-compute/openstack#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;IN2P3-IRES&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vo.access.egi.eu&amp;#34;&lt;/span>
@@ -1770,7 +1770,7 @@ section.&lt;/p>
 &lt;p>GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
 dashboards or a &lt;a href="../automate">cloud orchestrator&lt;/a>.&lt;/p>
-&lt;p>It is also possible to use the &lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a>
+&lt;p>It is also possible to use the &lt;a href="../openstack#the-fedcloud-client">FedCloud Client&lt;/a>
 for command-line access. Below is an example on how to use the &lt;code>fedcloud&lt;/code>
 command to show the GPU properties of the available GPU flavors on all sites for
 the specific VO in the command:&lt;/p>
@@ -1807,10 +1807,10 @@ the specific VO in the command:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
-&lt;p>The &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a> sites in the EGI Cloud that
+&lt;p>The &lt;a href="../openstack">OpenStack&lt;/a> sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
-&lt;a href="../../../getting-started/cli">command-line interface&lt;/a> (CLI). This means that
+&lt;a href="../openstack#the-fedcloud-client">command-line interface&lt;/a> (CLI). This means that
 repetitive tasks or complex architectures can be turned into shell scripts.&lt;/p>
 &lt;p>But creating VMs happens so often in the EGI Cloud that tools were developed to
 capture the provisioning of these VMs, and allow users to recreate them in a
@@ -1834,7 +1834,7 @@ service to manage virtual infrastructures in EGI Cloud. Check the
 &lt;p>Orchestrators without native support for the EGI Cloud Compute service, but
 support out of band obtention with an OpenStack token for accessing the site can
 be used by obtaining this token with the help of the
-&lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>. You can set the &lt;code>OS_AUTH_URL&lt;/code>,
+&lt;a href="../openstack#the-fedcloud-client">FedCloud client&lt;/a>. You can set the &lt;code>OS_AUTH_URL&lt;/code>,
 &lt;code>OS_PROJECT_ID&lt;/code> and &lt;code>OS_TOKEN&lt;/code> environment variables as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OS_AUTH_URL and OS_PROJECT_ID with&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
@@ -1842,7 +1842,7 @@ be used by obtaining this token with the help of the
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># now get a valid token for OpenStack&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You will need an &lt;a href="../../../getting-started/cli/#Authentication">access token&lt;/a>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You will need an &lt;a href="../openstack/#authentication">access token&lt;/a>
 available for the &lt;code>fedcloud openstack&lt;/code> command to work.&lt;/p>
 &lt;h3 id="terraform">Terraform&lt;/h3>
 &lt;p>&lt;a href="https://terraform.io/">Terraform&lt;/a> supports EGI Cloud OpenStack providers by
@@ -1898,7 +1898,7 @@ with some boilerplate code.&lt;/p>
 &lt;code>alma 9&lt;/code> image from &lt;a href="../images">EGI&amp;rsquo;s registry&lt;/a> and a 2 cpus VM flavor at
 IN2P3-IRES site. The site requires a network to be specified, which we can
 discover either using the &lt;a href="https://dashboard.cloud.egi.eu">dashboard&lt;/a> or
-the &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a>.&lt;/p>
+the &lt;a href="../openstack#the-fedcloud-client">FedCloud client&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&amp;#34;An OpenStack Python Pulumi program&amp;#34;&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">pulumi&lt;/span>
@@ -3124,7 +3124,7 @@ can be later re-used to start similar VMs easily.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="how-can-i-find-all-the-vms-that-i-own-in-the-egi-federated-cloud">How can I find all the VMs that I own in the EGI Federated Cloud?&lt;/h3>
-&lt;p>We suggest using the &lt;a href="../../../../users/getting-started/cli/">fedcloudclient&lt;/a>:&lt;/p>
+&lt;p>We suggest using the &lt;a href="../openstack#the-fedcloud-client">fedcloudclient&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># list the Virtual Organisations that you belong to&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud token list-vos
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>

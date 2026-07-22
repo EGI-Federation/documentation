@@ -70,7 +70,7 @@ advanced Vault features not exposed via other tools.&lt;/p>
 &lt;p>To access the EGI Secrets Store service from the command-line you need a valid
 &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> access token. Get it either from the
 &lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a>, or from the
-&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../getting-started/cli#authentication">cli guide&lt;/a>
+&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../compute/cloud-compute/openstack#authentication">cli guide&lt;/a>
 for details), then set it to an environment variable:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
 &lt;li class="nav-item">
@@ -113,8 +113,8 @@ id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
 &lt;/div>
 &lt;/div>
 &lt;h2 id="access-via-fedcloud-client">Access via FedCloud client&lt;/h2>
-&lt;p>The &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a> is integrated with the EGI
-Secrets Store service, so that users can access the service immediately with
+&lt;p>The &lt;a href="../../../compute/cloud-compute/openstack#the-fedcloud-client">FedCloud client&lt;/a>
+is integrated with the EGI Secrets Store service, so that users can access the service immediately with
 simple commands. Below is a quick start to using the service.&lt;/p>
 &lt;h3 id="basic-usage">Basic usage&lt;/h3>
 &lt;p>Let&amp;rsquo;s assume you want to create a secret &lt;code>my_app_secrets&lt;/code> and store passwords

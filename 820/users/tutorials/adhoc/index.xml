@@ -21,7 +21,7 @@ Virtual Machine. There are several ways to achieve this. The simplest way is to
 use the
 &lt;a href="../../../compute/orchestration/im/dashboard">Infrastructure Manager Dashboard&lt;/a>.
 On the other hand, advanced users
-may prefer to use the &lt;a href="../../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
+may prefer to use the &lt;a href="../../../compute/cloud-compute/openstack#the-fedcloud-client">command-line interface&lt;/a>.&lt;/p>
 &lt;p>To know more about the &lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>
 Service in EGI please visit its &lt;a href="../../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>

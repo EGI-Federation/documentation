@@ -74,7 +74,7 @@ be discovered in the
 &lt;p>Multiple command-line interfaces (CLIs) are available to manage object storage:&lt;/p>
 &lt;ul>
 &lt;li>The &lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack CLI&lt;/a>&lt;/li>
-&lt;li>The &lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a> is a high-level CLI for
+&lt;li>The &lt;a href="../../../compute/cloud-compute/openstack#the-fedcloud-client">FedCloud Client&lt;/a> is a high-level CLI for
 interaction with the EGI Federated Cloud (&lt;strong>recommended&lt;/strong>)&lt;/li>
 &lt;li>The &lt;a href="https://docs.openstack.org/mitaka/cli-reference/swift.html">Swift CLI&lt;/a>
 has some advanced features that are not available through the OpenStack CLI&lt;/li>
@@ -122,7 +122,7 @@ PowerShell
 &lt;div class="tab-pane show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
-&lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
+&lt;a href="../../../compute/cloud-compute/openstack#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IFCA-LCG2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
@@ -137,7 +137,7 @@ to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="tab-pane "
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
-&lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
+&lt;a href="../../../compute/cloud-compute/openstack#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IN2P3-IRES
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
@@ -152,7 +152,7 @@ to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="tab-pane "
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
-&lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
+&lt;a href="../../../compute/cloud-compute/openstack#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;IN2P3-IRES&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vo.access.egi.eu&amp;#34;&lt;/span>
@@ -283,7 +283,7 @@ storage. This section explains how to use &lt;code>rclone&lt;/code> to interact 
 Federated Cloud.&lt;/p>
 &lt;p>As a prerequisite, we need to configure the following environment variables:
 &lt;code>OS_AUTH_URL&lt;/code>, &lt;code>OS_AUTH_TOKEN&lt;/code>, &lt;code>OS_STORAGE_URL&lt;/code>. Use the
-&lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a> to get their values:&lt;/p>
+&lt;a href="../../../compute/cloud-compute/openstack#the-fedcloud-client">FedCloud Client&lt;/a> to get their values:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># explore sites with swift storage&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud endpoint list --service-type org.openstack.swift --site ALL_SITES
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
