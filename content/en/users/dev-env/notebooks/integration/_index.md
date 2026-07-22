@@ -103,7 +103,7 @@ fedcloud token check
 ```
 
 If the `fedcloud` command is not available, please follow the
-[getting started](../../../getting-started/cli) guide to get it.
+[fedcloud client guide](../../../compute/cloud-compute/openstack#the-fedcloud-client) guide to get it.
 
 ## EGI Workload Manager (DIRAC)
 

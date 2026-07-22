@@ -6,10 +6,10 @@ description: >
   Use Infrastructure-as-Code in the EGI Cloud
 ---
 
-The [OpenStack](../../../getting-started/openstack) sites in the EGI Cloud that
+The [OpenStack](../openstack) sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
-[command-line interface](../../../getting-started/cli) (CLI). This means that
+[command-line interface](../openstack#the-fedcloud-client) (CLI). This means that
 repetitive tasks or complex architectures can be turned into shell scripts.
 
 But creating VMs happens so often in the EGI Cloud that tools were developed to
@@ -39,7 +39,7 @@ service to manage virtual infrastructures in EGI Cloud. Check the
 Orchestrators without native support for the EGI Cloud Compute service, but
 support out of band obtention with an OpenStack token for accessing the site can
 be used by obtaining this token with the help of the
-[FedCloud client](../../../getting-started/cli). You can set the `OS_AUTH_URL`,
+[FedCloud client](../openstack#the-fedcloud-client). You can set the `OS_AUTH_URL`,
 `OS_PROJECT_ID` and `OS_TOKEN` environment variables as follows:
 
 ```shell
@@ -51,7 +51,7 @@ $ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
                     token issue -c id -f value)
 ```
 
-You will need an [access token](../../../getting-started/cli/#Authentication)
+You will need an [access token](../openstack/#authentication)
 available for the `fedcloud openstack` command to work.
 
 ### Terraform
@@ -138,7 +138,7 @@ Edit `__main__.py` to create a VM. In the example code below, we will use an
 `alma 9` image from [EGI's registry](../images) and a 2 cpus VM flavor at
 IN2P3-IRES site.  The site requires a network to be specified, which we can
 discover either using the [dashboard](https://dashboard.cloud.egi.eu) or
-the [FedCloud client](../../../getting-started/cli).
+the [FedCloud client](../openstack#the-fedcloud-client).
 
 ```python
 """An OpenStack Python Pulumi program"""

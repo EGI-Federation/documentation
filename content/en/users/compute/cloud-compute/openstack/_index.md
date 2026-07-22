@@ -54,7 +54,7 @@ at [the EGI Cloud Compute dashboard](https://dashboard.cloud.egi.eu/).
 
 You can quickly find the dashboards of
 all providers in the EGI infrastructure that are accessible to you (use the
-correct VO) with the [FedCloud Client](../cli):
+correct VO) with the [FedCloud Client](#the-fedcloud-client):
 
 ```shell
 $ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
@@ -84,17 +84,17 @@ FedCloud client has the following modules (features):
 
 - [**Check-in**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.checkin)
   allows checking validity of access tokens and listing
-  [Virtual Organisations](../../aai/check-in/vos) (VOs) of a token
+  [Virtual Organisations](../../../aai/check-in/vos) (VOs) of a token
 - [**Endpoint**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.endpoint)
   can search endpoints in the
-  [Configuration Database](../../../internal/configuration-database) and extract
+  [Configuration Database](../../../../internal/configuration-database) and extract
   site-specific information from unscoped/scoped tokens
 - [**Sites**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.sites)
   allows management of site configurations
 - [**OpenStack**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack)
   can perform commands on [OpenStack services](../openstack) deployed to sites
 - **EC3** allows deploying
-  [elastic cloud compute clusters](../../compute/orchestration/im/ec3)
+  [elastic cloud compute clusters](../../orchestration/im/ec3)
 
 ### Installation
 
@@ -216,7 +216,7 @@ is the same as from [the command-line](#using-from-the-command-line).
 
 ### Using from EGI Notebooks
 
-[EGI Notebooks](../../dev-env/notebooks) are integrated with access tokens so it
+[EGI Notebooks](../../../dev-env/notebooks) are integrated with access tokens so it
 simplifies using the FedCloud client. First make sure that you follow the
 [installation](#installation) steps above. Then, below are the commands that you
 need to run inside a terminal in JupyterLab:
@@ -577,7 +577,7 @@ Please refer to the
 complete guide on the VM management features of OpenStack. We list in the
 sections below some useful commands for the EGI Cloud.
 
-### Registering an existing ssh key
+#### Registering an existing ssh key
 
 It's possible to register an ssh key that can later be used as the default ssh
 key for the default user of the VM (via the `--key-name` argument to
@@ -587,7 +587,7 @@ key for the default user of the VM (via the `--key-name` argument to
 fedcloud openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
 ```
 
-### Creating a VM
+#### Creating a VM
 
 ```shell
 fedcloud openstack flavor list

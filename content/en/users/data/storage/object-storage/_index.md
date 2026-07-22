@@ -99,7 +99,7 @@ be discovered in the
 Multiple command-line interfaces (CLIs) are available to manage object storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)
-- The [FedCloud Client](../../../getting-started/cli) is a high-level CLI for
+- The [FedCloud Client](../../../compute/cloud-compute/openstack#the-fedcloud-client) is a high-level CLI for
   interaction with the EGI Federated Cloud (**recommended**)
 - The [Swift CLI](https://docs.openstack.org/mitaka/cli-reference/swift.html)
   has some advanced features that are not available through the OpenStack CLI
@@ -127,7 +127,7 @@ use the FedCloud command below:
 {{< tabx header="Linux / Mac" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```shell
@@ -146,7 +146,7 @@ $ fedcloud openstack container list --site $EGI_SITE
 {{< tabx  header="Windows" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```shell
@@ -165,7 +165,7 @@ to set them once and reuse them with each command invocation.
 {{< tabx header="PowerShell" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```powershell
@@ -330,7 +330,7 @@ Federated Cloud.
 
 As a prerequisite, we need to configure the following environment variables:
 `OS_AUTH_URL`, `OS_AUTH_TOKEN`, `OS_STORAGE_URL`. Use the
-[FedCloud Client](../../../getting-started/cli) to get their values:
+[FedCloud Client](../../../compute/cloud-compute/openstack#the-fedcloud-client) to get their values:
 
 ```shell
 # explore sites with swift storage
