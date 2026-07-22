@@ -96,7 +96,7 @@ FedCloud command:
 {{< tabx header="Linux / Mac" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```shell
