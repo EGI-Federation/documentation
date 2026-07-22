@@ -23,7 +23,7 @@ community, private and/or public cloud services. These service providers offer:
 - **Resource discovery** features to easily understand which providers are
   supporting your community, and what are their capabilities
 - **Global accounting** that
-  [aggregates and allows visualisation](https://accounting.egi.eu/cloud/) of
+  [aggregates and allows visualisation](https://accounting.egi.eu/) of
   usage information
 - **Monitoring of availability and reliability** to
   [ensure SLAs are met](https://argo.egi.eu/egi/report-status/Critical/SITES?filter=FedCloud)

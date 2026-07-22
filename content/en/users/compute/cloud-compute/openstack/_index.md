@@ -23,7 +23,6 @@ includes details on every OpenStack project most providers offer access to:
 - [Neutron](https://docs.openstack.org/neutron/latest/), for network management
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web dashboard
 
-
 ## Access through web dashboard
 
 The Horizon Web-dashboard of the OpenStack providers can be accessed using your
@@ -68,7 +67,6 @@ correct resource type:
 - `org.openstack.swift` for object storage
 
 {{% /alert %}}
-
 
 ## The FedCloud client
 
@@ -569,8 +567,8 @@ fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue -c id
 
 ### Useful OpenStack commands
 
-Usage of the OpenStack client is described in detail
-[here](https://docs.openstack.org/python-openstackclient/latest).
+Usage of the OpenStack client is described in detail at
+[OpenStack documentation](https://docs.openstack.org/python-openstackclient/latest).
 
 Please refer to the
 [nova documentation](https://docs.openstack.org/nova/latest/user/) for a

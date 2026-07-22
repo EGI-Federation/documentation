@@ -110,9 +110,9 @@ The main FedCloud commands for managing storage containers and storage objects
 are described below.
 
 {{% alert title="Note" color="info" %}} See
-[here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html)
+[OpeStack container command](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html)
 for documentation on all storage container-related commands, and
-[here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html)
+[OpenStack object command](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html)
 for all object-related commands. {{% /alert %}}
 
 #### List storage containers
