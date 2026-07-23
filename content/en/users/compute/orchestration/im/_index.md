@@ -22,7 +22,7 @@ a wide variety of backends, either federated (such as
 [Amazon Web Services](https://aws.amazon.com/),
 [Google Cloud](https://cloud.google.com/) or
 [Microsoft Azure](https://azure.microsoft.com/)) or on-premises (such as
-[OpenStack](../../../getting-started/openstack)),
+[OpenStack](../../cloud-compute/openstack)),
 thus making user applications cloud agnostic.
 IM features a [web-based GUI](https://im.egi.eu/),
 an XML-RPC API, a REST API and a [command-line interface](./cli) (CLI).

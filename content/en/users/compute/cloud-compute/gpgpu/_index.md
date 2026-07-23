@@ -46,7 +46,7 @@ GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
 dashboards or a [cloud orchestrator](../automate).
 
-It is also possible to use the [FedCloud Client](../../../getting-started/cli)
+It is also possible to use the [FedCloud Client](../openstack#the-fedcloud-client)
 for command-line access. Below is an example on how to use the `fedcloud`
 command to show the GPU properties of the available GPU flavors on all sites for
 the specific VO in the command:

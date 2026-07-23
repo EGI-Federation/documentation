@@ -23,7 +23,7 @@ community, private and/or public cloud services. These service providers offer:
 - **Resource discovery** features to easily understand which providers are
   supporting your community, and what are their capabilities
 - **Global accounting** that
-  [aggregates and allows visualisation](https://accounting.egi.eu/cloud/) of
+  [aggregates and allows visualisation](https://accounting.egi.eu/) of
   usage information
 - **Monitoring of availability and reliability** to
   [ensure SLAs are met](https://argo.egi.eu/egi/report-status/Critical/SITES?filter=FedCloud)
@@ -65,7 +65,7 @@ Before users can access an EGI service, they have to:
    token (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
    (web interfaces and dashboards usually hide this from users) or explicitly
-   (e.g. when using [command-line tools](cli)).
+   (e.g. when using [command-line tools](../compute/cloud-compute/openstack#the-fedcloud-client)).
 
 {{% alert title="Note" color="info" %}} See the [EGI Check-in](../aai/check-in)
 documentation for a detailed description of the Authentication and Authorization
@@ -176,7 +176,9 @@ storage**. For the [EGI Cloud Compute](../compute/cloud-compute/) or the
 [EGI Container Cloud Compute](../compute/cloud-container-compute/), the EGI
 grant includes up to **4 vCPU cores, 8GB of RAM and 100GB of block storage**.
 
-You can manage those resources via [command-line](cli) or web interface like the
+You can manage those resources via
+[command-line](../compute/cloud-compute/openstack#the-fedcloud-client)
+or web interface like the
 [Infrastructure Manager dashboard](../compute/orchestration/im/dashboard/).
 
 ## Unused resources

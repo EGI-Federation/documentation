@@ -70,8 +70,8 @@ of a provider, from a [command-line interface](#manage-from-the-command-line)
 Multiple command-line interfaces (CLIs) are available to manage block storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)
-- The [FedCloud Client](../../../getting-started/cli) is a high-level CLI for
-  interaction with the EGI Federated Cloud (**recommended**)
+- The [FedCloud Client](../../../compute/cloud-compute/openstack#the-fedcloud-client)
+  is a high-level CLI for interaction with the EGI Federated Cloud (**recommended**)
 - The
   [Cinder CLI](https://docs.openstack.org/python-cinderclient/latest/user/shell.html)
   has some advanced features and administrative commands that are not available
@@ -96,7 +96,7 @@ FedCloud command:
 {{< tabx header="Linux / Mac" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```shell
@@ -117,7 +117,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 {{< tabx  header="Windows" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```shell
@@ -138,7 +138,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 {{< tabx  header="PowerShell" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
-[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+[FedCloud CLI environment variables](../../../compute/cloud-compute/openstack#environment-variables)
 to set them once and reuse them with each command invocation.
 
 ```powershell
