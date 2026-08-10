@@ -1,0 +1,261 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Accounting</title><link>/internal/accounting/</link><description>Recent content in Accounting on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/accounting/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/accounting/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/service-information/</guid><description>
+&lt;h2 id="identity-card">Identity card&lt;/h2>
+&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Accounting (Repository and Portal)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Tracking, in an APEL-based repository, and reporting, via a web portal, of the usage of EGI resources and services.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL&lt;/td>
+&lt;td>&lt;a href="https://accounting.egi.eu">https://accounting.egi.eu&lt;/a> (portal)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Support Email&lt;/td>
+&lt;td>&lt;code>apel-admins&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>stfc.ac.uk&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="../../helpdesk">Helpdesk&lt;/a> Support Unit&lt;/td>
+&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Accounting Portal &lt;br/> I__ APEL Client and Accounting Repository&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Configuration Database entries&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=237">Repository&lt;/a>, &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=646">Portal&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Suppliers&lt;/td>
+&lt;td>&lt;a href="https://www.ukri.org/">UKRI&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Roadmap&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Release notes&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Source code&lt;/td>
+&lt;td>&lt;a href="https://github.com/apel/apel">Repository&lt;/a>, &lt;a href="https://github.com/wlcg-ops/pear-prototype">Portal&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issue tracker for developers&lt;/td>
+&lt;td>&lt;a href="https://github.com/apel/apel/issues">Repository&lt;/a>, &lt;a href="https://jira.egi.eu/issues/?jql=project+%3D+EGITCB+AND+component+%3D+%22Accounting+Portal%22">Portal&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Licence&lt;/td>
+&lt;td>Apache 2.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Privacy Notice&lt;/td>
+&lt;td>&lt;a href="https://accounting.egi.eu/data_protection/">Privacy Notice&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Record and Message Formats</title><link>/internal/accounting/record-and-message-formats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/record-and-message-formats/</guid><description>
+&lt;h2 id="grid-accounting">Grid Accounting&lt;/h2>
+&lt;p>Grid accounting can either be sent as Individual or Summary job records.
+Summary Sync records can be sent in either case, and provide a mechanism to
+validate that all records stored locally at a site have been published.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="grid-accounting#individual-job-records-and-messages">Individual Job Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="grid-accounting#summary-job-records-and-messages">Summary Job Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="grid-accounting#summary-sync-records-and-messages">Summary Sync Records and Messages&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="cloud-accounting">Cloud Accounting&lt;/h2>
+&lt;p>Cloud accounting covers three types of messages:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="cloud-accounting#individual-vm-records-and-messages">VM Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cloud-accounting#ip-records">IP Records&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cloud-accounting#gpu-records">GPU Records&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Internal: Accounting Portal</title><link>/internal/accounting/portal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/portal/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The EGI Accounting Portal provides the accounting data for Compute and Cloud
+services gathered from the data centres of the
+&lt;a href="https://www.egi.eu/egi-federation/">EGI Federation&lt;/a>. Users can employ custom
+filtering by selecting resource centres, VOs and defining a time period etc.
+Accounting data gathered by the Open Science Grid (OSG) is also included.&lt;/p>
+&lt;h2 id="accounting-data">Accounting data&lt;/h2>
+&lt;p>Data for a given month is mapped to the first of the month at midnight, i.e.
+all usage for July 2026 is stored at &amp;lsquo;2026-07-01T00:00:00Z&amp;rsquo;.&lt;/p>
+&lt;p>Usage for the current month will update daily.&lt;/p>
+&lt;h3 id="programmatic-access">Programmatic access&lt;/h3>
+&lt;p>Access to the entirety of the accounting data is provided at the following endpoints, in the following formats.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://accounting.egi.eu/csv">https://accounting.egi.eu/csv&lt;/a>, CSV&lt;/li>
+&lt;li>&lt;a href="https://accounting.egi.eu/json">https://accounting.egi.eu/json&lt;/a>, JSON&lt;/li>
+&lt;/ul>
+&lt;h4 id="json-format-explained">JSON format explained&lt;/h4>
+&lt;p>The JSON format contains one or more result sets, each consisting of a named
+series with column definitions and corresponding data rows.&lt;/p>
+&lt;h5 id="high-level-structure">High-level structure&lt;/h5>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">root
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">└── results[] # Array of result sets
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> └── series[] # Array of series returned for this result
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> ├── name # Series name (&amp;#34;summary&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> ├── columns[] # Column definitions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> ├── values[] # Data rows
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> └── partial # Optional flag indicating this series is partial
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic"> # and more data follows in the next series.
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To obtain the full dataset, in a representation of the data where each record
+is stored as a self-contained object with named fields, concatenate all rows
+from all series.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">all_records&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">for&lt;/span> &lt;span style="color:#000">result&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">data&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;results&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> &lt;span style="color:#000">series&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">result&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">get&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;series&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000;font-weight:bold">[]):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">cols&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">series&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;columns&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> &lt;span style="color:#000">row&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">series&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;values&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">all_records&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">append&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">dict&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">zip&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">cols&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">row&lt;/span>&lt;span style="color:#000;font-weight:bold">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="datapoints-explained">Datapoints explained&lt;/h5>
+&lt;p>Each entry in values represents a summary accounting record containing:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Column&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>time&lt;/td>
+&lt;td>Timestamp associated with the record&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>benchmark&lt;/td>
+&lt;td>Benchmark identifier or value&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ce&lt;/td>
+&lt;td>Computing Element&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>country&lt;/td>
+&lt;td>Country in which the resource is located&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>federation&lt;/td>
+&lt;td>Federation to which the resource belongs&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>infrastructure&lt;/td>
+&lt;td>&lt;code>Grid&lt;/code>, &lt;code>Grid-Local&lt;/code> (local jobs) or &lt;code>Cloud&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>site&lt;/td>
+&lt;td>Site name&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tier&lt;/td>
+&lt;td>Site tier classification within WLCG&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>vo&lt;/td>
+&lt;td>Virtual Organisation&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ngi&lt;/td>
+&lt;td>The national grouping of shared computing resources&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>number_of_jobs&lt;/td>
+&lt;td>Number of jobs represented by the record&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>raw_cpu_eff&lt;/td>
+&lt;td>CPU efficiency metric&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>raw_cpu_time&lt;/td>
+&lt;td>Total CPU time consumed&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>raw_cpu_work&lt;/td>
+&lt;td>Total CPU work performed&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>raw_wc_time&lt;/td>
+&lt;td>Total wall-clock time&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>raw_wc_work&lt;/td>
+&lt;td>Total wall-clock work performed&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h5 id="example">Example&lt;/h5>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;results&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;series&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;summary&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;columns&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;benchmark&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;ce&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;country&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;federation&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;infrastructure&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;site&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;tier&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;vo&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;number_of_jobs&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_cpu_eff&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_cpu_time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_cpu_work&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_wc_time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_wc_work&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;values&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#a40000">Datapoint&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#a40000">Datapoint&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a40000">#&lt;/span> &lt;span style="color:#a40000">etc&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;partial&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;series&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;summary&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;columns&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;benchmark&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;ce&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;country&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;federation&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;infrastructure&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;site&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;tier&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;vo&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;number_of_jobs&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_cpu_eff&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_cpu_time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_cpu_work&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_wc_time&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;raw_wc_work&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;values&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#a40000">Datapoint&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">99&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#a40000">Datapoint&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">100&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
