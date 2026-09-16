@@ -107,9 +107,6 @@ the creation of a new environment will most likely fail.
 To prevent this, there are couple of approaches you can apply, so you can create
 a new environment with desired kernels in it:
 
-1. use a larger Notebook instance (e.g. medium, large) - this will add more
-   resources for conda-switcher to work with
-
 1. properly manage your memory - don't open multiple new tabs with active
    kernels, don't run other processes using more resources etc. a good approach
    is also to check your memory indicator on bottom left panel
