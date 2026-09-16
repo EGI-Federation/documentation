@@ -115,36 +115,38 @@ label is still a valid Conda environment, but it is not currently registered as
 a Jupyter kernel.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Creating an environment requires Conda
-to resolve and download the required packages. Depending on the selected Python
-version, network conditions and current server performance, this operation may
-take several minutes.
+Creating an environment requires Conda to resolve and download the required
+packages. Depending on the selected Python version, network conditions and
+current server performance, this operation may take several minutes.
 &lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-Default and any other conda
-environment not created using Conda-Switcher are &lt;strong>not&lt;/strong> considered by the
-extension. If you wish to manage those, you have to do it manually. There is
-also UI hint regarding this. &lt;img src="notebooks-default-env-hint.png" alt="Default env hint">
+&lt;p>Default and any other conda environment not created using Conda-Switcher are
+&lt;strong>not&lt;/strong> considered by the extension. If you wish to manage those, you have to
+do it manually. There is also UI hint regarding this.&lt;/p>
+&lt;p>&lt;img src="notebooks-default-env-hint.png" alt="Default env hint">&lt;/p>
 &lt;/div>
 &lt;h3 id="backup-an-environment">Backup an environment&lt;/h3>
-&lt;p>Click Backup environment and select the environment you want to back up.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-9_8-50-17.png&lt;/p>
-&lt;p>Conda Switcher uses conda-pack to create a portable archive containing the
+&lt;p>Click &lt;strong>Backup environment&lt;/strong> and select the environment you want to back up.&lt;/p>
+&lt;p>&lt;img src="notebooks-backup-env.png" alt="Backup environment">&lt;/p>
+&lt;p>Conda Switcher uses &lt;code>conda-pack&lt;/code> to create a portable archive containing the
 selected environment. Before the backup starts, a file browser opens where you
 can select the directory in which the backup archive should be stored. The file
 browser starts in your Jupyter home directory. You can later restore the
-environment from this archive using Restore environment.&lt;/p>
+environment from this archive using &lt;a href="./#restore">Restore environment&lt;/a>.&lt;/p>
 &lt;p>Backup is performed as a background operation and its progress can be monitored
 in the operation log. Large environments may require several minutes to package.&lt;/p>
-&lt;p>Note: Do not restart or stop your Jupyter server while a backup operation is
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Do not restart or stop your Jupyter server while a backup operation is
 still running. Wait until Conda Switcher reports that the operation has
-completed.&lt;/p>
-&lt;p>Restore an environment from a backup Click Restore environment to restore a
-previously backed-up environment. A file browser will open in your Jupyter home
-directory. Browse to the location where the backup archive is stored and select
-the archive you want to restore.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_16-23-40.png&lt;/p>
+completed.
+&lt;/div>
+&lt;h3 id="restore-an-environment-from-a-backup">Restore an environment from a backup&lt;/h3>
+&lt;p>Click &lt;strong>Restore environment&lt;/strong> to restore a previously backed-up environment.
+A file browser will open in your Jupyter home directory. Browse to the location
+where the backup archive is stored and select the archive you want to restore.&lt;/p>
+&lt;p>&lt;img src="notebooks-restore-env.png" alt="Restore environment">&lt;/p>
 &lt;p>Select the environment archive you want to restore and confirm your selection.
 You will then be asked for the name of the restored environment. Conda Switcher
 extracts the selected archive and recreates the environment in the managed
@@ -152,46 +154,70 @@ environment area.&lt;/p>
 &lt;p>The restoration process runs in the background and can be followed in the
 operation log. Once completed, the restored environment will appear in the list
 of available environments.&lt;/p>
-&lt;p>Export an environment to YAML Click Export to YAML and select the environment
-you want to export. A save dialog will open where you can browse the JupyterLab
-filesystem, select the destination directory and enter the desired file name in
+&lt;h3 id="export-an-environment-to-yaml">Export an environment to YAML&lt;/h3>
+&lt;p>Click &lt;strong>Export to YAML&lt;/strong> and select the environment you want to export.
+A save dialog will open where you can browse the JupyterLab filesystem,
+select the destination directory and enter the desired file name in
 the same window.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-4_15-0-47.png&lt;/p>
+&lt;p>&lt;img src="notebooks-export-env.png" alt="Export environment">&lt;/p>
 &lt;p>Enter the desired YAML file name and select the destination directory. The .yml
 extension is added automatically if it is not specified. After selecting the
 destination directory and file name, Conda Switcher asks you to choose an export
 method.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-11_17-30-20.png&lt;/p>
-&lt;p>Simple Conda export uses the standard Conda export command and stores its output
+&lt;p>&lt;img src="notebooks-export-method.png" alt="Export method">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Simple Conda export&lt;/strong> uses the standard Conda export command and stores its output
 directly in the selected YAML file. This mode does not apply additional
 processing, package filtering or pip metadata handling. It is intended as a
 compatibility option when you want the original Conda export behavior.&lt;/p>
-&lt;p>Advanced export is selected by default and is recommended for most users. It
-combines the standard Conda export with information from pip freeze and pip list
-&amp;ndash;format=json to improve portability of pip-installed packages. Git-based
-package references are preserved as repository URLs, while local file:///
-references are converted to package==version requirements when the installed
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Advanced export&lt;/strong> is selected by default and is recommended for most users. It
+combines the standard Conda export with information from &lt;code>pip freeze&lt;/code> and
+&lt;code>pip list --format=json&lt;/code> to improve portability of pip-installed packages. Git-based
+package references are preserved as repository URLs, while local &lt;code>file:///&lt;/code>
+references are converted to &lt;code>package==version&lt;/code> requirements when the installed
 package version can be identified.&lt;/p>
-&lt;p>Advanced export generates 2 files: environment.yaml and requirements.txt&lt;/p>
+&lt;p>Advanced export generates 2 files: &lt;code>environment.yaml&lt;/code> and &lt;code>requirements.txt&lt;/code>&lt;/p>
 &lt;p>The exported YAML file describes the packages and configuration of the selected
 Conda environment. In Advanced export mode, Conda Switcher always creates a
-requirements.txt file containing information about pip-installed packages, in
+&lt;code>requirements.txt&lt;/code> file containing information about pip-installed packages, in
 addition to the YAML environment file. The resulting files can be used to
 inspect the environment configuration or to reproduce a similar environment on
 another system.&lt;/p>
-&lt;p>Note: A YAML export is not a complete copy of the environment. It contains an
+&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+A YAML export is not a complete copy of the environment. It contains an
 environment specification, and the listed packages normally have to be
-downloaded again when the environment is recreated. Use Backup environment
+downloaded again when the environment is recreated. Use &lt;a href="./#backup">Backup environment&lt;/a>
 instead if you want to create an archive that can later be restored directly
-using Conda Switcher.&lt;/p>
-&lt;p>Install a Jupyter kernel Click Install kernel and select the environment in
-which you want to install the kernel. Conda Switcher provides support for
-Python, Julia, R and Octave kernels.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_15-50-40.png&lt;/p>
+using Conda Switcher.
+&lt;/div>
+&lt;h3 id="backup-vs-yaml-export">Backup vs. YAML export&lt;/h3>
+&lt;p>[Backup environment] and [Export to YAML] preserve an environment in different ways.&lt;/p>
+&lt;p>A backup created by &lt;strong>Backup environment&lt;/strong> is a packaged copy of the actual Conda
+environment and is intended to be restored using &lt;strong>Restore environment&lt;/strong>. It is the
+appropriate option when you want to preserve an environment and return to it
+later.&lt;/p>
+&lt;p>A &lt;strong>YAML export&lt;/strong> is a textual description of the environment and its packages. It
+is easier to inspect, edit and share, but it does not contain the packages
+themselves. Recreating an environment from YAML therefore generally requires the
+packages to be downloaded and installed again.&lt;/p>
+&lt;p>Use &lt;strong>Backup environment&lt;/strong> when your goal is to preserve and later restore an
+environment. Use &lt;strong>Export to YAML&lt;/strong> when you need a portable and human-readable
+environment specification.&lt;/p>
+&lt;h3 id="install-a-jupyter-kernel">Install a Jupyter kernel&lt;/h3>
+&lt;p>Click &lt;strong>Install kernel&lt;/strong> and select the environment in which you want to
+install the kernel. Conda Switcher provides support for Python, Julia, R
+and Octave kernels.&lt;/p>
+&lt;p>&lt;img src="notebooks-install-kernel.png" alt="Install kernel">&lt;/p>
 &lt;p>For Python, the kernel uses the Python installation of the selected environment.
 For Julia, R and Octave, Conda Switcher installs the packages required to
 provide the selected Jupyter kernel and registers it for use by JupyterLab.&lt;/p>
-&lt;p>Kernels can also be selected when creating a new environment. Use Install kernel
+&lt;p>Kernels can also be selected when creating a new environment. Use &lt;strong>Install kernel&lt;/strong>
 when you want to add another kernel to an environment that already exists.
 Kernel installation runs as a background operation. Installing a kernel that
 requires additional packages can take several minutes because the necessary
@@ -199,68 +225,51 @@ packages may have to be resolved and downloaded.&lt;/p>
 &lt;p>After installation, the kernel becomes available for use with Jupyter notebooks.
 If a newly installed kernel is not immediately visible in the Launcher or kernel
 selection menu, refresh the JupyterLab interface.&lt;/p>
-&lt;p>Remove an environment Click Delete environment and select the environment you
-want to remove.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_15-51-48.png&lt;/p>
+&lt;h3 id="remove-an-environment">Remove an environment&lt;/h3>
+&lt;p>Click &lt;strong>Delete environment&lt;/strong> and select the environment you want to remove.&lt;/p>
+&lt;p>&lt;img src="notebooks-delete-env.png" alt="Delete environment">&lt;/p>
 &lt;p>Before deleting an environment, Conda Switcher asks whether you want to create a
 backup of the environment first.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-4_15-7-45.png&lt;/p>
-&lt;p>You can choose Backup to create a backup before deleting the environment, or No
-to delete the environment without creating a backup. If Backup is selected, a
-file browser opens where you can choose the destination directory. Conda
-Switcher waits for the backup to complete successfully before removing the
+&lt;p>&lt;img src="notebooks-backup-before-delete.png" alt="Backup before delete">&lt;/p>
+&lt;p>You can choose &lt;strong>Backup&lt;/strong> to create a backup before deleting the environment,
+or &lt;strong>No&lt;/strong> to delete the environment without creating a backup. If &lt;strong>Backup&lt;/strong>
+is selected, a file browser opens where you can choose the destination directory.
+Conda Switcher waits for the backup to complete successfully before removing the
 environment.&lt;/p>
-&lt;p>Warning: Deleting an environment without creating a backup is irreversible.
-Choose No only if you are certain that you no longer need the environment or
-already have another copy of it.&lt;/p>
-&lt;p>Monitor running operations Some environment operations can take a significant
-amount of time. Conda Switcher therefore performs long-running tasks in the
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Deleting an environment without creating a backup is irreversible.
+Choose &lt;strong>No&lt;/strong> only if you are certain that you no longer need the environment or
+already have another copy of it.
+&lt;/div>
+&lt;h3 id="monitor-running-operations">Monitor running operations&lt;/h3>
+&lt;p>Some environment operations can take a significant amount of time.
+Conda Switcher therefore performs long-running tasks in the
 background and displays their progress in the lower part of the panel.&lt;/p>
-&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_15-53-49.png&lt;/p>
+&lt;p>&lt;img src="notebooks-monitor-operations.png" alt="Monitor operations">&lt;/p>
 &lt;p>While an operation is running, Conda Switcher displays its current status,
 elapsed running time and output produced by the underlying command. The detailed
 output is contained in a scrollable log area, so a long log does not expand the
 panel or move the environment controls out of view.&lt;/p>
-&lt;p>The Hide button hides the detailed log and changes to Show, which can be used to
-display it again. Hiding the log only changes its visibility; logging continues
-in the background and the running operation is not interrupted. The Clear button
-clears the currently displayed log output.&lt;/p>
-&lt;p>Note: Conda may spend a significant amount of time resolving dependencies,
+&lt;p>The &lt;strong>Hide&lt;/strong> button hides the detailed log and changes to &lt;strong>Show&lt;/strong>, which can
+then be used to display it again. Hiding the log only changes its visibility;
+logging continues in the background and the running operation is not interrupted.
+The &lt;strong>Clear&lt;/strong> button clears the currently displayed log output.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Conda may spend a significant amount of time resolving dependencies,
 downloading packages or executing package transactions. During these stages the
 operation may appear to make little progress even though it is still running.
 Check the operation status and log before assuming that an operation has
-stopped.&lt;/p>
-&lt;p>Backup storage Backup archives are stored in the directory selected by the user
+stopped.
+&lt;/div>
+&lt;h3 id="backup-storage">Backup storage&lt;/h3>
+&lt;p>Backup archives are stored in the directory selected by the user
 when the backup is created. Conda Switcher does not create or require a
 dedicated backup directory.&lt;/p>
-&lt;p>Backup archives can later be restored using Restore environment. The file
+&lt;p>Backup archives can later be restored using &lt;strong>Restore environment&lt;/strong>. The file
 browser starts in your Jupyter home directory, from where you can navigate to
 the location containing the archive.&lt;/p>
-&lt;p>Backup vs. YAML export Backup environment and Export to YAML preserve an
-environment in different ways.&lt;/p>
-&lt;p>A backup created by Backup environment is a packaged copy of the actual Conda
-environment and is intended to be restored using Restore environment. It is the
-appropriate option when you want to preserve an environment and return to it
-later.&lt;/p>
-&lt;p>A YAML export is a textual description of the environment and its packages. It
-is easier to inspect, edit and share, but it does not contain the packages
-themselves. Recreating an environment from YAML therefore generally requires the
-packages to be downloaded and installed again.&lt;/p>
-&lt;p>Use Backup environment when your goal is to preserve and later restore an
-environment. Use Export to YAML when you need a portable and human-readable
-environment specification.&lt;/p>
-&lt;p>Installing multiple kernels requires more resources, like memory. If you don&amp;rsquo;t
-have enough spare resources, the creation of a new environment will most likely
-fail.&lt;/p>
-&lt;p>To prevent this, there are couple of approaches you can apply, so you can create
-a new environment with desired kernels in it:&lt;/p>
-&lt;p>use a larger Notebook instance (e.g. medium, large) - this will add more
-resources for conda-switcher to work with&lt;/p>
-&lt;p>properly manage your memory - don&amp;rsquo;t open multiple new tabs with active kernels,
-don&amp;rsquo;t run other processes using more resources etc. a good approach is also to
-check your memory indicator on bottom left panel&lt;/p>
-&lt;p>install kernels individually inside a new environment using &amp;ldquo;Install Kernel&amp;rdquo;
-option from section 1.6&lt;/p>
 &lt;h2 id="installing-your-own-kernelsenvironments-permanently">Installing your own kernels/environments permanently&lt;/h2>
 &lt;p>If you want to have a completely customised environment for your Notebooks that
 persists across sessions, you can create your own conda environment in your home
