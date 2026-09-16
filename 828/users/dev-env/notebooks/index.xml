@@ -116,7 +116,7 @@ have the choice to run:&lt;/p>
 &lt;ul>
 &lt;li>the &lt;a href="./default">default environment&lt;/a> that provides a data-science ready stack
 with support for Python, R, Julia, and Octave, that can be further customised
-with the &lt;a href="./default#conda_switcher">Conda Switcher&lt;/a> extension.&lt;/li>
+with the &lt;a href="./default#conda-switcher">Conda Switcher&lt;/a> extension.&lt;/li>
 &lt;li>the &lt;a href="./matlab">MATLAB environment&lt;/a>, for running MATLAB.&lt;/li>
 &lt;/ul>
 &lt;p>After logging into the service, you will be shown a form for selecting the

@@ -69,7 +69,7 @@ be able to use/switch between options available in those environments by either
 selecting them from Jupyterlab launcher, kernel selection or CLI.&lt;/p>
 &lt;p>&lt;img src="notebooks-conda-switcher.png" alt="Conda Switcher Extension">&lt;/p>
 &lt;h3 id="create-a-new-environment">Create a new environment&lt;/h3>
-&lt;p>Click &lt;em>Create environment&lt;/em> in the Conda Switcher panel. Enter a name for the new
+&lt;p>Click &lt;strong>Create environment&lt;/strong> in the Conda Switcher panel. Enter a name for the new
 environment, select the Python version you want to use, and choose which Jupyter
 kernels should be installed together with the environment. Python is selected by
 default. You can also select R, Julia and Octave, and multiple kernels can be
@@ -100,13 +100,13 @@ is also to check your memory indicator on bottom left panel&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>install kernels individually inside a new environment using
-&lt;a href="#install_kernel">&amp;ldquo;Install Kernel&amp;rdquo;&lt;/a>&lt;/p>
+&lt;a href="./#install-a-jupyter-kernel">&amp;ldquo;Install Kernel&amp;rdquo;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
-&lt;p>The &lt;em>Custom Environments&lt;/em> section lists the Conda environments currently
+&lt;p>The &lt;strong>Custom Environments&lt;/strong> section lists the Conda environments currently
 detected by Conda Switcher.&lt;/p>
-&lt;p>&lt;img src="notebooks-custom-env.png" alt="Custom environments">&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-custom-env.png" alt="Custom environments">&lt;/p>
 &lt;p>A &lt;strong>kernel&lt;/strong> label may be displayed next to an environment name. This label
 indicates that the environment has at least one Jupyter &lt;strong>kernel&lt;/strong> registered
 for it. For example, if an environment contains multiple registered kernels,
@@ -123,7 +123,7 @@ current server performance, this operation may take several minutes.
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 &lt;p>Default and any other conda environment not created using Conda-Switcher are
 &lt;strong>not&lt;/strong> considered by the extension. If you wish to manage those, you have to
-do it manually. There is also UI hint regarding this.&lt;/p>
+do it manually. There is also an UI hint regarding this.&lt;/p>
 &lt;p>&lt;img src="notebooks-default-env-hint.png" alt="Default env hint">&lt;/p>
 &lt;/div>
 &lt;h3 id="backup-an-environment">Backup an environment&lt;/h3>
@@ -133,7 +133,8 @@ do it manually. There is also UI hint regarding this.&lt;/p>
 selected environment. Before the backup starts, a file browser opens where you
 can select the directory in which the backup archive should be stored. The file
 browser starts in your Jupyter home directory. You can later restore the
-environment from this archive using &lt;a href="./#restore">Restore environment&lt;/a>.&lt;/p>
+environment from this archive using
+&lt;a href="./#restore-an-environment-from-a-backup">Restore environment&lt;/a>.&lt;/p>
 &lt;p>Backup is performed as a background operation and its progress can be monitored
 in the operation log. Large environments may require several minutes to package.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -192,16 +193,17 @@ another system.&lt;/p>
 &lt;h4 class="alert-heading">Note&lt;/h4>
 A YAML export is not a complete copy of the environment. It contains an
 environment specification, and the listed packages normally have to be
-downloaded again when the environment is recreated. Use &lt;a href="./#backup">Backup environment&lt;/a>
-instead if you want to create an archive that can later be restored directly
-using Conda Switcher.
+downloaded again when the environment is recreated. Use
+&lt;a href="./#backup-an-environment">Backup environment&lt;/a> instead if you want to create
+an archive that can later be restored directly using Conda Switcher.
 &lt;/div>
 &lt;h3 id="backup-vs-yaml-export">Backup vs. YAML export&lt;/h3>
-&lt;p>[Backup environment] and [Export to YAML] preserve an environment in different ways.&lt;/p>
-&lt;p>A backup created by &lt;strong>Backup environment&lt;/strong> is a packaged copy of the actual Conda
-environment and is intended to be restored using &lt;strong>Restore environment&lt;/strong>. It is the
-appropriate option when you want to preserve an environment and return to it
-later.&lt;/p>
+&lt;p>&lt;a href="./#backup-an-environment">Backup environment&lt;/a> and
+&lt;a href="./#export-an-environment-to-yaml">Export to YAML&lt;/a> preserve an environment in
+different ways. A backup created by &lt;strong>Backup environment&lt;/strong> is a packaged copy of
+the actual Conda environment and is intended to be restored using
+&lt;strong>Restore environment&lt;/strong>. It is the appropriate option when you want to preserve
+an environment and return to it later.&lt;/p>
 &lt;p>A &lt;strong>YAML export&lt;/strong> is a textual description of the environment and its packages. It
 is easier to inspect, edit and share, but it does not contain the packages
 themselves. Recreating an environment from YAML therefore generally requires the
@@ -271,6 +273,11 @@ dedicated backup directory.&lt;/p>
 browser starts in your Jupyter home directory, from where you can navigate to
 the location containing the archive.&lt;/p>
 &lt;h2 id="installing-your-own-kernelsenvironments-permanently">Installing your own kernels/environments permanently&lt;/h2>
+&lt;div class="alert alert-danger" role="alert">
+&lt;h4 class="alert-heading">Deprecated&lt;/h4>
+This option for installing your kernels is deprecated. Use the
+&lt;a href="./#conda-switcher">Conda Switcher&lt;/a> instead to manage your own kernels.
+&lt;/div>
 &lt;p>If you want to have a completely customised environment for your Notebooks that
 persists across sessions, you can create your own conda environment in your home
 directory. Thanks to the
