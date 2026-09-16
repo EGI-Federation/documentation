@@ -1,28 +1,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Default Environment</title><link>/users/dev-env/notebooks/kernels/default/</link><description>Recent content in Default Environment on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/dev-env/notebooks/kernels/default/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create an environment recreatable in Replay</title><link>/users/dev-env/notebooks/kernels/default/replay/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/replay/</guid><description>
-&lt;p>First, you will need a YAML export of your environment. Process of exporting
-YAML manifest is described here.&lt;/p>
+&lt;p>First, you will need a &lt;a href="../#export-an-environment-to-yaml">YAML export of your environment&lt;/a>.&lt;/p>
 &lt;p>Once you have your YAML environment manifest, you can upload it to your github
-repository. You first create your new repository, you have to make sure it is
-set to public !&lt;/p>
+repository. First create your new repository, make sure it is set to public!&lt;/p>
+&lt;p>&lt;img src="new-repo.png" alt="Create a new repository">&lt;/p>
 &lt;p>Then you can add you YAML manifest there via file upload or by pushing via git
 based on your preference&lt;/p>
-&lt;p>Warning!&lt;/p>
-&lt;p>Please, make sure your YAML manifest is called environment.yaml before uploading
-it, because otherwise Binder won&amp;rsquo;t recognize it.&lt;/p>
-&lt;p>Now you have to add another file, you name it Dockerfile, it is a file with
+&lt;p>&lt;img src="upload-file.png" alt="Upload existing file">
+&lt;img src="drag-file.png" alt="Drag file">&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Please, make sure your YAML manifest is called &lt;code>environment.yaml&lt;/code> before uploading
+it, because otherwise Replay won&amp;rsquo;t recognize it.
+&lt;/div>
+&lt;p>Now you have to add another file, named &lt;code>Dockerfile&lt;/code>. This file details the
 container image build instructions. In this case we will add instructions that
 will allow us to build the conda environment from the exported YAML manifest in
-EOSC Node Binder.&lt;/p>
-&lt;p>You have to paste this into your Dockerfile:&lt;/p>
+Replay.&lt;/p>
+&lt;p>Your &lt;code>Dockerfile&lt;/code> should contain the following lines:&lt;/p>
 &lt;pre tabindex="0">&lt;code>FROM quay.io/jupyter/datascience-notebook:&amp;lt;IMAGE_TAG&amp;gt;
 COPY environment.yml /tmp/environment.yml
 RUN conda env create -f /tmp/environment.yml
-&lt;/code>&lt;/pre>&lt;p>To get as close to the original environment as possible, you can use the image
-tag, that was used to build the user image, you can find it here.&lt;/p>
-&lt;p>Once you added the image tag, you can upload Dockerfile into your repo and
-commit changes.&lt;/p>
-&lt;p>After that you only have to copy a link to your repository&lt;/p>
-&lt;p>And start a build in EOSC Node Binder&lt;/p></description></item><item><title>Users: Create a new environment with a different kernel</title><link>/users/dev-env/notebooks/kernels/default/custom-kernel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/custom-kernel/</guid><description>
+&lt;/code>&lt;/pre>&lt;p>&lt;code>&amp;lt;IMAGE_TAG&amp;gt;&lt;/code> should be replaced with the current image tag used to build the
+Notebooks environment. You can get the exact tag at the
+&lt;a href="https://github.com/EGI-Federation/egi-notebooks-images/blob/master/base/Dockerfile#L9">EGI notebooks image repository&lt;/a>.&lt;/p>
+&lt;p>Once you added the image tag, you can upload your &lt;code>Dockerfile&lt;/code> into the repository
+and commit changes.&lt;/p>
+&lt;p>&lt;img src="drag-dockerfile.png" alt="Upload dockerfile">&lt;/p>
+&lt;p>After that you can obtain a link to your repository&lt;/p>
+&lt;p>&lt;img src="repo-link.png" alt="Get repository link">&lt;/p>
+&lt;p>And start a build in Replay:&lt;/p>
+&lt;p>&lt;img src="binder-build.png" alt="Build a repository">&lt;/p></description></item><item><title>Users: Create a new environment with a different kernel</title><link>/users/dev-env/notebooks/kernels/default/custom-kernel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/custom-kernel/</guid><description>
 &lt;p>First you need to create a new environment, you can do it by selecting
 Conda-Switcher on left sidebar.&lt;/p>
 &lt;p>&lt;img src="notebooks-conda-switcher-sidebar.png" alt="Conda Switcher sidebar">&lt;/p>
