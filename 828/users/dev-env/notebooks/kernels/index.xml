@@ -170,7 +170,7 @@ method.&lt;/p>
 &lt;p>&lt;strong>Simple Conda export&lt;/strong> uses the standard Conda export command and stores its output
 directly in the selected YAML file. This mode does not apply additional
 processing, package filtering or pip metadata handling. It is intended as a
-compatibility option when you want the original Conda export behavior.&lt;/p>
+compatibility option when you want the original Conda export behaviour.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Advanced export&lt;/strong> is selected by default and is recommended for most users. It
