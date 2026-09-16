@@ -1,0 +1,435 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Notebooks Environments</title><link>/users/dev-env/notebooks/kernels/</link><description>Recent content in Notebooks Environments on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/dev-env/notebooks/kernels/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Default Environment</title><link>/users/dev-env/notebooks/kernels/default/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/</guid><description>
+&lt;!-- cSpell:words datascience -->
+&lt;p>The default environment includes a set of
+&lt;a href="https://jupyter.readthedocs.io/en/latest/projects/kernels.html">kernels&lt;/a> that
+are automatically built from the
+&lt;a href="https://github.com/EGI-Federation/egi-notebooks-images">EGI-Federation/egi-notebooks-images&lt;/a>
+GitHub repository.&lt;/p>
+&lt;p>These are the available kernels:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Python: Default Python 3 kernel, it includes commonly used data analysis and
+machine learning libraries. Created from the
+&lt;a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook">jupyter/scipy-notebook&lt;/a>
+stack.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Julia: The Julia programming language with the libraries described in
+&lt;a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook">jupyter/datascience-notebook&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>R: The R programming language with several packages from the R ecosystem as
+provided by
+&lt;a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-r-notebook">jupyter/r-notebook&lt;/a>
+and some extra libraries.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>RStudio:
+&lt;a href="https://posit.co/products/open-source/rstudio-server/">RStudio Server&lt;/a> offers
+a RStudio IDE from the Notebooks interface.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Octave: The &lt;a href="https://www.octave.org/">Octave&lt;/a> programming language installed
+on its own conda environment (named &lt;code>octave&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="cvmfs">CVMFS&lt;/h2>
+&lt;p>Notebooks mounts several &lt;a href="../../../../compute/software-distribution/">CVMFS&lt;/a>
+repositories where you can find software relevant to your community. These are
+accessible from the default CVMFS location &lt;code>/cvmfs&lt;/code> and also linked in your home
+directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are available:&lt;/p>
+&lt;!-- cSpell:disable -->
+&lt;ul>
+&lt;li>atlas-condb.cern.ch&lt;/li>
+&lt;li>atlas.cern.ch&lt;/li>
+&lt;li>auger.egi.eu&lt;/li>
+&lt;li>biomed.egi.eu&lt;/li>
+&lt;li>cms.cern.ch&lt;/li>
+&lt;li>dirac.egi.eu&lt;/li>
+&lt;li>eiscat.egi.eu&lt;/li>
+&lt;li>grid.cern.ch&lt;/li>
+&lt;li>notebooks.egi.eu&lt;/li>
+&lt;/ul>
+&lt;!-- cSpell:enable -->
+&lt;p>If you need access to any other repositories, please open a request in
+&lt;a href="https://helpdesk.ggus.eu">GGUS&lt;/a>.&lt;/p>
+&lt;h2 id="conda-switcher">Conda Switcher&lt;/h2>
+&lt;p>Conda Switcher is a JupyterLab extension for managing Conda environments
+directly from the Notebooks interface. It is available from the left control
+panel of the JupyterLab environment and provides a graphical interface for
+common environment management operations.&lt;/p>
+&lt;p>Conda Switcher allows you to create new Conda environments, restore environments
+from backups, create environment backups, export environments to YAML, install
+Jupyter kernels, and remove environments. The panel also displays the currently
+detected environments and provides a live operation log for monitoring
+longer-running tasks.&lt;/p>
+&lt;p>And how do you switch between environments ? Once you have created and you are
+managing multiple environments/kernels using Conda Switcher extension, you will
+be able to use/switch between options available in those environments by either
+selecting them from Jupyterlab launcher, kernel selection or CLI.&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher.png" alt="Conda Switcher Extension">&lt;/p>
+&lt;h3 id="create-a-new-environment">Create a new environment&lt;/h3>
+&lt;p>Click &lt;em>Create environment&lt;/em> in the Conda Switcher panel. Enter a name for the new
+environment, select the Python version you want to use, and choose which Jupyter
+kernels should be installed together with the environment. Python is selected by
+default. You can also select R, Julia and Octave, and multiple kernels can be
+installed at the same time.&lt;/p>
+&lt;p>&lt;img src="notebooks-create-env.png" alt="Create environment">&lt;/p>
+&lt;p>Confirm the dialog to start creating the environment. Conda Switcher first
+creates the environment and then installs and registers the selected kernels as
+part of the same background operation. The complete progress can be monitored in
+the operation log at the bottom of the Conda Switcher panel. Once the operation
+is completed, the new environment will appear in the list of available
+environments and the selected kernels will be available for use in JupyterLab.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;p>Installing multiple kernels
+requires more resources, like memory. If you don&amp;rsquo;t have enough spare resources,
+the creation of a new environment will most likely fail.&lt;/p>
+&lt;p>To prevent this, there are couple of approaches you can apply, so you can create
+a new environment with desired kernels in it:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>use a larger Notebook instance (e.g. medium, large) - this will add more
+resources for conda-switcher to work with&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>properly manage your memory - don&amp;rsquo;t open multiple new tabs with active
+kernels, don&amp;rsquo;t run other processes using more resources etc. a good approach
+is also to check your memory indicator on bottom left panel&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>install kernels individually inside a new environment using
+&lt;a href="#install_kernel">&amp;ldquo;Install Kernel&amp;rdquo;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;p>The &lt;em>Custom Environments&lt;/em> section lists the Conda environments currently
+detected by Conda Switcher.&lt;/p>
+&lt;p>&lt;img src="notebooks-custom-env.png" alt="Custom environments">&lt;/p>
+&lt;p>A &lt;strong>kernel&lt;/strong> label may be displayed next to an environment name. This label
+indicates that the environment has at least one Jupyter &lt;strong>kernel&lt;/strong> registered
+for it. For example, if an environment contains multiple registered kernels,
+only a single kernel label is displayed. An environment without the &lt;strong>kernel&lt;/strong>
+label is still a valid Conda environment, but it is not currently registered as
+a Jupyter kernel.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Creating an environment requires Conda
+to resolve and download the required packages. Depending on the selected Python
+version, network conditions and current server performance, this operation may
+take several minutes.
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Default and any other conda
+environment not created using Conda-Switcher are &lt;strong>not&lt;/strong> considered by the
+extension. If you wish to manage those, you have to do it manually. There is
+also UI hint regarding this. &lt;img src="notebooks-default-env-hint.png" alt="Default env hint">
+&lt;/div>
+&lt;h3 id="backup-an-environment">Backup an environment&lt;/h3>
+&lt;p>Click Backup environment and select the environment you want to back up.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-9_8-50-17.png&lt;/p>
+&lt;p>Conda Switcher uses conda-pack to create a portable archive containing the
+selected environment. Before the backup starts, a file browser opens where you
+can select the directory in which the backup archive should be stored. The file
+browser starts in your Jupyter home directory. You can later restore the
+environment from this archive using Restore environment.&lt;/p>
+&lt;p>Backup is performed as a background operation and its progress can be monitored
+in the operation log. Large environments may require several minutes to package.&lt;/p>
+&lt;p>Note: Do not restart or stop your Jupyter server while a backup operation is
+still running. Wait until Conda Switcher reports that the operation has
+completed.&lt;/p>
+&lt;p>Restore an environment from a backup Click Restore environment to restore a
+previously backed-up environment. A file browser will open in your Jupyter home
+directory. Browse to the location where the backup archive is stored and select
+the archive you want to restore.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_16-23-40.png&lt;/p>
+&lt;p>Select the environment archive you want to restore and confirm your selection.
+You will then be asked for the name of the restored environment. Conda Switcher
+extracts the selected archive and recreates the environment in the managed
+environment area.&lt;/p>
+&lt;p>The restoration process runs in the background and can be followed in the
+operation log. Once completed, the restored environment will appear in the list
+of available environments.&lt;/p>
+&lt;p>Export an environment to YAML Click Export to YAML and select the environment
+you want to export. A save dialog will open where you can browse the JupyterLab
+filesystem, select the destination directory and enter the desired file name in
+the same window.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-4_15-0-47.png&lt;/p>
+&lt;p>Enter the desired YAML file name and select the destination directory. The .yml
+extension is added automatically if it is not specified. After selecting the
+destination directory and file name, Conda Switcher asks you to choose an export
+method.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-11_17-30-20.png&lt;/p>
+&lt;p>Simple Conda export uses the standard Conda export command and stores its output
+directly in the selected YAML file. This mode does not apply additional
+processing, package filtering or pip metadata handling. It is intended as a
+compatibility option when you want the original Conda export behavior.&lt;/p>
+&lt;p>Advanced export is selected by default and is recommended for most users. It
+combines the standard Conda export with information from pip freeze and pip list
+&amp;ndash;format=json to improve portability of pip-installed packages. Git-based
+package references are preserved as repository URLs, while local file:///
+references are converted to package==version requirements when the installed
+package version can be identified.&lt;/p>
+&lt;p>Advanced export generates 2 files: environment.yaml and requirements.txt&lt;/p>
+&lt;p>The exported YAML file describes the packages and configuration of the selected
+Conda environment. In Advanced export mode, Conda Switcher always creates a
+requirements.txt file containing information about pip-installed packages, in
+addition to the YAML environment file. The resulting files can be used to
+inspect the environment configuration or to reproduce a similar environment on
+another system.&lt;/p>
+&lt;p>Note: A YAML export is not a complete copy of the environment. It contains an
+environment specification, and the listed packages normally have to be
+downloaded again when the environment is recreated. Use Backup environment
+instead if you want to create an archive that can later be restored directly
+using Conda Switcher.&lt;/p>
+&lt;p>Install a Jupyter kernel Click Install kernel and select the environment in
+which you want to install the kernel. Conda Switcher provides support for
+Python, Julia, R and Octave kernels.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_15-50-40.png&lt;/p>
+&lt;p>For Python, the kernel uses the Python installation of the selected environment.
+For Julia, R and Octave, Conda Switcher installs the packages required to
+provide the selected Jupyter kernel and registers it for use by JupyterLab.&lt;/p>
+&lt;p>Kernels can also be selected when creating a new environment. Use Install kernel
+when you want to add another kernel to an environment that already exists.
+Kernel installation runs as a background operation. Installing a kernel that
+requires additional packages can take several minutes because the necessary
+packages may have to be resolved and downloaded.&lt;/p>
+&lt;p>After installation, the kernel becomes available for use with Jupyter notebooks.
+If a newly installed kernel is not immediately visible in the Launcher or kernel
+selection menu, refresh the JupyterLab interface.&lt;/p>
+&lt;p>Remove an environment Click Delete environment and select the environment you
+want to remove.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_15-51-48.png&lt;/p>
+&lt;p>Before deleting an environment, Conda Switcher asks whether you want to create a
+backup of the environment first.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-9-4_15-7-45.png&lt;/p>
+&lt;p>You can choose Backup to create a backup before deleting the environment, or No
+to delete the environment without creating a backup. If Backup is selected, a
+file browser opens where you can choose the destination directory. Conda
+Switcher waits for the backup to complete successfully before removing the
+environment.&lt;/p>
+&lt;p>Warning: Deleting an environment without creating a backup is irreversible.
+Choose No only if you are certain that you no longer need the environment or
+already have another copy of it.&lt;/p>
+&lt;p>Monitor running operations Some environment operations can take a significant
+amount of time. Conda Switcher therefore performs long-running tasks in the
+background and displays their progress in the lower part of the panel.&lt;/p>
+&lt;p>EOSC User Guides &amp;gt; Environments Management &amp;gt; image-2026-8-14_15-53-49.png&lt;/p>
+&lt;p>While an operation is running, Conda Switcher displays its current status,
+elapsed running time and output produced by the underlying command. The detailed
+output is contained in a scrollable log area, so a long log does not expand the
+panel or move the environment controls out of view.&lt;/p>
+&lt;p>The Hide button hides the detailed log and changes to Show, which can be used to
+display it again. Hiding the log only changes its visibility; logging continues
+in the background and the running operation is not interrupted. The Clear button
+clears the currently displayed log output.&lt;/p>
+&lt;p>Note: Conda may spend a significant amount of time resolving dependencies,
+downloading packages or executing package transactions. During these stages the
+operation may appear to make little progress even though it is still running.
+Check the operation status and log before assuming that an operation has
+stopped.&lt;/p>
+&lt;p>Backup storage Backup archives are stored in the directory selected by the user
+when the backup is created. Conda Switcher does not create or require a
+dedicated backup directory.&lt;/p>
+&lt;p>Backup archives can later be restored using Restore environment. The file
+browser starts in your Jupyter home directory, from where you can navigate to
+the location containing the archive.&lt;/p>
+&lt;p>Backup vs. YAML export Backup environment and Export to YAML preserve an
+environment in different ways.&lt;/p>
+&lt;p>A backup created by Backup environment is a packaged copy of the actual Conda
+environment and is intended to be restored using Restore environment. It is the
+appropriate option when you want to preserve an environment and return to it
+later.&lt;/p>
+&lt;p>A YAML export is a textual description of the environment and its packages. It
+is easier to inspect, edit and share, but it does not contain the packages
+themselves. Recreating an environment from YAML therefore generally requires the
+packages to be downloaded and installed again.&lt;/p>
+&lt;p>Use Backup environment when your goal is to preserve and later restore an
+environment. Use Export to YAML when you need a portable and human-readable
+environment specification.&lt;/p>
+&lt;p>Installing multiple kernels requires more resources, like memory. If you don&amp;rsquo;t
+have enough spare resources, the creation of a new environment will most likely
+fail.&lt;/p>
+&lt;p>To prevent this, there are couple of approaches you can apply, so you can create
+a new environment with desired kernels in it:&lt;/p>
+&lt;p>use a larger Notebook instance (e.g. medium, large) - this will add more
+resources for conda-switcher to work with&lt;/p>
+&lt;p>properly manage your memory - don&amp;rsquo;t open multiple new tabs with active kernels,
+don&amp;rsquo;t run other processes using more resources etc. a good approach is also to
+check your memory indicator on bottom left panel&lt;/p>
+&lt;p>install kernels individually inside a new environment using &amp;ldquo;Install Kernel&amp;rdquo;
+option from section 1.6&lt;/p>
+&lt;h2 id="installing-your-own-kernelsenvironments-permanently">Installing your own kernels/environments permanently&lt;/h2>
+&lt;p>If you want to have a completely customised environment for your Notebooks that
+persists across sessions, you can create your own conda environment in your home
+directory. Thanks to the
+&lt;a href="https://github.com/Anaconda-Platform/nb_conda_kernels">nb_conda_kernels&lt;/a> plugin
+these will show up automatically as an option to start notebooks with by
+following these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a &lt;code>$HOME/.condarc&lt;/code> file specifying where your environments will be
+created, e.g. in &lt;code>/home/jovyan/conda-envs/&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">env_dirs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">/home/jovyan/conda-envs/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Create your environments as needed, make sure to install a kernel
+(&lt;code>ipykernel&lt;/code>) for it to show automatically:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ conda create -p /home/jovyan/conda-envs/myenv ipykernel scipy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>The environment will show up in the launcher as a new option&lt;/p>
+&lt;p>&lt;img src="notebooks-custom-env.png" alt="Launcher with custom env">&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Users: MATLAB</title><link>/users/dev-env/notebooks/kernels/matlab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/matlab/</guid><description>
+&lt;p>EGI offers MATLAB on the cloud using the
+&lt;a href="https://www.mathworks.com/products/reference-architectures/jupyter.html">MATLAB Integration for Jupyter&lt;/a>
+and shares data and code with other EGI users. MATLAB is also available directly
+on compute services offered by the members of the EGI Federation.&lt;/p>
+&lt;p>MATLAB on the EGI infrastructure can be used by scientists and engineers for
+Open Science by enabling them to share their data and code using computational
+notebooks.&lt;/p>
+&lt;h2 id="before-getting-started">Before getting started&lt;/h2>
+&lt;h3 id="matlab-licenses">MATLAB Licenses&lt;/h3>
+&lt;p>To use the MATLAB Integration on the EGI Notebooks service, a
+&lt;a href="https://github.com/mathworks/matlab-proxy/blob/main/MATLAB-Licensing-Info.md">supported MATLAB license&lt;/a>
+is required. You can also use the toolboxes linked to your MATLAB license.&lt;/p>
+&lt;p>If you are unsure of your MATLAB license type, contact your System Administrator
+or
+&lt;a href="https://www.mathworks.com/support/contact_us.html?s_tid=hp_ff_s_support">MathWorks support&lt;/a>.&lt;/p>
+&lt;h3 id="tutorials">Tutorials&lt;/h3>
+&lt;!-- cSpell:words Onramp Onramps -->
+&lt;p>If you are not familiar or have limited experience with MATLAB,
+&lt;a href="https://www.mathworks.com/learn/tutorials/matlab-onramp.html">MATLAB Onramp&lt;/a>
+provides a free, self-paced tutorial. Additional
+&lt;a href="https://www.mathworks.com/services/training.html">Onramps&lt;/a> are available for
+other topics using MATLAB.&lt;/p>
+&lt;h2 id="getting-started">Getting started&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Once your server has started up (after selecting the MATLAB environment),
+click on the MATLAB icon&lt;/p>
+&lt;p>&lt;img src="matlab-icon.png" alt="matlab-icon">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A dialog for handling MATLAB licensing will appear.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Individual and Campus Wide MATLAB Licenses&lt;/p>
+&lt;p>If you have access to a MATLAB Individual License or a MATLAB
+&lt;a href="https://www.mathworks.com/academia/tah-support-program/eligibility.html">Campus Wide License&lt;/a>,
+use the Online License Manager tab to log in using your MathWorks account
+(does not need to match the email used on the EGI Identity Provider) and
+click on next.&lt;/p>
+&lt;p>&lt;img src="matlab-online-license.png" alt="matlab-online-license">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Concurrent/Network Licenses&lt;/p>
+&lt;p>If you have Network Licenses, enter the &lt;code>port@hostname&lt;/code> of your License
+Server on the Network License Manager tab of the login screen. Before doing
+so, please check with your system administrator about allowing the EGI
+access to your on-prem Network License Manager (License Server).&lt;/p>
+&lt;p>&lt;img src="matlab-network-license.png" alt="matlab-network-license">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Free trial MATLAB Licenses If you do not have a MATLAB license and would
+like to try it out, you can download a
+&lt;a href="https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html">free MATLAB trial license&lt;/a>.
+Note that the trial license is for MATLAB only and does not have any
+toolboxes.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>More
+&lt;a href="https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md">information on MATLAB licensing with this integration&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Following this, the MATLAB IDE will appear in your browser.&lt;/p>
+&lt;p>&lt;img src="matlab-ide.png" alt="matlab-ide">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To facilitate sharing your research output, you can use
+&lt;a href="https://www.mathworks.com/help/matlab/matlab_prog/create-live-scripts.html">MATLAB Live Scripts&lt;/a>
+combining rich text, equations, images, code and inline output all in one
+document. Live Scripts can be accessed from the
+&lt;a href="https://www.mathworks.com/products/matlab/live-editor.html">Live Editor&lt;/a>
+tab. Here is
+&lt;a href="https://datahub.egi.eu/ozw/onezone/i#/public/shares/af92f66ad616fb8d49d854a823bfd69achf757">an example of a tutorial Live Script&lt;/a>
+from the EGI webinar showing steps required to analyze some public COVID-19
+data with MATLAB. Check other
+&lt;a href="https://www.mathworks.com/products/matlab/live-script-gallery.html">examples of Live Scripts&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="limitations">Limitations&lt;/h2>
+&lt;p>Browser based MATLAB has some differences as compared to MATLAB on the desktop.
+For more information, see the
+&lt;a href="https://www.mathworks.com/products/matlab-online/limitations.html">limitations&lt;/a>.
+Additionally, Simulink is not supported on the EGI at this time.&lt;/p>
+&lt;h2 id="restarting-stopping-or-signing-out-of-the-matlab-session">Restarting, stopping or signing out of the MATLAB session&lt;/h2>
+&lt;p>At any time, clicking on this symbol will bring up a dialog to stop, restart or
+sign out of the current MATLAB session.&lt;/p>
+&lt;p>&lt;img src="matlab-session.png" alt="matlab-session"> &lt;img src="matlab-status.png" alt="matlab-status">&lt;/p>
+&lt;h2 id="open-science-using-matlab-on-egi-notebooks">Open Science using MATLAB on EGI Notebooks&lt;/h2>
+&lt;p>You can access publicly available datasets via the EGI DataHub and analyze them
+in-the-cloud directly using MATLAB, without the need for time consuming
+downloads. Your MATLAB code can also be shared with your community in a variety
+of interoperable and open formats.&lt;/p>
+&lt;h2 id="analysing-public-datasets-using-matlab-on-egi">Analysing public datasets using MATLAB on EGI&lt;/h2>
+&lt;p>This &lt;a href="https://www.youtube.com/watch?v=Hbf1yg32sso">short video&lt;/a> and this
+&lt;a href="https://youtu.be/zT9aW1xHCJU?t=167s">webinar&lt;/a> explains how to access EGI Data
+Services from MATLAB in detail. Data from different data providers can be
+accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. Check
+&lt;a href="../../data">Data Management documentation&lt;/a>.&lt;/p>
+&lt;h2 id="matlab-support-for-data-formats">MATLAB support for data formats&lt;/h2>
+&lt;p>MATLAB supports several
+&lt;a href="https://www.mathworks.com/help/matlab/scientific-data.html">scientific&lt;/a> and
+&lt;a href="https://www.mathworks.com/help/matlab/data-import-and-export.html?s_tid=CRUX_lftnav">standard data formats&lt;/a>
+including
+&lt;a href="https://www.mathworks.com/help/matlab/import_export/download-data-from-web-service.html">web data&lt;/a>
+and those from
+&lt;a href="https://www.mathworks.com/hardware-support/home.html">specialized hardware&lt;/a>.&lt;/p>
+&lt;h2 id="sharing-data-and-code">Sharing data and code&lt;/h2>
+&lt;p>You can
+&lt;a href="https://www.youtube.com/watch?v=zT9aW1xHCJU&amp;amp;t=2727s">share your data and analyses&lt;/a>
+by sharing your EGI provided persistent storage space with others. Users
+belonging to a specific community can
+&lt;a href="../#service-modes">request community Notebooks&lt;/a>.&lt;/p>
+&lt;h3 id="interoperability-with-python-and-other-languages">Interoperability with Python and other languages&lt;/h3>
+&lt;p>You can collaborate with users of
+&lt;a href="https://www.mathworks.com/products/matlab/matlab-and-other-programming-languages.html">other languages&lt;/a>
+by
+&lt;a href="https://www.mathworks.com/help/matlab/external-language-interfaces.html">calling these languages&lt;/a>
+(eg. Python) from MATLAB for conducting specific analyses. You can also
+&lt;a href="https://youtu.be/zT9aW1xHCJU?t=2789s">save data in formats compatible with other languages&lt;/a>.&lt;/p>
+&lt;p>Here are some other ways in which
+&lt;a href="https://www.mathworks.com/discovery/open-science.html">MATLAB enables Open Science&lt;/a>&lt;/p>
+&lt;h2 id="using-matlab-on-other-egi-services">Using MATLAB on other EGI services&lt;/h2>
+&lt;p>In addition to MATLAB on EGI Notebooks, you can also use your MATLAB license to
+access MATLAB on any of the
+&lt;a href="https://www.egi.eu/about/egi-council/">Institutions participating in the EGI Federation&lt;/a>.
+To run your compute-intensive MATLAB code faster or to run code in parallel, you
+will need
+&lt;a href="https://www.mathworks.com/products/matlab-parallel-server.html">MATLAB Parallel Server&lt;/a>
+and
+&lt;a href="https://www.mathworks.com/products/parallel-computing.html">MATLAB Parallel Computing Toolbox&lt;/a>
+on your MATLAB license. If you have access to a
+&lt;a href="https://www.mathworks.com/academia/tah-support-program/eligibility.html">Campus Wide License&lt;/a>
+, you can now scale up to
+&lt;a href="https://www.mathworks.com/products/matlab-parallel-server/campus.html">use all available workers on the HPC cluster of your choice&lt;/a>.&lt;/p>
+&lt;p>To access MATLAB on any site of the
+&lt;a href="https://www.egi.eu/about/egi-council/">EGI Federation&lt;/a>, follow these steps.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Check if you have access to MATLAB Parallel Server and Parallel Computing
+Toolbox&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ask the system administrator of the site about MATLAB as part of EGI&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Get in touch via &lt;a href="https://helpdesk.ggus.eu">GGUS&lt;/a> for setting up access to
+MATLAB at the site.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
