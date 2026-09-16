@@ -300,4 +300,26 @@ created, e.g. in &lt;code>/home/jovyan/conda-envs/&lt;/code>:&lt;/p>
 &lt;p>The environment will show up in the launcher as a new option&lt;/p>
 &lt;p>&lt;img src="notebooks-custom-env.png" alt="Launcher with custom env">&lt;/p>
 &lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/ol></description></item><item><title>Users: Create a new environment with a different kernel</title><link>/users/dev-env/notebooks/kernels/default/new_kernel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/new_kernel/</guid><description>
+&lt;p>First you need to create a new environment, you can do it by selecting
+Conda-Switcher on left sidebar.&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-sidebar.png" alt="Conda Switcher sidebar">&lt;/p>
+&lt;p>Then you create a new environment by clicking on &lt;strong>Create Environment&lt;/strong> option
+and you select options you need:&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-create-env.png" alt="Create environment">&lt;/p>
+&lt;p>Here I selected I want to create an environment with Python 3.9 and IPykernel
+Jupyter of same version&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-custom-python.png" alt="Create environment with custom python">&lt;/p>
+&lt;p>Once the environment is created, you can check it by looking on list of
+available environments managed by Conda-Switcher&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-env.png" alt="New environmnent in the extension">&lt;/p>
+&lt;p>In the tab launcher you can now open a Jupyter kernel from 3.9 environment
+version you just created&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-launcher.png" alt="New environmnent in the launcher">&lt;/p>
+&lt;p>Or if you have an existing Notebook, you open it in Jupyterlab Notebook editor
+and then you select a kernel you desire, in this case we will select 3.9 Python
+kernel from the created environment.&lt;/p>
+&lt;p>You can select the kernel by clicking on the top right corner and select the
+kernel you wish.&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-kernel.png" alt="Define kernel in existing notebook">
+&lt;img src="notebooks-conda-switcher-kernel-select.png" alt="Select kernel in existing notebook">&lt;/p></description></item></channel></rss>
