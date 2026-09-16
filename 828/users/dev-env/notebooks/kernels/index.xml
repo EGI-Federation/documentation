@@ -89,19 +89,11 @@ the creation of a new environment will most likely fail.&lt;/p>
 &lt;p>To prevent this, there are couple of approaches you can apply, so you can create
 a new environment with desired kernels in it:&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>use a larger Notebook instance (e.g. medium, large) - this will add more
-resources for conda-switcher to work with&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>properly manage your memory - don&amp;rsquo;t open multiple new tabs with active
+&lt;li>properly manage your memory - don&amp;rsquo;t open multiple new tabs with active
 kernels, don&amp;rsquo;t run other processes using more resources etc. a good approach
-is also to check your memory indicator on bottom left panel&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>install kernels individually inside a new environment using
-&lt;a href="./#install-a-jupyter-kernel">&amp;ldquo;Install Kernel&amp;rdquo;&lt;/a>&lt;/p>
-&lt;/li>
+is also to check your memory indicator on bottom left panel&lt;/li>
+&lt;li>install kernels individually inside a new environment using
+&lt;a href="./#install-a-jupyter-kernel">&amp;ldquo;Install Kernel&amp;rdquo;&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;/div>
 &lt;p>The &lt;strong>Custom Environments&lt;/strong> section lists the Conda environments currently
