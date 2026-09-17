@@ -9,12 +9,8 @@ description: >
 ---
 
 First you need to create a new environment, you can do it by selecting
-Conda-Switcher on left sidebar.
-
-![Conda Switcher sidebar](notebooks-conda-switcher-sidebar.png)
-
-Then you create a new environment by clicking on **Create Environment** option
-and you select options you need:
+Conda-Switcher on left sidebar. Then you create a new environment by
+clicking on **Create Environment** option and you select options you need:
 
 ![Create environment](notebooks-conda-switcher-create-env.png)
 

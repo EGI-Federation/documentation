@@ -68,7 +68,9 @@ If you need access to any other repositories, please open a request in
 Conda Switcher is a JupyterLab extension for managing Conda environments
 directly from the Notebooks interface. It is available from the left control
 panel of the JupyterLab environment and provides a graphical interface for
-common environment management operations.
+common environment management operations:
+
+![Conda Switcher Sidebar](notebooks-conda-switcher-sidebar.png)
 
 Conda Switcher allows you to create new Conda environments, restore environments
 from backups, create environment backups, export environments to YAML, install
@@ -76,12 +78,12 @@ Jupyter kernels, and remove environments. The panel also displays the currently
 detected environments and provides a live operation log for monitoring
 longer-running tasks.
 
+![Conda Switcher Extension](notebooks-conda-switcher.png)
+
 And how do you switch between environments ? Once you have created and you are
 managing multiple environments/kernels using Conda Switcher extension, you will
 be able to use/switch between options available in those environments by either
 selecting them from Jupyterlab launcher, kernel selection or CLI.
-
-![Conda Switcher Extension](notebooks-conda-switcher.png)
 
 ### Create a new environment
 
@@ -125,6 +127,9 @@ for it. For example, if an environment contains multiple registered kernels,
 only a single kernel label is displayed. An environment without the **kernel**
 label is still a valid Conda environment, but it is not currently registered as
 a Jupyter kernel.
+
+You can also [customise the python version](./custom-kernel) when creating your
+new environment.
 
 {{% alert title="Note" color="info" %}}
 Creating an environment requires Conda to resolve and download the required
@@ -222,6 +227,12 @@ environment specification, and the listed packages normally have to be
 downloaded again when the environment is recreated. Use
 [Backup environment](./#backup-an-environment) instead if you want to create
 an archive that can later be restored directly using Conda Switcher.
+{{% /alert %}}
+
+{{% alert title="Reproducing with Replay" color="info" %}}
+You can use the YAML export to share a reproducible version of your
+environment. Check the [guide to recreate your environment in Replay](./replay)
+for more information.
 {{% /alert %}}
 
 ### Backup vs. YAML export
