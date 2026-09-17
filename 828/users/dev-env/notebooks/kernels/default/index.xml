@@ -1,9 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Default Environment</title><link>/users/dev-env/notebooks/kernels/default/</link><description>Recent content in Default Environment on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/dev-env/notebooks/kernels/default/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create a new environment with a different kernel</title><link>/users/dev-env/notebooks/kernels/default/custom-kernel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/default/custom-kernel/</guid><description>
 &lt;p>First you need to create a new environment, you can do it by selecting
-Conda-Switcher on left sidebar.&lt;/p>
-&lt;p>&lt;img src="notebooks-conda-switcher-sidebar.png" alt="Conda Switcher sidebar">&lt;/p>
-&lt;p>Then you create a new environment by clicking on &lt;strong>Create Environment&lt;/strong> option
-and you select options you need:&lt;/p>
+Conda-Switcher on left sidebar. Then you create a new environment by
+clicking on &lt;strong>Create Environment&lt;/strong> option and you select options you need:&lt;/p>
 &lt;p>&lt;img src="notebooks-conda-switcher-create-env.png" alt="Create environment">&lt;/p>
 &lt;p>Here I selected I want to create an environment with Python 3.9 and IPykernel
 Jupyter of same version&lt;/p>

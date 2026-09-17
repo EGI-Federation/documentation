@@ -57,17 +57,18 @@ directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are availabl
 &lt;p>Conda Switcher is a JupyterLab extension for managing Conda environments
 directly from the Notebooks interface. It is available from the left control
 panel of the JupyterLab environment and provides a graphical interface for
-common environment management operations.&lt;/p>
+common environment management operations:&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher-sidebar.png" alt="Conda Switcher Sidebar">&lt;/p>
 &lt;p>Conda Switcher allows you to create new Conda environments, restore environments
 from backups, create environment backups, export environments to YAML, install
 Jupyter kernels, and remove environments. The panel also displays the currently
 detected environments and provides a live operation log for monitoring
 longer-running tasks.&lt;/p>
+&lt;p>&lt;img src="notebooks-conda-switcher.png" alt="Conda Switcher Extension">&lt;/p>
 &lt;p>And how do you switch between environments ? Once you have created and you are
 managing multiple environments/kernels using Conda Switcher extension, you will
 be able to use/switch between options available in those environments by either
 selecting them from Jupyterlab launcher, kernel selection or CLI.&lt;/p>
-&lt;p>&lt;img src="notebooks-conda-switcher.png" alt="Conda Switcher Extension">&lt;/p>
 &lt;h3 id="create-a-new-environment">Create a new environment&lt;/h3>
 &lt;p>Click &lt;strong>Create environment&lt;/strong> in the Conda Switcher panel. Enter a name for the new
 environment, select the Python version you want to use, and choose which Jupyter
@@ -105,6 +106,8 @@ for it. For example, if an environment contains multiple registered kernels,
 only a single kernel label is displayed. An environment without the &lt;strong>kernel&lt;/strong>
 label is still a valid Conda environment, but it is not currently registered as
 a Jupyter kernel.&lt;/p>
+&lt;p>You can also &lt;a href="./custom-kernel">customise the python version&lt;/a> when creating your
+new environment.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Creating an environment requires Conda to resolve and download the required
@@ -188,6 +191,12 @@ environment specification, and the listed packages normally have to be
 downloaded again when the environment is recreated. Use
 &lt;a href="./#backup-an-environment">Backup environment&lt;/a> instead if you want to create
 an archive that can later be restored directly using Conda Switcher.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Reproducing with Replay&lt;/h4>
+You can use the YAML export to share a reproducible version of your
+environment. Check the &lt;a href="./replay">guide to recreate your environment in Replay&lt;/a>
+for more information.
 &lt;/div>
 &lt;h3 id="backup-vs-yaml-export">Backup vs. YAML export&lt;/h3>
 &lt;p>&lt;a href="./#backup-an-environment">Backup environment&lt;/a> and
