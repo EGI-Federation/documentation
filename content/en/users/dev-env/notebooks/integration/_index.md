@@ -57,17 +57,23 @@ be renewed for longer usage. With EGI Notebooks, you can get a ready-to-use
 token at any time.
 
 You can obtain a new token at any time with the JupyterLab extension available
-from the Jupyter Lab interface. You have two options:
+from the Jupyter Lab interface.
+
+You have two options:
 
 1. Copying the token to clipboard
 2. Saving the token to disk so it's accessible from your notebook files
-   and/or terminal. Optionally you can request the token to be continuously
+   and/or terminal.
+
+![token extension](notebooks-token-acquirer-interface.png)
+
+Optionally you can request the token to be continuously
    refreshed on disk so you don't need to request new tokens.
 
-![token extension](notebooks-token-extension.png)
 
-Whether you have selected to mount the token on the server creation step or
-if you save it to disk with the extension, the token will be available at
+![token extension](notebooks-token-acquirer-refresh-on.png)
+
+When you save the token on the disk, it will be available at
 `/var/run/secrets/egi.eu/access_token`. See for example below some
 python code to access cloud providers of the EGI cloud, where a list of
 VMs is obtained from CESGA's OpenStack:
@@ -90,6 +96,33 @@ sess = session.Session(auth=auth)
 nova = client.Client(session=sess, version=2)
 nova.servers.list()
 ```
+
+Additionally, the Token Acquirer extension allows you to show you information about your token, if you click on *Show token info* button.
+
+![token extension](notebooks-token-acquirer-info.png)
+
+### token management and real-time collaboration
+
+
+The token information is quite sensitive and therefore users need to take actions in order to avoid credentials leaking.
+
+This is particularly relevant when the Notebooks environment is shared with other users and Real Time Collaboration is enabled.
+
+![token extension](notebooks-token-acquirer-warning.png)
+
+In order to avoid issues, the User Sharing functionality explicitly checks for access tokens saved on disk and eventually allows to remove them before sharing the Notebooks server with other users.
+
+![token extension](notebooks-token-acquirer-detection.png)
+
+If the user does not delete the token on disk prior to create a Share link, the extension automatically remove the token.
+
+![token extension](notebooks-token-acquirer-new-share-link.png)
+
+
+Also, when there is either an invited user or still active share-link, the Token Acquirer will refuse to issue a token to you, unless all sharing is revoked.
+
+![token extension](notebooks-token-acquirer-active-sharing.png)
+
 
 ### fedcloud client
 
