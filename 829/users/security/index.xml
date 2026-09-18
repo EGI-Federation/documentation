@@ -1,0 +1,38 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Security Services</title><link>/users/security/</link><description>Recent content in Security Services on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Secrets Store</title><link>/users/security/secrets-store/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/security/secrets-store/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Your applications and services may need different secrets (credentials, tokens,
+passwords, etc.) during deployment and operation. These secrets are often
+stored as clear texts in code repositories or configuration files, which
+poses security risks. Furthermore, the secrets stored in files are static and
+difficult to change (rotate).&lt;/p>
+&lt;p>The EGI Secrets Store helps you to
+&lt;strong>securely store, retrieve, and rotate credentials for your services&lt;/strong>.&lt;/p>
+&lt;p>The main features of EGI Secrets Store:&lt;/p>
+&lt;ul>
+&lt;li>Simplifies, standardizes, and secures the way users store secrets.&lt;/li>
+&lt;li>Offers secure storage of secrets, encrypted both in transit and at rest.&lt;/li>
+&lt;li>Allows easy rotation of secrets, while administrators can track usage and
+manage access.&lt;/li>
+&lt;li>Integrates with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a> to allow access with
+home organisation credentials, no additional registration needed.&lt;/li>
+&lt;li>High-availability ensures the service is always accessible to
+users, applications and other services that rely of it.&lt;/li>
+&lt;li>Easy to maintain, upgrade, and extend, as it is based on
+well-known open-source software, with many client tools and libraries
+with strong community support.&lt;/li>
+&lt;/ul>
+&lt;h2 id="concepts">Concepts&lt;/h2>
+&lt;p>&lt;strong>Secret objects&lt;/strong> (or secrets, for short) in EGI Secrets Store are identified
+by their paths, like files on disk. Each user has a private &lt;strong>secret space&lt;/strong>
+for storing their secret objects, and cannot see secrets of other users.
+Each secret object may contain several &lt;strong>secret values&lt;/strong>, and each value is
+identified by its &lt;strong>key&lt;/strong> (name).&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Example&lt;/h4>
+A secret object for your service
+may contain several different passwords for different components: database,
+message queue, cache, storage system, etc. Each of these passwords will be a
+distinct secret value in your secret object.
+&lt;/div>
+&lt;p>Secret objects are always created, retrieved, updated, and deleted as a whole,
+users cannot manipulate individual secret values of an existing secret.&lt;/p></description></item></channel></rss>
