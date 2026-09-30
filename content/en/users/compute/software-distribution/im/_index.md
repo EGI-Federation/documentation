@@ -1,6 +1,5 @@
 ---
 title: CVMFS with Infrastructure Manager
-linkTitle: cvmfs-and-im
 type: docs
 weight: 10
 description: >
