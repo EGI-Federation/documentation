@@ -173,4 +173,4 @@ directory on your building host. One option is to use an actual CVMFS client, so
 you have ready all the existing content being already distributed by CVMFS. By
 default, the `/cvmfs/` directory on a CVMFS client host is read-only, but that
 can be solved using an
-[ephemeral writeable container](https://cvmfs.readthedocs.io/en/latest/cpt-enter.html).
+[ephemeral writeable container](https://cvmfs.readthedocs.io/en/stable/cpt-enter/).
