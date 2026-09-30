@@ -11,7 +11,9 @@ aliases:
 
 This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
 For information on how to install a client, follow the instruction in the
-[CVMFS official documentation](https://cvmfs.readthedocs.io/en/latest/cpt-quickstart.html)
+[CVMFS official documentation](https://cvmfs.readthedocs.io/en/latest/cpt-quickstart.html).
+CVMFS can be [automatically configured in your VMs with Infrastructure Manager](./im) as
+well.
 
 ## Overview
 
