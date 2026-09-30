@@ -1,0 +1,52 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Software Distribution</title><link>/users/compute/software-distribution/</link><description>Recent content in Software Distribution on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/software-distribution/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: CVMFS with Infrastructure Manager</title><link>/users/compute/software-distribution/im/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/software-distribution/im/</guid><description>
+&lt;p>You can start a VM with CVMFS configured out of the box with
+&lt;a href="../../orchestration/im/">Infrastructure Manager&lt;/a> relying on the available
+templates.&lt;/p>
+&lt;h2 id="create-a-new-infrastructure">Create a new infrastructure&lt;/h2>
+&lt;p>Once you have logged in the
+&lt;a href="https://im.egi.eu">Infrastructure Manager Dashboard&lt;/a>, select &amp;ldquo;Deploy a VM&amp;rdquo; from
+the dashboard:&lt;/p>
+&lt;p>&lt;img src="dashboard-vm.png" alt="Deploy a VM">&lt;/p>
+&lt;p>You will be shown with a set of optional features to add to the VM, Add &amp;ldquo;Install
+and Configure CernVM-FS&amp;rdquo; and click on &amp;ldquo;Configure&amp;rdquo; button at the bottom of the
+page:&lt;/p>
+&lt;p>&lt;img src="cernvmfs-optional-feature.png" alt="Install and configure CernVM-FS">&lt;/p>
+&lt;p>In the configuration form, you will see a &lt;em>CernVM-FS&lt;/em> tab where you can list the
+repositories to configure. In this example we will add &lt;code>notebooks.egi.eu&lt;/code> and
+&lt;code>software.eesi.io&lt;/code>. EGI&amp;rsquo;s Software Distribution service supports the
+&lt;a href="../#overview">repositories listed here&lt;/a>&lt;/p>
+&lt;p>&lt;img src="cernvmfs-tab.png" alt="Configure CernVM-FS repositories">&lt;/p>
+&lt;p>Check the &lt;a href="../../orchestration/im/dashboard">IM dashboard docuomentation&lt;/a> for
+more details on how to configure your VM.&lt;/p>
+&lt;h2 id="use-your-vm">Use your VM&lt;/h2>
+&lt;p>Once the VM is configured:&lt;/p>
+&lt;p>&lt;img src="infras-configured.png" alt="VM configured">&lt;/p>
+&lt;p>click on &amp;ldquo;Outputs&amp;rdquo; and download the key:&lt;/p>
+&lt;p>&lt;img src="vm-outputs.png" alt="VM outputs">&lt;/p>
+&lt;p>From your terminal you can now login and access the cvmfs directories&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> key.pem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh -i key.pem cloudadm@&amp;lt;your VM IP&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ls /cvmfs/notebooks.egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud isgc-2023 midicsv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat /cvmfs/software.eessi.io/README.eessi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EESSI - the European Environment &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> Scientific Software Installations
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Getting started
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Set up your environment by sourcing the initialisation script &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> a particular version of EESSI:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">source&lt;/span> /cvmfs/software.eessi.io/versions/2023.06/init/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Explore the software included in EESSI via the &lt;span style="color:#4e9a06">&amp;#34;module avail&amp;#34;&lt;/span> command.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>3&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Load one or more modules, and start running the software!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Links
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-----
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>website: https://eessi.io
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>documentation: https://eessi.io/docs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>support: https://www.eessi.io/docs/support &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>contact support@eessi.io via e-mail&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

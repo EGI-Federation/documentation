@@ -1,0 +1,926 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Record and Message Formats</title><link>/internal/accounting/record-and-message-formats/</link><description>Recent content in Record and Message Formats on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/accounting/record-and-message-formats/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Grid Accounting</title><link>/internal/accounting/record-and-message-formats/grid-accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/record-and-message-formats/grid-accounting/</guid><description>
+&lt;h2 id="individual-job-records-and-messages">Individual Job Records and Messages&lt;/h2>
+&lt;h3 id="header">Header&lt;/h3>
+&lt;p>&lt;code>APEL-individual-job-message: v0.3&lt;/code>&lt;/p>
+&lt;p>The header only appears once at the top of each message (that is once at the
+top of each file). It defines the type of record and the schema version.&lt;/p>
+&lt;h3 id="record-fields">Record Fields&lt;/h3>
+&lt;p>The table shows the equivalent field in the CAR, under the container element
+&lt;code>urf:UsageRecord&lt;/code>. If not specified, it refers to the text value of urf:Key,
+where the element is a direct child of &lt;code>urf:UsageRecord&lt;/code>.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Key&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Mandatory&lt;/th>
+&lt;th>CAR equivalent (if different)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>GOCDB sitename&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SubmitHost&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>The CE-ID (see example)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MachineName&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>LRMS hostname&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Queue&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Batch system queue&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalJobId&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Batch System Job ID&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>urf:JobIdentity/urf:LocalJobId&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalUserId&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Local username&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:UserIdentity/urf:LocalUserId&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s X509 DN&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:UserIdentity/urf:GlobalUserName&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VOMS attributes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:UserIdentity/urf:GroupAttribute[@type=&amp;ldquo;FQAN&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WallDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Wallclock time for the job (seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 time duration&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CpuDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>CPU time for the job (seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 time duration&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Processors&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of processors&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:Processors[@metric=&amp;ldquo;max&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NodeCount&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of nodes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>StartTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Start time of the job (epoch time)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 datetime&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EndTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Stop time of the job (epoch time)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 datetime&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>InfrastructureDescription&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>&amp;lt;accounting client&amp;gt;-&amp;lt;CE type&amp;gt;-&amp;lt;batch system type&amp;gt; eg. &amp;ldquo;APEL-CREAM-PBS&amp;rdquo;&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>InfrastructureType&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>grid OR local&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MemoryReal&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Memory consumed by job (kbytes)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:Memory[@metric=&amp;ldquo;max&amp;rdquo; and @type=&amp;ldquo;Physical&amp;rdquo; and @storageUnit=&amp;ldquo;KB&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MemoryVirtual&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Virtual memory consumed by job (kbytes)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:Memory[@metric=&amp;ldquo;max&amp;rdquo; and @type=&amp;ldquo;Shared&amp;rdquo; and @storageUnit=&amp;ldquo;KB&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ServiceLevelType&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Si2k OR HEPSPEC&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>urf:ServiceLevel[@type]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ServiceLevel&lt;/td>
+&lt;td>double&lt;/td>
+&lt;td>Value of either HepSpec06 or SpecInt2000&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>urf:ServiceLevel&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="message">Message&lt;/h3>
+&lt;h4 id="end-of-record">End of record&lt;/h4>
+&lt;p>%%&lt;/p>
+&lt;h4 id="example-message">Example Message&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-individual-job-message: v0.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Site: ExampleSite
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmitHost: host.domain:port/queue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LocalJobId: 11111111
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LocalUserId: User1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlobalUserName: /C=whatever/D=someDN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FQAN: /voname/Role=NULL/Capability=NULL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WallDuration: 234256
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CpuDuration: 2345
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Processors: 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NodeCount: 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>StartTime: 1234567890
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndTime: 1234567899
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MemoryReal: 1000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MemoryVirtual: 2000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ServiceLevelType: Si2k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ServiceLevel: 1000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another job record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="notes">Notes&lt;/h3>
+&lt;p>If GlobalUserName or UserFQAN is not published, the value for these fields on
+the server will be set to &amp;lsquo;None&amp;rsquo;.&lt;/p>
+&lt;p>Jobs are assumed to be grid jobs. To specify local jobs, use:&lt;/p>
+&lt;ul>
+&lt;li>InfrastructureType: local&lt;/li>
+&lt;li>SubmitHostType: LRMS&lt;/li>
+&lt;li>SubmitHost: LRMS-hostname&lt;/li>
+&lt;/ul>
+&lt;p>The Group value specified for local jobs must be different to equivalent grid
+jobs, or you will not be able to differentiate them in the accounting portal.
+Suggestion:&lt;/p>
+&lt;ul>
+&lt;li>Group: ExampleVO - grid job&lt;/li>
+&lt;li>Group: local-ExampleVO - local job&lt;/li>
+&lt;/ul>
+&lt;h3 id="changes-since-version-02">Changes since version 0.2&lt;/h3>
+&lt;ul>
+&lt;li>InfrastructureType field (optional)&lt;/li>
+&lt;li>InfrastructureDescription field (optional)&lt;/li>
+&lt;li>SubmitHostType field (optional)&lt;/li>
+&lt;/ul>
+&lt;h3 id="changes-from-version-01-to-version-02">Changes from version 0.1 to version 0.2&lt;/h3>
+&lt;ul>
+&lt;li>LocalJobID has changed to LocalJobId&lt;/li>
+&lt;li>LocalUserID has changed to LocalUserId&lt;/li>
+&lt;li>UserFQAN has changed to FQAN&lt;/li>
+&lt;li>ScalingFactorUnit has changed to ServiceLevelType&lt;/li>
+&lt;li>The possible values of ScalingFactorType have changed from
+[&amp;ldquo;SpecInt2000&amp;rdquo;, &amp;ldquo;HepSpec06&amp;rdquo;, &amp;ldquo;custom&amp;rdquo;] to [&amp;ldquo;Si2k&amp;rdquo;], [&amp;ldquo;HEPSPEC&amp;rdquo;]&lt;/li>
+&lt;li>ScalingFactor has changed to ServiceLevel&lt;/li>
+&lt;/ul>
+&lt;h2 id="summary-job-records-and-messages">Summary Job Records and Messages&lt;/h2>
+&lt;h3 id="header-1">Header&lt;/h3>
+&lt;p>&lt;code>APEL-summary-job-message: v0.3&lt;/code>&lt;/p>
+&lt;p>The header only appears once at the top of each message. It defines the type
+of record and the schema version.&lt;/p>
+&lt;h3 id="record-fields-1">Record Fields&lt;/h3>
+&lt;p>The table shows the equivalent field in the AUR, under the container element
+&lt;code>aur:SummaryRecord&lt;/code>. If not specified, it refers to the text value of
+&lt;code>urf:Key&lt;/code>, where the element is a direct child of &lt;code>aur:SummaryRecord&lt;/code>.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Key&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Mandatory&lt;/th>
+&lt;th>AUR equivalent&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>GOCDB sitename&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Month&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Month of summary (see notes)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Year&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Year of summary (see notes)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s X509 DN&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:GlobalUserName&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VO&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VO&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:Group&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VOGroup&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VOMS group&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:GroupAttribute[@type=&amp;ldquo;vo-group&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VORole&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VOMS role&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:GroupAttribute[@type=&amp;ldquo;vo-role&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SubmitHost&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>The CE-ID or LRMS hostname&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Infrastructure&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>grid OR local&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Processors&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of processors&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NodeCount&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of nodes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EarliestEndTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>End time of the first job in the month (epoch time)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>AUR has dates in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LatestEndTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>End time of the last job in the month (epoch time)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>AUR has dates in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WallDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of wall clock times for all jobs in the month (in seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CpuDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of CPU time for all jobs in the month (in seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NormalisedWallDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of normalised wall clock time for all jobs (in seconds; normalised by HEPSPEC06)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NormalisedCpuDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of normalised CPU times for all jobs (in seconds; normalised by HEPSPEC06)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NumberOfJobs&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Total number of jobs&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="message-1">Message&lt;/h3>
+&lt;h4 id="end-of-record-1">End of record&lt;/h4>
+&lt;p>%%&lt;/p>
+&lt;h4 id="example-message-1">Example Message&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-summary-job-message: v0.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Site: ExampleSite
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Month: 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Year: 2010
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlobalUserName: /C=whatever/D=someDN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO: ExampleVO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VOGroup: /ExampleVO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VORole: Role=production
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmitHost: host.domain:port/queue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Infrastructure: grid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Processors: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NodeCount: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EarliestEndTime: 1267527463
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LatestEndTime: 1269773863
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WallDuration: 23425
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CpuDuration: 2345
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NormalisedWallDuration: 244435
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NormalisedCpuDuration: 2500
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NumberOfJobs: 100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another summary job record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="notes-1">Notes&lt;/h3>
+&lt;p>If GlobalUserName, VO, Group or Role are not published, the value for these
+fields on the server will be set to &amp;lsquo;None&amp;rsquo;.&lt;/p>
+&lt;p>The job records are included in months according to the month and year of
+their EndTime. The month and year should be in UTC. Only completed jobs are
+accounted for by APEL.&lt;/p>
+&lt;p>All durations are in hours. Normalised durations should be multiplied by
+HEPSPEC06. All figures should be rounded to the nearest integer.&lt;/p>
+&lt;h2 id="summary-sync-records-and-messages">Summary Sync Records and Messages&lt;/h2>
+&lt;p>The Summary Sync records are used for the creation of the &amp;ldquo;APEL Pub/Sync&amp;rdquo;
+tests. It is a mechanism for the central APEL server to know the number of
+records that each site is storing locally. It is in general only used by
+sites which publish via the standard APEL client.&lt;/p>
+&lt;h3 id="header-2">Header&lt;/h3>
+&lt;p>&lt;code>APEL-sync-message: v0.1&lt;/code>&lt;/p>
+&lt;h3 id="record-fields-2">Record Fields&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Key&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Mandatory&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>GOCDB sitename&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SubmitHost&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>CE ID&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NumberOfJobs&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Total number of jobs for that month&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Month&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Month&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Year&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Year&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="message-2">Message&lt;/h3>
+&lt;h4 id="end-of-record-2">End of record&lt;/h4>
+&lt;p>%%&lt;/p>
+&lt;h4 id="example-message-2">Example Message&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-sync-message: v0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Site: ExampleSite
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmitHost: host.domain:port/queue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NumberOfJobs: 3479
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Month: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Year: 2010
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another sync record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: Cloud Accounting</title><link>/internal/accounting/record-and-message-formats/cloud-accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/record-and-message-formats/cloud-accounting/</guid><description>
+&lt;h2 id="individual-vm-records-and-messages">Individual VM Records and Messages&lt;/h2>
+&lt;h3 id="header">Header&lt;/h3>
+&lt;p>&lt;code>APEL-cloud-message: v0.4&lt;/code>&lt;/p>
+&lt;p>The header only appears once at the top of each message (that is once at the
+top of each file). It defines the type of record and the schema version.&lt;/p>
+&lt;h3 id="record-fields">Record Fields&lt;/h3>
+&lt;p>The federated cloud task force has agreed on a Cloud Usage Record, which
+inherits from the &lt;a href="https://ogf.org/documents/GFD.204.pdf">OGF Usage Record (GFD.204)&lt;/a>.
+This record defines the data that resource providers must send to EGI&amp;rsquo;s central
+Accounting repository.&lt;/p>
+&lt;p>Version 0.4 of the Cloud Accounting Usage Record was agreed at the FedCloud Face
+to Face in Amsterdam in January 2015. A summary table of the format is shown
+below:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Cloud Usage Record Property&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Null&lt;/th>
+&lt;th>Definition&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>VMUUID&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Virtual Machine's Universally Unique Identifier concatenation of CurrentTime, SiteName and MachineName&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SiteName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>GOCDB SiteName - GOCDB now has cloud service types and a cloud-only site is allowed.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CloudComputeService (NEW)&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Name identifying cloud resource within the site. Allows multiple cloud resources within a site, i.e. a level of granularity.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MachineName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>VM ID - the site name for the VM&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalUserId&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Local username&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalGroupId&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Local group name&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Global identity of user (certificate DN)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Use if VOs part of authorization mechanism&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Status&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Completion status - completed, started or suspended&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>StartTime&lt;/td>
+&lt;td>&lt;code>datetime&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Must be set when Status = started&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EndTime&lt;/td>
+&lt;td>&lt;code>datetime&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Set to NULL until Status = completed&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SuspendDuration&lt;/td>
+&lt;td>&lt;code>datetime&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Set when Status = suspended (Timestamp)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WallDuration&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>WallClock time - actual time used&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CpuDuration&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>CPU time consumed (Duration)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CpuCount&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Number of CPUs allocated&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NetworkType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Needs clarifying&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NetworkInbound&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>GB received&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NetworkOutbound&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>GB sent&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PublicIPCount (NEW)&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Number of public IP addresses assigned to VM &lt;strong>Not used&lt;/strong>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Memory&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Memory allocated to the VM&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Disk&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Size in GB allocated to the VM&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BenchmarkType (NEW)&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Name of benchmark used for normalization of times (eg HEPSPEC06)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Benchmark (NEW)&lt;/td>
+&lt;td>&lt;code>Decimal&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Value of benchmark of VM using ServiceLevelType benchmark’&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>StorageRecordId&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Link to other associated storage record &lt;em>Need to check feasibility&lt;/em>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ImageId&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Every image has a unique ID associated with it. For images from the Artecfact Registry this should be &lt;code>VMCATCHER_EVENT_AD_MPURI&lt;/code>; for images from other repositories it should be an equivalent; for local images - local identifier of the image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CloudType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Type of cloud infrastructure: OpenNebula; OpenStack; Synnefo; etc.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="message">Message&lt;/h3>
+&lt;h4 id="end-of-record">End of record&lt;/h4>
+&lt;pre tabindex="0">&lt;code>%%
+&lt;/code>&lt;/pre>&lt;h4 id="example-message">Example Message&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-cloud-message: v0.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SiteName: SAMPLE-SITE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CloudComputeService: host.example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CloudType: caso/5.2.1 (OpenStack)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CpuCount: 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CpuDuration: 31359976
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Disk: 80
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndTime: 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FQAN: vo.sample.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LocalGroupId: foo-bar
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LocalUserId: baz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MachineName: vm-name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Memory: 4096
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PublicIPCount: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>StartTime: 1764592012
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Status: started
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VMUUID: 12345678-1234-5678-9012-123456789012
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WallDuration: 15679988
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another VM record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ip-records">IP Records&lt;/h2>
+&lt;p>The fedcloud task force has agreed on a Public IP Usage Record. The format uses many
+of the same fields as the Cloud Usage Record. The Usage Record should be a
+snapshot of the number of IPs currently assigned to a user. A table defining
+v0.2 of the format is shown below:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Cloud Usage Record Property&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Null&lt;/th>
+&lt;th>Definition&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>MeasurementTime&lt;/td>
+&lt;td>&lt;code>datetime&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The time the usage was recorded.&lt;/td>
+&lt;td>In the message format, must be a UNIX timestamp, i.e. the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SiteName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The GOCDB site assigning the IP&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CloudComputeService&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>See Cloud Usage Record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CloudType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See Cloud Usage Record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalUser&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See Cloud Usage Record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalGroup&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See Cloud Usage Record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See Cloud Usage Record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See Cloud Usage Record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>IPVersion&lt;/td>
+&lt;td>&lt;code>byte&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>4 or 6&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>IPCount&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The number of IP addresses of IPVersion this user currently assigned to them&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;p>A JSON schema defining a valid Public IP Usage message can be found at:
+&lt;a href="https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py">https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py&lt;/a>&lt;/p>
+&lt;h2 id="gpu-records">GPU Records&lt;/h2>
+&lt;p>The fedcloud task force has agreed on an GPU Usage Record. The format uses many
+of the same fields as the Cloud Usage Record. A table defining &lt;em>Draft 4 –
+24/02/2021&lt;/em> is shown below:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>GPU Usage Record Property&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Null&lt;/th>
+&lt;th>Definition&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>MeasurementMonth&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The month/year the reported usage should be assigned to. If the month/year is the current month/year, the usage should be up to the point of reporting.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MeasurementYear&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AssociatedRecordType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The context in which the reported usage was used. I.e. “cloud” for an accelerator attached to a VM.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AssociatedRecord&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>VMUUID if AssociatedRecordType is “cloud”&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SiteName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Count&lt;/td>
+&lt;td>&lt;code>decimal&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>A count of the Accelerators attached to the VM. At the moment Accelerators are not shared among VMs but it will change when Accelerator virtualization is applied, so we should have the field at decimal type instead of integer (e.g. Count = 0.5 when it is shared between two VMs).&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cores&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Total number of cores. i.e. So if an Accelerator has 64 cores and a VM has 2 like that attached then we would report: Count=2 and Processors=128&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ActiveDuration&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if ActiveDuration is omitted from the record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AvailableDuration&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Time accelerator was available in seconds for the given month/year (Wall)Time that a GPU was attached to a VM.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BenchmarkType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Name of benchmark used for normalization of times&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Benchmark&lt;/td>
+&lt;td>&lt;code>decimal&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Value of benchmark of Accelerator&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Type&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>High level description of accelerator, i.e. GPU, FPGA, Other&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Model&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>model number, spec, some other concept that 2 ACCELERATORs with the same number of cores might be different etc&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="sample-message">Sample message&lt;/h3>
+&lt;p>Records are sent as a json payload as shown in the following sample:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;APEL-accelerator-message&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Version&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;0.1&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;UsageRecords&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;SiteName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SAMPLE-SITE&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;CloudType&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;caso/5.2.1 (OpenStack)&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;CloudComputeService&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;host.example.com&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;AssociatedRecord&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;12345678-1234-5678-9012-123456789012&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;FQAN&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;vo.sample.org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Count&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;AvailableDuration&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2592000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;MeasurementMonth&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;MeasurementYear&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2026&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;AssociatedRecordType&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cloud&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;GPU&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Model&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;NVIDIA Tesla V100&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ActiveDuration&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2592000&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span> &lt;span style="color:#a40000">...&lt;/span> &lt;span style="color:#a40000">another&lt;/span> &lt;span style="color:#a40000">GPU&lt;/span> &lt;span style="color:#a40000">record&lt;/span> &lt;span style="color:#a40000">...&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
