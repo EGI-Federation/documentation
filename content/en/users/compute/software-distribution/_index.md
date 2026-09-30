@@ -35,6 +35,9 @@ software used to process experiment data.
 The current list of EGI repositories is as follows
 (disclaimer, some of them are inactive, but we keep them for archival purposes):
 
+
+<!-- cSpell:disable -->
+
 | Repository                    | Project's URL |
 |-------------------------------|---------------|
 | auger.egi.eu                  |               |
@@ -73,6 +76,9 @@ The current list of EGI repositories is as follows
 | unpacked.egi.eu               |               |
 | wenmr.egi.eu                  |               |
 | west-life.egi.eu              |               |
+
+<!-- cSpell:enable -->
+
 
 The list of EGI repositories can also be found online via
 [the CVMFS monitor](http://cvmfs-release01.gridpp.rl.ac.uk/cvmfsmonitor/).
@@ -167,4 +173,4 @@ directory on your building host. One option is to use an actual CVMFS client, so
 you have ready all the existing content being already distributed by CVMFS. By
 default, the `/cvmfs/` directory on a CVMFS client host is read-only, but that
 can be solved using an
-[ephemeral writable container](https://cvmfs.readthedocs.io/en/latest/cpt-enter.html).
+[ephemeral writeable container](https://cvmfs.readthedocs.io/en/latest/cpt-enter.html).
