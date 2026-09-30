@@ -32,7 +32,7 @@ repositories to configure. In this example we will add `notebooks.egi.eu` and
 
 ![Configure CernVM-FS repositories](cernvmfs-tab.png)
 
-Check the [IM dashboard docuomentation](../../orchestration/im/dashboard) for
+Check the [IM dashboard documentation](../../orchestration/im/dashboard) for
 more details on how to configure your VM.
 
 ## Use your VM
