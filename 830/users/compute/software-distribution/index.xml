@@ -14,7 +14,7 @@ page:&lt;/p>
 &lt;p>In the configuration form, you will see a &lt;em>CernVM-FS&lt;/em> tab where you can list the
 repositories to configure. In this example we will add &lt;code>notebooks.egi.eu&lt;/code> and
 &lt;code>software.eesi.io&lt;/code>. EGI&amp;rsquo;s Software Distribution service supports the
-&lt;a href="../#overview">repositories listed here&lt;/a>&lt;/p>
+&lt;a href="../#repositories">repositories listed here&lt;/a>&lt;/p>
 &lt;p>&lt;img src="cernvmfs-tab.png" alt="Configure CernVM-FS repositories">&lt;/p>
 &lt;p>Check the &lt;a href="../../orchestration/im/dashboard">IM dashboard documentation&lt;/a> for
 more details on how to configure your VM.&lt;/p>
