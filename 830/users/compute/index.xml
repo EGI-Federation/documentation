@@ -317,7 +317,7 @@ choose (or gets used automatically) in specific scenarios:&lt;/p>
 &lt;p>The following sections offer more details about each of these orchestrators.&lt;/p></description></item><item><title>Users: Software Distribution</title><link>/users/compute/software-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/software-distribution/</guid><description>
 &lt;p>This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
 For information on how to install a client, follow the instruction in the
-&lt;a href="https://cvmfs.readthedocs.io/en/latest/cpt-quickstart.html">CVMFS official documentation&lt;/a>.
+&lt;a href="https://cvmfs.readthedocs.io/en/stable/cpt-quickstart/">CVMFS official documentation&lt;/a>.
 CVMFS can be &lt;a href="./im">automatically configured in your VMs with Infrastructure Manager&lt;/a> as
 well.&lt;/p>
 &lt;h2 id="overview">Overview&lt;/h2>
