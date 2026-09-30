@@ -30,6 +30,8 @@ small and large collaborations. In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
 software used to process experiment data.
 
+### Repositories
+
 The current list of EGI repositories is as follows
 (disclaimer, some of them are inactive, but we keep them for archival purposes):
 

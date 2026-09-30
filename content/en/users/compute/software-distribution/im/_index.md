@@ -27,7 +27,7 @@ page:
 In the configuration form, you will see a _CernVM-FS_ tab where you can list the
 repositories to configure. In this example we will add `notebooks.egi.eu` and
 `software.eesi.io`. EGI's Software Distribution service supports the
-[repositories listed here](../#overview)
+[repositories listed here](../#repositories)
 
 ![Configure CernVM-FS repositories](cernvmfs-tab.png)
 
