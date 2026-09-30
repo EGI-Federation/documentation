@@ -336,6 +336,7 @@ software used to process experiment data.&lt;/p>
 &lt;h3 id="repositories">Repositories&lt;/h3>
 &lt;p>The current list of EGI repositories is as follows
 (disclaimer, some of them are inactive, but we keep them for archival purposes):&lt;/p>
+&lt;!-- cSpell:disable -->
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -490,6 +491,7 @@ software used to process experiment data.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;!-- cSpell:enable -->
 &lt;p>The list of EGI repositories can also be found online via
 &lt;a href="http://cvmfs-release01.gridpp.rl.ac.uk/cvmfsmonitor/">the CVMFS monitor&lt;/a>.&lt;/p>
 &lt;p>This documentation is for the VO content managers.&lt;/p>
@@ -552,4 +554,4 @@ directory on your building host. One option is to use an actual CVMFS client, so
 you have ready all the existing content being already distributed by CVMFS. By
 default, the &lt;code>/cvmfs/&lt;/code> directory on a CVMFS client host is read-only, but that
 can be solved using an
-&lt;a href="https://cvmfs.readthedocs.io/en/latest/cpt-enter.html">ephemeral writable container&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;a href="https://cvmfs.readthedocs.io/en/latest/cpt-enter.html">ephemeral writeable container&lt;/a>.&lt;/p></description></item></channel></rss>
