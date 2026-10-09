@@ -27,26 +27,11 @@ OpenStack services APIs:
 
 - [Authentication and authorization of EGI users](./aai) into your system is
   performed by configuring the native OpenID Connect support of Keystone
-- **cASO** collects [accounting](./accounting) data from OpenStack and uses
-  **SSM** to send the records to the central accounting database on
-  the [EGI Accounting service](../../../internal/accounting)
-  ([APEL](https://apel.github.io/)). cASO and SSM are operated by the site.
-- EGI runs [catch-all components](./catch-all) -- cloud-info-provider and
-  cloudkeeper -- information discovery and VM image synchronisation.
+- EGI runs [catch-all components](./catch-all) -- cloud-info-provider, image-sync
+  and cASO/SSM -- information discovery, VM image synchronisation and
+  accounting.
 
 ![image](openstacksite.png)
-
-## Installation options
-
-cASO and SSM releases can be be obtained from GitHub:
-
-- [cASO](https://github.com/IFCA-Advanced-Computing/caso/releases). cASO
-  containers are available in the
-  [fedcloud-caso](https://github.com/EGI-Federation/fedcloud-catchall-operations/pkgs/container/fedcloud-caso)
-  package from
-  <!-- cspell:disable-next-line -->
-  [fedcloud-catchall-operations](https://github.com/EGI-Federation/fedcloud-catchall-operations)
-- [SSM](https://github.com/apel/ssm/releases).
 
 ## Open Ports
 
