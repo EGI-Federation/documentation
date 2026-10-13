@@ -578,9 +578,8 @@ are available for your users in glance.&lt;/p>
 that are sent to the central &lt;a href="../../../../internal/accounting">EGI accounting repository&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>The deployment and configuration of these components is managed a the&lt;/p>
-&lt;!-- cspell:disable-next-line -->
-&lt;p>&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>.
+&lt;p>The deployment and configuration of these components is managed at the
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>.
 Every provider should have a single &lt;code>yaml&lt;/code> file that describes its configuration
 as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your endpoint as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
