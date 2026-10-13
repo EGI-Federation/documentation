@@ -834,9 +834,8 @@ for the VOs are listed in
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can include as many mappings as needed in the json file. Users will be
 members of all the matching groups.&lt;/p>
 &lt;h2 id="catch-all-components">Catch-all components&lt;/h2>
-&lt;p>Update your &lt;code>site.yaml&lt;/code> at the&lt;/p>
-&lt;!-- cspell:disable-next-line -->
-&lt;p>&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>
+&lt;p>Update your &lt;code>site.yaml&lt;/code> at the
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>
 to include the new VO by creating a PR. Once merged the new VO will be visible
 for all components.&lt;/p></description></item><item><title>Providers: Useful Resources</title><link>/providers/cloud-compute/openstack/useful-resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/useful-resources/</guid><description>
 &lt;p>In this page we gather a list of useful resources for OpenStack administrators.&lt;/p>
