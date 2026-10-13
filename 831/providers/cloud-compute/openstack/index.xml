@@ -575,7 +575,7 @@ are available for your users in glance.&lt;/p>
 &lt;li>
 &lt;p>&lt;code>accounting&lt;/code> extracts usage records from your OpenStack services and creates
 &lt;a href="../../../../internal/accounting/record-and-message-formats/">accounting records&lt;/a>
-that are sent to the central &lt;a href="../../../../internal/accounting">EGI accounting repository&lt;/a>&lt;/p>
+that are sent to the central &lt;a href="../../../../internal/accounting">EGI accounting repository&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>The deployment and configuration of these components is managed a the&lt;/p>
