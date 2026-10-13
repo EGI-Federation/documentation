@@ -89,34 +89,11 @@ $ openstack mapping set --rules mapping.json egi-mapping
 You can include as many mappings as needed in the json file. Users will be
 members of all the matching groups.
 
-## Accounting
+## Catch-all components
 
-Add the project supporting the VO to cASO:
+Update your `site.yaml` at the
+[EGI-Federation/fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/)
+to include the new VO by creating a PR. Once merged the new VO will be visible
+for all components.
 
-1. In the `projects` field of `/etc/caso/caso.conf` :
 
-   ```ini
-   projects = vo_project1, vo_project2, <your_new_vo_project>
-   ```
-
-1. and as a new mapping in `/etc/caso/voms.json` :
-
-   ```json
-   {
-     "<your new vo>": {
-       "projects": ["<your new vo project>"]
-     }
-   }
-   ```
-
-Be sure to include the user running cASO at least as `reader` of the project if
-it does not have admin privileges:
-
-```shell
-openstack role add --user <your caso user> --project <your new vo project> reader
-```
-
-## Information system / VM Image management
-
-If you are correctly setting the `egi.VO` property to your projects, the
-configuration will be automatically retrieved by the catch-all components.

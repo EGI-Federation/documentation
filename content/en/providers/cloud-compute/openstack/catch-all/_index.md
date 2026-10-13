@@ -23,8 +23,11 @@ to do it:
 - the `image-sync` makes sure that images available in [EGI's Artefact Registry](https://registry.egi.eu)
   are available for your users in glance.
 
-The deployment and configuration of these components is managed a the
-<!-- cspell:disable-next-line -->
+- `accounting` extracts usage records from your OpenStack services and creates
+  [accounting records](../../../../internal/accounting/record-and-message-formats/)
+  that are sent to the central [EGI accounting repository](../../../../internal/accounting).
+
+The deployment and configuration of these components is managed at the
 [EGI-Federation/fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/).
 Every provider should have a single `yaml` file that describes its configuration
 as follows:
@@ -49,11 +52,21 @@ vos:
     name: <name of another vo>
 ```
 
+Accounting is configured on a per-site basis in the main
+[deployment playbook file](https://github.com/EGI-Federation/fedcloud-catchall-operations/blob/main/deploy/playbook.yaml)
+with the `accounting_sites` variable:
+
+```yaml
+accounting_sites:
+  - <name of site>
+  # ...
+```
+
 You can create
 [pull requests](https://github.com/EGI-Federation/fedcloud-catchall-operations/pulls)
 for adding and maintaining your site configuration to the catch-all operations. As
 soon as the pull request is merged, a new deployment will be triggered and your site
-should start publishing information and syncing images.
+should start publishing information, syncing images and generating accounting.
 
 The catch-all operations uses a service account user, this user is member of the `ops` VO
 and should be enabled to manage VM images in glance.
@@ -70,4 +83,10 @@ on the images being present at the site.
 
 Individual components are available in GitHub if you want to operate them by your own:
 - [`cloud-info-provider`](https://github.com/EGI-Federation/cloud-info-provider)
-- [`atrope`](https://github.com/EGI-Federation/atrope)
+  for generating site information;
+- [`atrope`](https://github.com/EGI-Federation/atrope) for image synchronisation;
+- [cASO](https://github.com/IFCA-Advanced-Computing/caso/) for generating usage
+  records; and
+- [ssmsend](https://github.com/apel/ssm), for sending usage information to the
+  central EGI accounting repository.
+
