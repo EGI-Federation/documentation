@@ -115,7 +115,7 @@ from outside the site:&lt;/p>
 OpenStack services APIs:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="./aai">Authentication and authorization of EGI users&lt;/a> into your system is
-performed by configuring the native OpenID Connect support of Keystone&lt;/li>
+performed by configuring the native OpenID Connect support of Keystone.&lt;/li>
 &lt;li>EGI runs &lt;a href="./catch-all">catch-all components&lt;/a> &amp;ndash; cloud-info-provider, image-sync
 and cASO/SSM &amp;ndash; information discovery, VM image synchronisation and
 accounting.&lt;/li>
