@@ -26,7 +26,7 @@ The integration is performed by a set of EGI components that interact with the
 OpenStack services APIs:
 
 - [Authentication and authorization of EGI users](./aai) into your system is
-  performed by configuring the native OpenID Connect support of Keystone
+  performed by configuring the native OpenID Connect support of Keystone.
 - EGI runs [catch-all components](./catch-all) -- cloud-info-provider, image-sync
   and cASO/SSM -- information discovery, VM image synchronisation and
   accounting.
