@@ -92,7 +92,6 @@ members of all the matching groups.
 ## Catch-all components
 
 Update your `site.yaml` at the
-<!-- cspell:disable-next-line -->
 [EGI-Federation/fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/)
 to include the new VO by creating a PR. Once merged the new VO will be visible
 for all components.
