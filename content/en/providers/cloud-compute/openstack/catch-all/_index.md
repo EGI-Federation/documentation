@@ -27,8 +27,7 @@ to do it:
   [accounting records](../../../../internal/accounting/record-and-message-formats/)
   that are sent to the central [EGI accounting repository](../../../../internal/accounting).
 
-The deployment and configuration of these components is managed a the
-<!-- cspell:disable-next-line -->
+The deployment and configuration of these components is managed at the
 [EGI-Federation/fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/).
 Every provider should have a single `yaml` file that describes its configuration
 as follows:
