@@ -25,7 +25,7 @@ to do it:
 
 - `accounting` extracts usage records from your OpenStack services and creates
   [accounting records](../../../../internal/accounting/record-and-message-formats/)
-  that are sent to the central [EGI accounting repository](../../../../internal/accounting)
+  that are sent to the central [EGI accounting repository](../../../../internal/accounting).
 
 The deployment and configuration of these components is managed a the
 <!-- cspell:disable-next-line -->
