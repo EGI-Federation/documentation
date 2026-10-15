@@ -249,7 +249,7 @@ Options
 #### Example
 
 ```shell
-fts-rest-transfer-status -s https://fts-cern.cern.ch:8446 
+fts-rest-transfer-status -s https://fts-cern.cern.ch:8446
   --access-token=$TOKEN 83ef08a6-1ac7-11f0-ae40-fa163ebe1520
 Request ID: 83ef08a6-1ac7-11f0-ae40-fa163ebe1520
 Status: FAILED

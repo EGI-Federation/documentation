@@ -23,7 +23,7 @@ advanced Vault features not exposed via other tools.
 To access the EGI Secrets Store service from the command-line you need a valid
 [EGI Check-in](../../../aai/check-in) access token. Get it either from the
 [EGI Check-in Token Portal](https://aai.egi.eu/token), or from the
-**oidc-agent** (see [cli guide](../../../getting-started/cli#authentication)
+**oidc-agent** (see [cli guide](../../../compute/cloud-compute/openstack#authentication)
 for details), then set it to an environment variable:
 
 {{< tabpanex >}} {{< tabx header="Mac / Linux" >}}
@@ -48,8 +48,8 @@ $ export OIDC_ACCESS_TOKEN=<token>
 
 ## Access via FedCloud client
 
-The [FedCloud client](../../../getting-started/cli) is integrated with the EGI
-Secrets Store service, so that users can access the service immediately with
+The [FedCloud client](../../../compute/cloud-compute/openstack#the-fedcloud-client)
+is integrated with the EGI Secrets Store service, so that users can access the service immediately with
 simple commands. Below is a quick start to using the service.
 
 ### Basic usage

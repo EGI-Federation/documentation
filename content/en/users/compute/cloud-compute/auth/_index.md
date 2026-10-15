@@ -141,7 +141,7 @@ Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:
 
 ```shell
-$ fedcloud openstack image list --site <NAME_OF_SITE> --vo <NAME_OF_VO>
+fedcloud openstack image list --site <NAME_OF_SITE> --vo <NAME_OF_VO>
 ```
 
 For third-party tools that can use token based authentication in OpenStack, use
@@ -155,4 +155,6 @@ $ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
 ### Using ssh-oidc
 
 [ssh-oidc](https://github.com/EOSC-synergy/ssh-oidc) is a set of tools that
-allows ssh with OIDC.
+allows ssh through OIDC tokens.
+
+See the section of [Token based authentication of accessing VMs with SSH](../../../tutorials/adhoc/accessing-vm-with-ssh/) tutorial for more information on how to use ssh-oidc to access VMs with OIDC tokens.

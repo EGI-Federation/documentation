@@ -7,7 +7,6 @@ aliases:
   - /users/notebooks/sharing
 description: >
   User initiated sharing and Real-Time Collaboration (RTC)
-draft: true
 ---
 
 User-initiated sharing is a mechanism allowing users to share access to their

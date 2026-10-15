@@ -14,7 +14,8 @@ software and hardware for running your applications. For the EGI service, you
 have the choice to run:
 
 - the [default environment](./default) that provides a data-science ready stack
-  with support for Python, R, Julia, and Octave.
+  with support for Python, R, Julia, and Octave, that can be further customised
+  with the [Conda Switcher](./default#conda-switcher) extension.
 - the [MATLAB environment](./matlab), for running MATLAB.
 
 After logging into the service, you will be shown a form for selecting the

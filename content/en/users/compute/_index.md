@@ -28,9 +28,11 @@ The compute services are summarized below:
   use-cases are user gateways or portals, interactive computing platforms and
   almost any kind of data- and/or compute-intensive workloads.
 - [Container Compute](./cloud-container-compute/) supports running
-  **container-based applications** with either Docker or Kubernetes on top of
-  Cloud Compute. Typical use-cases are multi-tenant, microservices-based
-  applications that must easily scale horizontally.
+  **container-based applications** on the EGI Cloud. The service provides a
+  managed Kubernetes platform based on Rancher for easy deployment and
+  orchestration of containerised workloads, as well as options for running
+  Docker directly on virtual machines. Typical use-cases are multi-tenant,
+  microservices-based applications that must easily scale horizontally.
 - [High Throughput Compute](./high-throughput-compute/) provides access to
   large, shared grid computing systems for **running computational jobs at
   scale**. Typical use-cases include analysis of large datasets in an

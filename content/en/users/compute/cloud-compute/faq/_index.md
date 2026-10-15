@@ -258,7 +258,7 @@ strategies you can use:
 
 ### How can I find all the VMs that I own in the EGI Federated Cloud?
 
-We suggest using the [fedcloudclient](../../../../users/getting-started/cli/):
+We suggest using the [fedcloudclient](../openstack#the-fedcloud-client):
 
 ```bash
 # list the Virtual Organisations that you belong to

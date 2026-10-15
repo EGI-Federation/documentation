@@ -40,6 +40,14 @@ ticket priority.
 | very urgent     | 1 working day  |
 | top priority    | 1 working day  |
 
+**new definition under discussion:**
+
+| Ticket Priority | Response time  |
+| --------------- | -------------- |
+| less urgent     | 5 working days |
+| urgent          | 3 working days |
+| very urgent     | 1 working day  |
+
 ### Advanced service
 
 | Ticket Priority | Response time   |
@@ -48,6 +56,14 @@ ticket priority.
 | urgent          | 1 working day   |
 | very urgent     | 1 working day   |
 | top priority    | 4 working hours |
+
+**new definition under discussion:**
+
+| Ticket Priority | Response time   |
+| --------------- | --------------- |
+| less urgent     | 5 working days  |
+| urgent          | 1 working day   |
+| very urgent     | 4 working hours |
 
 ## QoS level declaration
 

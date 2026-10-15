@@ -11,7 +11,9 @@ aliases:
 
 This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
 For information on how to install a client, follow the instruction in the
-[CVMFS official documentation](https://cvmfs.readthedocs.io/en/latest/cpt-quickstart.html)
+[CVMFS official documentation](https://cvmfs.readthedocs.io/en/stable/cpt-quickstart/).
+CVMFS can be [automatically configured in your VMs with Infrastructure Manager](./im) as
+well.
 
 ## Overview
 
@@ -28,8 +30,13 @@ small and large collaborations. In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
 software used to process experiment data.
 
+### Repositories
+
 The current list of EGI repositories is as follows
 (disclaimer, some of them are inactive, but we keep them for archival purposes):
+
+
+<!-- cSpell:disable -->
 
 | Repository                    | Project's URL |
 |-------------------------------|---------------|
@@ -69,6 +76,9 @@ The current list of EGI repositories is as follows
 | unpacked.egi.eu               |               |
 | wenmr.egi.eu                  |               |
 | west-life.egi.eu              |               |
+
+<!-- cSpell:enable -->
+
 
 The list of EGI repositories can also be found online via
 [the CVMFS monitor](http://cvmfs-release01.gridpp.rl.ac.uk/cvmfsmonitor/).
@@ -163,4 +173,4 @@ directory on your building host. One option is to use an actual CVMFS client, so
 you have ready all the existing content being already distributed by CVMFS. By
 default, the `/cvmfs/` directory on a CVMFS client host is read-only, but that
 can be solved using an
-[ephemeral writable container](https://cvmfs.readthedocs.io/en/latest/cpt-enter.html).
+[ephemeral writeable container](https://cvmfs.readthedocs.io/en/stable/cpt-enter/).

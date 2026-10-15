@@ -69,6 +69,7 @@ cartopy
 CAs
 caso
 catania
+catchall
 ccsrm
 cdmi
 ceid
@@ -403,6 +404,7 @@ mailinator
 manuel
 matlab
 matplotlib
+mccli
 mdui
 mesos
 metalink
@@ -480,6 +482,7 @@ ogf
 oidc
 oidcaccesstoken
 OIM
+oinit
 okeanos
 olas
 oncover

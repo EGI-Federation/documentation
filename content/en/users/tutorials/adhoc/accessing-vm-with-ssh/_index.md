@@ -53,7 +53,7 @@ restrictive file permissions. Depending on your local operative system you may
 need to run:
 
 ```shell
-$ chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
 ```
 
 (with `id_rsa` being the name of the private key associated with the public key
@@ -212,10 +212,47 @@ username (usually `cloudadm`), and the SSH key.
 
 If supported by your virtual machine, you can also use
 [ssh-oidc](https://github.com/EOSC-synergy/ssh-oidc) which implements the
-authentication consuming under-the-hood tokens from a local demon installed on
-your local machine.
+(SSH) authentication through (Check-in) OIDC tokens.
+Rather than a single software package, ssh-oidc is a set of server/client side
+tools.
 
-More details on that soon.
+The SSH-OIDC ecosystem has evolved along the years to support different use cases.
+There are two ways to setup a SSH-OIDC client/server configuration:
 
-The Infrastructure Manager (IM) can `Enable SSH OIDC access to the VM` in
-virtual machines by selecting the related `Optional Features`.
+1. Server deploys [Motley-Cue][], client uses [mccli][] to login to the server.
+2. Server deploys [oinit server tools][] (which includes a certificate authority),
+client uses [oinit client tools][] to connect to the server.
+
+In the first case, the client explicitly calls mccli to login to the SSH server;
+It is a wrapper around `ssh` and `scp` commands that automatically handles the
+OIDC access token to the (Motley-Cue) server.
+The advantage of this approach is the simplicity of the server and client setup;
+The disadvantage is that the wrapping of the ssh command -- although it works
+well for simple workflows -- may not be suitable for more complex workflows.
+
+The second case is more complex to setup, but it allows the client to use the
+standard `ssh` and `scp` commands, and it is more suitable for complex workflows.
+
+Both methods use [oidc-agent][] to manage the OIDC tokens on the client side
+(*OR* you provide the tokens explicitly).
+
+### Infrastructure Manager (IM) support for SSH-OIDC
+
+The first use case of SSH-OIDC is currently supported by the Infrastructure Manager (IM).
+
+After selecting to `Deploy a Virtual Machine`, the user can select the
+`Enable SSH OIDC access to the VM` option in the next `Optional Features` page.
+
+This will deploy the virtual machine with Motley-Cue server and the SSH server
+configured accordingly. The user can then use the `mccli` client to connect to
+the virtual machine. E.g,
+
+```shell
+mccli --token $TOKEN ssh <VM_IP_ADDRESS>
+```
+
+[Motley-Cue]: https://motley-cue.readthedocs.io/
+[mccli]: https://mccli.readthedocs.io/
+[oinit server tools]: https://ssh-oidc-doc.data.kit.edu/admin-installation/
+[oinit client tools]: https://ssh-oidc-doc.data.kit.edu/user-installation/
+[oidc-agent]: https://indigo-dc.github.io/oidc-agent/

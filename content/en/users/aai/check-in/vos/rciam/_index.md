@@ -1,10 +1,11 @@
 ---
 title: Group Management in Keycloak
-linkTitle: "Keycloak"
+linkTitle: "RCIAM"
 type: docs
 weight: 20
 aliases:
   - /users/check-in/vos/keycloak
+  - /users/check-in/vos/rciam
 description: >
   Group Management in Check-in via Keycloak
 ---

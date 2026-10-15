@@ -20,7 +20,7 @@ choices of backends, either public (such as
 [Amazon Web Services](https://aws.amazon.com/),
 [Google Cloud](https://cloud.google.com/) or
 [Microsoft Azure](https://azure.microsoft.com/)) or on-premises (such as
-[OpenStack](../../../../getting-started/openstack)). EC3 can provision clusters
+[OpenStack](../../../cloud-compute/openstack)). EC3 can provision clusters
 running [TORQUE](https://github.com/adaptivecomputing/torque),
 [SLURM](https://slurm.schedmd.com/),
 [HTCondor](https://research.cs.wisc.edu/htcondor/),
