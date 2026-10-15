@@ -989,22 +989,6 @@ Example response:
 }
 ```
 
-##### Device Code with PKCE
-
-To combine Device Code flow with PKCE you need to make the following requests:
-
-1 - Device Authorization Request:
-
-```shell
-$ curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -d "client_id=${CLIENT_ID}" \
-    -d "client_secret=${CLIENT_SECRET}" \
-    -d "scope=openid%20email%20profile" \
-    -d "code_challenge=${CODE_CHALLENGE}" \
-    -d "code_challenge_method=S256" | python -m json.tool
-```
-
 {{% alert title="Note" color="info" %}} You can find the
 `DEVICE_AUTHORIZATION_ENDPOINT` in the [Endpoints](#endpoints)
 table.{{% /alert %}}
