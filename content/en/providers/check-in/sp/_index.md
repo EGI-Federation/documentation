@@ -841,19 +841,6 @@ Example response:
 }
 ```
 
-##### Refresh Request when using PKCE
-
-To combine the refresh token grant type with PKCE you need to make the following
-request:
-
-```shell
-$ curl -X POST "${TOKEN_ENDPOINT}" \
-    -d "client_id=${CLIENT_ID}" \
-    -d "grant_type=refresh_token" \
-    -d "refresh_token=${REFRESH_TOKEN}" \
-    -d "scope=openid%20email%20profile" | python -m json.tool;
-```
-
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
