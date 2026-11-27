@@ -4,7 +4,7 @@ linkTitle: "AUDITOR deployment instructions"
 weight: 100
 description: >-
      This page collects the information and the documentation to deploy AUDITOR
-	 in the EGI Infrastructure
+   in the EGI Infrastructure
 ---
 
 ## Heading
